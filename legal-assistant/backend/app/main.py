@@ -51,9 +51,9 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(
-    title="法规论点与证据问答助手",
-    version="0.3.1",
-    description="本地法规优先、通过本机 Codex CLI 生成并审核答案。",
+    title="法规研究与证据问答助手",
+    version="0.5.0",
+    description="迭代检索本地法规，必要时查询欧盟官方Web来源，并通过本机 Codex CLI 生成动态法规落地作业包。",
     lifespan=lifespan,
 )
 app.add_middleware(
@@ -92,6 +92,14 @@ async def codex_health() -> dict:
     result["queueSize"] = qa_service.queue.qsize()
     result["queueLimit"] = settings.queue_limit
     result["verifyEnabled"] = settings.codex_verify_enabled
+    result["webSearchEnabled"] = settings.web_search_enabled
+    result["localResearchRounds"] = settings.research_local_rounds
+    result["webResearchRounds"] = settings.research_web_rounds
+    result["researchMode"] = "adaptive-fast"
+    result["adaptiveLocalRoundLimits"] = {"simple": 1, "standard": 2, "complex": 3}
+    result["webTrigger"] = "explicit-request-or-critical-legal-gap"
+    result["reportMode"] = "adaptive-work-product-v4"
+    result["reportExpansionEnabled"] = settings.report_expansion_enabled
     return result
 
 
@@ -119,7 +127,8 @@ async def question_events(job_id: str) -> StreamingResponse:
 
     async def stream() -> AsyncIterator[str]:
         delivered = 0
-        for _ in range(360):
+        heartbeat = 0
+        while True:
             job = database.get_job(job_id)
             if not job:
                 break
@@ -130,6 +139,9 @@ async def question_events(job_id: str) -> StreamingResponse:
             if job["status"] in {"completed", "failed"}:
                 yield f"event: done\ndata: {json.dumps({'status': job['status']})}\n\n"
                 break
+            heartbeat += 1
+            if heartbeat % 30 == 0:
+                yield ": heartbeat\n\n"
             await asyncio.sleep(0.5)
 
     return StreamingResponse(stream(), media_type="text/event-stream")

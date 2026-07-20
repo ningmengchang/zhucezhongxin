@@ -78,6 +78,7 @@ class CodexRunner:
         schema_name: str,
         *,
         event_callback: EventCallback | None = None,
+        allow_web_search: bool = False,
     ) -> CodexResult:
         if self.settings.codex_mock:
             return self._mock_result(schema_name)
@@ -89,23 +90,7 @@ class CodexRunner:
             jobs_dir = self.settings.data_dir / "jobs"
             jobs_dir.mkdir(parents=True, exist_ok=True)
             with tempfile.TemporaryDirectory(prefix="codex-job-", dir=jobs_dir) as job_dir:
-                command = [
-                    self.settings.codex_binary,
-                    "--ask-for-approval",
-                    "never",
-                    "exec",
-                    "--json",
-                    "--output-schema",
-                    str(schema_path),
-                    "--sandbox",
-                    "read-only",
-                    "--ephemeral",
-                    "--ignore-user-config",
-                    "--skip-git-repo-check",
-                    "--cd",
-                    job_dir,
-                    "-",
-                ]
+                command = self._build_command(schema_path, job_dir, allow_web_search)
                 environment = os.environ.copy()
                 environment["NO_COLOR"] = "1"
                 # Keep the authenticated CODEX_HOME unchanged, but move transient
@@ -168,6 +153,30 @@ class CodexRunner:
                     raise CodexError("Codex最终消息不是合法JSON") from exc
                 return CodexResult(payload=payload, events=events, stderr=stderr)
 
+    def _build_command(self, schema_path: Path, job_dir: str, allow_web_search: bool) -> list[str]:
+        command = [self.settings.codex_binary]
+        if allow_web_search:
+            command.append("--search")
+        command.extend(
+            [
+                "--ask-for-approval",
+                "never",
+                "exec",
+                "--json",
+                "--output-schema",
+                str(schema_path),
+                "--sandbox",
+                "read-only",
+                "--ephemeral",
+                "--ignore-user-config",
+                "--skip-git-repo-check",
+                "--cd",
+                job_dir,
+                "-",
+            ]
+        )
+        return command
+
     @staticmethod
     def _extract_agent_text(event: dict[str, Any]) -> str | None:
         item = event.get("item")
@@ -183,7 +192,73 @@ class CodexRunner:
 
     @staticmethod
     def _mock_result(schema_name: str) -> CodexResult:
-        if "verification" in schema_name:
+        if schema_name == "research_assessment.schema.json":
+            payload = {
+                "decision": "unresolved",
+                "reason": "Mock模式没有模型评估",
+                "coveredTopics": [],
+                "gaps": ["Mock模式"],
+                "criticalGaps": [],
+                "nextQueries": [],
+                "webQueries": [],
+                "webRequired": False,
+                "questionProfile": {
+                    "interpretedQuestion": "Mock问题",
+                    "complexity": "simple",
+                    "intents": ["legal_explanation"],
+                    "requiredBlockTypes": ["deep_analysis"],
+                    "focusAreas": [],
+                    "targetCharacters": 700,
+                },
+            }
+        elif schema_name == "web_research.schema.json":
+            payload = {"searchedQueries": [], "sources": [], "unresolvedGaps": ["Mock模式"]}
+        elif schema_name == "legal_report.schema.json":
+            payload = {
+                "status": "unresolved",
+                "executiveSummary": [],
+                "analysisSections": [],
+                "serviceProviderImpact": [],
+                "uncertainties": ["Mock模式未调用Codex。"],
+            }
+        elif schema_name == "work_product_report.schema.json":
+            payload = {
+                "status": "unresolved",
+                "answerTitle": "Mock模式",
+                "executiveAnswer": [],
+                "keyTakeaways": [],
+                "contentBlocks": [],
+                "serviceProviderActions": [],
+                "unresolvedQuestions": [
+                    {
+                        "itemId": "U-MOCK",
+                        "question": "Mock模式未调用Codex",
+                        "impact": "没有生成真实内容",
+                        "neededEvidence": "关闭Mock模式",
+                    }
+                ],
+            }
+        elif schema_name == "work_product_verification.schema.json":
+            payload = {
+                "overall": "pass",
+                "unsupportedItemIds": [],
+                "partialItemIds": [],
+                "reclassifications": [],
+                "revisions": [],
+                "missingDeliverables": [],
+                "reviewNote": "Mock模式审核完成",
+            }
+        elif schema_name == "report_verification.schema.json":
+            payload = {
+                "overall": "pass",
+                "coverageStatus": "complete",
+                "unsupportedParagraphIds": [],
+                "partialParagraphIds": [],
+                "unsupportedServiceItemIds": [],
+                "coverageGaps": [],
+                "reviewNote": "Mock模式审核完成",
+            }
+        elif "verification" in schema_name:
             payload = {
                 "overall": "pass",
                 "coverageStatus": "complete",

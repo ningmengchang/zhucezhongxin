@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date, datetime
 from enum import Enum
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, Field
 
@@ -25,6 +25,8 @@ class ReviewStatus(str, Enum):
 class JobStatus(str, Enum):
     queued = "queued"
     retrieving = "retrieving"
+    assessing = "assessing"
+    web_searching = "web_searching"
     generating = "generating"
     verifying = "verifying"
     completed = "completed"
@@ -144,6 +146,168 @@ class LegalAnswer(BaseModel):
     searchedSources: list[str] = Field(default_factory=list)
 
 
+class ReportParagraph(BaseModel):
+    paragraphId: str
+    text: str
+    nature: Literal["legal_analysis", "process_explanation", "implementation_advice", "uncertainty"]
+    sourceRefs: list[str] = Field(default_factory=list)
+
+
+class ReportSection(BaseModel):
+    title: str
+    paragraphs: list[ReportParagraph] = Field(default_factory=list)
+
+
+class ServiceProviderItem(BaseModel):
+    itemId: str
+    title: str
+    detail: str
+    nature: Literal[
+        "direct_legal_duty",
+        "direct_service_provider_duty",
+        "legal_responsibility_boundary",
+        "derived_implementation_action",
+    ]
+    sourceRefs: list[str] = Field(default_factory=list)
+
+
+class ReportSource(BaseModel):
+    sourceId: str
+    origin: Literal["local", "web"]
+    authorityKind: Literal["legal_act", "official_guidance", "local_supplement"]
+    title: str
+    sourceLevel: SourceLevel | None = None
+    documentId: str | None = None
+    filename: str | None = None
+    article: str | None = None
+    page: int | None = None
+    quote: str
+    url: str | None = None
+    publisher: str | None = None
+    publicationDate: date | None = None
+    effectiveDate: date | None = None
+    applicabilityStatus: Literal["current", "future", "unknown"] = "unknown"
+    accessedAt: datetime | None = None
+    verified: bool = True
+
+
+class ResearchTraceItem(BaseModel):
+    round: int
+    type: Literal["local", "web", "verification"]
+    queries: list[str] = Field(default_factory=list)
+    resultCount: int = 0
+    decision: str
+
+
+class ResearchReport(BaseModel):
+    schemaVersion: Literal["3.0"] = "3.0"
+    status: Literal["answered", "partial", "unresolved", "system_error"]
+    executiveSummary: list[ReportParagraph] = Field(default_factory=list)
+    timeContext: TimeContext | None = None
+    analysisSections: list[ReportSection] = Field(default_factory=list)
+    serviceProviderImpact: list[ServiceProviderItem] = Field(default_factory=list)
+    uncertainties: list[str] = Field(default_factory=list)
+    sources: list[ReportSource] = Field(default_factory=list)
+    researchTrace: list[ResearchTraceItem] = Field(default_factory=list)
+
+
+ContentBasis = Literal[
+    "regulatory_requirement",
+    "official_interpretation",
+    "standard_guidance",
+    "engineering_recommendation",
+    "uncertainty",
+]
+
+
+class ReportStatementV4(BaseModel):
+    statementId: str
+    text: str
+    basis: ContentBasis
+    sourceRefs: list[str] = Field(default_factory=list)
+
+
+class WorkProductItem(BaseModel):
+    itemId: str
+    title: str = ""
+    detail: str = ""
+    cells: list[str] = Field(default_factory=list)
+    owner: str = ""
+    input: str = ""
+    output: str = ""
+    acceptanceCriteria: str = ""
+    priority: Literal["high", "medium", "low", "not_applicable"] = "not_applicable"
+    basis: ContentBasis
+    sourceRefs: list[str] = Field(default_factory=list)
+
+
+class WorkProductBlock(BaseModel):
+    blockId: str
+    blockType: Literal[
+        "deep_analysis",
+        "comparison_table",
+        "field_matrix",
+        "responsibility_matrix",
+        "process",
+        "checklist",
+        "decision_rules",
+        "example",
+        "common_mistakes",
+    ]
+    title: str
+    introduction: str = ""
+    columns: list[str] = Field(default_factory=list)
+    items: list[WorkProductItem] = Field(default_factory=list)
+
+
+class ServiceProviderActionV4(BaseModel):
+    actionId: str
+    title: str
+    detail: str
+    owner: str
+    priority: Literal["high", "medium", "low"]
+    deliverable: str
+    nature: Literal[
+        "direct_service_provider_duty",
+        "legal_responsibility_boundary",
+        "derived_implementation_action",
+    ]
+    basis: ContentBasis
+    sourceRefs: list[str] = Field(default_factory=list)
+
+
+class UnresolvedQuestionV4(BaseModel):
+    itemId: str
+    question: str
+    impact: str
+    neededEvidence: str
+
+
+class QualityNoteV4(BaseModel):
+    noteId: str
+    type: Literal["removed", "partial_support", "coverage", "system"]
+    message: str
+    relatedId: str | None = None
+
+
+class WorkProductReport(BaseModel):
+    schemaVersion: Literal["4.0"] = "4.0"
+    status: Literal["answered", "partial", "unresolved", "system_error"]
+    answerTitle: str
+    executiveAnswer: list[ReportStatementV4] = Field(default_factory=list)
+    keyTakeaways: list[ReportStatementV4] = Field(default_factory=list)
+    contentBlocks: list[WorkProductBlock] = Field(default_factory=list)
+    serviceProviderActions: list[ServiceProviderActionV4] = Field(default_factory=list)
+    unresolvedQuestions: list[UnresolvedQuestionV4] = Field(default_factory=list)
+    timeContext: TimeContext | None = None
+    sources: list[ReportSource] = Field(default_factory=list)
+    researchTrace: list[ResearchTraceItem] = Field(default_factory=list)
+    qualityNotes: list[QualityNoteV4] = Field(default_factory=list)
+
+
+AnswerPayload = Annotated[LegalAnswer | ResearchReport | WorkProductReport, Field(discriminator="schemaVersion")]
+
+
 class QuestionRequest(BaseModel):
     question: str = Field(min_length=2, max_length=4000)
     conversation_id: str | None = Field(default=None, min_length=8, max_length=128)
@@ -161,7 +325,7 @@ class JobOut(BaseModel):
     question: str
     conversation_id: str | None = None
     status: JobStatus
-    answer: LegalAnswer | None = None
+    answer: AnswerPayload | None = None
     error: str | None = None
     events: list[dict] = Field(default_factory=list)
     created_at: datetime

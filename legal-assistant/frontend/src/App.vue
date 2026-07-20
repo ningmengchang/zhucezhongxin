@@ -31,8 +31,10 @@ const memoryTurns = ref(Number(localStorage.getItem(`legal-assistant-turns-${con
 const conversationLabel = computed(() => conversationId.value.slice(0, 8))
 
 const statusLabel = computed(() => ({
-  answered: '证据充分', partial: '部分有依据', insufficient_evidence: '证据不足', system_error: '系统错误'
+  answered: '研究结论完整', partial: '部分结论', unresolved: '尚未解决', insufficient_evidence: '证据不足', system_error: '系统错误'
 }[answer.value?.status] || '等待提问'))
+const isReport = computed(() => answer.value?.schemaVersion === '3.0')
+const isWorkProduct = computed(() => answer.value?.schemaVersion === '4.0')
 
 async function api(path, options = {}) {
   const isForm = options.body instanceof FormData
@@ -74,7 +76,7 @@ async function ask() {
         as_of_date: asOfDate.value || null
       })
     })
-    await pollJob(accepted.job_id)
+    await followJob(accepted.job_id)
   } catch (err) {
     error.value = err.message
   } finally {
@@ -83,7 +85,7 @@ async function ask() {
 }
 
 async function pollJob(id) {
-  for (let count = 0; count < 400; count += 1) {
+  for (let count = 0; count < 900; count += 1) {
     job.value = await api(`/api/questions/${id}`)
     if (job.value.status === 'completed') {
       answer.value = job.value.answer
@@ -95,6 +97,25 @@ async function pollJob(id) {
     await new Promise(resolve => setTimeout(resolve, 700))
   }
   throw new Error('等待答案超时')
+}
+
+async function followJob(id) {
+  job.value = { id, status: 'queued', events: [] }
+  if (typeof EventSource !== 'undefined') {
+    await new Promise(resolve => {
+      const stream = new EventSource(`/api/questions/${id}/events`)
+      const timeout = setTimeout(() => { stream.close(); resolve() }, 490000)
+      stream.onmessage = event => {
+        try {
+          const item = JSON.parse(event.data)
+          job.value = { ...(job.value || {}), events: [...(job.value?.events || []), item], status: item.stage || job.value?.status }
+        } catch (_) { /* polling below remains authoritative */ }
+      }
+      stream.addEventListener('done', () => { clearTimeout(timeout); stream.close(); resolve() })
+      stream.onerror = () => { clearTimeout(timeout); stream.close(); resolve() }
+    })
+  }
+  await pollJob(id)
 }
 
 function startNewConversation() {
@@ -112,6 +133,16 @@ function startNewConversation() {
 
 async function showEvidence(citation) {
   evidenceDetail.value = await api(`/api/evidence/${citation.evidenceId}`)
+}
+
+async function showReportSource(source) {
+  if (source.origin === 'local') {
+    evidenceDetail.value = await api(`/api/evidence/${source.sourceId}`)
+    evidenceDetail.value.origin = 'local'
+    evidenceDetail.value.displaySource = source
+  } else {
+    evidenceDetail.value = { ...source, origin: 'web', text: source.quote }
+  }
 }
 
 async function loadDocuments() {
@@ -137,6 +168,43 @@ async function syncLocalDocuments() {
 
 function sourceClass(level) {
   return `source source-${level?.toLowerCase()}`
+}
+
+function sourceLabel(source) {
+  if (source.origin === 'web') return source.authorityKind === 'legal_act' ? 'Web官方法规' : 'Web官方说明'
+  if (source.sourceLevel) return `本地法规 ${source.sourceLevel}`
+  return '本地资料'
+}
+
+function paragraphNatureLabel(nature) {
+  return ({ legal_analysis: '法规分析', process_explanation: '流程解释', implementation_advice: '实施建议', uncertainty: '不确定事项' })[nature] || nature
+}
+
+function basisLabel(basis) {
+  return ({
+    regulatory_requirement: '法规直接要求',
+    official_interpretation: '官方解释',
+    standard_guidance: '本地标准指导',
+    engineering_recommendation: '工程建议 · 非强制',
+    uncertainty: '尚待确认'
+  })[basis] || basis
+}
+
+function blockTypeLabel(type) {
+  return ({
+    deep_analysis: '深度解释', comparison_table: '对比表', field_matrix: '字段矩阵',
+    responsibility_matrix: '责任矩阵', process: '实施流程', checklist: '验收清单',
+    decision_rules: '决策规则', example: '示意例子', common_mistakes: '常见错误'
+  })[type] || type
+}
+
+function priorityLabel(priority) {
+  return ({ high: '高优先级', medium: '中优先级', low: '低优先级' })[priority] || ''
+}
+
+function sourcesFor(refs = []) {
+  const wanted = new Set(refs)
+  return (answer.value?.sources || []).filter(source => wanted.has(source.sourceId))
 }
 
 function applicabilityLabel(status) {
@@ -224,7 +292,7 @@ onMounted(async () => {
         <div v-if="!answer && !busy" class="empty-state">
           <div class="empty-icon">§</div>
           <h2>从已审核法规中寻找答案</h2>
-          <p>助手先检索本地源文件，再让本机 Codex 生成原子论点，并独立核验每条引用。</p>
+          <p>助手会循环检索本地源文件并评估证据覆盖；本地仍有缺口时，仅查询欧盟官方网站，最终生成完整研究报告。</p>
           <div class="rule-grid">
             <article><b>A1 / A2</b><span>正式法规与现行文本</span></article>
             <article><b>B / C</b><span>指南与标准仅作补充</span></article>
@@ -234,6 +302,190 @@ onMounted(async () => {
 
         <div v-if="answer" class="answer-layout">
           <div class="answer-main">
+            <template v-if="isWorkProduct">
+              <div class="answer-heading work-heading">
+                <div class="report-heading-row">
+                  <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
+                  <span class="report-version">落地作业包 · v4.0</span>
+                </div>
+                <h2>{{ answer.answerTitle }}</h2>
+                <article v-for="item in answer.executiveAnswer" :key="item.statementId" class="work-executive">
+                  <p>{{ item.text }}</p>
+                  <div class="paragraph-meta">
+                    <span class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</span>
+                    <button v-for="source in sourcesFor(item.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ sourceLabel(source) }} · {{ source.article || source.sourceId }}</button>
+                  </div>
+                </article>
+                <div v-if="answer.timeContext" class="time-basis">
+                  <b>法规时点：{{ answer.timeContext.asOfDate }}</b>
+                  <span>{{ answer.timeContext.includesFutureRules ? '包含正式公布、尚未生效的规则' : '仅使用当日有效规则' }}</span>
+                  <span>本地来源 {{ answer.sources?.filter(item => item.origin === 'local').length || 0 }} 个 · Web官方来源 {{ answer.sources?.filter(item => item.origin === 'web').length || 0 }} 个</span>
+                </div>
+              </div>
+
+              <section v-if="answer.keyTakeaways?.length" class="answer-section takeaway-section">
+                <p class="section-index">先看这些</p><h2>关键决策要点</h2>
+                <div class="takeaway-grid">
+                  <article v-for="(item, index) in answer.keyTakeaways" :key="item.statementId">
+                    <span>{{ String(index + 1).padStart(2, '0') }}</span><p>{{ item.text }}</p>
+                    <div class="paragraph-meta"><i class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</i></div>
+                  </article>
+                </div>
+              </section>
+
+              <section v-if="answer.timeContext?.notices?.length" class="future-notice">
+                <h2>法规时点提示</h2>
+                <article v-for="notice in answer.timeContext.notices" :key="notice.documentId">
+                  <span :class="applicabilityClass(notice.applicabilityStatus)">{{ applicabilityLabel(notice.applicabilityStatus) }}</span>
+                  <div><b>{{ notice.documentTitle }}</b><p>{{ notice.note }}</p></div>
+                </article>
+              </section>
+
+              <section v-for="(block, blockIndex) in answer.contentBlocks" :key="block.blockId" class="answer-section work-block" :class="`block-${block.blockType}`">
+                <div class="work-block-heading"><div><p class="section-index">{{ String(blockIndex + 1).padStart(2, '0') }} / {{ blockTypeLabel(block.blockType) }}</p><h2>{{ block.title }}</h2></div><span>{{ block.items.length }}项</span></div>
+                <p v-if="block.introduction" class="block-intro">{{ block.introduction }}</p>
+
+                <div v-if="block.columns?.length" class="work-table-wrap">
+                  <table class="work-table">
+                    <thead><tr><th v-for="column in block.columns" :key="column">{{ column }}</th><th>依据性质</th></tr></thead>
+                    <tbody>
+                      <tr v-for="item in block.items" :key="item.itemId">
+                        <td v-for="(cell, cellIndex) in item.cells" :key="cellIndex">{{ cell }}</td>
+                        <td><span class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</span><div class="table-source-list"><button v-for="source in sourcesFor(item.sourceRefs)" :key="source.sourceId" @click="showReportSource(source)">{{ source.article || source.sourceId }}</button></div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div v-else-if="block.blockType === 'process'" class="process-list">
+                  <article v-for="(item, index) in block.items" :key="item.itemId">
+                    <div class="process-index">{{ index + 1 }}</div>
+                    <div><h3>{{ item.title }}</h3><p>{{ item.detail }}</p><dl><template v-if="item.owner"><dt>责任角色</dt><dd>{{ item.owner }}</dd></template><template v-if="item.input"><dt>输入</dt><dd>{{ item.input }}</dd></template><template v-if="item.output"><dt>输出</dt><dd>{{ item.output }}</dd></template><template v-if="item.acceptanceCriteria"><dt>验收</dt><dd>{{ item.acceptanceCriteria }}</dd></template></dl><div class="paragraph-meta"><span class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</span></div></div>
+                  </article>
+                </div>
+
+                <div v-else-if="block.blockType === 'checklist'" class="checklist-grid">
+                  <article v-for="item in block.items" :key="item.itemId"><span class="check-box">✓</span><div><h3>{{ item.title }}</h3><p>{{ item.detail }}</p><small v-if="item.acceptanceCriteria"><b>验收：</b>{{ item.acceptanceCriteria }}</small><div class="paragraph-meta"><em v-if="item.priority !== 'not_applicable'" :class="`priority-${item.priority}`">{{ priorityLabel(item.priority) }}</em><span class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</span></div></div></article>
+                </div>
+
+                <div v-else class="work-card-list">
+                  <article v-for="item in block.items" :key="item.itemId"><h3 v-if="item.title">{{ item.title }}</h3><p>{{ item.detail }}</p><pre v-if="block.blockType === 'example' && item.output">{{ item.output }}</pre><div class="paragraph-meta"><span class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</span><button v-for="source in sourcesFor(item.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ sourceLabel(source) }} · {{ source.article || source.sourceId }}</button></div></article>
+                </div>
+              </section>
+
+              <section v-if="answer.serviceProviderActions?.length" class="answer-section provider-section action-plan">
+                <div class="provider-heading"><div><p>服务商执行视角</p><h2>行动计划与交付物</h2></div><em>按优先级、负责人和依据性质拆分</em></div>
+                <article v-for="action in answer.serviceProviderActions" :key="action.actionId" class="action-row">
+                  <div><span :class="`priority-pill priority-${action.priority}`">{{ priorityLabel(action.priority) }}</span><span class="impact-kind">{{ action.nature === 'direct_service_provider_duty' ? '直接义务' : action.nature === 'legal_responsibility_boundary' ? '责任边界' : '实施行动' }}</span></div>
+                  <div><h3>{{ action.title }}</h3><p>{{ action.detail }}</p><dl><dt>负责人</dt><dd>{{ action.owner }}</dd><dt>交付物</dt><dd>{{ action.deliverable }}</dd></dl><div class="paragraph-meta"><span class="basis-tag" :class="`basis-${action.basis}`">{{ basisLabel(action.basis) }}</span><button v-for="source in sourcesFor(action.sourceRefs)" :key="source.sourceId" class="source-ref" @click="showReportSource(source)">{{ source.article || source.sourceId }}</button></div></div>
+                </article>
+              </section>
+
+              <section v-if="answer.unresolvedQuestions?.length" class="answer-section unresolved-section">
+                <details><summary>仍需补齐的业务问题（{{ answer.unresolvedQuestions.length }}项）</summary><article v-for="item in answer.unresolvedQuestions" :key="item.itemId"><h3>{{ item.question }}</h3><p><b>影响：</b>{{ item.impact }}</p><p><b>需要补充：</b>{{ item.neededEvidence }}</p></article></details>
+              </section>
+
+              <section class="answer-section research-audit">
+                <details><summary>研究与质量审计</summary>
+                  <div class="audit-columns">
+                    <div><h3>检索过程</h3><div class="trace-list"><article v-for="(item, index) in answer.researchTrace" :key="index"><span>{{ item.type === 'local' ? `本地第${item.round}轮` : item.type === 'web' ? '官方Web' : '独立审核' }}</span><div><b>{{ item.decision }}</b><small>新增有效结果：{{ item.resultCount }}</small></div></article></div></div>
+                    <div v-if="answer.qualityNotes?.length"><h3>内部质量记录</h3><ul class="quality-list"><li v-for="note in answer.qualityNotes" :key="note.noteId">{{ note.message }}</li></ul></div>
+                  </div>
+                </details>
+              </section>
+
+              <section class="answer-section source-directory">
+                <p class="section-index">来源索引</p><h2>本作业包实际使用的来源</h2>
+                <button v-for="source in answer.sources" :key="source.sourceId" class="directory-source" @click="showReportSource(source)"><span class="source-origin" :class="`origin-${source.origin}`">{{ sourceLabel(source) }}</span><span><b>{{ source.title }}</b><small>{{ source.article || '条款未识别' }}{{ source.page ? ` · 第${source.page}页` : '' }}</small></span></button>
+              </section>
+            </template>
+
+            <template v-else-if="isReport">
+              <div class="answer-heading report-heading">
+                <div class="report-heading-row">
+                  <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
+                  <span class="report-version">专业研究报告 · v3.0</span>
+                </div>
+                <h2>直接答复</h2>
+                <article v-for="paragraph in answer.executiveSummary" :key="paragraph.paragraphId" class="report-paragraph executive-paragraph">
+                  <p>{{ paragraph.text }}</p>
+                  <div class="paragraph-meta">
+                    <span class="nature-tag">{{ paragraphNatureLabel(paragraph.nature) }}</span>
+                    <button v-for="source in sourcesFor(paragraph.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">
+                      {{ sourceLabel(source) }} · {{ source.article || source.sourceId }}
+                    </button>
+                  </div>
+                </article>
+                <p v-if="!answer.executiveSummary?.length" class="muted">当前研究未形成可由有效来源支撑的直接答复。</p>
+                <div v-if="answer.timeContext" class="time-basis">
+                  <b>法规时点：{{ answer.timeContext.asOfDate }}</b>
+                  <span>{{ answer.timeContext.includesFutureRules ? '包含正式公布、尚未生效的规则' : '仅使用当日有效规则' }}</span>
+                  <span>本地来源 {{ answer.sources?.filter(item => item.origin === 'local').length || 0 }} 个 · Web官方来源 {{ answer.sources?.filter(item => item.origin === 'web').length || 0 }} 个</span>
+                </div>
+              </div>
+
+              <section v-if="answer.timeContext?.notices?.length" class="future-notice">
+                <h2>法规时点提示</h2>
+                <article v-for="notice in answer.timeContext.notices" :key="notice.documentId">
+                  <span :class="applicabilityClass(notice.applicabilityStatus)">{{ applicabilityLabel(notice.applicabilityStatus) }}</span>
+                  <div><b>{{ notice.documentTitle }}</b><p>{{ notice.note }}</p></div>
+                </article>
+              </section>
+
+              <section v-for="(section, sectionIndex) in answer.analysisSections" :key="section.title" class="answer-section report-section">
+                <p class="section-index">{{ String(sectionIndex + 1).padStart(2, '0') }} / 详细分析</p>
+                <h2>{{ section.title }}</h2>
+                <article v-for="paragraph in section.paragraphs" :key="paragraph.paragraphId" class="report-paragraph">
+                  <p>{{ paragraph.text }}</p>
+                  <div class="paragraph-meta">
+                    <span class="nature-tag" :class="`nature-${paragraph.nature}`">{{ paragraphNatureLabel(paragraph.nature) }}</span>
+                    <button v-for="source in sourcesFor(paragraph.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">
+                      {{ sourceLabel(source) }} · {{ source.article || source.sourceId }}
+                    </button>
+                  </div>
+                </article>
+              </section>
+
+              <section v-if="answer.serviceProviderImpact?.length" class="answer-section provider-section report-provider">
+                <div class="provider-heading"><div><p>服务商重点</p><h2>服务商职责与系统影响</h2></div><em>直接法定义务与实施推导分开展示</em></div>
+                <article v-for="item in answer.serviceProviderImpact" :key="item.itemId" class="provider-impact" :class="`impact-${item.nature}`">
+                  <div class="impact-kind">{{ ['direct_legal_duty', 'direct_service_provider_duty'].includes(item.nature) ? '服务商直接法定义务' : item.nature === 'legal_responsibility_boundary' ? '法定责任边界' : '推导实施行动' }}</div>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.detail }}</p>
+                  <div class="paragraph-meta">
+                    <button v-for="source in sourcesFor(item.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ sourceLabel(source) }} · {{ source.article || source.sourceId }}</button>
+                  </div>
+                </article>
+              </section>
+
+              <section v-if="answer.uncertainties?.length" class="answer-section warning-section report-warning">
+                <p class="section-index">研究边界</p><h2>尚不能确认的事项</h2>
+                <ul><li v-for="item in answer.uncertainties" :key="item">{{ item }}</li></ul>
+              </section>
+
+              <section class="answer-section research-audit">
+                <details>
+                  <summary>查看检索过程（{{ answer.researchTrace?.length || 0 }}个步骤）</summary>
+                  <div class="trace-list">
+                    <article v-for="(item, index) in answer.researchTrace" :key="index">
+                      <span>{{ item.type === 'local' ? `本地第${item.round}轮` : item.type === 'web' ? '官方Web搜索' : '独立审核' }}</span>
+                      <div><b>{{ item.decision }}</b><p v-if="item.queries?.length">检索词：{{ item.queries.join('；') }}</p><small>新增有效结果：{{ item.resultCount }}</small></div>
+                    </article>
+                  </div>
+                </details>
+              </section>
+
+              <section class="answer-section source-directory">
+                <p class="section-index">审计索引</p><h2>本报告使用的来源</h2>
+                <button v-for="source in answer.sources" :key="source.sourceId" class="directory-source" @click="showReportSource(source)">
+                  <span class="source-origin" :class="`origin-${source.origin}`">{{ sourceLabel(source) }}</span>
+                  <span><b>{{ source.title }}</b><small>{{ source.article || '条款未识别' }}{{ source.page ? ` · 第${source.page}页` : '' }}{{ source.accessedAt ? ` · 访问于${source.accessedAt.slice(0, 10)}` : '' }}</small></span>
+                </button>
+                <p v-if="!answer.sources?.length" class="muted">没有通过校验并实际用于报告的来源。</p>
+              </section>
+            </template>
+
+            <template v-else>
             <div class="answer-heading">
               <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
               <h2>直接结论</h2>
@@ -287,19 +539,22 @@ onMounted(async () => {
               <h2>三、不确定事项</h2>
               <ul><li v-for="item in answer.missingEvidence" :key="item">{{ item }}</li></ul>
             </section>
+            </template>
           </div>
 
           <aside class="evidence-panel">
             <template v-if="evidenceDetail">
               <div class="evidence-head">
-                <span :class="sourceClass(evidenceDetail.source_level)">{{ evidenceDetail.source_level }}</span>
+                <span v-if="evidenceDetail.origin === 'web'" class="source-origin origin-web">{{ sourceLabel(evidenceDetail) }}</span>
+                <span v-else :class="sourceClass(evidenceDetail.source_level)">{{ evidenceDetail.source_level }}</span>
                 <button @click="evidenceDetail = null">×</button>
               </div>
-              <h3>{{ evidenceDetail.document_title }}</h3>
-              <p class="evidence-meta">{{ evidenceDetail.article || '未识别条款' }} · PDF第{{ evidenceDetail.page }}页</p>
+              <h3>{{ evidenceDetail.document_title || evidenceDetail.title }}</h3>
+              <p v-if="evidenceDetail.origin !== 'web'" class="evidence-meta">{{ evidenceDetail.article || '未识别条款' }} · 文件第{{ evidenceDetail.page }}页</p>
+              <p v-else class="evidence-meta">{{ evidenceDetail.publisher }} · 官方Web来源</p>
               <p v-if="evidenceDetail.effective_date" class="evidence-meta">生效日期：{{ evidenceDetail.effective_date }}</p>
               <blockquote>{{ evidenceDetail.text }}</blockquote>
-              <a :href="evidenceDetail.pdfUrl" target="_blank">打开法规原文件 ↗</a>
+              <a :href="evidenceDetail.origin === 'web' ? evidenceDetail.url : evidenceDetail.pdfUrl" target="_blank">{{ evidenceDetail.origin === 'web' ? '打开官方网页' : '打开法规原文件' }} ↗</a>
             </template>
             <template v-else>
               <div class="evidence-placeholder">点击结论下方的条款标签，在这里核对法规原文。</div>
@@ -343,11 +598,11 @@ onMounted(async () => {
         <div class="metrics">
           <article><span>调用方式</span><b>codex exec</b><small>不使用业务大模型API</small></article>
           <article><span>并发上限</span><b>{{ codexHealth?.concurrency ?? 2 }}</b><small>当前队列 {{ codexHealth?.queueSize ?? 0 }}/{{ codexHealth?.queueLimit ?? 20 }}</small></article>
-          <article><span>独立审核</span><b>{{ codexHealth?.verifyEnabled ? '已启用' : '已关闭' }}</b><small>生成与审核分两次运行</small></article>
+          <article><span>研究策略</span><b>{{ codexHealth?.localResearchRounds ?? 3 }}＋{{ codexHealth?.webResearchRounds ?? 1 }}</b><small>本地扩检轮次＋官方Web轮次</small></article>
         </div>
         <div class="boundary-note">
           <h3>数据边界</h3>
-          <p>法规源文件和索引保存在本机；提交给 Codex 的用户问题与已筛选证据片段会通过当前 ChatGPT 登录会话发送给 OpenAI。Codex不启用自主网络搜索。</p>
+          <p>法规源文件和索引保存在本机；用户问题与已筛选证据片段会通过当前 ChatGPT 登录会话发送给 OpenAI。本地证据不足时，Codex仅在单独阶段搜索欧盟官方来源，页面会把本地法规和Web来源分别标明。</p>
         </div>
       </section>
     </main>

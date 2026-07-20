@@ -37,6 +37,24 @@ class Settings:
     auto_seed: bool = _bool("AUTO_SEED", False)
     auto_sync_local_files: bool = _bool("AUTO_SYNC_LOCAL_FILES", True)
     max_evidence: int = int(os.getenv("MAX_EVIDENCE", "24"))
+    research_local_rounds: int = int(os.getenv("RESEARCH_LOCAL_ROUNDS", "3"))
+    research_web_rounds: int = int(os.getenv("RESEARCH_WEB_ROUNDS", "1"))
+    research_total_timeout_seconds: int = int(os.getenv("RESEARCH_TOTAL_TIMEOUT_SECONDS", "480"))
+    research_max_evidence: int = int(os.getenv("RESEARCH_MAX_EVIDENCE", "60"))
+    web_search_enabled: bool = _bool("WEB_SEARCH_ENABLED", True)
+    web_max_sources: int = int(os.getenv("WEB_MAX_SOURCES", "5"))
+    web_official_domains: tuple[str, ...] = tuple(
+        item.strip().lower().lstrip(".")
+        for item in os.getenv(
+            "WEB_OFFICIAL_DOMAINS",
+            "europa.eu,eur-lex.europa.eu,op.europa.eu,echa.europa.eu",
+        ).split(",")
+        if item.strip()
+    )
+    report_expansion_enabled: bool = _bool("REPORT_EXPANSION_ENABLED", True)
+    report_simple_min_chars: int = int(os.getenv("REPORT_SIMPLE_MIN_CHARS", "700"))
+    report_standard_min_chars: int = int(os.getenv("REPORT_STANDARD_MIN_CHARS", "1600"))
+    report_complex_min_chars: int = int(os.getenv("REPORT_COMPLEX_MIN_CHARS", "3000"))
     cors_origins: tuple[str, ...] = tuple(
         item.strip()
         for item in os.getenv(
