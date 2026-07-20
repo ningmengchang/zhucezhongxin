@@ -9,7 +9,7 @@ from typing import Any
 
 from pydantic import ValidationError
 
-from .codex_runner import CodexError, CodexRunner
+from .codex_runner import CodexError, CodexRunner, LawToolContext
 from .database import Database
 from .models import Claim, JobStatus, LegalAnswer, QuestionRequest, TimeContext, TimeNotice
 from .models import (
@@ -95,6 +95,220 @@ class QAService:
                 self.queue.task_done()
 
     async def _process(self, job_id: str, request: QuestionRequest) -> None:
+        if self.runner.settings.law_retrieval_mode == "legacy":
+            await self._process_legacy(job_id, request)
+            return
+        await self._process_tool_agent(job_id, request)
+
+    async def _process_tool_agent(self, job_id: str, request: QuestionRequest) -> None:
+        deadline = asyncio.get_running_loop().time() + self.runner.settings.research_total_timeout_seconds
+        history = self.database.conversation_history(
+            request.conversation_id,
+            exclude_job_id=job_id,
+            limit=self.runner.settings.conversation_memory_turns,
+        )
+        effective_on = request.as_of_date or date.today()
+        self.database.update_job(
+            job_id,
+            status=JobStatus.retrieving.value,
+            event=self._event(
+                "retrieving",
+                "Codex正在使用SearchLaw定位法规，并按需调用ReadLawSource读取原文"
+                + (f"；已载入{len(history)}轮会话记忆" if history else ""),
+            ),
+        )
+        local_result = await self._run_before_deadline(
+            deadline,
+            self._local_agent_prompt(request, history),
+            "local_law_agent.schema.json",
+            law_tools=LawToolContext(
+                database_path=self.runner.settings.database_path,
+                as_of_date=effective_on,
+                include_future_rules=request.include_future_rules,
+            ),
+        )
+        payload = local_result.payload
+        decision = payload.get("decision")
+        if decision not in {"sufficient", "needs_web", "unresolved"}:
+            decision = "unresolved"
+        profile = self._merge_question_profile(request.question, payload.get("questionProfile", {}))
+        assessment = {
+            "decision": "search_web" if decision == "needs_web" else decision,
+            "reason": str(payload.get("reason", "")).strip(),
+            "gaps": [str(item) for item in payload.get("criticalGaps", [])],
+            "criticalGaps": [str(item) for item in payload.get("criticalGaps", [])],
+            "nextQueries": [],
+            "webQueries": [str(item) for item in payload.get("webQueries", [])][:4],
+            "webRequired": decision == "needs_web",
+            "questionProfile": profile,
+        }
+        evidence, trace = self._evidence_from_law_trace(
+            local_result.law_trace,
+            effective_on,
+            invocation_started_at=local_result.started_at,
+            invocation_finished_at=local_result.finished_at,
+        )
+        if not any(item.action == "search" for item in trace) and not self.runner.settings.codex_mock:
+            raise CodexError("法规Agent未调用SearchLaw，已拒绝无检索依据的答案")
+        if not evidence:
+            decision = "unresolved"
+            assessment["decision"] = "unresolved"
+            assessment["criticalGaps"] = ["没有通过ReadLawSource读取可引用的本地法规原文"]
+
+        try:
+            answer = WorkProductReport.model_validate(payload.get("report", {}))
+        except ValidationError as exc:
+            raise CodexError(f"Codex本地法规Agent未通过应用层Schema校验: {exc}") from exc
+        local_sources = self._report_sources(evidence, [])
+        answer.sources = local_sources
+        answer.researchTrace = trace
+        answer.timeContext = self._time_context(request, evidence)
+        answer = self._validate_work_product(answer, profile)
+
+        explicit_web_request = self._explicit_web_requested(request.question)
+        web_sources: list[ReportSource] = []
+        rejected_web: list[str] = []
+        if (
+            (explicit_web_request or decision == "needs_web")
+            and self.runner.settings.web_search_enabled
+            and self.runner.settings.research_web_rounds > 0
+            and self._remaining_seconds(deadline) > 90
+        ):
+            web_queries = assessment["webQueries"] or [request.question]
+            web_result = None
+            self.database.update_job(
+                job_id,
+                status=JobStatus.web_searching.value,
+                event=self._event("web_searching", "本地原文仍有关键缺口，正在检索并核验欧盟官方网站"),
+            )
+            try:
+                web_result = await self._run_before_deadline(
+                    deadline,
+                    self._web_prompt(request, assessment, web_queries),
+                    "web_research.schema.json",
+                    allow_web_search=True,
+                )
+                used_native_search = any(
+                    isinstance(event.get("item"), dict)
+                    and "web_search" in str(event["item"].get("type", ""))
+                    for event in web_result.events
+                )
+                if used_native_search or self.runner.settings.codex_mock:
+                    web_sources, rejected_web = await asyncio.wait_for(
+                        self.web_validator.validate_many(web_result.payload.get("sources", [])),
+                        timeout=max(1.0, self._remaining_seconds(deadline)),
+                    )
+                else:
+                    rejected_web = ["Codex未执行原生Web Search，本轮结果已丢弃"]
+            except asyncio.TimeoutError:
+                rejected_web = ["官方Web研究达到时间上限，未保留未经完整校验的结果"]
+            answer.researchTrace.append(
+                ResearchTraceItem(
+                    round=1,
+                    type="web",
+                    queries=web_queries,
+                    resultCount=len(web_sources),
+                    decision=(
+                        f"核验通过{len(web_sources)}个欧盟官方来源"
+                        if web_sources
+                        else "未找到可核验的欧盟官方来源"
+                    ),
+                    startedAt=web_result.started_at if web_result else None,
+                    finishedAt=web_result.finished_at if web_result else None,
+                    durationMs=web_result.duration_ms if web_result else None,
+                )
+            )
+
+        all_sources = self._report_sources(evidence, web_sources)
+        if web_sources:
+            completed_trace = list(answer.researchTrace)
+            self.database.update_job(
+                job_id,
+                status=JobStatus.generating.value,
+                event=self._event("generating", "正在结合已读取本地原文和已核验Web来源生成最终答案"),
+            )
+            generation = await self._run_before_deadline(
+                deadline,
+                self._report_prompt(request, all_sources, assessment, rejected_web, history),
+                "work_product_report.schema.json",
+            )
+            answer = WorkProductReport.model_validate(generation.payload)
+            answer.sources = all_sources
+            answer.researchTrace = completed_trace
+            answer.timeContext = self._time_context(request, evidence)
+            answer = self._validate_work_product(answer, profile)
+        elif decision in {"needs_web", "unresolved"} and answer.status == "answered":
+            answer.status = "partial"
+
+        quality_gaps = self._work_product_quality_gaps(answer, profile)
+        if quality_gaps and self.runner.settings.report_expansion_enabled and self._remaining_seconds(deadline) > 90:
+            initial_answer = answer.model_copy(deep=True)
+            self.database.update_job(
+                job_id,
+                status=JobStatus.generating.value,
+                event=self._event("generating", "首稿缺少直接结论或详细分析，正在定向修订"),
+            )
+            try:
+                expanded = await self._run_before_deadline(
+                    deadline,
+                    self._expansion_prompt(request, answer, all_sources, assessment, quality_gaps),
+                    "work_product_report.schema.json",
+                )
+                candidate = WorkProductReport.model_validate(expanded.payload)
+                candidate.sources = all_sources
+                candidate.researchTrace = answer.researchTrace
+                candidate.timeContext = answer.timeContext
+                candidate = self._validate_work_product(candidate, profile)
+                candidate_gaps = self._work_product_quality_gaps(candidate, profile)
+                if len(candidate_gaps) < len(quality_gaps):
+                    answer = candidate
+            except (asyncio.TimeoutError, ValidationError):
+                answer = initial_answer
+
+        if self.runner.settings.codex_verify_enabled and self._work_product_item_count(answer):
+            self.database.update_job(
+                job_id,
+                status=JobStatus.verifying.value,
+                event=self._event("verifying", "正在独立审核报告覆盖范围和全部来源引用"),
+            )
+            try:
+                verification = await self._run_before_deadline(
+                    deadline,
+                    self._work_product_verification_prompt(request, answer, profile),
+                    "work_product_verification.schema.json",
+                )
+                answer = self._apply_work_product_verification(answer, verification.payload)
+                answer.researchTrace.append(
+                    ResearchTraceItem(
+                        round=1,
+                        type="verification",
+                        queries=[],
+                        resultCount=self._work_product_item_count(answer),
+                        decision=str(verification.payload.get("reviewNote", "独立审核完成")),
+                        startedAt=verification.started_at,
+                        finishedAt=verification.finished_at,
+                        durationMs=verification.duration_ms,
+                    )
+                )
+                answer = self._validate_work_product(answer, profile)
+            except asyncio.TimeoutError:
+                answer.status = "partial"
+                answer.qualityNotes.append(
+                    QualityNoteV4(
+                        noteId="QN-VERIFY-TIMEOUT",
+                        type="system",
+                        message="独立审核达到时间上限；内容已通过确定性来源校验，但未完成模型完整性复核",
+                    )
+                )
+
+        self.database.update_job(
+            job_id,
+            status=JobStatus.completed.value,
+            answer=answer.model_dump(mode="json"),
+            event=self._event("completed", "按需检索、原文阅读和报告审核完成"),
+        )
+
+    async def _process_legacy(self, job_id: str, request: QuestionRequest) -> None:
         deadline = asyncio.get_running_loop().time() + self.runner.settings.research_total_timeout_seconds
         history = self.database.conversation_history(
             request.conversation_id,
@@ -242,6 +456,7 @@ class QAService:
             and self._remaining_seconds(deadline) > 90
         ):
             web_queries = (assessment.get("webQueries") or assessment.get("nextQueries") or [request.question])[:4]
+            web_result = None
             self.database.update_job(
                 job_id,
                 status=JobStatus.web_searching.value,
@@ -284,6 +499,9 @@ class QAService:
                         if web_sources
                         else "未找到可核验的欧盟官方来源"
                     ),
+                    startedAt=web_result.started_at if web_result else None,
+                    finishedAt=web_result.finished_at if web_result else None,
+                    durationMs=web_result.duration_ms if web_result else None,
                 )
             )
 
@@ -291,7 +509,7 @@ class QAService:
         self.database.update_job(
             job_id,
             status=JobStatus.generating.value,
-            event=self._event("generating", f"正在使用{len(all_sources)}个有效来源生成落地作业包"),
+            event=self._event("generating", f"正在使用{len(all_sources)}个有效来源生成法规答复"),
         )
         try:
             generation = await self._run_before_deadline(
@@ -324,11 +542,11 @@ class QAService:
         try:
             answer = WorkProductReport.model_validate(generation.payload)
         except ValidationError as exc:
-            raise CodexError(f"Codex落地作业包未通过应用层Schema校验: {exc}") from exc
+            raise CodexError(f"Codex法规答复未通过应用层Schema校验: {exc}") from exc
         answer.timeContext = self._time_context(request, evidence)
         answer.sources = all_sources
         answer.researchTrace = trace
-        answer = self._validate_work_product(answer)
+        answer = self._validate_work_product(answer, assessment.get("questionProfile", {}))
 
         quality_gaps = self._work_product_quality_gaps(answer, assessment.get("questionProfile", {}))
         if (
@@ -340,7 +558,7 @@ class QAService:
             self.database.update_job(
                 job_id,
                 status=JobStatus.generating.value,
-                event=self._event("generating", "首稿内容密度不足，正在补充表格、流程、清单或示例"),
+                event=self._event("generating", "首稿缺少直接结论或详细分析，正在定向修订"),
             )
             try:
                 expanded = await self._run_before_deadline(
@@ -352,15 +570,13 @@ class QAService:
                 candidate.timeContext = self._time_context(request, evidence)
                 candidate.sources = all_sources
                 candidate.researchTrace = trace
-                candidate = self._validate_work_product(candidate)
+                candidate = self._validate_work_product(
+                    candidate, assessment.get("questionProfile", {})
+                )
                 candidate_gaps = self._work_product_quality_gaps(
                     candidate, assessment.get("questionProfile", {})
                 )
-                if len(candidate_gaps) < len(quality_gaps) or (
-                    len(candidate_gaps) == len(quality_gaps)
-                    and self._work_product_text_length(candidate)
-                    > self._work_product_text_length(initial_answer)
-                ):
+                if len(candidate_gaps) < len(quality_gaps):
                     answer = candidate
                 else:
                     answer = initial_answer
@@ -368,7 +584,7 @@ class QAService:
                         QualityNoteV4(
                             noteId="QN-EXPAND-NO-GAIN",
                             type="system",
-                            message="定向扩写未提升内容覆盖或密度，已保留更完整的首稿",
+                            message="定向修订未补齐明确缺口，已保留首稿",
                         )
                     )
             except (asyncio.TimeoutError, ValidationError):
@@ -400,9 +616,14 @@ class QAService:
                         queries=[],
                         resultCount=self._work_product_item_count(answer),
                         decision=str(verification.payload.get("reviewNote", "独立审核完成")),
+                        startedAt=verification.started_at,
+                        finishedAt=verification.finished_at,
+                        durationMs=verification.duration_ms,
                     )
                 )
-                answer = self._validate_work_product(answer)
+                answer = self._validate_work_product(
+                    answer, assessment.get("questionProfile", {})
+                )
             except asyncio.TimeoutError:
                 answer.status = "partial"
                 answer.qualityNotes.append(
@@ -431,14 +652,146 @@ class QAService:
         schema_name: str,
         *,
         allow_web_search: bool = False,
+        law_tools: LawToolContext | None = None,
     ):
         remaining = self._remaining_seconds(deadline)
         if remaining <= 0:
             raise asyncio.TimeoutError
         return await asyncio.wait_for(
-            self.runner.run(prompt, schema_name, allow_web_search=allow_web_search),
+            self.runner.run(
+                prompt,
+                schema_name,
+                allow_web_search=allow_web_search,
+                law_tools=law_tools,
+            ),
             timeout=remaining,
         )
+
+    def _evidence_from_law_trace(
+        self,
+        tool_trace: list[dict[str, Any]],
+        effective_on: date,
+        *,
+        invocation_started_at: datetime | None = None,
+        invocation_finished_at: datetime | None = None,
+    ) -> tuple[list[Any], list[ResearchTraceItem]]:
+        evidence_by_id: dict[str, Any] = {}
+        trace: list[ResearchTraceItem] = []
+        search_round = 0
+        read_round = 0
+        previous_finished_at = invocation_started_at
+
+        def timestamp(value: Any) -> datetime | None:
+            if isinstance(value, datetime):
+                return value
+            if not value:
+                return None
+            try:
+                return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+            except ValueError:
+                return None
+
+        for event in tool_trace:
+            action = event.get("action")
+            started_at = timestamp(event.get("startedAt"))
+            finished_at = timestamp(event.get("finishedAt"))
+            model_thinking_ms = None
+            if started_at and previous_finished_at:
+                model_thinking_ms = round(
+                    max(0.0, (started_at - previous_finished_at).total_seconds() * 1000), 3
+                )
+            duration_ms = event.get("durationMs")
+            if not isinstance(duration_ms, (int, float)):
+                duration_ms = None
+            if action in {"search", "search_rejected"}:
+                search_round += 1
+                query = str(event.get("query", "")).strip()
+                trace.append(
+                    ResearchTraceItem(
+                        round=search_round,
+                        type="local",
+                        action="search",
+                        queries=[query] if query else [],
+                        resultCount=int(event.get("resultCount", 0) or 0),
+                        decision=(
+                            "SearchLaw完成候选定位"
+                            if action == "search"
+                            else "SearchLaw调用已被上限拦截"
+                        ),
+                        startedAt=started_at,
+                        finishedAt=finished_at,
+                        durationMs=duration_ms,
+                        modelThinkingMs=model_thinking_ms,
+                    )
+                )
+            elif action in {"read", "read_duplicate", "read_rejected"}:
+                read_round += 1
+                added = 0
+                if action == "read":
+                    for source_id in event.get("resultIds", []):
+                        if source_id in evidence_by_id:
+                            continue
+                        passages = self.retriever.read_source(
+                            str(source_id), context_chunks=0, as_of_date=effective_on
+                        )
+                        if passages:
+                            evidence_by_id[source_id] = passages[0]
+                            added += 1
+                decision = "ReadLawSource完成法规原文读取"
+                if action == "read_duplicate":
+                    decision = "重复source_id读取已拦截，复用上一次原文"
+                elif action == "read_rejected":
+                    decision = "ReadLawSource调用已拒绝"
+                trace.append(
+                    ResearchTraceItem(
+                        round=read_round,
+                        type="local",
+                        action="read",
+                        queries=[str(event.get("requestedId", ""))],
+                        resultCount=added,
+                        decision=decision,
+                        startedAt=started_at,
+                        finishedAt=finished_at,
+                        durationMs=duration_ms,
+                        modelThinkingMs=model_thinking_ms,
+                    )
+                )
+            if finished_at:
+                previous_finished_at = finished_at
+
+        if trace and invocation_finished_at and previous_finished_at:
+            trace[-1].finalAnswerMs = round(
+                max(0.0, (invocation_finished_at - previous_finished_at).total_seconds() * 1000),
+                3,
+            )
+        return list(evidence_by_id.values()), trace
+
+    @staticmethod
+    def _local_agent_prompt(request: QuestionRequest, history: list[dict]) -> str:
+        return f"""你是数字产品护照服务商的法规研究Agent。你可以使用本地只读工具SearchLaw和ReadLawSource，并必须在本次任务中完成检索、按需阅读和首稿生成。
+
+研究协议：
+1. 必须先调用SearchLaw；先用用户原问题搜索，结果不准时主动改用法规英文术语、条款号、主体和动作继续搜索，最多4次。
+2. SearchLaw只用于定位。凡准备作为法规要求、官方解释或标准指导引用的source_id，必须调用ReadLawSource读取原文；最终sourceRefs只能使用ReadLawSource实际返回的source_id。
+3. 优先读取最相关的少量来源，必要时读取相邻条款。同一source_id禁止重复调用ReadLawSource，必须复用已返回的原文。不得把搜索摘要、模型记忆或会话历史作为法规证据。
+4. 本地证据已覆盖主体、动作、对象、时点、范围和关键例外时decision=sufficient。只有缺少会改变核心结论的正式法规、最新实施文件或官方解释时decision=needs_web，并给不超过4条Web查询。其他不足返回unresolved。
+5. 所有本地文件检索权重相同，但必须根据实际原文区分法规、草案、标准、指南和工程建议，不得把标准或建议写成法定义务。
+
+作业包要求：
+- 以正文为主：executiveAnswer用1至3条直接回答；再用一个deep_analysis模块充分说明法规依据、适用条件、限制和实际含义。
+- keyTakeaways可以为空；只有存在与直接结论不重复的关键决策点时才输出，最多3条。
+- contentBlocks最多2个：deep_analysis加一个确实有助于理解的表格、流程或清单。示例、注意事项和限制优先写入正文，不为填充结构拆分模块。
+- 服务商行动仅在职责、API/字段、流程或实施类问题中输出，最多3条；概念和定义类问题不生成通用行动项。
+- regulatory_requirement、official_interpretation和standard_guidance必须填写已读取的sourceRefs；engineering_recommendation允许无来源但必须明确“建议、非强制”。
+- 服务商行动写明owner、priority和deliverable；只有原文直接规定服务商义务时才标direct_service_provider_duty。
+- 已公布尚未生效的来源必须说明生效日期。不得创造法规义务、接口契约、字段或source_id。
+- 不输出隐藏思维过程，只输出Schema要求的结构化结果。
+
+回答时点：{(request.as_of_date or date.today()).isoformat()}
+是否纳入已公布待生效法规：{request.include_future_rules}
+用户问题：{request.question}
+会话上下文（只用于理解指代）：{json.dumps(QAService._memory_payload(history), ensure_ascii=False)}
+"""
 
     def _search_local(
         self,
@@ -470,20 +823,15 @@ class QAService:
         complexity = raw_profile.get("complexity")
         if complexity not in {"simple", "standard", "complex"}:
             complexity = "standard"
-        target = raw_profile.get("targetCharacters")
-        if not isinstance(target, int):
-            target = {"simple": 900, "standard": 2200, "complex": 4000}[complexity]
+        suggested_block_type = str(raw_profile.get("suggestedBlockType", "none"))
+        if suggested_block_type not in {*WORK_BLOCK_TYPES, "none"}:
+            suggested_block_type = "none"
         profile = {
             "interpretedQuestion": str(raw_profile.get("interpretedQuestion", "")).strip(),
             "complexity": complexity,
             "intents": [str(item).strip() for item in raw_profile.get("intents", []) if str(item).strip()],
-            "requiredBlockTypes": list(
-                dict.fromkeys(
-                    str(item) for item in raw_profile.get("requiredBlockTypes", []) if str(item) in WORK_BLOCK_TYPES
-                )
-            ),
+            "suggestedBlockType": suggested_block_type,
             "focusAreas": [str(item).strip() for item in raw_profile.get("focusAreas", []) if str(item).strip()],
-            "targetCharacters": min(max(target, 700), 5000),
         }
         return {
             "decision": decision,
@@ -552,54 +900,55 @@ class QAService:
 
     @staticmethod
     def _default_question_profile(question: str) -> dict[str, Any]:
-        required = ["deep_analysis"]
+        normalized = question.lower()
         intents: list[str] = []
-        if any(marker in question.lower() for marker in ("区别", "对比", "关系", "不同")):
+        if any(marker in normalized for marker in ("区别", "对比", "关系", "不同")):
             intents.append("comparison")
-            required.append("comparison_table")
-        if any(marker in question.lower() for marker in ("字段", "入参", "参数", "api", "接口", "编码")):
+        if any(marker in normalized for marker in ("字段", "入参", "参数", "api", "接口", "编码", "数据结构")):
             intents.append("technical_design")
-            required.extend(["field_matrix", "example", "checklist"])
         if any(marker in question for marker in ("流程", "过程", "如何", "怎么")):
             intents.append("process")
-            required.append("process")
         if any(marker in question for marker in ("职责", "责任", "服务商", "谁")):
             intents.append("responsibility")
-            required.append("responsibility_matrix")
-        complex_question = len(set(required)) >= 4 or len(question) >= 45
-        complexity = "complex" if complex_question else "standard" if len(set(required)) >= 2 else "simple"
+        if any(marker in question for marker in ("实现", "落地", "设计", "接入", "开发", "保存", "校验")):
+            intents.append("implementation")
+        intents = list(dict.fromkeys(intents))
+        explicit_subquestions = sum(question.count(marker) for marker in ("？", "?", "；", ";"))
+        complex_question = explicit_subquestions >= 2 or (
+            len(question) >= 80 and len(intents) >= 2
+        )
+        complexity = "complex" if complex_question else "standard" if intents else "simple"
+        if "technical_design" in intents:
+            suggested_block_type = "field_matrix"
+        elif "responsibility" in intents:
+            suggested_block_type = "responsibility_matrix"
+        elif "process" in intents:
+            suggested_block_type = "process"
+        elif "comparison" in intents:
+            suggested_block_type = "comparison_table"
+        else:
+            suggested_block_type = "none"
         return {
             "interpretedQuestion": question,
             "complexity": complexity,
             "intents": intents or ["legal_explanation"],
-            "requiredBlockTypes": list(dict.fromkeys(required)),
+            "suggestedBlockType": suggested_block_type,
             "focusAreas": [],
-            "targetCharacters": {"simple": 900, "standard": 2200, "complex": 4000}[complexity],
         }
 
     @staticmethod
     def _merge_question_profile(question: str, model_profile: dict[str, Any]) -> dict[str, Any]:
         fallback = QAService._default_question_profile(question)
-        rank = {"simple": 0, "standard": 1, "complex": 2}
-        model_complexity = model_profile.get("complexity", "standard")
-        complexity = max(
-            (fallback["complexity"], model_complexity),
-            key=lambda value: rank.get(value, 1),
-        )
-        required = list(
-            dict.fromkeys(
-                [*fallback["requiredBlockTypes"], *model_profile.get("requiredBlockTypes", [])]
-            )
-        )
+        suggested_block_type = fallback["suggestedBlockType"]
+        model_suggestion = str(model_profile.get("suggestedBlockType", "none"))
+        if suggested_block_type == "none" and model_suggestion in WORK_BLOCK_TYPES:
+            suggested_block_type = model_suggestion
         return {
             "interpretedQuestion": model_profile.get("interpretedQuestion") or fallback["interpretedQuestion"],
-            "complexity": complexity,
+            "complexity": fallback["complexity"],
             "intents": list(dict.fromkeys([*fallback["intents"], *model_profile.get("intents", [])])),
-            "requiredBlockTypes": [item for item in required if item in WORK_BLOCK_TYPES],
+            "suggestedBlockType": suggested_block_type,
             "focusAreas": model_profile.get("focusAreas", []) or fallback["focusAreas"],
-            "targetCharacters": max(
-                fallback["targetCharacters"], int(model_profile.get("targetCharacters", 0) or 0)
-            ),
         }
 
     @staticmethod
@@ -624,15 +973,15 @@ class QAService:
 
 判断标准：
 1. 分解用户问题的全部关键部分；主体、动作、入参、流程、时间效力、例外和技术边界应按实际问题覆盖。
-2. A1/A2可以支撑确定性法律结论；B/C只能补充；D不能支撑确定性结论。
+2. 所有本地法规资料按相同证据权重处理；只根据原文是否直接支持结论判断充分性。
 3. 不能因为出现一个相关片段就判定充分；但不要把非必要的延伸说明、工程实现细节或锦上添花的信息当成关键缺口。
 4. gaps列出所有剩余不足；criticalGaps只列出会改变核心结论、适用主体、法定义务、时间效力或责任边界的缺口。
 5. 如果本地可能还有同义词、法规编号、英文术语或相关条款，返回search_local和不超过6条检索词；检索词不得与上一轮重复。
 6. webRequired仅在缺少正式法规、最新实施文件或官方解释，且该缺口属于criticalGaps时设为true。一般补充项、工程建议和表述优化不得触发Web。
 7. 只有已合理扩大本地检索仍存在criticalGaps时才返回search_web；没有关键缺口时，即使回答可继续丰富，也应返回sufficient。
 8. 不使用模型记忆补充法律事实，不输出隐藏思维过程，只给简短评估原因。
-9. questionProfile必须结合当前问题和会话指代，明确用户真正想解决的问题、复杂度、内容意图和必须交付的动态内容块。
-10. 字段/API/编码类至少规划field_matrix、example和checklist；流程类规划process；职责类规划responsibility_matrix；概念对比类规划comparison_table。复杂多部分问题targetCharacters设为3000至5000。
+9. questionProfile必须结合当前问题和会话指代，明确用户真正想解决的问题、内容意图和关注点。
+10. suggestedBlockType只能选一个最能帮助理解的表格、流程或清单类型；不需要结构化内容时返回none。不按字数或模块数判断充分性。
 
 用户问题：{request.question}
 上一轮证据缺口：{json.dumps(previous_gaps, ensure_ascii=False)}
@@ -668,14 +1017,12 @@ class QAService:
     def _report_sources(evidence: list[Any], web_sources: list[ReportSource]) -> list[ReportSource]:
         sources: list[ReportSource] = []
         for item in evidence:
-            level = item.sourceLevel.value
             sources.append(
                 ReportSource(
                     sourceId=item.evidenceId,
                     origin="local",
-                    authorityKind="legal_act" if level in {"A1", "A2"} else "local_supplement",
+                    authorityKind="legal_act",
                     title=item.documentTitle,
-                    sourceLevel=item.sourceLevel,
                     documentId=item.documentId,
                     filename=item.filename,
                     article=item.article,
@@ -699,12 +1046,12 @@ class QAService:
         rejected_web: list[str],
         history: list[dict],
     ) -> str:
-        return f"""你是数字产品护照服务商的首席法规与解决方案顾问。根据已验证来源，为用户制作一份可直接用于产品、研发和合规讨论的中文“落地作业包”，不要套用固定法律报告模板。
+        return f"""你是数字产品护照服务商的首席法规与解决方案顾问。根据已验证来源，为用户生成正文优先、内容详实的中文法规答复。
 
 总体要求：
-1. 严格按questionProfile理解当前问题，覆盖requiredBlockTypes和focusAreas。简单问题紧凑；标准和复杂问题必须提供足够的表格、流程、清单或示例，不能只有抽象法条释义。
-2. executiveAnswer先直接解决问题；keyTakeaways只保留真正影响决策的3至8条内容。
-3. contentBlocks按问题动态组织。不要为了凑结构创建空洞模块：
+1. 严格按questionProfile理解当前问题，完整覆盖用户明确提出的子问题和focusAreas。不设字数目标，以结论有据、解释充分且不重复为准。
+2. executiveAnswer用1至3条直接解决问题。keyTakeaways可以为空；只有存在与executiveAnswer不重复的重要决策点时才输出，最多3条。
+3. contentBlocks最多2个：默认使用一个deep_analysis详实解释法规依据、适用条件、限制、例外和实际含义；只在suggestedBlockType确实帮助理解时增加一个结构化块。示例和注意事项优先融入深度分析，不为凑结构创建模块：
    - comparison_table：对比概念、主体、对象、时点、功能、关系和易错点。
    - field_matrix：列出建议字段、业务含义、法规是否直接规定、来源、必填建议、校验和未知项。
    - responsibility_matrix：列出法定主体、直接义务、服务商角色、责任边界和留痕证据。
@@ -714,12 +1061,12 @@ class QAService:
    - decision_rules和common_mistakes：写清何时怎么判断、哪些做法不能采用。
 4. 表格块columns给出列名，每个item.cells按相同顺序给单元格；非表格块columns返回空数组。流程和清单项必须使用结构字段，不能把全部内容挤进detail。
 5. 每项内容必须准确分类basis：
-   - regulatory_requirement仅用于A1/A2或已核验Web法规直接规定的内容，必须引用sourceRefs。
+   - regulatory_requirement用于本地法规资料或已核验Web法规直接规定的内容，必须引用sourceRefs。
    - official_interpretation用于官方解释，必须引用来源。
-   - standard_guidance用于本地B/C标准或指南，必须引用来源，不能写成法定义务。
+   - standard_guidance用于原文属于标准或指南的内容，必须引用来源，不能写成法定义务。
    - engineering_recommendation可以是独立工程方案，允许无来源，但必须明确“建议、非强制”，不得使用“法规要求、法定必须”等措辞。
    - uncertainty只用于无法确认的业务内容。
-6. 服务商行动必须写明owner、priority、deliverable。只有条文直接规定服务商义务时使用direct_service_provider_duty；其他主体承担义务但服务商需要守住边界时使用legal_responsibility_boundary；工程行动使用derived_implementation_action。
+6. serviceProviderActions只在职责、字段/API、流程或实施类问题中输出，最多3条，必须写明owner、priority、deliverable。概念和定义类问题应为空。只有条文直接规定服务商义务时使用direct_service_provider_duty；其他主体承担义务但服务商需要守住边界时使用legal_responsibility_boundary；工程行动使用derived_implementation_action。
 7. unresolvedQuestions只放会影响方案选择、合规判断或上线决策的真实缺口，并写明impact和需要补充什么证据。不要放“某段被删除、部分支持、Web失败”等系统审核信息。
 8. future来源必须明确“已公布但尚未生效”和生效日期。不得创造sourceId、法规义务、标准参数、接口契约或Web事实。
 9. 对法规没给出的技术细节，不要反复只写“无法确认”。先说明法规边界，再给明确标注为engineering_recommendation的可配置实现方案、示例和等待后续规范时的调整点。
@@ -744,51 +1091,17 @@ Web校验未通过事项：{json.dumps(rejected_web, ensure_ascii=False)}
             + len(answer.serviceProviderActions)
         )
 
-    @staticmethod
-    def _work_product_text_length(answer: WorkProductReport) -> int:
-        parts = [answer.answerTitle]
-        parts.extend(item.text for item in answer.executiveAnswer)
-        parts.extend(item.text for item in answer.keyTakeaways)
-        for block in answer.contentBlocks:
-            parts.extend((block.title, block.introduction))
-            for item in block.items:
-                parts.extend(
-                    (
-                        item.title,
-                        item.detail,
-                        *item.cells,
-                        item.owner,
-                        item.input,
-                        item.output,
-                        item.acceptanceCriteria,
-                    )
-                )
-        for action in answer.serviceProviderActions:
-            parts.extend((action.title, action.detail, action.owner, action.deliverable))
-        return sum(len(part.strip()) for part in parts if part)
-
     def _work_product_quality_gaps(
         self, answer: WorkProductReport, profile: dict[str, Any]
     ) -> list[str]:
-        complexity = profile.get("complexity", "standard")
-        minimum = {
-            "simple": self.runner.settings.report_simple_min_chars,
-            "standard": self.runner.settings.report_standard_min_chars,
-            "complex": self.runner.settings.report_complex_min_chars,
-        }.get(complexity, self.runner.settings.report_standard_min_chars)
         gaps: list[str] = []
-        actual = self._work_product_text_length(answer)
-        if actual < minimum:
-            gaps.append(f"有效正文约{actual}字，低于{complexity}问题的{minimum}字内容密度门槛")
-        available = {block.blockType for block in answer.contentBlocks if block.items}
-        for block_type in profile.get("requiredBlockTypes", []):
-            if block_type in WORK_BLOCK_TYPES and block_type not in available:
-                gaps.append(f"缺少问题画像要求的{block_type}内容块")
-        if complexity in {"standard", "complex"} and len(answer.keyTakeaways) < 3:
-            gaps.append("关键决策要点少于3条")
-        intents = set(profile.get("intents", []))
-        if intents.intersection({"technical_design", "process", "responsibility"}) and not answer.serviceProviderActions:
-            gaps.append("缺少面向服务商的负责人、优先级和交付物行动项")
+        if answer.status in {"answered", "partial"} and not answer.executiveAnswer:
+            gaps.append("缺少直接回答用户问题的结论")
+        if answer.status in {"answered", "partial"} and not any(
+            block.blockType == "deep_analysis" and block.items
+            for block in answer.contentBlocks
+        ):
+            gaps.append("缺少对法规依据、适用条件和限制的详细分析")
         return gaps
 
     @staticmethod
@@ -799,11 +1112,11 @@ Web校验未通过事项：{json.dumps(rejected_web, ensure_ascii=False)}
         assessment: dict[str, Any],
         quality_gaps: list[str],
     ) -> str:
-        return f"""你是法规落地作业包的高级编辑。首稿已经通过基础来源校验，但内容密度或交付物不够。请输出一份完整替代稿，不是只输出新增部分。
+        return f"""你是法规答复的高级编辑。首稿已经通过基础来源校验，但遗漏了直接结论或详细分析。请输出一份完整替代稿，不是只输出新增部分。
 
-扩写要求：
+修订要求：
 1. 保留首稿中正确、具体、有来源的内容，针对QUALITY_GAPS逐项补足。
-2. 优先补充可直接使用的对比表、字段矩阵、责任矩阵、流程、验收清单、决策规则、示意例子和常见错误；不要靠重复法条或扩大“不确定事项”凑字数。
+2. 保持正文优先：1至3条直接结论、一个deep_analysis，最多再加一个有必要的表格或流程。不要为字数、模块数或形式扩写。
 3. 法律要求、官方解释、本地标准和工程建议继续严格分层。工程建议必须明确为“建议、非强制”，但应给出字段、负责人、输入输出、验收条件或示例等实质内容。
 4. unresolvedQuestions只放影响业务决策的真实问题，不得写内部审核过程。
 5. 不得创造来源编号或法规事实。
@@ -816,25 +1129,24 @@ QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
 """
 
     @staticmethod
-    def _validate_work_product(answer: WorkProductReport) -> WorkProductReport:
+    def _validate_work_product(
+        answer: WorkProductReport, profile: dict[str, Any] | None = None
+    ) -> WorkProductReport:
         source_map = {source.sourceId: source for source in answer.sources if source.verified}
         authoritative = {
             source_id
             for source_id, source in source_map.items()
-            if source.authorityKind == "legal_act"
-            and (source.origin == "web" or (source.sourceLevel and source.sourceLevel.value in {"A1", "A2"}))
+            if source.origin == "local" or source.authorityKind == "legal_act"
         }
         official = {
             source_id
             for source_id, source in source_map.items()
-            if source.origin == "web" or source.authorityKind == "legal_act"
+            if source.origin == "local" or source.origin == "web"
         }
         standard = {
             source_id
             for source_id, source in source_map.items()
             if source.origin == "local"
-            and source.sourceLevel
-            and source.sourceLevel.value in {"B", "C"}
         }
         seen: set[str] = set()
         used: set[str] = set()
@@ -867,13 +1179,13 @@ QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
             allowed = True
             if basis == "regulatory_requirement" and not authoritative.intersection(valid_refs):
                 allowed = False
-                note("removed", "标为法规要求但缺少A1/A2或已核验Web法规来源，已移除", item_id)
+                note("removed", "标为法规要求但缺少本地法规资料或已核验Web法规来源，已移除", item_id)
             elif basis == "official_interpretation" and not official.intersection(valid_refs):
                 allowed = False
                 note("removed", "标为官方解释但缺少官方来源，已移除", item_id)
             elif basis == "standard_guidance" and not standard.intersection(valid_refs):
                 allowed = False
-                note("removed", "标为标准指导但缺少本地B/C级标准来源，已移除", item_id)
+                note("removed", "标为标准指导但缺少本地资料来源，已移除", item_id)
             if not allowed:
                 removed_material = True
                 return False, valid_refs
@@ -924,7 +1236,65 @@ QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
                 item.sourceRefs = refs
                 actions.append(item)
         answer.serviceProviderActions = actions
+
+        if profile is not None:
+            answer.executiveAnswer = answer.executiveAnswer[:3]
+            executive_text = {_normalize(item.text) for item in answer.executiveAnswer}
+            distinct_takeaways = []
+            for item in answer.keyTakeaways:
+                normalized_text = _normalize(item.text)
+                if not normalized_text or normalized_text in executive_text:
+                    continue
+                executive_text.add(normalized_text)
+                distinct_takeaways.append(item)
+                if len(distinct_takeaways) == 3:
+                    break
+            answer.keyTakeaways = distinct_takeaways
+
+            deep_analysis = next(
+                (block for block in answer.contentBlocks if block.blockType == "deep_analysis"),
+                None,
+            )
+            suggested = str(profile.get("suggestedBlockType", "none"))
+            structured = next(
+                (
+                    block
+                    for block in answer.contentBlocks
+                    if block.blockType == suggested and block is not deep_analysis
+                ),
+                None,
+            )
+            selected_blocks = [block for block in (deep_analysis, structured) if block is not None]
+            if not selected_blocks and answer.contentBlocks:
+                selected_blocks = [answer.contentBlocks[0]]
+            answer.contentBlocks = selected_blocks[:2]
+
+            provider_intents = {
+                "technical_design",
+                "process",
+                "responsibility",
+                "implementation",
+            }
+            if provider_intents.intersection(profile.get("intents", [])):
+                answer.serviceProviderActions = answer.serviceProviderActions[:3]
+            else:
+                answer.serviceProviderActions = []
+
         answer.qualityNotes = quality
+        used = {
+            ref
+            for refs in (
+                *[item.sourceRefs for item in answer.executiveAnswer],
+                *[item.sourceRefs for item in answer.keyTakeaways],
+                *[
+                    item.sourceRefs
+                    for block in answer.contentBlocks
+                    for item in block.items
+                ],
+                *[item.sourceRefs for item in answer.serviceProviderActions],
+            )
+            for ref in refs
+        }
         answer.sources = [source for source in answer.sources if source.sourceId in used]
         substantive = bool(answer.executiveAnswer or answer.contentBlocks)
         if not substantive:
@@ -941,15 +1311,15 @@ QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
 
 审核规则：
 1. regulatory_requirement必须由引用来源直接支持，检查主体、动作、时点、范围和例外；不支持则列入unsupportedItemIds。
-2. 本地B/C标准不得被写成法规义务；应通过reclassifications降为standard_guidance或engineering_recommendation。
+2. 所有本地文件具有相同证据资格；仍须根据引用原文判断内容属于法规要求、标准指导还是工程建议。
 3. engineering_recommendation允许没有来源，不要因为它不是法规原文而删除；只检查是否明确为建议、是否与法规冲突、是否误用强制措辞。
 4. 只有确实无法成立的内容才删除。可纠正的年份、主体、范围或措辞错误必须写入revisions并给出完整替代文本；部分支持内容优先修订或降级分类，避免把有价值的实施方案机械删掉，也不能让已发现的事实错误留在正文。
-5. 检查questionProfile要求的表格、流程、清单、示例和服务商行动是否实质覆盖；缺少时写入missingDeliverables，但不要把内部审核说明混入业务不确定事项。
+5. 检查直接结论和详细分析是否回答了用户明确提出的所有子问题。只有遗漏实质问题时才写入missingDeliverables；不得因字数短、模块少、没有表格、清单、示例或服务商行动而判定不合格。
 6. 只输出简短审核结果，不输出隐藏思维过程。
 
 用户问题：{request.question}
 问题画像：{json.dumps(profile, ensure_ascii=False)}
-落地作业包及来源：{json.dumps(answer.model_dump(mode='json'), ensure_ascii=False)}
+法规答复及来源：{json.dumps(answer.model_dump(mode='json'), ensure_ascii=False)}
 """
 
     @staticmethod
@@ -1029,8 +1399,7 @@ QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
         authoritative = {
             source_id
             for source_id, source in source_map.items()
-            if source.authorityKind == "legal_act"
-            and (source.origin == "web" or (source.sourceLevel and source.sourceLevel.value in {"A1", "A2"}))
+            if source.origin == "local" or source.authorityKind == "legal_act"
         }
         used: set[str] = set()
         seen_paragraph_ids: set[str] = set()
@@ -1144,13 +1513,13 @@ unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获�
 硬性规则：
 1. 把回答拆成可独立核验的原子论点；每个legal_fact必须引用至少一个证据ID。
 2. 不得创造证据ID、文件名、Article、页码或原文。quote必须逐字复制证据片段中的连续文字。
-3. A1/A2可支持确定性法律结论；B/C只能补充；D不得支持确定性结论。
+3. 所有本地法规资料按相同证据资格处理；法律结论必须由引用原文直接支持。
 4. 法规未直接规定时写入missingEvidence或标为uncertain。
 5. 实施建议只能放implementationAdvice，性质必须是implementation_advice，不能冒充法定义务。
 6. 结论与解释使用中文，quote保留源文件原文。
 7. 不使用网络、常识或模型记忆补齐法规。
 8. summary必须先直接回答用户问题，不能只写“证据未定义”；有明确能力但缺少技术契约时，要同时写明“法规明确了什么”和“法规没有明确什么”。
-9. 对“有哪些、包括什么、流程是什么”类问题，必须覆盖证据中所有直接相关的A1/A2条款，并按类别完整列举，不得仅选择一两个示例。
+9. 对“有哪些、包括什么、流程是什么”类问题，必须覆盖证据中所有直接相关条款，并按类别完整列举，不得仅选择一两个示例。
 10. 每个claim的text写论点，analysis写法规原文如何支持该论点、适用主体、边界及与用户问题的关系；不得重复一句话敷衍。
 11. 必须区分：法规明确称为API的接口、通过API完成的业务动作、并未被法规定义为API的系统能力、法规尚未提供的端点/方法/字段/鉴权等技术契约。
 12. 证据的applicabilityStatus为future时，必须明确写“已公布但尚未生效”及effectiveDate，不得表述为当前已生效义务。
@@ -1231,7 +1600,7 @@ unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获�
 - 推断超出条文、主体错置、时间或适用范围错误时判unsupported或conflict。
 - 不评价implementationAdvice，只审核claims。
 - revisedSummary应保留正确内容，并纠正不完整、主体错置或未标注未来生效的问题。
-- 对证据中存在、但初稿遗漏的重要A1/A2结论，写入supplementalClaims；引用规则与初稿完全相同。
+- 对证据中存在、但初稿遗漏的重要结论，写入supplementalClaims；引用规则与初稿完全相同。
 - 特别检查是否混淆“API”“通过API完成的动作”“普通平台能力”和“法规未定义的技术契约”。
 - 比较相似标识符时，检查是否分别交代正式术语、识别对象、产生主体、法律功能和非正式叫法；不得把电池unique identifier、所谓battery passport unique identifier和registry unique registration identifier混为一谈。
 - future证据只能支持已公布待生效规则，不能表述为当前生效义务。
@@ -1261,7 +1630,6 @@ unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获�
                     continue
                 if citation.documentId != source.documentId or citation.page != source.page:
                     continue
-                citation.sourceLevel = source.sourceLevel
                 citation.article = source.article
                 citation.documentTitle = source.documentTitle
                 citation.filename = source.filename
@@ -1272,9 +1640,8 @@ unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获�
                 valid_citations.append(citation)
             claim.citations = valid_citations
             if claim.nature == "legal_fact":
-                has_primary = any(item.sourceLevel.value in {"A1", "A2"} for item in valid_citations)
-                if not has_primary:
-                    missing.append(f"论点{claim.claimId}缺少A类直接证据：{claim.text}")
+                if not valid_citations:
+                    missing.append(f"论点{claim.claimId}缺少直接证据：{claim.text}")
                     continue
             if not valid_citations and claim.nature != "uncertain":
                 missing.append(f"论点{claim.claimId}引用未通过原文校验")

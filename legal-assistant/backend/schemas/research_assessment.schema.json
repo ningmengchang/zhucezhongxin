@@ -15,17 +15,13 @@
     "questionProfile": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["interpretedQuestion", "complexity", "intents", "requiredBlockTypes", "focusAreas", "targetCharacters"],
+      "required": ["interpretedQuestion", "complexity", "intents", "suggestedBlockType", "focusAreas"],
       "properties": {
         "interpretedQuestion": {"type": "string"},
         "complexity": {"type": "string", "enum": ["simple", "standard", "complex"]},
         "intents": {"type": "array", "items": {"type": "string"}},
-        "requiredBlockTypes": {
-          "type": "array",
-          "items": {"type": "string", "enum": ["deep_analysis", "comparison_table", "field_matrix", "responsibility_matrix", "process", "checklist", "decision_rules", "example", "common_mistakes"]}
-        },
-        "focusAreas": {"type": "array", "items": {"type": "string"}},
-        "targetCharacters": {"type": "integer", "minimum": 700, "maximum": 5000}
+        "suggestedBlockType": {"type": "string", "enum": ["none", "comparison_table", "field_matrix", "responsibility_matrix", "process", "checklist", "decision_rules", "example", "common_mistakes"]},
+        "focusAreas": {"type": "array", "items": {"type": "string"}}
       }
     }
   }

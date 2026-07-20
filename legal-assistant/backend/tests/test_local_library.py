@@ -1,7 +1,7 @@
 from app.database import Database
 from app.ingestion import ingest_document
 from app.local_library import discover_local_files, sync_local_library
-from app.models import DocumentCreate, ReviewStatus, SourceLevel
+from app.models import DocumentCreate
 
 
 def test_discovery_uses_local_supported_files_and_excludes_application_files(tmp_path):
@@ -19,7 +19,7 @@ def test_discovery_uses_local_supported_files_and_excludes_application_files(tmp
     assert discovered == {"regulation.md", "standard.txt"}
 
 
-def test_sync_imports_new_local_files_as_published_b_sources(tmp_path):
+def test_sync_imports_new_local_files_without_level_or_review_status(tmp_path):
     (tmp_path / "local-rule.md").write_text("Article 1\nA local compliance rule.", encoding="utf-8")
     database = Database(tmp_path / "library.sqlite3")
 
@@ -29,8 +29,8 @@ def test_sync_imports_new_local_files_as_published_b_sources(tmp_path):
 
     assert first["discovered"] == 1 and first["imported"] == 1
     assert second["imported"] == 0 and second["unchanged"] == 1
-    assert documents[0]["source_level"] == "B"
-    assert documents[0]["review_status"] == "published"
+    assert "source_level" not in documents[0]
+    assert "review_status" not in documents[0]
 
 
 def test_upload_and_web_archive_routes_are_not_exposed():
@@ -39,6 +39,7 @@ def test_upload_and_web_archive_routes_are_not_exposed():
     paths = {route.path for route in app.routes}
     assert "/api/documents/upload" not in paths
     assert "/api/web-discovery/archive" not in paths
+    assert "/api/documents/{document_id}/review" not in paths
     assert "/api/admin/sync-local" in paths
 
 
@@ -65,11 +66,9 @@ def test_scanned_pdf_uses_local_ocr_fallback(tmp_path, monkeypatch):
         database,
         DocumentCreate(
             path=str(source),
-            source_level=SourceLevel.B,
-            review_status=ReviewStatus.published,
         ),
         tmp_path,
     )
 
     assert document["passage_count"] == 1
-    assert database.published_passages()[0]["text"] == "OCR extracted local regulation text."
+    assert database.searchable_passages()[0]["text"] == "OCR extracted local regulation text."

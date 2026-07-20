@@ -17,7 +17,6 @@ from .ingestion import ingest_document
 from .models import (
     DocumentCreate,
     DocumentOut,
-    DocumentReview,
     JobOut,
     JobStatus,
     QuestionAccepted,
@@ -52,8 +51,8 @@ async def lifespan(_: FastAPI):
 
 app = FastAPI(
     title="法规研究与证据问答助手",
-    version="0.5.0",
-    description="迭代检索本地法规，必要时查询欧盟官方Web来源，并通过本机 Codex CLI 生成动态法规落地作业包。",
+    version="0.7.0",
+    description="等权检索全部本地法规文件，必要时查询欧盟官方Web来源，并通过本机 Codex CLI 生成正文优先的详实法规答复。",
     lifespan=lifespan,
 )
 app.add_middleware(
@@ -83,7 +82,13 @@ def require_admin(role: Annotated[Role, Depends(current_role)]) -> Role:
 
 @app.get("/api/health")
 async def health() -> dict:
-    return {"status": "ok", "documents": len(database.list_documents()), "queue": qa_service.queue.qsize()}
+    index = database.search_index_status()
+    return {
+        "status": "ok" if index["ready"] else "degraded",
+        "documents": index["documents"],
+        "queue": qa_service.queue.qsize(),
+        "searchIndex": index,
+    }
 
 
 @app.get("/api/system/codex-health")
@@ -95,10 +100,12 @@ async def codex_health() -> dict:
     result["webSearchEnabled"] = settings.web_search_enabled
     result["localResearchRounds"] = settings.research_local_rounds
     result["webResearchRounds"] = settings.research_web_rounds
-    result["researchMode"] = "adaptive-fast"
-    result["adaptiveLocalRoundLimits"] = {"simple": 1, "standard": 2, "complex": 3}
+    result["researchMode"] = "mcp-on-demand" if settings.law_retrieval_mode == "mcp" else "legacy-adaptive-fast"
+    result["retrievalMode"] = settings.law_retrieval_mode
+    result["searchIndex"] = database.search_index_status()
     result["webTrigger"] = "explicit-request-or-critical-legal-gap"
-    result["reportMode"] = "adaptive-work-product-v4"
+    result["localSourcePolicy"] = "all-files-equal-no-review-state"
+    result["reportMode"] = "prose-first-v4"
     result["reportExpansionEnabled"] = settings.report_expansion_enabled
     return result
 
@@ -202,23 +209,6 @@ async def ingest_existing(
     except (FileNotFoundError, ValueError) as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     return DocumentOut.model_validate(document)
-
-
-@app.post("/api/documents/{document_id}/review")
-async def review_document(
-    document_id: str,
-    review: DocumentReview,
-    _: Annotated[Role, Depends(require_admin)],
-) -> dict:
-    updated = database.update_document_review(
-        document_id,
-        review.review_status.value,
-        review.source_level.value if review.source_level else None,
-        review.note,
-    )
-    if not updated:
-        raise HTTPException(status_code=404, detail="法规文件不存在")
-    return {"updated": True}
 
 
 @app.get("/api/documents/{document_id}/versions")

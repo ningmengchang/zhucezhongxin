@@ -1,23 +1,22 @@
 from datetime import date
 
-from app.models import Citation, Claim, Evidence, LegalAnswer, QuestionRequest, SourceLevel
+from app.models import Citation, Claim, Evidence, LegalAnswer, QuestionRequest
 from app.qa_service import QAService
 
 
-def evidence(level=SourceLevel.A1):
+def evidence():
     return Evidence(
         evidenceId="EV-001",
         documentId="DOC-001",
         documentTitle="Regulation",
         filename="regulation.pdf",
-        sourceLevel=level,
         article="Article 15",
         page=43,
         quote="Customs authorities shall verify the unique registration identifier and the commodity code.",
     )
 
 
-def answer(quote: str, level=SourceLevel.A1):
+def answer(quote: str):
     return LegalAnswer(
         status="answered",
         summary="summary",
@@ -31,7 +30,6 @@ def answer(quote: str, level=SourceLevel.A1):
                     Citation(
                         evidenceId="EV-001",
                         documentId="DOC-001",
-                        sourceLevel=level,
                         article="Article 15",
                         page=43,
                         quote=quote,
@@ -56,14 +54,6 @@ def test_invented_quote_is_blocked():
     assert result.status == "insufficient_evidence"
     assert result.claims == []
     assert result.missingEvidence
-
-
-def test_non_primary_source_cannot_support_legal_fact():
-    result = QAService._deterministic_validate(
-        answer("the unique registration identifier", SourceLevel.B), [evidence(SourceLevel.B)]
-    )
-    assert result.status == "insufficient_evidence"
-    assert result.claims == []
 
 
 def test_validation_enriches_citation_metadata():

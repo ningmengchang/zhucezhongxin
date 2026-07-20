@@ -34,6 +34,10 @@ class Settings:
     conversation_memory_turns: int = int(os.getenv("CONVERSATION_MEMORY_TURNS", "5"))
     codex_verify_enabled: bool = _bool("CODEX_VERIFY_ENABLED", True)
     codex_mock: bool = _bool("CODEX_MOCK", False)
+    law_retrieval_mode: str = os.getenv("LAW_RETRIEVAL_MODE", "mcp").strip().lower()
+    law_search_top_k: int = int(os.getenv("LAW_SEARCH_TOP_K", "8"))
+    law_search_max_calls: int = int(os.getenv("LAW_SEARCH_MAX_CALLS", "4"))
+    law_read_max_calls: int = int(os.getenv("LAW_READ_MAX_CALLS", "8"))
     auto_seed: bool = _bool("AUTO_SEED", False)
     auto_sync_local_files: bool = _bool("AUTO_SYNC_LOCAL_FILES", True)
     max_evidence: int = int(os.getenv("MAX_EVIDENCE", "24"))
@@ -52,9 +56,6 @@ class Settings:
         if item.strip()
     )
     report_expansion_enabled: bool = _bool("REPORT_EXPANSION_ENABLED", True)
-    report_simple_min_chars: int = int(os.getenv("REPORT_SIMPLE_MIN_CHARS", "700"))
-    report_standard_min_chars: int = int(os.getenv("REPORT_STANDARD_MIN_CHARS", "1600"))
-    report_complex_min_chars: int = int(os.getenv("REPORT_COMPLEX_MIN_CHARS", "3000"))
     cors_origins: tuple[str, ...] = tuple(
         item.strip()
         for item in os.getenv(

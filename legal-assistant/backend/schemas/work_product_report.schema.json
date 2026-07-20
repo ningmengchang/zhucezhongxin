@@ -6,10 +6,11 @@
   "properties": {
     "status": {"type": "string", "enum": ["answered", "partial", "unresolved", "system_error"]},
     "answerTitle": {"type": "string"},
-    "executiveAnswer": {"type": "array", "items": {"$ref": "#/$defs/statement"}},
-    "keyTakeaways": {"type": "array", "items": {"$ref": "#/$defs/statement"}},
+    "executiveAnswer": {"type": "array", "maxItems": 3, "items": {"$ref": "#/$defs/statement"}},
+    "keyTakeaways": {"type": "array", "maxItems": 3, "items": {"$ref": "#/$defs/statement"}},
     "contentBlocks": {
       "type": "array",
+      "maxItems": 2,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -26,6 +27,7 @@
     },
     "serviceProviderActions": {
       "type": "array",
+      "maxItems": 3,
       "items": {
         "type": "object",
         "additionalProperties": false,

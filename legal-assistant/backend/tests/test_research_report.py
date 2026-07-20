@@ -11,19 +11,17 @@ from app.models import (
     ReportSource,
     ResearchReport,
     ServiceProviderItem,
-    SourceLevel,
 )
 from app.qa_service import QAService
 from app.web_evidence import WebEvidenceValidator
 
 
-def local_source(level: SourceLevel = SourceLevel.A1) -> ReportSource:
+def local_source() -> ReportSource:
     return ReportSource(
         sourceId="EV-001",
         origin="local",
-        authorityKind="legal_act" if level in {SourceLevel.A1, SourceLevel.A2} else "local_supplement",
+        authorityKind="legal_act",
         title="Regulation (EU) 2024/1781",
-        sourceLevel=level,
         documentId="DOC-001",
         filename="regulation.pdf",
         article="Article 13",
@@ -76,11 +74,12 @@ def test_report_keeps_verified_primary_local_source():
     assert result.sources[0].origin == "local"
 
 
-def test_report_blocks_legal_conclusion_supported_only_by_supplement():
-    result = QAService._validate_report(report(local_source(SourceLevel.B)))
-    assert result.status in {"partial", "unresolved"}
-    assert result.executiveSummary == []
-    assert any("缺少正式法规依据" in item for item in result.uncertainties)
+def test_report_accepts_any_local_file_as_direct_evidence():
+    source = local_source()
+    source.authorityKind = "local_supplement"
+    result = QAService._validate_report(report(source))
+    assert result.status == "answered"
+    assert result.executiveSummary[0].sourceRefs == ["EV-001"]
 
 
 def test_verification_removes_unsupported_report_and_service_items():

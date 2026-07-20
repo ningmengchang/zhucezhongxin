@@ -3,9 +3,12 @@ from __future__ import annotations
 import asyncio
 import json
 import os
+import sys
 import tempfile
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import date, datetime, timezone
 from pathlib import Path
+from time import perf_counter
 from typing import Any, Awaitable, Callable
 
 from .config import BACKEND_DIR, Settings
@@ -20,6 +23,18 @@ class CodexResult:
     payload: dict[str, Any]
     events: list[dict[str, Any]]
     stderr: str
+    law_trace: list[dict[str, Any]] = field(default_factory=list)
+    started_at: datetime | None = None
+    finished_at: datetime | None = None
+    duration_ms: float | None = None
+    queue_wait_ms: float | None = None
+
+
+@dataclass(frozen=True)
+class LawToolContext:
+    database_path: Path
+    as_of_date: date
+    include_future_rules: bool
 
 
 EventCallback = Callable[[dict[str, Any]], Awaitable[None]]
@@ -79,6 +94,7 @@ class CodexRunner:
         *,
         event_callback: EventCallback | None = None,
         allow_web_search: bool = False,
+        law_tools: LawToolContext | None = None,
     ) -> CodexResult:
         if self.settings.codex_mock:
             return self._mock_result(schema_name)
@@ -86,11 +102,18 @@ class CodexRunner:
         if not schema_path.is_file():
             raise CodexError(f"输出Schema不存在: {schema_path}")
 
+        queued_clock = perf_counter()
         async with self.semaphore:
+            queue_wait_ms = round((perf_counter() - queued_clock) * 1000, 3)
+            started_at = datetime.now(timezone.utc)
+            started_clock = perf_counter()
             jobs_dir = self.settings.data_dir / "jobs"
             jobs_dir.mkdir(parents=True, exist_ok=True)
             with tempfile.TemporaryDirectory(prefix="codex-job-", dir=jobs_dir) as job_dir:
-                command = self._build_command(schema_path, job_dir, allow_web_search)
+                trace_path = Path(job_dir) / "law-tool-trace.jsonl"
+                command = self._build_command(
+                    schema_path, job_dir, allow_web_search, law_tools, trace_path
+                )
                 environment = os.environ.copy()
                 environment["NO_COLOR"] = "1"
                 # Keep the authenticated CODEX_HOME unchanged, but move transient
@@ -151,12 +174,74 @@ class CodexRunner:
                     payload = json.loads(final_text)
                 except json.JSONDecodeError as exc:
                     raise CodexError("Codex最终消息不是合法JSON") from exc
-                return CodexResult(payload=payload, events=events, stderr=stderr)
+                law_trace: list[dict[str, Any]] = []
+                if trace_path.is_file():
+                    for line in trace_path.read_text(encoding="utf-8", errors="replace").splitlines():
+                        try:
+                            law_trace.append(json.loads(line))
+                        except json.JSONDecodeError:
+                            continue
+                finished_at = datetime.now(timezone.utc)
+                return CodexResult(
+                    payload=payload,
+                    events=events,
+                    stderr=stderr,
+                    law_trace=law_trace,
+                    started_at=started_at,
+                    finished_at=finished_at,
+                    duration_ms=round((perf_counter() - started_clock) * 1000, 3),
+                    queue_wait_ms=queue_wait_ms,
+                )
 
-    def _build_command(self, schema_path: Path, job_dir: str, allow_web_search: bool) -> list[str]:
+    def _build_command(
+        self,
+        schema_path: Path,
+        job_dir: str,
+        allow_web_search: bool,
+        law_tools: LawToolContext | None = None,
+        trace_path: Path | None = None,
+    ) -> list[str]:
         command = [self.settings.codex_binary]
         if allow_web_search:
             command.append("--search")
+        if law_tools:
+            if trace_path is None:
+                raise CodexError("法规MCP工具缺少trace路径")
+            backend_dir = Path(__file__).resolve().parent.parent
+            args = [
+                "-m",
+                "app.law_mcp_server",
+                "--database",
+                str(law_tools.database_path.resolve()),
+                "--as-of-date",
+                law_tools.as_of_date.isoformat(),
+                "--include-future-rules",
+                "true" if law_tools.include_future_rules else "false",
+                "--trace",
+                str(trace_path.resolve()),
+                "--max-search-calls",
+                str(self.settings.law_search_max_calls),
+                "--max-read-calls",
+                str(self.settings.law_read_max_calls),
+                "--default-top-k",
+                str(self.settings.law_search_top_k),
+            ]
+            command.extend(
+                [
+                    "-c",
+                    f"mcp_servers.law.command={json.dumps(sys.executable)}",
+                    "-c",
+                    f"mcp_servers.law.args={json.dumps(args)}",
+                    "-c",
+                    f"mcp_servers.law.cwd={json.dumps(str(backend_dir))}",
+                    "-c",
+                    "mcp_servers.law.required=true",
+                    "-c",
+                    'mcp_servers.law.enabled_tools=["SearchLaw","ReadLawSource"]',
+                    "-c",
+                    'mcp_servers.law.default_tools_approval_mode="approve"',
+                ]
+            )
         command.extend(
             [
                 "--ask-for-approval",
@@ -192,7 +277,37 @@ class CodexRunner:
 
     @staticmethod
     def _mock_result(schema_name: str) -> CodexResult:
-        if schema_name == "research_assessment.schema.json":
+        if schema_name == "local_law_agent.schema.json":
+            payload = {
+                "decision": "unresolved",
+                "reason": "Mock模式没有执行法规工具",
+                "criticalGaps": ["Mock模式"],
+                "webQueries": [],
+                "questionProfile": {
+                    "interpretedQuestion": "Mock问题",
+                    "complexity": "simple",
+                    "intents": ["legal_explanation"],
+                    "suggestedBlockType": "none",
+                    "focusAreas": [],
+                },
+                "report": {
+                    "status": "unresolved",
+                    "answerTitle": "Mock模式",
+                    "executiveAnswer": [],
+                    "keyTakeaways": [],
+                    "contentBlocks": [],
+                    "serviceProviderActions": [],
+                    "unresolvedQuestions": [
+                        {
+                            "itemId": "U-MOCK",
+                            "question": "Mock模式未调用法规工具",
+                            "impact": "没有生成真实内容",
+                            "neededEvidence": "关闭Mock模式",
+                        }
+                    ],
+                },
+            }
+        elif schema_name == "research_assessment.schema.json":
             payload = {
                 "decision": "unresolved",
                 "reason": "Mock模式没有模型评估",
@@ -206,9 +321,8 @@ class CodexRunner:
                     "interpretedQuestion": "Mock问题",
                     "complexity": "simple",
                     "intents": ["legal_explanation"],
-                    "requiredBlockTypes": ["deep_analysis"],
+                    "suggestedBlockType": "none",
                     "focusAreas": [],
-                    "targetCharacters": 700,
                 },
             }
         elif schema_name == "web_research.schema.json":

@@ -49,18 +49,6 @@ async function api(path, options = {}) {
   return response.json()
 }
 
-async function reviewDocument(document, status, sourceLevel = document.source_level) {
-  try {
-    await api(`/api/documents/${document.id}/review`, {
-      method: 'POST', headers: { 'X-Role': 'admin' },
-      body: JSON.stringify({ review_status: status, source_level: sourceLevel, note: `Web管理员设置为${status}/${sourceLevel}` })
-    })
-    await loadDocuments()
-  } catch (err) {
-    error.value = err.message
-  }
-}
-
 async function ask() {
   if (!question.value.trim() || busy.value) return
   busy.value = true
@@ -166,14 +154,9 @@ async function syncLocalDocuments() {
   }
 }
 
-function sourceClass(level) {
-  return `source source-${level?.toLowerCase()}`
-}
-
 function sourceLabel(source) {
   if (source.origin === 'web') return source.authorityKind === 'legal_act' ? 'Web官方法规' : 'Web官方说明'
-  if (source.sourceLevel) return `本地法规 ${source.sourceLevel}`
-  return '本地资料'
+  return '本地法规文件'
 }
 
 function paragraphNatureLabel(nature) {
@@ -200,6 +183,22 @@ function blockTypeLabel(type) {
 
 function priorityLabel(priority) {
   return ({ high: '高优先级', medium: '中优先级', low: '低优先级' })[priority] || ''
+}
+
+function formatDuration(milliseconds) {
+  if (milliseconds == null || Number.isNaN(Number(milliseconds))) return ''
+  const value = Number(milliseconds)
+  return value >= 1000 ? `${(value / 1000).toFixed(1)}秒` : `${value.toFixed(1)}毫秒`
+}
+
+function traceTimingLabel(item) {
+  const parts = []
+  if (item.modelThinkingMs != null) parts.push(`调用前模型思考 ${formatDuration(item.modelThinkingMs)}`)
+  if (item.durationMs != null) {
+    parts.push(`${['web', 'verification'].includes(item.type) ? '阶段耗时' : '工具执行'} ${formatDuration(item.durationMs)}`)
+  }
+  if (item.finalAnswerMs != null) parts.push(`最后一次工具后生成 ${formatDuration(item.finalAnswerMs)}`)
+  return parts.join(' · ')
 }
 
 function sourcesFor(refs = []) {
@@ -291,12 +290,12 @@ onMounted(async () => {
 
         <div v-if="!answer && !busy" class="empty-state">
           <div class="empty-icon">§</div>
-          <h2>从已审核法规中寻找答案</h2>
-          <p>助手会循环检索本地源文件并评估证据覆盖；本地仍有缺口时，仅查询欧盟官方网站，最终生成完整研究报告。</p>
+          <h2>从本地法规资料中寻找答案</h2>
+          <p>助手会循环检索本地源文件并评估证据覆盖；本地仍有关键缺口时，仅查询欧盟官方网站，最终生成正文优先的详实法规答复。</p>
           <div class="rule-grid">
-            <article><b>A1 / A2</b><span>正式法规与现行文本</span></article>
-            <article><b>B / C</b><span>指南与标准仅作补充</span></article>
-            <article><b>D</b><span>草案不支撑确定性结论</span></article>
+            <article><b>全部文件同权重</b><span>不再区分等级或审核状态</span></article>
+            <article><b>逐条引用原文</b><span>结论可回看对应文件、条款和页码</span></article>
+            <article><b>保留时间口径</b><span>继续识别生效、待生效与失效日期</span></article>
           </div>
         </div>
 
@@ -306,7 +305,7 @@ onMounted(async () => {
               <div class="answer-heading work-heading">
                 <div class="report-heading-row">
                   <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
-                  <span class="report-version">落地作业包 · v4.0</span>
+                  <span class="report-version">法规答复 · v4.0</span>
                 </div>
                 <h2>{{ answer.answerTitle }}</h2>
                 <article v-for="item in answer.executiveAnswer" :key="item.statementId" class="work-executive">
@@ -388,7 +387,7 @@ onMounted(async () => {
               <section class="answer-section research-audit">
                 <details><summary>研究与质量审计</summary>
                   <div class="audit-columns">
-                    <div><h3>检索过程</h3><div class="trace-list"><article v-for="(item, index) in answer.researchTrace" :key="index"><span>{{ item.type === 'local' ? `本地第${item.round}轮` : item.type === 'web' ? '官方Web' : '独立审核' }}</span><div><b>{{ item.decision }}</b><small>新增有效结果：{{ item.resultCount }}</small></div></article></div></div>
+                    <div><h3>检索过程</h3><div class="trace-list"><article v-for="(item, index) in answer.researchTrace" :key="index"><span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : item.action === 'search' ? `本地搜索${item.round}` : `本地第${item.round}轮`) : item.type === 'web' ? '官方Web' : '独立审核' }}</span><div><b>{{ item.decision }}</b><small>{{ item.action === 'read' ? '已读取原文' : '有效结果' }}：{{ item.resultCount }}</small><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div></article></div></div>
                     <div v-if="answer.qualityNotes?.length"><h3>内部质量记录</h3><ul class="quality-list"><li v-for="note in answer.qualityNotes" :key="note.noteId">{{ note.message }}</li></ul></div>
                   </div>
                 </details>
@@ -468,8 +467,8 @@ onMounted(async () => {
                   <summary>查看检索过程（{{ answer.researchTrace?.length || 0 }}个步骤）</summary>
                   <div class="trace-list">
                     <article v-for="(item, index) in answer.researchTrace" :key="index">
-                      <span>{{ item.type === 'local' ? `本地第${item.round}轮` : item.type === 'web' ? '官方Web搜索' : '独立审核' }}</span>
-                      <div><b>{{ item.decision }}</b><p v-if="item.queries?.length">检索词：{{ item.queries.join('；') }}</p><small>新增有效结果：{{ item.resultCount }}</small></div>
+                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : item.action === 'search' ? `本地搜索${item.round}` : `本地第${item.round}轮`) : item.type === 'web' ? '官方Web搜索' : '独立审核' }}</span>
+                      <div><b>{{ item.decision }}</b><p v-if="item.queries?.length">检索词：{{ item.queries.join('；') }}</p><small>新增有效结果：{{ item.resultCount }}</small><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div>
                     </article>
                   </div>
                 </details>
@@ -514,7 +513,7 @@ onMounted(async () => {
                   <div class="citation-stack">
                     <article v-for="citation in claim.citations" :key="citation.evidenceId" class="citation-card">
                       <button class="citation-heading" @click="showEvidence(citation)">
-                        <span :class="sourceClass(citation.sourceLevel)">{{ citation.sourceLevel }}</span>
+                        <span class="source source-local">本地法规文件</span>
                         <span :class="applicabilityClass(citation.applicabilityStatus)">{{ applicabilityLabel(citation.applicabilityStatus) }}</span>
                         <b>{{ citation.documentTitle || citation.documentId }}</b>
                         <small>{{ citation.article || '条款未识别' }} · PDF第{{ citation.page }}页</small>
@@ -546,7 +545,7 @@ onMounted(async () => {
             <template v-if="evidenceDetail">
               <div class="evidence-head">
                 <span v-if="evidenceDetail.origin === 'web'" class="source-origin origin-web">{{ sourceLabel(evidenceDetail) }}</span>
-                <span v-else :class="sourceClass(evidenceDetail.source_level)">{{ evidenceDetail.source_level }}</span>
+                <span v-else class="source source-local">本地法规文件</span>
                 <button @click="evidenceDetail = null">×</button>
               </div>
               <h3>{{ evidenceDetail.document_title || evidenceDetail.title }}</h3>
@@ -565,7 +564,7 @@ onMounted(async () => {
 
       <section v-if="activeTab === 'library'" class="library-page">
         <div class="section-toolbar">
-          <div><p class="eyebrow">管理员设置</p><h2>本地法规资料库</h2><p>自动读取本地法规目录；新文件默认以B级发布，管理员可调整等级或停用。</p></div>
+          <div><p class="eyebrow">本地资料</p><h2>本地法规资料库</h2><p>自动读取本地法规目录；所有已同步文件不分等级和状态，以相同权重参与检索。</p></div>
           <div class="toolbar-actions">
             <button class="primary" :disabled="syncBusy" @click="syncLocalDocuments">{{ syncBusy ? '正在扫描与提取…' : '同步本地目录' }}</button>
           </div>
@@ -574,17 +573,13 @@ onMounted(async () => {
           发现 {{ syncReport.discovered }} 个本地文件；新增 {{ syncReport.imported }} 个；已有 {{ syncReport.unchanged }} 个；失败 {{ syncReport.errors?.length || 0 }} 个。
         </div>
         <div class="document-table">
-          <div class="table-row table-head"><span>法规文件</span><span>等级</span><span>状态</span><span>条款片段</span><span>生效日期</span><span>审核</span></div>
+          <div class="table-row table-head"><span>法规文件</span><span>条款片段</span><span>发布日期</span><span>生效日期</span><span>原文件</span></div>
           <div v-for="document in documents" :key="document.id" class="table-row">
             <span><b>{{ document.title }}</b><small>{{ document.filename }}</small></span>
-            <span><select class="level-select" :value="document.source_level" @change="reviewDocument(document, document.review_status, $event.target.value)"><option v-for="level in ['A1','A2','B','C','D']" :key="level">{{ level }}</option></select></span>
-            <span><i class="review-pill">{{ document.review_status }}</i></span>
             <span>{{ document.passage_count }}</span>
+            <span>{{ document.publication_date || '—' }}</span>
             <span>{{ document.effective_date || '—' }}</span>
-            <span class="row-actions">
-              <button v-if="document.review_status !== 'published'" @click="reviewDocument(document, 'published')">发布</button>
-              <button v-if="document.review_status !== 'disabled'" @click="reviewDocument(document, 'disabled')">停用</button>
-            </span>
+            <span><a class="document-link" :href="`/api/documents/${document.id}/file`" target="_blank">打开 ↗</a></span>
           </div>
           <div v-if="!documents.length" class="table-empty">尚未发现可读取的本地法规文件。</div>
         </div>

@@ -5,7 +5,6 @@ from app.config import Settings
 from app.models import (
     ReportSource,
     ReportStatementV4,
-    SourceLevel,
     WorkProductBlock,
     WorkProductItem,
     WorkProductReport,
@@ -13,13 +12,12 @@ from app.models import (
 from app.qa_service import QAService
 
 
-def source(level: SourceLevel = SourceLevel.A1) -> ReportSource:
+def source() -> ReportSource:
     return ReportSource(
-        sourceId=f"EV-{level.value}",
+        sourceId="EV-LOCAL",
         origin="local",
-        authorityKind="legal_act" if level in {SourceLevel.A1, SourceLevel.A2} else "local_supplement",
+        authorityKind="legal_act",
         title="Test source",
-        sourceLevel=level,
         documentId="DOC-1",
         filename="source.pdf",
         page=1,
@@ -46,8 +44,9 @@ def test_engineering_recommendation_without_source_is_preserved():
     assert result.qualityNotes == []
 
 
-def test_b_level_source_cannot_support_regulatory_requirement_and_note_stays_internal():
-    b_source = source(SourceLevel.B)
+def test_any_local_source_can_support_regulatory_requirement():
+    local_source = source()
+    local_source.authorityKind = "local_supplement"
     answer = WorkProductReport(
         status="answered",
         answerTitle="错误法规结论",
@@ -56,20 +55,20 @@ def test_b_level_source_cannot_support_regulatory_requirement_and_note_stays_int
                 statementId="E-1",
                 text="这是法定要求。",
                 basis="regulatory_requirement",
-                sourceRefs=[b_source.sourceId],
+                sourceRefs=[local_source.sourceId],
             )
         ],
-        sources=[b_source],
+        sources=[local_source],
     )
     result = QAService._validate_work_product(answer)
-    assert result.executiveAnswer == []
-    assert result.status == "unresolved"
-    assert result.qualityNotes and result.qualityNotes[0].type == "removed"
+    assert result.executiveAnswer
+    assert result.status == "answered"
+    assert result.qualityNotes == []
     assert result.unresolvedQuestions == []
 
 
-def test_complex_work_product_quality_gate_requires_useful_blocks(tmp_path: Path):
-    runner = CodexRunner(Settings(data_dir=tmp_path, report_complex_min_chars=3000))
+def test_quality_gate_does_not_require_length_modules_or_provider_actions(tmp_path: Path):
+    runner = CodexRunner(Settings(data_dir=tmp_path))
     service = QAService(None, None, runner, 1)  # type: ignore[arg-type]
     answer = WorkProductReport(
         status="answered",
@@ -82,18 +81,41 @@ def test_complex_work_product_quality_gate_requires_useful_blocks(tmp_path: Path
                 sourceRefs=[],
             )
         ],
+        contentBlocks=[
+            WorkProductBlock(
+                blockId="B-1",
+                blockType="deep_analysis",
+                title="详细分析",
+                items=[
+                    WorkProductItem(
+                        itemId="I-1",
+                        detail="法规只规定唯一性，具体字段格式需由实施方案确定。",
+                        basis="engineering_recommendation",
+                    )
+                ],
+            )
+        ],
     )
     gaps = service._work_product_quality_gaps(
         answer,
         {
             "complexity": "complex",
             "intents": ["technical_design"],
-            "requiredBlockTypes": ["field_matrix", "example", "checklist"],
+            "suggestedBlockType": "field_matrix",
         },
     )
-    assert any("3000字" in gap for gap in gaps)
-    assert any("field_matrix" in gap for gap in gaps)
-    assert any("服务商" in gap for gap in gaps)
+    assert gaps == []
+
+
+def test_quality_gate_only_flags_missing_direct_answer_or_analysis(tmp_path: Path):
+    runner = CodexRunner(Settings(data_dir=tmp_path))
+    service = QAService(None, None, runner, 1)  # type: ignore[arg-type]
+    answer = WorkProductReport(status="answered", answerTitle="未完成")
+    gaps = service._work_product_quality_gaps(answer, {"complexity": "simple"})
+    assert gaps == [
+        "缺少直接回答用户问题的结论",
+        "缺少对法规依据、适用条件和限制的详细分析",
+    ]
 
 
 def test_verifier_reclassifies_instead_of_deleting_useful_item():
@@ -160,7 +182,23 @@ def test_verifier_can_correct_factual_wording_in_place():
     assert "纠正文案" in result.qualityNotes[0].message
 
 
-def test_encoding_question_profile_requests_field_example_and_checklist():
+def test_encoding_question_profile_suggests_only_one_useful_block():
     profile = QAService._default_question_profile("他的编码规则和字段应该如何设计")
-    assert profile["complexity"] == "complex"
-    assert {"field_matrix", "example", "checklist"}.issubset(profile["requiredBlockTypes"])
+    assert profile["complexity"] == "standard"
+    assert profile["suggestedBlockType"] == "field_matrix"
+    assert "targetCharacters" not in profile
+
+
+def test_model_cannot_escalate_simple_question_complexity():
+    profile = QAService._merge_question_profile(
+        "注册中心定义",
+        {
+            "interpretedQuestion": "什么是注册中心",
+            "complexity": "complex",
+            "intents": ["legal_explanation"],
+            "suggestedBlockType": "comparison_table",
+            "focusAreas": ["定义"],
+        },
+    )
+    assert profile["complexity"] == "simple"
+    assert profile["suggestedBlockType"] == "comparison_table"

@@ -1,9 +1,13 @@
 import asyncio
+from datetime import datetime, timezone
 
 from app.codex_runner import CodexResult
 from app.config import Settings
 from app.database import Database
-from app.models import Evidence, QuestionRequest, SourceLevel
+from app.models import Evidence, QuestionRequest
+from app.ingestion import ingest_document
+from app.models import DocumentCreate
+from app.retrieval import Retriever
 from app.qa_service import QAService
 
 
@@ -20,7 +24,6 @@ class RecordingRetriever:
                 documentId="DOC-001",
                 documentTitle="Regulation (EU) 2024/1781",
                 filename="regulation.pdf",
-                sourceLevel=SourceLevel.A1,
                 article="Article 13",
                 page=20,
                 quote="The Commission shall set up a digital registry storing unique identifiers.",
@@ -37,7 +40,6 @@ class DuplicateEvidenceRetriever(RecordingRetriever):
                 documentId="DOC-001",
                 documentTitle="Regulation (EU) 2024/1781",
                 filename="regulation.pdf",
-                sourceLevel=SourceLevel.A1,
                 article="Article 13",
                 page=20,
                 quote="The Commission shall set up a digital registry storing unique identifiers.",
@@ -113,6 +115,7 @@ def test_research_flow_expands_local_search_and_skips_web_when_sufficient(tmp_pa
     database.init()
     database.create_job("JOB-FLOW", "注册中心如何保存数据？", "CONV-FLOW", None)
     settings = Settings(
+        law_retrieval_mode="legacy",
         data_dir=tmp_path,
         database_path=tmp_path / "flow.sqlite3",
         research_local_rounds=3,
@@ -161,9 +164,8 @@ class SimpleGapRunner(ExpandingRunner):
                         "interpretedQuestion": "注册中心定义",
                         "complexity": "simple",
                         "intents": ["legal_explanation"],
-                        "requiredBlockTypes": ["deep_analysis"],
+                        "suggestedBlockType": "none",
                         "focusAreas": [],
-                        "targetCharacters": 900,
                     },
                 },
                 [],
@@ -177,6 +179,7 @@ def test_simple_question_stops_after_one_local_round(tmp_path):
     database.init()
     database.create_job("JOB-SIMPLE", "注册中心定义", "CONV-SIMPLE", None)
     settings = Settings(
+        law_retrieval_mode="legacy",
         data_dir=tmp_path,
         database_path=tmp_path / "simple.sqlite3",
         research_local_rounds=3,
@@ -209,6 +212,7 @@ def test_follow_up_round_stops_without_another_model_call_when_no_new_evidence(t
     database.init()
     database.create_job("JOB-NO-GAIN", "注册中心如何保存数据？", "CONV-NO-GAIN", None)
     settings = Settings(
+        law_retrieval_mode="legacy",
         data_dir=tmp_path,
         database_path=tmp_path / "no-gain.sqlite3",
         research_local_rounds=3,
@@ -262,3 +266,110 @@ def test_web_search_requires_explicit_request_or_critical_gap():
     assert QAService._should_search_web(
         ordinary_gap, explicit_request=True, local_search_exhausted=False
     )
+
+
+class ToolAgentRunner:
+    def __init__(self, settings, evidence_id):
+        self.settings = settings
+        self.evidence_id = evidence_id
+        self.schemas = []
+
+    async def run(self, _, schema_name, **kwargs):
+        self.schemas.append(schema_name)
+        assert schema_name == "local_law_agent.schema.json"
+        assert kwargs.get("law_tools") is not None
+        return CodexResult(
+            {
+                "decision": "sufficient",
+                "reason": "已读取正式法规原文",
+                "criticalGaps": [],
+                "webQueries": [],
+                "questionProfile": {
+                    "interpretedQuestion": "海关核验流程",
+                    "complexity": "simple",
+                    "intents": ["process"],
+                    "suggestedBlockType": "process",
+                    "focusAreas": ["海关入参"],
+                },
+                "report": {
+                    "status": "answered",
+                    "answerTitle": "海关核验",
+                    "executiveAnswer": [
+                        {
+                            "statementId": "S-1",
+                            "text": "海关核验唯一登记标识符和商品编码。",
+                            "basis": "regulatory_requirement",
+                            "sourceRefs": [self.evidence_id],
+                        }
+                    ],
+                    "keyTakeaways": [],
+                    "contentBlocks": [],
+                    "serviceProviderActions": [],
+                    "unresolvedQuestions": [],
+                },
+            },
+            [],
+            "",
+            law_trace=[
+                {
+                    "action": "search",
+                    "query": "customs registration identifier commodity code",
+                    "resultIds": [self.evidence_id],
+                    "resultCount": 1,
+                    "startedAt": "2026-07-20T00:00:00.010000+00:00",
+                    "finishedAt": "2026-07-20T00:00:00.020000+00:00",
+                    "durationMs": 10.0,
+                },
+                {
+                    "action": "read",
+                    "requestedId": self.evidence_id,
+                    "resultIds": [self.evidence_id],
+                    "resultCount": 1,
+                    "startedAt": "2026-07-20T00:00:00.050000+00:00",
+                    "finishedAt": "2026-07-20T00:00:00.052000+00:00",
+                    "durationMs": 2.0,
+                },
+            ],
+            started_at=datetime(2026, 7, 20, tzinfo=timezone.utc),
+            finished_at=datetime(2026, 7, 20, 0, 0, 0, 100000, tzinfo=timezone.utc),
+            duration_ms=100.0,
+        )
+
+
+def test_mcp_mode_generates_report_in_one_local_agent_call(tmp_path):
+    source = tmp_path / "customs.txt"
+    source.write_text(
+        "Article 15\nCustoms authorities shall verify the unique registration identifier and commodity code.",
+        encoding="utf-8",
+    )
+    database = Database(tmp_path / "mcp-flow.sqlite3")
+    database.init()
+    document = ingest_document(database, DocumentCreate(path=str(source)), tmp_path)
+    evidence_id = database.searchable_passages()[0]["id"]
+    database.create_job("JOB-MCP", "海关如何核验？", "CONV-MCP", None)
+    settings = Settings(
+        data_dir=tmp_path,
+        database_path=tmp_path / "mcp-flow.sqlite3",
+        law_retrieval_mode="mcp",
+        web_search_enabled=False,
+        codex_verify_enabled=False,
+        report_expansion_enabled=False,
+    )
+    runner = ToolAgentRunner(settings, evidence_id)
+    service = QAService(database, Retriever(database), runner, 5)
+
+    asyncio.run(
+        service._process(
+            "JOB-MCP", QuestionRequest(question="海关如何核验？", conversation_id="CONV-MCP")
+        )
+    )
+
+    job = database.get_job("JOB-MCP")
+    assert document["passage_count"] == 1
+    assert runner.schemas == ["local_law_agent.schema.json"]
+    assert job["status"] == "completed"
+    assert job["answer"]["sources"][0]["sourceId"] == evidence_id
+    assert [item["action"] for item in job["answer"]["researchTrace"]] == ["search", "read"]
+    assert job["answer"]["researchTrace"][0]["modelThinkingMs"] == 10.0
+    assert job["answer"]["researchTrace"][1]["modelThinkingMs"] == 30.0
+    assert job["answer"]["researchTrace"][1]["finalAnswerMs"] == 48.0

@@ -7,21 +7,6 @@ from typing import Annotated, Literal
 from pydantic import BaseModel, Field
 
 
-class SourceLevel(str, Enum):
-    A1 = "A1"
-    A2 = "A2"
-    B = "B"
-    C = "C"
-    D = "D"
-
-
-class ReviewStatus(str, Enum):
-    pending = "pending"
-    published = "published"
-    rejected = "rejected"
-    disabled = "disabled"
-
-
 class JobStatus(str, Enum):
     queued = "queued"
     retrieving = "retrieving"
@@ -36,8 +21,6 @@ class JobStatus(str, Enum):
 class DocumentCreate(BaseModel):
     path: str
     title: str | None = None
-    source_level: SourceLevel = SourceLevel.D
-    review_status: ReviewStatus = ReviewStatus.pending
     jurisdiction: str = "EU"
     authority: str | None = None
     official_url: str | None = None
@@ -47,20 +30,12 @@ class DocumentCreate(BaseModel):
     version_of: str | None = None
 
 
-class DocumentReview(BaseModel):
-    review_status: ReviewStatus
-    source_level: SourceLevel | None = None
-    note: str | None = None
-
-
 class DocumentOut(BaseModel):
     id: str
     title: str
     filename: str
     path: str
     sha256: str
-    source_level: SourceLevel
-    review_status: ReviewStatus
     jurisdiction: str
     authority: str | None = None
     official_url: str | None = None
@@ -77,7 +52,6 @@ class Evidence(BaseModel):
     documentId: str
     documentTitle: str
     filename: str
-    sourceLevel: SourceLevel
     article: str | None = None
     paragraph: str | None = None
     page: int
@@ -93,7 +67,6 @@ class Evidence(BaseModel):
 class Citation(BaseModel):
     evidenceId: str
     documentId: str
-    sourceLevel: SourceLevel
     article: str | None = None
     page: int
     quote: str
@@ -176,7 +149,6 @@ class ReportSource(BaseModel):
     origin: Literal["local", "web"]
     authorityKind: Literal["legal_act", "official_guidance", "local_supplement"]
     title: str
-    sourceLevel: SourceLevel | None = None
     documentId: str | None = None
     filename: str | None = None
     article: str | None = None
@@ -197,6 +169,12 @@ class ResearchTraceItem(BaseModel):
     queries: list[str] = Field(default_factory=list)
     resultCount: int = 0
     decision: str
+    action: Literal["search", "read"] | None = None
+    startedAt: datetime | None = None
+    finishedAt: datetime | None = None
+    durationMs: float | None = Field(default=None, ge=0)
+    modelThinkingMs: float | None = Field(default=None, ge=0)
+    finalAnswerMs: float | None = Field(default=None, ge=0)
 
 
 class ResearchReport(BaseModel):
@@ -342,6 +320,5 @@ class SearchRequest(BaseModel):
 class OfficialArchiveRequest(BaseModel):
     url: str = Field(min_length=12, max_length=2000)
     title: str
-    source_level: SourceLevel = SourceLevel.A1
     jurisdiction: str = "EU"
     authority: str | None = None

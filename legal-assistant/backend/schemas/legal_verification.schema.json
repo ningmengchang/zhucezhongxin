@@ -37,11 +37,10 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["evidenceId", "documentId", "sourceLevel", "article", "page", "quote", "interpretation"],
+              "required": ["evidenceId", "documentId", "article", "page", "quote", "interpretation"],
               "properties": {
                 "evidenceId": {"type": "string"},
                 "documentId": {"type": "string"},
-                "sourceLevel": {"type": "string", "enum": ["A1", "A2", "B", "C", "D"]},
                 "article": {"type": ["string", "null"]},
                 "page": {"type": "integer", "minimum": 1},
                 "quote": {"type": "string"},

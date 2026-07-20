@@ -4,8 +4,8 @@ from pathlib import Path
 
 from .config import settings
 from .database import Database
-from .ingestion import ingest_document
-from .models import DocumentCreate, ReviewStatus, SourceLevel
+from .ingestion import ingest_document, sha256_file
+from .models import DocumentCreate
 from .seed import SEED_DOCUMENTS
 
 
@@ -43,21 +43,46 @@ def sync_local_library(database: Database | None = None, source_dir: Path | None
     db.init()
     source_dir = (source_dir or settings.source_dir).resolve()
     curated = _curated_specs(source_dir)
-    existing_hashes = {item["sha256"] for item in db.list_documents()}
+    existing_documents = db.list_documents()
+    existing_hashes = {item["sha256"] for item in existing_documents}
     imported = 0
     unchanged = 0
     errors: list[dict[str, str]] = []
     discovered = discover_local_files(source_dir)
+    discovered_by_hash: dict[str, Path] = {}
+
+    for path in discovered:
+        try:
+            discovered_by_hash.setdefault(sha256_file(path), path)
+        except OSError as exc:
+            errors.append({"path": str(path), "error": str(exc)})
+
+    removed = 0
+    relocated = 0
+    for document in existing_documents:
+        try:
+            document_path = Path(document["path"]).resolve()
+            managed = document_path.is_relative_to(source_dir)
+        except (OSError, ValueError):
+            managed = False
+        if not managed:
+            continue
+        replacement = discovered_by_hash.get(document["sha256"])
+        if replacement is None:
+            db.delete_document(document["id"])
+            existing_hashes.discard(document["sha256"])
+            removed += 1
+        elif replacement != document_path:
+            db.update_document_path(document["id"], str(replacement), replacement.name)
+            relocated += 1
 
     for path in discovered:
         curated_spec = curated.get(path)
         spec = curated_spec.model_copy(update={"path": str(path)}) if curated_spec else DocumentCreate(
             path=str(path),
             title=path.stem,
-            source_level=SourceLevel.B,
-            review_status=ReviewStatus.published,
             jurisdiction="EU",
-            authority="Local regulation library — administrator review required",
+            authority="Local regulation library",
         )
         try:
             result = ingest_document(db, spec, source_dir)
@@ -74,5 +99,7 @@ def sync_local_library(database: Database | None = None, source_dir: Path | None
         "discovered": len(discovered),
         "imported": imported,
         "unchanged": unchanged,
+        "removed": removed,
+        "relocated": relocated,
         "errors": errors,
     }
