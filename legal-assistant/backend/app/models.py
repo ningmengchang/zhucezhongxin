@@ -283,7 +283,45 @@ class WorkProductReport(BaseModel):
     qualityNotes: list[QualityNoteV4] = Field(default_factory=list)
 
 
-AnswerPayload = Annotated[LegalAnswer | ResearchReport | WorkProductReport, Field(discriminator="schemaVersion")]
+class ConciseLegalAnswer(BaseModel):
+    schemaVersion: Literal["5.0"] = "5.0"
+    status: Literal["answered", "partial", "unresolved", "system_error"]
+    title: str
+    conclusion: ReportStatementV4
+    explanations: list[ReportStatementV4] = Field(default_factory=list)
+    providerAdvice: list[ReportStatementV4] = Field(default_factory=list)
+    timeContext: TimeContext | None = None
+    sources: list[ReportSource] = Field(default_factory=list)
+    researchTrace: list[ResearchTraceItem] = Field(default_factory=list)
+
+
+class DynamicTableRow(BaseModel):
+    rowId: str
+    cells: list[str] = Field(default_factory=list)
+    basis: ContentBasis
+    sourceRefs: list[str] = Field(default_factory=list)
+
+
+class DynamicAnswerTable(BaseModel):
+    columns: list[str] = Field(default_factory=list)
+    rows: list[DynamicTableRow] = Field(default_factory=list)
+
+
+class DynamicTableLegalAnswer(BaseModel):
+    schemaVersion: Literal["6.0"] = "6.0"
+    status: Literal["answered", "partial", "unresolved", "system_error"]
+    title: str
+    conclusion: ReportStatementV4
+    table: DynamicAnswerTable
+    timeContext: TimeContext | None = None
+    sources: list[ReportSource] = Field(default_factory=list)
+    researchTrace: list[ResearchTraceItem] = Field(default_factory=list)
+
+
+AnswerPayload = Annotated[
+    LegalAnswer | ResearchReport | WorkProductReport | ConciseLegalAnswer | DynamicTableLegalAnswer,
+    Field(discriminator="schemaVersion"),
+]
 
 
 class QuestionRequest(BaseModel):

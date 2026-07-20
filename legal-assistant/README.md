@@ -1,6 +1,6 @@
 # 法规答复与证据问答助手
 
-本项目是一个本地法规优先的内部 Web 试点。业务系统不调用大模型 API，而是通过本机 `codex exec` 和当前 ChatGPT 登录生成、审核结构化答案。
+本项目是一个本地法规优先的内部 Web 试点。业务系统不调用大模型 API，而是通过本机 `codex exec` 和当前 ChatGPT 登录生成结构化答案。
 
 ## 已实现
 
@@ -10,17 +10,15 @@
 - 按 PDF 页码及 Article 上下文切分证据；
 - SQLite FTS5持久化BM25索引、等权来源融合与毫秒级候选检索；
 - 通过临时STDIO MCP向单次Codex开放 `SearchLaw` / `ReadLawSource`，先定位再按需读取原文；
-- 同一 `source_id` 每个任务只读取一次；审计轨迹记录模型思考、工具执行、首稿收尾和独立审核耗时；
+- 同一 `source_id` 每个任务只读取一次；审计轨迹记录模型思考、工具执行和答复生成耗时；
 - `codex --ask-for-approval never exec --json --output-schema` 非交互调用，本地研究阶段不使用大模型API；
 - 只读沙箱和临时任务目录；仅在本地证据不足时执行1轮 Codex 原生Web Search；
 - Web来源限欧盟官方域名，并执行HTTPS、公共地址、重定向和官方页面原文核验；
-- 默认生成“直接结论 + 详细分析”，只在有助于理解时增加一个对比表、字段矩阵、责任矩阵、流程或清单；
+- 默认生成“一句直接结论 + 一张动态业务表”；模型根据问题生成2至5个业务列，不预设服务商或其他角色视角；
 - 法规要求、官方解释、本地标准指导、工程建议和不确定事项五级内容性质标注；
-- 复杂问题设置有效内容门槛，不足时最多执行一次定向扩写并择优保留；
-- 来源真实性、回答完整性独立复核，并可修正正文中的年份、主体和范围错误；
 - 证据 ID、文件、页码和英文引文的确定性校验；
 - 无证据时阻断确定性结论；
-- Vue 3 问答、动态表格/流程/清单、服务商责任边界、本地/Web来源标签、折叠质量审计、法规库和证据预览；
+- Vue 3 问答、服务商责任边界、本地/Web来源标签、折叠法规依据与检索过程、法规库和证据预览；
 - 小团队试点队列：默认并发 2、队列 20。
 - 同一浏览器会话最近5轮有限记忆；当前问题与历史问题独立检索、近似历史自动去重，历史仅帮助理解指代，不能压过本轮正式法源或充当法规证据。
 
@@ -121,14 +119,13 @@ cd legal-assistant/backend
 - `WEB_SEARCH_ENABLED=true`
 - `WEB_MAX_SOURCES=5`
 - `WEB_OFFICIAL_DOMAINS=europa.eu,eur-lex.europa.eu,op.europa.eu,echa.europa.eu`
-- `REPORT_EXPANSION_ENABLED=true`：仅在缺少直接结论或详细分析时启动一次定向修订，不按字数或模块数扩写；
 
 默认MCP模式由同一次Codex自主执行最多4次候选搜索，并对准备引用的来源执行最多8次原文读取；只有 `ReadLawSource` 实际返回的来源才能进入最终引用。Web搜索不由普通内容缺口触发，仅在用户明确要求联网，或本地按需阅读后仍缺关键正式法规、最新实施文件或官方解释时执行。`RESEARCH_LOCAL_ROUNDS`只供legacy回滚模式使用。
 
 不调用真实 Codex 的服务测试可设置：
 
 ```bash
-CODEX_MOCK=true CODEX_VERIFY_ENABLED=false .venv/bin/python -m app
+CODEX_MOCK=true .venv/bin/python -m app
 ```
 
 ## 当前试点边界
@@ -138,4 +135,4 @@ CODEX_MOCK=true CODEX_VERIFY_ENABLED=false .venv/bin/python -m app
 - 扫描PDF通过本机Tesseract识别；识别质量受扫描清晰度影响，管理员仍需核对原文件；
 - 不提供网页上传或网络归档入口；新增法规由管理员放入本地法规目录后同步；
 - `X-Role` 只用于本机试点，不等同于正式身份认证；
-- Codex限额、ChatGPT登录失效或网络错误会使任务失败，不会返回未审核的半成品答案。
+- Codex限额、ChatGPT登录失效或网络错误会使任务失败，不会把缺少有效来源的内容作为确定性法规结论返回。

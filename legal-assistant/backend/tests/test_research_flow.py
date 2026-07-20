@@ -86,23 +86,28 @@ class ExpandingRunner:
                 [],
                 "",
             )
-        if schema_name == "work_product_report.schema.json":
+        if schema_name == "dynamic_table_answer.schema.json":
             return CodexResult(
                 {
                     "status": "answered",
-                    "answerTitle": "注册中心保存的数据",
-                    "executiveAnswer": [
-                        {
-                            "statementId": "P-01",
-                            "text": "欧盟委员会应建立保存唯一标识符的注册中心。",
-                            "basis": "regulatory_requirement",
-                            "sourceRefs": ["EV-001"],
-                        }
-                    ],
-                    "keyTakeaways": [],
-                    "contentBlocks": [],
-                    "serviceProviderActions": [],
-                    "unresolvedQuestions": [],
+                    "title": "注册中心保存的数据",
+                    "conclusion": {
+                        "statementId": "P-01",
+                        "text": "欧盟委员会应建立保存唯一标识符的注册中心。",
+                        "basis": "regulatory_requirement",
+                        "sourceRefs": ["EV-001"],
+                    },
+                    "table": {
+                        "columns": ["主体", "要求"],
+                        "rows": [
+                            {
+                                "rowId": "R-01",
+                                "cells": ["欧盟委员会", "建立保存唯一标识符的注册中心"],
+                                "basis": "regulatory_requirement",
+                                "sourceRefs": ["EV-001"],
+                            }
+                        ],
+                    },
                 },
                 [],
                 "",
@@ -122,8 +127,6 @@ def test_research_flow_expands_local_search_and_skips_web_when_sufficient(tmp_pa
         research_web_rounds=1,
         research_max_evidence=60,
         web_search_enabled=True,
-        codex_verify_enabled=False,
-        report_expansion_enabled=False,
     )
     retriever = RecordingRetriever()
     runner = ExpandingRunner(settings)
@@ -138,7 +141,7 @@ def test_research_flow_expands_local_search_and_skips_web_when_sufficient(tmp_pa
 
     job = database.get_job("JOB-FLOW")
     assert job["status"] == "completed"
-    assert job["answer"]["schemaVersion"] == "4.0"
+    assert job["answer"]["schemaVersion"] == "6.0"
     assert job["answer"]["status"] == "answered"
     assert retriever.queries == ["注册中心如何保存数据？", "Article 13 digital product passport registry"]
     assert "web_research.schema.json" not in runner.schemas
@@ -185,8 +188,6 @@ def test_simple_question_stops_after_one_local_round(tmp_path):
         research_local_rounds=3,
         research_web_rounds=1,
         web_search_enabled=True,
-        codex_verify_enabled=False,
-        report_expansion_enabled=False,
     )
     retriever = RecordingRetriever()
     runner = SimpleGapRunner(settings)
@@ -218,8 +219,6 @@ def test_follow_up_round_stops_without_another_model_call_when_no_new_evidence(t
         research_local_rounds=3,
         research_web_rounds=1,
         web_search_enabled=True,
-        codex_verify_enabled=False,
-        report_expansion_enabled=False,
     )
     retriever = DuplicateEvidenceRetriever()
     runner = ExpandingRunner(settings)
@@ -291,21 +290,26 @@ class ToolAgentRunner:
                     "suggestedBlockType": "process",
                     "focusAreas": ["海关入参"],
                 },
-                "report": {
+                "answer": {
                     "status": "answered",
-                    "answerTitle": "海关核验",
-                    "executiveAnswer": [
-                        {
-                            "statementId": "S-1",
-                            "text": "海关核验唯一登记标识符和商品编码。",
-                            "basis": "regulatory_requirement",
-                            "sourceRefs": [self.evidence_id],
-                        }
-                    ],
-                    "keyTakeaways": [],
-                    "contentBlocks": [],
-                    "serviceProviderActions": [],
-                    "unresolvedQuestions": [],
+                    "title": "海关核验",
+                    "conclusion": {
+                        "statementId": "S-1",
+                        "text": "海关核验唯一登记标识符和商品编码。",
+                        "basis": "regulatory_requirement",
+                        "sourceRefs": [self.evidence_id],
+                    },
+                    "table": {
+                        "columns": ["核验项", "内容"],
+                        "rows": [
+                            {
+                                "rowId": "R-1",
+                                "cells": ["最少核验", "唯一登记标识符和商品编码"],
+                                "basis": "regulatory_requirement",
+                                "sourceRefs": [self.evidence_id],
+                            }
+                        ],
+                    },
                 },
             },
             [],
@@ -352,8 +356,6 @@ def test_mcp_mode_generates_report_in_one_local_agent_call(tmp_path):
         database_path=tmp_path / "mcp-flow.sqlite3",
         law_retrieval_mode="mcp",
         web_search_enabled=False,
-        codex_verify_enabled=False,
-        report_expansion_enabled=False,
     )
     runner = ToolAgentRunner(settings, evidence_id)
     service = QAService(database, Retriever(database), runner, 5)
@@ -368,6 +370,7 @@ def test_mcp_mode_generates_report_in_one_local_agent_call(tmp_path):
     assert document["passage_count"] == 1
     assert runner.schemas == ["local_law_agent.schema.json"]
     assert job["status"] == "completed"
+    assert job["answer"]["schemaVersion"] == "6.0"
     assert job["answer"]["sources"][0]["sourceId"] == evidence_id
     assert [item["action"] for item in job["answer"]["researchTrace"]] == ["search", "read"]
     assert job["answer"]["researchTrace"][0]["modelThinkingMs"] == 10.0

@@ -82,23 +82,6 @@ def test_report_accepts_any_local_file_as_direct_evidence():
     assert result.executiveSummary[0].sourceRefs == ["EV-001"]
 
 
-def test_verification_removes_unsupported_report_and_service_items():
-    result = QAService._apply_report_verification(
-        report(local_source()),
-        {
-            "overall": "partial",
-            "coverageStatus": "incomplete",
-            "unsupportedParagraphIds": ["P-02"],
-            "partialParagraphIds": [],
-            "unsupportedServiceItemIds": ["SP-01"],
-            "coverageGaps": ["缺少技术字段"],
-        },
-    )
-    assert result.analysisSections == []
-    assert result.serviceProviderImpact == []
-    assert result.status == "partial"
-
-
 def test_web_validator_accepts_exact_quote_from_official_page(monkeypatch):
     validator = WebEvidenceValidator(("europa.eu",))
     monkeypatch.setattr("app.web_evidence._public_addresses", lambda _: True)

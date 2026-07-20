@@ -11,10 +11,15 @@ from pydantic import ValidationError
 
 from .codex_runner import CodexError, CodexRunner, LawToolContext
 from .database import Database
-from .models import Claim, JobStatus, LegalAnswer, QuestionRequest, TimeContext, TimeNotice
+from .models import JobStatus, LegalAnswer, QuestionRequest, TimeContext, TimeNotice
 from .models import (
+    ConciseLegalAnswer,
+    DynamicAnswerTable,
+    DynamicTableLegalAnswer,
+    DynamicTableRow,
     QualityNoteV4,
     ReportParagraph,
+    ReportStatementV4,
     ReportSource,
     ResearchReport,
     ResearchTraceItem,
@@ -156,14 +161,14 @@ class QAService:
             assessment["criticalGaps"] = ["没有通过ReadLawSource读取可引用的本地法规原文"]
 
         try:
-            answer = WorkProductReport.model_validate(payload.get("report", {}))
+            answer = DynamicTableLegalAnswer.model_validate(payload.get("answer", {}))
         except ValidationError as exc:
             raise CodexError(f"Codex本地法规Agent未通过应用层Schema校验: {exc}") from exc
         local_sources = self._report_sources(evidence, [])
         answer.sources = local_sources
         answer.researchTrace = trace
         answer.timeContext = self._time_context(request, evidence)
-        answer = self._validate_work_product(answer, profile)
+        answer = self._validate_dynamic_table_answer(answer, profile)
 
         explicit_web_request = self._explicit_web_requested(request.question)
         web_sources: list[ReportSource] = []
@@ -229,83 +234,22 @@ class QAService:
             )
             generation = await self._run_before_deadline(
                 deadline,
-                self._report_prompt(request, all_sources, assessment, rejected_web, history),
-                "work_product_report.schema.json",
+                self._dynamic_table_answer_prompt(request, all_sources, assessment, rejected_web, history),
+                "dynamic_table_answer.schema.json",
             )
-            answer = WorkProductReport.model_validate(generation.payload)
+            answer = DynamicTableLegalAnswer.model_validate(generation.payload)
             answer.sources = all_sources
             answer.researchTrace = completed_trace
             answer.timeContext = self._time_context(request, evidence)
-            answer = self._validate_work_product(answer, profile)
+            answer = self._validate_dynamic_table_answer(answer, profile)
         elif decision in {"needs_web", "unresolved"} and answer.status == "answered":
             answer.status = "partial"
-
-        quality_gaps = self._work_product_quality_gaps(answer, profile)
-        if quality_gaps and self.runner.settings.report_expansion_enabled and self._remaining_seconds(deadline) > 90:
-            initial_answer = answer.model_copy(deep=True)
-            self.database.update_job(
-                job_id,
-                status=JobStatus.generating.value,
-                event=self._event("generating", "首稿缺少直接结论或详细分析，正在定向修订"),
-            )
-            try:
-                expanded = await self._run_before_deadline(
-                    deadline,
-                    self._expansion_prompt(request, answer, all_sources, assessment, quality_gaps),
-                    "work_product_report.schema.json",
-                )
-                candidate = WorkProductReport.model_validate(expanded.payload)
-                candidate.sources = all_sources
-                candidate.researchTrace = answer.researchTrace
-                candidate.timeContext = answer.timeContext
-                candidate = self._validate_work_product(candidate, profile)
-                candidate_gaps = self._work_product_quality_gaps(candidate, profile)
-                if len(candidate_gaps) < len(quality_gaps):
-                    answer = candidate
-            except (asyncio.TimeoutError, ValidationError):
-                answer = initial_answer
-
-        if self.runner.settings.codex_verify_enabled and self._work_product_item_count(answer):
-            self.database.update_job(
-                job_id,
-                status=JobStatus.verifying.value,
-                event=self._event("verifying", "正在独立审核报告覆盖范围和全部来源引用"),
-            )
-            try:
-                verification = await self._run_before_deadline(
-                    deadline,
-                    self._work_product_verification_prompt(request, answer, profile),
-                    "work_product_verification.schema.json",
-                )
-                answer = self._apply_work_product_verification(answer, verification.payload)
-                answer.researchTrace.append(
-                    ResearchTraceItem(
-                        round=1,
-                        type="verification",
-                        queries=[],
-                        resultCount=self._work_product_item_count(answer),
-                        decision=str(verification.payload.get("reviewNote", "独立审核完成")),
-                        startedAt=verification.started_at,
-                        finishedAt=verification.finished_at,
-                        durationMs=verification.duration_ms,
-                    )
-                )
-                answer = self._validate_work_product(answer, profile)
-            except asyncio.TimeoutError:
-                answer.status = "partial"
-                answer.qualityNotes.append(
-                    QualityNoteV4(
-                        noteId="QN-VERIFY-TIMEOUT",
-                        type="system",
-                        message="独立审核达到时间上限；内容已通过确定性来源校验，但未完成模型完整性复核",
-                    )
-                )
 
         self.database.update_job(
             job_id,
             status=JobStatus.completed.value,
             answer=answer.model_dump(mode="json"),
-            event=self._event("completed", "按需检索、原文阅读和报告审核完成"),
+            event=self._event("completed", "按需检索、原文阅读和动态表格答复生成完成"),
         )
 
     async def _process_legacy(self, job_id: str, request: QuestionRequest) -> None:
@@ -514,22 +458,29 @@ class QAService:
         try:
             generation = await self._run_before_deadline(
                 deadline,
-                self._report_prompt(request, all_sources, assessment, rejected_web, history),
-                "work_product_report.schema.json",
+                self._dynamic_table_answer_prompt(request, all_sources, assessment, rejected_web, history),
+                "dynamic_table_answer.schema.json",
             )
         except asyncio.TimeoutError:
-            answer = WorkProductReport(
+            answer = DynamicTableLegalAnswer(
                 status="unresolved",
-                answerTitle="研究达到时间上限",
+                title="研究达到时间上限",
+                conclusion=ReportStatementV4(
+                    statementId="C-TIMEOUT",
+                    text="本轮未能在时间上限内形成可核验的结论，请重试或缩小问题范围。",
+                    basis="uncertainty",
+                ),
+                table=DynamicAnswerTable(
+                    columns=["事项", "结果"],
+                    rows=[
+                        DynamicTableRow(
+                            rowId="R-TIMEOUT",
+                            cells=["研究状态", "未能在时间上限内形成可核验结论"],
+                            basis="uncertainty",
+                        )
+                    ],
+                ),
                 timeContext=self._time_context(request, evidence),
-                unresolvedQuestions=[
-                    {
-                        "itemId": "U-TIMEOUT",
-                        "question": "本轮研究未能在时间上限内完成",
-                        "impact": "系统未输出未经完整生成和审核的半成品结论",
-                        "neededEvidence": "重新提问或缩小问题范围后重试",
-                    }
-                ],
                 researchTrace=trace,
             )
             self.database.update_job(
@@ -540,105 +491,21 @@ class QAService:
             )
             return
         try:
-            answer = WorkProductReport.model_validate(generation.payload)
+            answer = DynamicTableLegalAnswer.model_validate(generation.payload)
         except ValidationError as exc:
             raise CodexError(f"Codex法规答复未通过应用层Schema校验: {exc}") from exc
         answer.timeContext = self._time_context(request, evidence)
         answer.sources = all_sources
         answer.researchTrace = trace
-        answer = self._validate_work_product(answer, assessment.get("questionProfile", {}))
-
-        quality_gaps = self._work_product_quality_gaps(answer, assessment.get("questionProfile", {}))
-        if (
-            quality_gaps
-            and self.runner.settings.report_expansion_enabled
-            and self._remaining_seconds(deadline) > 90
-        ):
-            initial_answer = answer.model_copy(deep=True)
-            self.database.update_job(
-                job_id,
-                status=JobStatus.generating.value,
-                event=self._event("generating", "首稿缺少直接结论或详细分析，正在定向修订"),
-            )
-            try:
-                expanded = await self._run_before_deadline(
-                    deadline,
-                    self._expansion_prompt(request, answer, all_sources, assessment, quality_gaps),
-                    "work_product_report.schema.json",
-                )
-                candidate = WorkProductReport.model_validate(expanded.payload)
-                candidate.timeContext = self._time_context(request, evidence)
-                candidate.sources = all_sources
-                candidate.researchTrace = trace
-                candidate = self._validate_work_product(
-                    candidate, assessment.get("questionProfile", {})
-                )
-                candidate_gaps = self._work_product_quality_gaps(
-                    candidate, assessment.get("questionProfile", {})
-                )
-                if len(candidate_gaps) < len(quality_gaps):
-                    answer = candidate
-                else:
-                    answer = initial_answer
-                    answer.qualityNotes.append(
-                        QualityNoteV4(
-                            noteId="QN-EXPAND-NO-GAIN",
-                            type="system",
-                            message="定向修订未补齐明确缺口，已保留首稿",
-                        )
-                    )
-            except (asyncio.TimeoutError, ValidationError):
-                answer.qualityNotes.append(
-                    QualityNoteV4(
-                        noteId="QN-EXPAND",
-                        type="system",
-                        message="定向扩写未能在时间或结构约束内完成，已保留通过校验的首稿",
-                    )
-                )
-
-        if self.runner.settings.codex_verify_enabled and self._work_product_item_count(answer):
-            self.database.update_job(
-                job_id,
-                status=JobStatus.verifying.value,
-                event=self._event("verifying", "正在独立审核报告覆盖范围和全部来源引用"),
-            )
-            try:
-                verification = await self._run_before_deadline(
-                    deadline,
-                    self._work_product_verification_prompt(request, answer, assessment.get("questionProfile", {})),
-                    "work_product_verification.schema.json",
-                )
-                answer = self._apply_work_product_verification(answer, verification.payload)
-                answer.researchTrace.append(
-                    ResearchTraceItem(
-                        round=1,
-                        type="verification",
-                        queries=[],
-                        resultCount=self._work_product_item_count(answer),
-                        decision=str(verification.payload.get("reviewNote", "独立审核完成")),
-                        startedAt=verification.started_at,
-                        finishedAt=verification.finished_at,
-                        durationMs=verification.duration_ms,
-                    )
-                )
-                answer = self._validate_work_product(
-                    answer, assessment.get("questionProfile", {})
-                )
-            except asyncio.TimeoutError:
-                answer.status = "partial"
-                answer.qualityNotes.append(
-                    QualityNoteV4(
-                        noteId="QN-VERIFY-TIMEOUT",
-                        type="system",
-                        message="独立审核达到时间上限；内容已通过确定性来源校验，但未完成模型完整性复核",
-                    )
-                )
+        answer = self._validate_dynamic_table_answer(
+            answer, assessment.get("questionProfile", {})
+        )
 
         self.database.update_job(
             job_id,
             status=JobStatus.completed.value,
             answer=answer.model_dump(mode="json"),
-            event=self._event("completed", "迭代研究、来源校验和报告审核完成"),
+            event=self._event("completed", "迭代研究、来源校验和动态表格答复生成完成"),
         )
 
     @staticmethod
@@ -768,7 +635,7 @@ class QAService:
 
     @staticmethod
     def _local_agent_prompt(request: QuestionRequest, history: list[dict]) -> str:
-        return f"""你是数字产品护照服务商的法规研究Agent。你可以使用本地只读工具SearchLaw和ReadLawSource，并必须在本次任务中完成检索、按需阅读和首稿生成。
+        return f"""你是法规研究Agent。你可以使用本地只读工具SearchLaw和ReadLawSource，并必须在本次任务中完成检索、按需阅读和首稿生成。
 
 研究协议：
 1. 必须先调用SearchLaw；先用用户原问题搜索，结果不准时主动改用法规英文术语、条款号、主体和动作继续搜索，最多4次。
@@ -777,15 +644,16 @@ class QAService:
 4. 本地证据已覆盖主体、动作、对象、时点、范围和关键例外时decision=sufficient。只有缺少会改变核心结论的正式法规、最新实施文件或官方解释时decision=needs_web，并给不超过4条Web查询。其他不足返回unresolved。
 5. 所有本地文件检索权重相同，但必须根据实际原文区分法规、草案、标准、指南和工程建议，不得把标准或建议写成法定义务。
 
-作业包要求：
-- 以正文为主：executiveAnswer用1至3条直接回答；再用一个deep_analysis模块充分说明法规依据、适用条件、限制和实际含义。
-- keyTakeaways可以为空；只有存在与直接结论不重复的关键决策点时才输出，最多3条。
-- contentBlocks最多2个：deep_analysis加一个确实有助于理解的表格、流程或清单。示例、注意事项和限制优先写入正文，不为填充结构拆分模块。
-- 服务商行动仅在职责、API/字段、流程或实施类问题中输出，最多3条；概念和定义类问题不生成通用行动项。
-- regulatory_requirement、official_interpretation和standard_guidance必须填写已读取的sourceRefs；engineering_recommendation允许无来源但必须明确“建议、非强制”。
-- 服务商行动写明owner、priority和deliverable；只有原文直接规定服务商义务时才标direct_service_provider_duty。
-- 已公布尚未生效的来源必须说明生效日期。不得创造法规义务、接口契约、字段或source_id。
-- 不输出隐藏思维过程，只输出Schema要求的结构化结果。
+动态单表答复要求：
+- answer.conclusion用一个不超过300字的完整段落直接回答，不写空泛前言。
+- answer.table只能有一张表；根据当前问题自行生成2至5个有业务含义的columns，不使用“服务商视角”或其他预设视角，也不要生成“依据”列，页面会自动追加。
+- rows最多12行。每行cells必须与columns一一对应，用表格完整回答问题，不把法规原文整段复制进单元格。
+- 入参问题可按使用方、入参、用途、法规是否明确组织；其他问题应自行选择更合适的表头，不能机械套用示例。
+- 只有用户明确询问设计或实施方案时才可输出engineering_recommendation，并明确“建议、非强制”；不得主动增加任何角色视角。
+- regulatory_requirement、official_interpretation和standard_guidance行必须填写已调用ReadLawSource读取的sourceRefs。
+- 已公布尚未生效的来源必须说明生效日期。不得创造法规义务、接口契约、字段、URL或source_id。
+- 核心问题没有证据时，conclusion使用uncertainty并直接说明当前不能确定；不得用模型记忆补齐。
+- 不输出检索过程、审核过程或隐藏思维，只输出Schema要求的结构化结果。
 
 回答时点：{(request.as_of_date or date.today()).isoformat()}
 是否纳入已公布待生效法规：{request.include_future_rules}
@@ -1039,38 +907,29 @@ class QAService:
         return sources
 
     @staticmethod
-    def _report_prompt(
+    def _dynamic_table_answer_prompt(
         request: QuestionRequest,
         sources: list[ReportSource],
         assessment: dict[str, Any],
         rejected_web: list[str],
         history: list[dict],
     ) -> str:
-        return f"""你是数字产品护照服务商的首席法规与解决方案顾问。根据已验证来源，为用户生成正文优先、内容详实的中文法规答复。
+        return f"""你是法规顾问。只依据已验证来源，生成“一句直接结论 + 一张动态业务表”的中文答复。
 
-总体要求：
-1. 严格按questionProfile理解当前问题，完整覆盖用户明确提出的子问题和focusAreas。不设字数目标，以结论有据、解释充分且不重复为准。
-2. executiveAnswer用1至3条直接解决问题。keyTakeaways可以为空；只有存在与executiveAnswer不重复的重要决策点时才输出，最多3条。
-3. contentBlocks最多2个：默认使用一个deep_analysis详实解释法规依据、适用条件、限制、例外和实际含义；只在suggestedBlockType确实帮助理解时增加一个结构化块。示例和注意事项优先融入深度分析，不为凑结构创建模块：
-   - comparison_table：对比概念、主体、对象、时点、功能、关系和易错点。
-   - field_matrix：列出建议字段、业务含义、法规是否直接规定、来源、必填建议、校验和未知项。
-   - responsibility_matrix：列出法定主体、直接义务、服务商角色、责任边界和留痕证据。
-   - process：每一步填写owner、input、output和验收标准。
-   - checklist：给可执行任务、优先级和acceptanceCriteria。
-   - example：给示意字段、伪JSON、URI或数据关系示例，同时说明不能直接当作法定格式。
-   - decision_rules和common_mistakes：写清何时怎么判断、哪些做法不能采用。
-4. 表格块columns给出列名，每个item.cells按相同顺序给单元格；非表格块columns返回空数组。流程和清单项必须使用结构字段，不能把全部内容挤进detail。
-5. 每项内容必须准确分类basis：
+输出规则：
+1. conclusion直接回答用户问题，使用一个不超过300字的完整段落。不要写“综上”“根据检索结果”等空话。
+2. table只能生成一张。根据当前问题动态生成2至5个有业务含义的columns和最多12行rows；每行cells数量必须与columns相同。不要生成“依据”列，页面会固定追加。
+3. 不预设服务商、经济运营商、监管者或其他视角。用户询问哪个主体就回答哪个主体；用户没有指定主体时，根据问题本身选择最自然的表头，不主动增加角色建议。
+4. 表头必须贴合问题：入参问题可使用“使用方、入参、用途、法规是否明确”，概念对比、流程、职责、定义和技术问题应自行选择更准确的列，不能机械套用示例。
+5. 每一行必须准确分类basis：
    - regulatory_requirement用于本地法规资料或已核验Web法规直接规定的内容，必须引用sourceRefs。
    - official_interpretation用于官方解释，必须引用来源。
    - standard_guidance用于原文属于标准或指南的内容，必须引用来源，不能写成法定义务。
-   - engineering_recommendation可以是独立工程方案，允许无来源，但必须明确“建议、非强制”，不得使用“法规要求、法定必须”等措辞。
+   - engineering_recommendation只有用户明确询问设计或实施方案时才可使用，允许无来源，但单元格必须明确“建议、非强制”，不得使用强制措辞。
    - uncertainty只用于无法确认的业务内容。
-6. serviceProviderActions只在职责、字段/API、流程或实施类问题中输出，最多3条，必须写明owner、priority、deliverable。概念和定义类问题应为空。只有条文直接规定服务商义务时使用direct_service_provider_duty；其他主体承担义务但服务商需要守住边界时使用legal_responsibility_boundary；工程行动使用derived_implementation_action。
-7. unresolvedQuestions只放会影响方案选择、合规判断或上线决策的真实缺口，并写明impact和需要补充什么证据。不要放“某段被删除、部分支持、Web失败”等系统审核信息。
-8. future来源必须明确“已公布但尚未生效”和生效日期。不得创造sourceId、法规义务、标准参数、接口契约或Web事实。
-9. 对法规没给出的技术细节，不要反复只写“无法确认”。先说明法规边界，再给明确标注为engineering_recommendation的可配置实现方案、示例和等待后续规范时的调整点。
-10. 不使用会话历史回答作为法规证据；历史只用于理解“他的、这个、继续”等指代。
+6. 只引用下面给出的sourceId；不得创造法规义务、来源编号、标准参数、接口契约、URL或Web事实。无法由来源支持的核心结论必须使用uncertainty并直说当前无法确定。
+7. future来源必须明确“已公布但尚未生效”及生效日期，不能写成当前义务。
+8. 不展示检索过程、审核过程、隐藏思维或多模块报告；历史只用于理解指代，不能作为法规证据。
 
 回答时点：{(request.as_of_date or date.today()).isoformat()}
 用户问题：{request.question}
@@ -1083,50 +942,220 @@ Web校验未通过事项：{json.dumps(rejected_web, ensure_ascii=False)}
 """
 
     @staticmethod
-    def _work_product_item_count(answer: WorkProductReport) -> int:
-        return (
-            len(answer.executiveAnswer)
-            + len(answer.keyTakeaways)
-            + sum(len(block.items) for block in answer.contentBlocks)
-            + len(answer.serviceProviderActions)
-        )
+    def _validate_dynamic_table_answer(
+        answer: DynamicTableLegalAnswer, profile: dict[str, Any] | None = None
+    ) -> DynamicTableLegalAnswer:
+        source_map = {source.sourceId: source for source in answer.sources if source.verified}
+        authoritative = {
+            source_id
+            for source_id, source in source_map.items()
+            if source.origin == "local" or source.authorityKind == "legal_act"
+        }
+        official = {
+            source_id for source_id, source in source_map.items() if source.origin in {"local", "web"}
+        }
+        standard = {
+            source_id for source_id, source in source_map.items() if source.origin == "local"
+        }
+        allow_engineering = profile is None or "implementation" in profile.get("intents", [])
+        seen_ids: set[str] = set()
+        removed_material = False
 
-    def _work_product_quality_gaps(
-        self, answer: WorkProductReport, profile: dict[str, Any]
-    ) -> list[str]:
-        gaps: list[str] = []
-        if answer.status in {"answered", "partial"} and not answer.executiveAnswer:
-            gaps.append("缺少直接回答用户问题的结论")
-        if answer.status in {"answered", "partial"} and not any(
-            block.blockType == "deep_analysis" and block.items
-            for block in answer.contentBlocks
-        ):
-            gaps.append("缺少对法规依据、适用条件和限制的详细分析")
-        return gaps
+        def refs_are_supported(basis: str, refs: list[str]) -> bool:
+            if basis == "regulatory_requirement":
+                return bool(authoritative.intersection(refs))
+            if basis == "official_interpretation":
+                return bool(official.intersection(refs))
+            if basis == "standard_guidance":
+                return bool(standard.intersection(refs))
+            if basis == "engineering_recommendation":
+                return allow_engineering
+            return True
+
+        conclusion = answer.conclusion
+        conclusion.statementId = conclusion.statementId.strip()
+        conclusion.text = conclusion.text.strip()[:300]
+        conclusion.sourceRefs = list(
+            dict.fromkeys(ref for ref in conclusion.sourceRefs if ref in source_map)
+        )
+        valid_conclusion = bool(
+            conclusion.statementId
+            and conclusion.text
+            and refs_are_supported(conclusion.basis, conclusion.sourceRefs)
+        )
+        if valid_conclusion:
+            seen_ids.add(conclusion.statementId)
+        else:
+            removed_material = True
+            answer.conclusion = ReportStatementV4(
+                statementId="C-UNRESOLVED",
+                text="根据当前已读取并校验的法规资料，无法形成可核验的确定性结论。",
+                basis="uncertainty",
+                sourceRefs=[],
+            )
+            answer.status = "unresolved"
+
+        columns: list[str] = []
+        for raw_column in answer.table.columns[:5]:
+            column = str(raw_column).strip()[:24]
+            if column and _normalize(column) not in {_normalize(item) for item in columns}:
+                columns.append(column)
+        if len(columns) < 2:
+            columns = ["事项", "说明"]
+            removed_material = True
+        answer.table.columns = columns
+
+        rows: list[DynamicTableRow] = []
+        seen_content: set[str] = set()
+        for row in answer.table.rows[:12]:
+            row_id = row.rowId.strip()
+            refs = list(dict.fromkeys(ref for ref in row.sourceRefs if ref in source_map))
+            cells = [str(cell).strip()[:500] or "—" for cell in row.cells[: len(columns)]]
+            if len(cells) < len(columns):
+                cells.extend(["—"] * (len(columns) - len(cells)))
+            normalized_content = _normalize(" | ".join(cells))
+            if (
+                not row_id
+                or row_id in seen_ids
+                or not normalized_content
+                or normalized_content in seen_content
+                or not refs_are_supported(row.basis, refs)
+            ):
+                removed_material = True
+                continue
+            seen_ids.add(row_id)
+            seen_content.add(normalized_content)
+            row.rowId = row_id
+            row.cells = cells
+            row.sourceRefs = refs
+            rows.append(row)
+        if not rows:
+            rows = [
+                DynamicTableRow(
+                    rowId="R-UNRESOLVED",
+                    cells=["证据状态", "当前资料不足以形成更多可核验内容"]
+                    + ["—"] * (len(columns) - 2),
+                    basis="uncertainty",
+                    sourceRefs=[],
+                )
+            ]
+        answer.table.rows = rows
+
+        used = set(answer.conclusion.sourceRefs)
+        used.update(ref for row in rows for ref in row.sourceRefs)
+        answer.sources = [source for source in answer.sources if source.sourceId in used]
+        supported_rows = any(row.sourceRefs for row in rows)
+        if answer.conclusion.basis == "uncertainty":
+            answer.status = "partial" if supported_rows else "unresolved"
+        elif removed_material and answer.status == "answered":
+            answer.status = "partial"
+        return answer
 
     @staticmethod
-    def _expansion_prompt(
-        request: QuestionRequest,
-        answer: WorkProductReport,
-        sources: list[ReportSource],
-        assessment: dict[str, Any],
-        quality_gaps: list[str],
-    ) -> str:
-        return f"""你是法规答复的高级编辑。首稿已经通过基础来源校验，但遗漏了直接结论或详细分析。请输出一份完整替代稿，不是只输出新增部分。
+    def _validate_concise_answer(
+        answer: ConciseLegalAnswer, profile: dict[str, Any] | None = None
+    ) -> ConciseLegalAnswer:
+        source_map = {source.sourceId: source for source in answer.sources if source.verified}
+        authoritative = {
+            source_id
+            for source_id, source in source_map.items()
+            if source.origin == "local" or source.authorityKind == "legal_act"
+        }
+        official = {
+            source_id
+            for source_id, source in source_map.items()
+            if source.origin in {"local", "web"}
+        }
+        standard = {
+            source_id for source_id, source in source_map.items() if source.origin == "local"
+        }
+        seen: set[str] = set()
+        removed_material = False
 
-修订要求：
-1. 保留首稿中正确、具体、有来源的内容，针对QUALITY_GAPS逐项补足。
-2. 保持正文优先：1至3条直接结论、一个deep_analysis，最多再加一个有必要的表格或流程。不要为字数、模块数或形式扩写。
-3. 法律要求、官方解释、本地标准和工程建议继续严格分层。工程建议必须明确为“建议、非强制”，但应给出字段、负责人、输入输出、验收条件或示例等实质内容。
-4. unresolvedQuestions只放影响业务决策的真实问题，不得写内部审核过程。
-5. 不得创造来源编号或法规事实。
+        def validate(item: ReportStatementV4, *, max_length: int) -> ReportStatementV4 | None:
+            nonlocal removed_material
+            item_id = item.statementId.strip()
+            if not item_id or item_id in seen:
+                removed_material = True
+                return None
+            seen.add(item_id)
+            item.statementId = item_id
+            item.text = item.text.strip()[:max_length]
+            item.sourceRefs = list(dict.fromkeys(ref for ref in item.sourceRefs if ref in source_map))
+            if not item.text:
+                removed_material = True
+                return None
+            supported = True
+            if item.basis == "regulatory_requirement":
+                supported = bool(authoritative.intersection(item.sourceRefs))
+            elif item.basis == "official_interpretation":
+                supported = bool(official.intersection(item.sourceRefs))
+            elif item.basis == "standard_guidance":
+                supported = bool(standard.intersection(item.sourceRefs))
+            if not supported:
+                removed_material = True
+                return None
+            return item
 
-用户问题：{request.question}
-问题画像：{json.dumps(assessment.get('questionProfile', {}), ensure_ascii=False)}
-QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
-首稿：{json.dumps(answer.model_dump(mode='json', exclude={'sources', 'researchTrace', 'qualityNotes', 'timeContext'}), ensure_ascii=False)}
-已验证来源：{json.dumps([item.model_dump(mode='json') for item in sources], ensure_ascii=False)}
-"""
+        conclusion = validate(answer.conclusion, max_length=300)
+        if conclusion is None:
+            answer.conclusion = ReportStatementV4(
+                statementId="C-UNRESOLVED",
+                text="根据当前已读取并校验的法规资料，无法形成可核验的确定性结论。",
+                basis="uncertainty",
+                sourceRefs=[],
+            )
+            answer.status = "unresolved"
+        else:
+            answer.conclusion = conclusion
+
+        occupied_text = {_normalize(answer.conclusion.text)}
+        explanations: list[ReportStatementV4] = []
+        for item in answer.explanations:
+            accepted = validate(item, max_length=300)
+            if accepted is None:
+                continue
+            normalized = _normalize(accepted.text)
+            if not normalized or normalized in occupied_text:
+                removed_material = True
+                continue
+            occupied_text.add(normalized)
+            explanations.append(accepted)
+            if len(explanations) == 3:
+                break
+        answer.explanations = explanations
+
+        provider_intents = {"technical_design", "process", "responsibility", "implementation"}
+        allow_advice = profile is None or bool(
+            provider_intents.intersection(profile.get("intents", []))
+        )
+        advice: list[ReportStatementV4] = []
+        if allow_advice:
+            for item in answer.providerAdvice:
+                accepted = validate(item, max_length=200)
+                if accepted is None:
+                    continue
+                normalized = _normalize(accepted.text)
+                if not normalized or normalized in occupied_text:
+                    removed_material = True
+                    continue
+                occupied_text.add(normalized)
+                advice.append(accepted)
+                if len(advice) == 2:
+                    break
+        answer.providerAdvice = advice
+
+        used = {
+            ref
+            for item in [answer.conclusion, *answer.explanations, *answer.providerAdvice]
+            for ref in item.sourceRefs
+        }
+        answer.sources = [source for source in answer.sources if source.sourceId in used]
+        if answer.conclusion.basis == "uncertainty":
+            answer.status = "partial" if any(item.sourceRefs for item in explanations) else "unresolved"
+        elif removed_material and answer.status == "answered":
+            answer.status = "partial"
+        return answer
 
     @staticmethod
     def _validate_work_product(
@@ -1304,92 +1333,6 @@ QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
         return answer
 
     @staticmethod
-    def _work_product_verification_prompt(
-        request: QuestionRequest, answer: WorkProductReport, profile: dict[str, Any]
-    ) -> str:
-        return f"""你是独立的法规准确性和落地价值审核员。只依据报告附带的已验证来源，不使用网络或模型记忆。
-
-审核规则：
-1. regulatory_requirement必须由引用来源直接支持，检查主体、动作、时点、范围和例外；不支持则列入unsupportedItemIds。
-2. 所有本地文件具有相同证据资格；仍须根据引用原文判断内容属于法规要求、标准指导还是工程建议。
-3. engineering_recommendation允许没有来源，不要因为它不是法规原文而删除；只检查是否明确为建议、是否与法规冲突、是否误用强制措辞。
-4. 只有确实无法成立的内容才删除。可纠正的年份、主体、范围或措辞错误必须写入revisions并给出完整替代文本；部分支持内容优先修订或降级分类，避免把有价值的实施方案机械删掉，也不能让已发现的事实错误留在正文。
-5. 检查直接结论和详细分析是否回答了用户明确提出的所有子问题。只有遗漏实质问题时才写入missingDeliverables；不得因字数短、模块少、没有表格、清单、示例或服务商行动而判定不合格。
-6. 只输出简短审核结果，不输出隐藏思维过程。
-
-用户问题：{request.question}
-问题画像：{json.dumps(profile, ensure_ascii=False)}
-法规答复及来源：{json.dumps(answer.model_dump(mode='json'), ensure_ascii=False)}
-"""
-
-    @staticmethod
-    def _apply_work_product_verification(
-        answer: WorkProductReport, verification: dict[str, Any]
-    ) -> WorkProductReport:
-        unsupported = {str(item) for item in verification.get("unsupportedItemIds", [])}
-        partial = {str(item) for item in verification.get("partialItemIds", [])}
-        reclassifications = {
-            str(item.get("itemId")): item
-            for item in verification.get("reclassifications", [])
-            if isinstance(item, dict) and item.get("itemId")
-        }
-        revisions = {
-            str(item.get("itemId")): item
-            for item in verification.get("revisions", [])
-            if isinstance(item, dict) and item.get("itemId") and item.get("revisedText")
-        }
-        note_index = len(answer.qualityNotes)
-
-        def add_note(kind: str, message: str, related_id: str | None = None) -> None:
-            nonlocal note_index
-            note_index += 1
-            answer.qualityNotes.append(
-                QualityNoteV4(
-                    noteId=f"QV-{note_index:03d}",
-                    type=kind,
-                    message=message,
-                    relatedId=related_id,
-                )
-            )
-
-        def apply(item: Any, item_id: str) -> bool:
-            if item_id in unsupported:
-                add_note("removed", "独立审核认定内容缺少支持，已移除", item_id)
-                return False
-            change = reclassifications.get(item_id)
-            if change:
-                item.basis = change.get("newBasis", item.basis)
-                add_note("partial_support", f"依据性质已调整：{change.get('reason', '')}", item_id)
-            revision = revisions.get(item_id)
-            if revision:
-                revised_text = str(revision.get("revisedText", "")).strip()
-                if hasattr(item, "text"):
-                    item.text = revised_text
-                elif hasattr(item, "detail"):
-                    item.detail = revised_text
-                add_note("partial_support", f"独立审核已纠正文案：{revision.get('reason', '')}", item_id)
-            if item_id in partial:
-                add_note("partial_support", "独立审核认定该项仅获部分支持，已保留并标记", item_id)
-            return True
-
-        answer.executiveAnswer = [item for item in answer.executiveAnswer if apply(item, item.statementId)]
-        answer.keyTakeaways = [item for item in answer.keyTakeaways if apply(item, item.statementId)]
-        for block in answer.contentBlocks:
-            block.items = [item for item in block.items if apply(item, item.itemId)]
-        answer.contentBlocks = [block for block in answer.contentBlocks if block.items]
-        answer.serviceProviderActions = [
-            item for item in answer.serviceProviderActions if apply(item, item.actionId)
-        ]
-        for missing in verification.get("missingDeliverables", []):
-            add_note("coverage", f"回答仍缺少交付物：{missing}")
-        overall = verification.get("overall")
-        if overall == "fail":
-            answer.status = "unresolved"
-        elif overall == "partial" and answer.status == "answered":
-            answer.status = "partial"
-        return answer
-
-    @staticmethod
     def _report_paragraphs(answer: ResearchReport) -> list[ReportParagraph]:
         return [*answer.executiveSummary, *(p for section in answer.analysisSections for p in section.paragraphs)]
 
@@ -1448,50 +1391,6 @@ QUALITY_GAPS：{json.dumps(quality_gaps, ensure_ascii=False)}
         if not substantive:
             answer.status = "unresolved"
         elif removed or (answer.uncertainties and answer.status == "answered"):
-            answer.status = "partial"
-        return answer
-
-    @staticmethod
-    def _report_verification_prompt(request: QuestionRequest, answer: ResearchReport) -> str:
-        return f"""你是独立法规报告审核员。只根据报告中附带的已验证来源核查，不使用网络或模型记忆。
-
-逐段检查：
-- sourceRefs是否真正支持整段内容，是否存在主体错置、时间效力错误、过度推断或把官方说明当成法规。
-- 是否完整回答用户问题的所有重要组成部分。
-- 是否把经济运营商义务错误表述为服务商直接法定义务。direct_service_provider_duty必须有明确以服务商为义务主体的条文；其他主体承担的义务必须分类为legal_responsibility_boundary，否则列入unsupportedServiceItemIds。
-- implementation_advice不作为法律事实审核，但若伪装成法定义务应判不支持。
-unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获部分支持段落；unsupportedServiceItemIds列出主体错置或证据不支持的服务商条目；coverageGaps只写影响答案完整性的缺口。
-只输出简短审核结论，不输出隐藏思维过程。
-
-用户问题：{request.question}
-报告及来源：
-{json.dumps(answer.model_dump(mode='json'), ensure_ascii=False)}
-"""
-
-    @staticmethod
-    def _apply_report_verification(answer: ResearchReport, verification: dict[str, Any]) -> ResearchReport:
-        unsupported = {str(item) for item in verification.get("unsupportedParagraphIds", [])}
-        partial = {str(item) for item in verification.get("partialParagraphIds", [])}
-        unsupported_service = {str(item) for item in verification.get("unsupportedServiceItemIds", [])}
-        answer.executiveSummary = [p for p in answer.executiveSummary if p.paragraphId not in unsupported]
-        for section in answer.analysisSections:
-            section.paragraphs = [p for p in section.paragraphs if p.paragraphId not in unsupported]
-        answer.analysisSections = [section for section in answer.analysisSections if section.paragraphs]
-        answer.serviceProviderImpact = [
-            item for item in answer.serviceProviderImpact if item.itemId not in unsupported_service
-        ]
-        for paragraph_id in sorted(unsupported):
-            answer.uncertainties.append(f"独立审核移除了证据不支持的段落{paragraph_id}")
-        for paragraph_id in sorted(partial):
-            answer.uncertainties.append(f"段落{paragraph_id}仅获得部分证据支持")
-        for item_id in sorted(unsupported_service):
-            answer.uncertainties.append(f"独立审核移除了证据不支持的服务商条目{item_id}")
-        for gap in verification.get("coverageGaps", []):
-            answer.uncertainties.append(f"回答覆盖仍不完整：{gap}")
-        answer.uncertainties = list(dict.fromkeys(answer.uncertainties))
-        if verification.get("overall") == "fail":
-            answer.status = "unresolved"
-        elif verification.get("overall") != "pass" or verification.get("coverageStatus") == "incomplete":
             answer.status = "partial"
         return answer
 
@@ -1560,7 +1459,18 @@ unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获�
             report_summary = answer.get("executiveSummary") if isinstance(answer.get("executiveSummary"), list) else []
             work_summary = answer.get("executiveAnswer") if isinstance(answer.get("executiveAnswer"), list) else []
             work_takeaways = answer.get("keyTakeaways") if isinstance(answer.get("keyTakeaways"), list) else []
+            concise_conclusion = answer.get("conclusion") if isinstance(answer.get("conclusion"), dict) else {}
+            concise_explanations = answer.get("explanations") if isinstance(answer.get("explanations"), list) else []
             summary = str(answer.get("summary", ""))
+            if not summary and concise_conclusion.get("text"):
+                summary = str(concise_conclusion.get("text", ""))
+                explanation_text = [
+                    str(statement.get("text", ""))
+                    for statement in concise_explanations[:3]
+                    if isinstance(statement, dict) and statement.get("text")
+                ]
+                if explanation_text:
+                    summary = "\n".join([summary, *explanation_text])
             if not summary and report_summary:
                 summary = "\n".join(
                     str(paragraph.get("text", ""))
@@ -1589,30 +1499,6 @@ unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获�
                 }
             )
         return payload
-
-    @staticmethod
-    def _verification_prompt(answer: LegalAnswer, evidence: list) -> str:
-        return f"""你是独立法规证据审核员和答案完整性复核员。逐项检查论点，并检查答案是否遗漏证据中直接回答用户问题的重要内容。
-
-审核规则：
-- 只依据给定证据，不使用外部知识。
-- 证据仅部分覆盖论点时判partially_supported。
-- 推断超出条文、主体错置、时间或适用范围错误时判unsupported或conflict。
-- 不评价implementationAdvice，只审核claims。
-- revisedSummary应保留正确内容，并纠正不完整、主体错置或未标注未来生效的问题。
-- 对证据中存在、但初稿遗漏的重要结论，写入supplementalClaims；引用规则与初稿完全相同。
-- 特别检查是否混淆“API”“通过API完成的动作”“普通平台能力”和“法规未定义的技术契约”。
-- 比较相似标识符时，检查是否分别交代正式术语、识别对象、产生主体、法律功能和非正式叫法；不得把电池unique identifier、所谓battery passport unique identifier和registry unique registration identifier混为一谈。
-- future证据只能支持已公布待生效规则，不能表述为当前生效义务。
-- 没有遗漏时coverageStatus为complete、supplementalClaims和coverageGaps为空。
-
-<ANSWER>
-{json.dumps(answer.model_dump(mode='json'), ensure_ascii=False)}
-</ANSWER>
-<EVIDENCE>
-{json.dumps([item.model_dump(mode='json') for item in evidence], ensure_ascii=False)}
-</EVIDENCE>
-"""
 
     @staticmethod
     def _deterministic_validate(answer: LegalAnswer, evidence: list) -> LegalAnswer:
@@ -1653,55 +1539,6 @@ unsupportedParagraphIds列出应删除段落；partialParagraphIds列出仅获�
         if not valid_claims:
             answer.status = "insufficient_evidence"
         elif answer.missingEvidence:
-            answer.status = "partial"
-        return answer
-
-    @staticmethod
-    def _apply_verification(answer: LegalAnswer, verification: dict[str, Any]) -> LegalAnswer:
-        verdicts = {
-            item.get("claimId"): item
-            for item in verification.get("results", [])
-            if isinstance(item, dict) and item.get("claimId")
-        }
-        accepted = []
-        for claim in answer.claims:
-            result = verdicts.get(claim.claimId)
-            if not result:
-                answer.missingEvidence.append(f"论点{claim.claimId}未获得独立审核结果")
-                continue
-            verdict = result.get("verdict")
-            if verdict == "supported":
-                claim.supportStatus = "supported"
-                accepted.append(claim)
-            elif verdict == "partially_supported":
-                claim.supportStatus = "partially_supported"
-                accepted.append(claim)
-                answer.missingEvidence.append(f"论点{claim.claimId}仅获部分支持：{result.get('reason', '')}")
-            else:
-                answer.missingEvidence.append(f"论点{claim.claimId}被审核阻断：{result.get('reason', '')}")
-        answer.claims = accepted
-        existing_ids = {claim.claimId for claim in accepted}
-        for payload in verification.get("supplementalClaims", []):
-            try:
-                claim = Claim.model_validate(payload)
-            except ValidationError:
-                answer.missingEvidence.append("完整性复核生成的补充论点未通过Schema校验")
-                continue
-            if claim.claimId in existing_ids:
-                answer.missingEvidence.append(f"完整性复核返回重复论点编号：{claim.claimId}")
-                continue
-            existing_ids.add(claim.claimId)
-            accepted.append(claim)
-        revised_summary = str(verification.get("revisedSummary", "")).strip()
-        if revised_summary:
-            answer.summary = revised_summary
-        if verification.get("coverageStatus") == "incomplete" and not verification.get("supplementalClaims"):
-            for gap in verification.get("coverageGaps", []):
-                answer.missingEvidence.append(f"回答覆盖仍不完整：{gap}")
-        answer.missingEvidence = list(dict.fromkeys(answer.missingEvidence))
-        if not accepted:
-            answer.status = "insufficient_evidence"
-        elif answer.missingEvidence or verification.get("overall") != "pass":
             answer.status = "partial"
         return answer
 

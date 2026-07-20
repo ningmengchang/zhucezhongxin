@@ -1,12 +1,10 @@
-from pathlib import Path
-
-from app.codex_runner import CodexRunner
-from app.config import Settings
 from app.models import (
+    ConciseLegalAnswer,
+    DynamicAnswerTable,
+    DynamicTableLegalAnswer,
+    DynamicTableRow,
     ReportSource,
     ReportStatementV4,
-    WorkProductBlock,
-    WorkProductItem,
     WorkProductReport,
 )
 from app.qa_service import QAService
@@ -25,7 +23,7 @@ def source() -> ReportSource:
     )
 
 
-def test_engineering_recommendation_without_source_is_preserved():
+def test_historical_v4_engineering_recommendation_without_source_is_preserved():
     answer = WorkProductReport(
         status="answered",
         answerTitle="字段建议",
@@ -41,145 +39,188 @@ def test_engineering_recommendation_without_source_is_preserved():
     result = QAService._validate_work_product(answer)
     assert result.executiveAnswer
     assert result.status == "answered"
-    assert result.qualityNotes == []
 
 
-def test_any_local_source_can_support_regulatory_requirement():
-    local_source = source()
-    local_source.authorityKind = "local_supplement"
-    answer = WorkProductReport(
+def test_concise_answer_keeps_supported_conclusion():
+    a_source = source()
+    answer = ConciseLegalAnswer(
         status="answered",
-        answerTitle="错误法规结论",
-        executiveAnswer=[
-            ReportStatementV4(
-                statementId="E-1",
-                text="这是法定要求。",
-                basis="regulatory_requirement",
-                sourceRefs=[local_source.sourceId],
-            )
-        ],
-        sources=[local_source],
+        title="登记规则",
+        conclusion=ReportStatementV4(
+            statementId="C-1",
+            text="经济运营商应上传唯一标识符。",
+            basis="regulatory_requirement",
+            sourceRefs=[a_source.sourceId],
+        ),
+        sources=[a_source],
     )
-    result = QAService._validate_work_product(answer)
-    assert result.executiveAnswer
+    result = QAService._validate_concise_answer(answer, {"intents": ["legal_explanation"]})
     assert result.status == "answered"
-    assert result.qualityNotes == []
-    assert result.unresolvedQuestions == []
+    assert result.conclusion.statementId == "C-1"
+    assert result.sources == [a_source]
 
 
-def test_quality_gate_does_not_require_length_modules_or_provider_actions(tmp_path: Path):
-    runner = CodexRunner(Settings(data_dir=tmp_path))
-    service = QAService(None, None, runner, 1)  # type: ignore[arg-type]
-    answer = WorkProductReport(
+def test_concise_answer_replaces_unsupported_legal_conclusion():
+    answer = ConciseLegalAnswer(
         status="answered",
-        answerTitle="编码规则",
-        executiveAnswer=[
+        title="无来源结论",
+        conclusion=ReportStatementV4(
+            statementId="C-1",
+            text="这是法规直接要求。",
+            basis="regulatory_requirement",
+            sourceRefs=["MISSING"],
+        ),
+    )
+    result = QAService._validate_concise_answer(answer)
+    assert result.status == "unresolved"
+    assert result.conclusion.statementId == "C-UNRESOLVED"
+    assert result.conclusion.basis == "uncertainty"
+
+
+def test_concise_answer_deduplicates_and_limits_explanations():
+    a_source = source()
+    answer = ConciseLegalAnswer(
+        status="answered",
+        title="简明答复",
+        conclusion=ReportStatementV4(
+            statementId="C-1",
+            text="经济运营商应上传唯一标识符。",
+            basis="regulatory_requirement",
+            sourceRefs=[a_source.sourceId],
+        ),
+        explanations=[
             ReportStatementV4(
-                statementId="E-1",
-                text="法规要求使用唯一标识符。",
+                statementId=f"E-{index}",
+                text="经济运营商应上传唯一标识符。" if index == 0 else f"补充说明{index}",
+                basis="regulatory_requirement",
+                sourceRefs=[a_source.sourceId],
+            )
+            for index in range(5)
+        ],
+        sources=[a_source],
+    )
+    result = QAService._validate_concise_answer(answer)
+    assert [item.text for item in result.explanations] == ["补充说明1", "补充说明2", "补充说明3"]
+    assert result.status == "partial"
+
+
+def test_provider_advice_only_kept_for_relevant_question_intent():
+    answer = ConciseLegalAnswer(
+        status="answered",
+        title="字段设计",
+        conclusion=ReportStatementV4(
+            statementId="C-1",
+            text="法规没有规定内部数据库字段名称。",
+            basis="engineering_recommendation",
+        ),
+        providerAdvice=[
+            ReportStatementV4(
+                statementId="A-1",
+                text="建议、非强制：分别保存产品标识和登记标识。",
                 basis="engineering_recommendation",
-                sourceRefs=[],
-            )
-        ],
-        contentBlocks=[
-            WorkProductBlock(
-                blockId="B-1",
-                blockType="deep_analysis",
-                title="详细分析",
-                items=[
-                    WorkProductItem(
-                        itemId="I-1",
-                        detail="法规只规定唯一性，具体字段格式需由实施方案确定。",
-                        basis="engineering_recommendation",
-                    )
-                ],
             )
         ],
     )
-    gaps = service._work_product_quality_gaps(
-        answer,
-        {
-            "complexity": "complex",
-            "intents": ["technical_design"],
-            "suggestedBlockType": "field_matrix",
-        },
+    concept_result = QAService._validate_concise_answer(
+        answer.model_copy(deep=True), {"intents": ["legal_explanation"]}
     )
-    assert gaps == []
+    technical_result = QAService._validate_concise_answer(
+        answer.model_copy(deep=True), {"intents": ["technical_design"]}
+    )
+    assert concept_result.providerAdvice == []
+    assert len(technical_result.providerAdvice) == 1
 
 
-def test_quality_gate_only_flags_missing_direct_answer_or_analysis(tmp_path: Path):
-    runner = CodexRunner(Settings(data_dir=tmp_path))
-    service = QAService(None, None, runner, 1)  # type: ignore[arg-type]
-    answer = WorkProductReport(status="answered", answerTitle="未完成")
-    gaps = service._work_product_quality_gaps(answer, {"complexity": "simple"})
-    assert gaps == [
-        "缺少直接回答用户问题的结论",
-        "缺少对法规依据、适用条件和限制的详细分析",
-    ]
-
-
-def test_verifier_reclassifies_instead_of_deleting_useful_item():
+def test_dynamic_table_keeps_supported_rows_and_normalizes_cells():
     a_source = source()
-    answer = WorkProductReport(
+    answer = DynamicTableLegalAnswer(
         status="answered",
-        answerTitle="实施建议",
-        executiveAnswer=[
-            ReportStatementV4(
-                statementId="E-1",
-                text="建议保留标准版本字段。",
-                basis="regulatory_requirement",
-                sourceRefs=[a_source.sourceId],
-            )
-        ],
+        title="登记入参",
+        conclusion=ReportStatementV4(
+            statementId="C-1",
+            text="经济运营商应上传唯一标识符。",
+            basis="regulatory_requirement",
+            sourceRefs=[a_source.sourceId],
+        ),
+        table=DynamicAnswerTable(
+            columns=["主体", "入参", "用途"],
+            rows=[
+                DynamicTableRow(
+                    rowId="R-1",
+                    cells=["经济运营商", "唯一标识符"],
+                    basis="regulatory_requirement",
+                    sourceRefs=[a_source.sourceId],
+                )
+            ],
+        ),
         sources=[a_source],
     )
-    result = QAService._apply_work_product_verification(
-        answer,
-        {
-            "overall": "partial",
-            "unsupportedItemIds": [],
-            "partialItemIds": ["E-1"],
-            "reclassifications": [
-                {"itemId": "E-1", "newBasis": "engineering_recommendation", "reason": "法规未规定字段"}
-            ],
-            "missingDeliverables": ["字段示例"],
-        },
+    result = QAService._validate_dynamic_table_answer(
+        answer, {"intents": ["technical_design"]}
     )
-    assert result.executiveAnswer[0].basis == "engineering_recommendation"
-    assert len(result.qualityNotes) == 3
-    assert result.unresolvedQuestions == []
+    assert result.schemaVersion == "6.0"
+    assert result.table.rows[0].cells == ["经济运营商", "唯一标识符", "—"]
+    assert result.sources == [a_source]
 
 
-def test_verifier_can_correct_factual_wording_in_place():
+def test_dynamic_table_removes_unsupported_regulatory_row():
     a_source = source()
-    answer = WorkProductReport(
+    answer = DynamicTableLegalAnswer(
         status="answered",
-        answerTitle="标准年份",
-        executiveAnswer=[
-            ReportStatementV4(
-                statementId="E-1",
-                text="ISO/IEC 15459-2:2014适用。",
-                basis="regulatory_requirement",
-                sourceRefs=[a_source.sourceId],
-            )
-        ],
+        title="无依据行",
+        conclusion=ReportStatementV4(
+            statementId="C-1",
+            text="经济运营商应上传唯一标识符。",
+            basis="regulatory_requirement",
+            sourceRefs=[a_source.sourceId],
+        ),
+        table=DynamicAnswerTable(
+            columns=["事项", "要求"],
+            rows=[
+                DynamicTableRow(
+                    rowId="R-1",
+                    cells=["接口", "法规规定固定字段名"],
+                    basis="regulatory_requirement",
+                    sourceRefs=["MISSING"],
+                )
+            ],
+        ),
         sources=[a_source],
     )
-    result = QAService._apply_work_product_verification(
-        answer,
-        {
-            "overall": "partial",
-            "unsupportedItemIds": [],
-            "partialItemIds": [],
-            "reclassifications": [],
-            "revisions": [
-                {"itemId": "E-1", "revisedText": "ISO/IEC 15459-2:2015适用。", "reason": "更正年份"}
+    result = QAService._validate_dynamic_table_answer(answer)
+    assert result.status == "partial"
+    assert result.table.rows[0].basis == "uncertainty"
+
+
+def test_dynamic_table_only_allows_engineering_when_implementation_is_asked():
+    answer = DynamicTableLegalAnswer(
+        status="answered",
+        title="字段设计",
+        conclusion=ReportStatementV4(
+            statementId="C-1",
+            text="建议、非强制：分别保存两个标识符。",
+            basis="engineering_recommendation",
+        ),
+        table=DynamicAnswerTable(
+            columns=["字段", "设计"],
+            rows=[
+                DynamicTableRow(
+                    rowId="R-1",
+                    cells=["identifier", "建议、非强制：分字段保存"],
+                    basis="engineering_recommendation",
+                )
             ],
-            "missingDeliverables": [],
-        },
+        ),
     )
-    assert result.executiveAnswer[0].text == "ISO/IEC 15459-2:2015适用。"
-    assert "纠正文案" in result.qualityNotes[0].message
+    blocked = QAService._validate_dynamic_table_answer(
+        answer.model_copy(deep=True), {"intents": ["technical_design"]}
+    )
+    allowed = QAService._validate_dynamic_table_answer(
+        answer.model_copy(deep=True), {"intents": ["implementation"]}
+    )
+    assert blocked.status == "unresolved"
+    assert allowed.status == "answered"
+    assert allowed.table.rows[0].rowId == "R-1"
 
 
 def test_encoding_question_profile_suggests_only_one_useful_block():

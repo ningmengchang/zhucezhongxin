@@ -35,6 +35,8 @@ const statusLabel = computed(() => ({
 }[answer.value?.status] || '等待提问'))
 const isReport = computed(() => answer.value?.schemaVersion === '3.0')
 const isWorkProduct = computed(() => answer.value?.schemaVersion === '4.0')
+const isConcise = computed(() => answer.value?.schemaVersion === '5.0')
+const isDynamicTable = computed(() => answer.value?.schemaVersion === '6.0')
 
 async function api(path, options = {}) {
   const isForm = options.body instanceof FormData
@@ -278,7 +280,7 @@ onMounted(async () => {
               </div>
             </div>
             <button class="primary" :disabled="busy" @click="ask">
-              {{ busy ? '正在检索与核验…' : '开始法规检索' }}
+              {{ busy ? '正在检索法规原文…' : '开始法规检索' }}
             </button>
           </div>
           <div v-if="job?.events?.length" class="progress-strip">
@@ -291,7 +293,7 @@ onMounted(async () => {
         <div v-if="!answer && !busy" class="empty-state">
           <div class="empty-icon">§</div>
           <h2>从本地法规资料中寻找答案</h2>
-          <p>助手会循环检索本地源文件并评估证据覆盖；本地仍有关键缺口时，仅查询欧盟官方网站，最终生成正文优先的详实法规答复。</p>
+          <p>助手先搜索本地源文件并按需读取法规原文；仅在关键法规缺口无法由本地资料解决时查询欧盟官方网站，最后给出简明且可核验的答复。</p>
           <div class="rule-grid">
             <article><b>全部文件同权重</b><span>不再区分等级或审核状态</span></article>
             <article><b>逐条引用原文</b><span>结论可回看对应文件、条款和页码</span></article>
@@ -301,7 +303,150 @@ onMounted(async () => {
 
         <div v-if="answer" class="answer-layout">
           <div class="answer-main">
-            <template v-if="isWorkProduct">
+            <template v-if="isDynamicTable">
+              <div class="answer-heading concise-heading dynamic-heading">
+                <div class="report-heading-row">
+                  <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
+                  <span class="report-version">动态表格答复 · v6.0</span>
+                </div>
+                <h2>{{ answer.title }}</h2>
+                <article class="concise-conclusion">
+                  <p>{{ answer.conclusion.text }}</p>
+                  <div class="paragraph-meta">
+                    <span class="basis-tag" :class="`basis-${answer.conclusion.basis}`">{{ basisLabel(answer.conclusion.basis) }}</span>
+                    <button v-for="source in sourcesFor(answer.conclusion.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ sourceLabel(source) }} · {{ source.article || source.sourceId }}</button>
+                  </div>
+                </article>
+                <div v-if="answer.timeContext" class="time-basis concise-time">
+                  <b>法规时点：{{ answer.timeContext.asOfDate }}</b>
+                  <span>{{ answer.timeContext.includesFutureRules ? '同时识别已公布待生效规则' : '仅使用当日有效规则' }}</span>
+                </div>
+              </div>
+
+              <section class="answer-section dynamic-table-section">
+                <div class="dynamic-table-wrap">
+                  <table class="dynamic-answer-table">
+                    <thead>
+                      <tr><th v-for="column in answer.table.columns" :key="column">{{ column }}</th><th class="basis-column">依据</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="row in answer.table.rows" :key="row.rowId">
+                        <td v-for="(cell, index) in row.cells" :key="index">{{ cell || '—' }}</td>
+                        <td class="basis-cell">
+                          <span class="basis-tag" :class="`basis-${row.basis}`">{{ basisLabel(row.basis) }}</span>
+                          <div class="dynamic-source-list">
+                            <button v-for="source in sourcesFor(row.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ source.article || source.sourceId }}</button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section v-if="answer.timeContext?.notices?.length" class="future-notice concise-notices">
+                <h2>法规时点提示</h2>
+                <article v-for="notice in answer.timeContext.notices" :key="notice.documentId">
+                  <span :class="applicabilityClass(notice.applicabilityStatus)">{{ applicabilityLabel(notice.applicabilityStatus) }}</span>
+                  <div><b>{{ notice.documentTitle }}</b><p>{{ notice.note }}</p></div>
+                </article>
+              </section>
+
+              <section class="answer-section concise-basis">
+                <details>
+                  <summary>法规依据与检索过程（{{ answer.sources?.length || 0 }}个来源）</summary>
+                  <div class="concise-source-list">
+                    <button v-for="source in answer.sources" :key="source.sourceId" class="directory-source" @click="showReportSource(source)">
+                      <span class="source-origin" :class="`origin-${source.origin}`">{{ sourceLabel(source) }}</span>
+                      <span><b>{{ source.title }}</b><small>{{ source.article || '条款未识别' }}{{ source.page ? ` · 第${source.page}页` : '' }}</small></span>
+                    </button>
+                    <p v-if="!answer.sources?.length" class="muted">当前结论未使用可核验来源。</p>
+                  </div>
+                  <div v-if="answer.researchTrace?.length" class="trace-list concise-trace">
+                    <article v-for="(item, index) in answer.researchTrace" :key="index">
+                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : `本地搜索${item.round}`) : '官方Web搜索' }}</span>
+                      <div><b>{{ item.decision }}</b><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div>
+                    </article>
+                  </div>
+                </details>
+              </section>
+            </template>
+
+            <template v-else-if="isConcise">
+              <div class="answer-heading concise-heading">
+                <div class="report-heading-row">
+                  <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
+                  <span class="report-version">简明法规答复 · v5.0</span>
+                </div>
+                <h2>{{ answer.title }}</h2>
+                <article class="concise-conclusion">
+                  <p>{{ answer.conclusion.text }}</p>
+                  <div class="paragraph-meta">
+                    <span class="basis-tag" :class="`basis-${answer.conclusion.basis}`">{{ basisLabel(answer.conclusion.basis) }}</span>
+                    <button v-for="source in sourcesFor(answer.conclusion.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ sourceLabel(source) }} · {{ source.article || source.sourceId }}</button>
+                  </div>
+                </article>
+                <div v-if="answer.timeContext" class="time-basis concise-time">
+                  <b>法规时点：{{ answer.timeContext.asOfDate }}</b>
+                  <span>{{ answer.timeContext.includesFutureRules ? '同时识别已公布待生效规则' : '仅使用当日有效规则' }}</span>
+                </div>
+              </div>
+
+              <section v-if="answer.explanations?.length" class="answer-section concise-explanations">
+                <h2>说明</h2>
+                <article v-for="(item, index) in answer.explanations" :key="item.statementId">
+                  <span class="concise-index">{{ index + 1 }}</span>
+                  <div>
+                    <p>{{ item.text }}</p>
+                    <div class="paragraph-meta">
+                      <span class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</span>
+                      <button v-for="source in sourcesFor(item.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ sourceLabel(source) }} · {{ source.article || source.sourceId }}</button>
+                    </div>
+                  </div>
+                </article>
+              </section>
+
+              <section v-if="answer.providerAdvice?.length" class="answer-section concise-provider">
+                <p class="section-index">服务商视角</p>
+                <h2>建议与责任边界</h2>
+                <article v-for="item in answer.providerAdvice" :key="item.statementId">
+                  <p>{{ item.text }}</p>
+                  <div class="paragraph-meta">
+                    <span class="basis-tag" :class="`basis-${item.basis}`">{{ basisLabel(item.basis) }}</span>
+                    <button v-for="source in sourcesFor(item.sourceRefs)" :key="source.sourceId" class="source-ref" :class="`origin-${source.origin}`" @click="showReportSource(source)">{{ sourceLabel(source) }} · {{ source.article || source.sourceId }}</button>
+                  </div>
+                </article>
+              </section>
+
+              <section v-if="answer.timeContext?.notices?.length" class="future-notice concise-notices">
+                <h2>法规时点提示</h2>
+                <article v-for="notice in answer.timeContext.notices" :key="notice.documentId">
+                  <span :class="applicabilityClass(notice.applicabilityStatus)">{{ applicabilityLabel(notice.applicabilityStatus) }}</span>
+                  <div><b>{{ notice.documentTitle }}</b><p>{{ notice.note }}</p></div>
+                </article>
+              </section>
+
+              <section class="answer-section concise-basis">
+                <details>
+                  <summary>法规依据与检索过程（{{ answer.sources?.length || 0 }}个来源）</summary>
+                  <div class="concise-source-list">
+                    <button v-for="source in answer.sources" :key="source.sourceId" class="directory-source" @click="showReportSource(source)">
+                      <span class="source-origin" :class="`origin-${source.origin}`">{{ sourceLabel(source) }}</span>
+                      <span><b>{{ source.title }}</b><small>{{ source.article || '条款未识别' }}{{ source.page ? ` · 第${source.page}页` : '' }}</small></span>
+                    </button>
+                    <p v-if="!answer.sources?.length" class="muted">当前结论未使用可核验来源。</p>
+                  </div>
+                  <div v-if="answer.researchTrace?.length" class="trace-list concise-trace">
+                    <article v-for="(item, index) in answer.researchTrace" :key="index">
+                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : `本地搜索${item.round}`) : '官方Web搜索' }}</span>
+                      <div><b>{{ item.decision }}</b><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div>
+                    </article>
+                  </div>
+                </details>
+              </section>
+            </template>
+
+            <template v-else-if="isWorkProduct">
               <div class="answer-heading work-heading">
                 <div class="report-heading-row">
                   <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>

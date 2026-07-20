@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["decision", "reason", "criticalGaps", "webQueries", "questionProfile", "report"],
+  "required": ["decision", "reason", "criticalGaps", "webQueries", "questionProfile", "answer"],
   "properties": {
     "decision": {"type": "string", "enum": ["sufficient", "needs_web", "unresolved"]},
     "reason": {"type": "string"},
@@ -20,80 +20,47 @@
         "focusAreas": {"type": "array", "items": {"type": "string"}}
       }
     },
-    "report": {"$ref": "#/$defs/report"}
+    "answer": {"$ref": "#/$defs/answer"}
   },
   "$defs": {
     "basis": {"type": "string", "enum": ["regulatory_requirement", "official_interpretation", "standard_guidance", "engineering_recommendation", "uncertainty"]},
     "statement": {
-      "type": "object", "additionalProperties": false,
+      "type": "object",
+      "additionalProperties": false,
       "required": ["statementId", "text", "basis", "sourceRefs"],
       "properties": {
-        "statementId": {"type": "string"}, "text": {"type": "string"},
+        "statementId": {"type": "string"},
+        "text": {"type": "string", "maxLength": 300},
         "basis": {"$ref": "#/$defs/basis"},
-        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        "sourceRefs": {"type": "array", "maxItems": 6, "items": {"type": "string"}}
       }
     },
-    "workItem": {
-      "type": "object", "additionalProperties": false,
-      "required": ["itemId", "title", "detail", "cells", "owner", "input", "output", "acceptanceCriteria", "priority", "basis", "sourceRefs"],
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rowId", "cells", "basis", "sourceRefs"],
       "properties": {
-        "itemId": {"type": "string"}, "title": {"type": "string"}, "detail": {"type": "string"},
-        "cells": {"type": "array", "items": {"type": "string"}},
-        "owner": {"type": "string"}, "input": {"type": "string"}, "output": {"type": "string"},
-        "acceptanceCriteria": {"type": "string"},
-        "priority": {"type": "string", "enum": ["high", "medium", "low", "not_applicable"]},
+        "rowId": {"type": "string"},
+        "cells": {"type": "array", "minItems": 2, "maxItems": 5, "items": {"type": "string", "maxLength": 500}},
         "basis": {"$ref": "#/$defs/basis"},
-        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        "sourceRefs": {"type": "array", "maxItems": 6, "items": {"type": "string"}}
       }
     },
-    "report": {
-      "type": "object", "additionalProperties": false,
-      "required": ["status", "answerTitle", "executiveAnswer", "keyTakeaways", "contentBlocks", "serviceProviderActions", "unresolvedQuestions"],
+    "answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "title", "conclusion", "table"],
       "properties": {
         "status": {"type": "string", "enum": ["answered", "partial", "unresolved", "system_error"]},
-        "answerTitle": {"type": "string"},
-        "executiveAnswer": {"type": "array", "maxItems": 3, "items": {"$ref": "#/$defs/statement"}},
-        "keyTakeaways": {"type": "array", "maxItems": 3, "items": {"$ref": "#/$defs/statement"}},
-        "contentBlocks": {
-          "type": "array",
-          "maxItems": 2,
-          "items": {
-            "type": "object", "additionalProperties": false,
-            "required": ["blockId", "blockType", "title", "introduction", "columns", "items"],
-            "properties": {
-              "blockId": {"type": "string"},
-              "blockType": {"type": "string", "enum": ["deep_analysis", "comparison_table", "field_matrix", "responsibility_matrix", "process", "checklist", "decision_rules", "example", "common_mistakes"]},
-              "title": {"type": "string"}, "introduction": {"type": "string"},
-              "columns": {"type": "array", "items": {"type": "string"}},
-              "items": {"type": "array", "items": {"$ref": "#/$defs/workItem"}}
-            }
-          }
-        },
-        "serviceProviderActions": {
-          "type": "array",
-          "maxItems": 3,
-          "items": {
-            "type": "object", "additionalProperties": false,
-            "required": ["actionId", "title", "detail", "owner", "priority", "deliverable", "nature", "basis", "sourceRefs"],
-            "properties": {
-              "actionId": {"type": "string"}, "title": {"type": "string"}, "detail": {"type": "string"},
-              "owner": {"type": "string"}, "priority": {"type": "string", "enum": ["high", "medium", "low"]},
-              "deliverable": {"type": "string"},
-              "nature": {"type": "string", "enum": ["direct_service_provider_duty", "legal_responsibility_boundary", "derived_implementation_action"]},
-              "basis": {"$ref": "#/$defs/basis"},
-              "sourceRefs": {"type": "array", "items": {"type": "string"}}
-            }
-          }
-        },
-        "unresolvedQuestions": {
-          "type": "array",
-          "items": {
-            "type": "object", "additionalProperties": false,
-            "required": ["itemId", "question", "impact", "neededEvidence"],
-            "properties": {
-              "itemId": {"type": "string"}, "question": {"type": "string"},
-              "impact": {"type": "string"}, "neededEvidence": {"type": "string"}
-            }
+        "title": {"type": "string", "maxLength": 80},
+        "conclusion": {"$ref": "#/$defs/statement"},
+        "table": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["columns", "rows"],
+          "properties": {
+            "columns": {"type": "array", "minItems": 2, "maxItems": 5, "items": {"type": "string", "maxLength": 24}},
+            "rows": {"type": "array", "maxItems": 12, "items": {"$ref": "#/$defs/row"}}
           }
         }
       }

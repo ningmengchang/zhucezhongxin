@@ -32,7 +32,6 @@ class Settings:
     codex_concurrency: int = int(os.getenv("CODEX_CONCURRENCY", "2"))
     queue_limit: int = int(os.getenv("CODEX_QUEUE_LIMIT", "20"))
     conversation_memory_turns: int = int(os.getenv("CONVERSATION_MEMORY_TURNS", "5"))
-    codex_verify_enabled: bool = _bool("CODEX_VERIFY_ENABLED", True)
     codex_mock: bool = _bool("CODEX_MOCK", False)
     law_retrieval_mode: str = os.getenv("LAW_RETRIEVAL_MODE", "mcp").strip().lower()
     law_search_top_k: int = int(os.getenv("LAW_SEARCH_TOP_K", "8"))
@@ -55,7 +54,6 @@ class Settings:
         ).split(",")
         if item.strip()
     )
-    report_expansion_enabled: bool = _bool("REPORT_EXPANSION_ENABLED", True)
     cors_origins: tuple[str, ...] = tuple(
         item.strip()
         for item in os.getenv(

@@ -290,21 +290,26 @@ class CodexRunner:
                     "suggestedBlockType": "none",
                     "focusAreas": [],
                 },
-                "report": {
+                "answer": {
                     "status": "unresolved",
-                    "answerTitle": "Mock模式",
-                    "executiveAnswer": [],
-                    "keyTakeaways": [],
-                    "contentBlocks": [],
-                    "serviceProviderActions": [],
-                    "unresolvedQuestions": [
-                        {
-                            "itemId": "U-MOCK",
-                            "question": "Mock模式未调用法规工具",
-                            "impact": "没有生成真实内容",
-                            "neededEvidence": "关闭Mock模式",
-                        }
-                    ],
+                    "title": "Mock模式",
+                    "conclusion": {
+                        "statementId": "C-MOCK",
+                        "text": "Mock模式未调用法规工具。",
+                        "basis": "uncertainty",
+                        "sourceRefs": [],
+                    },
+                    "table": {
+                        "columns": ["事项", "结果"],
+                        "rows": [
+                            {
+                                "rowId": "R-MOCK",
+                                "cells": ["运行模式", "Mock模式未调用法规工具"],
+                                "basis": "uncertainty",
+                                "sourceRefs": [],
+                            }
+                        ],
+                    },
                 },
             }
         elif schema_name == "research_assessment.schema.json":
@@ -352,34 +357,40 @@ class CodexRunner:
                     }
                 ],
             }
-        elif schema_name == "work_product_verification.schema.json":
+        elif schema_name == "concise_legal_answer.schema.json":
             payload = {
-                "overall": "pass",
-                "unsupportedItemIds": [],
-                "partialItemIds": [],
-                "reclassifications": [],
-                "revisions": [],
-                "missingDeliverables": [],
-                "reviewNote": "Mock模式审核完成",
+                "status": "unresolved",
+                "title": "Mock模式",
+                "conclusion": {
+                    "statementId": "C-MOCK",
+                    "text": "Mock模式未调用Codex。",
+                    "basis": "uncertainty",
+                    "sourceRefs": [],
+                },
+                "explanations": [],
+                "providerAdvice": [],
             }
-        elif schema_name == "report_verification.schema.json":
+        elif schema_name == "dynamic_table_answer.schema.json":
             payload = {
-                "overall": "pass",
-                "coverageStatus": "complete",
-                "unsupportedParagraphIds": [],
-                "partialParagraphIds": [],
-                "unsupportedServiceItemIds": [],
-                "coverageGaps": [],
-                "reviewNote": "Mock模式审核完成",
-            }
-        elif "verification" in schema_name:
-            payload = {
-                "overall": "pass",
-                "coverageStatus": "complete",
-                "results": [],
-                "revisedSummary": "Mock模式未调用Codex。",
-                "supplementalClaims": [],
-                "coverageGaps": [],
+                "status": "unresolved",
+                "title": "Mock模式",
+                "conclusion": {
+                    "statementId": "C-MOCK",
+                    "text": "Mock模式未调用Codex。",
+                    "basis": "uncertainty",
+                    "sourceRefs": [],
+                },
+                "table": {
+                    "columns": ["事项", "结果"],
+                    "rows": [
+                        {
+                            "rowId": "R-MOCK",
+                            "cells": ["运行模式", "Mock模式未调用Codex"],
+                            "basis": "uncertainty",
+                            "sourceRefs": [],
+                        }
+                    ],
+                },
             }
         else:
             payload = {

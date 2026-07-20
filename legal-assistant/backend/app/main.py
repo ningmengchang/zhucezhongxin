@@ -96,7 +96,7 @@ async def codex_health() -> dict:
     result = await codex_runner.health()
     result["queueSize"] = qa_service.queue.qsize()
     result["queueLimit"] = settings.queue_limit
-    result["verifyEnabled"] = settings.codex_verify_enabled
+    result["independentReview"] = False
     result["webSearchEnabled"] = settings.web_search_enabled
     result["localResearchRounds"] = settings.research_local_rounds
     result["webResearchRounds"] = settings.research_web_rounds
@@ -105,8 +105,7 @@ async def codex_health() -> dict:
     result["searchIndex"] = database.search_index_status()
     result["webTrigger"] = "explicit-request-or-critical-legal-gap"
     result["localSourcePolicy"] = "all-files-equal-no-review-state"
-    result["reportMode"] = "prose-first-v4"
-    result["reportExpansionEnabled"] = settings.report_expansion_enabled
+    result["reportMode"] = "dynamic-table-v6"
     return result
 
 
