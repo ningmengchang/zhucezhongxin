@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "executiveSummary", "analysisSections", "serviceProviderImpact", "uncertainties"],
+  "properties": {
+    "status": {"type": "string", "enum": ["answered", "partial", "unresolved", "system_error"]},
+    "executiveSummary": {"type": "array", "items": {"$ref": "#/$defs/paragraph"}},
+    "analysisSections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "paragraphs"],
+        "properties": {
+          "title": {"type": "string"},
+          "paragraphs": {"type": "array", "items": {"$ref": "#/$defs/paragraph"}}
+        }
+      }
+    },
+    "serviceProviderImpact": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["itemId", "title", "detail", "nature", "sourceRefs"],
+        "properties": {
+          "itemId": {"type": "string"},
+          "title": {"type": "string"},
+          "detail": {"type": "string"},
+          "nature": {"type": "string", "enum": ["direct_service_provider_duty", "legal_responsibility_boundary", "derived_implementation_action"]},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "uncertainties": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "paragraph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paragraphId", "text", "nature", "sourceRefs"],
+      "properties": {
+        "paragraphId": {"type": "string"},
+        "text": {"type": "string"},
+        "nature": {"type": "string", "enum": ["legal_analysis", "process_explanation", "implementation_advice", "uncertainty"]},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

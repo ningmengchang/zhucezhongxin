@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["searchedQueries", "sources", "unresolvedGaps"],
+  "properties": {
+    "searchedQueries": {"type": "array", "items": {"type": "string"}},
+    "sources": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceId", "title", "url", "publisher", "publicationDate", "effectiveDate", "authorityKind", "quote", "supportedTopics"],
+        "properties": {
+          "sourceId": {"type": "string"},
+          "title": {"type": "string"},
+          "url": {"type": "string"},
+          "publisher": {"type": "string"},
+          "publicationDate": {"type": ["string", "null"]},
+          "effectiveDate": {"type": ["string", "null"]},
+          "authorityKind": {"type": "string", "enum": ["legal_act", "official_guidance"]},
+          "quote": {"type": "string"},
+          "supportedTopics": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "unresolvedGaps": {"type": "array", "items": {"type": "string"}}
+  }
+}

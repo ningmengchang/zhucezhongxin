@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "answerTitle", "executiveAnswer", "keyTakeaways", "contentBlocks", "serviceProviderActions", "unresolvedQuestions"],
+  "properties": {
+    "status": {"type": "string", "enum": ["answered", "partial", "unresolved", "system_error"]},
+    "answerTitle": {"type": "string"},
+    "executiveAnswer": {"type": "array", "items": {"$ref": "#/$defs/statement"}},
+    "keyTakeaways": {"type": "array", "items": {"$ref": "#/$defs/statement"}},
+    "contentBlocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["blockId", "blockType", "title", "introduction", "columns", "items"],
+        "properties": {
+          "blockId": {"type": "string"},
+          "blockType": {"type": "string", "enum": ["deep_analysis", "comparison_table", "field_matrix", "responsibility_matrix", "process", "checklist", "decision_rules", "example", "common_mistakes"]},
+          "title": {"type": "string"},
+          "introduction": {"type": "string"},
+          "columns": {"type": "array", "items": {"type": "string"}},
+          "items": {"type": "array", "items": {"$ref": "#/$defs/workItem"}}
+        }
+      }
+    },
+    "serviceProviderActions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["actionId", "title", "detail", "owner", "priority", "deliverable", "nature", "basis", "sourceRefs"],
+        "properties": {
+          "actionId": {"type": "string"},
+          "title": {"type": "string"},
+          "detail": {"type": "string"},
+          "owner": {"type": "string"},
+          "priority": {"type": "string", "enum": ["high", "medium", "low"]},
+          "deliverable": {"type": "string"},
+          "nature": {"type": "string", "enum": ["direct_service_provider_duty", "legal_responsibility_boundary", "derived_implementation_action"]},
+          "basis": {"$ref": "#/$defs/basis"},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "unresolvedQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["itemId", "question", "impact", "neededEvidence"],
+        "properties": {
+          "itemId": {"type": "string"},
+          "question": {"type": "string"},
+          "impact": {"type": "string"},
+          "neededEvidence": {"type": "string"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "basis": {"type": "string", "enum": ["regulatory_requirement", "official_interpretation", "standard_guidance", "engineering_recommendation", "uncertainty"]},
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statementId", "text", "basis", "sourceRefs"],
+      "properties": {
+        "statementId": {"type": "string"},
+        "text": {"type": "string"},
+        "basis": {"$ref": "#/$defs/basis"},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "workItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["itemId", "title", "detail", "cells", "owner", "input", "output", "acceptanceCriteria", "priority", "basis", "sourceRefs"],
+      "properties": {
+        "itemId": {"type": "string"},
+        "title": {"type": "string"},
+        "detail": {"type": "string"},
+        "cells": {"type": "array", "items": {"type": "string"}},
+        "owner": {"type": "string"},
+        "input": {"type": "string"},
+        "output": {"type": "string"},
+        "acceptanceCriteria": {"type": "string"},
+        "priority": {"type": "string", "enum": ["high", "medium", "low", "not_applicable"]},
+        "basis": {"$ref": "#/$defs/basis"},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
