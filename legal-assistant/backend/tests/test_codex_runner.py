@@ -28,4 +28,20 @@ def test_law_tools_are_attached_as_required_ephemeral_mcp(tmp_path: Path):
     assert "mcp_servers.law.required=true" in command
     assert "app.law_mcp_server" in rendered
     assert "SearchLaw" in rendered and "ReadLawSource" in rendered
+    assert "--max-search-calls" not in command
+    assert "--max-read-calls" not in command
     assert "--sandbox" in command and "read-only" in command
+
+
+def test_native_web_and_two_local_tools_can_be_enabled_together(tmp_path: Path):
+    runner = CodexRunner(Settings(data_dir=tmp_path, database_path=tmp_path / "law.sqlite3"))
+    command = runner._build_command(
+        tmp_path / "schema.json",
+        str(tmp_path),
+        True,
+        LawToolContext(tmp_path / "law.sqlite3", date(2026, 7, 20), True),
+        tmp_path / "trace.jsonl",
+    )
+
+    assert "--search" in command
+    assert 'mcp_servers.law.enabled_tools=["SearchLaw","ReadLawSource"]' in command

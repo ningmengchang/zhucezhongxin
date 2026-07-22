@@ -117,7 +117,9 @@ def test_api_query_recalls_registry_and_semantic_repository_rules(tmp_path: Path
     )
 
     results = Retriever(database).search(
-        "注册中心定义的api有哪些", as_of_date=date(2026, 7, 20), limit=12
+        "API registry digital registry semantic repository search service",
+        as_of_date=date(2026, 7, 20),
+        limit=12,
     )
     text = " ".join(item.quote for item in results)
     assert "registering the digital product passport" in text
@@ -129,7 +131,7 @@ def test_api_query_recalls_registry_and_semantic_repository_rules(tmp_path: Path
     assert {item.applicabilityStatus for item in results} == {"current", "future"}
 
 
-def test_chinese_query_expands_to_english_legal_terms(tmp_path: Path):
+def test_retriever_uses_agent_supplied_language_without_hidden_translation(tmp_path: Path):
     source = tmp_path / "customs.txt"
     source.write_text(
         "Article 15\nCustoms authorities shall verify the unique registration identifier and commodity code.",
@@ -146,7 +148,10 @@ def test_chinese_query_expands_to_english_legal_terms(tmp_path: Path):
         tmp_path,
     )
 
-    results = Retriever(database).search("海关查询注册中心需要什么唯一登记标识符和商品编码")
+    assert Retriever(database).search("海关查询注册中心需要什么唯一登记标识符和商品编码") == []
+    results = Retriever(database).search(
+        "customs unique registration identifier commodity code"
+    )
     assert results
     assert "Customs authorities" in results[0].quote
 
@@ -185,12 +190,14 @@ def test_near_duplicate_memory_cannot_drown_authoritative_identifier_evidence(tm
         tmp_path,
     )
 
-    contexts = ["电池唯一标识和电池护照唯一标识"]
+    contexts = ["unique identifier battery passport"]
     results = Retriever(database).search(
-        "电池唯一标识符和电池护照唯一标识符", context_queries=contexts, limit=12
+        "unique identifier battery passport identification of batteries",
+        context_queries=contexts,
+        limit=12,
     )
 
-    assert prepare_context_queries("电池唯一标识符和电池护照唯一标识符", contexts) == []
+    assert prepare_context_queries("unique identifier battery passport", contexts) == []
     assert any("identification of batteries" in item.quote for item in results)
 
 
@@ -213,8 +220,8 @@ def test_referential_comparison_uses_identifier_context_without_merging_queries(
     )
 
     results = Retriever(database).search(
-        "那二者有什么区别",
-        context_queries=["电池唯一标识符和电池护照唯一标识符"],
+        "difference unique identifier battery passport identification of batteries",
+        context_queries=["unique identifier battery passport"],
         limit=12,
     )
 

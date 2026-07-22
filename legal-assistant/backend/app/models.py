@@ -318,8 +318,32 @@ class DynamicTableLegalAnswer(BaseModel):
     researchTrace: list[ResearchTraceItem] = Field(default_factory=list)
 
 
+class WebSourceCandidate(BaseModel):
+    title: str = Field(min_length=1, max_length=500)
+    url: str = Field(min_length=12, max_length=2000)
+    publisher: str = Field(default="", max_length=300)
+    quote: str = Field(min_length=20, max_length=5000)
+    publicationDate: date | None = None
+    effectiveDate: date | None = None
+
+
+class MarkdownLegalAnswer(BaseModel):
+    schemaVersion: Literal["7.0"] = "7.0"
+    status: Literal["answered", "partial", "unresolved", "system_error"]
+    markdown: str
+    timeContext: TimeContext | None = None
+    sources: list[ReportSource] = Field(default_factory=list)
+    researchTrace: list[ResearchTraceItem] = Field(default_factory=list)
+    webSources: list[WebSourceCandidate] = Field(default_factory=list, exclude=True)
+
+
 AnswerPayload = Annotated[
-    LegalAnswer | ResearchReport | WorkProductReport | ConciseLegalAnswer | DynamicTableLegalAnswer,
+    LegalAnswer
+    | ResearchReport
+    | WorkProductReport
+    | ConciseLegalAnswer
+    | DynamicTableLegalAnswer
+    | MarkdownLegalAnswer,
     Field(discriminator="schemaVersion"),
 ]
 
@@ -329,6 +353,23 @@ class QuestionRequest(BaseModel):
     conversation_id: str | None = Field(default=None, min_length=8, max_length=128)
     as_of_date: date | None = None
     include_future_rules: bool = True
+
+
+class LoginRequest(BaseModel):
+    username: str = Field(min_length=1, max_length=64)
+    password: str = Field(min_length=1, max_length=256)
+
+
+class AuthUserOut(BaseModel):
+    username: str
+    role: Literal["admin", "user"]
+    permissions: list[str] = Field(default_factory=list)
+    session_id: str | None = None
+
+
+class LoginOut(BaseModel):
+    user: AuthUserOut
+    expires_at: datetime
 
 
 class QuestionAccepted(BaseModel):

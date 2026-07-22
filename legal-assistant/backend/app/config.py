@@ -31,29 +31,11 @@ class Settings:
     codex_timeout_seconds: int = int(os.getenv("CODEX_TIMEOUT_SECONDS", "180"))
     codex_concurrency: int = int(os.getenv("CODEX_CONCURRENCY", "2"))
     queue_limit: int = int(os.getenv("CODEX_QUEUE_LIMIT", "20"))
-    conversation_memory_turns: int = int(os.getenv("CONVERSATION_MEMORY_TURNS", "5"))
     codex_mock: bool = _bool("CODEX_MOCK", False)
-    law_retrieval_mode: str = os.getenv("LAW_RETRIEVAL_MODE", "mcp").strip().lower()
     law_search_top_k: int = int(os.getenv("LAW_SEARCH_TOP_K", "8"))
-    law_search_max_calls: int = int(os.getenv("LAW_SEARCH_MAX_CALLS", "4"))
-    law_read_max_calls: int = int(os.getenv("LAW_READ_MAX_CALLS", "8"))
     auto_seed: bool = _bool("AUTO_SEED", False)
     auto_sync_local_files: bool = _bool("AUTO_SYNC_LOCAL_FILES", True)
-    max_evidence: int = int(os.getenv("MAX_EVIDENCE", "24"))
-    research_local_rounds: int = int(os.getenv("RESEARCH_LOCAL_ROUNDS", "3"))
-    research_web_rounds: int = int(os.getenv("RESEARCH_WEB_ROUNDS", "1"))
     research_total_timeout_seconds: int = int(os.getenv("RESEARCH_TOTAL_TIMEOUT_SECONDS", "480"))
-    research_max_evidence: int = int(os.getenv("RESEARCH_MAX_EVIDENCE", "60"))
-    web_search_enabled: bool = _bool("WEB_SEARCH_ENABLED", True)
-    web_max_sources: int = int(os.getenv("WEB_MAX_SOURCES", "5"))
-    web_official_domains: tuple[str, ...] = tuple(
-        item.strip().lower().lstrip(".")
-        for item in os.getenv(
-            "WEB_OFFICIAL_DOMAINS",
-            "europa.eu,eur-lex.europa.eu,op.europa.eu,echa.europa.eu",
-        ).split(",")
-        if item.strip()
-    )
     cors_origins: tuple[str, ...] = tuple(
         item.strip()
         for item in os.getenv(

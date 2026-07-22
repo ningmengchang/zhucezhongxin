@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import sqlite3
 from contextlib import contextmanager
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterator
 
@@ -66,9 +66,39 @@ class Database:
                 );
 
                 CREATE INDEX IF NOT EXISTS idx_passages_document ON passages(document_id);
+                CREATE TABLE IF NOT EXISTS users (
+                    id TEXT PRIMARY KEY,
+                    username TEXT NOT NULL UNIQUE COLLATE NOCASE,
+                    password_hash TEXT NOT NULL,
+                    role TEXT NOT NULL CHECK(role IN ('admin', 'user')),
+                    enabled INTEGER NOT NULL DEFAULT 1,
+                    created_at TEXT NOT NULL,
+                    updated_at TEXT NOT NULL
+                );
+
+                CREATE TABLE IF NOT EXISTS auth_sessions (
+                    id TEXT PRIMARY KEY,
+                    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                    token_hash TEXT NOT NULL UNIQUE,
+                    expires_at TEXT NOT NULL,
+                    revoked_at TEXT,
+                    revoke_reason TEXT,
+                    created_at TEXT NOT NULL,
+                    login_ip TEXT,
+                    user_agent TEXT,
+                    browser TEXT,
+                    operating_system TEXT,
+                    device TEXT,
+                    last_seen_at TEXT
+                );
+
+                CREATE INDEX IF NOT EXISTS idx_auth_sessions_user
+                ON auth_sessions(user_id, created_at);
+
                 CREATE TABLE IF NOT EXISTS jobs (
                     id TEXT PRIMARY KEY,
                     question TEXT NOT NULL,
+                    created_by TEXT,
                     conversation_id TEXT,
                     as_of_date TEXT,
                     status TEXT NOT NULL,
@@ -95,6 +125,26 @@ class Database:
                     tokenize='unicode61 remove_diacritics 2'
                 );
                 """
+            )
+            job_columns = {row["name"] for row in db.execute("PRAGMA table_info(jobs)").fetchall()}
+            if "created_by" not in job_columns:
+                db.execute("ALTER TABLE jobs ADD COLUMN created_by TEXT")
+            session_columns = {
+                row["name"] for row in db.execute("PRAGMA table_info(auth_sessions)").fetchall()
+            }
+            for column in (
+                "login_ip", "user_agent", "browser", "operating_system", "device",
+                "last_seen_at",
+            ):
+                if column not in session_columns:
+                    db.execute(f"ALTER TABLE auth_sessions ADD COLUMN {column} TEXT")
+            db.execute(
+                "CREATE INDEX IF NOT EXISTS idx_auth_sessions_last_seen "
+                "ON auth_sessions(last_seen_at)"
+            )
+            db.execute(
+                "CREATE INDEX IF NOT EXISTS idx_jobs_created_by_created "
+                "ON jobs(created_by, created_at)"
             )
             self._remove_level_and_review_metadata(db)
             self._ensure_search_index(db)
@@ -386,15 +436,20 @@ class Database:
             return dict(row) if row else None
 
     def create_job(
-        self, job_id: str, question: str, conversation_id: str | None, as_of_date: str | None
+        self,
+        job_id: str,
+        question: str,
+        conversation_id: str | None,
+        as_of_date: str | None,
+        created_by: str | None = None,
     ) -> None:
         now = utc_now()
         with self.connect() as db:
             db.execute(
                 """INSERT INTO jobs
-                (id,question,conversation_id,as_of_date,status,events_json,created_at,updated_at)
-                VALUES (?,?,?,?,?,'[]',?,?)""",
-                (job_id, question, conversation_id, as_of_date, "queued", now, now),
+                (id,question,created_by,conversation_id,as_of_date,status,events_json,created_at,updated_at)
+                VALUES (?,?,?,?,?,?,'[]',?,?)""",
+                (job_id, question, created_by, conversation_id, as_of_date, "queued", now, now),
             )
 
     def update_job(
@@ -438,28 +493,336 @@ class Database:
             result.pop("answer_json", None)
             return result
 
-    def conversation_history(
-        self, conversation_id: str | None, *, exclude_job_id: str, limit: int = 5
-    ) -> list[dict[str, Any]]:
-        if not conversation_id or limit <= 0:
-            return []
+    def seed_users(self, users: list[dict[str, str]]) -> None:
+        now = utc_now()
+        with self.connect() as db:
+            db.executemany(
+                """
+                INSERT OR IGNORE INTO users
+                    (id,username,password_hash,role,enabled,created_at,updated_at)
+                VALUES (:id,:username,:password_hash,:role,1,:created_at,:updated_at)
+                """,
+                [{**item, "created_at": now, "updated_at": now} for item in users],
+            )
+
+    def get_user_by_username(self, username: str) -> dict[str, Any] | None:
+        with self.connect() as db:
+            row = db.execute(
+                "SELECT * FROM users WHERE username=? COLLATE NOCASE", (username,)
+            ).fetchone()
+            return dict(row) if row else None
+
+    def create_single_session(
+        self,
+        *,
+        session_id: str,
+        user_id: str,
+        token_hash: str,
+        expires_at: str,
+        login_ip: str | None = None,
+        user_agent: str | None = None,
+        browser: str | None = None,
+        operating_system: str | None = None,
+        device: str | None = None,
+    ) -> None:
+        now = utc_now()
+        with self.connect() as db:
+            db.execute(
+                """
+                UPDATE auth_sessions
+                SET revoked_at=?, revoke_reason='session_replaced'
+                WHERE user_id=? AND revoked_at IS NULL
+                """,
+                (now, user_id),
+            )
+            db.execute(
+                """
+                INSERT INTO auth_sessions
+                    (id,user_id,token_hash,expires_at,created_at,login_ip,user_agent,
+                     browser,operating_system,device,last_seen_at)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?)
+                """,
+                (
+                    session_id, user_id, token_hash, expires_at, now, login_ip, user_agent,
+                    browser, operating_system, device, now,
+                ),
+            )
+
+    def resolve_session(self, token_hash: str) -> dict[str, Any] | None:
+        with self.connect() as db:
+            row = db.execute(
+                """
+                SELECT s.id AS session_id, s.expires_at, s.revoked_at, s.revoke_reason,
+                       s.last_seen_at,
+                       u.id AS user_id, u.username, u.role, u.enabled
+                FROM auth_sessions s JOIN users u ON u.id=s.user_id
+                WHERE s.token_hash=?
+                """,
+                (token_hash,),
+            ).fetchone()
+            return dict(row) if row else None
+
+    def touch_session(self, session_id: str, previous_seen_at: str | None) -> None:
+        """Update activity at most once per minute to keep polling read-mostly."""
+        now = datetime.now(timezone.utc)
+        if previous_seen_at:
+            try:
+                if now - datetime.fromisoformat(previous_seen_at) < timedelta(seconds=60):
+                    return
+            except (TypeError, ValueError):
+                pass
+        with self.connect() as db:
+            db.execute(
+                "UPDATE auth_sessions SET last_seen_at=? WHERE id=? AND revoked_at IS NULL",
+                (now.isoformat(), session_id),
+            )
+
+    def revoke_session(self, token_hash: str, reason: str = "logout") -> None:
+        with self.connect() as db:
+            db.execute(
+                """
+                UPDATE auth_sessions SET revoked_at=?, revoke_reason=?
+                WHERE token_hash=? AND revoked_at IS NULL
+                """,
+                (utc_now(), reason, token_hash),
+            )
+
+    def revoke_session_by_id(self, session_id: str, reason: str = "admin_revoked") -> bool:
+        with self.connect() as db:
+            cursor = db.execute(
+                """
+                UPDATE auth_sessions SET revoked_at=?, revoke_reason=?
+                WHERE id=? AND revoked_at IS NULL
+                """,
+                (utc_now(), reason, session_id),
+            )
+            return cursor.rowcount > 0
+
+    @staticmethod
+    def _page(page: int, page_size: int) -> tuple[int, int]:
+        safe_page = max(1, page)
+        safe_size = min(100, max(1, page_size))
+        return safe_size, (safe_page - 1) * safe_size
+
+    def monitoring_overview(self, *, day_start: str, day_end: str, online_cutoff: str) -> dict[str, Any]:
+        with self.connect() as db:
+            online_users = db.execute(
+                """
+                SELECT COUNT(DISTINCT user_id) FROM auth_sessions
+                WHERE revoked_at IS NULL AND expires_at>? AND last_seen_at>=?
+                """,
+                (utc_now(), online_cutoff),
+            ).fetchone()[0]
+            logins_today = db.execute(
+                "SELECT COUNT(*) FROM auth_sessions WHERE created_at>=? AND created_at<?",
+                (day_start, day_end),
+            ).fetchone()[0]
+            row = db.execute(
+                """
+                SELECT COUNT(*) AS total,
+                       SUM(CASE WHEN status='completed' THEN 1 ELSE 0 END) AS completed,
+                       AVG(CASE WHEN status='completed'
+                           THEN (julianday(updated_at)-julianday(created_at))*86400 END) AS average_seconds
+                FROM jobs WHERE created_at>=? AND created_at<?
+                """,
+                (day_start, day_end),
+            ).fetchone()
+        total = row["total"] or 0
+        completed = row["completed"] or 0
+        return {
+            "onlineUsers": online_users,
+            "loginsToday": logins_today,
+            "questionsToday": total,
+            "successRate": round(completed * 100 / total, 1) if total else 0,
+            "averageDurationSeconds": round(row["average_seconds"] or 0, 1),
+        }
+
+    def monitoring_users(self, *, online_cutoff: str) -> list[dict[str, Any]]:
+        now = utc_now()
         with self.connect() as db:
             rows = db.execute(
                 """
-                SELECT id, question, answer_json, created_at
-                FROM jobs
-                WHERE conversation_id=? AND id<>? AND status='completed' AND answer_json IS NOT NULL
-                ORDER BY created_at DESC
-                LIMIT ?
-                """,
-                (conversation_id, exclude_job_id, limit),
+                SELECT u.id, u.username, u.role, u.enabled,
+                       latest.id AS session_id, latest.created_at AS last_login_at,
+                       latest.last_seen_at, latest.login_ip, latest.browser,
+                       latest.operating_system, latest.device, latest.revoked_at,
+                       latest.expires_at,
+                       (SELECT COUNT(*) FROM jobs j WHERE j.created_by=u.id) AS question_count
+                FROM users u
+                LEFT JOIN auth_sessions latest ON latest.id=(
+                    SELECT s.id FROM auth_sessions s WHERE s.user_id=u.id
+                    ORDER BY s.created_at DESC LIMIT 1
+                )
+                ORDER BY u.role ASC, u.username COLLATE NOCASE
+                """
             ).fetchall()
-        history = []
-        for row in reversed(rows):
+        result = []
+        for row in rows:
             item = dict(row)
+            item["online"] = bool(
+                item["enabled"] and not item["revoked_at"]
+                and item["expires_at"] and item["expires_at"] > now
+                and item["last_seen_at"] and item["last_seen_at"] >= online_cutoff
+            )
+            result.append(item)
+        return result
+
+    def monitoring_sessions(
+        self, *, page: int, page_size: int, username: str | None = None,
+        status: str | None = None, date_from: str | None = None, date_to: str | None = None,
+        online_cutoff: str,
+    ) -> dict[str, Any]:
+        filters: list[str] = []
+        params: list[Any] = []
+        if username:
+            filters.append("LOWER(u.username) LIKE ?")
+            params.append(f"%{username.strip().lower()}%")
+        if date_from:
+            filters.append("s.created_at>=?")
+            params.append(date_from)
+        if date_to:
+            filters.append("s.created_at<?")
+            params.append(date_to)
+        now = utc_now()
+        if status == "online":
+            filters.append("s.revoked_at IS NULL AND s.expires_at>? AND s.last_seen_at>=?")
+            params.extend([now, online_cutoff])
+        elif status == "active":
+            filters.append("s.revoked_at IS NULL AND s.expires_at>?")
+            params.append(now)
+        elif status == "revoked":
+            filters.append("s.revoked_at IS NOT NULL")
+        elif status == "expired":
+            filters.append("s.revoked_at IS NULL AND s.expires_at<=?")
+            params.append(now)
+        where = " WHERE " + " AND ".join(filters) if filters else ""
+        limit, offset = self._page(page, page_size)
+        with self.connect() as db:
+            total = db.execute(
+                f"SELECT COUNT(*) FROM auth_sessions s JOIN users u ON u.id=s.user_id{where}",
+                params,
+            ).fetchone()[0]
+            rows = db.execute(
+                f"""
+                SELECT s.id, u.username, u.role, s.created_at, s.last_seen_at,
+                       s.expires_at, s.revoked_at, s.revoke_reason, s.login_ip,
+                       s.user_agent, s.browser, s.operating_system, s.device
+                FROM auth_sessions s JOIN users u ON u.id=s.user_id
+                {where} ORDER BY s.created_at DESC LIMIT ? OFFSET ?
+                """,
+                [*params, limit, offset],
+            ).fetchall()
+        items = []
+        for row in rows:
+            item = dict(row)
+            if item["revoked_at"]:
+                item["status"] = "revoked"
+            elif item["expires_at"] <= now:
+                item["status"] = "expired"
+            elif item["last_seen_at"] and item["last_seen_at"] >= online_cutoff:
+                item["status"] = "online"
+            else:
+                item["status"] = "inactive"
+            items.append(item)
+        return {"items": items, "total": total, "page": page, "pageSize": limit}
+
+    def monitoring_questions(
+        self, *, page: int, page_size: int, username: str | None = None,
+        status: str | None = None, keyword: str | None = None,
+        date_from: str | None = None, date_to: str | None = None,
+    ) -> dict[str, Any]:
+        filters: list[str] = []
+        params: list[Any] = []
+        if username:
+            filters.append("LOWER(u.username) LIKE ?")
+            params.append(f"%{username.strip().lower()}%")
+        if status:
+            filters.append("j.status=?")
+            params.append(status)
+        if keyword:
+            filters.append("j.question LIKE ?")
+            params.append(f"%{keyword.strip()}%")
+        if date_from:
+            filters.append("j.created_at>=?")
+            params.append(date_from)
+        if date_to:
+            filters.append("j.created_at<?")
+            params.append(date_to)
+        where = " WHERE " + " AND ".join(filters) if filters else ""
+        limit, offset = self._page(page, page_size)
+        join = " FROM jobs j LEFT JOIN users u ON u.id=j.created_by"
+        with self.connect() as db:
+            total = db.execute(f"SELECT COUNT(*){join}{where}", params).fetchone()[0]
+            rows = db.execute(
+                f"""
+                SELECT j.id, j.question, j.status, j.error, j.created_at, j.updated_at,
+                       u.username,
+                       ROUND((julianday(j.updated_at)-julianday(j.created_at))*86400, 1)
+                           AS duration_seconds
+                {join}{where} ORDER BY j.created_at DESC LIMIT ? OFFSET ?
+                """,
+                [*params, limit, offset],
+            ).fetchall()
+        return {
+            "items": [dict(row) for row in rows], "total": total,
+            "page": page, "pageSize": limit,
+        }
+
+    def monitoring_question_detail(self, job_id: str) -> dict[str, Any] | None:
+        with self.connect() as db:
+            row = db.execute(
+                """
+                SELECT j.*, u.username,
+                       ROUND((julianday(j.updated_at)-julianday(j.created_at))*86400, 1)
+                           AS duration_seconds
+                FROM jobs j LEFT JOIN users u ON u.id=j.created_by WHERE j.id=?
+                """,
+                (job_id,),
+            ).fetchone()
+        if not row:
+            return None
+        item = dict(row)
+        item["events"] = json.loads(item.pop("events_json") or "[]")
+        item["answer"] = json.loads(item.pop("answer_json")) if item.get("answer_json") else None
+        item.pop("answer_json", None)
+        return item
+
+    def cleanup_monitoring_data(self, retention_days: int = 30) -> dict[str, int]:
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=retention_days)).isoformat()
+        with self.connect() as db:
+            sessions = db.execute(
+                "DELETE FROM auth_sessions WHERE created_at<?", (cutoff,)
+            ).rowcount
+            jobs = db.execute("DELETE FROM jobs WHERE created_at<?", (cutoff,)).rowcount
+        return {"sessions": sessions, "jobs": jobs}
+
+    def job_belongs_to(self, job_id: str, user_id: str) -> bool:
+        with self.connect() as db:
+            return db.execute(
+                "SELECT 1 FROM jobs WHERE id=? AND created_by=?", (job_id, user_id)
+            ).fetchone() is not None
+
+    @staticmethod
+    def _answer_references(answer: Any, key: str, value: str) -> bool:
+        if isinstance(answer, dict):
+            if answer.get(key) == value:
+                return True
+            return any(Database._answer_references(item, key, value) for item in answer.values())
+        if isinstance(answer, list):
+            return any(Database._answer_references(item, key, value) for item in answer)
+        return False
+
+    def user_answer_references(self, user_id: str, key: str, value: str) -> bool:
+        with self.connect() as db:
+            rows = db.execute(
+                "SELECT answer_json FROM jobs WHERE created_by=? AND answer_json IS NOT NULL",
+                (user_id,),
+            ).fetchall()
+        for row in rows:
             try:
-                item["answer"] = json.loads(item.pop("answer_json"))
-            except (json.JSONDecodeError, TypeError):
+                answer = json.loads(row["answer_json"])
+            except (TypeError, json.JSONDecodeError):
                 continue
-            history.append(item)
-        return history
+            if self._answer_references(answer, key, value):
+                return True
+        return False

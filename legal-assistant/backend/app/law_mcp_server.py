@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from pathlib import Path
 from time import perf_counter
@@ -14,14 +14,18 @@ from .retrieval import Retriever
 
 
 INSTRUCTIONS = (
-    "先用SearchLaw定位本地法规。只有ReadLawSource返回的source_id可以作为最终答案引用；"
-    "摘要不足时读取相邻条款，不得凭模型记忆补充法规事实。"
+    "提供本地文件搜索和原文读取两个只读工具；本地文件可能使用不同语言。"
+    "调用模型需要自行判断法规标准术语、原文语言、拼写变体和相关概念，并分别提交聚焦查询。"
+    "准备在答案中采用的候选必须通过原文读取工具核对。"
 )
 
 TOOLS = [
     {
         "name": "SearchLaw",
-        "description": "搜索本地法规索引，返回少量候选摘要和source_id。",
+        "description": (
+            "按输入原样搜索本地文件索引并返回候选文本和source_id；工具不会翻译或扩展关键词。"
+            "请自行判断原文语言并用标准法规术语分别搜索。"
+        ),
         "inputSchema": {
             "type": "object",
             "additionalProperties": False,
@@ -36,7 +40,7 @@ TOOLS = [
     },
     {
         "name": "ReadLawSource",
-        "description": "读取SearchLaw已命中的法规原文及同一条款相邻文本。同一source_id每个任务只能读取一次，应复用已返回的原文。",
+        "description": "根据source_id读取本地文件原文及相邻文本；答案采用本地候选前必须调用此工具核对。",
         "inputSchema": {
             "type": "object",
             "additionalProperties": False,
@@ -57,13 +61,7 @@ class ToolState:
     as_of_date: date
     include_future_rules: bool
     trace_path: Path
-    max_search_calls: int
-    max_read_calls: int
     default_top_k: int = 8
-    searched_ids: set[str] = field(default_factory=set)
-    read_ids: set[str] = field(default_factory=set)
-    search_calls: int = 0
-    read_calls: int = 0
 
     def trace(self, payload: dict[str, Any]) -> None:
         with self.trace_path.open("a", encoding="utf-8") as handle:
@@ -92,21 +90,6 @@ def search_law(
 ) -> dict[str, Any]:
     started_at = datetime.now(timezone.utc)
     started_clock = perf_counter()
-    state.search_calls += 1
-    if state.search_calls > state.max_search_calls:
-        _timed_trace(
-            state,
-            {
-                "action": "search_rejected",
-                "query": query,
-                "resultIds": [],
-                "resultCount": 0,
-                "reason": "search_call_limit",
-            },
-            started_at,
-            started_clock,
-        )
-        return {"error": f"SearchLaw最多调用{state.max_search_calls}次", "results": []}
     bounded_top_k = min(max(int(top_k or state.default_top_k), 1), 12)
     results = state.retriever.search(
         query,
@@ -115,7 +98,6 @@ def search_law(
         limit=bounded_top_k,
         source_filter=source_filter,
     )
-    state.searched_ids.update(item.evidenceId for item in results)
     payload = [
         {
             "source_id": item.evidenceId,
@@ -150,53 +132,6 @@ def read_law_source(
 ) -> dict[str, Any]:
     started_at = datetime.now(timezone.utc)
     started_clock = perf_counter()
-    if source_id not in state.searched_ids:
-        _timed_trace(
-            state,
-            {
-                "action": "read_rejected",
-                "requestedId": source_id,
-                "resultIds": [],
-                "resultCount": 0,
-                "reason": "source_not_searched",
-            },
-            started_at,
-            started_clock,
-        )
-        return {"error": "只能读取本任务SearchLaw已经命中的source_id", "passages": []}
-    if source_id in state.read_ids:
-        _timed_trace(
-            state,
-            {
-                "action": "read_duplicate",
-                "requestedId": source_id,
-                "resultIds": [],
-                "resultCount": 0,
-                "reason": "source_already_read",
-            },
-            started_at,
-            started_clock,
-        )
-        return {
-            "already_read": True,
-            "message": f"{source_id}已读取；请复用上一次返回的原文，不要再次调用ReadLawSource。",
-            "passages": [],
-        }
-    state.read_calls += 1
-    if state.read_calls > state.max_read_calls:
-        _timed_trace(
-            state,
-            {
-                "action": "read_rejected",
-                "requestedId": source_id,
-                "resultIds": [],
-                "resultCount": 0,
-                "reason": "read_call_limit",
-            },
-            started_at,
-            started_clock,
-        )
-        return {"error": f"ReadLawSource最多调用{state.max_read_calls}次", "passages": []}
     passages = state.retriever.read_source(
         source_id,
         context_chunks=min(max(int(context_chunks), 0), 3),
@@ -217,7 +152,6 @@ def read_law_source(
         }
         for item in passages
     ]
-    state.read_ids.add(source_id)
     _timed_trace(
         state,
         {
@@ -312,8 +246,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--as-of-date", required=True)
     parser.add_argument("--include-future-rules", choices=("true", "false"), required=True)
     parser.add_argument("--trace", required=True)
-    parser.add_argument("--max-search-calls", type=int, default=4)
-    parser.add_argument("--max-read-calls", type=int, default=8)
     parser.add_argument("--default-top-k", type=int, default=8)
     return parser.parse_args()
 
@@ -325,8 +257,6 @@ def main() -> None:
         as_of_date=date.fromisoformat(args.as_of_date),
         include_future_rules=args.include_future_rules == "true",
         trace_path=Path(args.trace),
-        max_search_calls=max(1, args.max_search_calls),
-        max_read_calls=max(1, args.max_read_calls),
         default_top_k=min(max(1, args.default_top_k), 12),
     )
     serve(state)

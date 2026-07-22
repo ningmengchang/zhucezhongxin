@@ -1,21 +1,17 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
-
-const CONVERSATION_KEY = 'legal-assistant-conversation-id'
-function createConversationId() {
-  return globalThis.crypto?.randomUUID?.() || `conv-${Date.now()}-${Math.random().toString(16).slice(2)}`
-}
-function loadConversationId() {
-  const stored = localStorage.getItem(CONVERSATION_KEY)
-  if (stored) return stored
-  const created = createConversationId()
-  localStorage.setItem(CONVERSATION_KEY, created)
-  return created
-}
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import DOMPurify from 'dompurify'
+import { marked } from 'marked'
 
 const activeTab = ref('ask')
-const question = ref('海关查询注册中心是根据什么入参查的，经济运营商需要提供什么入参？')
-const asOfDate = ref('')
+const authUser = ref(null)
+const authLoading = ref(true)
+const loginUsername = ref('')
+const loginPassword = ref('')
+const loginBusy = ref(false)
+const loginError = ref('')
+const sessionNotice = ref('')
+const question = ref('')
 const busy = ref(false)
 const job = ref(null)
 const answer = ref(null)
@@ -25,30 +21,153 @@ const codexHealth = ref(null)
 const evidenceDetail = ref(null)
 const syncBusy = ref(false)
 const syncReport = ref(null)
-const conversationId = ref(loadConversationId())
-const memoryTurns = ref(Number(localStorage.getItem(`legal-assistant-turns-${conversationId.value}`) || 0))
-
-const conversationLabel = computed(() => conversationId.value.slice(0, 8))
-
+const monitorOverview = ref(null)
+const monitorUsers = ref([])
+const monitorSessions = ref({ items: [], total: 0, page: 1, pageSize: 20 })
+const monitorQuestions = ref({ items: [], total: 0, page: 1, pageSize: 20 })
+const monitorBusy = ref(false)
+const monitorDetail = ref(null)
+const monitorToday = new Date()
+const monitorWeekStart = new Date(monitorToday)
+monitorWeekStart.setDate(monitorToday.getDate() - 6)
+const monitorFilters = ref({
+  username: '', sessionStatus: '', questionStatus: '', keyword: '',
+  dateFrom: monitorWeekStart.toLocaleDateString('en-CA'),
+  dateTo: monitorToday.toLocaleDateString('en-CA')
+})
+const markdownRoot = ref(null)
+const isAdmin = computed(() => authUser.value?.role === 'admin')
 const statusLabel = computed(() => ({
-  answered: '研究结论完整', partial: '部分结论', unresolved: '尚未解决', insufficient_evidence: '证据不足', system_error: '系统错误'
+  answered: '答复完成', partial: '部分答复', unresolved: '尚未解决', insufficient_evidence: '证据不足', system_error: '处理失败'
 }[answer.value?.status] || '等待提问'))
 const isReport = computed(() => answer.value?.schemaVersion === '3.0')
 const isWorkProduct = computed(() => answer.value?.schemaVersion === '4.0')
 const isConcise = computed(() => answer.value?.schemaVersion === '5.0')
 const isDynamicTable = computed(() => answer.value?.schemaVersion === '6.0')
+const isMarkdown = computed(() => answer.value?.schemaVersion === '7.0')
+const renderedMarkdown = computed(() => DOMPurify.sanitize(marked.parse(answer.value?.markdown || '', {
+  gfm: true,
+  breaks: false
+})))
+const monitorDetailMarkdown = computed(() => DOMPurify.sanitize(marked.parse(
+  monitorDetail.value?.answer?.markdown || '', { gfm: true, breaks: false }
+)))
+
+let mermaidRenderRun = 0
+let mermaidInstance = null
+async function loadMermaid() {
+  if (mermaidInstance) return mermaidInstance
+  const module = await import('mermaid')
+  mermaidInstance = module.default
+  mermaidInstance.initialize({
+    startOnLoad: false,
+    securityLevel: 'strict',
+    theme: 'neutral',
+    flowchart: { htmlLabels: false },
+    sequence: { useMaxWidth: true }
+  })
+  return mermaidInstance
+}
+
+async function renderMermaidDiagrams() {
+  const run = ++mermaidRenderRun
+  await nextTick()
+  if (run !== mermaidRenderRun || !markdownRoot.value) return
+  const blocks = markdownRoot.value.querySelectorAll('pre code.language-mermaid, pre code.lang-mermaid')
+  if (!blocks.length) return
+  const mermaid = await loadMermaid()
+  if (run !== mermaidRenderRun) return
+  for (const [index, block] of blocks.entries()) {
+    const pre = block.closest('pre')
+    if (!pre) continue
+    try {
+      const id = `mermaid-${Date.now()}-${run}-${index}`
+      const { svg } = await mermaid.render(id, block.textContent || '')
+      if (run !== mermaidRenderRun) return
+      const diagram = document.createElement('div')
+      diagram.className = 'mermaid-diagram'
+      diagram.setAttribute('role', 'img')
+      diagram.setAttribute('aria-label', '答复图示')
+      diagram.innerHTML = DOMPurify.sanitize(svg, { USE_PROFILES: { svg: true, svgFilters: true } })
+      pre.replaceWith(diagram)
+    } catch (err) {
+      pre.classList.add('mermaid-error-source')
+      const note = document.createElement('div')
+      note.className = 'mermaid-error-note'
+      note.textContent = isAdmin.value && err instanceof Error ? `图表渲染失败：${err.message}` : '图示暂无法显示'
+      pre.before(note)
+    }
+  }
+}
+
+watch(renderedMarkdown, renderMermaidDiagrams, { flush: 'post' })
 
 async function api(path, options = {}) {
   const isForm = options.body instanceof FormData
   const response = await fetch(path, {
+    credentials: 'same-origin',
     headers: { ...(isForm ? {} : { 'Content-Type': 'application/json' }), ...(options.headers || {}) },
     ...options
   })
   if (!response.ok) {
     const payload = await response.json().catch(() => ({}))
-    throw new Error(payload.detail || `请求失败：${response.status}`)
+    const detail = payload.detail
+    const code = typeof detail === 'object' ? detail?.code : ''
+    const message = typeof detail === 'object' ? detail?.message : detail
+    if (response.status === 401 && path !== '/api/auth/login') {
+      authUser.value = null
+      activeTab.value = 'ask'
+      answer.value = null
+      job.value = null
+      documents.value = []
+      codexHealth.value = null
+      sessionNotice.value = message || '登录已失效，请重新登录'
+    }
+    const requestError = new Error(message || `请求失败：${response.status}`)
+    requestError.code = code
+    throw requestError
   }
+  if (response.status === 204) return null
   return response.json()
+}
+
+async function initializeAuthenticatedView() {
+  if (!isAdmin.value) return
+  await Promise.all([loadDocuments(), loadHealth()])
+}
+
+async function login() {
+  if (!loginUsername.value.trim() || !loginPassword.value || loginBusy.value) return
+  loginBusy.value = true
+  loginError.value = ''
+  try {
+    const result = await api('/api/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ username: loginUsername.value.trim(), password: loginPassword.value })
+    })
+    authUser.value = result.user
+    loginPassword.value = ''
+    sessionNotice.value = ''
+    await initializeAuthenticatedView()
+  } catch (err) {
+    loginError.value = err.message
+  } finally {
+    loginBusy.value = false
+  }
+}
+
+async function logout() {
+  try {
+    await api('/api/auth/logout', { method: 'POST' })
+  } catch (_) { /* local state is still cleared */ }
+  authUser.value = null
+  activeTab.value = 'ask'
+  answer.value = null
+  job.value = null
+  documents.value = []
+  codexHealth.value = null
+  loginPassword.value = ''
+  sessionNotice.value = '已安全退出'
 }
 
 async function ask() {
@@ -61,9 +180,7 @@ async function ask() {
     const accepted = await api('/api/questions', {
       method: 'POST',
       body: JSON.stringify({
-        question: question.value.trim(),
-        conversation_id: conversationId.value,
-        as_of_date: asOfDate.value || null
+        question: question.value.trim()
       })
     })
     await followJob(accepted.job_id)
@@ -79,8 +196,6 @@ async function pollJob(id) {
     job.value = await api(`/api/questions/${id}`)
     if (job.value.status === 'completed') {
       answer.value = job.value.answer
-      memoryTurns.value = Math.min(memoryTurns.value + 1, 5)
-      localStorage.setItem(`legal-assistant-turns-${conversationId.value}`, String(memoryTurns.value))
       return
     }
     if (job.value.status === 'failed') throw new Error(job.value.error || '任务执行失败')
@@ -102,23 +217,20 @@ async function followJob(id) {
         } catch (_) { /* polling below remains authoritative */ }
       }
       stream.addEventListener('done', () => { clearTimeout(timeout); stream.close(); resolve() })
+      stream.addEventListener('auth', event => {
+        try {
+          const detail = JSON.parse(event.data)
+          sessionNotice.value = detail.message || '登录已失效，请重新登录'
+        } catch (_) { sessionNotice.value = '登录已失效，请重新登录' }
+        authUser.value = null
+        clearTimeout(timeout)
+        stream.close()
+        resolve()
+      })
       stream.onerror = () => { clearTimeout(timeout); stream.close(); resolve() }
     })
   }
   await pollJob(id)
-}
-
-function startNewConversation() {
-  const created = createConversationId()
-  conversationId.value = created
-  memoryTurns.value = 0
-  localStorage.setItem(CONVERSATION_KEY, created)
-  localStorage.setItem(`legal-assistant-turns-${created}`, '0')
-  answer.value = null
-  job.value = null
-  evidenceDetail.value = null
-  error.value = ''
-  question.value = ''
 }
 
 async function showEvidence(citation) {
@@ -147,7 +259,7 @@ async function syncLocalDocuments() {
   syncBusy.value = true
   error.value = ''
   try {
-    syncReport.value = await api('/api/admin/sync-local', { method: 'POST', headers: { 'X-Role': 'admin' } })
+    syncReport.value = await api('/api/admin/sync-local', { method: 'POST' })
     await loadDocuments()
   } catch (err) {
     error.value = err.message
@@ -156,9 +268,112 @@ async function syncLocalDocuments() {
   }
 }
 
+function queryString(values) {
+  const params = new URLSearchParams()
+  Object.entries(values).forEach(([key, value]) => {
+    if (value !== '' && value != null) params.set(key, value)
+  })
+  return params.toString()
+}
+
+async function loadMonitor(options = {}) {
+  if (!isAdmin.value || monitorBusy.value) return
+  monitorBusy.value = true
+  try {
+    const sessionPage = options.sessionPage || monitorSessions.value.page || 1
+    const questionPage = options.questionPage || monitorQuestions.value.page || 1
+    const common = {
+      username: monitorFilters.value.username,
+      date_from: monitorFilters.value.dateFrom,
+      date_to: monitorFilters.value.dateTo
+    }
+    const [overview, users, sessions, questions] = await Promise.all([
+      api('/api/admin/monitor/overview'),
+      api('/api/admin/monitor/users'),
+      api(`/api/admin/monitor/sessions?${queryString({
+        ...common, status: monitorFilters.value.sessionStatus, page: sessionPage, page_size: 20
+      })}`),
+      api(`/api/admin/monitor/questions?${queryString({
+        ...common, status: monitorFilters.value.questionStatus, keyword: monitorFilters.value.keyword,
+        page: questionPage, page_size: 20
+      })}`)
+    ])
+    monitorOverview.value = overview
+    monitorUsers.value = users
+    monitorSessions.value = sessions
+    monitorQuestions.value = questions
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    monitorBusy.value = false
+  }
+}
+
+async function openMonitorDetail(jobId) {
+  try {
+    monitorDetail.value = await api(`/api/admin/monitor/questions/${jobId}`)
+  } catch (err) {
+    error.value = err.message
+  }
+}
+
+async function revokeMonitoredSession(session) {
+  if (session.id === authUser.value?.session_id) return
+  if (!window.confirm(`确认下线 ${session.username} 的这个登录会话吗？`)) return
+  try {
+    await api(`/api/admin/monitor/sessions/${session.id}/revoke`, { method: 'POST' })
+    await loadMonitor()
+  } catch (err) {
+    error.value = err.message
+  }
+}
+
+function formatDateTime(value) {
+  if (!value) return '未记录'
+  const parsed = new Date(value)
+  if (Number.isNaN(parsed.getTime())) return value
+  return parsed.toLocaleString('zh-CN', { hour12: false })
+}
+
+function monitorStatusLabel(status) {
+  return ({
+    online: '在线', inactive: '离开', active: '有效', revoked: '已下线', expired: '已过期',
+    queued: '排队中', retrieving: '检索中', assessing: '分析中', web_searching: '网络搜索',
+    generating: '生成中', verifying: '核验中', completed: '已完成', failed: '失败'
+  })[status] || status || '未知'
+}
+
+function answerSources(detail) {
+  const answer = detail?.answer || {}
+  return [...(answer.sources || []), ...(answer.webSources || [])]
+}
+
+let monitorTimer = null
+function startMonitorRefresh() {
+  stopMonitorRefresh()
+  monitorTimer = window.setInterval(() => {
+    if (activeTab.value === 'monitor') loadMonitor()
+  }, 30000)
+}
+
+function stopMonitorRefresh() {
+  if (monitorTimer) window.clearInterval(monitorTimer)
+  monitorTimer = null
+}
+
+watch(activeTab, value => {
+  if (value === 'monitor' && isAdmin.value) {
+    loadMonitor()
+    startMonitorRefresh()
+  } else {
+    stopMonitorRefresh()
+    monitorDetail.value = null
+  }
+})
+
 function sourceLabel(source) {
-  if (source.origin === 'web') return source.authorityKind === 'legal_act' ? 'Web官方法规' : 'Web官方说明'
-  return '本地法规文件'
+  if (source.origin === 'web') return 'Web来源'
+  return '本地文件'
 }
 
 function paragraphNatureLabel(nature) {
@@ -218,38 +433,67 @@ function applicabilityClass(status) {
 
 onMounted(async () => {
   try {
-    await Promise.all([loadDocuments(), loadHealth()])
+    authUser.value = await api('/api/auth/me')
+    await initializeAuthenticatedView()
   } catch (err) {
-    error.value = err.message
+    if (authUser.value) error.value = err.message
+  } finally {
+    authLoading.value = false
   }
 })
+onUnmounted(stopMonitorRefresh)
 </script>
 
 <template>
-  <div class="app-shell">
+  <div v-if="authLoading" class="auth-screen">
+    <div class="auth-loading"><span class="brand-mark">法</span><p>正在验证登录状态…</p></div>
+  </div>
+
+  <div v-else-if="!authUser" class="auth-screen">
+    <form class="login-card" @submit.prevent="login">
+      <div class="login-brand"><span class="brand-mark">法</span><div><strong>法规助手</strong><small>内网账号登录</small></div></div>
+      <h1>登录系统</h1>
+      <p>请输入管理员分配的账号和密码。</p>
+      <div v-if="sessionNotice" class="login-notice">{{ sessionNotice }}</div>
+      <div v-if="loginError" class="login-error">{{ loginError }}</div>
+      <label for="login-username">账号</label>
+      <input id="login-username" v-model="loginUsername" autocomplete="username" autofocus />
+      <label for="login-password">密码</label>
+      <input id="login-password" v-model="loginPassword" type="password" autocomplete="current-password" />
+      <button class="primary" type="submit" :disabled="loginBusy || !loginUsername.trim() || !loginPassword">
+        {{ loginBusy ? '正在登录…' : '登录' }}
+      </button>
+    </form>
+  </div>
+
+  <div v-else class="app-shell">
     <aside class="sidebar">
       <div class="brand-mark">法</div>
       <div class="brand-copy">
-        <strong>法规证据助手</strong>
-        <span>Local Codex · Evidence First</span>
+        <strong>法规助手</strong>
+        <span>Regulatory Knowledge Service</span>
       </div>
       <nav>
         <button :class="{ active: activeTab === 'ask' }" @click="activeTab = 'ask'">
           <span>⌁</span>法规问答
         </button>
-        <button :class="{ active: activeTab === 'library' }" @click="activeTab = 'library'; loadDocuments()">
-          <span>▤</span>法规资料库
+        <button v-if="isAdmin" :class="{ active: activeTab === 'library' }" @click="activeTab = 'library'; loadDocuments()">
+          <span>▤</span>本地资料库
         </button>
-        <button :class="{ active: activeTab === 'system' }" @click="activeTab = 'system'; loadHealth()">
+        <button v-if="isAdmin" :class="{ active: activeTab === 'monitor' }" @click="activeTab = 'monitor'">
+          <span>◎</span>使用监控
+        </button>
+        <button v-if="isAdmin" :class="{ active: activeTab === 'system' }" @click="activeTab = 'system'; loadHealth()">
           <span>◉</span>运行状态
         </button>
       </nav>
       <div class="sidebar-foot">
-        <div class="health-dot" :class="{ online: codexHealth?.available && codexHealth?.authenticated }"></div>
+        <div class="account-avatar">{{ authUser.username.slice(0, 1).toUpperCase() }}</div>
         <div>
-          <b>{{ codexHealth?.authenticated ? 'Codex 已登录' : 'Codex 待检查' }}</b>
-          <small>{{ codexHealth?.version || '本机运行模式' }}</small>
+          <b>{{ authUser.username }}</b>
+          <small>{{ isAdmin ? '管理员' : '法规问答用户' }}</small>
         </div>
+        <button class="logout-button" @click="logout">退出</button>
       </div>
     </aside>
 
@@ -257,7 +501,7 @@ onMounted(async () => {
       <header class="topbar">
         <div>
           <p class="eyebrow">服务商合规工作台</p>
-          <h1>{{ activeTab === 'ask' ? '每个结论，都能回到法规原文' : activeTab === 'library' ? '法规资料库' : 'Codex 运行状态' }}</h1>
+          <h1>{{ activeTab === 'ask' ? '法规问题咨询' : activeTab === 'library' ? '本地资料库' : activeTab === 'monitor' ? '使用监控' : 'Codex 运行状态' }}</h1>
         </div>
         <div class="principle"><span>✓</span> 无证据，不下确定性结论</div>
       </header>
@@ -266,48 +510,84 @@ onMounted(async () => {
 
       <section v-if="activeTab === 'ask'" class="workspace">
         <div class="question-panel">
-          <label for="question">请输入法规问题</label>
+          <label for="question">请输入问题</label>
           <textarea id="question" v-model="question" rows="5" @keydown.ctrl.enter="ask"></textarea>
           <div class="question-actions">
-            <div class="question-context">
-              <div class="date-field">
-                <span>回答截止日期（默认同时提示已公布待生效规则）</span>
-                <input v-model="asOfDate" type="date" />
-              </div>
-              <div class="memory-control">
-                <div><b>有限记忆 {{ memoryTurns }}/5轮</b><small>会话 {{ conversationLabel }} · 仅用于理解上下文</small></div>
-                <button class="secondary" :disabled="busy" @click="startNewConversation">新建会话</button>
-              </div>
-            </div>
             <button class="primary" :disabled="busy" @click="ask">
-              {{ busy ? '正在检索法规原文…' : '开始法规检索' }}
+              {{ busy ? '正在处理…' : '提交问题' }}
             </button>
           </div>
-          <div v-if="job?.events?.length" class="progress-strip">
+          <div v-if="isAdmin && job?.events?.length" class="progress-strip">
             <div v-for="event in job.events" :key="event.at" class="progress-item">
               <span></span>{{ event.message }}
             </div>
+          </div>
+          <div v-if="!isAdmin && busy" class="generic-progress" role="progressbar" aria-label="正在处理问题">
+            <div class="generic-progress-track"><span></span></div>
+            <p>正在处理，请稍候</p>
           </div>
         </div>
 
         <div v-if="!answer && !busy" class="empty-state">
           <div class="empty-icon">§</div>
-          <h2>从本地法规资料中寻找答案</h2>
-          <p>助手先搜索本地源文件并按需读取法规原文；仅在关键法规缺口无法由本地资料解决时查询欧盟官方网站，最后给出简明且可核验的答复。</p>
+          <h2>提出你的法规问题</h2>
+          <p>系统将结合现有资料整理答复，并提供可核对的参考依据。</p>
           <div class="rule-grid">
-            <article><b>全部文件同权重</b><span>不再区分等级或审核状态</span></article>
-            <article><b>逐条引用原文</b><span>结论可回看对应文件、条款和页码</span></article>
-            <article><b>保留时间口径</b><span>继续识别生效、待生效与失效日期</span></article>
+            <article><b>内容充分</b><span>围绕问题整理相关要求与说明</span></article>
+            <article><b>依据清晰</b><span>保留引用资料和原文核对入口</span></article>
+            <article><b>直接易读</b><span>根据问题选择合适的答复结构</span></article>
           </div>
         </div>
 
         <div v-if="answer" class="answer-layout">
           <div class="answer-main">
-            <template v-if="isDynamicTable">
+            <template v-if="isMarkdown">
+              <div class="answer-heading markdown-heading">
+                <div class="report-heading-row">
+                  <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
+                  <span v-if="isAdmin" class="report-version">原生 Markdown · v7.0</span>
+                </div>
+                <div v-if="answer.timeContext" class="time-basis concise-time">
+                  <b>法规时点：{{ answer.timeContext.asOfDate }}</b>
+                  <span>{{ answer.timeContext.includesFutureRules ? '同时识别已公布待生效规则' : '仅使用当日有效规则' }}</span>
+                </div>
+              </div>
+
+              <article ref="markdownRoot" class="answer-section markdown-body" v-html="renderedMarkdown"></article>
+
+              <section v-if="answer.timeContext?.notices?.length" class="future-notice concise-notices">
+                <h2>法规时点提示</h2>
+                <article v-for="notice in answer.timeContext.notices" :key="notice.documentId">
+                  <span :class="applicabilityClass(notice.applicabilityStatus)">{{ applicabilityLabel(notice.applicabilityStatus) }}</span>
+                  <div><b>{{ notice.documentTitle }}</b><p>{{ notice.note }}</p></div>
+                </article>
+              </section>
+
+              <section class="answer-section concise-basis">
+                <details>
+                  <summary>{{ isAdmin ? `工具调用记录（读取${answer.sources?.length || 0}个本地来源）` : `参考资料（${answer.sources?.length || 0}项）` }}</summary>
+                  <div class="concise-source-list">
+                    <button v-for="source in answer.sources" :key="source.sourceId" class="directory-source" @click="showReportSource(source)">
+                      <span class="source-origin" :class="`origin-${source.origin}`">{{ sourceLabel(source) }}</span>
+                      <span><b>{{ source.title }}</b><small>{{ source.article || '条款未识别' }}{{ source.page ? ` · 第${source.page}页` : '' }}</small></span>
+                    </button>
+                    <p v-if="!answer.sources?.length" class="muted">当前答复没有可展示的参考资料。</p>
+                  </div>
+                  <div v-if="isAdmin && answer.researchTrace?.length" class="trace-list concise-trace">
+                    <article v-for="(item, index) in answer.researchTrace" :key="index">
+                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : `本地搜索${item.round}`) : 'Web搜索' }}</span>
+                      <div><b>{{ item.decision }}</b><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div>
+                    </article>
+                  </div>
+                </details>
+              </section>
+            </template>
+
+            <template v-else-if="isDynamicTable">
               <div class="answer-heading concise-heading dynamic-heading">
                 <div class="report-heading-row">
                   <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
-                  <span class="report-version">动态表格答复 · v6.0</span>
+                  <span v-if="isAdmin" class="report-version">动态表格答复 · v6.0</span>
                 </div>
                 <h2>{{ answer.title }}</h2>
                 <article class="concise-conclusion">
@@ -354,7 +634,7 @@ onMounted(async () => {
 
               <section class="answer-section concise-basis">
                 <details>
-                  <summary>法规依据与检索过程（{{ answer.sources?.length || 0 }}个来源）</summary>
+                  <summary>{{ isAdmin ? `法规依据与检索过程（${answer.sources?.length || 0}个来源）` : `参考资料（${answer.sources?.length || 0}项）` }}</summary>
                   <div class="concise-source-list">
                     <button v-for="source in answer.sources" :key="source.sourceId" class="directory-source" @click="showReportSource(source)">
                       <span class="source-origin" :class="`origin-${source.origin}`">{{ sourceLabel(source) }}</span>
@@ -362,9 +642,9 @@ onMounted(async () => {
                     </button>
                     <p v-if="!answer.sources?.length" class="muted">当前结论未使用可核验来源。</p>
                   </div>
-                  <div v-if="answer.researchTrace?.length" class="trace-list concise-trace">
+                  <div v-if="isAdmin && answer.researchTrace?.length" class="trace-list concise-trace">
                     <article v-for="(item, index) in answer.researchTrace" :key="index">
-                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : `本地搜索${item.round}`) : '官方Web搜索' }}</span>
+                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : `本地搜索${item.round}`) : 'Web搜索' }}</span>
                       <div><b>{{ item.decision }}</b><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div>
                     </article>
                   </div>
@@ -376,7 +656,7 @@ onMounted(async () => {
               <div class="answer-heading concise-heading">
                 <div class="report-heading-row">
                   <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
-                  <span class="report-version">简明法规答复 · v5.0</span>
+                  <span v-if="isAdmin" class="report-version">简明法规答复 · v5.0</span>
                 </div>
                 <h2>{{ answer.title }}</h2>
                 <article class="concise-conclusion">
@@ -428,7 +708,7 @@ onMounted(async () => {
 
               <section class="answer-section concise-basis">
                 <details>
-                  <summary>法规依据与检索过程（{{ answer.sources?.length || 0 }}个来源）</summary>
+                  <summary>{{ isAdmin ? `法规依据与检索过程（${answer.sources?.length || 0}个来源）` : `参考资料（${answer.sources?.length || 0}项）` }}</summary>
                   <div class="concise-source-list">
                     <button v-for="source in answer.sources" :key="source.sourceId" class="directory-source" @click="showReportSource(source)">
                       <span class="source-origin" :class="`origin-${source.origin}`">{{ sourceLabel(source) }}</span>
@@ -436,9 +716,9 @@ onMounted(async () => {
                     </button>
                     <p v-if="!answer.sources?.length" class="muted">当前结论未使用可核验来源。</p>
                   </div>
-                  <div v-if="answer.researchTrace?.length" class="trace-list concise-trace">
+                  <div v-if="isAdmin && answer.researchTrace?.length" class="trace-list concise-trace">
                     <article v-for="(item, index) in answer.researchTrace" :key="index">
-                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : `本地搜索${item.round}`) : '官方Web搜索' }}</span>
+                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : `本地搜索${item.round}`) : 'Web搜索' }}</span>
                       <div><b>{{ item.decision }}</b><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div>
                     </article>
                   </div>
@@ -450,7 +730,7 @@ onMounted(async () => {
               <div class="answer-heading work-heading">
                 <div class="report-heading-row">
                   <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
-                  <span class="report-version">法规答复 · v4.0</span>
+                  <span v-if="isAdmin" class="report-version">法规答复 · v4.0</span>
                 </div>
                 <h2>{{ answer.answerTitle }}</h2>
                 <article v-for="item in answer.executiveAnswer" :key="item.statementId" class="work-executive">
@@ -529,10 +809,10 @@ onMounted(async () => {
                 <details><summary>仍需补齐的业务问题（{{ answer.unresolvedQuestions.length }}项）</summary><article v-for="item in answer.unresolvedQuestions" :key="item.itemId"><h3>{{ item.question }}</h3><p><b>影响：</b>{{ item.impact }}</p><p><b>需要补充：</b>{{ item.neededEvidence }}</p></article></details>
               </section>
 
-              <section class="answer-section research-audit">
+              <section v-if="isAdmin" class="answer-section research-audit">
                 <details><summary>研究与质量审计</summary>
                   <div class="audit-columns">
-                    <div><h3>检索过程</h3><div class="trace-list"><article v-for="(item, index) in answer.researchTrace" :key="index"><span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : item.action === 'search' ? `本地搜索${item.round}` : `本地第${item.round}轮`) : item.type === 'web' ? '官方Web' : '独立审核' }}</span><div><b>{{ item.decision }}</b><small>{{ item.action === 'read' ? '已读取原文' : '有效结果' }}：{{ item.resultCount }}</small><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div></article></div></div>
+                    <div><h3>检索过程</h3><div class="trace-list"><article v-for="(item, index) in answer.researchTrace" :key="index"><span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : item.action === 'search' ? `本地搜索${item.round}` : `本地第${item.round}轮`) : item.type === 'web' ? 'Web搜索' : '独立审核' }}</span><div><b>{{ item.decision }}</b><small>{{ item.action === 'read' ? '已读取原文' : '有效结果' }}：{{ item.resultCount }}</small><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div></article></div></div>
                     <div v-if="answer.qualityNotes?.length"><h3>内部质量记录</h3><ul class="quality-list"><li v-for="note in answer.qualityNotes" :key="note.noteId">{{ note.message }}</li></ul></div>
                   </div>
                 </details>
@@ -548,7 +828,7 @@ onMounted(async () => {
               <div class="answer-heading report-heading">
                 <div class="report-heading-row">
                   <span class="answer-status" :class="`answer-${answer.status}`">{{ statusLabel }}</span>
-                  <span class="report-version">专业研究报告 · v3.0</span>
+                  <span v-if="isAdmin" class="report-version">专业研究报告 · v3.0</span>
                 </div>
                 <h2>直接答复</h2>
                 <article v-for="paragraph in answer.executiveSummary" :key="paragraph.paragraphId" class="report-paragraph executive-paragraph">
@@ -607,12 +887,12 @@ onMounted(async () => {
                 <ul><li v-for="item in answer.uncertainties" :key="item">{{ item }}</li></ul>
               </section>
 
-              <section class="answer-section research-audit">
+              <section v-if="isAdmin" class="answer-section research-audit">
                 <details>
                   <summary>查看检索过程（{{ answer.researchTrace?.length || 0 }}个步骤）</summary>
                   <div class="trace-list">
                     <article v-for="(item, index) in answer.researchTrace" :key="index">
-                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : item.action === 'search' ? `本地搜索${item.round}` : `本地第${item.round}轮`) : item.type === 'web' ? '官方Web搜索' : '独立审核' }}</span>
+                      <span>{{ item.type === 'local' ? (item.action === 'read' ? `原文阅读${item.round}` : item.action === 'search' ? `本地搜索${item.round}` : `本地第${item.round}轮`) : item.type === 'web' ? 'Web搜索' : '独立审核' }}</span>
                       <div><b>{{ item.decision }}</b><p v-if="item.queries?.length">检索词：{{ item.queries.join('；') }}</p><small>新增有效结果：{{ item.resultCount }}</small><small v-if="traceTimingLabel(item)" class="trace-timing">{{ traceTimingLabel(item) }}</small></div>
                     </article>
                   </div>
@@ -695,7 +975,7 @@ onMounted(async () => {
               </div>
               <h3>{{ evidenceDetail.document_title || evidenceDetail.title }}</h3>
               <p v-if="evidenceDetail.origin !== 'web'" class="evidence-meta">{{ evidenceDetail.article || '未识别条款' }} · 文件第{{ evidenceDetail.page }}页</p>
-              <p v-else class="evidence-meta">{{ evidenceDetail.publisher }} · 官方Web来源</p>
+              <p v-else class="evidence-meta">{{ evidenceDetail.publisher }} · Web来源</p>
               <p v-if="evidenceDetail.effective_date" class="evidence-meta">生效日期：{{ evidenceDetail.effective_date }}</p>
               <blockquote>{{ evidenceDetail.text }}</blockquote>
               <a :href="evidenceDetail.origin === 'web' ? evidenceDetail.url : evidenceDetail.pdfUrl" target="_blank">{{ evidenceDetail.origin === 'web' ? '打开官方网页' : '打开法规原文件' }} ↗</a>
@@ -707,9 +987,9 @@ onMounted(async () => {
         </div>
       </section>
 
-      <section v-if="activeTab === 'library'" class="library-page">
+      <section v-if="isAdmin && activeTab === 'library'" class="library-page">
         <div class="section-toolbar">
-          <div><p class="eyebrow">本地资料</p><h2>本地法规资料库</h2><p>自动读取本地法规目录；所有已同步文件不分等级和状态，以相同权重参与检索。</p></div>
+          <div><p class="eyebrow">本地资料</p><h2>本地资料库</h2><p>自动读取本地目录；所有已同步文件不分类型、等级和状态，以相同权重参与检索。</p></div>
           <div class="toolbar-actions">
             <button class="primary" :disabled="syncBusy" @click="syncLocalDocuments">{{ syncBusy ? '正在扫描与提取…' : '同步本地目录' }}</button>
           </div>
@@ -718,7 +998,7 @@ onMounted(async () => {
           发现 {{ syncReport.discovered }} 个本地文件；新增 {{ syncReport.imported }} 个；已有 {{ syncReport.unchanged }} 个；失败 {{ syncReport.errors?.length || 0 }} 个。
         </div>
         <div class="document-table">
-          <div class="table-row table-head"><span>法规文件</span><span>条款片段</span><span>发布日期</span><span>生效日期</span><span>原文件</span></div>
+          <div class="table-row table-head"><span>本地文件</span><span>文本片段</span><span>发布日期</span><span>生效日期</span><span>原文件</span></div>
           <div v-for="document in documents" :key="document.id" class="table-row">
             <span><b>{{ document.title }}</b><small>{{ document.filename }}</small></span>
             <span>{{ document.passage_count }}</span>
@@ -726,11 +1006,117 @@ onMounted(async () => {
             <span>{{ document.effective_date || '—' }}</span>
             <span><a class="document-link" :href="`/api/documents/${document.id}/file`" target="_blank">打开 ↗</a></span>
           </div>
-          <div v-if="!documents.length" class="table-empty">尚未发现可读取的本地法规文件。</div>
+          <div v-if="!documents.length" class="table-empty">尚未发现可读取的本地文件。</div>
         </div>
       </section>
 
-      <section v-if="activeTab === 'system'" class="system-page">
+      <section v-if="isAdmin && activeTab === 'monitor'" class="monitor-page">
+        <div class="section-toolbar">
+          <div><p class="eyebrow">管理员专用</p><h2>使用监控</h2><p>查看最近30天的用户登录、在线状态和问题处理记录。</p></div>
+          <button class="primary" :disabled="monitorBusy" @click="loadMonitor()">{{ monitorBusy ? '正在刷新…' : '刷新数据' }}</button>
+        </div>
+
+        <div class="monitor-metrics">
+          <article><span>当前在线</span><b>{{ monitorOverview?.onlineUsers ?? '—' }}</b><small>最近5分钟有活动</small></article>
+          <article><span>今日登录</span><b>{{ monitorOverview?.loginsToday ?? '—' }}</b><small>登录会话次数</small></article>
+          <article><span>今日问题</span><b>{{ monitorOverview?.questionsToday ?? '—' }}</b><small>所有用户提问</small></article>
+          <article><span>完成率</span><b>{{ monitorOverview ? `${monitorOverview.successRate}%` : '—' }}</b><small>平均 {{ monitorOverview ? `${monitorOverview.averageDurationSeconds}秒` : '—' }}</small></article>
+        </div>
+
+        <section class="monitor-card">
+          <div class="monitor-card-head"><div><h3>用户状态</h3><p>按照最近一次登录和活动时间汇总</p></div><span>每30秒自动刷新</span></div>
+          <div class="monitor-table-wrap">
+            <table class="monitor-table">
+              <thead><tr><th>用户</th><th>状态</th><th>最后活动</th><th>登录IP</th><th>客户端</th><th>问题数</th></tr></thead>
+              <tbody>
+                <tr v-for="user in monitorUsers" :key="user.id">
+                  <td><b>{{ user.username }}</b><small>{{ user.role === 'admin' ? '管理员' : '普通用户' }}</small></td>
+                  <td><span class="monitor-status" :class="user.online ? 'status-online' : 'status-offline'">{{ user.online ? '在线' : '离线' }}</span></td>
+                  <td>{{ formatDateTime(user.last_seen_at) }}</td>
+                  <td>{{ user.login_ip || '未记录' }}</td>
+                  <td>{{ [user.browser, user.operating_system, user.device].filter(Boolean).join(' · ') || '未记录' }}</td>
+                  <td>{{ user.question_count }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="monitor-filters">
+          <label>用户<input v-model="monitorFilters.username" placeholder="账号名称" /></label>
+          <label>开始日期<input v-model="monitorFilters.dateFrom" type="date" /></label>
+          <label>结束日期<input v-model="monitorFilters.dateTo" type="date" /></label>
+          <button class="secondary" @click="loadMonitor({ sessionPage: 1, questionPage: 1 })">应用筛选</button>
+        </div>
+
+        <section class="monitor-card">
+          <div class="monitor-card-head">
+            <div><h3>登录记录</h3><p>共 {{ monitorSessions.total }} 条</p></div>
+            <select v-model="monitorFilters.sessionStatus" @change="loadMonitor({ sessionPage: 1 })">
+              <option value="">全部状态</option><option value="online">在线</option><option value="active">会话有效</option><option value="revoked">已下线</option><option value="expired">已过期</option>
+            </select>
+          </div>
+          <div class="monitor-table-wrap">
+            <table class="monitor-table monitor-session-table">
+              <thead><tr><th>用户</th><th>登录时间</th><th>最后活动</th><th>状态</th><th>IP</th><th>浏览器 / 设备</th><th>下线原因</th><th>操作</th></tr></thead>
+              <tbody>
+                <tr v-for="session in monitorSessions.items" :key="session.id">
+                  <td><b>{{ session.username }}</b></td>
+                  <td>{{ formatDateTime(session.created_at) }}</td>
+                  <td>{{ formatDateTime(session.last_seen_at) }}</td>
+                  <td><span class="monitor-status" :class="session.status === 'online' ? 'status-online' : 'status-offline'">{{ monitorStatusLabel(session.status) }}</span></td>
+                  <td>{{ session.login_ip || '未记录' }}</td>
+                  <td><b>{{ session.browser || '未记录' }}</b><small>{{ [session.operating_system, session.device].filter(Boolean).join(' · ') }}</small><details v-if="session.user_agent"><summary>完整标识</summary><p class="user-agent-text">{{ session.user_agent }}</p></details></td>
+                  <td>{{ session.revoke_reason || '—' }}</td>
+                  <td><button class="danger-link" :disabled="session.id === authUser.session_id || !['online', 'inactive'].includes(session.status)" @click="revokeMonitoredSession(session)">下线</button></td>
+                </tr>
+                <tr v-if="!monitorSessions.items.length"><td colspan="8" class="monitor-empty">没有符合条件的登录记录</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="monitor-pagination"><button :disabled="monitorSessions.page <= 1" @click="loadMonitor({ sessionPage: monitorSessions.page - 1 })">上一页</button><span>第 {{ monitorSessions.page }} 页</span><button :disabled="monitorSessions.page * monitorSessions.pageSize >= monitorSessions.total" @click="loadMonitor({ sessionPage: monitorSessions.page + 1 })">下一页</button></div>
+        </section>
+
+        <section class="monitor-card">
+          <div class="monitor-card-head">
+            <div><h3>问题记录</h3><p>共 {{ monitorQuestions.total }} 条，点击问题查看完整详情</p></div>
+            <div class="monitor-inline-filters">
+              <input v-model="monitorFilters.keyword" placeholder="搜索问题内容" @keyup.enter="loadMonitor({ questionPage: 1 })" />
+              <select v-model="monitorFilters.questionStatus" @change="loadMonitor({ questionPage: 1 })">
+                <option value="">全部状态</option><option value="completed">已完成</option><option value="failed">失败</option><option value="queued">排队中</option><option value="retrieving">处理中</option><option value="generating">生成中</option>
+              </select>
+            </div>
+          </div>
+          <div class="monitor-table-wrap">
+            <table class="monitor-table monitor-question-table">
+              <thead><tr><th>用户</th><th>问题</th><th>状态</th><th>提交时间</th><th>耗时</th></tr></thead>
+              <tbody>
+                <tr v-for="item in monitorQuestions.items" :key="item.id" class="clickable-row" @click="openMonitorDetail(item.id)">
+                  <td><b>{{ item.username || '未知账号' }}</b></td><td>{{ item.question }}</td>
+                  <td><span class="monitor-status" :class="item.status === 'completed' ? 'status-online' : 'status-offline'">{{ monitorStatusLabel(item.status) }}</span></td>
+                  <td>{{ formatDateTime(item.created_at) }}</td><td>{{ item.duration_seconds != null ? `${item.duration_seconds}秒` : '—' }}</td>
+                </tr>
+                <tr v-if="!monitorQuestions.items.length"><td colspan="5" class="monitor-empty">没有符合条件的问题记录</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="monitor-pagination"><button :disabled="monitorQuestions.page <= 1" @click="loadMonitor({ questionPage: monitorQuestions.page - 1 })">上一页</button><span>第 {{ monitorQuestions.page }} 页</span><button :disabled="monitorQuestions.page * monitorQuestions.pageSize >= monitorQuestions.total" @click="loadMonitor({ questionPage: monitorQuestions.page + 1 })">下一页</button></div>
+        </section>
+
+        <div v-if="monitorDetail" class="monitor-modal" @click.self="monitorDetail = null">
+          <article class="monitor-detail">
+            <header><div><p class="eyebrow">{{ monitorDetail.username }} · {{ formatDateTime(monitorDetail.created_at) }}</p><h2>{{ monitorDetail.question }}</h2></div><button @click="monitorDetail = null">×</button></header>
+            <div class="monitor-detail-meta"><span>{{ monitorStatusLabel(monitorDetail.status) }}</span><span>耗时 {{ monitorDetail.duration_seconds ?? '—' }} 秒</span><span>ID {{ monitorDetail.id }}</span></div>
+            <div v-if="monitorDetail.error" class="monitor-detail-error"><b>错误信息</b><p>{{ monitorDetail.error }}</p></div>
+            <section><h3>完整回答</h3><div v-if="monitorDetail.answer?.markdown" class="markdown-body monitor-answer" v-html="monitorDetailMarkdown"></div><pre v-else>{{ JSON.stringify(monitorDetail.answer, null, 2) }}</pre></section>
+            <section><h3>引用来源（{{ answerSources(monitorDetail).length }}）</h3><div class="monitor-source-list"><article v-for="(source, index) in answerSources(monitorDetail)" :key="source.sourceId || source.url || index"><b>{{ source.title || source.documentTitle || '未命名来源' }}</b><p>{{ source.origin === 'web' || source.url ? 'Web来源' : '本地文件' }} · {{ source.article || `第${source.page || '—'}页` }}</p><blockquote v-if="source.quote">{{ source.quote }}</blockquote></article><p v-if="!answerSources(monitorDetail).length" class="muted">没有记录引用来源。</p></div></section>
+            <section><h3>检索与模型处理轨迹</h3><pre>{{ JSON.stringify(monitorDetail.answer?.researchTrace || [], null, 2) }}</pre></section>
+            <section><h3>任务事件</h3><pre>{{ JSON.stringify(monitorDetail.events || [], null, 2) }}</pre></section>
+          </article>
+        </div>
+      </section>
+
+      <section v-if="isAdmin && activeTab === 'system'" class="system-page">
         <div class="status-card hero-status">
           <div class="status-icon" :class="{ ready: codexHealth?.available && codexHealth?.authenticated }">◉</div>
           <div><p class="eyebrow">本机生成引擎</p><h2>{{ codexHealth?.login || 'Codex状态未知' }}</h2><span>{{ codexHealth?.version }}</span></div>
@@ -738,11 +1124,12 @@ onMounted(async () => {
         <div class="metrics">
           <article><span>调用方式</span><b>codex exec</b><small>不使用业务大模型API</small></article>
           <article><span>并发上限</span><b>{{ codexHealth?.concurrency ?? 2 }}</b><small>当前队列 {{ codexHealth?.queueSize ?? 0 }}/{{ codexHealth?.queueLimit ?? 20 }}</small></article>
-          <article><span>研究策略</span><b>{{ codexHealth?.localResearchRounds ?? 3 }}＋{{ codexHealth?.webResearchRounds ?? 1 }}</b><small>本地扩检轮次＋官方Web轮次</small></article>
+          <article><span>研究策略</span><b>模型自主</b><small>本地工具与Web搜索在同一次调用中开放</small></article>
+          <article><span>会话记忆</span><b>已关闭</b><small>每次提问独立研究，不读取历史问题或答案</small></article>
         </div>
         <div class="boundary-note">
           <h3>数据边界</h3>
-          <p>法规源文件和索引保存在本机；用户问题与已筛选证据片段会通过当前 ChatGPT 登录会话发送给 OpenAI。本地证据不足时，Codex仅在单独阶段搜索欧盟官方来源，页面会把本地法规和Web来源分别标明。</p>
+          <p>法规源文件和索引保存在本机；用户问题与模型自主读取的内容会通过当前 ChatGPT 登录会话发送给 OpenAI。Codex可在同一次任务中自行使用本地搜索、原文读取和Web搜索。</p>
         </div>
       </section>
     </main>

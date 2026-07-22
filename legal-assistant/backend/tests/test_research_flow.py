@@ -4,320 +4,41 @@ from datetime import datetime, timezone
 from app.codex_runner import CodexResult
 from app.config import Settings
 from app.database import Database
-from app.models import Evidence, QuestionRequest
 from app.ingestion import ingest_document
-from app.models import DocumentCreate
-from app.retrieval import Retriever
+from app.models import DocumentCreate, QuestionRequest, ReportSource
 from app.qa_service import QAService
+from app.retrieval import Retriever
 
 
-class RecordingRetriever:
-    def __init__(self):
-        self.queries = []
-
-    def search(self, query, **_):
-        self.queries.append(query)
-        evidence_id = f"EV-{len(self.queries):03d}"
-        return [
-            Evidence(
-                evidenceId=evidence_id,
-                documentId="DOC-001",
-                documentTitle="Regulation (EU) 2024/1781",
-                filename="regulation.pdf",
-                article="Article 13",
-                page=20,
-                quote="The Commission shall set up a digital registry storing unique identifiers.",
-            )
-        ]
-
-
-class DuplicateEvidenceRetriever(RecordingRetriever):
-    def search(self, query, **_):
-        self.queries.append(query)
-        return [
-            Evidence(
-                evidenceId="EV-001",
-                documentId="DOC-001",
-                documentTitle="Regulation (EU) 2024/1781",
-                filename="regulation.pdf",
-                article="Article 13",
-                page=20,
-                quote="The Commission shall set up a digital registry storing unique identifiers.",
-            )
-        ]
-
-
-class ExpandingRunner:
-    def __init__(self, settings):
-        self.settings = settings
-        self.assessments = 0
-        self.schemas = []
-
-    async def run(self, _, schema_name, **__):
-        self.schemas.append(schema_name)
-        if schema_name == "research_assessment.schema.json":
-            self.assessments += 1
-            if self.assessments == 1:
-                return CodexResult(
-                    {
-                        "decision": "search_local",
-                        "reason": "需要按法规编号继续检索",
-                        "coveredTopics": ["注册中心"],
-                        "gaps": ["登记数据"],
-                        "criticalGaps": [],
-                        "nextQueries": ["Article 13 digital product passport registry"],
-                        "webQueries": [],
-                        "webRequired": False,
-                    },
-                    [],
-                    "",
-                )
-            return CodexResult(
-                {
-                    "decision": "sufficient",
-                    "reason": "正式法规已经覆盖问题",
-                    "coveredTopics": ["注册中心", "登记数据"],
-                    "gaps": [],
-                    "criticalGaps": [],
-                    "nextQueries": [],
-                    "webQueries": [],
-                    "webRequired": False,
-                },
-                [],
-                "",
-            )
-        if schema_name == "dynamic_table_answer.schema.json":
-            return CodexResult(
-                {
-                    "status": "answered",
-                    "title": "注册中心保存的数据",
-                    "conclusion": {
-                        "statementId": "P-01",
-                        "text": "欧盟委员会应建立保存唯一标识符的注册中心。",
-                        "basis": "regulatory_requirement",
-                        "sourceRefs": ["EV-001"],
-                    },
-                    "table": {
-                        "columns": ["主体", "要求"],
-                        "rows": [
-                            {
-                                "rowId": "R-01",
-                                "cells": ["欧盟委员会", "建立保存唯一标识符的注册中心"],
-                                "basis": "regulatory_requirement",
-                                "sourceRefs": ["EV-001"],
-                            }
-                        ],
-                    },
-                },
-                [],
-                "",
-            )
-        raise AssertionError(schema_name)
-
-
-def test_research_flow_expands_local_search_and_skips_web_when_sufficient(tmp_path):
-    database = Database(tmp_path / "flow.sqlite3")
-    database.init()
-    database.create_job("JOB-FLOW", "注册中心如何保存数据？", "CONV-FLOW", None)
-    settings = Settings(
-        law_retrieval_mode="legacy",
-        data_dir=tmp_path,
-        database_path=tmp_path / "flow.sqlite3",
-        research_local_rounds=3,
-        research_web_rounds=1,
-        research_max_evidence=60,
-        web_search_enabled=True,
-    )
-    retriever = RecordingRetriever()
-    runner = ExpandingRunner(settings)
-    service = QAService(database, retriever, runner, 5)
-
-    asyncio.run(
-        service._process(
-            "JOB-FLOW",
-            QuestionRequest(question="注册中心如何保存数据？", conversation_id="CONV-FLOW"),
-        )
-    )
-
-    job = database.get_job("JOB-FLOW")
-    assert job["status"] == "completed"
-    assert job["answer"]["schemaVersion"] == "6.0"
-    assert job["answer"]["status"] == "answered"
-    assert retriever.queries == ["注册中心如何保存数据？", "Article 13 digital product passport registry"]
-    assert "web_research.schema.json" not in runner.schemas
-    assert [item["type"] for item in job["answer"]["researchTrace"]] == ["local", "local"]
-
-
-class SimpleGapRunner(ExpandingRunner):
-    async def run(self, _, schema_name, **__):
-        self.schemas.append(schema_name)
-        if schema_name == "research_assessment.schema.json":
-            self.assessments += 1
-            return CodexResult(
-                {
-                    "decision": "search_local",
-                    "reason": "仍可补充背景资料",
-                    "coveredTopics": ["定义"],
-                    "gaps": ["非必要背景"],
-                    "criticalGaps": [],
-                    "nextQueries": ["补充背景资料"],
-                    "webQueries": [],
-                    "webRequired": False,
-                    "questionProfile": {
-                        "interpretedQuestion": "注册中心定义",
-                        "complexity": "simple",
-                        "intents": ["legal_explanation"],
-                        "suggestedBlockType": "none",
-                        "focusAreas": [],
-                    },
-                },
-                [],
-                "",
-            )
-        return await super().run(_, schema_name, **__)
-
-
-def test_simple_question_stops_after_one_local_round(tmp_path):
-    database = Database(tmp_path / "simple.sqlite3")
-    database.init()
-    database.create_job("JOB-SIMPLE", "注册中心定义", "CONV-SIMPLE", None)
-    settings = Settings(
-        law_retrieval_mode="legacy",
-        data_dir=tmp_path,
-        database_path=tmp_path / "simple.sqlite3",
-        research_local_rounds=3,
-        research_web_rounds=1,
-        web_search_enabled=True,
-    )
-    retriever = RecordingRetriever()
-    runner = SimpleGapRunner(settings)
-    service = QAService(database, retriever, runner, 5)
-
-    asyncio.run(
-        service._process(
-            "JOB-SIMPLE",
-            QuestionRequest(question="注册中心定义", conversation_id="CONV-SIMPLE"),
-        )
-    )
-
-    job = database.get_job("JOB-SIMPLE")
-    assert job["status"] == "completed"
-    assert runner.assessments == 1
-    assert retriever.queries == ["注册中心定义"]
-    assert [item["type"] for item in job["answer"]["researchTrace"]] == ["local"]
-    assert "web_research.schema.json" not in runner.schemas
-
-
-def test_follow_up_round_stops_without_another_model_call_when_no_new_evidence(tmp_path):
-    database = Database(tmp_path / "no-gain.sqlite3")
-    database.init()
-    database.create_job("JOB-NO-GAIN", "注册中心如何保存数据？", "CONV-NO-GAIN", None)
-    settings = Settings(
-        law_retrieval_mode="legacy",
-        data_dir=tmp_path,
-        database_path=tmp_path / "no-gain.sqlite3",
-        research_local_rounds=3,
-        research_web_rounds=1,
-        web_search_enabled=True,
-    )
-    retriever = DuplicateEvidenceRetriever()
-    runner = ExpandingRunner(settings)
-    service = QAService(database, retriever, runner, 5)
-
-    asyncio.run(
-        service._process(
-            "JOB-NO-GAIN",
-            QuestionRequest(question="注册中心如何保存数据？", conversation_id="CONV-NO-GAIN"),
-        )
-    )
-
-    job = database.get_job("JOB-NO-GAIN")
-    assert job["status"] == "completed"
-    assert runner.assessments == 1
-    assert len(retriever.queries) == 2
-    assert job["answer"]["researchTrace"][1]["resultCount"] == 0
-    assert "没有新增有效证据" in job["answer"]["researchTrace"][1]["decision"]
-
-
-def test_web_search_requires_explicit_request_or_critical_gap():
-    ordinary_gap = {
-        "decision": "unresolved",
-        "gaps": ["可以补充示例"],
-        "criticalGaps": [],
-        "webRequired": False,
-    }
-    critical_gap = {
-        "decision": "unresolved",
-        "gaps": ["缺少适用条款"],
-        "criticalGaps": ["缺少适用条款"],
-        "webRequired": False,
-    }
-
-    assert not QAService._should_search_web(
-        ordinary_gap, explicit_request=False, local_search_exhausted=True
-    )
-    assert not QAService._should_search_web(
-        critical_gap, explicit_request=False, local_search_exhausted=False
-    )
-    assert QAService._should_search_web(
-        critical_gap, explicit_request=False, local_search_exhausted=True
-    )
-    assert QAService._should_search_web(
-        ordinary_gap, explicit_request=True, local_search_exhausted=False
-    )
-
-
-class ToolAgentRunner:
+class AutonomousRunner:
     def __init__(self, settings, evidence_id):
         self.settings = settings
         self.evidence_id = evidence_id
-        self.schemas = []
+        self.calls = []
 
-    async def run(self, _, schema_name, **kwargs):
-        self.schemas.append(schema_name)
-        assert schema_name == "local_law_agent.schema.json"
-        assert kwargs.get("law_tools") is not None
+    async def run(self, prompt, schema_name, **kwargs):
+        self.calls.append((prompt, schema_name, kwargs))
         return CodexResult(
             {
-                "decision": "sufficient",
-                "reason": "已读取正式法规原文",
-                "criticalGaps": [],
-                "webQueries": [],
-                "questionProfile": {
-                    "interpretedQuestion": "海关核验流程",
-                    "complexity": "simple",
-                    "intents": ["process"],
-                    "suggestedBlockType": "process",
-                    "focusAreas": ["海关入参"],
-                },
-                "answer": {
-                    "status": "answered",
-                    "title": "海关核验",
-                    "conclusion": {
-                        "statementId": "S-1",
-                        "text": "海关核验唯一登记标识符和商品编码。",
-                        "basis": "regulatory_requirement",
-                        "sourceRefs": [self.evidence_id],
-                    },
-                    "table": {
-                        "columns": ["核验项", "内容"],
-                        "rows": [
-                            {
-                                "rowId": "R-1",
-                                "cells": ["最少核验", "唯一登记标识符和商品编码"],
-                                "basis": "regulatory_requirement",
-                                "sourceRefs": [self.evidence_id],
-                            }
-                        ],
-                    },
-                },
+                "status": "answered",
+                "markdown": "海关可根据具体制度和可用信息进行核验。",
             },
-            [],
+            [
+                {
+                    "type": "item.completed",
+                    "item": {
+                        "id": "WEB-TOOL-1",
+                        "type": "web_search_call",
+                        "query": "EU customs battery registry",
+                        "results": [{"url": "https://example.com"}],
+                    },
+                }
+            ],
             "",
             law_trace=[
                 {
                     "action": "search",
-                    "query": "customs registration identifier commodity code",
+                    "query": "customs battery registry",
                     "resultIds": [self.evidence_id],
                     "resultCount": 1,
                     "startedAt": "2026-07-20T00:00:00.010000+00:00",
@@ -340,39 +61,147 @@ class ToolAgentRunner:
         )
 
 
-def test_mcp_mode_generates_report_in_one_local_agent_call(tmp_path):
+def test_question_uses_one_autonomous_agent_with_all_tools(tmp_path):
     source = tmp_path / "customs.txt"
     source.write_text(
-        "Article 15\nCustoms authorities shall verify the unique registration identifier and commodity code.",
+        "Article 15\nCustoms authorities shall verify the unique registration identifier.",
         encoding="utf-8",
     )
-    database = Database(tmp_path / "mcp-flow.sqlite3")
+    database = Database(tmp_path / "flow.sqlite3")
     database.init()
-    document = ingest_document(database, DocumentCreate(path=str(source)), tmp_path)
+    ingest_document(database, DocumentCreate(path=str(source)), tmp_path)
     evidence_id = database.searchable_passages()[0]["id"]
-    database.create_job("JOB-MCP", "海关如何核验？", "CONV-MCP", None)
-    settings = Settings(
-        data_dir=tmp_path,
-        database_path=tmp_path / "mcp-flow.sqlite3",
-        law_retrieval_mode="mcp",
-        web_search_enabled=False,
+    database.create_job("JOB-PREV", "注册中心定义了哪些接口", "CONV-AUTO", None)
+    database.update_job(
+        "JOB-PREV",
+        status="completed",
+        answer={
+            "schemaVersion": "7.0",
+            "status": "answered",
+            "markdown": "旧答案：只以正式法规能够确认的接口为准。",
+        },
     )
-    runner = ToolAgentRunner(settings, evidence_id)
+    database.create_job("JOB-AUTO", "海关如何核验？", "CONV-AUTO", None)
+    settings = Settings(data_dir=tmp_path, database_path=tmp_path / "flow.sqlite3")
+    runner = AutonomousRunner(settings, evidence_id)
     service = QAService(database, Retriever(database), runner, 5)
 
     asyncio.run(
         service._process(
-            "JOB-MCP", QuestionRequest(question="海关如何核验？", conversation_id="CONV-MCP")
+            "JOB-AUTO", QuestionRequest(question="海关如何核验？", conversation_id="CONV-AUTO")
         )
     )
 
-    job = database.get_job("JOB-MCP")
-    assert document["passage_count"] == 1
-    assert runner.schemas == ["local_law_agent.schema.json"]
+    job = database.get_job("JOB-AUTO")
     assert job["status"] == "completed"
-    assert job["answer"]["schemaVersion"] == "6.0"
-    assert job["answer"]["sources"][0]["sourceId"] == evidence_id
-    assert [item["action"] for item in job["answer"]["researchTrace"]] == ["search", "read"]
-    assert job["answer"]["researchTrace"][0]["modelThinkingMs"] == 10.0
-    assert job["answer"]["researchTrace"][1]["modelThinkingMs"] == 30.0
-    assert job["answer"]["researchTrace"][1]["finalAnswerMs"] == 48.0
+    assert len(runner.calls) == 1
+    prompt, schema_name, kwargs = runner.calls[0]
+    assert schema_name == "markdown_answer.schema.json"
+    assert kwargs["allow_web_search"] is True
+    assert kwargs["law_tools"] is not None
+    assert "均由你自行判断" in prompt
+    assert "法规、用户指南、标准、草案、工作文件和说明材料" in prompt
+    assert "不得默认把用户问题改写成“正式法规能够确认什么”" in prompt
+    assert "旧答案：只以正式法规能够确认的接口为准" not in prompt
+    assert "会话上下文" not in prompt
+    assert "不得叙述模型、工具名称、搜索轮次" in prompt
+    assert "自行识别原文中的标准法规术语" in prompt
+    assert "SearchLaw不会替你翻译或扩展关键词" in prompt
+    assert job["answer"]["status"] == "answered"
+    assert job["answer"]["sources"][0]["authorityKind"] == "local_supplement"
+    assert [item["type"] for item in job["answer"]["researchTrace"]] == [
+        "local",
+        "local",
+        "web",
+    ]
+    assert job["answer"]["researchTrace"][2]["queries"] == ["EU customs battery registry"]
+
+
+class NoToolRunner:
+    def __init__(self, settings):
+        self.settings = settings
+
+    async def run(self, *_args, **_kwargs):
+        return CodexResult(
+            {"status": "answered", "markdown": "模型选择不调用工具并直接回答。"},
+            [],
+            "",
+        )
+
+
+def test_answer_is_blocked_when_model_uses_no_evidence(tmp_path):
+    database = Database(tmp_path / "no-tools.sqlite3")
+    database.init()
+    database.create_job("JOB-NO-TOOLS", "普通问题", "CONV-NO-TOOLS", None)
+    settings = Settings(data_dir=tmp_path, database_path=tmp_path / "no-tools.sqlite3")
+    service = QAService(database, Retriever(database), NoToolRunner(settings), 5)
+
+    asyncio.run(
+        service._process(
+            "JOB-NO-TOOLS", QuestionRequest(question="普通问题", conversation_id="CONV-NO-TOOLS")
+        )
+    )
+
+    answer = database.get_job("JOB-NO-TOOLS")["answer"]
+    assert answer["status"] == "unresolved"
+    assert "暂时无法给出可靠结论" in answer["markdown"]
+    assert answer["sources"] == []
+    assert answer["researchTrace"] == []
+
+
+class WebOnlyRunner:
+    def __init__(self, settings):
+        self.settings = settings
+
+    async def run(self, *_args, **_kwargs):
+        return CodexResult(
+            {
+                "status": "answered",
+                "markdown": "该结论由可核验的外部原始来源支持。",
+                "webSources": [
+                    {
+                        "title": "External primary source",
+                        "url": "https://example.com/source",
+                        "publisher": "Example authority",
+                        "quote": "This is a sufficiently long verbatim quotation from the external source.",
+                        "publicationDate": None,
+                        "effectiveDate": None,
+                    }
+                ],
+            },
+            [],
+            "",
+        )
+
+
+class AcceptWebEvidence:
+    async def validate_many(self, _payloads):
+        return (
+            [
+                ReportSource(
+                    sourceId="WEB-TEST",
+                    origin="web",
+                    authorityKind="official_guidance",
+                    title="External primary source",
+                    quote="This is a sufficiently long verbatim quotation from the external source.",
+                    url="https://example.com/source",
+                )
+            ],
+            [],
+        )
+
+
+def test_verified_web_source_satisfies_evidence_gate(tmp_path):
+    database = Database(tmp_path / "web-only.sqlite3")
+    database.init()
+    database.create_job("JOB-WEB", "外部来源问题", None, None)
+    settings = Settings(data_dir=tmp_path, database_path=tmp_path / "web-only.sqlite3")
+    service = QAService(database, Retriever(database), WebOnlyRunner(settings), 5)
+    service.web_evidence = AcceptWebEvidence()
+
+    asyncio.run(service._process("JOB-WEB", QuestionRequest(question="外部来源问题")))
+
+    answer = database.get_job("JOB-WEB")["answer"]
+    assert answer["status"] == "answered"
+    assert answer["sources"][0]["sourceId"] == "WEB-TEST"
+    assert "webSources" not in answer

@@ -27,8 +27,6 @@ def _state(tmp_path: Path) -> ToolState:
         as_of_date=date(2026, 7, 20),
         include_future_rules=True,
         trace_path=tmp_path / "trace.jsonl",
-        max_search_calls=4,
-        max_read_calls=8,
     )
 
 
@@ -47,7 +45,7 @@ def test_search_then_read_source_records_citeable_passages(tmp_path: Path):
     assert all(item["durationMs"] >= 0 for item in trace)
 
 
-def test_duplicate_read_is_blocked_without_consuming_read_quota(tmp_path: Path):
+def test_duplicate_read_is_allowed_and_recorded(tmp_path: Path):
     state = _state(tmp_path)
     found = search_law(state, "customs unique registration identifier", top_k=3)
     source_id = found["results"][0]["source_id"]
@@ -56,18 +54,17 @@ def test_duplicate_read_is_blocked_without_consuming_read_quota(tmp_path: Path):
     duplicate = read_law_source(state, source_id)
 
     assert first["passages"]
-    assert duplicate["already_read"] is True
-    assert duplicate["passages"] == []
-    assert state.read_calls == 1
+    assert duplicate["passages"]
     trace = [json.loads(line) for line in state.trace_path.read_text(encoding="utf-8").splitlines()]
-    assert [item["action"] for item in trace] == ["search", "read", "read_duplicate"]
-    assert trace[-1]["reason"] == "source_already_read"
+    assert [item["action"] for item in trace] == ["search", "read", "read"]
 
 
-def test_read_rejects_source_that_was_not_searched(tmp_path: Path):
+def test_read_does_not_require_a_prior_search(tmp_path: Path):
     state = _state(tmp_path)
+    source_id = state.retriever.database.searchable_passages()[0]["id"]
 
-    result = read_law_source(state, "EV-NOT-SEARCHED")
+    result = read_law_source(state, source_id)
 
-    assert result["passages"] == []
-    assert "SearchLaw" in result["error"]
+    assert result["passages"]
+    trace = [json.loads(line) for line in state.trace_path.read_text(encoding="utf-8").splitlines()]
+    assert [item["action"] for item in trace] == ["read"]

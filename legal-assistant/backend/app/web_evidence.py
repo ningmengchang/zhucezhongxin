@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import asyncio
+import hashlib
 import html
 import ipaddress
 import re
@@ -21,93 +23,84 @@ def _normalized(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip().lower()
 
 
-def _official_host(host: str, allowed_domains: tuple[str, ...]) -> bool:
-    host = host.rstrip(".").lower()
-    return any(host == domain or host.endswith(f".{domain}") for domain in allowed_domains)
-
-
 def _public_addresses(host: str) -> bool:
     try:
         addresses = {item[4][0] for item in socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)}
     except socket.gaierror:
         return False
-    if not addresses:
-        return False
-    for address in addresses:
-        ip = ipaddress.ip_address(address)
-        if not ip.is_global:
-            return False
-    return True
+    return bool(addresses) and all(ipaddress.ip_address(address).is_global for address in addresses)
 
 
 def _page_text(content: bytes, content_type: str) -> str:
     if "pdf" in content_type.lower() or content.startswith(b"%PDF"):
         document = fitz.open(stream=content, filetype="pdf")
-        return "\n".join(page.get_text("text") for page in document)
+        try:
+            return "\n".join(page.get_text("text") for page in document)
+        finally:
+            document.close()
     decoded = content.decode("utf-8", errors="replace")
     decoded = re.sub(r"(?is)<(script|style|noscript).*?>.*?</\1>", " ", decoded)
     return html.unescape(re.sub(r"(?s)<[^>]+>", " ", decoded))
 
 
-def _parse_date(value: Any) -> date | None:
-    if not value:
-        return None
-    try:
-        return date.fromisoformat(str(value)[:10])
-    except ValueError:
-        return None
-
-
 class WebEvidenceValidator:
-    def __init__(self, allowed_domains: tuple[str, ...], max_sources: int = 5):
-        self.allowed_domains = allowed_domains
+    def __init__(self, max_sources: int = 5):
         self.max_sources = max_sources
 
     async def validate_many(self, payloads: list[dict[str, Any]]) -> tuple[list[ReportSource], list[str]]:
+        results = await asyncio.gather(
+            *(self._validate(payload, index) for index, payload in enumerate(payloads[: self.max_sources], 1)),
+            return_exceptions=True,
+        )
         accepted: list[ReportSource] = []
         rejected: list[str] = []
-        for index, payload in enumerate(payloads[: self.max_sources], start=1):
-            source, reason = await self._validate(payload, index)
-            if source:
-                accepted.append(source)
+        for result in results:
+            if isinstance(result, Exception):
+                rejected.append(f"外部来源验证失败：{str(result)[:160]}")
+            elif result[0] is not None:
+                accepted.append(result[0])
             else:
-                rejected.append(reason)
+                rejected.append(result[1])
         return accepted, rejected
 
     async def _validate(self, payload: dict[str, Any], index: int) -> tuple[ReportSource | None, str]:
         raw_url = str(payload.get("url", "")).strip()
         quote = str(payload.get("quote", "")).strip()
+        label = str(payload.get("title") or raw_url or f"外部来源{index}")
         parsed = urlparse(raw_url)
-        host = (parsed.hostname or "").lower()
-        label = str(payload.get("title") or raw_url or f"Web来源{index}")
-        if parsed.scheme != "https" or not host or not _official_host(host, self.allowed_domains):
-            return None, f"{label}：URL不属于允许的欧盟官方域名"
+        host = (parsed.hostname or "").rstrip(".").lower()
+        if parsed.scheme != "https" or not host:
+            return None, f"{label}：仅接受有效HTTPS地址"
         if len(_normalized(quote)) < 20:
-            return None, f"{label}：未返回可核验的法规原文"
+            return None, f"{label}：没有足够长的可核验原文"
         if not _public_addresses(host):
-            return None, f"{label}：域名解析结果不是公共网络地址"
+            return None, f"{label}：地址不是公共网络来源"
 
         try:
             final_url, body, content_type = await self._fetch(raw_url)
             page_text = _page_text(body, content_type)
         except Exception as exc:
-            return None, f"{label}：官方页面读取失败（{str(exc)[:120]}）"
+            return None, f"{label}：页面读取失败（{str(exc)[:120]}）"
         if _normalized(quote) not in _normalized(page_text):
-            return None, f"{label}：返回原文无法在官方页面中逐字核对"
+            return None, f"{label}：引文无法在页面中逐字核对"
 
-        publication = _parse_date(payload.get("publicationDate"))
-        effective = _parse_date(payload.get("effectiveDate"))
-        today = date.today()
-        applicability = "future" if effective and effective > today else "current" if effective else "unknown"
+        publication = payload.get("publicationDate")
+        effective = payload.get("effectiveDate")
+        if isinstance(publication, str):
+            publication = date.fromisoformat(publication[:10])
+        if isinstance(effective, str):
+            effective = date.fromisoformat(effective[:10])
+        applicability = "future" if effective and effective > date.today() else "current" if effective else "unknown"
+        source_hash = hashlib.sha256(final_url.encode("utf-8")).hexdigest()[:12].upper()
         return (
             ReportSource(
-                sourceId=f"WEB-{index:02d}",
+                sourceId=f"WEB-{source_hash}",
                 origin="web",
-                authorityKind=payload.get("authorityKind", "official_guidance"),
+                authorityKind="official_guidance",
                 title=label,
                 quote=quote,
                 url=final_url,
-                publisher=str(payload.get("publisher", "")).strip() or host,
+                publisher=str(payload.get("publisher") or host).strip(),
                 publicationDate=publication,
                 effectiveDate=effective,
                 applicabilityStatus=applicability,
@@ -119,22 +112,26 @@ class WebEvidenceValidator:
 
     async def _fetch(self, url: str) -> tuple[str, bytes, str]:
         current = url
-        async with httpx.AsyncClient(timeout=20, follow_redirects=False, headers={"User-Agent": "LegalAssistant/0.4"}) as client:
+        async with httpx.AsyncClient(
+            timeout=20,
+            follow_redirects=False,
+            headers={"User-Agent": "LegalAssistant/0.8"},
+        ) as client:
             for _ in range(4):
                 parsed = urlparse(current)
-                host = (parsed.hostname or "").lower()
-                if parsed.scheme != "https" or not _official_host(host, self.allowed_domains):
-                    raise ValueError("重定向目标不在官方域名白名单")
+                host = (parsed.hostname or "").rstrip(".").lower()
+                if parsed.scheme != "https" or not host or not _public_addresses(host):
+                    raise ValueError("重定向目标不是公共HTTPS地址")
                 response = await client.get(current)
                 if response.status_code in {301, 302, 303, 307, 308}:
                     target = response.headers.get("location")
                     if not target:
-                        raise ValueError("官方页面返回空重定向")
+                        raise ValueError("页面返回空重定向")
                     current = urljoin(current, target)
                     continue
                 response.raise_for_status()
                 body = response.content
                 if len(body) > MAX_WEB_BYTES:
-                    raise ValueError("官方页面超过10MB验证上限")
+                    raise ValueError("页面超过10MB验证上限")
                 return str(response.url), body, response.headers.get("content-type", "")
-        raise ValueError("官方页面重定向次数过多")
+        raise ValueError("页面重定向次数过多")

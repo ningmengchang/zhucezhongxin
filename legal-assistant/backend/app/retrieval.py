@@ -9,65 +9,6 @@ from .models import Evidence
 from .search_index import fts_query, tokenize
 
 
-ZH_EN_GLOSSARY = {
-    "海关": ["customs", "customs authorities", "customs controls"],
-    "查询": ["search", "retrieve", "verify", "verification"],
-    "核对": ["verify", "verification", "correspond"],
-    "注册中心": ["registry", "digital product passport registry"],
-    "登记": ["registration", "register", "registered"],
-    "唯一登记标识符": ["unique registration identifier"],
-    "唯一标识符": ["unique identifier", "unique identifiers"],
-    "电池唯一标识符": ["unique identifier", "batteries"],
-    "产品唯一标识符": ["unique product identifier"],
-    "商品编码": ["commodity code", "commodity codes"],
-    "经济运营商": ["economic operator", "economic operators"],
-    "经济运营者": ["economic operator", "economic operators"],
-    "服务商": ["service provider", "digital product passport service provider"],
-    "提供商": ["service provider"],
-    "电池": ["battery", "batteries"],
-    "电池护照": ["battery passport"],
-    "数字产品护照": ["digital product passport"],
-    "护照": ["passport"],
-    "二维码": ["QR code"],
-    "上传": ["upload", "uploading"],
-    "投放市场": ["placing on the market", "placed on the market"],
-    "投入使用": ["putting into service", "put into service"],
-    "自由流通": ["release for free circulation"],
-    "申报": ["declaration", "provide", "make available"],
-    "入参": ["data", "identifier", "input", "unique registration identifier", "commodity code"],
-    "字段": ["data", "data element", "attribute", "schema"],
-    "模型": ["data model", "schema", "semantic definition"],
-    "api": ["API", "application programming interface", "publicly documented APIs"],
-    "接口": ["API", "application programming interface", "user interface"],
-    "责任": ["responsibility", "responsible", "obligation"],
-    "职责": ["responsibility", "responsible", "obligation"],
-    "义务": ["obligation", "shall"],
-    "法规": ["regulation", "union law"],
-    "条款": ["article", "paragraph"],
-}
-CRITICAL_PHRASES = {
-    "application programming interface",
-    "publicly documented apis",
-    "unique registration identifier",
-    "unique product identifier",
-    "unique identifier",
-    "commodity code",
-    "economic operator",
-    "customs authorities",
-    "release for free circulation",
-    "digital product passport service provider",
-}
-
-
-def expand_query(query: str) -> str:
-    additions: list[str] = []
-    lowered = query.lower()
-    for chinese, english_terms in ZH_EN_GLOSSARY.items():
-        if chinese in lowered:
-            additions.extend(english_terms)
-    return f"{query} {' '.join(additions)}" if additions else query
-
-
 def _query_key(query: str) -> str:
     normalized = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", "", query.lower())
     return normalized.replace("标识符", "标识").replace("经济运营者", "经济运营商")
@@ -105,9 +46,9 @@ def _is_context_dependent(query: str) -> bool:
 
 
 def query_variants(query: str, routing_text: str | None = None) -> list[str]:
-    """Keep deterministic expansion narrow; the law agent can issue follow-up searches itself."""
-    expanded = expand_query(query)
-    return list(dict.fromkeys([query, expanded]))
+    """Search exactly what the agent requested; terminology choices belong to the agent."""
+    normalized = " ".join(query.split())
+    return [normalized] if normalized else []
 
 
 def _applicability(item: dict, effective_on: date) -> str:
@@ -154,9 +95,6 @@ class Retriever:
                 normalized_query = " ".join(variant.lower().split())
                 if normalized_query and normalized_query in item["normalized_text"]:
                     contribution += 0.03
-                for phrase in CRITICAL_PHRASES:
-                    if phrase in variant.lower() and phrase in item["normalized_text"]:
-                        contribution += 0.02
                 fused_scores[item["id"]] += contribution
         context_weight = 0.65 if _is_context_dependent(query) else 0.25
         for context_query in prepared_context:

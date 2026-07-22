@@ -7,12 +7,16 @@ import subprocess
 import sys
 import time
 import urllib.request
+import urllib.error
 import os
 
 
 def get(url: str) -> tuple[int, str, str]:
-    with urllib.request.urlopen(url, timeout=5) as response:
-        return response.status, response.headers.get_content_type(), response.read().decode("utf-8")
+    try:
+        with urllib.request.urlopen(url, timeout=5) as response:
+            return response.status, response.headers.get_content_type(), response.read().decode("utf-8")
+    except urllib.error.HTTPError as exc:
+        return exc.code, exc.headers.get_content_type(), exc.read().decode("utf-8")
 
 
 def main() -> None:
@@ -36,9 +40,9 @@ def main() -> None:
             raise RuntimeError("HTTP server did not become ready")
         frontend = get("http://127.0.0.1:8090/")
         payload = json.loads(health[2])
-        assert health[0] == 200 and payload["status"] == "ok"
+        assert health[0] == 401 and payload["detail"]["code"] == "authentication_required"
         assert frontend[0] == 200 and "text/html" in frontend[1]
-        assert "法规证据助手" in frontend[2]
+        assert "法规助手" in frontend[2]
         print(json.dumps({"health": payload, "frontend": frontend[:2]}, ensure_ascii=False))
     finally:
         process.terminate()

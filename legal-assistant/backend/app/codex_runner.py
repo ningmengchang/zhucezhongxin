@@ -219,10 +219,6 @@ class CodexRunner:
                 "true" if law_tools.include_future_rules else "false",
                 "--trace",
                 str(trace_path.resolve()),
-                "--max-search-calls",
-                str(self.settings.law_search_max_calls),
-                "--max-read-calls",
-                str(self.settings.law_read_max_calls),
                 "--default-top-k",
                 str(self.settings.law_search_top_k),
             ]
@@ -276,129 +272,9 @@ class CodexRunner:
         return None
 
     @staticmethod
-    def _mock_result(schema_name: str) -> CodexResult:
-        if schema_name == "local_law_agent.schema.json":
-            payload = {
-                "decision": "unresolved",
-                "reason": "Mock模式没有执行法规工具",
-                "criticalGaps": ["Mock模式"],
-                "webQueries": [],
-                "questionProfile": {
-                    "interpretedQuestion": "Mock问题",
-                    "complexity": "simple",
-                    "intents": ["legal_explanation"],
-                    "suggestedBlockType": "none",
-                    "focusAreas": [],
-                },
-                "answer": {
-                    "status": "unresolved",
-                    "title": "Mock模式",
-                    "conclusion": {
-                        "statementId": "C-MOCK",
-                        "text": "Mock模式未调用法规工具。",
-                        "basis": "uncertainty",
-                        "sourceRefs": [],
-                    },
-                    "table": {
-                        "columns": ["事项", "结果"],
-                        "rows": [
-                            {
-                                "rowId": "R-MOCK",
-                                "cells": ["运行模式", "Mock模式未调用法规工具"],
-                                "basis": "uncertainty",
-                                "sourceRefs": [],
-                            }
-                        ],
-                    },
-                },
-            }
-        elif schema_name == "research_assessment.schema.json":
-            payload = {
-                "decision": "unresolved",
-                "reason": "Mock模式没有模型评估",
-                "coveredTopics": [],
-                "gaps": ["Mock模式"],
-                "criticalGaps": [],
-                "nextQueries": [],
-                "webQueries": [],
-                "webRequired": False,
-                "questionProfile": {
-                    "interpretedQuestion": "Mock问题",
-                    "complexity": "simple",
-                    "intents": ["legal_explanation"],
-                    "suggestedBlockType": "none",
-                    "focusAreas": [],
-                },
-            }
-        elif schema_name == "web_research.schema.json":
-            payload = {"searchedQueries": [], "sources": [], "unresolvedGaps": ["Mock模式"]}
-        elif schema_name == "legal_report.schema.json":
-            payload = {
-                "status": "unresolved",
-                "executiveSummary": [],
-                "analysisSections": [],
-                "serviceProviderImpact": [],
-                "uncertainties": ["Mock模式未调用Codex。"],
-            }
-        elif schema_name == "work_product_report.schema.json":
-            payload = {
-                "status": "unresolved",
-                "answerTitle": "Mock模式",
-                "executiveAnswer": [],
-                "keyTakeaways": [],
-                "contentBlocks": [],
-                "serviceProviderActions": [],
-                "unresolvedQuestions": [
-                    {
-                        "itemId": "U-MOCK",
-                        "question": "Mock模式未调用Codex",
-                        "impact": "没有生成真实内容",
-                        "neededEvidence": "关闭Mock模式",
-                    }
-                ],
-            }
-        elif schema_name == "concise_legal_answer.schema.json":
-            payload = {
-                "status": "unresolved",
-                "title": "Mock模式",
-                "conclusion": {
-                    "statementId": "C-MOCK",
-                    "text": "Mock模式未调用Codex。",
-                    "basis": "uncertainty",
-                    "sourceRefs": [],
-                },
-                "explanations": [],
-                "providerAdvice": [],
-            }
-        elif schema_name == "dynamic_table_answer.schema.json":
-            payload = {
-                "status": "unresolved",
-                "title": "Mock模式",
-                "conclusion": {
-                    "statementId": "C-MOCK",
-                    "text": "Mock模式未调用Codex。",
-                    "basis": "uncertainty",
-                    "sourceRefs": [],
-                },
-                "table": {
-                    "columns": ["事项", "结果"],
-                    "rows": [
-                        {
-                            "rowId": "R-MOCK",
-                            "cells": ["运行模式", "Mock模式未调用Codex"],
-                            "basis": "uncertainty",
-                            "sourceRefs": [],
-                        }
-                    ],
-                },
-            }
-        else:
-            payload = {
-                "status": "insufficient_evidence",
-                "summary": "Mock模式未调用Codex。",
-                "claims": [],
-                "implementationAdvice": [],
-                "missingEvidence": ["Mock模式"],
-                "searchedSources": [],
-            }
+    def _mock_result(_schema_name: str) -> CodexResult:
+        payload = {
+            "status": "unresolved",
+            "markdown": "Mock模式未调用Codex。",
+        }
         return CodexResult(payload=payload, events=[{"type": "mock"}], stderr="")
