@@ -11,6 +11,9 @@ const loginPassword = ref('')
 const loginBusy = ref(false)
 const loginError = ref('')
 const sessionNotice = ref('')
+const authMode = ref('login')
+const registerPassword = ref('')
+const registerConfirmPassword = ref('')
 const question = ref('')
 const busy = ref(false)
 const job = ref(null)
@@ -36,6 +39,7 @@ const monitorFilters = ref({
   dateTo: monitorToday.toLocaleDateString('en-CA')
 })
 const markdownRoot = ref(null)
+const mermaidPreview = ref(null)
 const isAdmin = computed(() => authUser.value?.role === 'admin')
 const statusLabel = computed(() => ({
   answered: '答复完成', partial: '部分答复', unresolved: '尚未解决', insufficient_evidence: '证据不足', system_error: '处理失败'
@@ -55,6 +59,81 @@ const monitorDetailMarkdown = computed(() => DOMPurify.sanitize(marked.parse(
 
 let mermaidRenderRun = 0
 let mermaidInstance = null
+
+function saveBlob(blob, filename) {
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  link.remove()
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
+function downloadMermaidSource(source, filename) {
+  saveBlob(new Blob([source], { type: 'text/plain;charset=utf-8' }), filename)
+}
+
+async function downloadMermaidPng(svgMarkup, filename) {
+  const parser = new DOMParser()
+  const svgDocument = parser.parseFromString(svgMarkup, 'image/svg+xml')
+  const svgElement = svgDocument.documentElement
+  if (svgElement.nodeName.toLowerCase() !== 'svg') throw new Error('图示内容无法转换为图片')
+  svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+  const viewBox = (svgElement.getAttribute('viewBox') || '').split(/\s+/).map(Number)
+  const rawWidth = viewBox.length === 4 && viewBox[2] > 0
+    ? viewBox[2] : Number.parseFloat(svgElement.getAttribute('width')) || 1200
+  const rawHeight = viewBox.length === 4 && viewBox[3] > 0
+    ? viewBox[3] : Number.parseFloat(svgElement.getAttribute('height')) || 800
+  const scale = Math.min(2, 8000 / rawWidth, 8000 / rawHeight)
+  const width = Math.max(1, Math.round(rawWidth * scale))
+  const height = Math.max(1, Math.round(rawHeight * scale))
+  const serialized = new XMLSerializer().serializeToString(svgElement)
+  const svgUrl = URL.createObjectURL(new Blob([serialized], { type: 'image/svg+xml;charset=utf-8' }))
+  try {
+    const image = new Image()
+    image.src = svgUrl
+    await image.decode()
+    const canvas = document.createElement('canvas')
+    canvas.width = width
+    canvas.height = height
+    const context = canvas.getContext('2d')
+    if (!context) throw new Error('浏览器不支持图片导出')
+    context.fillStyle = '#ffffff'
+    context.fillRect(0, 0, width, height)
+    context.drawImage(image, 0, 0, width, height)
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'))
+    if (!blob) throw new Error('图片生成失败')
+    saveBlob(blob, filename)
+  } finally {
+    URL.revokeObjectURL(svgUrl)
+  }
+}
+
+function openMermaidPreview(svgMarkup, source, baseName) {
+  const document = new DOMParser().parseFromString(svgMarkup, 'image/svg+xml')
+  const svg = document.documentElement
+  const viewBox = (svg.getAttribute('viewBox') || '').split(/\s+/).map(Number)
+  const naturalWidth = viewBox.length === 4 && viewBox[2] > 0
+    ? viewBox[2] : Number.parseFloat(svg.getAttribute('width')) || 1000
+  mermaidPreview.value = {
+    svg: svgMarkup,
+    source,
+    baseName,
+    previewWidth: Math.min(5000, Math.max(1200, Math.round(naturalWidth * 1.4)))
+  }
+}
+
+function exportMermaidPng(svgMarkup, filename) {
+  downloadMermaidPng(svgMarkup, filename).catch(err => {
+    error.value = err instanceof Error ? `图示下载失败：${err.message}` : '图示下载失败'
+  })
+}
+
+function handleMermaidPreviewKey(event) {
+  if (event.key === 'Escape' && mermaidPreview.value) mermaidPreview.value = null
+}
 async function loadMermaid() {
   if (mermaidInstance) return mermaidInstance
   const module = await import('mermaid')
@@ -81,15 +160,41 @@ async function renderMermaidDiagrams() {
     const pre = block.closest('pre')
     if (!pre) continue
     try {
+      const source = block.textContent || ''
       const id = `mermaid-${Date.now()}-${run}-${index}`
-      const { svg } = await mermaid.render(id, block.textContent || '')
+      const { svg } = await mermaid.render(id, source)
       if (run !== mermaidRenderRun) return
+      const sanitizedSvg = DOMPurify.sanitize(svg, { USE_PROFILES: { svg: true, svgFilters: true } })
+      const baseName = `法规助手-时序图-${index + 1}`
+      const card = document.createElement('figure')
+      card.className = 'mermaid-card'
+      const toolbar = document.createElement('figcaption')
+      toolbar.className = 'mermaid-toolbar'
+      const title = document.createElement('span')
+      title.textContent = '时序图'
+      toolbar.appendChild(title)
+      const actions = document.createElement('div')
+      const previewButton = document.createElement('button')
+      previewButton.type = 'button'
+      previewButton.textContent = '查看大图'
+      previewButton.addEventListener('click', () => openMermaidPreview(sanitizedSvg, source, baseName))
+      const imageButton = document.createElement('button')
+      imageButton.type = 'button'
+      imageButton.textContent = '下载图片'
+      imageButton.addEventListener('click', () => exportMermaidPng(sanitizedSvg, `${baseName}.png`))
+      const sourceButton = document.createElement('button')
+      sourceButton.type = 'button'
+      sourceButton.textContent = '下载源码'
+      sourceButton.addEventListener('click', () => downloadMermaidSource(source, `${baseName}.mmd`))
+      actions.append(previewButton, imageButton, sourceButton)
+      toolbar.appendChild(actions)
       const diagram = document.createElement('div')
       diagram.className = 'mermaid-diagram'
       diagram.setAttribute('role', 'img')
       diagram.setAttribute('aria-label', '答复图示')
-      diagram.innerHTML = DOMPurify.sanitize(svg, { USE_PROFILES: { svg: true, svgFilters: true } })
-      pre.replaceWith(diagram)
+      diagram.innerHTML = sanitizedSvg
+      card.append(toolbar, diagram)
+      pre.replaceWith(card)
     } catch (err) {
       pre.classList.add('mermaid-error-source')
       const note = document.createElement('div')
@@ -149,6 +254,58 @@ async function login() {
     loginPassword.value = ''
     sessionNotice.value = ''
     await initializeAuthenticatedView()
+  } catch (err) {
+    loginError.value = err.message
+  } finally {
+    loginBusy.value = false
+  }
+}
+
+function switchAuthMode(mode) {
+  authMode.value = mode
+  loginError.value = ''
+  sessionNotice.value = ''
+  loginPassword.value = ''
+  registerPassword.value = ''
+  registerConfirmPassword.value = ''
+}
+
+async function registerAccount() {
+  const username = loginUsername.value.trim()
+  if (loginBusy.value) return
+  if (username.length < 2 || username.length > 32) {
+    loginError.value = '用户名长度必须为2至32位'
+    return
+  }
+  const usernamePattern = /^[\p{Script=Han}A-Za-z0-9](?:[\p{Script=Han}A-Za-z0-9_.-]*[\p{Script=Han}A-Za-z0-9])$/u
+  if (!usernamePattern.test(username)) {
+    loginError.value = '用户名只能包含中文、英文字母、数字、下划线、短横线和点，且首尾不能是符号'
+    return
+  }
+  if (registerPassword.value.length < 8 || registerPassword.value.length > 128) {
+    loginError.value = '密码长度必须为8至128位'
+    return
+  }
+  if (registerPassword.value !== registerConfirmPassword.value) {
+    loginError.value = '两次输入的密码不一致'
+    return
+  }
+  loginBusy.value = true
+  loginError.value = ''
+  try {
+    const result = await api('/api/auth/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        password: registerPassword.value,
+        confirm_password: registerConfirmPassword.value
+      })
+    })
+    authMode.value = 'login'
+    loginUsername.value = result.username
+    registerPassword.value = ''
+    registerConfirmPassword.value = ''
+    sessionNotice.value = result.message || '注册成功，请登录'
   } catch (err) {
     loginError.value = err.message
   } finally {
@@ -432,6 +589,7 @@ function applicabilityClass(status) {
 }
 
 onMounted(async () => {
+  window.addEventListener('keydown', handleMermaidPreviewKey)
   try {
     authUser.value = await api('/api/auth/me')
     await initializeAuthenticatedView()
@@ -441,7 +599,10 @@ onMounted(async () => {
     authLoading.value = false
   }
 })
-onUnmounted(stopMonitorRefresh)
+onUnmounted(() => {
+  stopMonitorRefresh()
+  window.removeEventListener('keydown', handleMermaidPreviewKey)
+})
 </script>
 
 <template>
@@ -450,18 +611,31 @@ onUnmounted(stopMonitorRefresh)
   </div>
 
   <div v-else-if="!authUser" class="auth-screen">
-    <form class="login-card" @submit.prevent="login">
-      <div class="login-brand"><span class="brand-mark">法</span><div><strong>法规助手</strong><small>内网账号登录</small></div></div>
-      <h1>登录系统</h1>
-      <p>请输入管理员分配的账号和密码。</p>
+    <form class="login-card" @submit.prevent="authMode === 'login' ? login() : registerAccount()">
+      <div class="login-brand"><span class="brand-mark">法</span><div><strong>法规助手</strong><small>{{ authMode === 'login' ? '内网账号登录' : '创建问答账号' }}</small></div></div>
+      <h1>{{ authMode === 'login' ? '登录系统' : '注册账号' }}</h1>
+      <p>{{ authMode === 'login' ? '请输入账号和密码。' : '注册成功后，即可使用法规问答。' }}</p>
       <div v-if="sessionNotice" class="login-notice">{{ sessionNotice }}</div>
       <div v-if="loginError" class="login-error">{{ loginError }}</div>
       <label for="login-username">账号</label>
       <input id="login-username" v-model="loginUsername" autocomplete="username" autofocus />
-      <label for="login-password">密码</label>
-      <input id="login-password" v-model="loginPassword" type="password" autocomplete="current-password" />
-      <button class="primary" type="submit" :disabled="loginBusy || !loginUsername.trim() || !loginPassword">
-        {{ loginBusy ? '正在登录…' : '登录' }}
+      <template v-if="authMode === 'login'">
+        <label for="login-password">密码</label>
+        <input id="login-password" v-model="loginPassword" type="password" autocomplete="current-password" />
+      </template>
+      <template v-else>
+        <p class="register-hint">2～32位，可使用中英文、数字、下划线、短横线和点。</p>
+        <label for="register-password">密码</label>
+        <input id="register-password" v-model="registerPassword" type="password" autocomplete="new-password" />
+        <label for="register-confirm-password">确认密码</label>
+        <input id="register-confirm-password" v-model="registerConfirmPassword" type="password" autocomplete="new-password" />
+        <p class="register-hint">密码长度为8～128位。</p>
+      </template>
+      <button class="primary" type="submit" :disabled="loginBusy || !loginUsername.trim() || (authMode === 'login' ? !loginPassword : !registerPassword || !registerConfirmPassword)">
+        {{ loginBusy ? (authMode === 'login' ? '正在登录…' : '正在注册…') : (authMode === 'login' ? '登录' : '注册') }}
+      </button>
+      <button class="auth-mode-switch" type="button" @click="switchAuthMode(authMode === 'login' ? 'register' : 'login')">
+        {{ authMode === 'login' ? '没有账号？立即注册' : '已有账号？返回登录' }}
       </button>
     </form>
   </div>
@@ -1132,6 +1306,20 @@ onUnmounted(stopMonitorRefresh)
           <p>法规源文件和索引保存在本机；用户问题与模型自主读取的内容会通过当前 ChatGPT 登录会话发送给 OpenAI。Codex可在同一次任务中自行使用本地搜索、原文读取和Web搜索。</p>
         </div>
       </section>
+
+      <div v-if="mermaidPreview" class="mermaid-preview-modal" @click.self="mermaidPreview = null">
+        <section class="mermaid-preview-panel" role="dialog" aria-modal="true" aria-label="时序图大图预览">
+          <header>
+            <div><p class="eyebrow">图示预览</p><h2>时序图大图</h2></div>
+            <div class="mermaid-preview-actions">
+              <button @click="exportMermaidPng(mermaidPreview.svg, `${mermaidPreview.baseName}.png`)">下载图片</button>
+              <button @click="downloadMermaidSource(mermaidPreview.source, `${mermaidPreview.baseName}.mmd`)">下载源码</button>
+              <button class="mermaid-preview-close" aria-label="关闭大图" @click="mermaidPreview = null">×</button>
+            </div>
+          </header>
+          <div class="mermaid-preview-canvas"><div class="mermaid-preview-drawing" :style="{ width: `${mermaidPreview.previewWidth}px` }" v-html="mermaidPreview.svg"></div></div>
+        </section>
+      </div>
     </main>
   </div>
 </template>

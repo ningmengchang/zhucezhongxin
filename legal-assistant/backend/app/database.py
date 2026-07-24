@@ -504,6 +504,33 @@ class Database:
                 """,
                 [{**item, "created_at": now, "updated_at": now} for item in users],
             )
+            # nmc is the permanent administrator. Preserve the existing password
+            # while repairing accidental role/status changes on every startup.
+            db.execute(
+                """
+                UPDATE users SET role='admin', enabled=1, updated_at=?
+                WHERE username='nmc' COLLATE NOCASE
+                """,
+                (now,),
+            )
+
+    def create_user(
+        self, *, user_id: str, username: str, password_hash: str, role: str = "user"
+    ) -> bool:
+        now = utc_now()
+        try:
+            with self.connect() as db:
+                db.execute(
+                    """
+                    INSERT INTO users
+                        (id,username,password_hash,role,enabled,created_at,updated_at)
+                    VALUES (?,?,?,?,1,?,?)
+                    """,
+                    (user_id, username, password_hash, role, now, now),
+                )
+        except sqlite3.IntegrityError:
+            return False
+        return True
 
     def get_user_by_username(self, username: str) -> dict[str, Any] | None:
         with self.connect() as db:

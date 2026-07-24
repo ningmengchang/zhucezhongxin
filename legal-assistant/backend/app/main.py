@@ -26,6 +26,8 @@ from .models import (
     JobStatus,
     LoginOut,
     LoginRequest,
+    RegisterOut,
+    RegisterRequest,
     QuestionAccepted,
     QuestionRequest,
     SearchRequest,
@@ -147,6 +149,22 @@ async def login(payload: LoginRequest, request: Request, response: Response) -> 
         path="/",
     )
     return LoginOut(user=auth_user_out(principal), expires_at=expires_at)
+
+
+@app.post("/api/auth/register", response_model=RegisterOut, status_code=201)
+async def register(payload: RegisterRequest) -> RegisterOut:
+    try:
+        username = await asyncio.to_thread(
+            auth_service.register,
+            payload.username,
+            payload.password,
+            payload.confirm_password,
+        )
+    except FileExistsError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return RegisterOut(username=username, message="注册成功，请登录")
 
 
 @app.get("/api/auth/me", response_model=AuthUserOut)

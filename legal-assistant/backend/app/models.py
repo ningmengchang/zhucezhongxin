@@ -360,6 +360,17 @@ class LoginRequest(BaseModel):
     password: str = Field(min_length=1, max_length=256)
 
 
+class RegisterRequest(BaseModel):
+    username: str = Field(min_length=1, max_length=64)
+    password: str = Field(min_length=1, max_length=128)
+    confirm_password: str = Field(min_length=1, max_length=128)
+
+
+class RegisterOut(BaseModel):
+    username: str
+    message: str
+
+
 class AuthUserOut(BaseModel):
     username: str
     role: Literal["admin", "user"]

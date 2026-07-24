@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import re
 import secrets
+import unicodedata
 import uuid
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -70,6 +71,41 @@ class AuthService:
 
     def seed_defaults(self) -> None:
         self.database.seed_users(DEFAULT_USERS)
+
+    @staticmethod
+    def normalize_registration_username(username: str) -> str:
+        normalized = unicodedata.normalize("NFKC", username).strip().lower()
+        if not 2 <= len(normalized) <= 32:
+            raise ValueError("用户名长度必须为2至32位")
+
+        def allowed_alphanumeric(character: str) -> bool:
+            return (
+                "a" <= character <= "z"
+                or "0" <= character <= "9"
+                or "\u3400" <= character <= "\u9fff"
+            )
+
+        if not allowed_alphanumeric(normalized[0]) or not allowed_alphanumeric(normalized[-1]):
+            raise ValueError("用户名必须以中文、英文字母或数字开头和结尾")
+        if any(not allowed_alphanumeric(character) and character not in "_.-" for character in normalized):
+            raise ValueError("用户名只能包含中文、英文字母、数字、下划线、短横线和点")
+        return normalized
+
+    def register(self, username: str, password: str, confirm_password: str) -> str:
+        normalized = self.normalize_registration_username(username)
+        if not 8 <= len(password) <= 128:
+            raise ValueError("密码长度必须为8至128位")
+        if password != confirm_password:
+            raise ValueError("两次输入的密码不一致")
+        created = self.database.create_user(
+            user_id=f"USR-{uuid.uuid4().hex.upper()}",
+            username=normalized,
+            password_hash=self.password_hasher.hash(password),
+            role="user",
+        )
+        if not created:
+            raise FileExistsError("该用户名已存在")
+        return normalized
 
     @staticmethod
     def describe_user_agent(user_agent: str | None) -> tuple[str, str, str]:
