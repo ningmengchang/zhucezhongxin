@@ -166,7 +166,8 @@ class CodexRunner:
                     raise CodexError(f"Codex运行超过{self.settings.codex_timeout_seconds}秒") from exc
 
                 if process.returncode != 0:
-                    detail = stderr.strip()[-2000:] or "Codex未返回错误详情"
+                    detail = self._extract_error_detail(events) or stderr.strip()[-2000:]
+                    detail = detail or "Codex未返回错误详情"
                     raise CodexError(f"Codex退出码{process.returncode}: {detail}")
                 if not final_text:
                     raise CodexError("Codex JSONL中没有最终agent_message")
@@ -269,6 +270,21 @@ class CodexRunner:
                 value = event.get(key)
                 if isinstance(value, str):
                     return value
+        return None
+
+    @staticmethod
+    def _extract_error_detail(events: list[dict[str, Any]]) -> str | None:
+        for event in reversed(events):
+            error = event.get("error")
+            if isinstance(error, dict) and isinstance(error.get("message"), str):
+                return error["message"][-2000:]
+            if isinstance(error, str):
+                return error[-2000:]
+            if event.get("type") == "error" and isinstance(event.get("message"), str):
+                return event["message"][-2000:]
+            item = event.get("item")
+            if isinstance(item, dict) and isinstance(item.get("error"), str):
+                return item["error"][-2000:]
         return None
 
     @staticmethod

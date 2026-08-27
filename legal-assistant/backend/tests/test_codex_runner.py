@@ -14,6 +14,14 @@ def test_ignore_non_agent_event():
     assert CodexRunner._extract_agent_text({"type": "turn.started"}) is None
 
 
+def test_extract_jsonl_error_detail():
+    events = [
+        {"type": "error", "message": "usage limit reached"},
+        {"type": "turn.failed", "error": {"message": "try again later"}},
+    ]
+    assert CodexRunner._extract_error_detail(events) == "try again later"
+
+
 def test_law_tools_are_attached_as_required_ephemeral_mcp(tmp_path: Path):
     runner = CodexRunner(Settings(data_dir=tmp_path, database_path=tmp_path / "law.sqlite3"))
     command = runner._build_command(

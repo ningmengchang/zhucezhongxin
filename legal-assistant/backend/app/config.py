@@ -11,6 +11,23 @@ PROJECT_DIR = BACKEND_DIR.parent
 DEFAULT_WORKSPACE = PROJECT_DIR.parent
 
 
+def _codex_binary() -> str:
+    explicit = os.getenv("CODEX_BINARY")
+    if explicit:
+        return explicit
+    discovered = shutil.which("codex")
+    if discovered:
+        return discovered
+    # The service may be launched through sudo/escalation with a restricted PATH.
+    # Resolve the workspace owner's local Codex installation before falling back
+    # to a relative command name.
+    workspace_home = PROJECT_DIR.parents[2]
+    candidate = workspace_home / ".local" / "bin" / "codex"
+    if candidate.is_file():
+        return str(candidate)
+    return "codex"
+
+
 def _bool(name: str, default: bool) -> bool:
     value = os.getenv(name)
     if value is None:
@@ -27,7 +44,7 @@ class Settings:
     database_path: Path = Path(
         os.getenv("LEGAL_ASSISTANT_DATABASE", BACKEND_DIR / "data" / "legal_assistant.sqlite3")
     )
-    codex_binary: str = os.getenv("CODEX_BINARY", shutil.which("codex") or "codex")
+    codex_binary: str = _codex_binary()
     codex_timeout_seconds: int = int(os.getenv("CODEX_TIMEOUT_SECONDS", "180"))
     codex_concurrency: int = int(os.getenv("CODEX_CONCURRENCY", "2"))
     queue_limit: int = int(os.getenv("CODEX_QUEUE_LIMIT", "20"))
