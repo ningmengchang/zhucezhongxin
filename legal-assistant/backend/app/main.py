@@ -58,11 +58,17 @@ async def cleanup_monitoring_loop() -> None:
 async def lifespan(_: FastAPI):
     database.init()
     await asyncio.to_thread(database.cleanup_monitoring_data, 30)
+    await asyncio.to_thread(
+        database.fail_unfinished_jobs,
+        "服务已重启，未完成的历史任务已终止，请重新提问",
+    )
     auth_service.seed_defaults()
     if settings.auto_seed and not database.list_documents():
         await asyncio.to_thread(seed, database)
     if settings.auto_sync_local_files:
         await asyncio.to_thread(sync_local_library, database)
+    with suppress(Exception):
+        await codex_runner.start()
     await qa_service.start(settings.codex_concurrency)
     cleanup_task = asyncio.create_task(cleanup_monitoring_loop())
     yield
@@ -70,12 +76,13 @@ async def lifespan(_: FastAPI):
     with suppress(asyncio.CancelledError):
         await cleanup_task
     await qa_service.stop()
+    await codex_runner.stop()
 
 
 app = FastAPI(
     title="法规助手",
-    version="0.7.0",
-    description="向本机 Codex CLI 提供等权本地文件检索、原文读取和Web搜索，由模型自主研究并生成原生Markdown答复。",
+    version="0.8.0",
+    description="通过本机 Codex App Server提供等权本地文件检索、原文读取和Web搜索，由模型自主研究并生成原生Markdown答复。",
     lifespan=lifespan,
     docs_url=None,
     redoc_url=None,
@@ -129,6 +136,9 @@ def auth_user_out(principal: Principal) -> AuthUserOut:
 
 @app.post("/api/auth/login", response_model=LoginOut)
 async def login(payload: LoginRequest, request: Request, response: Response) -> LoginOut:
+    replaced_session_ids = await asyncio.to_thread(
+        database.active_session_ids_for_username, payload.username
+    )
     result = await asyncio.to_thread(
         auth_service.login,
         payload.username,
@@ -139,6 +149,10 @@ async def login(payload: LoginRequest, request: Request, response: Response) -> 
     if not result:
         raise HTTPException(status_code=401, detail="用户名或密码错误")
     principal, token, expires_at = result
+    await asyncio.gather(
+        *(qa_service.close_session(session_id) for session_id in replaced_session_ids),
+        return_exceptions=True,
+    )
     response.set_cookie(
         SESSION_COOKIE,
         token,
@@ -175,10 +189,11 @@ async def me(principal: Annotated[Principal, Depends(current_user)]) -> AuthUser
 @app.post("/api/auth/logout", status_code=204)
 async def logout(
     response: Response,
-    _: Annotated[Principal, Depends(current_user)],
+    principal: Annotated[Principal, Depends(current_user)],
     session_token: Annotated[str | None, Cookie(alias=SESSION_COOKIE)] = None,
 ) -> Response:
     await asyncio.to_thread(auth_service.logout, session_token)
+    await qa_service.close_session(principal.session_id)
     response.delete_cookie(SESSION_COOKIE, path="/", samesite="strict")
     response.status_code = 204
     return response
@@ -207,7 +222,11 @@ async def codex_health(_: Annotated[Principal, Depends(require_admin)]) -> dict:
     result["searchIndex"] = database.search_index_status()
     result["webTrigger"] = "model-decides"
     result["localSourcePolicy"] = "all-files-equal-no-review-state"
-    result["conversationMemoryEnabled"] = False
+    result["conversationMemoryEnabled"] = True
+    result["conversationMemoryScope"] = "login-session"
+    result["conversationMemoryMaxTurns"] = settings.codex_conversation_max_turns
+    result["conversationMemoryIdleSeconds"] = settings.codex_conversation_idle_seconds
+    result["conversationMemoryPersistsAcrossRestart"] = False
     result["reportMode"] = "native-markdown-v7"
     return result
 
@@ -276,6 +295,7 @@ async def monitor_revoke_session(
         raise HTTPException(status_code=400, detail="不能下线当前使用中的管理员会话")
     if not database.revoke_session_by_id(session_id):
         raise HTTPException(status_code=404, detail="会话不存在或已经失效")
+    await qa_service.close_session(session_id)
     return Response(status_code=204)
 
 
@@ -314,7 +334,7 @@ async def ask(
     principal: Annotated[Principal, Depends(current_user)],
 ) -> QuestionAccepted:
     try:
-        job_id = await qa_service.submit(request, principal.user_id)
+        job_id = await qa_service.submit(request, principal.user_id, principal.session_id)
     except RuntimeError as exc:
         raise HTTPException(status_code=429, detail=str(exc)) from exc
     return QuestionAccepted(job_id=job_id, status=JobStatus.queued)

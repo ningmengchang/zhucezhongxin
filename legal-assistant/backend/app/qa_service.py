@@ -20,7 +20,9 @@ class QAService:
         self.retriever = retriever
         self.runner = runner
         self.web_evidence = WebEvidenceValidator()
-        self.queue: asyncio.Queue[tuple[str, QuestionRequest]] = asyncio.Queue(maxsize=queue_limit)
+        self.queue: asyncio.Queue[tuple[str, QuestionRequest, str | None]] = asyncio.Queue(
+            maxsize=queue_limit
+        )
         self.workers: list[asyncio.Task] = []
 
     async def start(self, worker_count: int) -> None:
@@ -34,7 +36,12 @@ class QAService:
         await asyncio.gather(*self.workers, return_exceptions=True)
         self.workers.clear()
 
-    async def submit(self, request: QuestionRequest, user_id: str | None = None) -> str:
+    async def submit(
+        self,
+        request: QuestionRequest,
+        user_id: str | None = None,
+        session_key: str | None = None,
+    ) -> str:
         if self.queue.full():
             raise RuntimeError("问答队列已满，请稍后重试")
         job_id = f"JOB-{uuid.uuid4().hex[:16].upper()}"
@@ -45,14 +52,17 @@ class QAService:
             request.as_of_date.isoformat() if request.as_of_date else None,
             user_id,
         )
-        await self.queue.put((job_id, request))
+        await self.queue.put((job_id, request, session_key))
         return job_id
+
+    async def close_session(self, session_key: str) -> None:
+        await self.runner.close_session(session_key)
 
     async def _worker(self) -> None:
         while True:
-            job_id, request = await self.queue.get()
+            job_id, request, session_key = await self.queue.get()
             try:
-                await self._process(job_id, request)
+                await self._process(job_id, request, session_key)
             except asyncio.CancelledError:
                 raise
             except Exception as exc:
@@ -65,10 +75,14 @@ class QAService:
             finally:
                 self.queue.task_done()
 
-    async def _process(self, job_id: str, request: QuestionRequest) -> None:
-        await self._process_tool_agent(job_id, request)
+    async def _process(
+        self, job_id: str, request: QuestionRequest, session_key: str | None = None
+    ) -> None:
+        await self._process_tool_agent(job_id, request, session_key)
 
-    async def _process_tool_agent(self, job_id: str, request: QuestionRequest) -> None:
+    async def _process_tool_agent(
+        self, job_id: str, request: QuestionRequest, session_key: str | None
+    ) -> None:
         deadline = asyncio.get_running_loop().time() + self.runner.settings.research_total_timeout_seconds
         effective_on = request.as_of_date or date.today()
         self.database.update_job(
@@ -89,6 +103,7 @@ class QAService:
                 as_of_date=effective_on,
                 include_future_rules=request.include_future_rules,
             ),
+            session_key=session_key,
         )
         evidence, trace = self._evidence_from_law_trace(
             result.law_trace,
@@ -151,6 +166,7 @@ class QAService:
         *,
         allow_web_search: bool = False,
         law_tools: LawToolContext | None = None,
+        session_key: str | None = None,
     ):
         remaining = self._remaining_seconds(deadline)
         if remaining <= 0:
@@ -161,6 +177,7 @@ class QAService:
                 schema_name,
                 allow_web_search=allow_web_search,
                 law_tools=law_tools,
+                session_key=session_key,
             ),
             timeout=remaining,
         )
@@ -260,7 +277,8 @@ class QAService:
         seen: set[str] = set()
         for event in events:
             item = event.get("item")
-            if not isinstance(item, dict) or "web_search" not in str(item.get("type", "")):
+            item_type = str(item.get("type", "")) if isinstance(item, dict) else ""
+            if not isinstance(item, dict) or item_type not in {"webSearch", "web_search_call"}:
                 continue
             identifier = str(item.get("id") or "")
             action = item.get("action") if isinstance(item.get("action"), dict) else {}

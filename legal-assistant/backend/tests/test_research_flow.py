@@ -88,7 +88,9 @@ def test_question_uses_one_autonomous_agent_with_all_tools(tmp_path):
 
     asyncio.run(
         service._process(
-            "JOB-AUTO", QuestionRequest(question="海关如何核验？", conversation_id="CONV-AUTO")
+            "JOB-AUTO",
+            QuestionRequest(question="海关如何核验？", conversation_id="CONV-AUTO"),
+            "SESSION-AUTO",
         )
     )
 
@@ -99,6 +101,7 @@ def test_question_uses_one_autonomous_agent_with_all_tools(tmp_path):
     assert schema_name == "markdown_answer.schema.json"
     assert kwargs["allow_web_search"] is True
     assert kwargs["law_tools"] is not None
+    assert kwargs["session_key"] == "SESSION-AUTO"
     assert "均由你自行判断" in prompt
     assert "法规、用户指南、标准、草案、工作文件和说明材料" in prompt
     assert "不得默认把用户问题改写成“正式法规能够确认什么”" in prompt

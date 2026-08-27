@@ -675,7 +675,7 @@ onUnmounted(() => {
       <header class="topbar">
         <div>
           <p class="eyebrow">服务商合规工作台</p>
-          <h1>{{ activeTab === 'ask' ? '法规问题咨询' : activeTab === 'library' ? '本地资料库' : activeTab === 'monitor' ? '使用监控' : 'Codex 运行状态' }}</h1>
+          <h1>{{ activeTab === 'ask' ? '法规问题咨询' : activeTab === 'library' ? '本地资料库' : activeTab === 'monitor' ? '使用监控' : '运行状态' }}</h1>
         </div>
         <div class="principle"><span>✓</span> 无证据，不下确定性结论</div>
       </header>
@@ -1293,13 +1293,13 @@ onUnmounted(() => {
       <section v-if="isAdmin && activeTab === 'system'" class="system-page">
         <div class="status-card hero-status">
           <div class="status-icon" :class="{ ready: codexHealth?.available && codexHealth?.authenticated }">◉</div>
-          <div><p class="eyebrow">本机生成引擎</p><h2>{{ codexHealth?.login || 'Codex状态未知' }}</h2><span>{{ codexHealth?.version }}</span></div>
+          <div><p class="eyebrow">本机生成引擎</p><h2>{{ codexHealth?.login || '运行状态未知' }}</h2><span>{{ codexHealth?.version }}</span></div>
         </div>
         <div class="metrics">
-          <article><span>调用方式</span><b>codex exec</b><small>不使用业务大模型API</small></article>
-          <article><span>并发上限</span><b>{{ codexHealth?.concurrency ?? 2 }}</b><small>当前队列 {{ codexHealth?.queueSize ?? 0 }}/{{ codexHealth?.queueLimit ?? 20 }}</small></article>
+          <article><span>调用方式</span><b>App Server</b><small>{{ codexHealth?.processRunning ? '长驻进程正常' : '进程未运行' }} · 不使用业务大模型API</small></article>
+          <article><span>并发上限</span><b>{{ codexHealth?.concurrency ?? 2 }}</b><small>活动任务 {{ codexHealth?.activeTurns ?? 0 }} · 队列 {{ codexHealth?.queueSize ?? 0 }}/{{ codexHealth?.queueLimit ?? 20 }}</small></article>
           <article><span>研究策略</span><b>模型自主</b><small>本地工具与Web搜索在同一次调用中开放</small></article>
-          <article><span>会话记忆</span><b>已关闭</b><small>每次提问独立研究，不读取历史问题或答案</small></article>
+          <article><span>会话记忆</span><b>会话级有限记忆</b><small>最多 {{ codexHealth?.conversationMemoryMaxTurns ?? 20 }} 轮 · 空闲 {{ (codexHealth?.conversationMemoryIdleSeconds ?? 7200) / 3600 }} 小时自动重置</small></article>
         </div>
         <div class="boundary-note">
           <h3>数据边界</h3>

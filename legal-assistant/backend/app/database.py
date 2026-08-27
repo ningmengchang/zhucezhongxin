@@ -452,6 +452,21 @@ class Database:
                 (job_id, question, created_by, conversation_id, as_of_date, "queued", now, now),
             )
 
+    def fail_unfinished_jobs(self, message: str) -> int:
+        with self.connect() as db:
+            rows = db.execute(
+                "SELECT id,events_json FROM jobs WHERE status NOT IN ('completed','failed')"
+            ).fetchall()
+            now = utc_now()
+            for row in rows:
+                events = json.loads(row["events_json"] or "[]")
+                events.append({"stage": "failed", "message": message, "at": now})
+                db.execute(
+                    "UPDATE jobs SET status='failed',error=?,events_json=?,updated_at=? WHERE id=?",
+                    (message, json.dumps(events, ensure_ascii=False), now, row["id"]),
+                )
+            return len(rows)
+
     def update_job(
         self,
         job_id: str,
@@ -574,6 +589,18 @@ class Database:
                     browser, operating_system, device, now,
                 ),
             )
+
+    def active_session_ids_for_username(self, username: str) -> list[str]:
+        with self.connect() as db:
+            rows = db.execute(
+                """
+                SELECT s.id
+                FROM auth_sessions s JOIN users u ON u.id=s.user_id
+                WHERE u.username=? COLLATE NOCASE AND s.revoked_at IS NULL
+                """,
+                (username.strip(),),
+            ).fetchall()
+            return [str(row["id"]) for row in rows]
 
     def resolve_session(self, token_hash: str) -> dict[str, Any] | None:
         with self.connect() as db:

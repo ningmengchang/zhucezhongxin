@@ -101,3 +101,22 @@ def test_question_monitoring_details_filters_and_retention(tmp_path):
     assert database.get_job("JOB-OLD") is None
     assert database.get_job("JOB-NEW") is not None
     assert database.get_user_by_username("user") is not None
+
+
+def test_startup_marks_only_unfinished_jobs_as_failed(tmp_path):
+    database = make_database(tmp_path)
+    database.create_job("JOB-QUEUED", "排队中", None, None, "USR-USER")
+    database.create_job("JOB-RUNNING", "处理中", None, None, "USR-USER")
+    database.update_job("JOB-RUNNING", status="retrieving")
+    database.create_job("JOB-DONE", "已完成", None, None, "USR-USER")
+    database.update_job(
+        "JOB-DONE",
+        status="completed",
+        answer={"schemaVersion": "7.0", "status": "answered", "markdown": "完成"},
+    )
+
+    assert database.fail_unfinished_jobs("服务已重启") == 2
+    assert database.get_job("JOB-QUEUED")["status"] == "failed"
+    assert database.get_job("JOB-RUNNING")["error"] == "服务已重启"
+    assert database.get_job("JOB-RUNNING")["events"][-1]["stage"] == "failed"
+    assert database.get_job("JOB-DONE")["status"] == "completed"

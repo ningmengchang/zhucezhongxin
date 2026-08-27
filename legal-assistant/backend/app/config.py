@@ -49,6 +49,15 @@ class Settings:
     codex_concurrency: int = int(os.getenv("CODEX_CONCURRENCY", "2"))
     queue_limit: int = int(os.getenv("CODEX_QUEUE_LIMIT", "20"))
     codex_mock: bool = _bool("CODEX_MOCK", False)
+    codex_app_server_start_timeout_seconds: int = int(
+        os.getenv("CODEX_APP_SERVER_START_TIMEOUT_SECONDS", "20")
+    )
+    codex_conversation_max_turns: int = int(
+        os.getenv("CODEX_CONVERSATION_MAX_TURNS", "20")
+    )
+    codex_conversation_idle_seconds: int = int(
+        os.getenv("CODEX_CONVERSATION_IDLE_SECONDS", "7200")
+    )
     law_search_top_k: int = int(os.getenv("LAW_SEARCH_TOP_K", "8"))
     auto_seed: bool = _bool("AUTO_SEED", False)
     auto_sync_local_files: bool = _bool("AUTO_SYNC_LOCAL_FILES", True)
