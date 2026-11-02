@@ -1,0 +1,15 @@
+flowchart LR
+    K["客户或授权密钥服务<br/>生成 EC 密钥对<br/>私钥保留在安全密钥服务内"]
+    A["客户管理员<br/>完成组织核验<br/>创建账号并登记公钥"]
+    R["欧盟注册中心<br/>分配 client_id<br/>确认 ACTIVE 凭证与实际 kid"]
+    F["Futris 平台<br/>按客户组织和环境保存配置<br/>client_id / kid / alg / key_ref"]
+    K -->|仅导出公钥| A
+    A -->|账号开通和凭证登记| R
+    R -->|客户取得登记结果后配置| F
+    K -->|授权签名能力和 key_ref| F
+    classDef customer fill:#eaf3fc,stroke:#527eac,color:#17344d
+    classDef platform fill:#e5f5f2,stroke:#168575,color:#17344d
+    classDef european fill:#fff3dc,stroke:#c18923,color:#17344d
+    class A,K customer
+    class R european
+    class F platform

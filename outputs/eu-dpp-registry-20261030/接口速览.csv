@@ -1,0 +1,6 @@
+﻿方法,路径,中文用途,入参要点（本地摘要）,成功出参要点（本地摘要）,注意事项
+GET,/api/v1/dpp/product-groups,查询产品组及子组,Bearer JWT；无请求体,200：产品组及子组列表,先获取合法分类代码。
+POST,/api/v1/dpp/submission,提交注册请求,必需 Idempotency-Key；JSON 含 productGroup、productSubGroup（电池必需）、submissionItems；每项至少含 uniqueProductIdentifier、granularity,202：taskId、taskType、submittedAt、correlationId 等,每次 1—100 项；202 表示受理。使用任务接口判断最终结果。
+GET,/api/v1/tasks,查询任务列表,可选 status、taskType、page、size、sort、submittedFrom、submittedTo、extended,200：分页任务列表,默认 extended=false；业务结果需启用扩展或查看详情。
+GET,/api/v1/tasks/{taskId},查询任务详情与业务结果,taskId；Bearer JWT,200：任务状态、outcome、specificTaskData,COMPLETED 后还需检查 outcome.outcomeResult，处理结束不等于注册成功。
+GET,/api/v1/tasks/{taskId}/items,查询逐项处理结果,taskId；可选 page、size；Accept: application/json 或 text/csv,200：分页逐项结果；也可获取该页 CSV,CSV 同样遵循分页；用于定位具体 UPI 的成功／失败及原因。

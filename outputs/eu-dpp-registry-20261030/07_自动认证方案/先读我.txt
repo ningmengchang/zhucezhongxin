@@ -1,0 +1,27 @@
+Futris 欧盟 DPP 自动认证对接说明 v1.0
+
+直接阅读：Futris_欧盟DPP自动认证对接说明_v1.0.pdf
+继续编辑：Futris_欧盟DPP自动认证对接说明_v1.0.docx
+文本源稿：Futris_欧盟DPP自动认证对接说明_v1.0.md
+流程图与时序图源文件：图源/ 下的三个 .mmd 文件
+图像：图像/ 下的 SVG 和 PNG
+程序示例：代码/dpp_token_client.py
+离线检查：代码/offline_checks.py
+
+重点：
+1. client_id 由欧盟注册中心在创建服务账号后签发；kid 使用实际登记的 ACTIVE 凭证值。
+2. 密钥对由客户或其授权密钥服务生成；普通配置只保留 key_ref，密钥用于受控签名。
+3. jti、iat、exp 和 client_assertion 每次申请时重新生成；access_token 由欧盟授权服务签发。
+4. 自动认证使用 POST /oauth2/token。具体 ACC 和 PROD 地址及参数见正文第 3、5 节。
+5. 代码没有真实凭证。HSM/KMS 的 JwtSigner 适配器需要接入你们实际使用的密钥服务。
+6. 代码是单客户配置实例、单进程线程锁示例；多实例缓存与锁按正文第 6 节落地。
+
+离线运行：
+python3 -m venv .venv
+.venv/bin/pip install -r 代码/requirements.txt
+cd 代码
+../.venv/bin/python -m unittest -v offline_checks
+
+检查仅使用临时测试密钥与本地模拟 HTTP 响应；不会申请官方 Token 或提交注册。
+真实环境联调需要有效组织、Service Account、公钥凭证、签名授权及可访问的官方接口。
+官方来源链接和页码见正文第 8 节。

@@ -1,0 +1,87 @@
+{
+  "核验范围": "本机匿名 GET，未获取 Token，未执行注册或其他写操作；HTTP 响应可能来自网关，不能据此判定业务联调通过。",
+  "结果": [
+    {
+      "名称": "测试管理门户",
+      "时间": "2026-10-31T11:30:42+08:00",
+      "方法": "GET",
+      "地址": "https://registry.acc.product-passport.ec.europa.eu/",
+      "鉴权": "未携带 Token",
+      "写操作": false,
+      "状态码": 200,
+      "Content-Type": "text/html",
+      "WWW-Authenticate": "未返回",
+      "Server": "nginx/1.28.3",
+      "最终地址": "https://registry.acc.product-passport.ec.europa.eu/",
+      "正文类型": "HTML",
+      "页面标题": "Digital Product Passport Registry"
+    },
+    {
+      "名称": "授权服务器元数据",
+      "时间": "2026-10-31T11:30:42+08:00",
+      "方法": "GET",
+      "地址": "https://auth.acc.product-passport.ec.europa.eu/.well-known/oauth-authorization-server",
+      "鉴权": "未携带 Token",
+      "写操作": false,
+      "状态码": 401,
+      "Content-Type": "未返回",
+      "WWW-Authenticate": "未返回",
+      "Server": "istio-envoy",
+      "最终地址": "https://auth.acc.product-passport.ec.europa.eu/.well-known/oauth-authorization-server",
+      "正文类型": "文本或空正文",
+      "正文摘要": ""
+    },
+    {
+      "名称": "访问令牌公钥 JWKS",
+      "时间": "2026-10-31T11:30:42+08:00",
+      "方法": "GET",
+      "地址": "https://auth.acc.product-passport.ec.europa.eu/oauth2/jwks",
+      "鉴权": "未携带 Token",
+      "写操作": false,
+      "状态码": 404,
+      "Content-Type": "application/json",
+      "WWW-Authenticate": "未返回",
+      "Server": "istio-envoy",
+      "最终地址": "https://auth.acc.product-passport.ec.europa.eu/oauth2/jwks",
+      "正文类型": "JSON",
+      "JSON顶层字段": [
+        "message",
+        "code",
+        "status",
+        "subCode",
+        "timestamp",
+        "traceId"
+      ]
+    },
+    {
+      "名称": "指南中的 API 域名",
+      "时间": "2026-10-31T11:30:42+08:00",
+      "方法": "GET",
+      "地址": "https://reg.acc.product-passport.ec.europa.eu/api/v1/dpp/product-groups",
+      "鉴权": "未携带 Token",
+      "写操作": false,
+      "状态码": 401,
+      "Content-Type": "未返回",
+      "WWW-Authenticate": "未返回",
+      "Server": "未返回",
+      "最终地址": "https://reg.acc.product-passport.ec.europa.eu/api/v1/dpp/product-groups",
+      "正文类型": "文本或空正文",
+      "正文摘要": "Unauthorized: missing session cookie"
+    },
+    {
+      "名称": "OpenAPI 中的 API 域名",
+      "时间": "2026-10-31T11:30:42+08:00",
+      "方法": "GET",
+      "地址": "https://registry.acc.product-passport.ec.europa.eu/api/v1/dpp/product-groups",
+      "鉴权": "未携带 Token",
+      "写操作": false,
+      "状态码": 200,
+      "Content-Type": "text/html",
+      "WWW-Authenticate": "未返回",
+      "Server": "nginx/1.28.3",
+      "最终地址": "https://registry.acc.product-passport.ec.europa.eu/api/v1/dpp/product-groups",
+      "正文类型": "HTML",
+      "页面标题": "Digital Product Passport Registry"
+    }
+  ]
+}

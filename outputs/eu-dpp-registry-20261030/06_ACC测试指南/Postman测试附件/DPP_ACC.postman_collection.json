@@ -1,0 +1,465 @@
+{
+  "info": {
+    "_postman_id": "cbd0bb90-132a-4b4d-9e32-c0e298a25954",
+    "name": "欧委会 DPP ACC · 20261030 OpenAPI 测试模板",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "工作整理版，官方出处见配套 Excel。Registry base 取服务账号指南 reg.acc；Dashboard base 暂保留原始 OpenAPI registry.acc，两者均有路由/访问条件待核实。无真实凭证。逐个手动执行，不直接 Run 全部。"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "00 匿名查看（当前可能受环境限制）",
+      "item": [
+        {
+          "name": "授权服务器元数据",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "https://auth.acc.product-passport.ec.europa.eu/.well-known/oauth-authorization-server",
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          }
+        },
+        {
+          "name": "访问令牌 JWKS",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "https://auth.acc.product-passport.ec.europa.eu/oauth2/jwks",
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "01 获取 Token（每次使用新签名 assertion）",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "url": "https://auth.acc.product-passport.ec.europa.eu/oauth2/token",
+        "description": "私钥在本机 JOSE/JWT 库/HSM 中签名。不要把真实 assertion/token 导出到分享文件。此请求是否在当前网关可用仍需身份联调验证。",
+        "auth": {
+          "type": "noauth"
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "{{client_id}}",
+              "type": "text"
+            },
+            {
+              "key": "client_assertion_type",
+              "value": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+              "type": "text"
+            },
+            {
+              "key": "client_assertion",
+              "value": "{{client_assertion}}",
+              "type": "text"
+            },
+            {
+              "key": "resource",
+              "value": "https://auth.acc.product-passport.ec.europa.eu/resources/dpp/registry",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "{{scope}}",
+              "type": "text",
+              "disabled": true,
+              "description": "按已有授权选填；不猜 scope。"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.environment.unset('access_token');",
+              "if (!pm.environment.get('client_id') || !pm.environment.get('client_assertion')) {",
+              "  throw new Error('请在本机填写真实 client_id 和本次新签名的 client_assertion。');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Token 返回 200 JSON', function () {",
+              "  pm.response.to.have.status(200);",
+              "  pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json');",
+              "});",
+              "if (pm.response.code === 200) {",
+              "  const data = pm.response.json();",
+              "  pm.test('含 Bearer access_token', function () {",
+              "    pm.expect(data.access_token).to.be.a('string').and.not.empty;",
+              "    pm.expect(String(data.token_type).toLowerCase()).to.eql('bearer');",
+              "  });",
+              "  if (data.access_token && String(data.token_type).toLowerCase() === 'bearer') {",
+              "    pm.environment.set('access_token', data.access_token);",
+              "  }",
+              "}",
+              "pm.environment.unset('client_assertion');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 查询产品分类（先验证 Token 与路由）",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{registry_api_base}}/dpp/product-groups",
+        "description": ""
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('access_token')) {",
+              "  throw new Error('先成功获取 access_token；匿名检查不等于鉴权联调。');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('返回 JSON，而非门户 HTML', function () {",
+              "  pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json');",
+              "  pm.response.json();",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('分类返回 200', function () { pm.response.to.have.status(200); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 提交一条测试注册（实际写入 ACC）",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{idempotency_key}}"
+          }
+        ],
+        "url": "{{registry_api_base}}/dpp/submission",
+        "description": "先用 GET 产品分类核对分类，部署 Registry 可访问的真实测试 UPI。首次幂等键为空会自动生成；相同逻辑提交重试保留，新/变更请求要清空或更换。202 仅为受理。",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productGroup\": \"{{product_group}}\",\n  \"productSubGroup\": \"{{product_subgroup}}\",\n  \"submissionItems\": [\n    {\n      \"uniqueProductIdentifier\": \"{{unique_product_identifier}}\",\n      \"granularity\": \"item\",\n      \"batchIdentifier\": \"{{batch_identifier}}\",\n      \"modelIdentifier\": \"{{model_identifier}}\"\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('access_token')) {",
+              "  throw new Error('先成功获取 access_token；匿名检查不等于鉴权联调。');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const upi = pm.environment.get('unique_product_identifier') || '';",
+              "if (!upi.startsWith('https://') || /^https:\\/\\/(localhost|127\\.0\\.0\\.1|example\\.(com|invalid))(\\/|:|$)/i.test(upi)) {",
+              "  throw new Error('先填写 Registry 可以实际访问的 HTTPS 测试护照 UPI。');",
+              "}",
+              "if (!pm.environment.get('product_group') || !pm.environment.get('product_subgroup')) {",
+              "  throw new Error('先根据 GET 分类结果填写 product_group / product_subgroup。');",
+              "}",
+              "if (!pm.environment.get('idempotency_key')) {",
+              "  pm.environment.set('idempotency_key', pm.variables.replaceIn('{{$guid}}'));",
+              "}",
+              "if (pm.environment.get('idempotency_key').length > 128) {",
+              "  throw new Error('Idempotency-Key 最长 128 字符。');",
+              "}",
+              "pm.environment.unset('task_id');"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('202 仅表示异步受理', function () {",
+              "  pm.response.to.have.status(202);",
+              "});",
+              "if (pm.response.code === 202) {",
+              "  const data = pm.response.json();",
+              "  pm.test('返回 taskId', function () { pm.expect(data.taskId).to.be.a('string').and.not.empty; });",
+              "  if (data.taskId) pm.environment.set('task_id', data.taskId);",
+              "  if (data.correlationId) pm.environment.set('correlation_id', data.correlationId);",
+              "  if (data.estimatedPeriodCompletionTime) pm.environment.set('estimated_period', data.estimatedPeriodCompletionTime);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 查询任务详情（先等待，按结果退避）",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{dashboard_api_base}}/tasks/{{task_id}}",
+        "description": "Dashboard host 来自原始 OpenAPI，需确认实际路由。PENDING/PROCESSING 继续等待；COMPLETED 后检查 outcome.outcomeResult=SUCCEEDED；ERROR 为技术失败。"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('access_token')) {",
+              "  throw new Error('先成功获取 access_token；匿名检查不等于鉴权联调。');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('task_id')) throw new Error('先取得真实 task_id。');"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('返回 JSON，而非门户 HTML', function () {",
+              "  pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json');",
+              "  pm.response.json();",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('任务查询返回 200', function () { pm.response.to.have.status(200); });",
+              "if (pm.response.code === 200 && (pm.response.headers.get('Content-Type') || '').includes('application/json')) {",
+              "  const data = pm.response.json();",
+              "  pm.test('任务状态合法', function () {",
+              "    pm.expect(['PENDING', 'PROCESSING', 'COMPLETED', 'ERROR']).to.include(data.status);",
+              "  });",
+              "  if (data.status === 'COMPLETED') {",
+              "    pm.test('注册业务成功：outcomeResult 为 SUCCEEDED', function () {",
+              "      pm.expect(data.outcome && data.outcome.outcomeResult).to.eql('SUCCEEDED');",
+              "    });",
+              "  } else if (data.status === 'ERROR') {",
+              "    pm.test('任务未发生技术失败', function () { throw new Error('任务为 ERROR，请检查逐条证据与 correlationId。'); });",
+              "  }",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 查询逐条结果（JSON）",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{dashboard_api_base}}/tasks/{{task_id}}/items?page=0&size=25",
+        "description": ""
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('access_token')) {",
+              "  throw new Error('先成功获取 access_token；匿名检查不等于鉴权联调。');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('task_id')) throw new Error('先取得真实 task_id。');"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('返回 JSON，而非门户 HTML', function () {",
+              "  pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json');",
+              "  pm.response.json();",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 查询逐条结果（CSV 当前页）",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/csv"
+          }
+        ],
+        "url": "{{dashboard_api_base}}/tasks/{{task_id}}/items?page=0&size=25",
+        "description": "仍为分页，需手工递增 page。"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('access_token')) {",
+              "  throw new Error('先成功获取 access_token；匿名检查不等于鉴权联调。');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('task_id')) throw new Error('先取得真实 task_id。');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 列出注册任务",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{dashboard_api_base}}/tasks?taskType=DPP_REGISTRATION&extended=true&page=0&size=25",
+        "description": ""
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('access_token')) {",
+              "  throw new Error('先成功获取 access_token；匿名检查不等于鉴权联调。');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('返回 JSON，而非门户 HTML', function () {",
+              "  pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json');",
+              "  pm.response.json();",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

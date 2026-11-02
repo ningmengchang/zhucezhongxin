@@ -1,0 +1,508 @@
+# Locally prepared import bundle; official unmodified specifications are in 02_OpenAPI.
+openapi: 3.1.0
+info:
+  title: EU DPP Registry API — single-file import bundle
+  version: 1.0.0
+  license:
+    name: European Union Public Licence v. 1.2
+    identifier: EUPL-1.2
+  description: 'Locally prepared single-file import bundle. Consult original source contracts and accompanying integration
+    guides.
+
+
+    Public REST contract for DPP registration submissions and Registry product-classification reference data. Registry
+    accepts JSON-only submissions containing between 1 and 100 items for a single product group. Each item contains
+    a uniqueProductIdentifier and may include optional common or product-specific fields defined by the selected
+    request variant. Accepted submissions are processed asynchronously and tracked through Activity Dashboard using
+    the returned taskId. Acceptance for processing does not mean that any submitted DPP has been registered.'
+servers:
+- url: https://registry.acc.product-passport.ec.europa.eu
+  description: ACC
+- url: https://registry.product-passport.ec.europa.eu
+  description: PROD
+security:
+- bearerAuth: []
+paths:
+  /api/v1/dpp/product-groups:
+    get:
+      tags:
+      - Registry reference data
+      summary: List available product groups
+      operationId: listProductGroups
+      responses:
+        '200':
+          description: Available product groups
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductGroup'
+  /api/v1/dpp/submission:
+    post:
+      tags:
+      - DPP registration
+      summary: Submit a DPP registration request
+      description: 'Accepts a JSON-only DPP registration submission containing between 1 and 100 items for one productGroup.
+        Each item contains its own uniqueProductIdentifier and may include optional batchIdentifier, modelIdentifier,
+        or product-specific fields defined by the selected request variant. An accepted request returns 202 Accepted
+        and a taskId for Activity Dashboard tracking. Acceptance for processing does not confirm that any submitted
+        DPP has been registered. File upload is not part of this public API.
+
+        '
+      operationId: submitDppRegistrationRequest
+      parameters:
+      - $ref: '#/components/parameters/CorrelationId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DPPRegistrationSubmissionRequest'
+            example:
+              productGroup: BATTERIES
+              productSubGroup: EV
+              submissionItems:
+              - uniqueProductIdentifier: https://example.com/dpp/battery/0001
+                granularity: item
+                batchIdentifier: xxx-000
+                modelIdentifier: yyy-111
+      responses:
+        '202':
+          description: Accepted for asynchronous processing. The response identifies the task used to track processing
+            and does not confirm successful DPP registration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedAsyncOperation'
+        '400':
+          description: The request body or request parameters are invalid.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorMessage'
+        '403':
+          description: Forbidden — organisation is not verified or caller lacks required permission
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorMessage'
+        '409':
+          description: Duplicate or conflicting request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorMessage'
+        '422':
+          description: Unprocessable — semantic validation unavailable or data logically invalid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorMessage'
+        '413':
+          description: Payload too large — request body exceeds the maximum allowed size
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorMessage'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          description: Technical error — system could not process the request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorMessage'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    CorrelationId:
+      name: X-Correlation-Id
+      in: header
+      required: false
+      description: Optional correlation identifier for end-to-end tracing and support diagnostics. If omitted, Registry
+        generates and propagates one.
+      schema:
+        type: string
+        maxLength: 128
+        examples:
+        - corr_01J1REG
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      description: Required deduplication key for write operations that must be replay-safe.
+      schema:
+        type: string
+        maxLength: 128
+        examples:
+        - idem_save_002
+    PageParam:
+      name: page
+      in: query
+      required: false
+      description: Zero-based page index.
+      schema:
+        type: integer
+        format: int32
+        minimum: 0
+        default: 0
+    SizeParam:
+      name: size
+      in: query
+      required: false
+      description: Page size (max 100).
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 100
+        default: 25
+  schemas:
+    ProductGroup:
+      type: object
+      required:
+      - code
+      - label
+      - productSubGroups
+      properties:
+        code:
+          type: string
+          examples:
+          - BATTERIES
+        label:
+          type: string
+        productSubGroups:
+          type: array
+          description: Valid product sub-groups for the product group.
+          items:
+            $ref: '#/components/schemas/ProductSubGroup'
+    ProductSubGroup:
+      type: object
+      required:
+      - code
+      - label
+      properties:
+        code:
+          type: string
+          examples:
+          - EV
+        label:
+          type: string
+    DPPRegistrationSubmissionRequest:
+      description: JSON-only DPP registration submission discriminated by the mandatory productGroup. productSubGroup
+        is optional in the common base; each product-group variant may require it. submissionItems contains between
+        1 and 100 items, each with its own uniqueProductIdentifier, required granularity, and any optional common
+        or product-specific fields defined by the selected variant. For each item, batchIdentifier and modelIdentifier
+        are conditional on the selected granularity.
+      oneOf:
+      - $ref: '#/components/schemas/BatteriesSubmissionRequest'
+      discriminator:
+        propertyName: productGroup
+        mapping:
+          BATTERIES: '#/components/schemas/BatteriesSubmissionRequest'
+      examples:
+      - productGroup: BATTERIES
+        productSubGroup: EV
+        submissionItems:
+        - uniqueProductIdentifier: https://example.com/dpp/battery/0001
+          granularity: item
+          batchIdentifier: xxx-000
+          modelIdentifier: yyy-111
+      - productGroup: BATTERIES
+        productSubGroup: LMT
+        submissionItems:
+        - uniqueProductIdentifier: https://example.com/dpp/battery/0002
+          granularity: batch
+    BaseDPPRegistrationSubmissionRequest:
+      type: object
+      required:
+      - productGroup
+      - submissionItems
+      description: Common base of all registration request variants. Variants constrain productGroup and narrow
+        the type of submissionItems.
+      properties:
+        productGroup:
+          type: string
+          description: Product group code selected from the product groups catalogue.
+        productSubGroup:
+          type: string
+          description: Product sub-group valid for the selected product group. Optional unless the selected product-group
+            variant requires it.
+        submissionItems:
+          type: array
+          description: Items included in the registration submission. Registry accepts between 1 and 100 items.
+          items:
+            $ref: '#/components/schemas/SubmissionItem'
+    BatteriesSubmissionRequest:
+      title: BatteriesSubmissionRequest
+      description: Registration request for the BATTERIES product group. productSubGroup is mandatory for this group
+        and carries no sub-group specific structure.
+      allOf:
+      - $ref: '#/components/schemas/BaseDPPRegistrationSubmissionRequest'
+      - type: object
+        required:
+        - productSubGroup
+        properties:
+          submissionItems:
+            type: array
+            items:
+              $ref: '#/components/schemas/BatteriesSubmissionItem'
+    BatteriesSubmissionItem:
+      description: BATTERIES-specific extension of the common submission item. No additional BATTERIES-specific
+        fields are defined in this version.
+      allOf:
+      - $ref: '#/components/schemas/SubmissionItem'
+      - type: object
+        properties: {}
+    SubmissionItem:
+      type: object
+      required:
+      - uniqueProductIdentifier
+      - granularity
+      description: A single item to register within a DPP submission.
+      properties:
+        uniqueProductIdentifier:
+          $ref: '#/components/schemas/UniqueProductIdentifier'
+        granularity:
+          type: string
+          description: Granularity level for this submitted DPP (item, batch, or model).
+          enum:
+          - item
+          - batch
+          - model
+        batchIdentifier:
+          type: string
+          description: Optional batch identifier.
+          examples:
+          - xxx-000
+        modelIdentifier:
+          type: string
+          description: Optional model identifier.
+          examples:
+          - yyy-111
+    UniqueProductIdentifier:
+      type: string
+      format: uri
+      minLength: 8
+      maxLength: 2000
+      description: HTTPS URL identifying the DPP candidate. Registry resolves and validates it through the controlled
+        HTTPS retrieval policy.
+    ApiErrorMessage:
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          type: string
+          description: Human-readable error message
+          examples:
+          - Unauthorized
+        code:
+          type: string
+          description: Optional high-level machine-readable error code.
+          examples:
+          - CONFLICT
+        subCode:
+          type: string
+          description: Optional domain-specific machine-readable code providing a more precise error classification.
+          examples:
+          - CONFLICT_ASYNC_OPERATION_IN_PROGRESS
+        status:
+          type: integer
+          format: int32
+          description: HTTP status code
+          examples:
+          - 401
+        correlationId:
+          type: string
+          description: Optional correlation id for support/logs.
+          examples:
+          - corr_01J1REG
+        timestamp:
+          type: string
+          format: date-time
+          description: Optional error generation time (UTC).
+          examples:
+          - '2026-04-13T09:00:00Z'
+    PageMetadata:
+      type: object
+      description: Shared pagination metadata. Concrete paginated envelopes compose this schema with `allOf` and
+        add a required `content` array of their item type.
+      required:
+      - page
+      - size
+      - totalElements
+      properties:
+        page:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Zero-based page index of the current page.
+          examples:
+          - 0
+        size:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Requested page size.
+          examples:
+          - 25
+        totalElements:
+          type: integer
+          format: int64
+          minimum: 0
+          description: Total number of elements matching the query.
+          examples:
+          - 1
+    AcceptedAsyncOperation:
+      type: object
+      required:
+      - taskId
+      - submittedAt
+      - taskType
+      - correlationId
+      description: Acknowledgement returned when an asynchronous operation is accepted and a task has been opened.
+        Shared by all DPP services. The task state itself is tracked via the Dashboard service.
+      properties:
+        taskId:
+          type: string
+          description: Task identifier. Tasks are tracked via the Dashboard service for centralised task management.
+          examples:
+          - task_01J1REG001
+        submittedAt:
+          type: string
+          format: date-time
+          description: Timestamp at which the task-bearing request was accepted.
+          examples:
+          - '2026-04-20T08:28:44Z'
+        taskType:
+          type: string
+          description: Task type created by this operation.
+          examples:
+          - DPP_REGISTRATION
+        correlationId:
+          type:
+          - string
+          - 'null'
+          description: Effective correlation identifier for tracing and support.
+          examples:
+          - corr_01J1REG
+        estimatedPeriodCompletionTime:
+          type:
+          - string
+          - 'null'
+          format: duration
+          description: Optional estimated time period until completion, expressed as an ISO 8601 duration.
+          examples:
+          - PT10S
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp of the latest task update.
+          examples:
+          - '2026-04-20T08:28:44Z'
+      examples:
+      - taskId: task_01J1REG001
+        taskType: DPP_REGISTRATION
+        correlationId: corr_01J1REG
+        submittedAt: '2026-04-20T08:28:44Z'
+        updatedAt: '2026-04-20T08:28:44Z'
+        estimatedPeriodCompletionTime: PT10S
+  responses:
+    BadRequest:
+      description: Bad request — the request payload or parameters failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    Unauthorized:
+      description: Authentication is required or the supplied credentials are invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    Forbidden:
+      description: Caller is authenticated but not authorised to perform the operation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    Conflict:
+      description: The operation conflicts with the current resource state or an idempotency rule.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    UnprocessableEntity:
+      description: Semantic validation failed — the request is syntactically valid but violates business rules.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    InternalServerError:
+      description: An unexpected server error occurred.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    PayloadTooLarge:
+      description: Request body exceeds the maximum allowed size. This limit is enforced at the backend application
+        level.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+    TooManyRequests:
+      description: Rate limit exceeded. The client has sent too many requests in a given time period. The Retry-After
+        header indicates when the client may retry.
+      headers:
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiErrorMessage'
+  headers:
+    RetryAfter:
+      description: Number of seconds to wait before retrying the request after rate limit is exceeded.
+      schema:
+        type: integer
+        format: int32
+        examples:
+        - 60
+    CorrelationId:
+      description: Effective correlation identifier for end-to-end tracing and support diagnostics.
+      schema:
+        type: string
+        maxLength: 128
+        examples:
+        - corr_01J1REG
+    Location:
+      description: Canonical URI of the created resource or accepted task.
+      schema:
+        type: string
+        format: uri-reference
+x-derived-document:
+  notice: Convenience bundle prepared locally from official European Commission files. Original files are retained
+    in 02_OpenAPI. Shared references are localised; conflicting component names are qualified. No API operation,
+    payload field, required field, response or security requirement has been intentionally changed.
+  sourceFiles:
+  - openapi-dpp-registry-public.yml
+  - openapi-dpp-common-public.yml
+  publicationDate: '2026-10-30'
+  sourcePage: https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/resources-documentation_en
+tags:
+- name: Registry reference data
+- name: DPP registration

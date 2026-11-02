@@ -1,0 +1,341 @@
+{
+  "openapi" : "3.0.3",
+  "info" : {
+    "description" : "API for the Battery Pass Test Executor",
+    "title" : "Battery Pass Test Executor",
+    "version" : "v1.4"
+  },
+  "servers" : [ {
+    "url" : "https://test-executor.gefeg.com/api"
+  } ],
+  "paths" : {
+    "/GetTests" : {
+      "get" : {
+        "operationId" : "getTests",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/TestCaseDescriptionType"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/ExecTest" : {
+      "post" : {
+        "operationId" : "execTest",
+        "parameters" : [ {
+          "explode" : true,
+          "in" : "query",
+          "name" : "testURL",
+          "required" : false,
+          "schema" : {
+            "format" : "uri",
+            "type" : "string"
+          },
+          "style" : "form"
+        }, {
+          "explode" : true,
+          "in" : "query",
+          "name" : "testAdapterURL",
+          "required" : false,
+          "schema" : {
+            "format" : "uri",
+            "type" : "string"
+          },
+          "style" : "form"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TestCaseType"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/TestResultType"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ExecutionStateType" : {
+        "enum" : [ "error", "failure", "success", "unknown" ],
+        "type" : "string"
+      },
+      "TestStepExecutionType" : {
+        "example" : {
+          "State" : null,
+          "Data" : "{}",
+          "Name" : "Name"
+        },
+        "properties" : {
+          "Name" : {
+            "type" : "string"
+          },
+          "State" : {
+            "$ref" : "#/components/schemas/ExecutionStateType"
+          },
+          "Data" : {
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "TestCaseDescriptionType" : {
+        "example" : {
+          "x-testSetup" : "{}",
+          "name" : "name",
+          "description" : "description",
+          "category" : [ "BackupProvider", "BackupProvider" ],
+          "parameters" : [ {
+            "name" : "name",
+            "value" : {
+              "inputMethod" : {
+                "values" : [ "values", "values" ],
+                "name" : "choice"
+              },
+              "type" : "boolean"
+            }
+          }, {
+            "name" : "name",
+            "value" : {
+              "inputMethod" : {
+                "values" : [ "values", "values" ],
+                "name" : "choice"
+              },
+              "type" : "boolean"
+            }
+          } ],
+          "x-expected" : {
+            "serverType" : "serverType",
+            "values" : [ "values", "values" ]
+          }
+        },
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "category" : {
+            "items" : {
+              "enum" : [ "BackupProvider", "EconomicOperator" ],
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "parameters" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ParameterDescriptionType"
+            },
+            "type" : "array"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "x-expected" : {
+            "$ref" : "#/components/schemas/TestCaseDescriptionType_x_expected"
+          },
+          "x-testSetup" : {
+            "type" : "object"
+          }
+        },
+        "required" : [ "category", "name" ],
+        "type" : "object"
+      },
+      "ParameterDescriptionType" : {
+        "example" : {
+          "name" : "name",
+          "value" : {
+            "inputMethod" : {
+              "values" : [ "values", "values" ],
+              "name" : "choice"
+            },
+            "type" : "boolean"
+          }
+        },
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "value" : {
+            "$ref" : "#/components/schemas/ParameterDescriptionType_value"
+          }
+        },
+        "required" : [ "name", "value" ],
+        "type" : "object"
+      },
+      "ParametersType" : {
+        "items" : {
+          "$ref" : "#/components/schemas/ParametersType_inner"
+        },
+        "type" : "array"
+      },
+      "TestCaseType" : {
+        "example" : {
+          "name" : "name",
+          "category" : "BackupProvider",
+          "parameters" : [ {
+            "name" : "name",
+            "value" : true
+          }, {
+            "name" : "name",
+            "value" : true
+          } ]
+        },
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "category" : {
+            "enum" : [ "BackupProvider", "EconomicOperator" ],
+            "type" : "string"
+          },
+          "parameters" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ParametersType_inner"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "name" ],
+        "type" : "object"
+      },
+      "TestResultType" : {
+        "example" : {
+          "result" : "error",
+          "data" : [ {
+            "State" : null,
+            "Data" : "{}",
+            "Name" : "Name"
+          }, {
+            "State" : null,
+            "Data" : "{}",
+            "Name" : "Name"
+          } ]
+        },
+        "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/ExecutionStateType"
+          },
+          "data" : {
+            "items" : {
+              "$ref" : "#/components/schemas/TestStepExecutionType"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "TestCaseDescriptionType_x_expected" : {
+        "example" : {
+          "serverType" : "serverType",
+          "values" : [ "values", "values" ]
+        },
+        "properties" : {
+          "serverType" : {
+            "type" : "string"
+          },
+          "values" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "regexURL", "values" ],
+        "type" : "object"
+      },
+      "ParameterDescriptionType_value_inputMethod" : {
+        "example" : {
+          "values" : [ "values", "values" ],
+          "name" : "choice"
+        },
+        "properties" : {
+          "name" : {
+            "enum" : [ "choice", "multipleChoice" ],
+            "type" : "string"
+          },
+          "values" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "ParameterDescriptionType_value" : {
+        "example" : {
+          "inputMethod" : {
+            "values" : [ "values", "values" ],
+            "name" : "choice"
+          },
+          "type" : "boolean"
+        },
+        "properties" : {
+          "type" : {
+            "enum" : [ "boolean", "integer", "number", "object", "string" ],
+            "type" : "string"
+          },
+          "inputMethod" : {
+            "$ref" : "#/components/schemas/ParameterDescriptionType_value_inputMethod"
+          }
+        },
+        "required" : [ "type" ],
+        "type" : "object"
+      },
+      "ParametersType_inner_value" : {
+        "oneOf" : [ {
+          "type" : "boolean"
+        }, {
+          "type" : "integer"
+        }, {
+          "type" : "number"
+        }, {
+          "type" : "object"
+        }, {
+          "type" : "string"
+        } ]
+      },
+      "ParametersType_inner" : {
+        "example" : {
+          "name" : "name",
+          "value" : true
+        },
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "value" : {
+            "$ref" : "#/components/schemas/ParametersType_inner_value"
+          }
+        },
+        "type" : "object"
+      }
+    }
+  }
+}

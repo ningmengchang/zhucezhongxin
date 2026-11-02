@@ -1,0 +1,7 @@
+生成入口：../build_schema_excel.py
+新增细化模块：../schema_field_details.py、../schema_excel_output.py
+依赖：openpyxl、jsonschema、referencing、rdflib（本次使用7.4.0）。
+执行：在依赖齐备的Python环境运行 python build_schema_excel.py。
+输入为固定的03_语义资源目录；不联网修改官方文件。
+输出文件仍使用原名；细化前版本在历史备份目录。
+完整核验结果见 字段字典_生成与核验.json。

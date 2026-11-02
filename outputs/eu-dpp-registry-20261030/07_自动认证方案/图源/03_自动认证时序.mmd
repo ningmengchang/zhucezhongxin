@@ -1,0 +1,26 @@
+sequenceDiagram
+    autonumber
+    participant B as 业务服务
+    participant T as Futris 认证模块
+    participant K as 客户授权密钥服务
+    participant A as 欧盟授权服务
+    participant R as 欧盟注册中心
+    B->>T: 获取指定客户与环境的 Token
+    T->>T: 读取配置并检查 Token 缓存
+    alt 缓存仍有效
+      T-->>B: 返回缓存的 access_token
+    else 需要重新申请
+      T->>T: 加锁复查缓存<br/>仍需刷新则生成新 jti / iat / exp
+      T->>K: 用 key_ref 对 JWT 签名
+      Note over K: 私钥留在密钥服务内部
+      K-->>T: 返回新 client_assertion
+      T->>A: POST /oauth2/token<br/>client_credentials 与签名 assertion 与 resource
+      A-->>T: 校验通过后签发<br/>access_token / token_type / expires_in
+      T->>T: 按客户与环境缓存 Token 并释放锁
+      T-->>B: 返回 access_token
+    end
+    opt 已取得有效 Token
+      B->>R: 调用业务接口<br/>Authorization: Bearer access_token
+      R-->>B: 业务接口响应
+    end
+    Note over T,A: 失败按第 6 节分类处理；重试需重新生成 assertion

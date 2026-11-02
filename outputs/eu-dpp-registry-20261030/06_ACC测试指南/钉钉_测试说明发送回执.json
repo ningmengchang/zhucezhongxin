@@ -1,0 +1,28 @@
+{
+  "uuid": "5271d716-9203-5976-a39b-c42cbd0663e5",
+  "text": "Excel 和 Postman 测试包都发你了。\n\nExcel 里把官方测试地址、原文出处、账号准备、Token 申请、5 个业务接口和具体测试步骤放在一起了。研发可以先看「使用说明」和「测试步骤」，需要复制请求时看「请求示例」。Postman 包解压后导入两个 JSON，按里面的「先读我」操作。\n\n测试顺序是：完成 ACC 组织核验 → 创建服务账号并登记公钥 → 用私钥签名申请 Token → 查询产品分类 → 提交一条实际可访问的测试护照 → 查询任务和逐条结果。收到 202 只是受理，最后还要确认业务结果是 SUCCEEDED。\n\n目前有个实际问题我也写进表里了：官方指南和 OpenAPI 的域名不一致，本机访问还遇到缺少 session cookie、元数据 401 和 JWKS 404。需要先核实实际 API 地址和机器接入条件。现在完成的是资料整理和匿名检查，带账号的完整联调还没跑过。",
+  "response": {
+    "arguments": [],
+    "errorCode": null,
+    "errorMsg": null,
+    "result": {
+      "friendlyHint": "",
+      "openTaskId": "Lzf8Qm2LM8NV24FMRBOTvzXXJRi4ABA8Na2IgmrUh94=",
+      "retryable": false
+    },
+    "success": true
+  },
+  "deliveryStatus": {
+    "arguments": [],
+    "errorCode": null,
+    "errorMsg": null,
+    "result": {
+      "friendlyHint": "",
+      "openConversationId": "cid91baccGIzmKsjTsjAHYG/kJh0wt6rRufd7Ho2zFZkPU=",
+      "openMessageId": "msgWEi9RiRDD/I8QMDRn2XmVg==",
+      "retryable": false,
+      "sendStatus": "SUCCESS"
+    },
+    "success": true
+  }
+}

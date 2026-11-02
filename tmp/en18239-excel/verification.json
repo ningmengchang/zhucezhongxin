@@ -1,0 +1,484 @@
+{
+  "outputPath": "/home/ningmengchang/Desktop/注册中心/outputs/en18239-20261013/EN18239_DPP平台要求与实现分析.xlsx",
+  "sheetName": "条款解读与实现",
+  "rowCount": 66,
+  "dataRange": "A8:E73",
+  "requiredNumberedItems": {
+    "clause52": 24,
+    "annexA": 11
+  },
+  "headers": [
+    "文档内容",
+    "文档的意思（解释列）",
+    "DPP平台的要求",
+    "如何实现",
+    "实现的重点"
+  ],
+  "sourceLocators": [
+    "4.1",
+    "4.2 第1类",
+    "4.2 第2类",
+    "4.2 第3类",
+    "4.2 第4类（主服务）",
+    "4.2 第4类（备份及扩展主体）",
+    "5.1",
+    "5.2 第1项",
+    "5.2 第2项",
+    "5.2 第3项",
+    "5.2 第4项",
+    "5.2 第5项",
+    "5.2 第6项",
+    "5.2 第7项",
+    "5.2 第8项",
+    "5.2 第9项",
+    "5.2 第10项",
+    "5.2 第11项",
+    "5.2 第12项",
+    "5.2 第13项",
+    "5.2 第14项",
+    "5.2 第15项",
+    "5.2 第16项",
+    "5.2 第17项",
+    "5.2 第18项",
+    "5.2 第19项",
+    "5.2 第20项",
+    "5.2 第21项",
+    "5.2 第22项",
+    "5.2 第23项",
+    "5.2 第24项",
+    "6.1（数据访问与认证功能）",
+    "6.1（系统组件）",
+    "6.2（EO的访问管理）",
+    "6.2 第1类访问",
+    "6.2 第2类访问",
+    "6.3",
+    "6.4.1",
+    "6.4.2",
+    "6.4.3",
+    "6.5.1",
+    "6.5.2（安全设计）",
+    "6.5.2（生命周期措施及风险评估）",
+    "6.5.2（供应商合同）",
+    "6.5.3",
+    "6.5.4",
+    "6.5.5（ISMS与PDCA）",
+    "6.5.5（Plan：策划）",
+    "6.5.5（Do：执行）",
+    "6.5.5（Check：检查）",
+    "6.5.5（Act：改进）",
+    "附录A 第1项",
+    "附录A 第2项",
+    "附录A 第3项",
+    "附录A 第4项",
+    "附录A 第5项",
+    "附录A 第6项",
+    "附录A 第7项",
+    "附录A 第8项",
+    "附录A 第9项",
+    "附录A 第10项",
+    "附录A 第11项",
+    "附录ZA（自愿性符合路径）",
+    "附录ZA（符合性推定条件）",
+    "附录ZA 表ZA.1",
+    "附录ZA 警告1、2"
+  ],
+  "heights": [
+    {
+      "locator": "4.1",
+      "row": 8,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "4.2 第1类",
+      "row": 9,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "4.2 第2类",
+      "row": 10,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "4.2 第3类",
+      "row": 11,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "4.2 第4类（主服务）",
+      "row": 12,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "4.2 第4类（备份及扩展主体）",
+      "row": 13,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.1",
+      "row": 14,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第1项",
+      "row": 15,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第2项",
+      "row": 16,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第3项",
+      "row": 17,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第4项",
+      "row": 18,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第5项",
+      "row": 19,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第6项",
+      "row": 20,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第7项",
+      "row": 21,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第8项",
+      "row": 22,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第9项",
+      "row": 23,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第10项",
+      "row": 24,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第11项",
+      "row": 25,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第12项",
+      "row": 26,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第13项",
+      "row": 27,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第14项",
+      "row": 28,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第15项",
+      "row": 29,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第16项",
+      "row": 30,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第17项",
+      "row": 31,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第18项",
+      "row": 32,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第19项",
+      "row": 33,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第20项",
+      "row": 34,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第21项",
+      "row": 35,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第22项",
+      "row": 36,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "5.2 第23项",
+      "row": 37,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "5.2 第24项",
+      "row": 38,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.1（数据访问与认证功能）",
+      "row": 39,
+      "heightPx": 113,
+      "lines": 5
+    },
+    {
+      "locator": "6.1（系统组件）",
+      "row": 40,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "6.2（EO的访问管理）",
+      "row": 41,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.2 第1类访问",
+      "row": 42,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.2 第2类访问",
+      "row": 43,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.3",
+      "row": 44,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.4.1",
+      "row": 45,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.4.2",
+      "row": 46,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "6.4.3",
+      "row": 47,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.5.1",
+      "row": 48,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.5.2（安全设计）",
+      "row": 49,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.5.2（生命周期措施及风险评估）",
+      "row": 50,
+      "heightPx": 113,
+      "lines": 5
+    },
+    {
+      "locator": "6.5.2（供应商合同）",
+      "row": 51,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.5.3",
+      "row": 52,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "6.5.4",
+      "row": 53,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "6.5.5（ISMS与PDCA）",
+      "row": 54,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "6.5.5（Plan：策划）",
+      "row": 55,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "6.5.5（Do：执行）",
+      "row": 56,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "6.5.5（Check：检查）",
+      "row": 57,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "6.5.5（Act：改进）",
+      "row": 58,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第1项",
+      "row": 59,
+      "heightPx": 76,
+      "lines": 2
+    },
+    {
+      "locator": "附录A 第2项",
+      "row": 60,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第3项",
+      "row": 61,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第4项",
+      "row": 62,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第5项",
+      "row": 63,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第6项",
+      "row": 64,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第7项",
+      "row": 65,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第8项",
+      "row": 66,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第9项",
+      "row": 67,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第10项",
+      "row": 68,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录A 第11项",
+      "row": 69,
+      "heightPx": 76,
+      "lines": 3
+    },
+    {
+      "locator": "附录ZA（自愿性符合路径）",
+      "row": 70,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "附录ZA（符合性推定条件）",
+      "row": 71,
+      "heightPx": 113,
+      "lines": 5
+    },
+    {
+      "locator": "附录ZA 表ZA.1",
+      "row": 72,
+      "heightPx": 94,
+      "lines": 4
+    },
+    {
+      "locator": "附录ZA 警告1、2",
+      "row": 73,
+      "heightPx": 94,
+      "lines": 4
+    }
+  ],
+  "roundTripValuesMatch": true
+}

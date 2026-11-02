@@ -1,0 +1,22 @@
+{
+  "title": "Futris 欧盟 DPP 自动认证对接说明",
+  "updatedAt": "2026-10-31 20:33",
+  "figures": 3,
+  "sourceDate": "2026-10-30",
+  "files": [
+    {
+      "name": "Futris_欧盟DPP自动认证对接说明_v1.0.docx",
+      "sizeBytes": 814627,
+      "sha256": "f7385a69d575be8c7c9632c69efcdf3cfea9c15a7fcdcfae8e73cf15b29927df",
+      "uid": 1000,
+      "gid": 1000
+    },
+    {
+      "name": "Futris_欧盟DPP自动认证对接说明_v1.0.md",
+      "sizeBytes": 19597,
+      "sha256": "3bc02d2358a8ddbeb21983c7c4b8f0039323e1e0fb37260e36591af7b8c36d7c",
+      "uid": 1000,
+      "gid": 1000
+    }
+  ]
+}

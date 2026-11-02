@@ -1,0 +1,17 @@
+flowchart TB
+    A["定位客户和环境<br/>读取服务账号配置"] --> B{缓存有效吗}
+    B -->|是| R[携带 Bearer 调用业务 API]
+    B -->|否| C[取得刷新锁并复查缓存]
+    C --> D{仍需刷新吗}
+    D -->|否| R
+    D -->|是| E["生成新 jti / iat / exp<br/>组装 JWT"]
+    E --> F["调用密钥服务签名<br/>得到 client_assertion"]
+    F --> G["POST /oauth2/token<br/>提交认证表单"]
+    G --> H{签发成功吗}
+    H -->|200 且响应有效| I[缓存新 Token 和到期时间]
+    I --> R
+    H -->|失败| Z["脱敏记录并分类处理<br/>重试时必须重新签名"]
+    classDef dynamic fill:#e5f5f2,stroke:#168575,color:#17344d
+    classDef external fill:#fff3dc,stroke:#c18923,color:#17344d
+    class E,F,I dynamic
+    class G,H,R external

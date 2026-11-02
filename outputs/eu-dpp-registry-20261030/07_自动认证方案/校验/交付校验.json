@@ -1,0 +1,64 @@
+{
+  "documentTitle": "Futris 欧盟 DPP 自动认证对接说明",
+  "pdfPages": 11,
+  "wordFigures": 3,
+  "wordTables": 8,
+  "overflow": [],
+  "blankPages": [],
+  "figurePages": [
+    3,
+    7,
+    8
+  ],
+  "offlineCodeChecks": "12 passed; local signatures and simulated HTTP only",
+  "realTokenCall": "not performed",
+  "ownership": [
+    {
+      "file": "Futris_欧盟DPP自动认证对接说明_v1.0.docx",
+      "uid": 1000,
+      "gid": 1000,
+      "sizeBytes": 814627,
+      "sha256": "f7385a69d575be8c7c9632c69efcdf3cfea9c15a7fcdcfae8e73cf15b29927df"
+    },
+    {
+      "file": "Futris_欧盟DPP自动认证对接说明_v1.0.pdf",
+      "uid": 1000,
+      "gid": 1000,
+      "sizeBytes": 1190365,
+      "sha256": "e0959d9ac3518c410ef2ce4ddbb2a36cb01a0dc0bff7d35fce523709a39bb72d"
+    },
+    {
+      "file": "Futris_欧盟DPP自动认证对接说明_v1.0.md",
+      "uid": 1000,
+      "gid": 1000,
+      "sizeBytes": 19597,
+      "sha256": "3bc02d2358a8ddbeb21983c7c4b8f0039323e1e0fb37260e36591af7b8c36d7c"
+    }
+  ],
+  "sourceIntegrity": [
+    {
+      "file": "DPP Registry – OpenAPI Specifications.zip",
+      "sha256Unchanged": true
+    },
+    {
+      "file": "DPP Registry – API Integration Guide for Economic Operators.pdf",
+      "sha256Unchanged": true
+    },
+    {
+      "file": "DPP Registry – Semantic Data Guide.pdf",
+      "sha256Unchanged": true
+    },
+    {
+      "file": "DPP Registry – Semantic Data Artifacts.zip",
+      "sha256Unchanged": true
+    },
+    {
+      "file": "DPP Registry – Service Account Technical Integration Guide.pdf",
+      "sha256Unchanged": true
+    },
+    {
+      "file": "DPP Registry – Self-Hosted Authentication Guide for Economic Operators.pdf",
+      "sha256Unchanged": true
+    }
+  ]
+}

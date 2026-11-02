@@ -1,0 +1,20 @@
+{
+  "oldVsNewFieldRowsCompared": 666,
+  "comparedItems": [
+    "path",
+    "JSON type",
+    "Schema required",
+    "Schema constraints",
+    "official sample",
+    "source pointer"
+  ],
+  "officialSampleUnitChecksPassed": 86,
+  "xlsxZipIntegrity": "passed",
+  "allTaskArtifactOwnership": "1000:1000",
+  "displayPreview": "校验/字段细化_显示抽样.xlsx",
+  "visualReview": {
+    "previewPages": 3,
+    "status": "已查看单位与必填、工业适用条件、质保期格式三页；未发现截字或重叠。",
+    "note": "从实际工作簿抽取原值与原样式生成，仅用于显示核验；主Excel无需打印缩放即可按10号字查看。"
+  }
+}

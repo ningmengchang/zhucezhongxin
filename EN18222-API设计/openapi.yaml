@@ -1,0 +1,1247 @@
+openapi: 3.1.0
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
+info:
+  title: EN 18222:2026 DPP API 实施配置文件
+  version: 1.0.0
+  description: |-
+    面向开发和联调的 EN 18222:2026 REST/HTTPS API 配置文件。
+
+    - 路径和逻辑方法来自 EN 18222:2026 第 4、5、6、8 条。
+    - DPP 头部和 DataElement 模型来自 EN 18223:2026 第 4、5 条及附录 A。
+    - JSON 是本配置文件的首期强制交换格式；XML、JSON-LD、HTML 可按 EN 18216:2026 后续扩展。
+    - 分页封装、错误封装、ETag、Bearer Token 等标准未完全规定的部分，是本实施配置文件的明确约定。
+    - 本文件不是欧盟委员会线上 DPP Registry 的官方 API 文档，Registry 的实际地址、认证和产品组 Schema
+      必须以欧盟委员会发布的技术文档为准。
+  license:
+    name: Internal implementation profile; EN standards remain copyrighted
+servers:
+  - url: https://dpp.example.com
+    description: DPP custodian / service-provider API
+  - url: https://registry.example.eu
+    description: Registry placeholder; replace with the authoritative Registry endpoint
+tags:
+  - name: Life Cycle API
+    description: DPP 主生命周期方法
+  - name: Fine-grained API
+    description: 单个数据元素读写方法
+  - name: Registry API
+    description: DPP 注册方法
+
+paths:
+  /v1/dpps/{dppId}:
+    parameters:
+      - $ref: '#/components/parameters/DppId'
+      - $ref: '#/components/parameters/CorrelationId'
+    get:
+      tags: [Life Cycle API]
+      operationId: readDppById
+      x-en18222-method: ReadDPPById
+      summary: 按 DPP ID 读取 DPP
+      description: |-
+        返回指定 DPP ID 对应的 DPP。服务端必须在序列化响应前执行访问控制和字段级过滤。
+        此方法属于 EN 18222 要求提供的方法。
+      security:
+        - {}
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Representation'
+      responses:
+        '200':
+          $ref: '#/components/responses/DppOk'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+    patch:
+      tags: [Life Cycle API]
+      operationId: updateDppById
+      x-en18222-method: UpdateDPPById
+      summary: 原子化局部更新 DPP
+      description: |-
+        按 RFC 7396 JSON Merge Patch 更新 DPP。请求可以包含一个或多个待变更数据元素；任一字段校验、
+        授权或持久化失败时，整个更新必须回滚。成功后必须依照 EN 18221 保存变更历史。
+
+        本配置文件把 digitalProductPassportId 和 uniqueProductIdentifier 设为不可变字段。
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Representation'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/PartialDigitalProductPassport'
+            examples:
+              statusAndCapacity:
+                summary: 同一事务中更新状态和业务数据点
+                value:
+                  dppStatus: active
+                  battery:
+                    remainingCapacityKWh: 71.4
+      responses:
+        '200':
+          $ref: '#/components/responses/DppOk'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+    delete:
+      tags: [Life Cycle API]
+      operationId: deleteDppById
+      x-en18222-method: DeleteDPPById
+      summary: 结束 DPP 的活动生命周期
+      description: |-
+        删除指定 DPP。实现应采用逻辑删除或归档，而不是抹除 EN 18221 要求保留的历史记录。
+        本方法属于 EN 18222 的建议方法。
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      responses:
+        '204':
+          description: DPP 已转为删除/归档状态；响应没有正文
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+
+  /v1/dppsByProductId/{productId}:
+    parameters:
+      - $ref: '#/components/parameters/ProductId'
+      - $ref: '#/components/parameters/CorrelationId'
+    get:
+      tags: [Life Cycle API]
+      operationId: readDppByProductId
+      x-en18222-method: ReadDPPByProductId
+      summary: 按产品唯一标识读取当前有效 DPP
+      description: |-
+        返回该产品唯一标识对应的当前活动 DPP（最新版本）。产品标识必须符合 EN 18219。
+        此方法属于 EN 18222 要求提供的方法。
+      security:
+        - {}
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Representation'
+      responses:
+        '200':
+          $ref: '#/components/responses/DppOk'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+
+  /v1/dppsByIdAndDate/{dppId}:
+    parameters:
+      - $ref: '#/components/parameters/DppId'
+      - $ref: '#/components/parameters/CorrelationId'
+    get:
+      tags: [Life Cycle API]
+      operationId: readDppVersionByIdAndDate
+      x-en18222-method: ReadDPPVersionByIdAndDate
+      summary: 按 DPP ID 和 UTC 时点读取历史版本
+      description: |-
+        返回在给定 UTC 时点有效的 DPP 版本。选择规则为 validFrom <= date 且
+        (validTo 为空或 date < validTo) 的唯一版本；这是本配置文件对标准未细化部分的实施约定。
+      security:
+        - {}
+        - bearerAuth: []
+      parameters:
+        - name: date
+          in: query
+          required: true
+          description: ISO 8601-1 UTC 时间，必须以 Z 结尾
+          schema:
+            $ref: '#/components/schemas/UtcTimestamp'
+          example: '2026-08-27T06:30:00Z'
+        - $ref: '#/components/parameters/Representation'
+      responses:
+        '200':
+          $ref: '#/components/responses/DppOk'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+
+  /v1/dppsByProductIds:
+    post:
+      tags: [Life Cycle API]
+      operationId: readDppIdsByProductIds
+      x-en18222-method: ReadDPPIdsByProductIds
+      summary: 批量用产品标识发现 DPP ID
+      description: |-
+        输入非空且不重复的产品唯一标识集合，返回匹配的 DPP ID。EN 18222 提到 limit/cursor，
+        但没有定义其 REST 位置和分页对象；本配置文件将它们定义为查询参数和 pagination 响应字段。
+        此方法属于 EN 18222 要求提供的方法。
+      security:
+        - {}
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductIdSet'
+            example:
+              - https://id.example.com/01/09506000134352/21/SN-A10001
+              - did:web:example.com:products:SN-A10002
+      responses:
+        '200':
+          description: 查询成功；无匹配时 payload 为空数组
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DppIdsResponse'
+              example:
+                statusCode: Success
+                payload:
+                  - https://passport.example.com/dpp/018f73c0-9320-7f91-bdc9-2ea86bc98a66
+                pagination:
+                  limit: 100
+                  nextCursor: eyJvZmZzZXQiOjEwMH0
+                  hasMore: true
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+
+  /v1/dpps:
+    post:
+      tags: [Life Cycle API]
+      operationId: createDpp
+      x-en18222-method: CreateDPP
+      summary: 创建新的 DPP
+      description: |-
+        创建 DPP 并返回 DPP ID。DPP ID 与产品唯一标识必须满足唯一性约束；重复创建返回 409。
+        本方法属于主 DPP 服务商和备份服务商的建议方法。
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+        - $ref: '#/components/parameters/Representation'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DigitalProductPassport'
+            examples:
+              compressedBatteryDpp:
+                $ref: '#/components/examples/CompressedBatteryDpp'
+      responses:
+        '201':
+          description: DPP 创建成功
+          headers:
+            Location:
+              description: 新 DPP 资源地址
+              schema:
+                type: string
+                format: uri
+            ETag:
+              $ref: '#/components/headers/ETag'
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateDppResponse'
+              example:
+                statusCode: SuccessCreated
+                digitalProductPassportId: https://passport.example.com/dpp/018f73c0-9320-7f91-bdc9-2ea86bc98a66
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+
+  /v1/registerDPP:
+    post:
+      tags: [Registry API]
+      operationId: registerProductDpp
+      x-en18222-method: RegisterProductDPP
+      summary: 向 DPP Registry 注册 DPP
+      description: |-
+        提交 EN 18222 DppRegistryEntry。调用者必须是已验证并获授权的经济运营商或其代理。
+        201 表示注册完成并返回 registrationId；202 表示已接收并进入异步验证。
+        欧盟委员会实际 Registry 的字段、认证和批量上传规则以其官方技术文档为准。
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DppRegistryEntry'
+            example:
+              uniqueProductIdentifier: https://id.example.com/01/09506000134352/21/SN-A10001
+              digitalProductPassportId: https://passport.example.com/dpp/018f73c0-9320-7f91-bdc9-2ea86bc98a66
+              uniqueEconomicOperatorIdentifier: iso6523-actorid-upis::0199:example-operator-001
+              backupEconomicOperatorIdentifier: iso6523-actorid-upis::0199:example-backup-001
+              dppApiEndpoint: https://passport.example.com/v1
+      responses:
+        '201':
+          description: 注册成功并生成唯一注册标识
+          headers:
+            Location:
+              description: 注册记录地址（实施扩展）
+              schema:
+                type: string
+                format: uri
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegistrationResponse'
+              example:
+                statusCode: SuccessCreated
+                registrationId: urn:eu:dpp:registration:01J6D4M4G3KQ8M7B7X1J15HYTZ
+        '202':
+          description: 注册请求已接收，尚未完成验证
+          headers:
+            Location:
+              description: 注册请求状态地址；属于实施扩展
+              schema:
+                type: string
+                format: uri
+            Retry-After:
+              description: 建议再次查询状态的秒数
+              schema:
+                type: integer
+                minimum: 1
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegistrationAcceptedResponse'
+              example:
+                statusCode: SuccessAccepted
+                correlationId: 01J6D4KAP9E2WQ0M4X8GZ6VB30
+                estimatedCompletionAt: '2026-08-27T06:31:00Z'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+
+  /v1/dpps/{dppId}/elements/{elementIdPath}:
+    parameters:
+      - $ref: '#/components/parameters/DppId'
+      - $ref: '#/components/parameters/ElementIdPath'
+      - $ref: '#/components/parameters/CorrelationId'
+    get:
+      tags: [Fine-grained API]
+      operationId: readDataElement
+      x-en18222-method: ReadDataElement
+      summary: 按唯一 JSONPath 读取一个数据元素
+      description: |-
+        elementIdPath 必须是 RFC 9535 的绝对规范化路径，并且只能定位一个元素；通配符、切片、
+        过滤器和递归下降等可能返回多个节点的表达式应拒绝。此方法属于建议方法。
+      security:
+        - {}
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Representation'
+      responses:
+        '200':
+          description: 数据元素读取成功
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataElementResponse'
+              examples:
+                compressed:
+                  summary: compressed 表示
+                  value:
+                    statusCode: Success
+                    payload: 71.4
+                full:
+                  summary: full 表示
+                  value:
+                    statusCode: Success
+                    payload:
+                      elementId: remainingCapacityKWh
+                      objectType: SingleValuedDataElement
+                      dictionaryReference: https://dictionary.example.eu/battery/remainingCapacityKWh
+                      valueDataType: xsd:decimal
+                      value: 71.4
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+    patch:
+      tags: [Fine-grained API]
+      operationId: updateDataElement
+      x-en18222-method: UpdateDataElement
+      summary: 原子化更新、增补或移除一个数据元素
+      description: |-
+        用 RFC 7396 语义修改目标元素。传 JSON null 表示移除该元素，是本配置文件对
+        EN 18222“允许移除”但未定义线协议细节的实施约定。修改必须归档。
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Representation'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              description: compressed 值、full DataElement 对象或 null（移除）
+            examples:
+              replaceCompressedValue:
+                value: 69.8
+              removeElement:
+                value: null
+      responses:
+        '200':
+          description: 数据元素更新成功
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataElementResponse'
+        '204':
+          description: 数据元素已移除；这是本配置文件为移除语义定义的响应
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '501':
+          $ref: '#/components/responses/NotImplemented'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |-
+        实施配置文件采用的认证占位方案。Token 的签发、声明、受众和角色模型应由最终安全规范、
+        产品组授权规则及部署环境确定。不得把此占位定义当作欧盟 Registry 的官方认证方案。
+
+  parameters:
+    DppId:
+      name: dppId
+      in: path
+      required: true
+      description: DPP 唯一标识；放入路径前必须执行 UTF-8 百分号编码
+      allowReserved: false
+      schema:
+        $ref: '#/components/schemas/DppIdentifier'
+      example: urn:uuid:018f73c0-9320-7f91-bdc9-2ea86bc98a66
+    ProductId:
+      name: productId
+      in: path
+      required: true
+      description: EN 18219 产品唯一标识；放入路径前必须执行 UTF-8 百分号编码
+      allowReserved: false
+      schema:
+        $ref: '#/components/schemas/UniqueProductIdentifier'
+      example: did:web:example.com:products:SN-A10001
+    ElementIdPath:
+      name: elementIdPath
+      in: path
+      required: true
+      description: |-
+        RFC 9535 JSONPath 绝对规范化路径，只允许定位单个节点；放入路径前必须整体百分号编码。
+        原始值示例：$['battery']['remainingCapacityKWh']
+      allowReserved: false
+      schema:
+        type: string
+        minLength: 1
+      example: $['battery']['remainingCapacityKWh']
+    Representation:
+      name: representation
+      in: query
+      required: false
+      description: EN 18223 DPP 表示方式；省略时按 compressed 处理
+      schema:
+        type: string
+        enum: [compressed, full]
+        default: compressed
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: 每页最大返回数；100/1000 是本配置文件默认值和上限，不是 EN 18222 的固定值
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+        default: 100
+    Cursor:
+      name: cursor
+      in: query
+      required: false
+      description: 服务端生成的不透明游标；若提供则不得为空，不得由客户端解析或修改
+      schema:
+        type: string
+        minLength: 1
+    CorrelationId:
+      name: X-Correlation-ID
+      in: header
+      required: false
+      description: 跨系统跟踪标识；服务端未收到时应生成并在响应中返回
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 128
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: 乐观锁版本；生产环境建议对 PATCH/DELETE 设为必填
+      schema:
+        type: string
+      example: '"dpp-v17"'
+
+  headers:
+    CorrelationId:
+      description: 本次请求的跨系统跟踪标识
+      schema:
+        type: string
+    ETag:
+      description: 当前 DPP 或元素版本，用于 If-Match 乐观锁
+      schema:
+        type: string
+
+  responses:
+    DppOk:
+      description: DPP 读取或更新成功
+      headers:
+        ETag:
+          $ref: '#/components/headers/ETag'
+        Last-Modified:
+          description: DPP 最近更新时间
+          schema:
+            type: string
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DppResponse'
+          examples:
+            compressed:
+              summary: 默认 compressed DPP
+              value:
+                statusCode: Success
+                payload:
+                  digitalProductPassportId: https://passport.example.com/dpp/018f73c0-9320-7f91-bdc9-2ea86bc98a66
+                  uniqueProductIdentifier: https://id.example.com/01/09506000134352/21/SN-A10001
+                  granularity: item
+                  dppSchemaVersion: eu-battery-passport:1.0
+                  dppStatus: active
+                  lastUpdated: '2026-08-27T06:30:00Z'
+                  economicOperatorId: iso6523-actorid-upis::0199:example-operator-001
+                  facilityId: iso6523-actorid-upis::0199:example-facility-001
+                  contentSpecificationIds:
+                    - eu:battery-passport:2027
+                  battery:
+                    category: EV
+                    ratedCapacityKWh: 82.0
+    BadRequest:
+      description: 请求格式错误、必填字段缺失、标识或 JSONPath 非法
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            statusCode: ClientErrorBadRequest
+            result:
+              message:
+                - messageType: Error
+                  text: cursor must not be empty
+                  code: DPP-API-400-001
+                  correlationId: 01J6D4KAP9E2WQ0M4X8GZ6VB30
+                  timestamp: '2026-08-27T06:30:00Z'
+    Unauthorized:
+      description: 缺失或错误的认证凭证
+      headers:
+        WWW-Authenticate:
+          description: Bearer challenge
+          schema:
+            type: string
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Forbidden:
+      description: 已认证，但没有读取、创建、更新或删除该资源的权限
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: DPP、历史版本或数据元素不存在
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    MethodNotAllowed:
+      description: 该资源不允许所请求的 HTTP 方法
+      headers:
+        Allow:
+          description: 资源允许的 HTTP 方法
+          schema:
+            type: string
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Conflict:
+      description: 资源已存在、版本冲突或并发更新冲突
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalError:
+      description: 未预期的服务端错误
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotImplemented:
+      description: 服务端未实现所请求的可选能力或表示格式
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadGateway:
+      description: 主服务、备份服务、Registry 或上游存储返回无效响应
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+  schemas:
+    StatusCode:
+      type: string
+      description: EN 18222 表 15 通用状态码
+      enum:
+        - Success
+        - SuccessCreated
+        - SuccessAccepted
+        - SuccessNoContent
+        - ClientErrorBadRequest
+        - ClientNotAuthorized
+        - ClientForbidden
+        - ClientMethodNotAllowed
+        - ClientErrorResourceNotFound
+        - ClientResourceConflict
+        - ServerInternalError
+        - ServerNotImplemented
+        - ServerErrorBadGateway
+    MessageTypeEnum:
+      type: string
+      description: EN 18222 表 14
+      enum: [Info, Warning, Error, Exception]
+    Message:
+      type: object
+      additionalProperties: false
+      required: [messageType, text]
+      properties:
+        messageType:
+          $ref: '#/components/schemas/MessageTypeEnum'
+        text:
+          type: string
+          minLength: 1
+        code:
+          type: string
+          description: 技术相关的细分状态或错误码
+        correlationId:
+          type: string
+          description: 跨多个系统关联结果消息的标识
+        timestamp:
+          $ref: '#/components/schemas/UtcTimestamp'
+    Result:
+      type: object
+      description: EN 18222 表 12；标准属性名为单数 message，但基数为 0..*
+      additionalProperties: false
+      properties:
+        message:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+    ErrorResponse:
+      type: object
+      description: 本配置文件把方法 statusCode 与 EN 18222 Result 组合成统一错误响应
+      additionalProperties: false
+      required: [statusCode, result]
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/StatusCode'
+        result:
+          $ref: '#/components/schemas/Result'
+
+    Identifier:
+      type: string
+      minLength: 1
+      description: EN 18222/EN 18223 使用的通用标识字符串
+    DppIdentifier:
+      allOf:
+        - $ref: '#/components/schemas/Identifier'
+      description: 全局唯一 DPP ID；EN 18223 建议采用 URI/URL 结构，但未强制为单一 URI 方案
+    UniqueProductIdentifier:
+      allOf:
+        - $ref: '#/components/schemas/Identifier'
+      description: |-
+        符合 EN 18219 的产品唯一标识。由于 EN 18219 允许 URL、Identification Link、DID、DOI、
+        RFID/2D 编码方案，不应使用一个自创的通用正则表达式限制全部合法值。
+    EconomicOperatorIdentifier:
+      allOf:
+        - $ref: '#/components/schemas/Identifier'
+      description: 符合 EN 18219 经济运营商标识方案的字符串
+    FacilityIdentifier:
+      allOf:
+        - $ref: '#/components/schemas/Identifier'
+      description: 符合 EN 18219 设施标识方案的字符串
+    UtcTimestamp:
+      type: string
+      format: date-time
+      pattern: Z$
+      description: ISO 8601-1 的 UTC 日期时间，必须以 Z 结尾
+
+    Granularity:
+      type: string
+      description: 本配置文件采用小写规范值；输入输出必须保持大小写一致
+      enum: [model, batch, item]
+    DppStatus:
+      type: string
+      minLength: 1
+      description: |-
+        DPP 数字资源状态。active、inactive、archived、invalid 是 EN 18223 示例值；
+        相关法律可以定义其他状态，因此这里不封闭枚举。
+      examples: [active, inactive, archived, invalid]
+    DppHeader:
+      type: object
+      required:
+        - digitalProductPassportId
+        - uniqueProductIdentifier
+        - granularity
+        - dppSchemaVersion
+        - dppStatus
+        - lastUpdated
+        - economicOperatorId
+      properties:
+        digitalProductPassportId:
+          $ref: '#/components/schemas/DppIdentifier'
+        uniqueProductIdentifier:
+          $ref: '#/components/schemas/UniqueProductIdentifier'
+        granularity:
+          $ref: '#/components/schemas/Granularity'
+        dppSchemaVersion:
+          type: string
+          minLength: 1
+          description: DPP 实例遵循的 Schema/规范版本引用
+        dppStatus:
+          $ref: '#/components/schemas/DppStatus'
+        lastUpdated:
+          $ref: '#/components/schemas/UtcTimestamp'
+        economicOperatorId:
+          $ref: '#/components/schemas/EconomicOperatorIdentifier'
+        facilityId:
+          $ref: '#/components/schemas/FacilityIdentifier'
+        contentSpecificationIds:
+          type: array
+          description: 横向或产品组内容规范的引用；EN 18223 基数为 0..*
+          uniqueItems: true
+          items:
+            type: string
+            minLength: 1
+    CompressedDigitalProductPassport:
+      allOf:
+        - $ref: '#/components/schemas/DppHeader'
+        - type: object
+          description: |-
+            EN 18223 compressed JSON。业务 DataElement 使用 elementId 作为 JSON key；
+            dictionaryReference 和 valueDataType 通常在外部数据字典定义，故可从运行时载荷省略。
+          additionalProperties: true
+    FullDigitalProductPassport:
+      allOf:
+        - $ref: '#/components/schemas/DppHeader'
+        - type: object
+          properties:
+            elements:
+              type: array
+              description: EN 18223 附录 A 的 fully expanded DataElement 数组
+              items:
+                $ref: '#/components/schemas/ExpandedDataElement'
+    DigitalProductPassport:
+      description: representation=compressed 或 representation=full 对应的 DPP
+      anyOf:
+        - $ref: '#/components/schemas/CompressedDigitalProductPassport'
+        - $ref: '#/components/schemas/FullDigitalProductPassport'
+    PartialDigitalProductPassport:
+      type: object
+      minProperties: 1
+      description: |-
+        RFC 7396 merge patch。未出现的属性保持不变，null 删除可选属性；补丁完成后的完整 DPP
+        仍须通过产品组 Schema 校验。本配置文件禁止修改两个身份字段。
+      properties:
+        digitalProductPassportId: false
+        uniqueProductIdentifier: false
+        granularity:
+          $ref: '#/components/schemas/Granularity'
+        dppSchemaVersion:
+          type: string
+        dppStatus:
+          $ref: '#/components/schemas/DppStatus'
+        lastUpdated:
+          $ref: '#/components/schemas/UtcTimestamp'
+        economicOperatorId:
+          $ref: '#/components/schemas/EconomicOperatorIdentifier'
+        facilityId:
+          oneOf:
+            - $ref: '#/components/schemas/FacilityIdentifier'
+            - type: 'null'
+        contentSpecificationIds:
+          type: array
+          uniqueItems: true
+          items:
+            type: string
+      additionalProperties: true
+
+    ExpandedDataElement:
+      oneOf:
+        - $ref: '#/components/schemas/DataElementCollection'
+        - $ref: '#/components/schemas/SingleValuedDataElement'
+        - $ref: '#/components/schemas/MultiValuedDataElement'
+        - $ref: '#/components/schemas/RelatedResource'
+        - $ref: '#/components/schemas/MultiLanguageDataElement'
+      discriminator:
+        propertyName: objectType
+        mapping:
+          DataElementCollection: '#/components/schemas/DataElementCollection'
+          SingleValuedDataElement: '#/components/schemas/SingleValuedDataElement'
+          MultiValuedDataElement: '#/components/schemas/MultiValuedDataElement'
+          RelatedResource: '#/components/schemas/RelatedResource'
+          MultiLanguageDataElement: '#/components/schemas/MultiLanguageDataElement'
+    DataElementBase:
+      type: object
+      required: [elementId, objectType]
+      properties:
+        elementId:
+          type: string
+          minLength: 1
+          description: 在所在容器内唯一；对应绝对路径在整个 DPP 内必须唯一
+        objectType:
+          type: string
+        dictionaryReference:
+          type: string
+          format: uri
+          description: 外部数据字典中语义定义的唯一引用
+    DataElementCollection:
+      allOf:
+        - $ref: '#/components/schemas/DataElementBase'
+        - type: object
+          required: [elements]
+          properties:
+            objectType:
+              const: DataElementCollection
+            elements:
+              type: array
+              minItems: 1
+              items:
+                $ref: '#/components/schemas/ExpandedDataElement'
+    SingleValuedDataElement:
+      allOf:
+        - $ref: '#/components/schemas/DataElementBase'
+        - type: object
+          required: [value]
+          properties:
+            objectType:
+              const: SingleValuedDataElement
+            valueDataType:
+              $ref: '#/components/schemas/XsdValueDataType'
+            value:
+              description: JSON 原生值；若数据字典未规定类型，可用字符串并提供 valueDataType
+    MultiValuedDataElement:
+      allOf:
+        - $ref: '#/components/schemas/DataElementBase'
+        - type: object
+          required: [value]
+          properties:
+            objectType:
+              const: MultiValuedDataElement
+            valueDataType:
+              $ref: '#/components/schemas/XsdValueDataType'
+            value:
+              type: array
+              minItems: 1
+              description: 同一数据类型、保持顺序的 DataElement 列表
+              items:
+                $ref: '#/components/schemas/ExpandedDataElement'
+    RelatedResource:
+      allOf:
+        - $ref: '#/components/schemas/DataElementBase'
+        - type: object
+          required: [contentType, url]
+          properties:
+            objectType:
+              const: RelatedResource
+            contentType:
+              type: string
+              minLength: 1
+              description: IANA media type，例如 application/pdf
+            url:
+              type: string
+              format: uri
+            language:
+              $ref: '#/components/schemas/LanguageTag'
+            resourceTitle:
+              type: string
+    MultiLanguageDataElement:
+      allOf:
+        - $ref: '#/components/schemas/DataElementBase'
+        - type: object
+          required: [value]
+          properties:
+            objectType:
+              const: MultiLanguageDataElement
+            value:
+              type: array
+              minItems: 1
+              items:
+                $ref: '#/components/schemas/MultiLanguageValue'
+    MultiLanguageValue:
+      type: object
+      additionalProperties: false
+      required: [language, value]
+      properties:
+        language:
+          $ref: '#/components/schemas/LanguageTag'
+        value:
+          type: string
+    LanguageTag:
+      type: string
+      minLength: 2
+      description: ISO 639 语言代码，可带 EN ISO 3166-1 国家代码，例如 en、en-GB、zh-CN
+      pattern: '^[A-Za-z]{2,3}(-[A-Za-z]{2})?$'
+    XsdValueDataType:
+      type: string
+      description: |-
+        本接口支持的 EN 18223:2026 Table 7 XSD-to-JSON 数据类型集合。
+        xsd:base64Binary 为可选支持类型。
+      pattern: '^xsd:[A-Za-z][A-Za-z0-9]*$'
+      enum:
+        - xsd:string
+        - xsd:boolean
+        - xsd:decimal
+        - xsd:integer
+        - xsd:double
+        - xsd:float
+        - xsd:date
+        - xsd:dateTime
+        - xsd:anyURI
+        - xsd:base64Binary
+      examples: [xsd:string, xsd:integer, xsd:decimal, xsd:dateTime, xsd:anyURI]
+
+    ProductIdSet:
+      type: array
+      minItems: 1
+      uniqueItems: true
+      items:
+        $ref: '#/components/schemas/UniqueProductIdentifier'
+    Pagination:
+      type: object
+      additionalProperties: false
+      required: [limit, hasMore]
+      properties:
+        limit:
+          type: integer
+          minimum: 1
+        nextCursor:
+          type: string
+          minLength: 1
+          description: hasMore=true 时必须返回的不透明游标
+        hasMore:
+          type: boolean
+    DppResponse:
+      type: object
+      additionalProperties: false
+      required: [statusCode, payload]
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/StatusCode'
+        payload:
+          $ref: '#/components/schemas/DigitalProductPassport'
+    DppIdsResponse:
+      type: object
+      additionalProperties: false
+      required: [statusCode, payload, pagination]
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/StatusCode'
+        payload:
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/DppIdentifier'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    CreateDppResponse:
+      type: object
+      additionalProperties: false
+      required: [statusCode, digitalProductPassportId]
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/StatusCode'
+        digitalProductPassportId:
+          $ref: '#/components/schemas/DppIdentifier'
+    DataElementResponse:
+      type: object
+      additionalProperties: false
+      required: [statusCode, payload]
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/StatusCode'
+        payload:
+          description: compressed JSON 值或 expanded DataElement 对象
+
+    DppRegistryEntry:
+      type: object
+      additionalProperties: false
+      required:
+        - uniqueProductIdentifier
+        - digitalProductPassportId
+        - uniqueEconomicOperatorIdentifier
+        - backupEconomicOperatorIdentifier
+        - dppApiEndpoint
+      properties:
+        uniqueProductIdentifier:
+          $ref: '#/components/schemas/UniqueProductIdentifier'
+        digitalProductPassportId:
+          $ref: '#/components/schemas/DppIdentifier'
+        uniqueEconomicOperatorIdentifier:
+          $ref: '#/components/schemas/EconomicOperatorIdentifier'
+        backupEconomicOperatorIdentifier:
+          allOf:
+            - $ref: '#/components/schemas/EconomicOperatorIdentifier'
+          description: |-
+            EN 18222 表 11 的“uniqueEconomicOperatorIdentifier of the Back-up operator”。
+            标准没有给出可直接作为 JSON key 的独立名称，本配置文件规范为此字段名。
+        dppApiEndpoint:
+          type: string
+          format: uri
+          pattern: '^https://'
+          description: DPP 服务 HTTPS API 根地址
+    RegistrationResponse:
+      type: object
+      additionalProperties: false
+      required: [statusCode, registrationId]
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/StatusCode'
+        registrationId:
+          type: string
+          minLength: 1
+          description: Registry 返回的唯一、持久注册标识
+    RegistrationAcceptedResponse:
+      type: object
+      additionalProperties: false
+      required: [statusCode, correlationId]
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/StatusCode'
+        correlationId:
+          type: string
+          minLength: 1
+        estimatedCompletionAt:
+          $ref: '#/components/schemas/UtcTimestamp'
+
+  examples:
+    CompressedBatteryDpp:
+      summary: 采用 EN 18223 compressed JSON 的电池 DPP 示例
+      value:
+        digitalProductPassportId: https://passport.example.com/dpp/018f73c0-9320-7f91-bdc9-2ea86bc98a66
+        uniqueProductIdentifier: https://id.example.com/01/09506000134352/21/SN-A10001
+        granularity: item
+        dppSchemaVersion: eu-battery-passport:1.0
+        dppStatus: active
+        lastUpdated: '2026-08-27T06:30:00Z'
+        economicOperatorId: iso6523-actorid-upis::0199:example-operator-001
+        facilityId: iso6523-actorid-upis::0199:example-facility-001
+        contentSpecificationIds:
+          - eu:battery-passport:2027
+        battery:
+          category: EV
+          ratedCapacityKWh: 82.0
+          chemistry: NMC811
+          productDescription:
+            - language: en-GB
+              value: Traction battery pack
+            - language: zh-CN
+              value: 动力电池包

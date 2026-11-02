@@ -1,0 +1,45 @@
+欧委会 DPP ACC 测试附件（资料日期 2026-10-30）
+整理时间：2026-10-31 11:37:11 CST
+
+配合《欧委会DPP_OpenAPI测试地址与操作指南_20261030.xlsx》使用。附件是整理模板，不是欧委会原始发布文件。
+
+先了解当前情况：
+1. 官方文档提供 ACC 地址，但本次没有有效服务账号，未申请 Token、未提交注册。
+2. 指南的 reg.acc 分类接口返回 401，正文为 Unauthorized: missing session cookie。
+3. 原始 OpenAPI 的 registry.acc 分类接口返回门户 HTML；metadata 返回 401，JWKS 返回 404。
+4. 请先向官方确认 Registry/Dashboard 实际 base 以及机器接入条件；不要把匿名响应当成联调成功。
+
+准备：
+- 单独的测试 EU Login、ACC VERIFIED 组织、带 Register DPPs 角色的 Service Account。
+- ACTIVE 公钥凭证、Client ID、kid，匹配私钥保留在本机密钥库/HSM。
+- 支持对应算法的 JOSE/JWT 库；服务账号指南第 13–14 页有 Java/TypeScript 签名示例。
+- 公钥、私钥、访问令牌的用途不同；只上传公钥，不能把私钥放进 Postman 或本分享包。
+
+Postman 操作：
+1. Import Collection 和 Environment 两个 JSON，选择 ACC 环境。
+2. 核实 registry_api_base / dashboard_api_base。当前分别保留指南和 Dashboard OpenAPI 的原文值。
+3. 填 client_id。kid、algorithm 用于你们本机的 JWT 签名器；在环境中填写它们不会自动产生签名。
+4. 生成新 client assertion：typ=client-authentication+jwt；iss=sub=client_id；aud=https://auth.acc.product-passport.ec.europa.eu；
+   iat=当前 Unix 秒；exp=iat+60–120；jti 每次唯一；用对应私钥签名。具体见 Excel。
+5. 仅在本机填 client_assertion，立即发送 01 获取 Token。scope 默认禁用，只在已知授权值时开启。
+   成功时脚本在本机环境保存 access_token；请求后移除 client_assertion，下一次申请须重新签名。
+6. 发送 02 GET 分类。须收到 200 JSON；HTML 不是成功。按实际返回填写 product_group / product_subgroup。
+7. 部署校验端能够访问的测试护照，并填写 unique_product_identifier。示例中的 example.com/localhost 不能用于有效注册。
+8. 发送 03 单条提交。首次幂等键为空时会生成一个 UUID；相同请求重试沿用；修改逻辑请求前清空或换新。
+9. 202 只表示受理，脚本保存 task_id。按 estimatedPeriodCompletionTime 等待，再手工执行 04。
+   若还在 PENDING/PROCESSING，按 1、1、2、3、5、8…秒退避，上限 60 秒，Retry-After 优先。
+10. COMPLETED 还需 outcome.outcomeResult=SUCCEEDED。FAILED 或 ERROR 时读 05 逐条证据。
+    CSV 只是当前页；需要翻页。不要直接 Run 全部请求来替代等待异步任务。
+
+补充：
+- Collection 没有自动签 JWT；header/payload 的示例文本不是有效的签名凭证。
+- 不在分享材料、日志或群聊中保存真实 assertion、Token、Cookie、私钥和口令。
+- 有效 access_token 在到期前复用，最长寿命 15 分钟；新 Token 请求每次用新 assertion。
+- Excel 中提供 curl 请求、来源页码、官方支持方式和可复制询问模板。
+
+官方出处：
+发布页：https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/resources-documentation_en
+服务账号指南：https://single-market-economy.ec.europa.eu/document/download/b42673d1-90db-4c0c-b54e-37fa9e0ac6c6_en?filename=DPP%20Registry%20%E2%80%93%20Service%20Account%20Technical%20Integration%20Guide.pdf
+API 指南：https://single-market-economy.ec.europa.eu/document/download/9bce584d-fd9c-453f-862c-55670d2757b7_en?filename=DPP%20Registry%20%E2%80%93%20API%20Integration%20Guide%20for%20Economic%20Operators.pdf
+原始 OpenAPI：https://single-market-economy.ec.europa.eu/document/download/74214725-69b6-490b-aa23-4e0f64329149_en?filename=DPP%20Registry%20%E2%80%93%20OpenAPI%20Specifications.zip
+官方技术支持：https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/dpp-registry_en

@@ -1,0 +1,24 @@
+{
+  "file": "欧委会DPP_OpenAPI测试地址与操作指南_20261030.xlsx",
+  "uuid": "58b13fcc-f497-5208-8fb6-47565cc0d084",
+  "exitCode": 0,
+  "response": {
+    "arguments": [],
+    "errorCode": null,
+    "errorMsg": null,
+    "result": {
+      "friendlyHint": "",
+      "openTaskId": "0vdwJ354RCwljzNHkmd9WxYV5z3dmHzcmCCNchO4wsk=",
+      "retryable": false
+    },
+    "success": true
+  },
+  "deliveryStatus": {
+    "success": true,
+    "result": {
+      "sendStatus": "SUCCESS",
+      "openConversationId": "cid91baccGIzmKsjTsjAHYG/kJh0wt6rRufd7Ho2zFZkPU=",
+      "openMessageId": "msgY5dQJ+5NjsiJC5T70FoAuA=="
+    }
+  }
+}

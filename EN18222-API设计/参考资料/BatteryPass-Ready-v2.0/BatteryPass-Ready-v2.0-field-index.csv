@@ -1,0 +1,435 @@
+﻿#,DIN DKE Spec 99100 Chapter,EV,LMT,Other Industrial >2kWh,Stationary >2kWh,Industrial without BMS,other exemptions,Mandatory from Feb 2027,Attribute category,Attribute sub-category,Attribute,Included in EU Commission Guidance,EU Commission Guidance number,EU Commission Guidance name,Short Definition/Understanding,Regulation Reference,Unit of attribute or sign (if applicable), Data format,Access rights according to Battery Regulation and draft implementing act,Data behavioural characteristic: static vs. dynamic,"Update requirement for dynamic data, or, where defined",Granularity level I: Model vs individual battery,Pack,Module,Cell
+1, - ,(M),(M),(M),(M),(M),n.a.,yes,DPP header,DPP Information,DPP Schema version,no,-,-,The reference standard the DPP instance schema refers to, JTC-24 EN 18223 (4.1.2.1 Table 1),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+2, - ,(M),(M),(M),(M),(M),n.a.,yes,DPP header,DPP Information,DPP Status,no,-,-,The current status of the DPP as a digital resource, JTC-24 EN 18223 (4.1.2.1 Table 1),n.a.,String,Public,Static,n.a.,Individual battery,M,-,-
+3, - ,(M),(M),(M),(M),(M),n.a.,yes,DPP header,DPP Information,DPP Granularity,no,-,-,"The required level of information with regard to product item, batch or model", JTC-24 EN 18223 (4.1.2.1 Table 1),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+4, - ,(M),(M),(M),(M),(M),n.a.,yes,DPP header,DPP Information,Date-time of latest update of DPP,no,-,-,Date and time of the latest update of the battery passport, JTC-24 EN 18223 (4.1.2.1 Table 1),n.a.,"String formatted as timestamp
+(UTC-based according to ISO 8601-1)",Public,Dynamic,upon any update of the battery passport,Individual battery,M,-,-
+5,6.1.2.1,M,M,M,M,M,n.a.,yes,DPP header,Identifier,Unique battery passport identifier / unique DPP identifier,no,-,-,"The unique identifier of a battery passport, equivalent to the unique DPP identifier in the JTC-24 standards","Art. 77(3) and (10); Art. 3(66);
+JTC-24 EN 18222 (4.2) & EN 18223 (4.1.2.1 Table 1 and 4.2)",n.a.,String,Public,Dynamic,upon any update of the battery passport that includes archiving,Individual battery,M,-,-
+6,6.1.2.2,M,M,M,M,M,n.a.,yes,DPP header,Identifier,Unique battery identifier / unique product identifier,yes,1,Unique identifier,"The unique identifier of the battery item, equivalent to the unique product identifier in the JTC-24 standards","Art. 77(3); Art. 3(66);
+JTC-24 EN 18219,
+JTC-24  EN 18222 (4.3) & EN 18223 (4.1.2.1 Table 1)",n.a.,String (formatted according to EN 18219),Public,Static,n.a.,Individual battery,M,-,-
+7,6.1.2.3,(M),(M),(M),(M),(M),n.a.,yes,DPP header,Identifier,Unique economic operator identifier,no,-,-,The unique identifier of the economic operator ,"ESPR Art. 2 (31), 12 (2); Annex XIII (1a) Annex VI Part A; Art. 3(66); Art. 77 (3)
+JTC-24 EN 18219 (4.1.1); JTC-24 EN 18223 (4.1.2.1 Table 1)",n.a.,String (formatted according to EN 18219),"Notified bodies, market surveillance authorities and the Commission",Static,n.a.,Individual battery,M,-,-
+8,6.1.3.1,V,V,V,V,V,n.a.,yes,DPP header,Identifier,Unique facility identifier,no,-,-,The unique identifier of a facility,JTC-24 EN 18219 (6); JTC-24 EN 18219; ESPR Annex III,n.a.,String (formatted according to EN 18219),"Notified bodies, market surveillance authorities and the Commission",Static,n.a.,Battery model per manufacturing site,M,-,-
+9,-,V,V,V,V,V,n.a.,yes,DPP header,Identifier,Content specification Ids,no,-,-,Reference to horizontal or product-type related content specifications for the DPP,JTC-24 EN 18223 (4.1.2.1 Table 1),n.a.,Array (String),Public,Static,n.a.,,,,
+10, - ,M,M,M,M,M,n.a.,yes,Identifiers and product data,Identifier,Battery model identifier,"yes, subsumed",7,"Model identification and
+batch or serial number, or
+product number or
+another element allowing
+their identification",The unique identifier of the battery model.,Article 3(19); CF declaration IA (draft),n.a.,String,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+11, - ,M,M,M,M,M,n.a.,yes,Identifiers and product data,Identifier,Battery serial number,"yes, subsumed",7,"Model identification and
+batch or serial number, or
+product number or
+another element allowing
+their identification",Serial number of the battery including information on the battery batch,"Article 38(6); Annex IX, 1",n.a.,String,Public,Static,n.a.,Individual battery,M,-,-
+12,6.1.2.4,M,M,M,M,M,n.a.,yes,Identifiers and product data,Identifier,Unique manufacturer identifier,no,-,-,The unique identifier of the manufacturer of the battery.,Annex VI Part A (1); Art. 38(7); ESPR Art. 2(32); ESPR Art. 12(1); ESPR Annex III; JTC-24 EN 18219,n.a.,String (formatted according to EN 18219),"Notified bodies, market surveillance authorities and the Commission",Static,n.a.,Battery model per manufacturing site,M,-,-
+13,-,(M),(M),(M),(M),(M),n.a.,yes,Identifiers and product data,Identifier,Third party service provider,no,-,-,reference to the third party service provider to be stored in the EU registry,EU registry IA Art. 8(9c),,String,"Notified bodies, market surveillance authorities and the Commission",Static,After change of service provider,Individual battery,M,-,-
+14,6.1.2.3,M,M,M,M,M,n.a.,yes,Identifiers and product data,Product data,Economic operator information,yes,2,"Identity of who is
+registering and/or is
+responsible for the battery
+passport",Information related to the economic operator ,"Art. 3, 1(22)",n.a.,String,Public,Static,n.a.,Individual battery,M,-,-
+15,6.1.2.4,M,M,M,M,M,n.a.,yes,Identifiers and product data,Product data,Manufacturer information,yes,"3, 4, 5","Manufacturer name,
+registered trade name or
+registered trade mark; 
+
+Manufacturer postal
+address, indicating a
+single contact point
+
+If available, manufacturer
+web and email address",Information related to the manufacturer of the battery,"Annex VI Part A (1); Art. 3, 1(33); Art. 38(7)",n.a.,String,Public,Static,n.a.,Battery model per manufacturing site,M,-,-
+16,6.1.3.1,M,M,M,M,M,n.a.,yes,Identifiers and product data,Product data,Manufacturing place,yes,8,"The place of manufacturer
+(geographical location of
+a battery manufacturing
+plant)",The place of manufacture of the battery,"Annex XIII (1a); Annex VI, Part A(3); Labelling IA (draft)",n.a.,String,Public,Static,n.a.,Battery model per manufacturing site,M,-,-
+17,6.1.3.2,M,M,M,M,M,n.a.,yes,Identifiers and product data,Product data,Manufacturing date,yes,9,The date of manufacturing (month and year),The date of manufacture of the battery,Annex XIII (1a); Annex VI Part A (4); Annex VII Part B (1); Labelling IA (draft),n.a.,Date[YYYY-MM],Public,Static,n.a.,Individual battery,M,-,-
+18,6.1.3.3,V,V,V,V,V,n.a.,yes,Identifiers and product data,Product data,Date of putting the battery into service,no,-,-,"The date of first use, for its intended purpose, in the European Union, of a battery, without having been previously placed on the market",Annex VII Part B (1),n.a.,Date[YYYY-MM],public,Static,n.a.,Individual battery,M,-,-
+19,6.1.3.4,C,C,C,C,C,n.a.,yes,Identifiers and product data,Product data,Warranty period of the battery,yes,35,"Period for which the
+commercial warranty for
+the calendar life applies",Commercial warranty period for the battery,Annex XIII (1m),n.a.,"String formatted as time period e.g., P3Y6M",Public,Static,n.a.,Individual battery,M,-,-
+20,6.1.3.5,M,M,M,M,M,n.a.,yes,Identifiers and product data,Product data,Battery category,yes,6,Battery category,Description of the scope of application of a battery in terms of its use according to the battery regulation,Annex XIII (1a); Annex VI Part A (2),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+21,6.1.3.6,M,M,M,M,M,n.a.,yes,Identifiers and product data,Product data,Battery mass,yes,10,The weight,The mass of the battery,Annex XIII (1a); Annex VI Part A (5); Labelling IA (draft),g or kg,Decimal,Public,Static,n.a.,Battery model,M,-,-
+22,6.1.3.7,M,M,M,M,M,n.a.,yes,Identifiers and product data,Product data,Battery status,yes,67,"Information on the status of the battery, defined as
+‘original’, ‘repurposed’,
+‘re-used’,
+‘remanufactured’ or
+‘waste'",Current status of the battery item in its life cycle,Annex XIII 4(c),n.a.,String,"- persons with a legitimate interest: 
+      o the natural or legal person who has legally purchased the battery or third party on behalf) and 
+- market surveillance authorities",Dynamic,upon placement on market and battery status change,Individual battery,M,-,-
+23,6.2.2,M,M,M,M,M,n.a.,yes,"Symbols, labels and documentation of conformity",-,Separate collection symbol,yes,40,"The marking requirements
+laid down in Article 13(4)",Symbol indicating the necessity of separate collection,Annex XIII (1s); Art. 13(4);  Annex VI Part B,n.a.,URI/URL,Public,Static,n.a.,Battery model,M,-,-
+24,6.2.3,C,C,C,C,C,if Pb / Cd level below threshold,yes,"Symbols, labels and documentation of conformity",-,Symbols for cadmium and lead,yes,41,"The marking requirements
+laid down in Article 13(5)",Representation of the chemical symbol “Cd” for cadmium and “Pb” for lead contained in the battery,Annex XIII (1s) Art. 13(5); ,n.a.,URI/URL,Public,Static,n.a.,Battery model,M,-,-
+25,6.2.4,M,M,M,M,M,n.a.,no,"Symbols, labels and documentation of conformity",-,Carbon footprint label,yes,18,The carbon footprint label,Label indicating the carbon footprint and carbon footprint performance class,Article 7(2) via Annex XIII (1c); Labelling IA (draft) Annex V,n.a.,URI/URL,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+26,6.2.5,M,M,M,M,M,n.a.,yes,"Symbols, labels and documentation of conformity",-,Extinguishing agent,yes,14,"Usable extinguishing
+agent",Specification of the usable extinguishing agent,Annex VI Part A (9); Labelling IA (draft),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+27,6.2.6,M,M,M,M,M,n.a.,yes,"Symbols, labels and documentation of conformity",-,Meaning of labels and symbols,"yes, subsumed",43,"The information regarding
+the prevention and
+management of waste
+batteries laid down in
+Article 74(1), points (a) to
+(f).",Brief and easily understandable explanatory sentence conveying the meaning of symbols and labels used,Annex XIII (1s);Art. 74 1(e); Labelling IA (draft),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+28,6.2.7,M,M,M,M,M,n.a.,yes,"Symbols, labels and documentation of conformity",-,EU declaration of conformity,yes,42,"The EU declaration of
+conformity referred to in
+Article 18",The document that declares compliance with requirements for placement on EU market,Annex XIII (1r); Art. 18; Annex IX,n.a.,URI/URL,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+29,6.2.8,M,M,M,M,M,n.a.,yes,"Symbols, labels and documentation of conformity",-,Results of test reports proving compliance,yes,50,"Results of test reports
+proving compliance with
+the requirements laid
+down in this Regulation or
+any delegated or
+implementing act adopted
+pursuant to this
+Regulation",Test report results proving compliance with the requirements stated in the battery regulation,Annex XIII (3); Annex VIII Part A 2(h),n.a.,URI/URL,"Notified bodies, market surveillance authorities and the Commission",Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+30,6.3.2,M,M,M,M,M,n.a.,no,Battery carbon footprint,-,Battery carbon footprint per Functional Unit,yes,17,The carbon footprint declaration,The battery carbon footprint must be included as declared in terms of kg of carbon dioxide equivalent per one kWh of the total energy provided by the battery over its expected service life.,Annex XIII (1c) → Art. 7; EV CF DA (draft); CF declaration IA (draft),kgCO2eq/kWh,Decimal,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+31,6.3.3,M,M,M,M,M,n.a.,no,Battery carbon footprint,-,Contribution of raw material acquisition and pre-processing lifecycle stage,"yes, subsumed",17,The carbon footprint declaration,Contribution of raw material acquisition and pre-processing lifecycle stage to the battery carbon footprint,Annex XIII (1c) → Art. 7; Annex II (4); EV CF DA (draft); CF declaration IA (draft),kgCO2eq/kWh,Decimal,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+32,6.3.4,M,M,M,M,M,n.a.,no,Battery carbon footprint,-,Contribution of main product production lifecycle stage,"yes, subsumed",17,The carbon footprint declaration,Contribution of the main product production lifecycle stage to the battery carbon footprint,Annex XIII (1c) → Art. 7; Annex II (4); EV CF DA (draft); CF declaration IA (draft),kgCO2eq/kWh,Decimal,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+33,6.3.5,M,M,M,M,M,n.a.,no,Battery carbon footprint,-,Contribution of distribution lifecycle stage,"yes, subsumed",17,The carbon footprint declaration,Contribution of the distribution lifecycle stage to the battery's carbon footprint,Annex XIII 1(c) → Art. 7; Annex II (4); EV CF DA (draft); CF declaration IA (draft),kgCO2eq/kWh,Decimal,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+34,6.3.6,M,M,M,M,M,n.a.,no,Battery carbon footprint,-,Contribution of end of life and recycling lifecycle stage,"yes, subsumed",17,The carbon footprint declaration,Contribution of the end of life and recycling lifecycle stage to the battery's carbon footprint,Annex XIII (1c) → Art. 7; Annex II (4); EV CF DA (draft); CF declaration IA (draft),kgCO2eq/kWh,Decimal,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+35,6.3.7,M,M,M,M,M,n.a.,no,Battery carbon footprint,-,Carbon footprint performance class,"yes, subsumed",18,The carbon footprint label,"Depending on the distribution of the values in the carbon footprint declarations of batteries placed on the market, a meaningful number of classes of performance shall be identified, with category A being the best class with the lowest carbon footprint life cycle impact, to enable market differentiation",Annex XIII (1c); Art. 7(2); Labelling IA (draft) Annex V,n.a.,String,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+36,6.3.8,M,M,M,M,M,n.a.,no,Battery carbon footprint,-,Web link to public carbon footprint study,"yes, subsumed",17,The carbon footprint declaration,The public version of the carbon footprint study,Annex XIII (1c); Art. 7 1(g); EV CF DA (draft),n.a.,URI/URL,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+37,6.3.10,V,V,V,V,V,n.a.,no,Battery carbon footprint,-,Absolute battery carbon footprint,no,-,-,Battery carbon footprint as absolute number ,n.a.,kgCO2eq,Integer,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+38,6.4.2,M,M,M,M,M,n.a.,no,Supply chain due diligence,-,Information of due diligence report,yes,19,Information on responsible sourcing as indicated in the report on battery due diligence policy referred to in Article 52(3),"The report on the supply chain due diligence policy, risk management plan, and summary of third-party verification.",Art. 52(3),n.a.,URI/URL,Public,Static,n.a.,Battery model,M,-,-
+39,6.4.3,V,V,V,V,V,n.a.,no,Supply chain due diligence,-,Third party assurances of recognised schemes,no,-,-,Information on supply chain scheme assurances granted by third-party actors,Art. 49(d),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+40,6.4.4,V,V,V,V,V,n.a.,no,Supply chain due diligence,-,Supply chain indices,no,-,-,Information on relevant supply chain indices,n.a.,n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+41,6.5.2,M,M,M,M,M,n.a.,yes,Battery materials and composition,-,Battery chemistry,yes,12,The chemistry,"The electrochemical composition reflecting active materials in cathode and anode, and - voluntarily - electrolyte",Annex XIII (1b); Annex VI Part A (7); Labelling IA (draft),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+42,6.5.3,M,M,M,M,M,n.a.,yes,Battery materials and composition,-,Critical raw materials,yes,15,"Critical raw materials
+present in the battery in a
+concentration of more
+than 0,1 % weight by
+weight","Critical raw materials present in a concentration of more than 0,1%, weight by weight",Annex XIII (1b); Annex VI Part A (10); Labelling IA (draft),n.a.,Array (string),Public,Static,n.a.,Battery model,M,-,-
+43,6.5.4,M,M,M,M,M,n.a.,yes,Battery materials and composition,-,"Materials used in cathode, anode and electrolyte",yes,45,"Detailed composition,
+including materials used
+in the cathode, anode and
+electrolyte","Detailed composition of cathode, anode and electrolyte",Annex XIII (2a),n.a.,Array (string),"- persons with a legitimate interest: 
+      o battery repair, repurposing and 
+         remanufacturing operators,
+      o  recyclers, battery treatment operators, 
+      o the natural or legal person who has 
+         legally purchased the battery or third 
+         party on behalf) 
+- the Commission and
+- Market Surveillance authorities",Static,n.a.,Battery model,M,-,-
+44,6.5.5,M,M,M,M,M,n.a.,yes,Battery materials and composition,-,Hazardous substances and their impact,yes,"13, 43","The hazardous
+substances present in the
+battery, other than
+mercury, cadmium or lead
+
+The information regarding
+the prevention and
+management of waste
+batteries laid down in
+Article 74(1), points (a) to
+(f).","Substances of very high concern in the meaning of Article 3 (1) (69) which are present in the battery, other than mercury, cadmium and lead, with a concentration equal or above 0,1%, weight on weight.’
+
+Information on the impact of substances contained in the battery on the environment, human health and the safety of persons","Annex XIII (1b); Annex VI Part A (8); Labelling IA (draft), 
+Environmental Omnibus: Draft: 2025/0397 (COD), Art. 1 (4)
+
+Annex XIII (1s); Art. 74 1(f)",n.a.,Array (string),Public,Static,n.a.,Battery model,M,-,-
+45,6.6.1.2,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,Circularity information,Dismantling information: Manuals for the removal and the disassembly of the battery pack,yes,48,"Dismantling information,
+including at least: - exploded diagrams of the
+battery system/pack
+showing the location of
+battery cells, -
+disassembly sequences, -
+type and number of
+fastening techniques to
+be unlocked, - tools
+required for disassembly,
+- warnings if risk of
+damaging parts exist, -
+amount of cells used and
+layout",Manual(s) containing information on the removal and disassembly of the battery pack,Annex XIII (2c),n.a.,URI/URL,"- persons with a legitimate interest: 
+      o battery repair, repurposing and 
+         remanufacturing operators, 
+      o  recyclers, battery treatment operators,
+      o the natural or legal person who has 
+         legally purchased the battery or third 
+         party on behalf), 
+- the Commission and 
+- market surveillance authorities ",Static,n.a.,Battery model,M,-,-
+46,6.6.1.3,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,Circularity information,Part numbers for components,yes,46,"Part numbers for
+components",The part numbers of components of the battery,Annex XIII (2b),n.a.,URI/URL,"- persons with a legitimate interest: 
+      o battery repair, repurposing and 
+         remanufacturing operators, 
+      o the natural or legal person who has 
+         legally purchased the battery or third 
+         party on behalf), 
+- the Commission and 
+- market surveillance authorities ",Static,n.a.,Battery model,M,-,-
+47,6.6.1.4,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,Circularity Information,Information on sources of spare parts,yes,47,"Contact details of sources
+for replacement spares",Information on how to contact sources of spare parts,Annex XIII (2b),n.a.,URI/URL,"- persons with a legitimate interest: 
+      o battery repair, repurposing and 
+         remanufacturing operators, 
+      o the natural or legal person who has 
+         legally purchased the battery or third 
+         party on behalf), 
+- the Commission and 
+- market surveillance authorities ",Static,n.a.,Battery model,M,-,-
+48,6.6.1.5,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,Circularity information,Safety measures,yes,"43, 49","The information regarding
+the prevention and
+management of waste
+batteries laid down in
+Article 74(1), points (a) to
+(f).
+
+Safety measures","Safety measures to be taken during battery handling, including the dismantling","Annex XIII (2d); Art. 74(1d), Art. 74(2)",n.a.,URI/URL,"- persons with a legitimate interest: 
+      o battery repair, repurposing and 
+         remanufacturing operators, 
+      o authorized treatment facilities, 
+          treatment facilities of waste 
+          electrical and electronic equipment, 
+      o recyclers, battery treatment 
+          operators,
+      o  the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf), 
+- the Commission and 
+- market surveillance authorities ",Static,n.a.,Battery model,M,-,-
+49,"6.6.2.3;
+6.6.2.7",C,C,C,C,C,no nickel present,no,Circularity and resource efficiency,Recycled and renewable content,Nickel recycled content share,yes,22,"Percentage share of
+nickel that is present in
+active materials and that
+has been recovered from
+battery manufacturing
+waste or post-consumer
+waste",The share of nickel recycled from battery manufacturing waste or post-consumer waste in the active materials of the battery,"Annex XIII (1e); Art. 8(1), Art. 3, 1(51), Recycled content DA (draft)",%,Integer,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+50,"6.6.2.4;
+6.6.2.8",C,C,C,C,C,no cobalt present,no,Circularity and resource efficiency,Recycled and renewable content,Cobalt recycled content share,yes,20,"Percentage share of
+cobalt that is present in
+active materials and that
+has been recovered from
+battery manufacturing
+waste or post-consumer
+waste",The share of cobalt recycled from battery manufacturing waste or post-consumer waste in the active materials of the battery,"Annex XIII (1e); Art. 8(1), Art. 3, 1(51), Recycled content DA (draft)",%,Integer,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+51,"6.6.2.5;
+6.6.2.9",C,C,C,C,C,no lithium present,no,Circularity and resource efficiency,Recycled and renewable content,Lithium recycled content share,yes,21,"Percentage share of
+lithium that is present in
+active materials and that
+has been recovered from
+battery manufacturing
+waste or post-consumer
+waste",The share of lithium recycled from battery manufacturing waste or post-consumer waste in the active materials of the battery,"Annex XIII (1e); Art. 8(1), Art. 3, 1(51), Recycled content DA (draft)",%,Integer,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+52,"6.6.2.6, 
+6.6.2.10",C,C,C,C,C,no lead present,no,Circularity and resource efficiency,Recycled and renewable content,Lead recycled content share,yes,23,"The percentage share of
+lead that is present in the
+battery and that has been
+recovered from waste",The share of recycled lead in the active materials of the battery,"Annex XIII (1e); Art. 8(1), Recycled content DA (draft)",%,Integer,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+53,6.6.2.11,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,Recycled and renewable content,Renewable content share,yes,24,"The share of renewable
+content",Share of renewable content in the battery,Annex XIII (1f),%,Integer,Public,Static,n.a.,"Battery model per calendar year and per manufacturing site, i.e. batch level",M,-,-
+54,6.6.3.2,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,"Information on role of end-users in waste prevention and information on battery collection, preparation for second life and on treatment at end of life",Information on the role of end-users in contributing to waste prevention,"yes, subsumed",43,"The information regarding
+the prevention and
+management of waste
+batteries laid down in
+Article 74(1), points (a) to
+(f).",Information on how end-users can contribute to waste prevention,Art. 74(1a),n.a.,URI/URL,Public,Static,n.a.,Battery model,M,-,-
+55,6.6.3.3,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,"Information on role of end-users in waste prevention and information on battery collection, preparation for second life and on treatment at end of life",Information on the role of end-users in contributing to the separate collection of waste batteries,"yes, subsumed",43,"The information regarding
+the prevention and
+management of waste
+batteries laid down in
+Article 74(1), points (a) to
+(f).",Information on how end-users can contribute to the separate collection of waste batteries,Art. 74(1b); Art. 64(1); Art. 64(2),n.a.,URI/URL,Public,Static,n.a.,Battery model,M,-,-
+56,6.6.3.4,M,M,M,M,M,n.a.,yes,Circularity and resource efficiency,"Information on role of end-users in waste prevention and information on battery collection, preparation for second life and on treatment at end of life","Information on battery collection, preparation for second life and on treatment at end of life","yes, subsumed",43,"The information regarding
+the prevention and
+management of waste
+batteries laid down in
+Article 74(1), points (a) to
+(f).","Information on the collection of waste batteries, their preparation for second life and definitive treatment at end of life",Art. 74(1c),n.a.,URI/URL,Public,Static,n.a.,Battery model,M,-,-
+57,6.7.2.2,M,M,M,M,M,n.a.,no,Performance and durability,"Capacity, energy, and voltage",Rated capacity,yes,"11, 25, 51","The capacity
+
+Rated capacity
+
+Rated capacity (in Ah)",The total number of ampere-hours that can be withdrawn from a fully charged battery under reference conditions,"Annex IV Part A (1); Annex XIII (1g); Labelling IA (draft) Annex II Part A (VI) and Part C (C, 1)","Ah 
+or mAh (for LMT)",Integer,Public,Static,n.a.,Battery model,M,-,-
+58,6.7.2.3,V,M,V,M,-,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",Remaining capacity,yes,62,"Information on the state of
+health of the battery
+pursuant to Article 14:
+remaining capacity",The corresponding in-use data attribute to rated capacity,Annex VII Part A (1) ,Ah,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,V,-
+59,6.7.2.4,M,M,M,M,M,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",Capacity fade ,yes,52,Capacity fade (in %) ,"The decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity as declared by the manufacturer",Annex IV Part A (1); Annex IV (2),%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Static,upon placement on market and battery status change,Battery model,M,-,-
+60,6.7.2.5,V,-,-,-,-,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",Certified usable battery energy,no,-,-,The usable battery energy according to the procedure in the UN GTR No 22 as determined during the certification of the vehicle,n.a.,kWh,Decimal,Public,Static,n.a.,Battery model,M,-,-
+61,6.7.2.6,V,-,-,-,-,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",Remaining usable battery energy,no,-,-,The usable battery energy at the present point in the lifetime of a battery as determined according to the procedure in the UN GTR No 22,n.a.,kWh,Decimal,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+62,6.7.2.7,M,-,-,-,-,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",State of certified energy (SOCE),yes,61,"Information on the state of
+health of the battery
+pursuant to Article 14:
+state of certified energy (SOCE)","The measured or on-board usable battery energy performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy.",Annex VII Part A (EV),%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+63,6.7.2.8,M,M,M,M,-,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",State of Charge (SoC),yes,71,Periodically recorded information on the state of charge,"The available energy or charge in a battery expressed as a percentage of rated capacity as declared by the manufacturer. When the battery’s state of health is no longer equal to its initial condition, SoC refers to the maximum energy or charge that can be stored in the battery at the time of charging.",Annex XIII (4d); Article 3 1(27); Standardization request M/579,%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+64,6.7.2.9,M,M,M,M,M,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",Minimum voltage ,yes,26,"Minimal voltage, with
+temperature range when
+relevant",The lower voltage limit that the safe operation of the battery is rated for,Annex XIII (1h),V,Decimal,Public,Static,n.a.,Battery model,M,-,-
+65,6.7.2.10,M,M,M,M,M,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",Maximum voltage,yes,28,"Maximum voltage, with
+temperature range when
+relevant",The upper voltage limit that the safe operation of the battery is rated for,Annex XIII (1h),V,Decimal,Public,Static,n.a.,Battery model,M,-,-
+66,6.7.2.11,M,M,M,M,M,n.a.,yes,Performance and durability,"Capacity, energy, and voltage",Nominal voltage,yes,27,"Nominal voltage, with
+temperature range when
+relevant",The suitable approximate value of the voltage used to designate or identify the battery,Annex XIII (1h),V,Decimal,Public,Static,n.a.,Battery model,M,-,-
+67,6.7.3.2,M,M,M,M,M,n.a.,yes,Performance and durability,Power capability,Original power capability,yes,"29, 53","Original power capability
+(in Watts)
+
+Power (in W) ",The amount of energy that a battery is capable to provide over a given period of time under reference conditions,"Annex XIII (1i); Art. 10, Annex IV Part B (4) → measurement at 80 % SoC and 20% SoC required; Annex IV (3)",W,Decimal,Public,Static,n.a.,Battery model,M,-,-
+68,6.7.3.3,V,M,V,M,-,n.a.,yes,Performance and durability,Power capability,Remaining power capability,yes,63,"Information on the state of
+health of the battery
+pursuant to Article 14:
+where possible, the
+remaining power
+capability",The amount of energy that a battery is capable to provide over a given period of time under reference conditions at a distinct point in time during its usage,"Art. 10: Annex IV (3) (only definition of power); Annex VII Part A (2) ""where possible, remaining power capability""; Annex IV Part B (4) --> measurement at 80 % SoC and 20% SoC required",W,Decimal,"- persons with a legitimate interest: 
+      o the natural or legal person who has legally purchased the battery or third party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+69,6.7.3.4,M,M,M,M,M,n.a.,yes,Performance and durability,Power capability,Power fade,yes,54,Power fade (in %),The decrease over time and upon usage in the amount of power that a battery can deliver at the rated voltage,"Annex IV P(4) (""power fade"" definition); Annex IV Part A (2) (power fade in %)
+Annex IV Part B (4) → measurement at 80 % SoC required;",%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Static,upon placement on market and battery status change,Battery model,M,-,-
+70,6.7.3.5,M,M,M,M,M,n.a.,yes,Performance and durability,Power capability,Maximum permitted battery power,yes,30,"Power limits, with
+temperature range when
+relevant",The value of maximum permitted power the battery is rated for and reflects the data relevant for power limits,Annex XIII (1i) (power limits),W,Decimal,Public,Static,n.a.,Battery model,M,-,-
+71,6.7.4.2,M,M,C,M,M,non-cycle applications,yes,Performance and durability,Round trip energy efficiency and self-discharge,Initial round trip energy efficiency ,yes,"36, 57","Initial round trip energy
+efficiency
+
+Where applicable, energy
+round trip efficiency (in
+%)",The ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial state of charge by a standard charge (see BattReg Annex IV (6)),Annex XIII (1n); Art. 10: Annex IV (6); Annex IV Part A (4),%,Integer,Public,Static,n.a.,Battery model,M,-,-
+72,6.7.4.3,M,M,C,M,M,non-cycle applications,yes,Performance and durability,Round trip energy efficiency and self-discharge,Round trip energy efficiency at 50% of cycle life,yes,37,"Round trip energy
+efficiency at 50 % of
+cycle-life",The ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial state of charge by a standard charge (see BattReg Annex IV (6)),Annex XIII 1(n); Annex IV (6),%,Integer,Public,Static,n.a.,Battery model,M,-,-
+73,6.7.4.4,-,C,-,C,-,non-cycle applications or no BMS,yes,Performance and durability,Round trip energy efficiency and self-discharge,Remaining round trip energy efficiency ,yes,64,"Information on the state of
+health of the battery
+pursuant to Article 14:
+where possible, the
+remaining round trip
+efficiency",The in-use analogy to the initial roundtrip energy the ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial state of charge by a standard charge,Art. 10: Annex IV Part A (4); Article 14: Annex VII Part A (3); Annex IV (6),%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+74,6.7.4.5,M,M,C,M,M,non-cycle applications,yes,Performance and durability,Round trip energy efficiency and self-discharge,Energy round trip efficiency fade,yes,58,"Where applicable, energy
+round trip efficiency fade
+(in %)",The decrease of round trip energy efficiency as percentage,Annex IV Part A (4),%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Static,upon placement on market and battery status change,Battery model,M,-,-
+75,6.7.4.6,-,V,-,V,-,n.a.,no,Performance and durability,Round trip energy efficiency and self-discharge,Initial self-discharge rate,no,-,-,"The self-discharge-rate in an idle state of the battery in reference conditions (temperature etc.) at begin of life
+",n.a.,%/month,Decimal,public,Static,n.a.,Battery model,M,-,-
+76,6.7.4.7,-,V,-,V,-,n.a.,no,Performance and durability,Round trip energy efficiency and self-discharge,Current self-discharge rate,no,-,-,"The change of the self-discharge rate in an idle state of the battery in reference conditions (temperature etc.) at aging parameter x, e.g. after a certain amount of storage time or, number of cycles",n.a.,%/month,Decimal,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+77,6.7.4.8,-,C,-,C,-,if application allows measurement,yes,Performance and durability,Round trip energy efficiency and self-discharge,Evolution of self-discharge rates,yes,65,"Information on the state of
+health of the battery
+pursuant to Article 14:
+[where possible,] the
+evolution of self-
+discharging rates","The change of self-discharge over time and usage, as percentage calculated from the initial and current self-discharge rate.",Art. 14: Annex VII Part A (4),%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+78,6.7.5.2,M,M,M,M,M,n.a.,yes,Performance and durability,Internal resistance,Initial internal resistance of battery cell and pack (module recommended),yes,"38, 55","Internal battery cell and
+pack resistance
+
+Internal resistance (in Ω)","""Quotient of change of voltage of a battery by the corresponding change in discharge current under specified conditions” (IEV 482 03 36)",Annex XIII (1o); Art. 10: Annex IV Part A (3) (+definition of internal resistance) ,Ohm,Integer,Public,Static,n.a.,Battery model,M,V,M
+79,6.7.5.3,M,M,M,M,M,n.a.,yes,Performance and durability,Internal resistance,Internal resistance increase of pack (cell and module recommended),yes,56,"Internal resistance
+increase (in %)",The increase over time and upon usage of internal resistance,"Annex IV, Part A(3)",%,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Static,upon placement on market and battery status change,Battery model,M,V,V
+80,-,-,C,-,C,-,if application allows measurement,yes,Performance and durability,Internal resistance,Present internal resistance of pack,yes,66,"
+Information on the state of
+health of the battery
+pursuant to Article 14:
+[where possible,] Ohmic resistance",Quotient of change of voltage of a battery by the corresponding change in discharge current under specified conditions” (IEV 482 03 36),"Annex VII, Part A (5)",Ohm,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,V,V
+81,6.7.6.2,M,M,M,M,M,n.a.,yes,Performance and durability,Battery lifetime,Expected lifetime in calendar years ,yes,60,"The expected life-time of
+the battery under the
+reference conditions for
+which it has been
+designed, in terms of
+calendar years","Expected life-time under the reference conditions for which they have been designed in terms of cycles, except for non-cycle applications, and calendar years","Annex IV, Part A(5); Annex XIII (1); Annex XIII (4a)",years,Decimal,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Static,n.a.,Battery model,M,-,-
+82,6.7.6.3,M,M,C,M,C,non-cycle applications,yes,Performance and durability,Battery lifetime,Expected lifetime - Number of charge-discharge cycles,yes,"31, 59","Expected battery lifetime
+expressed in cycles
+
+The expected life-time of
+the battery under the
+reference conditions for
+which it has been
+designed, in terms of
+cycles, except for non-
+cycle applications","Expected life-time under the reference conditions for which they have been designed in terms of cycles, except for non-cycle applications, and calendar years","Annex IV, Part A(5); Annex XIII (1); Annex XIII (4a)",n.a.,Integer,Public,Static,n.a.,Battery model,M,-,-
+83,6.7.6.4,M,M,C,M,-,non-cycle applications,yes,Performance and durability,Battery lifetime,Number of full charging and discharging cycles,yes,68,"The number of charging
+and discharging cycles",In-use number of (full) charging and discharging cycles,Annex XIII (4d); Art. 14: Annex VII Part B (5),n.a.,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+84,6.7.6.5,M,M,C,M,M,non-cycle applications,yes,Performance and durability,Battery lifetime,Cycle-life reference test,yes,32,"Reference test used for
+expected battery lifetime
+expressed in cycles",The reference test for “Expected lifetime: Number of charge-discharge cycles”,Annex XIII (1j),n.a.,String,Public,Static,n.a.,Battery model,M,-,-
+85,6.7.6.6,M,M,C,M,M,non-cycle applications,yes,Performance and durability,Battery lifetime,C-rate of relevant cycle-life test,yes,39,"C-rate of relevant cycle-
+life test",Measurement parameter for “Expected lifetime: Number of charge-discharge cycles”: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test,Annex XIII (1p),A/Ah,Decimal,Public,Static,n.a.,Battery model,M,-,-
+86,6.7.6.9,M,-,-,-,-,n.a.,yes,Performance and durability,Battery lifetime,Capacity threshold for exhaustion,yes,33,"Capacity threshold for
+exhaustion","The percentage of SOCE, above which the battery is still considered operational as EV battery in its current life, as provided by the economic operator",Annex XIII (1k),%,Integer,Public,Static,n.a.,Battery model,M,-,-
+87,6.7.7.2,M,M,M,M,-,n.a.,yes,Performance and durability,Temperature conditions,Temperature information,yes,70,"Periodically recorded
+information on the
+operating environmental
+conditions, including
+temperature",Temperature information regarding operating environmental conditions ,Annex XIII (4d),°C,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+88,6.7.7.3,M,M,M,M,M,n.a.,yes,Performance and durability,Temperature conditions,"Temperature range idle state, lower boundary",yes,34,"Temperature range the
+battery can withstand
+when not in use
+(reference test)",The lower boundary of the surrounding temperature range,Annex XIII (1l),°C,Integer,Public,Static,n.a.,Battery model,M,-,-
+89,6.7.7.4,M,M,M,M,M,n.a.,yes,Performance and durability,Temperature conditions,"Temperature range idle state, upper boundary",yes,35,"Temperature range the
+battery can withstand
+when not in use
+(reference test)",The upper boundary of the surrounding temperature range,Annex XIII (1l),°C,Integer,Public,Static,n.a.,Battery model,M,-,-
+90,6.7.8.2,V,V,V,V,-,n.a.,no,Performance and durability,Negative events,Number of deep discharge events,yes,69,"Negative events, such as
+accidents","The number of occasions, in which voltage has dropped below the lower operational limit as provided in the battery passport ",Annex VII Part B (4),n.a.,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+91,6.7.8.3,V,V,V,V,-,n.a.,no,Performance and durability,Negative events,Number of overcharge events,yes,69,"Negative events, such as
+accidents","The number of occasions, in which voltage has increased above the upper operational limit as provided in the battery passport ",n.a.,n.a.,Integer,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-
+92,6.7.8.4,M,M,M,M,M,n.a.,yes,Performance and durability,Negative events,Information on accidents,yes,69,"Negative events, such as
+accidents","Information on accidents affecting the battery, including when incorporated in equipment it is powering.",Annex XIII (4d),n.a.,URI/URL,"- persons with a legitimate interest: 
+      o the natural or legal person who has 
+          legally purchased the battery or third 
+          party on behalf) and 
+- market surveillance authorities",Dynamic,"depending on individual definition of ""up-to-date"" based on this data attribute and its use case. (Currently no clarification through official guidance or delegated act expected)",Individual battery,M,-,-

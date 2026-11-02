@@ -1,0 +1,31 @@
+{
+  "officialDownloads": 6,
+  "downloadFailures": [],
+  "officialOpenApiFiles": 3,
+  "officialOpenApiVersion": "3.1.0",
+  "officialContractVersion": "1.0.0",
+  "originalReferencesChecked": 87,
+  "bundles": [
+    {
+      "path": "04_单文件导入版/openapi-dpp-registry-bundled.yaml",
+      "operations": 2,
+      "localReferencesChecked": 30,
+      "sha256": "4ae9c69436dec151374f9931286c104f2b54d8d457416af21ede1ceeddd54a08"
+    },
+    {
+      "path": "04_单文件导入版/openapi-dpp-dashboard-bundled.yaml",
+      "operations": 3,
+      "localReferencesChecked": 67,
+      "sha256": "5e349532368b99bdacac8b09f3c9a63a34756373cd018f508265f143dd78b01a"
+    },
+    {
+      "path": "04_单文件导入版/openapi-dpp-all-bundled.yaml",
+      "operations": 5,
+      "localReferencesChecked": 87,
+      "sha256": "c93da92fda2b7bbe4253133b73a5b067cbf1cdad9c2aa635f2b9daa745111c66"
+    }
+  ],
+  "registrationExampleSchemaCheck": "passed",
+  "scope": "本地检查 YAML 解析、引用解析、组件 Schema 与注册请求示例。未调用注册服务，也未在 Apifox 中实测导入。",
+  "originalFilesUnmodified": true
+}

@@ -1,0 +1,352 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "TestAdapter",
+    "version": "v1.1"
+  },
+  "servers": [
+    {
+      "url": "https://testadapter.gefeg.com/api/{expected}",
+      "variables": {
+        "expected": {
+          "default": ""
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/TestSetup": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestSetupRequestType"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TestSetupResponseType"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/TestTeardown": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CommandResultDataBase": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ]
+      },
+      "CommandBase": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "name",
+          "mapping": {
+            "insertBatteryPass": "#/components/schemas/CommandInsertBatteryPass",
+            "bringBatteryToMarket": "#/components/schemas/CommandBringBatteryToMarket",
+            "issueCredentials": "#/components/schemas/CommandIssueCredentials"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CommandResultBase": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "name",
+          "mapping": {
+            "insertBatteryPass": "#/components/schemas/CommandInsertBatteryPassResult",
+            "bringBatteryToMarket": "#/components/schemas/CommandBringBatteryToMarketResult",
+            "issueCredentials": "#/components/schemas/CommandIssueCredentialsResult"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CommandInsertBatteryPass": {
+        "x-discriminator-value": "insertBatteryPass",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CommandBase"
+          },
+          {
+            "type": "object",
+            "required": [
+              "data"
+            ],
+            "properties": {
+              "data": {
+				  "$ref": "#/components/schemas/CommandInsertBatteryPassData"
+              }
+            }
+          }
+        ]
+      },
+	  "CommandInsertBatteryPassData": {
+		"type": "object",
+		"description": "Exactly one of DPP_ID or Product_ID must be provided.",
+		"properties": {
+			"DPP_ID": { "type": "string" },
+			"Product_ID": { "type": "string" },
+			"Status": { "type": "string" },
+			"DPP": { "type": "string" }
+		}	  
+	  },
+      "CommandInsertBatteryPassResult": {
+        "x-discriminator-value": "insertBatteryPass",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CommandResultBase"
+          },
+          {
+            "type": "object",
+            "required": [
+              "data"
+            ],
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/CommandResultDataBase"
+              }
+            }
+          }
+        ]
+      },
+      "CommandBringBatteryToMarket": {
+        "x-discriminator-value": "bringBatteryToMarket",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CommandBase"
+          },
+          {
+            "type": "object",
+            "required": [
+              "data"
+            ],
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/BringBatteryToMarketData"
+              }
+            }
+          }
+        ]
+      },
+      "BringBatteryToMarketData": {
+        "type": "object",
+        "required": [
+          "Product_ID"
+        ],
+        "properties": {
+          "Product_ID": {
+            "type": "string"
+          }
+        }
+      },
+      "CommandBringBatteryToMarketResult": {
+        "x-discriminator-value": "bringBatteryToMarket",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CommandResultBase"
+          },
+          {
+            "type": "object",
+            "required": [
+              "data"
+            ],
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/CommandResultDataBase"
+              }
+            }
+          }
+        ]
+      },
+      "CommandIssueCredentials": {
+        "x-discriminator-value": "issueCredentials",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CommandBase"
+          },
+          {
+            "type": "object",
+            "required": [
+              "data"
+            ],
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/IssueCredentialsData"
+              }
+            }
+          }
+        ]
+      },
+      "IssueCredentialsData": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The role the issued credential should carry. Must match a role defined in the system. Example: 'public', 'authority', 'commission', 'legitimate_interest'."
+          },
+          "type": {
+            "type": "string",
+            "description": "The credential type to issue.",
+            "enum": [
+              "apiKey",
+              "jwt"
+            ]
+          }
+        }
+      },
+      "CommandIssueCredentialsResult": {
+        "x-discriminator-value": "issueCredentials",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CommandResultBase"
+          },
+          {
+            "type": "object",
+            "required": [
+              "data"
+            ],
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/IssueCredentialsResultData"
+              }
+            }
+          }
+        ]
+      },
+      "IssueCredentialsResultData": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CommandResultDataBase"
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "token",
+			  "role"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "token": {
+                "type": "string"
+              },
+			  "role": {
+				"type": "string"
+			  }
+            }
+          }
+        ]
+      },
+      "TestSetupResponseType": {
+        "type": "object",
+        "properties": {
+          "commandResults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommandResultBase"
+            }
+          }
+        }
+      },
+      "TestSetupRequestType": {
+        "type": "object",
+        "properties": {
+          "commands": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommandBase"
+            }
+          },
+          "externalServices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalServiceType"
+            }
+          }
+        }
+      },
+      "ExternalServiceType": {
+        "type": "object",
+        "required": [
+          "serviceType",
+          "serviceURL"
+        ],
+        "properties": {
+          "serviceType": {
+            "type": "string",
+            "enum": [
+              "Backup",
+              "Registry"
+            ]
+          },
+          "serviceURL": {
+            "type": "string"
+          },
+          "auth": {
+            "$ref": "#/components/schemas/ExternalServiceAuth"
+          }
+        }
+      },
+      "ExternalServiceAuth": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

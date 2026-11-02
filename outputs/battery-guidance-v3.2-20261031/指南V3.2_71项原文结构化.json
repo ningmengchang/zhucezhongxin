@@ -1,0 +1,1076 @@
+[
+  {
+    "item": 1,
+    "pages": [
+      5
+    ],
+    "cells": [
+      "Unique identifier [unique product identifier]",
+      "BR Art 3(1)(66)",
+      "BR Article 77 (3)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 2,
+    "pages": [
+      5
+    ],
+    "cells": [
+      "Identity of who is registering and/or is responsible for the battery passport [name]",
+      "BR Art 77(4)",
+      "BR Article 77 (3)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 3,
+    "pages": [
+      5
+    ],
+    "cells": [
+      "Manufacturer name, registered trade name or registered trademark [at least one of]",
+      "BR Art 3(1)(33) (manufactur er)",
+      "BR Annex VI A (1)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 4,
+    "pages": [
+      5
+    ],
+    "cells": [
+      "Manufacturer single contact postal address",
+      "N/A",
+      "BR Annex VI A (1)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 5,
+    "pages": [
+      5
+    ],
+    "cells": [
+      "If available, manufacturer web and email address [both optional]",
+      "N/A",
+      "BR Annex VI A (1)",
+      "Public",
+      "Optional, to be filled if such data is available",
+      "Optional, to be filled if such data is available",
+      "Optional, to be filled if such data is available"
+    ]
+  },
+  {
+    "item": 6,
+    "pages": [
+      5
+    ],
+    "cells": [
+      "Battery category [3-code list]",
+      "BR Art 3(1)(11), (13), and (14)",
+      "BR Annex VI A (2)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 7,
+    "pages": [
+      5
+    ],
+    "cells": [
+      "Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",
+      "N/A",
+      "BR Annex VI A (2)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 8,
+    "pages": [
+      5,
+      6
+    ],
+    "cells": [
+      "The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",
+      "N/A",
+      "BR Annex VI A (3)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 9,
+    "pages": [
+      6
+    ],
+    "cells": [
+      "The date of manufacturing [month and year]",
+      "N/A",
+      "BR Annex VI A (4)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 10,
+    "pages": [
+      6
+    ],
+    "cells": [
+      "The weight [unit2 kg]",
+      "N/A",
+      "BR Annex VI A (5)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 11,
+    "pages": [
+      6
+    ],
+    "cells": [
+      "The capacity [unit Ah]",
+      "N/A",
+      "BR Annex VI A (6)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 12,
+    "pages": [
+      6
+    ],
+    "cells": [
+      "The chemistry [code list]3",
+      "N/A",
+      "BR Annex VI A (7)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 13,
+    "pages": [
+      6
+    ],
+    "cells": [
+      "The hazardous substances present in the battery, other than mercury, cadmium or lead [free text]",
+      "BR Art 3(1)(52)",
+      "BR Annex VI A (8)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 14,
+    "pages": [
+      6
+    ],
+    "cells": [
+      "Usable extinguishing agent [free text]",
+      "N/A",
+      "BR Annex VI A (9)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 15,
+    "pages": [
+      6,
+      7
+    ],
+    "cells": [
+      "Critical raw materials present in the battery in a concentration of more than 0,1 % weight by weight [code list]",
+      "List of raw materials in Annex X (1)",
+      "BR Annex VI A (10)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 16,
+    "pages": [
+      7
+    ],
+    "cells": [
+      "The material composition of the battery, including its chemistry, hazardous substances present in the battery, other than mercury, cadmium or lead, and critical raw materials present in the battery",
+      "BR Art 3(1)(52); list of raw materials in Annex X (1)",
+      "BR Annex XIII 1 (b)",
+      "Public",
+      "Not to be filled/displayed - repetition, same data already required under previous data points",
+      "Not to be filled/displayed - repetition, same data already required under previous data points",
+      "Not to be filled/displayed - repetition, same data already required under previous data points"
+    ]
+  },
+  {
+    "item": 17,
+    "pages": [
+      7
+    ],
+    "cells": [
+      "The carbon footprint declaration",
+      "BR Art 3(1)(51) for carbon footprint",
+      "BR Annex XIII 1 (c)",
+      "Public",
+      "Not to be filled/displayed as of February 2027- format still to be specified in the upcoming implementing act",
+      "Not to be filled/displayed as of February 2027- format still to be specified in the upcoming implementing act",
+      "Not to be filled/displayed as of February 2027- format still to be specified in the upcoming implementing act"
+    ]
+  },
+  {
+    "item": 18,
+    "pages": [
+      7
+    ],
+    "cells": [
+      "The carbon footprint label",
+      "BR Art 3(1)(51) for carbon footprint",
+      "BR Annex XIII 1 (c)",
+      "Public",
+      "Not to be filled/displayed as of February 2027- format still to be specified in the upcoming implementing act",
+      "Not to be filled/displayed as of February 2027- format still to be specified in the upcoming implementing act",
+      "Not to be filled/displayed as of February 2027- format still to be specified in the upcoming implementing act"
+    ]
+  },
+  {
+    "item": 19,
+    "pages": [
+      7
+    ],
+    "cells": [
+      "Information on responsible sourcing as indicated in the report on battery due diligence policy referred to in Article 52(3)",
+      "N/A",
+      "BR Annex XIII 1 (d)",
+      "Public",
+      "Not to be filled/displayed as of February 2027- as envisaged by Article 48(1), required from August 2027",
+      "Not to be filled/displayed as of February 2027- as envisaged by Article 48(1), required from August 2027",
+      "Not to be filled/displayed as of February 2027- as envisaged by Article 48(1), required from August 2027"
+    ]
+  },
+  {
+    "item": 20,
+    "pages": [
+      8
+    ],
+    "cells": [
+      "Percentage share of cobalt that is present in active materials and that has been recovered from battery manufacturing waste or post- consumer waste [%]",
+      "BR Art 3(1)(5) for active material",
+      "BR Annex XIII 1 (e)",
+      "Public",
+      "Not to be filled/displayed as of February 2027- to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027- to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027- to be applied as envisaged by Article 8"
+    ]
+  },
+  {
+    "item": 21,
+    "pages": [
+      8
+    ],
+    "cells": [
+      "Percentage share of lithium that is present in active materials and that has been recovered from battery manufacturing waste or post- consumer waste [%]",
+      "BR Art 3(1)(5) for active material and 3(1)(51) for battery manufacturin g waste",
+      "BR Annex XIII 1 (e)",
+      "Public",
+      "Not to be filled/displayed as of February 2027 - to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027- to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027- to be applied as envisaged by Article 8"
+    ]
+  },
+  {
+    "item": 22,
+    "pages": [
+      8
+    ],
+    "cells": [
+      "Percentage share of nickel that is present in active materials and that has been recovered from battery manufacturing waste or post- consumer waste [%]",
+      "BR Art 3(1)(5) for active material and 3(1)(51) for battery manufacturin g waste",
+      "BR Annex XIII 1 (e)",
+      "Public",
+      "Not to be filled/displayed as of February 2027 - to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027 - to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027 - to be applied as envisaged by Article 8"
+    ]
+  },
+  {
+    "item": 23,
+    "pages": [
+      8
+    ],
+    "cells": [
+      "The percentage share of lead that is present in the battery and that has been recovered from waste [%]",
+      "N/A",
+      "BR Annex XIII 1 (e)",
+      "Public",
+      "Not to be filled/displayed as of February 2027 - to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027 - to be applied as envisaged by Article 8",
+      "Not to be filled/displayed as of February 2027 - to be applied as envisaged by Article 8"
+    ]
+  },
+  {
+    "item": 24,
+    "pages": [
+      8,
+      9
+    ],
+    "cells": [
+      "The share of renewable content [%]",
+      "N/A",
+      "BR Annex XIII 1 (f)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 25,
+    "pages": [
+      9
+    ],
+    "cells": [
+      "Rated capacity [unit Ah]",
+      "N/A",
+      "BR Annex XIII 1 (g)",
+      "Public",
+      "Not to be filled/displayed - repetition, same data required under data point 11",
+      "Not to be filled/displayed - repetition, same data required under data point 11",
+      "Not to be filled/displayed - repetition, same data required under data point 11"
+    ]
+  },
+  {
+    "item": 26,
+    "pages": [
+      9
+    ],
+    "cells": [
+      "Minimal voltage, with temperature range when relevant [unit V, optional unit °C]",
+      "N/A",
+      "BR Annex XIII 1 (h)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 27,
+    "pages": [
+      9
+    ],
+    "cells": [
+      "Nominal voltage, with temperature range when relevant [unit V, optional unit °C]",
+      "N/A",
+      "BR Annex XIII 1 (h)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 28,
+    "pages": [
+      9
+    ],
+    "cells": [
+      "Maximum voltage, with temperature range when relevant [unit V, optional unit °C]",
+      "N/A",
+      "BR Annex XIII 1 (h)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 29,
+    "pages": [
+      9
+    ],
+    "cells": [
+      "Original power capability [unit W]",
+      "BR Annex IV (3) for “power” of the batteries in scope of the Annex",
+      "BR Annex XIII 1 (i)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 30,
+    "pages": [
+      9,
+      10
+    ],
+    "cells": [
+      "Power limits, with temperature range when relevant [unit W, optionally min_T °C … max_T °C]",
+      "BR Annex IV (3) for “power” of the batteries in scope of the Annex",
+      "BR Annex XIII 1 (i)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 31,
+    "pages": [
+      10
+    ],
+    "cells": [
+      "Expected battery lifetime expressed in cycles [in number]",
+      "BR Art 3(1)(59) for “lifetime”",
+      "BR Annex XIII 1 (j)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Only applicable for some industrial batteries where lifetime can be expressed in cycles"
+    ]
+  },
+  {
+    "item": 32,
+    "pages": [
+      10
+    ],
+    "cells": [
+      "Reference test used for expected battery lifetime expressed in cycles [free text]",
+      "BR Art 3(1)(59) for “lifetime”",
+      "BR Annex XIII 1 (j)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Only applicable for some industrial batteries where lifetime can be expressed in cycles"
+    ]
+  },
+  {
+    "item": 33,
+    "pages": [
+      10
+    ],
+    "cells": [
+      "Capacity threshold for exhaustion [%]",
+      "N/A",
+      "BR Annex XIII 1 (k)",
+      "Public",
+      "Mandatory",
+      "Not to be filled/displayed",
+      "Not to be filled/displayed"
+    ]
+  },
+  {
+    "item": 34,
+    "pages": [
+      10
+    ],
+    "cells": [
+      "Temperature range the battery can withstand when not in use (reference test) [min_T °C … max_T °C + free text]",
+      "N/A",
+      "BR Annex XIII 1 (l)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 35,
+    "pages": [
+      10
+    ],
+    "cells": [
+      "Period for which the commercial warranty for the calendar life applies [months]",
+      "N/A",
+      "BR Annex XIII 1 (m)",
+      "Public",
+      "If applicable (if commercial warranty envisaged)",
+      "If applicable (if commercial warranty envisaged)",
+      "If applicable (if commercial warranty envisaged)"
+    ]
+  },
+  {
+    "item": 36,
+    "pages": [
+      11
+    ],
+    "cells": [
+      "Initial round trip energy efficiency [%]",
+      "N/A",
+      "BR Annex XIII 1 (n)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Only applicable for some industrial batteries"
+    ]
+  },
+  {
+    "item": 37,
+    "pages": [
+      11
+    ],
+    "cells": [
+      "Round trip energy efficiency at 50 % of cycle-life [%]",
+      "BR Annex II 2(e) for life cycle for the calculation of carbon footprint",
+      "BR Annex XIII 1 (n)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Only applicable for some industrial batteries"
+    ]
+  },
+  {
+    "item": 38,
+    "pages": [
+      11
+    ],
+    "cells": [
+      "Internal battery cell resistance [unit Ω] / Internal battery pack resistance [unit Ω]",
+      "N/A",
+      "BR Annex XIII 1 (o)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 39,
+    "pages": [
+      11
+    ],
+    "cells": [
+      "Charge C-rate of relevant cycle-life test [number]",
+      "N/A",
+      "BR Annex XIII 1 (p)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Only applicable for some industrial batteries"
+    ]
+  },
+  {
+    "item": 40,
+    "pages": [
+      11
+    ],
+    "cells": [
+      "Discharge C-rate of relevant cycle-life test [number]",
+      "N/A",
+      "BR Annex XIII 1 (p)",
+      "Public",
+      "Optional",
+      "Optional",
+      "Optional"
+    ]
+  },
+  {
+    "item": 41,
+    "pages": [
+      11
+    ],
+    "cells": [
+      "The marking requirements laid down in Article 13(4) [Yes/No]",
+      "N/A",
+      "BR Annex XIII 1 (q)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 42,
+    "pages": [
+      11
+    ],
+    "cells": [
+      "The marking requirements laid down in Article 13(5) [code list]",
+      "N/A",
+      "BR Annex XIII 1 (q)",
+      "Public",
+      "Cadmium or lead symbol if applicable",
+      "Cadmium or lead symbol if applicable",
+      "Cadmium or lead symbol if applicable"
+    ]
+  },
+  {
+    "item": 43,
+    "pages": [
+      11,
+      12
+    ],
+    "cells": [
+      "The EU declaration of conformity referred to in Article 18 [a web link]",
+      "N/A",
+      "BR Annex XIII 1 (r)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 44,
+    "pages": [
+      12
+    ],
+    "cells": [
+      "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+      "N/A",
+      "BR Annex XIII 1 (s)",
+      "Public",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 45,
+    "pages": [
+      12
+    ],
+    "cells": [
+      "Clear, understandable and readable instructions for use in a format that makes it possible to print, download and save them on an electronic device so that the user can access them at all times, in particular during a breakdown of the battery [TBC]",
+      "N/A",
+      "BR Annex XIII 1 (t)",
+      "Public",
+      "Not to be filled/displayed as of February 2027 - application provisions on hold pending Omnibus adoption",
+      "Not to be filled/displayed as of February 2027 - application provisions on hold pending Omnibus adoption",
+      "Not to be filled/displayed as of February 2027 - application provisions on hold pending Omnibus adoption"
+    ]
+  },
+  {
+    "item": 46,
+    "pages": [
+      12
+    ],
+    "cells": [
+      "Detailed composition, including materials used in the cathode, anode and electrolyte [free text]",
+      "N/A",
+      "BR Annex XIII 2 (a)",
+      "Restricted: Only to persons with legitimate interests, notified bodies, MS authorities and COM",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 47,
+    "pages": [
+      12
+    ],
+    "cells": [
+      "Part numbers for components and contact details of sources for replacement spares [a web link]",
+      "N/A",
+      "BR Annex XIII 2 (b)",
+      "Restricted: Only to persons with legitimate interests, notified bodies, MS authorities and COM",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 48,
+    "pages": [
+      13
+    ],
+    "cells": [
+      "Dismantling information, including at least: - exploded diagrams of the battery system/pack showing the location of battery cells, - disassembly sequences, - type and number of fastening techniques to be unlocked, - tools required for disassembly, - warnings if risk of damaging parts exist, - amount of cells used and layout [a web link]",
+      "N/A",
+      "BR Annex XIII 2 (c)",
+      "Restricted: Only to persons with legitimate interests, notified bodies, MS authorities and COM",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 49,
+    "pages": [
+      13
+    ],
+    "cells": [
+      "Safety measures [a web link]",
+      "N/A",
+      "BR Annex XIII 2 (d)",
+      "Restricted: Only to persons with legitimate interests, notified bodies, MS authorities and COM",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 50,
+    "pages": [
+      13
+    ],
+    "cells": [
+      "Results of test reports proving compliance with the requirements laid down in this Regulation or any delegated or implementing act adopted pursuant to this Regulation [a web link]",
+      "N/A",
+      "BR Annex XIII 3",
+      "Restricted: Only to notified bodies, MS authorities and COM",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 51,
+    "pages": [
+      13,
+      14
+    ],
+    "cells": [
+      "Rated capacity [unit Ah]",
+      "BR Annex IV (1) for the batteries in scope of the Annex",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Same as data point 11 (capacity)",
+      "Same as data point 11 (capacity)",
+      "Same as data point 11 (capacity); only for rechargeable batteries"
+    ]
+  },
+  {
+    "item": 52,
+    "pages": [
+      14
+    ],
+    "cells": [
+      "Capacity fade [%]",
+      "BR Annex III B(1) or BR Annex IV (2) for the batteries in scope of the Annexes",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Only for rechargeable batteries"
+    ]
+  },
+  {
+    "item": 53,
+    "pages": [
+      14
+    ],
+    "cells": [
+      "Power [unit W]",
+      "BR Annex IV (3) for the batteries in scope of the Annex",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Only for rechargeable batteries"
+    ]
+  },
+  {
+    "item": 54,
+    "pages": [
+      14
+    ],
+    "cells": [
+      "Power fade [%]",
+      "BR Annex IV (4) for the batteries in scope of the Annex",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Only for rechargeable batteries"
+    ]
+  },
+  {
+    "item": 55,
+    "pages": [
+      14
+    ],
+    "cells": [
+      "Internal resistance [unit Ω]",
+      "BR Annex IV (5) for the batteries in scope of the Annex",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Only for rechargeable batteries"
+    ]
+  },
+  {
+    "item": 56,
+    "pages": [
+      14,
+      15
+    ],
+    "cells": [
+      "Internal resistance increase [%]",
+      "N/A",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Only for rechargeable batteries"
+    ]
+  },
+  {
+    "item": 57,
+    "pages": [
+      15
+    ],
+    "cells": [
+      "Where applicable, energy round trip efficiency [%]",
+      "BR Annex IV (6) for the batteries in scope of the Annex",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "If applicable",
+      "If applicable",
+      "Only for rechargeable batteries, if applicable"
+    ]
+  },
+  {
+    "item": 58,
+    "pages": [
+      15
+    ],
+    "cells": [
+      "Where applicable, energy round trip efficiency fade [%]",
+      "N/A",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "If applicable",
+      "If applicable",
+      "Only for rechargeable batteries, if applicable"
+    ]
+  },
+  {
+    "item": 59,
+    "pages": [
+      15
+    ],
+    "cells": [
+      "The expected lifetime of the battery under the reference conditions for which it has been designed, in terms of cycles, except for non-cycle applications [number]",
+      "BR Art 3(1)(59) for lifetime",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Only for rechargeable batteries and except for non- cycle applications"
+    ]
+  },
+  {
+    "item": 60,
+    "pages": [
+      15
+    ],
+    "cells": [
+      "The expected lifetime of the battery under the reference conditions for which it has been designed [years]",
+      "BR Art 3(1)(59) for lifetime",
+      "BR Annex XIII 4 (a)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Only for rechargeable batteries"
+    ]
+  },
+  {
+    "item": 61,
+    "pages": [
+      15
+    ],
+    "cells": [
+      "Information on the state of health of the battery pursuant to Article 14: state of certified energy (SOCE) [%]",
+      "N/A",
+      "BR Annex XIII 4 (b)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Not to be filled/displayed",
+      "Not to be filled/displayed"
+    ]
+  },
+  {
+    "item": 62,
+    "pages": [
+      15,
+      16
+    ],
+    "cells": [
+      "Information on the state of health of the battery pursuant to Article 14: remaining capacity [unit Ah]",
+      "N/A",
+      "BR Annex XIII 4 (b)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Not to be filled/displayed",
+      "Mandatory",
+      "Only for stationary battery energy storage systems and if they have a battery management system"
+    ]
+  },
+  {
+    "item": 63,
+    "pages": [
+      16
+    ],
+    "cells": [
+      "Information on the state of health of the battery pursuant to Article 14: where possible, the remaining power capability [unit W]",
+      "N/A",
+      "BR Annex XIII 4 (b)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Not to be filled/displayed",
+      "Mandatory",
+      "Only for stationary battery energy storage systems and if they have a battery management system"
+    ]
+  },
+  {
+    "item": 64,
+    "pages": [
+      16
+    ],
+    "cells": [
+      "Information on the state of health of the battery pursuant to Article 14: where possible, the remaining round-trip efficiency [%]",
+      "N/A",
+      "BR Annex XIII 4 (b)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Not to be filled/displayed",
+      "Mandatory",
+      "Only for stationary battery energy storage systems and if they have a battery management system"
+    ]
+  },
+  {
+    "item": 65,
+    "pages": [
+      16
+    ],
+    "cells": [
+      "Information on the state of health of the battery pursuant to Article 14: where possible, the evolution of self- discharging rates [timestamp, decrease % per year]",
+      "N/A",
+      "BR Annex XIII 4 (b)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Not to be filled/displayed",
+      "Mandatory",
+      "Only for stationary battery energy storage systems and if they have a battery management system"
+    ]
+  },
+  {
+    "item": 66,
+    "pages": [
+      16,
+      17
+    ],
+    "cells": [
+      "Information on the state of health of the battery pursuant to Article 14: where possible, the ohmic resistance [unit Ω]",
+      "N/A",
+      "BR Annex XIII 4 (b)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Not to be filled/displayed",
+      "Mandatory",
+      "Only for stationary battery energy storage systems and if they have a battery management system"
+    ]
+  },
+  {
+    "item": 67,
+    "pages": [
+      17
+    ],
+    "cells": [
+      "Information on the status of the battery, defined as ‘original’, ‘repurposed’, ‘re- used’, ‘remanufactured’ or ‘waste’ [code list]",
+      "BR Art 3(1)(32) for “remanufact uring” and 3(2)(2)(a) for “waste”",
+      "BR Annex XIII 4 (c)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Mandatory",
+      "Mandatory",
+      "Mandatory"
+    ]
+  },
+  {
+    "item": 68,
+    "pages": [
+      17
+    ],
+    "cells": [
+      "The number of charging and discharging cycles [number]",
+      "N/A",
+      "BR Annex XIII 4 (d)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used"
+    ]
+  },
+  {
+    "item": 69,
+    "pages": [
+      17
+    ],
+    "cells": [
+      "Negative events, such as accidents [multiple free texts]",
+      "N/A",
+      "BR Annex XIII 4 (d)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used"
+    ]
+  },
+  {
+    "item": 70,
+    "pages": [
+      17
+    ],
+    "cells": [
+      "Periodically recorded information on the operating environmental conditions, including temperature [code list, histogram, related units]",
+      "N/A",
+      "BR Annex XIII 4 (d)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used"
+    ]
+  },
+  {
+    "item": 71,
+    "pages": [
+      17
+    ],
+    "cells": [
+      "Periodically recorded information on the state of charge [histogram, %]",
+      "N/A",
+      "BR Annex XIII 4 (d)",
+      "Restricted: Only to persons with legitimate interest (individual battery)",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used",
+      "Applicable as soon as the battery starts to be used"
+    ]
+  }
+]

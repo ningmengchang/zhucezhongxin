@@ -1,0 +1,12 @@
+{
+  "productGroup": "{{product_group}}",
+  "productSubGroup": "{{product_subgroup}}",
+  "submissionItems": [
+    {
+      "uniqueProductIdentifier": "{{unique_product_identifier}}",
+      "granularity": "item",
+      "batchIdentifier": "{{batch_identifier}}",
+      "modelIdentifier": "{{model_identifier}}"
+    }
+  ]
+}

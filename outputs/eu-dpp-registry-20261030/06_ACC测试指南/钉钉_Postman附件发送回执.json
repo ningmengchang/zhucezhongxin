@@ -1,0 +1,29 @@
+{
+  "file": "欧委会DPP_ACC_Postman测试附件_20261030.zip",
+  "uuid": "32b716cf-e1e2-5021-8dd7-cd1001c7c972",
+  "exitCode": 0,
+  "response": {
+    "arguments": [],
+    "errorCode": null,
+    "errorMsg": null,
+    "result": {
+      "friendlyHint": "",
+      "openTaskId": "0F0dL7Rdrh0Di9fBozZc2fGFKgbUp/SZQz5crM/aESM=",
+      "retryable": false
+    },
+    "success": true
+  },
+  "deliveryStatus": {
+    "arguments": [],
+    "errorCode": null,
+    "errorMsg": null,
+    "result": {
+      "friendlyHint": "",
+      "openConversationId": "cid91baccGIzmKsjTsjAHYG/kJh0wt6rRufd7Ho2zFZkPU=",
+      "openMessageId": "msgKMdAaobD3p1FrrErFGRTfQ==",
+      "retryable": false,
+      "sendStatus": "SUCCESS"
+    },
+    "success": true
+  }
+}

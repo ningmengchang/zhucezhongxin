@@ -1,0 +1,73 @@
+{
+  "workbook": "欧委会电池护照_JSONSchema字段字典_20261030.xlsx",
+  "revision": "1.1",
+  "generatedAt": "2026-11-01T09:22:43",
+  "officialExcel": false,
+  "sourcePublicationDate": "2026-10-30",
+  "sourceSchemaCount": 18,
+  "allSourcePropertyDefinitionsCovered": 149,
+  "sourceReferencesResolved": 91,
+  "profileFieldRows": {
+    "EV": 206,
+    "LMT": 218,
+    "工业": 218
+  },
+  "topLevelViewFieldCombinations": 68,
+  "vocabularyConcepts": 294,
+  "sourceShapeFiles": 18,
+  "sourceShapeTriples": 1758,
+  "sourceShapePathOccurrences": 250,
+  "vocabularyRdfConceptCount": 294,
+  "detailedProfileRows": 642,
+  "commonStructureRows": 24,
+  "unitFormatRows": 176,
+  "ruleReviewRows": 234,
+  "shaclValidationExecuted": false,
+  "method": "RDF解析SHACL，沿property/node/and/or/not/qualifiedValueShape与序列/替代路径读取；组合分支与无条件数量分开，Schema按$id展开。",
+  "exampleChecks": {
+    "total": 12,
+    "passed": 12,
+    "withIssues": 0,
+    "formatCheckerEnabled": true
+  },
+  "allProfileRowsHaveUnitFormatAndRequiredExplanation": true,
+  "unitAndRequiredSpotChecks": [
+    "三类别commercialWarrantyPeriod月/integer/minimum=0/非required/SHACL0..1/商业质保适用",
+    "重量kg或g",
+    "容量Ah或mAh",
+    "电压主值V与温度范围°C分开",
+    "组合必填条件"
+  ],
+  "originalFilesUnmodified": true,
+  "officialFilesSha256Checked": 84,
+  "backup": "05_Excel阅读版/历史备份/细化前_20261101_091155",
+  "worksheets": [
+    "阅读说明",
+    "字段对照",
+    "EV字段",
+    "LMT字段",
+    "工业字段",
+    "通用结构",
+    "单位与格式速查",
+    "必填与规则核对",
+    "词表参考",
+    "组合与结构约束",
+    "SHACL规则索引",
+    "动态键格式",
+    "Schema文件索引",
+    "注意事项",
+    "样例校验"
+  ],
+  "outputSha256": "21a547ea8e2404c91cea944ac657387f184523ba148d41075b841b54b4012e05",
+  "generator": [
+    "build_schema_excel.py",
+    "schema_field_details.py",
+    "schema_excel_output.py"
+  ],
+  "independentComparison": {
+    "fieldRowsCompared": 666,
+    "officialSampleUnitChecksPassed": 86,
+    "visualPreviewPagesReviewed": 3,
+    "auditFile": "校验/独立内容核对.json"
+  }
+}

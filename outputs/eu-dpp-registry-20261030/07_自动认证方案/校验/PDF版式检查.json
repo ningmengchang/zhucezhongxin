@@ -1,0 +1,122 @@
+{
+  "pages": 11,
+  "pageDetails": [
+    {
+      "page": 1,
+      "width": 595,
+      "height": 842,
+      "textChars": 1412,
+      "figures": [],
+      "imageBoxes": []
+    },
+    {
+      "page": 2,
+      "width": 595,
+      "height": 842,
+      "textChars": 1110,
+      "figures": [],
+      "imageBoxes": []
+    },
+    {
+      "page": 3,
+      "width": 842,
+      "height": 595,
+      "textChars": 80,
+      "figures": [
+        "图 1 首次开通配置流程  客户开通与授权  欧盟分配账号  平台保存配置"
+      ],
+      "imageBoxes": [
+        [
+          60.0,
+          72.8,
+          788.5,
+          196.4
+        ]
+      ]
+    },
+    {
+      "page": 4,
+      "width": 595,
+      "height": 842,
+      "textChars": 1569,
+      "figures": [],
+      "imageBoxes": []
+    },
+    {
+      "page": 5,
+      "width": 595,
+      "height": 842,
+      "textChars": 1627,
+      "figures": [],
+      "imageBoxes": []
+    },
+    {
+      "page": 6,
+      "width": 595,
+      "height": 842,
+      "textChars": 1463,
+      "figures": [],
+      "imageBoxes": []
+    },
+    {
+      "page": 7,
+      "width": 595,
+      "height": 842,
+      "textChars": 78,
+      "figures": [
+        "图 2 自动认证流程  缓存优先  到期前重新申请  每次重试重新签名"
+      ],
+      "imageBoxes": [
+        [
+          179.9,
+          72.8,
+          415.4,
+          702.1
+        ]
+      ]
+    },
+    {
+      "page": 8,
+      "width": 595,
+      "height": 842,
+      "textChars": 80,
+      "figures": [
+        "图 3 自动认证时序  私钥留在密钥服务  Token 由欧盟授权服务签发"
+      ],
+      "imageBoxes": [
+        [
+          60.0,
+          72.8,
+          544.8,
+          646.6
+        ]
+      ]
+    },
+    {
+      "page": 9,
+      "width": 595,
+      "height": 842,
+      "textChars": 1303,
+      "figures": [],
+      "imageBoxes": []
+    },
+    {
+      "page": 10,
+      "width": 595,
+      "height": 842,
+      "textChars": 1433,
+      "figures": [],
+      "imageBoxes": []
+    },
+    {
+      "page": 11,
+      "width": 595,
+      "height": 842,
+      "textChars": 748,
+      "figures": [],
+      "imageBoxes": []
+    }
+  ],
+  "overflow": [],
+  "blankPages": []
+}

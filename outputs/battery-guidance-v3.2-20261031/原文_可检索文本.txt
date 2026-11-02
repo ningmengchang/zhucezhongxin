@@ -1,0 +1,844 @@
+Guidance Document: Digital Batteries
+ Passport – data points by category
+
+
+
+
+  Version 3.2 – 19 October 2026
+
+
+                                       1
+EUROPEAN COMMISSION
+Directorate-General for Internal Market, Industry, Entrepreneurship and SMEs
+Directorate G — Compliance and Responsible Business Conduct
+Unit G2 — Single Market Implementation Tools
+Contact: GROW Digital Product Passport Team
+E-mail: GROW-DIGITAL-PRODUCT-PASSPORT@ec.europa.eu
+European Commission
+B-1049 Brussels
+
+
+
+
+                                                                               2
+This guidance document aims to assist economic operators and other relevant stakeholders in preparing the implementation of the
+data requirements for the digital Batteries Passport (BP). It sets out the data points to be provided for electric vehicle (EV) batteries,
+light means of transport (LMT) batteries and industrial batteries, and identifies where information is mandatory, optional, applicable
+only in certain cases, or does not have to be filled/displayed as of February 2027. It should be read together with the applicable
+provisions of Regulation (EU) 2023/1542 and any relevant delegated or implementing acts.
+
+The document is intended to support a common understanding of the information to be made available in the BP and to promote a
+consistent and workable approach across the batteries value chain by clarifying, to the extent possible, how the different data
+requirements may be understood in practice. In doing so, it is meant to facilitate dialogue among stakeholders, reduce unnecessary
+divergence in implementation approaches, and support a smooth and consistent rollout of the Batteries Passport.
+
+By presenting the relevant data points in a structured and accessible manner, it seeks to help stakeholders identify the information
+that may need to be collected, assessed and made available, and to support early alignment of internal processes, data systems
+and reporting practices. The following table is structured around five elements: (1) the data point number, (2) the data point name,
+(3) the legal source of the data point in the Batteries Regulation, and (4)-(6) the applicability of the data point for EV, LMT and
+industrial batteries respectively. The applicability columns indicate whether a data point is mandatory, optional, applicable only in
+certain cases, or does not have to be filled/displayed as of February 2027. BR refers to REGULATION (EU) 2023/1542 OF THE
+EUROPEAN PARLIAMENT AND OF THE COUNCIL of 12 July 2023 concerning batteries and waste batteries, amending Directive
+2008/98/EC and Regulation (EU) 2019/1020 and repealing Directive 2006/66/EC1. For the purposes of this document, EV batteries,
+LMT batteries and industrial batteries correspond to the battery categories defined in Article 3 of the Batteries Regulation.
+
+This guidance document may be further developed over time to provide additional detail and practical clarification. In particular,
+future updates may include further information on the definitions of the individual data points, as well as indications on possible
+measuring units or formats to be used when reporting those data points, with a view to supporting greater clarity, comparability and
+consistency in the information made available through the Batteries Passport. This document should not be considered as
+representative of the European Commission’s official position. The information in the text does not extend in any way the rights and
+obligations deriving from applicable legislation nor introduce any additional requirement. The expressed views are not authoritative
+
+
+1 EUR-Lex - 02023R1542-20250731 - EN - EUR-Lex
+
+
+
+                                                                                                                                         3
+and cannot prejudge any future actions the European Commission may take, including potential positions before the Court of
+Justice of the European Union.
+
+Manuscript completed in October 2026
+
+3rd Edition
+
+This document has been prepared for the European Commission however it reflects the views only of the authors, and the European
+Commission is not liable for any consequence stemming from the reuse of this publication.
+
+© European Union, 2026
+
+The Commission’s reuse policy is implemented under Commission Decision 2011/833/EU of 12 December 2011 on the reuse of Commission
+documents (OJ L 330, 14.12.2011, p. 39, ELI: http://data.europa.eu/eli/dec/2011/833/oj). Unless otherwise noted, the reuse of this document is
+authorised under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence (https://creativecommons.org/licenses/by/4.0/). This
+means that reuse is allowed, provided appropriate credit is given and any changes are indicated.
+
+
+
+
+                                                                                                                                             4
+            Data point name                               Data
+                                          As defined                  Type of     Electric vehicles      Light means of
+Item     (clarifications stated in                        point                                                                  Industrial
+                                              in                    information         (EV)            transport (LMT)
+           square brackets [])                           source
+                                                          BR
+         Unique identifier [unique           BR Art
+ 1.                                                      Article      Public         Mandatory             Mandatory             Mandatory
+            product identifier]             3(1)(66)
+                                                         77 (3)
+
+       Identity of who is registering                     BR
+ 2.    and/or is responsible for the      BR Art 77(4)   Article      Public         Mandatory             Mandatory             Mandatory
+         battery passport [name]                         77 (3)
+
+            Manufacturer name,               BR Art
+                                                           BR
+         registered trade name or           3(1)(33)
+ 3.    registered trademark [at least     (manufactur
+                                                         Annex        Public         Mandatory             Mandatory             Mandatory
+                                                         VI A (1)
+                   one of]                     er)
+
+                                                           BR
+       Manufacturer single contact
+ 4.         postal address
+                                              N/A        Annex        Public         Mandatory             Mandatory             Mandatory
+                                                         VI A (1)
+
+        If available, manufacturer                         BR                       Optional, to be       Optional, to be       Optional, to be
+ 5.    web and email address [both            N/A        Annex        Public      filled if such data   filled if such data   filled if such data
+                  optional]                              VI A (1)                      is available          is available          is available
+
+                                            BR Art
+                                                           BR
+                                           3(1)(11),
+ 6.    Battery category [3-code list]                    Annex        Public         Mandatory             Mandatory             Mandatory
+                                           (13), and
+                                                         VI A (2)
+                                             (14)
+
+          Model identification and
+         batch or serial number, or                        BR
+ 7.     product number or another             N/A        Annex        Public         Mandatory             Mandatory             Mandatory
+           element allowing their                        VI A (2)
+       identification [at least one of]
+
+         The place of manufacture                          BR
+ 8.     (geographical location of a           N/A        Annex        Public         Mandatory             Mandatory             Mandatory
+       battery manufacturing plant)                      VI A (3)
+
+
+                                                                                                                                                5
+                     Data point name                              Data
+                                                 As defined                        Type of          Electric vehicles      Light means of
+    Item          (clarifications stated in                       point                                                                           Industrial
+                                                     in                          information              (EV)            transport (LMT)
+                    square brackets [])                          source
+                       [town, region,
+                     country/jurisdiction]
+
+                                                                   BR
+                  The date of manufacturing
+      9.                                             N/A         Annex              Public              Mandatory            Mandatory            Mandatory
+                      [month and year]
+                                                                 VI A (4)
+
+                                                                   BR
+      10.            The weight [unit2 kg]           N/A         Annex              Public              Mandatory            Mandatory            Mandatory
+                                                                 VI A (5)
+
+                                                                   BR
+      11.           The capacity [unit Ah]           N/A         Annex              Public              Mandatory            Mandatory            Mandatory
+                                                                 VI A (6)
+
+                                                                   BR
+      12.         The chemistry [code list]3         N/A         Annex              Public              Mandatory            Mandatory            Mandatory
+                                                                 VI A (7)
+
+                 The hazardous substances
+                                                                   BR
+                 present in the battery, other      BR Art
+      13.                                                        Annex              Public              Mandatory            Mandatory            Mandatory
+                  than mercury, cadmium or         3(1)(52)
+                                                                 VI A (8)
+                        lead [free text]
+
+                                                                   BR
+                 Usable extinguishing agent
+      14.                [free text]
+                                                     N/A         Annex              Public              Mandatory            Mandatory            Mandatory
+                                                                 VI A (9)
+
+                Critical raw materials present                      BR
+                                                  List of raw
+                       in the battery in a                        Annex
+      15.        concentration of more than
+                                                 materials in
+                                                                   VI A
+                                                                                    Public              Mandatory            Mandatory            Mandatory
+                                                 Annex X (1)
+                0,1 % weight by weight [code                       (10)
+
+2 When « unit » is mentioned in the rest of this document, the system will allow also to select multiples or submultiples of that measurement unit.
+
+
+
+
+                                                                                                                                                               6
+            Data point name                                Data
+                                         As defined                      Type of     Electric vehicles       Light means of
+Item     (clarifications stated in                         point                                                                       Industrial
+                                             in                        information         (EV)             transport (LMT)
+           square brackets [])                            source
+                    list]
+
+       The material composition of
+                                                                                          Not to be              Not to be              Not to be
+         the battery, including its
+                                            BR Art                                   filled/displayed -     filled/displayed -     filled/displayed -
+          chemistry, hazardous                               BR
+                                         3(1)(52); list                              repetition, same       repetition, same       repetition, same
+        substances present in the                          Annex
+ 16.   battery, other than mercury,
+                                            of raw
+                                                          XIII 1 (b)
+                                                                         Public          data already           data already           data already
+                                         materials in                                 required under         required under         required under
+       cadmium or lead, and critical
+                                         Annex X (1)                                   previous data          previous data          previous data
+       raw materials present in the
+                                                                                            points                 points                 points
+                  battery
+
+                                                                                           Not to be              Not to be              Not to be
+                                                                                     filled/displayed as    filled/displayed as    filled/displayed as
+                                           BR Art            BR
+                                                                                     of February 2027-      of February 2027-      of February 2027-
+           The carbon footprint          3(1)(51) for      Annex
+ 17.                                                                     Public        format still to be     format still to be     format still to be
+               declaration                 carbon         XIII 1 (c)
+                                                                                        specified in the       specified in the       specified in the
+                                          footprint
+                                                                                           upcoming               upcoming               upcoming
+                                                                                      implementing act       implementing act       implementing act
+
+                                                                                           Not to be              Not to be              Not to be
+                                                                                     filled/displayed as    filled/displayed as    filled/displayed as
+                                           BR Art            BR
+                                                                                     of February 2027-      of February 2027-      of February 2027-
+                                         3(1)(51) for      Annex
+ 18.    The carbon footprint label
+                                           carbon         XIII 1 (c)
+                                                                         Public        format still to be     format still to be     format still to be
+                                                                                        specified in the       specified in the       specified in the
+                                          footprint
+                                                                                           upcoming               upcoming               upcoming
+                                                                                      implementing act       implementing act       implementing act
+
+                                                                                           Not to be              Not to be              Not to be
+        Information on responsible                                                   filled/displayed as    filled/displayed as    filled/displayed as
+                                                             BR
+        sourcing as indicated in the                                                 of February 2027-      of February 2027-      of February 2027-
+                                                           Annex
+ 19.        report on battery due            N/A
+                                                          XIII 1 (d)
+                                                                         Public       as envisaged by        as envisaged by        as envisaged by
+       diligence policy referred to in                                                   Article 48(1),         Article 48(1),         Article 48(1),
+                Article 52(3)                                                            required from          required from          required from
+                                                                                          August 2027            August 2027            August 2027
+
+
+                                                                                                                                                        7
+            Data point name                           Data
+                                      As defined                    Type of     Electric vehicles      Light means of
+Item     (clarifications stated in                    point                                                                     Industrial
+                                          in                      information         (EV)            transport (LMT)
+           square brackets [])                       source
+        Percentage share of cobalt                                                    Not to be             Not to be             Not to be
+         that is present in active       BR Art         BR                      filled/displayed as   filled/displayed as   filled/displayed as
+       materials and that has been     3(1)(5) for    Annex                     of February 2027-     of February 2027-     of February 2027-
+ 20.                                                                Public
+          recovered from battery         active      XIII 1 (e)                   to be applied as      to be applied as      to be applied as
+       manufacturing waste or post-     material                                    envisaged by          envisaged by          envisaged by
+           consumer waste [%]                                                         Article 8             Article 8             Article 8
+
+                                         BR Art
+       Percentage share of lithium     3(1)(5) for                                    Not to be             Not to be             Not to be
+         that is present in active       active         BR                      filled/displayed as   filled/displayed as   filled/displayed as
+       materials and that has been    material and    Annex                     of February 2027 -    of February 2027-     of February 2027-
+ 21.     recovered from battery       3(1)(51) for   XIII 1 (e)
+                                                                    Public
+                                                                                  to be applied as      to be applied as      to be applied as
+       manufacturing waste or post-     battery                                     envisaged by          envisaged by          envisaged by
+           consumer waste [%]         manufacturin                                    Article 8             Article 8             Article 8
+                                        g waste
+
+                                         BR Art
+        Percentage share of nickel     3(1)(5) for                                    Not to be           Not to be           Not to be
+         that is present in active       active         BR                      filled/displayed as filled/displayed as filled/displayed as
+       materials and that has been    material and    Annex                     of February 2027 - of February 2027 - of February 2027 -
+ 22.                                                                Public
+         recovered from battery       3(1)(51) for   XIII 1 (e)                   to be applied as    to be applied as    to be applied as
+       manufacturing waste or post-     battery                                     envisaged by        envisaged by        envisaged by
+           consumer waste [%]         manufacturin                                    Article 8           Article 8           Article 8
+                                        g waste
+
+                                                                                      Not to be           Not to be           Not to be
+         The percentage share of                        BR                      filled/displayed as filled/displayed as filled/displayed as
+        lead that is present in the                   Annex                     of February 2027 - of February 2027 - of February 2027 -
+ 23.                                      N/A                       Public
+        battery and that has been                    XIII 1 (e)                   to be applied as    to be applied as    to be applied as
+        recovered from waste [%]                                                    envisaged by        envisaged by        envisaged by
+                                                                                      Article 8           Article 8           Article 8
+
+         The share of renewable                        BR
+ 24.                                      N/A                       Public          Mandatory            Mandatory             Mandatory
+              content [%]                             Annex
+
+
+                                                                                                                                              8
+            Data point name                               Data
+                                         As defined                     Type of     Electric vehicles     Light means of
+Item     (clarifications stated in                        point                                                                  Industrial
+                                             in                       information         (EV)           transport (LMT)
+           square brackets [])                           source
+                                                         XIII 1 (f)
+
+                                                                                         Not to be            Not to be            Not to be
+                                                                                    filled/displayed -   filled/displayed -   filled/displayed -
+                                                            BR
+                                                                                    repetition, same     repetition, same     repetition, same
+ 25.     Rated capacity [unit Ah]            N/A          Annex         Public
+                                                                                       data required        data required        data required
+                                                         XIII 1 (g)
+                                                                                    under data point     under data point     under data point
+                                                                                             11                   11                   11
+
+           Minimal voltage, with
+                                                            BR
+         temperature range when
+ 26.                                         N/A          Annex         Public         Mandatory            Mandatory            Mandatory
+       relevant [unit V, optional unit
+                                                         XIII 1 (h)
+                     °C]
+
+           Nominal voltage, with
+                                                            BR
+         temperature range when
+ 27.                                         N/A          Annex         Public         Mandatory            Mandatory            Mandatory
+       relevant [unit V, optional unit
+                                                         XIII 1 (h)
+                     °C]
+
+          Maximum voltage, with
+                                                            BR
+         temperature range when
+ 28.   relevant [unit V, optional unit
+                                             N/A          Annex         Public         Mandatory            Mandatory            Mandatory
+                                                         XIII 1 (h)
+                     °C]
+
+                                         BR Annex IV
+                                             (3) for
+                                                           BR
+         Original power capability         “power” of
+ 29.              [unit W]               the batteries
+                                                          Annex         Public         Mandatory            Mandatory            Mandatory
+                                                         XIII 1 (i)
+                                          in scope of
+                                           the Annex
+
+             Power limits, with          BR Annex IV       BR
+ 30.     temperature range when             (3) for       Annex         Public         Mandatory            Mandatory            Mandatory
+        relevant [unit W, optionally      “power” of     XIII 1 (i)
+
+
+
+                                                                                                                                                   9
+            Data point name                              Data
+                                        As defined                     Type of     Electric vehicles     Light means of
+Item     (clarifications stated in                       point                                                                   Industrial
+                                            in                       information         (EV)           transport (LMT)
+           square brackets [])                          source
+         min_T °C … max_T °C]           the batteries
+                                         in scope of
+                                          the Annex
+
+                                                                                                                               Only applicable
+                                                                                                                             for some industrial
+         Expected battery lifetime        BR Art          BR
+                                                                                                                               batteries where
+ 31.      expressed in cycles [in       3(1)(59) for     Annex         Public         Mandatory            Mandatory
+                                                                                                                               lifetime can be
+                number]                  “lifetime”     XIII 1 (j)
+                                                                                                                                 expressed in
+                                                                                                                                     cycles
+
+                                                                                                                               Only applicable
+          Reference test used for                                                                                            for some industrial
+                                          BR Art          BR
+         expected battery lifetime                                                                                             batteries where
+ 32.     expressed in cycles [free
+                                        3(1)(59) for     Annex         Public         Mandatory            Mandatory
+                                                                                                                               lifetime can be
+                                         “lifetime”     XIII 1 (j)
+                  text]                                                                                                          expressed in
+                                                                                                                                     cycles
+
+                                                           BR
+          Capacity threshold for                                                                              Not to be            Not to be
+ 33.         exhaustion [%]
+                                            N/A          Annex         Public         Mandatory
+                                                                                                         filled/displayed     filled/displayed
+                                                        XIII 1 (k)
+
+         Temperature range the
+       battery can withstand when                         BR
+                                                                       Public
+ 34.    not in use (reference test)         N/A          Annex                        Mandatory            Mandatory            Mandatory
+        [min_T °C … max_T °C +                          XIII 1 (l)
+                 free text]
+
+                                                          BR
+                                                                                    If applicable (if    If applicable (if    If applicable (if
+           Period for which the                          Annex
+                                                                                      commercial           commercial           commercial
+ 35.    commercial warranty for the         N/A          XIII 1        Public
+                                                                                        warranty             warranty             warranty
+       calendar life applies [months]                     (m)
+                                                                                       envisaged)           envisaged)           envisaged)
+
+
+
+
+                                                                                                                                              10
+           Data point name                              Data
+                                      As defined                      Type of     Electric vehicles    Light means of
+Item    (clarifications stated in                       point                                                               Industrial
+                                          in                        information         (EV)          transport (LMT)
+          square brackets [])                          source
+                                                          BR                                                              Only applicable
+         Initial round trip energy
+ 36.                                      N/A           Annex         Public         Mandatory          Mandatory       for some industrial
+               efficiency [%]
+                                                       XIII 1 (n)                                                            batteries
+
+                                       BR Annex II
+                                       2(e) for life
+                                                          BR                                                              Only applicable
+       Round trip energy efficiency   cycle for the                   Public
+ 37.                                                    Annex                        Mandatory          Mandatory       for some industrial
+         at 50 % of cycle-life [%]    calculation of
+                                                       XIII 1 (n)                                                            batteries
+                                         carbon
+                                        footprint
+
+           Internal battery cell
+            resistance [unit Ω]                           BR
+ 38.                                      N/A           Annex         Public         Mandatory          Mandatory          Mandatory
+          Internal battery pack                        XIII 1 (o)
+           resistance [unit Ω]
+
+                                                          BR                                                              Only applicable
+        Charge C-rate of relevant
+ 39.                                      N/A           Annex         Public         Mandatory          Mandatory       for some industrial
+         cycle-life test [number]
+                                                       XIII 1 (p)                                                            batteries
+
+                                                          BR
+       Discharge C-rate of relevant
+ 40.                                      N/A           Annex         Public          Optional           Optional            Optional
+          cycle-life test [number]
+                                                       XIII 1 (p)
+
+       The marking requirements                           BR
+ 41.    laid down in Article 13(4)        N/A           Annex         Public         Mandatory          Mandatory          Mandatory
+                [Yes/No]                               XIII 1 (q)
+
+       The marking requirements                           BR                      Cadmium or lead     Cadmium or lead   Cadmium or lead
+ 42.    laid down in Article 13(5)        N/A           Annex         Public         symbol if           symbol if         symbol if
+                [code list]                            XIII 1 (q)                   applicable          applicable        applicable
+
+          The EU declaration of                          BR
+ 43.                                      N/A                         Public         Mandatory          Mandatory          Mandatory
+         conformity referred to in                      Annex
+
+
+                                                                                                                                         11
+            Data point name                           Data
+                                        As defined                      Type of           Electric vehicles     Light means of
+Item     (clarifications stated in                    point                                                                           Industrial
+                                            in                        information               (EV)           transport (LMT)
+           square brackets [])                       source
+          Article 18 [a web link]                    XIII 1 (r)
+
+        The information regarding
+            the prevention and
+                                                        BR
+          management of waste
+ 44.                                       N/A        Annex              Public              Mandatory            Mandatory           Mandatory
+       batteries laid down in Article
+                                                     XIII 1 (s)
+           74(1), points (a) to (f)
+             [multiple free text]
+
+        Clear, understandable and
+       readable instructions for use
+                                                                                                Not to be           Not to be           Not to be
+          in a format that makes it
+                                                                                          filled/displayed as filled/displayed as filled/displayed as
+        possible to print, download                     BR
+                                                                                          of February 2027 - of February 2027 - of February 2027 -
+            and save them on an                       Annex
+ 45.   electronic device so that the
+                                           N/A
+                                                     XIII 1 (t)
+                                                                         Public                application         application         application
+                                                                                          provisions on hold provisions on hold provisions on hold
+        user can access them at all
+                                                                                          pending Omnibus pending Omnibus pending Omnibus
+        times, in particular during a
+                                                                                                adoption            adoption            adoption
+          breakdown of the battery
+                   [TBC]
+
+                                                                   Restricted: Only to
+          Detailed composition,
+                                                        BR            persons with
+       including materials used in
+ 46.     the cathode, anode and
+                                           N/A        Annex       legitimate interests,      Mandatory            Mandatory           Mandatory
+                                                     XIII 2 (a)    notified bodies, MS
+           electrolyte [free text]
+                                                                  authorities and COM
+
+            Part numbers for                                       Restricted: Only to
+        components and contact                          BR            persons with
+ 47.      details of sources for           N/A        Annex       legitimate interests,      Mandatory            Mandatory           Mandatory
+       replacement spares [a web                     XIII 2 (b)    notified bodies, MS
+                   link]                                          authorities and COM
+
+
+
+
+                                                                                                                                                   12
+            Data point name                              Data
+                                         As defined                        Type of           Electric vehicles     Light means of
+Item     (clarifications stated in                       point                                                                          Industrial
+                                             in                          information               (EV)           transport (LMT)
+           square brackets [])                          source
+           Dismantling information,
+                including at least:
+         - exploded diagrams of the
+       battery system/pack showing
+        the location of battery cells,
+          - disassembly sequences,
+                                                                      Restricted: Only to
+             - type and number of                          BR
+                                                                         persons with
+         fastening techniques to be                      Annex
+ 48.                unlocked,
+                                             N/A
+                                                        XIII 2 (c)
+                                                                     legitimate interests,      Mandatory            Mandatory          Mandatory
+                                                                      notified bodies, MS
+               - tools required for
+                                                                     authorities and COM
+                  disassembly,
+       - warnings if risk of damaging
+                    parts exist,
+         - amount of cells used and
+                      layout
+                   [a web link]
+
+                                                                      Restricted: Only to
+                                                           BR            persons with
+ 49.   Safety measures [a web link]          N/A         Annex       legitimate interests,      Mandatory            Mandatory          Mandatory
+                                                        XIII 2 (d)    notified bodies, MS
+                                                                     authorities and COM
+
+          Results of test reports
+       proving compliance with the
+                                                          BR
+        requirements laid down in                                     Restricted: Only to
+                                                         Annex
+ 50.      this Regulation or any             N/A                      notified bodies, MS       Mandatory            Mandatory          Mandatory
+                                                         XIII 3
+        delegated or implementing                                    authorities and COM
+       act adopted pursuant to this
+          Regulation [a web link]
+
+                                         BR Annex IV      BR          Restricted: Only to      Same as data        Same as data        Same as data
+ 51.     Rated capacity [unit Ah]
+                                          (1) for the    Annex          persons with         point 11 (capacity) point 11 (capacity)     point 11
+
+
+
+                                                                                                                                                      13
+           Data point name                             Data
+                                      As defined                        Type of           Electric vehicles    Light means of
+Item    (clarifications stated in                      point                                                                        Industrial
+                                          in                          information               (EV)          transport (LMT)
+          square brackets [])                         source
+                                       batteries in   XIII 4 (a)    legitimate interest                                         (capacity); only for
+                                      scope of the                 (individual battery)                                            rechargeable
+                                         Annex                                                                                       batteries
+
+                                      BR Annex III
+                                       B(1) or BR
+                                      Annex IV (2)                 Restricted: Only to
+                                                         BR                                                                          Only for
+                                         for the                       persons with
+ 52.        Capacity fade [%]                          Annex                                 Mandatory          Mandatory         rechargeable
+                                       batteries in                 legitimate interest
+                                                      XIII 4 (a)                                                                    batteries
+                                      scope of the                 (individual battery)
+                                        Annexes
+
+
+                                      BR Annex IV
+                                                                   Restricted: Only to
+                                        (3) for the      BR                                                                          Only for
+                                                                       persons with
+ 53.         Power [unit W]            batteries in    Annex
+                                                                    legitimate interest
+                                                                                             Mandatory          Mandatory         rechargeable
+                                      scope of the    XIII 4 (a)                                                                    batteries
+                                                                   (individual battery)
+                                          Annex
+
+                                      BR Annex IV
+                                                                   Restricted: Only to
+                                        (4) for the      BR                                                                          Only for
+                                                                       persons with
+ 54.         Power fade [%]            batteries in    Annex                                 Mandatory          Mandatory         rechargeable
+                                                                    legitimate interest
+                                      scope of the    XIII 4 (a)                                                                    batteries
+                                                                   (individual battery)
+                                          Annex
+
+                                      BR Annex IV
+                                                                   Restricted: Only to
+                                        (5) for the      BR                                                                          Only for
+                                                                       persons with
+ 55.   Internal resistance [unit Ω]    batteries in    Annex
+                                                                    legitimate interest
+                                                                                             Mandatory          Mandatory         rechargeable
+                                      scope of the    XIII 4 (a)                                                                    batteries
+                                                                   (individual battery)
+                                          Annex
+
+                                                         BR        Restricted: Only to                                               Only for
+       Internal resistance increase
+ 56.                                      N/A          Annex          persons with           Mandatory          Mandatory         rechargeable
+                    [%]
+                                                      XIII 4 (a)   legitimate interest                                              batteries
+
+
+                                                                                                                                                 14
+            Data point name                                 Data
+                                           As defined                        Type of           Electric vehicles    Light means of
+Item     (clarifications stated in                          point                                                                          Industrial
+                                               in                          information               (EV)          transport (LMT)
+           square brackets [])                             source
+                                                                        (individual battery)
+
+                                           BR Annex IV
+                                                                        Restricted: Only to                                                 Only for
+                                             (6) for the      BR
+         Where applicable, energy                                           persons with                                                 rechargeable
+ 57.                                        batteries in    Annex                                If applicable       If applicable
+         round trip efficiency [%]                                       legitimate interest                                              batteries, if
+                                           scope of the    XIII 4 (a)
+                                                                        (individual battery)                                               applicable
+                                               Annex
+
+                                                                        Restricted: Only to                                                 Only for
+                                                              BR
+         Where applicable, energy                                           persons with                                                 rechargeable
+ 58.   round trip efficiency fade [%]
+                                               N/A          Annex
+                                                                         legitimate interest
+                                                                                                 If applicable       If applicable
+                                                                                                                                          batteries, if
+                                                           XIII 4 (a)
+                                                                        (individual battery)                                               applicable
+
+       The expected lifetime of the
+                                                                                                                                            Only for
+       battery under the reference                                      Restricted: Only to
+                                             BR Art           BR                                                                         rechargeable
+        conditions for which it has                                         persons with
+ 59.                                       3(1)(59) for     Annex                                 Mandatory           Mandatory          batteries and
+        been designed, in terms of                                       legitimate interest
+                                             lifetime      XIII 4 (a)                                                                   except for non-
+       cycles, except for non-cycle                                     (individual battery)
+                                                                                                                                       cycle applications
+          applications [number]
+
+       The expected lifetime of the                                     Restricted: Only to
+                                             BR Art           BR                                                                            Only for
+       battery under the reference                                          persons with
+ 60.    conditions for which it has
+                                           3(1)(59) for     Annex
+                                                                         legitimate interest
+                                                                                                  Mandatory           Mandatory          rechargeable
+                                             lifetime      XIII 4 (a)                                                                      batteries
+          been designed [years]                                         (individual battery)
+
+         Information on the state of                                    Restricted: Only to
+                                                              BR
+       health of the battery pursuant                                       persons with                                 Not to be           Not to be
+ 61.   to Article 14: state of certified
+                                               N/A          Annex
+                                                                         legitimate interest
+                                                                                                  Mandatory
+                                                                                                                    filled/displayed    filled/displayed
+                                                           XIII 4 (b)
+             energy (SOCE) [%]                                          (individual battery)
+
+        Information on the state of                                     Restricted: Only to                                            Only for stationary
+                                                              BR
+       health of the battery pursuant                                       persons with             Not to be                           battery energy
+ 62.      to Article 14: remaining
+                                               N/A          Annex
+                                                                         legitimate interest    filled/displayed
+                                                                                                                      Mandatory
+                                                                                                                                        storage systems
+                                                           XIII 4 (b)
+             capacity [unit Ah]                                         (individual battery)                                           and if they have a
+
+
+
+                                                                                                                                                          15
+            Data point name                           Data
+                                        As defined                     Type of           Electric vehicles    Light means of
+Item     (clarifications stated in                    point                                                                        Industrial
+                                            in                       information               (EV)          transport (LMT)
+           square brackets [])                       source
+                                                                                                                                   battery
+                                                                                                                                 management
+                                                                                                                                   system
+
+                                                                                                                               Only for stationary
+         Information on the state of                                                                                             battery energy
+                                                                  Restricted: Only to
+       health of the battery pursuant                   BR                                                                      storage systems
+                                                                      persons with             Not to be
+ 63.   to Article 14: where possible,      N/A        Annex                                                    Mandatory       and if they have a
+                                                                   legitimate interest    filled/displayed
+            the remaining power                      XIII 4 (b)                                                                      battery
+                                                                  (individual battery)
+              capability [unit W]                                                                                                 management
+                                                                                                                                     system
+
+                                                                                                                               Only for stationary
+         Information on the state of                                                                                             battery energy
+                                                                  Restricted: Only to
+       health of the battery pursuant                   BR                                                                      storage systems
+                                                                      persons with             Not to be
+ 64.   to Article 14: where possible,      N/A        Annex
+                                                                   legitimate interest    filled/displayed
+                                                                                                               Mandatory       and if they have a
+          the remaining round-trip                   XIII 4 (b)                                                                      battery
+                                                                  (individual battery)
+                efficiency [%]                                                                                                    management
+                                                                                                                                     system
+
+          Information on the state of                                                                                          Only for stationary
+       health of the battery pursuant                                                                                            battery energy
+                                                                  Restricted: Only to
+       to Article 14: where possible,                   BR                                                                      storage systems
+                                                                      persons with             Not to be
+ 65.         the evolution of self-        N/A        Annex
+                                                                   legitimate interest    filled/displayed
+                                                                                                               Mandatory       and if they have a
+               discharging rates                     XIII 4 (b)                                                                      battery
+                                                                  (individual battery)
+        [timestamp, decrease % per                                                                                                management
+                     year]                                                                                                           system
+
+                                                                                                                               Only for stationary
+         Information on the state of                              Restricted: Only to                                            battery energy
+                                                        BR
+       health of the battery pursuant                                 persons with             Not to be                        storage systems
+ 66.                                       N/A        Annex                                                    Mandatory
+       to Article 14: where possible,                              legitimate interest    filled/displayed                     and if they have a
+                                                     XIII 4 (b)
+       the ohmic resistance [unit Ω]                              (individual battery)                                               battery
+                                                                                                                                  management
+
+
+                                                                                                                                                16
+                Data point name                                Data
+                                             As defined                         Type of           Electric vehicles     Light means of
+   Item      (clarifications stated in                         point                                                                         Industrial
+                                                 in                           information               (EV)           transport (LMT)
+               square brackets [])                            source
+                                                                                                                                               system
+
+                                                 BR Art
+           Information on the status of
+                                              3(1)(32) for                 Restricted: Only to
+              the battery, defined as                            BR
+                                             “remanufact                       persons with
+     67.    ‘original’, ‘repurposed’, ‘re-                     Annex                                 Mandatory           Mandatory           Mandatory
+                                              uring” and                    legitimate interest
+            used’, ‘remanufactured’ or                        XIII 4 (c)
+                                             3(2)(2)(a) for                (individual battery)
+                  ‘waste’ [code list]
+                                                “waste”
+
+                                                                           Restricted: Only to      Applicable as       Applicable as       Applicable as
+                                                                 BR
+           The number of charging and                                          persons with          soon as the         soon as the         soon as the
+     68.                                         N/A           Annex
+           discharging cycles [number]                                      legitimate interest    battery starts to   battery starts to   battery starts to
+                                                              XIII 4 (d)
+                                                                           (individual battery)        be used             be used             be used
+
+                                                                           Restricted: Only to      Applicable as       Applicable as       Applicable as
+                                                                 BR
+             Negative events, such as                                          persons with          soon as the         soon as the         soon as the
+     69.                                         N/A           Annex
+           accidents [multiple free texts]                                  legitimate interest    battery starts to   battery starts to   battery starts to
+                                                              XIII 4 (d)
+                                                                           (individual battery)        be used             be used             be used
+
+                Periodically recorded
+                                                                           Restricted: Only to      Applicable as       Applicable as       Applicable as
+           information on the operating                          BR
+                                                                               persons with          soon as the         soon as the         soon as the
+     70.     environmental conditions,           N/A           Annex
+                                                                            legitimate interest    battery starts to   battery starts to   battery starts to
+           including temperature [code                        XIII 4 (d)
+                                                                           (individual battery)        be used             be used             be used
+           list, histogram, related units]
+
+                                                                           Restricted: Only to      Applicable as       Applicable as       Applicable as
+               Periodically recorded                             BR
+                                                                               persons with          soon as the         soon as the         soon as the
+     71.    information on the state of          N/A           Annex
+                                                                            legitimate interest    battery starts to   battery starts to   battery starts to
+               charge [histogram, %]                          XIII 4 (d)
+                                                                           (individual battery)        be used             be used             be used
+
+
+
+Remarks:
+
+
+
+                                                                                                                                                           17
+A) The dynamic dimension of items 51 – 60 is to reflect that the parameters may need to be updated where there is a status change of the battery, e.g.
+   repurposed or remanufactured.
+B) Explanation remarks for column ‘type of information’:
+   1. The information referred relates to the battery model, except when explicitly stated otherwise.
+   2. Further clarifications on ‘persons with legitimate interest’ will be provided by the implementing regulation which will be adopted in line with the
+       empowerment set in the Batteries Regulation.
+
+
+
+
+                                                                                                                                                       18
+

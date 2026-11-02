@@ -1,0 +1,36 @@
+{
+  "theme": "base",
+  "fontFamily": "Noto Sans CJK SC",
+  "themeVariables": {
+    "fontFamily": "Noto Sans CJK SC",
+    "fontSize": "20px",
+    "primaryColor": "#eaf3fc",
+    "primaryTextColor": "#17344d",
+    "primaryBorderColor": "#527eac",
+    "lineColor": "#527085",
+    "actorBkg": "#eaf3fc",
+    "actorBorder": "#527eac",
+    "signalColor": "#17344d",
+    "noteBkgColor": "#fff3dc",
+    "noteTextColor": "#17344d"
+  },
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "linear",
+    "nodeSpacing": 36,
+    "rankSpacing": 46
+  },
+  "sequence": {
+    "diagramMarginX": 32,
+    "diagramMarginY": 20,
+    "actorMargin": 34,
+    "messageMargin": 24,
+    "noteMargin": 12,
+    "mirrorActors": false,
+    "useMaxWidth": false,
+    "actorFontSize": 18,
+    "messageFontSize": 18,
+    "noteFontSize": 16
+  },
+  "htmlLabels": false
+}

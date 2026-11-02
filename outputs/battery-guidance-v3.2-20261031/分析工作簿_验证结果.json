@@ -1,0 +1,22 @@
+{
+  "workbook": "官方指南V3.2_71项解读与系统需求.xlsx",
+  "items": 71,
+  "sheets": [
+    "阅读说明",
+    "71项解读",
+    "系统需求",
+    "待核验事项",
+    "原文矩阵"
+  ],
+  "requirements": 15,
+  "openIssues": 8,
+  "originalFileUnchanged": true,
+  "numberingComplete": true,
+  "rawMatrixMatchesStructuredSource": true,
+  "mandatoryLiteralCountsOnly": {
+    "EV": 45,
+    "LMT": 48,
+    "Industrial": 31
+  },
+  "countCaution": "仅统计原文单元格恰为 Mandatory 的数量，不是剔除条件后的实际必填字段数。"
+}

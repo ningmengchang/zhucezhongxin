@@ -1,0 +1,17 @@
+test_all_registered_curve_profiles (offline_checks.TokenClientChecks.test_all_registered_curve_profiles) ... ok
+test_bad_token_responses_are_not_cached (offline_checks.TokenClientChecks.test_bad_token_responses_are_not_cached) ... ok
+test_customer_environment_and_credential_isolation (offline_checks.TokenClientChecks.test_customer_environment_and_credential_isolation) ... ok
+test_encrypted_pem_loaded_without_exporting_plaintext_file (offline_checks.TokenClientChecks.test_encrypted_pem_loaded_without_exporting_plaintext_file) ... ok
+test_invalid_client_does_not_retry_or_echo_response (offline_checks.TokenClientChecks.test_invalid_client_does_not_retry_or_echo_response) ... ok
+test_new_jti_even_when_time_is_the_same (offline_checks.TokenClientChecks.test_new_jti_even_when_time_is_the_same) ... ok
+test_old_401_does_not_clear_newer_token (offline_checks.TokenClientChecks.test_old_401_does_not_clear_newer_token) ... ok
+test_parallel_calls_only_request_one_token (offline_checks.TokenClientChecks.test_parallel_calls_only_request_one_token) ... ok
+test_retry_after_and_new_assertion_for_every_attempt (offline_checks.TokenClientChecks.test_retry_after_and_new_assertion_for_every_attempt) ... ok
+test_token_cache_and_early_renewal (offline_checks.TokenClientChecks.test_token_cache_and_early_renewal) ... ok
+test_token_form_and_no_redirect (offline_checks.TokenClientChecks.test_token_form_and_no_redirect) ... ok
+test_wrong_audience_rejected_by_signature_validation (offline_checks.TokenClientChecks.test_wrong_audience_rejected_by_signature_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.034s
+
+OK
