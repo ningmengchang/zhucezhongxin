@@ -1,0 +1,184 @@
+﻿模型,验证输入变更,结果
+DppEV_PUB,删除根必填字段 digitalProductPassportId,正确拒绝
+DppEV_PUB,删除根必填字段 uniqueProductIdentifier,正确拒绝
+DppEV_PUB,删除根必填字段 granularity,正确拒绝
+DppEV_PUB,删除根必填字段 dppStatus,正确拒绝
+DppEV_PUB,删除根必填字段 lastUpdate,正确拒绝
+DppEV_PUB,删除根必填字段 contentSpecificationIds,正确拒绝
+DppEV_PUB,删除根必填字段 registrantIdentity,正确拒绝
+DppEV_PUB,删除根必填字段 manufacturerIdentification,正确拒绝
+DppEV_PUB,删除根必填字段 manufacturerPostalAddress,正确拒绝
+DppEV_PUB,删除根必填字段 batteryCategory,正确拒绝
+DppEV_PUB,删除根必填字段 batteryIdentification,正确拒绝
+DppEV_PUB,删除根必填字段 manufacturingPlace,正确拒绝
+DppEV_PUB,删除根必填字段 manufacturingDate,正确拒绝
+DppEV_PUB,删除根必填字段 batteryWeight,正确拒绝
+DppEV_PUB,删除根必填字段 batteryCapacity,正确拒绝
+DppEV_PUB,删除根必填字段 batteryChemistry,正确拒绝
+DppEV_PUB,删除根必填字段 hazardousSubstances,正确拒绝
+DppEV_PUB,删除根必填字段 extinguishingAgent,正确拒绝
+DppEV_PUB,删除根必填字段 criticalRawMaterials,正确拒绝
+DppEV_PUB,删除根必填字段 renewableContentShare,正确拒绝
+DppEV_PUB,删除根必填字段 minimalVoltage,正确拒绝
+DppEV_PUB,删除根必填字段 nominalVoltage,正确拒绝
+DppEV_PUB,删除根必填字段 maximumVoltage,正确拒绝
+DppEV_PUB,删除根必填字段 originalPowerCapability,正确拒绝
+DppEV_PUB,删除根必填字段 powerLimit,正确拒绝
+DppEV_PUB,删除根必填字段 notInUseTemperatureRange,正确拒绝
+DppEV_PUB,删除根必填字段 internalCellResistance,正确拒绝
+DppEV_PUB,删除根必填字段 internalPackResistance,正确拒绝
+DppEV_PUB,删除根必填字段 separateCollectionSymbol,正确拒绝
+DppEV_PUB,删除根必填字段 euDeclarationOfConformity,正确拒绝
+DppEV_PUB,删除根必填字段 wasteBatteryPreventionManagementInfo,正确拒绝
+DppEV_PUB,删除根必填字段 expectedLifetimeCycles,正确拒绝
+DppEV_PUB,删除根必填字段 cycleLifeReferenceTest,正确拒绝
+DppEV_PUB,删除根必填字段 capacityExhaustionThreshold,正确拒绝
+DppEV_PUB,删除根必填字段 initialRoundTripEnergyEfficiency,正确拒绝
+DppEV_PUB,删除根必填字段 roundTripEfficiencyAtHalfCycleLife,正确拒绝
+DppEV_PUB,删除根必填字段 cycleLifeChargeCRate,正确拒绝
+DppEV_PUB,manufacturerIdentification={},正确拒绝
+DppEV_PUB,manufacturerContactDetails={},正确拒绝
+DppEV_PUB,"batteryIdentification={""modelIdentifier"":""M1""}",正确拒绝
+DppEV_PUB,"batteryIdentification={""batchNumber"":""B1""}",正确拒绝
+DppEV_PUB,"manufacturingPlace={""manufacturingCountry"":""IRL""}",正确拒绝
+DppEV_PUB,"batteryCategory=""INVALID""",正确拒绝
+DppEV_PUB,"batteryWeight={""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt"",""value"":1}",正确拒绝
+DppEV_PUB,separateCollectionSymbol=false,正确拒绝
+DppEV_PUB,commercialWarrantyPeriod=-1,正确拒绝
+DppEV_PUB,"commercialWarrantyPeriod=""24""",正确拒绝
+DppEV_PUB,"batteryIdentification={""serialNumber"":""S1""}",正确接受合法组合
+DppEV_PUB,"manufacturerIdentification={""manufacturerName"":""Example manufacturer""}",正确接受合法组合
+DppEV_PUB,省略可选 commercialWarrantyPeriod,正确接受
+DppEV_RES1,删除根必填字段 detailedComposition,正确拒绝
+DppEV_RES1,删除根必填字段 sparePartReplacementDetails,正确拒绝
+DppEV_RES1,删除根必填字段 dismantlingInformation,正确拒绝
+DppEV_RES1,删除根必填字段 safetyMeasures,正确拒绝
+DppEV_RES2,删除根必填字段 complianceTestReportResults,正确拒绝
+DppEV_RES3,删除根必填字段 batteryStatus,正确拒绝
+DppEV_RES3,删除根必填字段 ratedCapacity,正确拒绝
+DppEV_RES3,删除根必填字段 capacityFade,正确拒绝
+DppEV_RES3,删除根必填字段 powerCapability,正确拒绝
+DppEV_RES3,删除根必填字段 powerFade,正确拒绝
+DppEV_RES3,删除根必填字段 internalResistance,正确拒绝
+DppEV_RES3,删除根必填字段 internalResistanceIncrease,正确拒绝
+DppEV_RES3,删除根必填字段 expectedLifetimeCyclesRest,正确拒绝
+DppEV_RES3,删除根必填字段 expectedLifetimeYears,正确拒绝
+DppEV_RES3,删除根必填字段 stateOfCertifiedEnergy,正确拒绝
+DppLMT_PUB,删除根必填字段 digitalProductPassportId,正确拒绝
+DppLMT_PUB,删除根必填字段 uniqueProductIdentifier,正确拒绝
+DppLMT_PUB,删除根必填字段 granularity,正确拒绝
+DppLMT_PUB,删除根必填字段 dppStatus,正确拒绝
+DppLMT_PUB,删除根必填字段 lastUpdate,正确拒绝
+DppLMT_PUB,删除根必填字段 contentSpecificationIds,正确拒绝
+DppLMT_PUB,删除根必填字段 registrantIdentity,正确拒绝
+DppLMT_PUB,删除根必填字段 manufacturerIdentification,正确拒绝
+DppLMT_PUB,删除根必填字段 manufacturerPostalAddress,正确拒绝
+DppLMT_PUB,删除根必填字段 batteryCategory,正确拒绝
+DppLMT_PUB,删除根必填字段 batteryIdentification,正确拒绝
+DppLMT_PUB,删除根必填字段 manufacturingPlace,正确拒绝
+DppLMT_PUB,删除根必填字段 manufacturingDate,正确拒绝
+DppLMT_PUB,删除根必填字段 batteryWeight,正确拒绝
+DppLMT_PUB,删除根必填字段 batteryCapacity,正确拒绝
+DppLMT_PUB,删除根必填字段 batteryChemistry,正确拒绝
+DppLMT_PUB,删除根必填字段 hazardousSubstances,正确拒绝
+DppLMT_PUB,删除根必填字段 extinguishingAgent,正确拒绝
+DppLMT_PUB,删除根必填字段 criticalRawMaterials,正确拒绝
+DppLMT_PUB,删除根必填字段 renewableContentShare,正确拒绝
+DppLMT_PUB,删除根必填字段 minimalVoltage,正确拒绝
+DppLMT_PUB,删除根必填字段 nominalVoltage,正确拒绝
+DppLMT_PUB,删除根必填字段 maximumVoltage,正确拒绝
+DppLMT_PUB,删除根必填字段 originalPowerCapability,正确拒绝
+DppLMT_PUB,删除根必填字段 powerLimit,正确拒绝
+DppLMT_PUB,删除根必填字段 notInUseTemperatureRange,正确拒绝
+DppLMT_PUB,删除根必填字段 internalCellResistance,正确拒绝
+DppLMT_PUB,删除根必填字段 internalPackResistance,正确拒绝
+DppLMT_PUB,删除根必填字段 separateCollectionSymbol,正确拒绝
+DppLMT_PUB,删除根必填字段 euDeclarationOfConformity,正确拒绝
+DppLMT_PUB,删除根必填字段 wasteBatteryPreventionManagementInfo,正确拒绝
+DppLMT_PUB,删除根必填字段 expectedLifetimeCycles,正确拒绝
+DppLMT_PUB,删除根必填字段 cycleLifeReferenceTest,正确拒绝
+DppLMT_PUB,删除根必填字段 initialRoundTripEnergyEfficiency,正确拒绝
+DppLMT_PUB,删除根必填字段 roundTripEfficiencyAtHalfCycleLife,正确拒绝
+DppLMT_PUB,删除根必填字段 cycleLifeChargeCRate,正确拒绝
+DppLMT_PUB,manufacturerIdentification={},正确拒绝
+DppLMT_PUB,manufacturerContactDetails={},正确拒绝
+DppLMT_PUB,"batteryIdentification={""modelIdentifier"":""M1""}",正确拒绝
+DppLMT_PUB,"batteryIdentification={""batchNumber"":""B1""}",正确拒绝
+DppLMT_PUB,"manufacturingPlace={""manufacturingCountry"":""IRL""}",正确拒绝
+DppLMT_PUB,"batteryCategory=""INVALID""",正确拒绝
+DppLMT_PUB,"batteryWeight={""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt"",""value"":1}",正确拒绝
+DppLMT_PUB,separateCollectionSymbol=false,正确拒绝
+DppLMT_PUB,commercialWarrantyPeriod=-1,正确拒绝
+DppLMT_PUB,"commercialWarrantyPeriod=""24""",正确拒绝
+DppLMT_PUB,"batteryIdentification={""serialNumber"":""S1""}",正确接受合法组合
+DppLMT_PUB,"manufacturerIdentification={""manufacturerName"":""Example manufacturer""}",正确接受合法组合
+DppLMT_PUB,省略可选 commercialWarrantyPeriod,正确接受
+DppLMT_RES1,删除根必填字段 detailedComposition,正确拒绝
+DppLMT_RES1,删除根必填字段 sparePartReplacementDetails,正确拒绝
+DppLMT_RES1,删除根必填字段 dismantlingInformation,正确拒绝
+DppLMT_RES1,删除根必填字段 safetyMeasures,正确拒绝
+DppLMT_RES2,删除根必填字段 complianceTestReportResults,正确拒绝
+DppLMT_RES3,删除根必填字段 batteryStatus,正确拒绝
+DppLMT_RES3,删除根必填字段 ratedCapacity,正确拒绝
+DppLMT_RES3,删除根必填字段 capacityFade,正确拒绝
+DppLMT_RES3,删除根必填字段 powerCapability,正确拒绝
+DppLMT_RES3,删除根必填字段 powerFade,正确拒绝
+DppLMT_RES3,删除根必填字段 internalResistance,正确拒绝
+DppLMT_RES3,删除根必填字段 internalResistanceIncrease,正确拒绝
+DppLMT_RES3,删除根必填字段 expectedLifetimeCyclesRest,正确拒绝
+DppLMT_RES3,删除根必填字段 expectedLifetimeYears,正确拒绝
+DppLMT_RES3,删除根必填字段 remainingCapacity,正确拒绝
+DppLMT_RES3,删除根必填字段 remainingPowerCapability,正确拒绝
+DppLMT_RES3,删除根必填字段 remainingRoundTripEfficiency,正确拒绝
+DppLMT_RES3,删除根必填字段 selfDischargingRateSet,正确拒绝
+DppLMT_RES3,删除根必填字段 ohmicResistance,正确拒绝
+DppIND_PUB,删除根必填字段 digitalProductPassportId,正确拒绝
+DppIND_PUB,删除根必填字段 uniqueProductIdentifier,正确拒绝
+DppIND_PUB,删除根必填字段 granularity,正确拒绝
+DppIND_PUB,删除根必填字段 dppStatus,正确拒绝
+DppIND_PUB,删除根必填字段 lastUpdate,正确拒绝
+DppIND_PUB,删除根必填字段 contentSpecificationIds,正确拒绝
+DppIND_PUB,删除根必填字段 registrantIdentity,正确拒绝
+DppIND_PUB,删除根必填字段 manufacturerIdentification,正确拒绝
+DppIND_PUB,删除根必填字段 manufacturerPostalAddress,正确拒绝
+DppIND_PUB,删除根必填字段 batteryCategory,正确拒绝
+DppIND_PUB,删除根必填字段 batteryIdentification,正确拒绝
+DppIND_PUB,删除根必填字段 manufacturingPlace,正确拒绝
+DppIND_PUB,删除根必填字段 manufacturingDate,正确拒绝
+DppIND_PUB,删除根必填字段 batteryWeight,正确拒绝
+DppIND_PUB,删除根必填字段 batteryCapacity,正确拒绝
+DppIND_PUB,删除根必填字段 batteryChemistry,正确拒绝
+DppIND_PUB,删除根必填字段 hazardousSubstances,正确拒绝
+DppIND_PUB,删除根必填字段 extinguishingAgent,正确拒绝
+DppIND_PUB,删除根必填字段 criticalRawMaterials,正确拒绝
+DppIND_PUB,删除根必填字段 renewableContentShare,正确拒绝
+DppIND_PUB,删除根必填字段 minimalVoltage,正确拒绝
+DppIND_PUB,删除根必填字段 nominalVoltage,正确拒绝
+DppIND_PUB,删除根必填字段 maximumVoltage,正确拒绝
+DppIND_PUB,删除根必填字段 originalPowerCapability,正确拒绝
+DppIND_PUB,删除根必填字段 powerLimit,正确拒绝
+DppIND_PUB,删除根必填字段 notInUseTemperatureRange,正确拒绝
+DppIND_PUB,删除根必填字段 internalCellResistance,正确拒绝
+DppIND_PUB,删除根必填字段 internalPackResistance,正确拒绝
+DppIND_PUB,删除根必填字段 separateCollectionSymbol,正确拒绝
+DppIND_PUB,删除根必填字段 euDeclarationOfConformity,正确拒绝
+DppIND_PUB,删除根必填字段 wasteBatteryPreventionManagementInfo,正确拒绝
+DppIND_PUB,manufacturerIdentification={},正确拒绝
+DppIND_PUB,manufacturerContactDetails={},正确拒绝
+DppIND_PUB,"batteryIdentification={""modelIdentifier"":""M1""}",正确拒绝
+DppIND_PUB,"batteryIdentification={""batchNumber"":""B1""}",正确拒绝
+DppIND_PUB,"manufacturingPlace={""manufacturingCountry"":""IRL""}",正确拒绝
+DppIND_PUB,"batteryCategory=""INVALID""",正确拒绝
+DppIND_PUB,"batteryWeight={""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt"",""value"":1}",正确拒绝
+DppIND_PUB,separateCollectionSymbol=false,正确拒绝
+DppIND_PUB,commercialWarrantyPeriod=-1,正确拒绝
+DppIND_PUB,"commercialWarrantyPeriod=""24""",正确拒绝
+DppIND_PUB,"batteryIdentification={""serialNumber"":""S1""}",正确接受合法组合
+DppIND_PUB,"manufacturerIdentification={""manufacturerName"":""Example manufacturer""}",正确接受合法组合
+DppIND_PUB,省略可选 commercialWarrantyPeriod,正确接受
+DppIND_RES1,删除根必填字段 detailedComposition,正确拒绝
+DppIND_RES1,删除根必填字段 sparePartReplacementDetails,正确拒绝
+DppIND_RES1,删除根必填字段 dismantlingInformation,正确拒绝
+DppIND_RES1,删除根必填字段 safetyMeasures,正确拒绝
+DppIND_RES2,删除根必填字段 complianceTestReportResults,正确拒绝
+DppIND_RES3,删除根必填字段 batteryStatus,正确拒绝

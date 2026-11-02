@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "yamlSha256": "e511d0838dd9827484ea05a8404ac41307ef15a7af17e888b86b15dbd4ea247c",
+  "originalConstraintsCompared": 858,
+  "sourceStructureNodesCompared": 865,
+  "fullyAnnotatedPropertyOccurrences": 790,
+  "enumOccurrencesChecked": 210,
+  "vocabularyEntriesChecked": 294,
+  "sourceFilesUnmodified": true,
+  "apifoxUiImportTested": false,
+  "shaclValidationExecuted": false
+}

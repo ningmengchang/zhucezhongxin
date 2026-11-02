@@ -1,0 +1,20 @@
+推荐使用 EVBatteryPassport_长度兼容版.schema.json，从数据模型入口直接创建。
+EVBatteryPassport_Apifox直接建模.schema.json 也已更新为相同的长度兼容内容。
+操作：接口管理 → ＋ → 新建数据模型，名称填写 EVBatteryPassport。
+点击“通过 JSON 等生成”，选择 JSON Schema，将该文件的完整内容粘贴进去，应用并保存。
+模式必须选择 JSON Schema；JSON/XML 模式用于根据样例推断字段，可能将 type、properties 等 Schema 关键字识别为普通字段。
+也可在模型的 JSON Schema／编辑源码入口粘贴完整文件并保存。
+保存后在“接口管理 → 数据模型”中查找 EVBatteryPassport；数据模型与接口目录分开。
+该文件为单个模型本身，包含 63 个顶层字段，无 OpenAPI 外层包装，无辅助模型。
+字段类型、必填、组合与完整枚举值保持一致；模型内使用简明说明。
+兼容版按本次选定的保守预算控制：每段说明最多240个UTF-8字节，标题最多64字节，整个模型和作为JSON字符串转义后均小于64KiB。该预算不是对Apifox官方限额的声明。
+完整字段说明见 EV电池_全部字段说明.csv；逐项枚举名称与详细解释见 EV电池_枚举说明.csv。
+openapi-ev-battery-single-model.yaml 仍保留为 OpenAPI 归档；用户反馈该项目级导入路径成功后未看到模型，不能据解析成功确认模型已创建。
+模型内直接包含 63 个顶层字段：PUB 41、RES1 4、RES2 1、RES3 17。
+所有嵌套对象、数组、通用结构、枚举都内置于同一模型；不增加其他模型或视图包装层。
+完整 EV 对象的 required 为四个源视图 required 的并集；条件必填继续保留 anyOf／dependentRequired。
+每个字段说明开头标注访问级别，保留必填条件、数据类型、完整 URI 枚举及含义。
+EV电池全部语义字段.schema.json 是同一个模型的原生 JSON Schema，供单独的数据模型 Schema 导入／编辑入口使用。
+已校验官方 EV 全量样例、四视图字段覆盖、字段约束一致性及反例。未在 Apifox 界面实测。
+官方步骤：https://docs.apifox.com/create-data-schema
+JSON Schema 模式：https://docs.apifox.com/generate-from-json

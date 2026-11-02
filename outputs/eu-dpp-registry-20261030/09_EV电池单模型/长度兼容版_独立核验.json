@@ -1,0 +1,12 @@
+{
+  "allValidationConstraintsUnchanged": true,
+  "topLevelFields": 63,
+  "requiredFields": 52,
+  "enumFields": 47,
+  "enumValueOccurrences": 151,
+  "maxDescriptionUtf8Bytes": 136,
+  "fileUtf8Bytes": 59804,
+  "officialFullExample": "passed",
+  "missingRequiredCounterexamplesPassed": 52,
+  "apifoxUiSaveTested": false
+}

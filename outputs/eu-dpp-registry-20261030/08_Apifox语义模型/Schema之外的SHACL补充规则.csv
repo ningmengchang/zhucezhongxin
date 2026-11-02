@@ -1,0 +1,99 @@
+﻿模型,字段路径,语义必填或禁止要求,数据类型,枚举要求,规则摘录,来源
+DppBattery_RES1,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$",product/batteries/1.0.0/shapes/res1-batteries-shapes.ttl
+DppBattery_RES2,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$",product/batteries/1.0.0/shapes/res2-batteries-shapes.ttl
+DppBattery_RES3,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$",product/batteries/1.0.0/shapes/res3-batteries-shapes.ttl
+DppEV_RES1,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/evb/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res1-batteries-shapes.ttl
+product/batteries/subgroup/evb/1.0.0/shapes/res1-evb-shapes.ttl"
+DppEV_RES2,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/evb/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res2-batteries-shapes.ttl
+product/batteries/subgroup/evb/1.0.0/shapes/res2-evb-shapes.ttl"
+DppEV_RES3,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/evb/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res3-batteries-shapes.ttl
+product/batteries/subgroup/evb/1.0.0/shapes/res3-evb-shapes.ttl"
+DppEV_RES3,$.ohmicResistance,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-081",product/batteries/subgroup/evb/1.0.0/shapes/res3-evb-shapes.ttl
+DppEV_RES3,$.remainingCapacity,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-075",product/batteries/subgroup/evb/1.0.0/shapes/res3-evb-shapes.ttl
+DppEV_RES3,$.remainingPowerCapability,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-076",product/batteries/subgroup/evb/1.0.0/shapes/res3-evb-shapes.ttl
+DppEV_RES3,$.remainingRoundTripEfficiency,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-077",product/batteries/subgroup/evb/1.0.0/shapes/res3-evb-shapes.ttl
+DppEV_RES3,$.selfDischargingRateSet,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-078",product/batteries/subgroup/evb/1.0.0/shapes/res3-evb-shapes.ttl
+DppLMT_PUB,$.capacityExhaustionThreshold,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-033",product/batteries/subgroup/lmt/1.0.0/shapes/pub-lmt-shapes.ttl
+DppLMT_RES1,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/lmt/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res1-batteries-shapes.ttl
+product/batteries/subgroup/lmt/1.0.0/shapes/res1-lmt-shapes.ttl"
+DppLMT_RES2,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/lmt/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res2-batteries-shapes.ttl
+product/batteries/subgroup/lmt/1.0.0/shapes/res2-lmt-shapes.ttl"
+DppLMT_RES3,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/lmt/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res3-batteries-shapes.ttl
+product/batteries/subgroup/lmt/1.0.0/shapes/res3-lmt-shapes.ttl"
+DppLMT_RES3,$.stateOfCertifiedEnergy,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-074",product/batteries/subgroup/lmt/1.0.0/shapes/res3-lmt-shapes.ttl
+DppIND_PUB,$.capacityExhaustionThreshold,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-033",product/batteries/subgroup/ind/1.0.0/shapes/pub-ind-shapes.ttl
+DppIND_RES1,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/ind/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res1-batteries-shapes.ttl
+product/batteries/subgroup/ind/1.0.0/shapes/res1-ind-shapes.ttl
+product/batteries/subgroup/ind/1.0.0/shapes/res2-ind-shapes.ttl"
+DppIND_RES2,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/ind/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res2-batteries-shapes.ttl
+product/batteries/subgroup/ind/1.0.0/shapes/res1-ind-shapes.ttl
+product/batteries/subgroup/ind/1.0.0/shapes/res2-ind-shapes.ttl"
+DppIND_RES3,$.contentSpecificationIds,该字段未在当前视图 JSON Schema properties 中定义；SHACL 另有数量／类型要求，不能据 Schema 未列 required 判为业务可选。,array<string>；完整结构参见 DppCore.contentSpecificationIds,非封闭枚举；规范 URI 的版本号按 pattern 校验,"qualifiedMinCount=1
+qualifiedMaxCount=1
+message=SEM-MSG-009
+[qualified值子集] datatype=http://www.w3.org/2001/XMLSchema#string
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/\d+\.\d+\.\d+$
+[qualified值子集] pattern=^https://repository\.product-passport\.ec\.europa\.eu/product/batteries/subgroup/ind/\d+\.\d+\.\d+$","product/batteries/1.0.0/shapes/res3-batteries-shapes.ttl
+product/batteries/subgroup/ind/1.0.0/shapes/res3-ind-shapes.ttl"
+DppIND_RES3,$.stateOfCertifiedEnergy,禁止出现（SHACL maxCount=0）,不适用（本访问视图禁止填写）,不适用（本访问视图禁止填写）,"maxCount=0
+message=SEM-BAT-MSG-074",product/batteries/subgroup/ind/1.0.0/shapes/res3-ind-shapes.ttl

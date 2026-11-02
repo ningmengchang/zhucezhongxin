@@ -1,0 +1,27 @@
+Apifox 导入：项目设置 → 导入数据 → OpenAPI/Swagger → 选择 dpp-semantic-models-apifox.yaml。
+JSON 文件与 YAML 内容相同，二选一即可。导入预览中选择数据模型；文件没有接口，导入后到“数据模型”中查看。
+推荐先看 DppEV_PUB、DppLMT_PUB、DppIND_PUB，再按需要查看同类别的 RES1／RES2／RES3。
+共 40 个模型：12 个电池类别／访问视图、5 个核心及电池组基础模型、6 个通用结构、17 个词表。
+
+必填：required 勾选只表示源 JSON Schema 的结构必填；嵌套字段仅在父对象存在时生效。
+manufacturerIdentification、batteryIdentification、manufacturingPlace 等组合规则完整保留，不把组合成员都设成必填。
+工业电池的可充电、循环应用、BMS 等条件在说明中列出；源模型未提供可直接用于 if/then 的判别字段，不虚构判断逻辑。
+SHACL 单独要求但当前 JSON Schema 未定义的字段（如受限视图 contentSpecificationIds）、maxCount=0 的禁止字段，列在模型说明和补充规则 CSV。
+
+类型：保留源字段类型。对象通过 properties 定义但未声明 type 时，导入版显式标注 object。
+多语言对象的键为 xx-XX，至少一个；源 JSON Schema 没有限定动态键的值类型，导入版保留该边界，说明中标出 SHACL 要求语言文本。
+
+枚举：受控词表按本地 2026-10-30 TTL 快照展开为标准 enum，附 x-apifox-enum 的名称与逐项说明。
+业务字段提交完整 URI；语义校验消息模型使用 SEM-... 原始代码。短代码仅用于解释，不能替代字段 URI。
+特定路径有 SHACL 固定值／允许单位时，按该路径收窄枚举。通用单位模型仍提供完整单位表。
+observedCharacteristic 的代码表依据是 common-error-code.ttl 中 SEM-COM-MSG-001；源 Schema 仅声明 URI。
+日期、国家代码外形、contentType、任意文本不依据示例生成封闭枚举。
+
+范围：这是护照语义数据模型；不是注册接口的完整请求体。注册请求体以 02_OpenAPI／04_单文件导入版 为准。
+完整 SHACL／SPARQL 校验还需加载原始上下文和词表；本次做本地 Schema、样例、必填、组合、类型及枚举边界核验，未在 Apifox 界面实测。
+
+复现：在资料包根目录运行 python build_semantic_apifox.py。
+依赖：rdflib 7.4.x、PyYAML、jsonschema、referencing、openpyxl；同时读取 build_schema_excel.py 与 schema_field_details.py。
+官方原始文件未修改。逐字段说明、完整枚举项、模型索引及校验记录都在本目录。
+Apifox 格式依据：https://docs.apifox.com/import-openapi-swagger
+枚举说明扩展依据：https://docs.apifox.com/x-apifox-enum

@@ -1,0 +1,566 @@
+﻿字段路径,字段名称,完整枚举值(JSON),枚举名称,枚举完整说明
+$.granularity,护照粒度,"""https://repository.product-passport.ec.europa.eu/core/vocabs/granularity-level#item""",Item,"原始代码：item
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/granularity-level#item
+来源：core/1.0.0/vocabs/granularity-level.ttl"
+$.dppStatus,护照资源状态,"""https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#invalidStatus""",Invalid status,"原始代码：invalidStatus
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#invalidStatus
+来源：core/1.0.0/vocabs/instance-status.ttl"
+$.dppStatus,护照资源状态,"""https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#validStatus""",Valid status,"原始代码：validStatus
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#validStatus
+来源：core/1.0.0/vocabs/instance-status.ttl"
+$.batteryCategory,电池类别,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#electricVehicleBattery""",EVB - Electric vehicle battery,"原始代码：electricVehicleBattery
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#electricVehicleBattery
+别名／符号：EVB
+Electric vehicle battery
+来源：product/batteries/1.0.0/vocabs/battery-category.ttl"
+$.batteryCategory,电池类别,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#industrialBattery""",IND - Industrial battery >2kWh,"原始代码：industrialBattery
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#industrialBattery
+别名／符号：IND
+IND - Industrial battery
+来源：product/batteries/1.0.0/vocabs/battery-category.ttl"
+$.batteryCategory,电池类别,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#lightMeansOfTransportBattery""",LMT - Light means of transport battery,"原始代码：lightMeansOfTransportBattery
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#lightMeansOfTransportBattery
+别名／符号：LMT
+Light means of transport battery
+来源：product/batteries/1.0.0/vocabs/battery-category.ttl"
+$.batteryWeight.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram""",Gram,"原始代码：gram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram
+别名／符号：g
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.batteryWeight.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram""",Kilogram,"原始代码：kilogram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram
+别名／符号：kg
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.batteryCapacity.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour""",Ampere hour,"原始代码：ampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour
+别名／符号：Ah
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.batteryCapacity.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour""",Milliampere hour,"原始代码：milliampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour
+别名／符号：mAh
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#leadAcid""",Pb - Lead-acid,"原始代码：leadAcid
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#leadAcid
+别名／符号：Lead-acid
+Pb
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLCO""",Li-ion LCO - Lithium ion LCO,"原始代码：lithiumIonLCO
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLCO
+别名／符号：Li-ion LCO
+Lithium-ion LCO
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLFP""",Li-ion LFP - Lithium ion LFP,"原始代码：lithiumIonLFP
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLFP
+别名／符号：Li-ion LFP
+Lithium-ion LFP
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLMO""",Li-ion LMO - Lithium ion LMO,"原始代码：lithiumIonLMO
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLMO
+别名／符号：Li-ion LMO
+Lithium-ion LMO
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonNCA""",Li-ion NCA - Lithium ion NCA,"原始代码：lithiumIonNCA
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonNCA
+别名／符号：Li-ion NCA
+Lithium-ion NCA
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonNMC""",Li-ion NMC - Lithium ion NMC,"原始代码：lithiumIonNMC
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonNMC
+别名／符号：Li-ion NMC
+Lithium-ion NMC
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumMetal""",Li-metal - Lithium metal,"原始代码：lithiumMetal
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumMetal
+别名／符号：Li-metal
+Lithium metal
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#nickelCadmium""",Ni-Cd - Nickel-cadmium,"原始代码：nickelCadmium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#nickelCadmium
+别名／符号：Ni-Cd
+Nickel-cadmium
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#nickelMetalHydride""",Ni-MH - Nickel-metal hydride,"原始代码：nickelMetalHydride
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#nickelMetalHydride
+别名／符号：Ni-MH
+Nickel-metal hydride
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.batteryChemistry[],电池化学体系（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#sodiumIon""",Na-ion - Sodium-ion,"原始代码：sodiumIon
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#sodiumIon
+别名／符号：Na-ion
+Sodium-ion
+来源：product/batteries/1.0.0/vocabs/battery-chemistry.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#antimony""",Antimony,"原始代码：antimony
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#antimony
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#arsenic""",Arsenic,"原始代码：arsenic
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#arsenic
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#baryte""",Baryte,"原始代码：baryte
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#baryte
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#bauxiteAluminaAluminium""",Bauxite/alumina/aluminium,"原始代码：bauxiteAluminaAluminium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#bauxiteAluminaAluminium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#beryllium""",Beryllium,"原始代码：beryllium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#beryllium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#bismuth""",Bismuth,"原始代码：bismuth
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#bismuth
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#boron""",Boron,"原始代码：boron
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#boron
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#cobalt""",Cobalt,"原始代码：cobalt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#cobalt
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#cokingCoal""",Coking coal,"原始代码：cokingCoal
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#cokingCoal
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#copper""",Copper,"原始代码：copper
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#copper
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#feldspar""",Feldspar,"原始代码：feldspar
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#feldspar
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#fluorspar""",Fluorspar,"原始代码：fluorspar
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#fluorspar
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#gallium""",Gallium,"原始代码：gallium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#gallium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#germanium""",Germanium,"原始代码：germanium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#germanium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#graphite""",Graphite,"原始代码：graphite
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#graphite
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#hafnium""",Hafnium,"原始代码：hafnium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#hafnium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#heavyRareEarthElements""",Heavy rare earth elements,"原始代码：heavyRareEarthElements
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#heavyRareEarthElements
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#helium""",Helium,"原始代码：helium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#helium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lightRareEarthElements""",Light rare earth elements,"原始代码：lightRareEarthElements
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lightRareEarthElements
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lithium""",Lithium,"原始代码：lithium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lithium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#magnesium""",Magnesium,"原始代码：magnesium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#magnesium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#manganese""",Manganese,"原始代码：manganese
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#manganese
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#nickelBatteryGrade""",Nickel – battery grade,"原始代码：nickelBatteryGrade
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#nickelBatteryGrade
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#niobium""",Niobium,"原始代码：niobium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#niobium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#phosphateRock""",Phosphate rock,"原始代码：phosphateRock
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#phosphateRock
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#phosphorus""",Phosphorus,"原始代码：phosphorus
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#phosphorus
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#platinumGroupMetals""",Platinum group metals,"原始代码：platinumGroupMetals
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#platinumGroupMetals
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#scandium""",Scandium,"原始代码：scandium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#scandium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#siliconMetal""",Silicon metal,"原始代码：siliconMetal
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#siliconMetal
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#strontium""",Strontium,"原始代码：strontium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#strontium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#tantalum""",Tantalum,"原始代码：tantalum
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#tantalum
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#titaniumMetal""",Titanium metal,"原始代码：titaniumMetal
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#titaniumMetal
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#tungsten""",Tungsten,"原始代码：tungsten
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#tungsten
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.criticalRawMaterials[],关键原材料列表（数组元素）,"""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#vanadium""",Vanadium,"原始代码：vanadium
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#vanadium
+来源：core/1.0.0/vocabs/critical-raw-material.ttl"
+$.renewableContentShare.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.minimalVoltage.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.minimalVoltage.valueRange.observedCharacteristic,被观测特征 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature""",Temperature,"原始代码：temperature
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature
+来源：core/1.0.0/vocabs/observed-characteristic.ttl"
+$.minimalVoltage.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.nominalVoltage.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.nominalVoltage.valueRange.observedCharacteristic,被观测特征 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature""",Temperature,"原始代码：temperature
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature
+来源：core/1.0.0/vocabs/observed-characteristic.ttl"
+$.nominalVoltage.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.maximumVoltage.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.maximumVoltage.valueRange.observedCharacteristic,被观测特征 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature""",Temperature,"原始代码：temperature
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature
+来源：core/1.0.0/vocabs/observed-characteristic.ttl"
+$.maximumVoltage.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.originalPowerCapability.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.powerLimit[].unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.powerLimit[].valueRange.observedCharacteristic,被观测特征 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature""",Temperature,"原始代码：temperature
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature
+来源：core/1.0.0/vocabs/observed-characteristic.ttl"
+$.powerLimit[].valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.observedCharacteristic,被观测特征 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature""",Temperature,"原始代码：temperature
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature
+来源：core/1.0.0/vocabs/observed-characteristic.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour""",Ampere hour,"原始代码：ampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour
+别名／符号：Ah
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram""",Gram,"原始代码：gram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram
+别名／符号：g
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour""",Hour,"原始代码：hour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour
+别名／符号：h
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram""",Kilogram,"原始代码：kilogram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram
+别名／符号：kg
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour""",Milliampere hour,"原始代码：milliampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour
+别名／符号：mAh
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour""",Reciprocal hour,"原始代码：reciprocalHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour
+别名／符号：h-1
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.notInUseTemperatureRange.valueRange.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.internalCellResistance.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.internalPackResistance.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.cycleLifeDischargeCRate.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour""",Reciprocal hour,"原始代码：reciprocalHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour
+别名／符号：h-1
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.separateCollectionSymbol,分类收集标识,true,固定值 true,固定值由原始 JSON Schema const 定义。
+$.chemicalSymbol[],化学物质标识符号（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#cadmiumSymbol""",Cadmium symbol,"原始代码：cadmiumSymbol
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#cadmiumSymbol
+别名／符号：Cd symbol
+来源：product/batteries/1.0.0/vocabs/battery-chemical-symbol.ttl"
+$.chemicalSymbol[],化学物质标识符号（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#leadSymbol""",Lead symbol,"原始代码：leadSymbol
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#leadSymbol
+别名／符号：Pb symbol
+来源：product/batteries/1.0.0/vocabs/battery-chemical-symbol.ttl"
+$.chemicalSymbol[],化学物质标识符号（数组元素）,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#noneSymbol""",Symbol - none,"原始代码：noneSymbol
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#noneSymbol
+来源：product/batteries/1.0.0/vocabs/battery-chemical-symbol.ttl"
+$.capacityExhaustionThreshold.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.initialRoundTripEnergyEfficiency.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.roundTripEfficiencyAtHalfCycleLife.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.cycleLifeChargeCRate.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour""",Reciprocal hour,"原始代码：reciprocalHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour
+别名／符号：h-1
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.roundTripEnergyEfficiency.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.roundTripEnergyEfficiencyFade.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.batteryStatus,电池生命周期状态,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#original""",Original,"原始代码：original
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#original
+来源：product/batteries/1.0.0/vocabs/battery-status.ttl"
+$.batteryStatus,电池生命周期状态,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#remanufactured""",Remanufactured,"原始代码：remanufactured
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#remanufactured
+来源：product/batteries/1.0.0/vocabs/battery-status.ttl"
+$.batteryStatus,电池生命周期状态,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#repurposed""",Repurposed,"原始代码：repurposed
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#repurposed
+来源：product/batteries/1.0.0/vocabs/battery-status.ttl"
+$.batteryStatus,电池生命周期状态,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#reused""",Reused,"原始代码：reused
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#reused
+来源：product/batteries/1.0.0/vocabs/battery-status.ttl"
+$.batteryStatus,电池生命周期状态,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#waste""",Waste,"原始代码：waste
+完整概念 URI：https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#waste
+来源：product/batteries/1.0.0/vocabs/battery-status.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour""",Ampere hour,"原始代码：ampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour
+别名／符号：Ah
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram""",Gram,"原始代码：gram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram
+别名／符号：g
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour""",Hour,"原始代码：hour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour
+别名／符号：h
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram""",Kilogram,"原始代码：kilogram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram
+别名／符号：kg
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour""",Milliampere hour,"原始代码：milliampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour
+别名／符号：mAh
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour""",Reciprocal hour,"原始代码：reciprocalHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour
+别名／符号：h-1
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour""",Ampere hour,"原始代码：ampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour
+别名／符号：Ah
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram""",Gram,"原始代码：gram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram
+别名／符号：g
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour""",Hour,"原始代码：hour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour
+别名／符号：h
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram""",Kilogram,"原始代码：kilogram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram
+别名／符号：kg
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour""",Milliampere hour,"原始代码：milliampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour
+别名／符号：mAh
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour""",Reciprocal hour,"原始代码：reciprocalHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour
+别名／符号：h-1
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.environmentalConditionHistogramSet.environmentalConditionHistogram[].observedCharacteristic,被观测特征 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature""",Temperature,"原始代码：temperature
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature
+来源：core/1.0.0/vocabs/observed-characteristic.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour""",Ampere hour,"原始代码：ampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour
+别名／符号：Ah
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram""",Gram,"原始代码：gram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram
+别名／符号：g
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour""",Hour,"原始代码：hour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour
+别名／符号：h
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram""",Kilogram,"原始代码：kilogram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram
+别名／符号：kg
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour""",Milliampere hour,"原始代码：milliampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour
+别名／符号：mAh
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour""",Reciprocal hour,"原始代码：reciprocalHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour
+别名／符号：h-1
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binRangeUnit,直方图区间单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour""",Ampere hour,"原始代码：ampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour
+别名／符号：Ah
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""",Degree Celsius,"原始代码：degreeCelsius
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius
+别名／符号：°C
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram""",Gram,"原始代码：gram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram
+别名／符号：g
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour""",Hour,"原始代码：hour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour
+别名／符号：h
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram""",Kilogram,"原始代码：kilogram
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram
+别名／符号：kg
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour""",Milliampere hour,"原始代码：milliampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour
+别名／符号：mAh
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour""",Reciprocal hour,"原始代码：reciprocalHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour
+别名／符号：h-1
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt""",Volt,"原始代码：volt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt
+别名／符号：V
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfChargeHistogram[].binValueUnit,直方图频数／数值单位,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.ratedCapacity.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour""",Ampere hour,"原始代码：ampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour
+别名／符号：Ah
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.ratedCapacity.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour""",Milliampere hour,"原始代码：milliampereHour
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour
+别名／符号：mAh
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.capacityFade.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.powerCapability.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt""",Watt,"原始代码：watt
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt
+别名／符号：W
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.powerFade.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.internalResistance.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm""",Ohm,"原始代码：ohm
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm
+别名／符号：Ω
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.internalResistanceIncrease.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
+$.stateOfCertifiedEnergy.unit,计量单位 URI,"""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent""",Percent,"原始代码：percent
+完整概念 URI：https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent
+别名／符号：%
+来源：core/1.0.0/vocabs/measurement-unit.ttl"
