@@ -45,7 +45,7 @@ def direct_import_schema(node):
     return node
 
 
-def compact_import_schema(schema):
+def compact_import_schema(schema, *, battery_label='EV', business_notes=None, compact_level=0):
     """Bound documentation size without changing validation keywords or enum values.
 
     These are conservative export budgets, not a claim about Apifox's undocumented
@@ -75,7 +75,7 @@ def compact_import_schema(schema):
         'expectedLifetimeCycles': '单位：循环次数。',
         'expectedLifetimeCyclesRest': '单位：循环次数。',
         'expectedLifetimeYears': '单位：年，填写整数。',
-        'contentSpecificationIds': '核心、电池组、EV子类规范URI各一项；版本号按pattern填写。',
+        'contentSpecificationIds': f'核心、电池组、{battery_label}子类规范URI各一项；版本号按pattern填写。',
         'numberOfChargingCycles': '电池开始使用后适用；单位：次数。',
         'numberOfDischargingCycles': '电池开始使用后适用；单位：次数。',
         'negativeEvents': '电池开始使用后适用。',
@@ -105,7 +105,10 @@ def compact_import_schema(schema):
                 'description': '动态语言键的值：源Schema未限定JSON类型，语义层要求文本。'
             }
         if path == '$':
-            node['description'] = 'EV全量语义模型：63个顶层字段，四视图必填规则取并集。字段详解及枚举含义见配套CSV。'
+            node['description'] = (f'{battery_label}全量语义模型：{len(schema["properties"])}个顶层字段，'
+                                   '四视图必填规则取并集。字段详解及枚举含义见配套CSV。')
+            if compact_level:
+                node['description'] += '类型见type；未列enum者为非枚举。'
             return
         field = path.rstrip('[]').rsplit('.', 1)[-1]
         typ = original.get('type', '源Schema未限定')
@@ -127,12 +130,13 @@ def compact_import_schema(schema):
         else:
             status = '可选'
         values = node.get('enum', node.get('items', {}).get('enum', []))
-        enum_text = ('枚举' + str(len(values)) + '项' + ('，使用完整URI。' if values and isinstance(values[0], str) and values[0].startswith('https://') else '。')) if values else '非枚举。'
+        enum_text = ('枚举' + str(len(values)) + '项' + ('，使用完整URI。' if values and isinstance(values[0], str) and values[0].startswith('https://') else '。')) if values else ('' if compact_level else '非枚举。')
         language_object = original.get('type') == 'object' and 'propertyNames' in original
         notes = ('至少一个xx-XX语言键；源Schema未限定值类型，语义要求文本。' if language_object
                  else special.get(field, ''))
         node['description'] = combine([
-            original.get('x-access-view', '') + '；' + status + '；' + typ + '。',
+            original.get('x-access-view', '') + '；' + status + ('。' if compact_level >= 2 else '；' + typ + '。'),
+            (business_notes or {}).get(path, ''),
             notes,
             enum_text,
             '格式：' + node['format'] + '。' if 'format' in node else '',

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "sourceValidationConstraintsCompared": 222,
+  "topLevelFields": 66,
+  "requiredTopLevelFields": 55,
+  "compactAndFullConstraintsIdentical": true,
+  "officialExamplePassedBothVersions": true,
+  "sha256": "74e92613caf5ff5e71d27f8aa7af8a6bea3e215fa6aefdc07349d7d1abd057e0",
+  "apifoxUiSaveTested": false
+}

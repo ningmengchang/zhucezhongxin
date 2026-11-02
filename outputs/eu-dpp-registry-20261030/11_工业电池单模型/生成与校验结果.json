@@ -1,0 +1,35 @@
+{
+  "modelName": "INDBatteryPassport",
+  "batterySubgroup": "ind",
+  "modelCountPerFile": 1,
+  "topLevelFieldCount": 66,
+  "requiredTopLevelFieldCount": 37,
+  "accessViewFieldCounts": {
+    "PUB": 40,
+    "RES1": 4,
+    "RES2": 1,
+    "RES3": 21
+  },
+  "fieldAndArrayItemDescriptionCount": 218,
+  "allSourceViewFieldsCovered": true,
+  "validationConstraintsIdenticalBetweenVersions": true,
+  "enumFields": 50,
+  "enumValueOccurrences": 155,
+  "allEnumValuesPreserved": true,
+  "officialCompleteExamplePassedBothVersions": true,
+  "boundaryAndCounterexampleChecks": 80,
+  "compactDocumentationLevel": 2,
+  "compactUtf8Bytes": 59206,
+  "compactAsJsonStringUtf8Bytes": 63986,
+  "maxCompactDescriptionUtf8Bytes": 166,
+  "maxCompactTitleUtf8Bytes": 51,
+  "compactBudgetIsOfficialApifoxLimit": false,
+  "unresolvedReferences": 0,
+  "apifoxUiSaveTested": false,
+  "shaclValidationExecuted": false,
+  "officialExample": "product/batteries/subgroup/ind/1.0.0/tests/conforms/batteries-ind.json",
+  "files": {
+    "工业电池全部语义字段.schema.json": "bd819bae68d64ea73921f7ca773d5a8c80436022adbe1d85b812f7146fb8a8ab",
+    "INDBatteryPassport_长度兼容版.schema.json": "485e5033616a151744efc12e388cb71ef5a6446f809f08dffd540dd6f09b5d6f"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "modelName": "LMTBatteryPassport",
+  "batterySubgroup": "lmt",
+  "modelCountPerFile": 1,
+  "topLevelFieldCount": 66,
+  "requiredTopLevelFieldCount": 55,
+  "accessViewFieldCounts": {
+    "PUB": 40,
+    "RES1": 4,
+    "RES2": 1,
+    "RES3": 21
+  },
+  "fieldAndArrayItemDescriptionCount": 218,
+  "allSourceViewFieldsCovered": true,
+  "validationConstraintsIdenticalBetweenVersions": true,
+  "enumFields": 50,
+  "enumValueOccurrences": 155,
+  "allEnumValuesPreserved": true,
+  "officialCompleteExamplePassedBothVersions": true,
+  "boundaryAndCounterexampleChecks": 80,
+  "compactDocumentationLevel": 1,
+  "compactUtf8Bytes": 60431,
+  "compactAsJsonStringUtf8Bytes": 65247,
+  "maxCompactDescriptionUtf8Bytes": 163,
+  "maxCompactTitleUtf8Bytes": 51,
+  "compactBudgetIsOfficialApifoxLimit": false,
+  "unresolvedReferences": 0,
+  "apifoxUiSaveTested": false,
+  "shaclValidationExecuted": false,
+  "officialExample": "product/batteries/subgroup/lmt/1.0.0/tests/conforms/batteries-lmt.json",
+  "files": {
+    "LMT电池全部语义字段.schema.json": "b79983fe4c4704192497af6188481d5171ce4a1441437709d513e4d49173cd94",
+    "LMTBatteryPassport_长度兼容版.schema.json": "74e92613caf5ff5e71d27f8aa7af8a6bea3e215fa6aefdc07349d7d1abd057e0"
+  }
+}
