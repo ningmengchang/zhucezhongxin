@@ -1,0 +1,50 @@
+{
+  "version": "4.0-review.1",
+  "referenceUrl": "https://alidocs.dingtalk.com/i/nodes/m9bN7RYPWdYPgl7vCjyrayLgVZd1wyK0",
+  "referenceSheet": "工程化3.4",
+  "referenceReadRange": "A1:S500",
+  "referenceHasMore": false,
+  "referenceRowsPreserved": 121,
+  "sourceSemanticVersion": "2026-10-30",
+  "profileTopLevelFields": {
+    "EV": 63,
+    "LMT": 66,
+    "IND": 66
+  },
+  "mainRows": 199,
+  "enumRows": 116,
+  "semanticRuleRows": 642,
+  "ruleRows": 732,
+  "diffRows": 181,
+  "originalBusinessRowsAllRepresented": true,
+  "semanticPathsAllRepresented": true,
+  "mappedMainRows": 124,
+  "legacyReviewRows": 73,
+  "newSemanticRows": 60,
+  "statusCounts": {
+    "旧表保留待确认": 35,
+    "结构／类型调整": 39,
+    "已映射": 25,
+    "候选映射待确认": 38,
+    "类别不适用": 2,
+    "新增结构组": 8,
+    "新增语义字段": 52
+  },
+  "requiredCounts": {
+    "M": 129,
+    "V": 22,
+    "C": 45,
+    "待确认": 1,
+    "N/A": 2
+  },
+  "verification": "passed",
+  "onlineOriginalModified": false,
+  "officialShaclExecution": false,
+  "sourceSha256": {
+    "engineering34Snapshot": "41200f20120433b77be80578c60e71e9dc229b992b31f593922d1d22e64af2a6",
+    "EV": "661ef740d7b02ba3a505f847ac0c2beac75a1b245978f36cc07ebb294488f03c",
+    "LMT": "b79983fe4c4704192497af6188481d5171ce4a1441437709d513e4d49173cd94",
+    "IND": "bd819bae68d64ea73921f7ca773d5a8c80436022adbe1d85b812f7146fb8a8ab"
+  },
+  "outputSha256": "7a6880088bea38c5f975e686c1ce34a679d4bd2812c8b9269807211d99e964b5"
+}

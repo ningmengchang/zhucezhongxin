@@ -1,0 +1,3085 @@
+[
+  {
+    "id": "V4-0001",
+    "code": "dppSchemaVersion",
+    "title": "电池护照架构版本",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 2,
+    "added": false,
+    "excel_row": 2
+  },
+  {
+    "id": "V4-0002",
+    "code": "internalDppStatus",
+    "title": "电池护照状态",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 3,
+    "added": false,
+    "excel_row": 3
+  },
+  {
+    "id": "V4-0003",
+    "code": "granularity",
+    "title": "电池护照颗粒度",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.granularity",
+    "status": "结构／类型调整",
+    "oldrow": 4,
+    "added": false,
+    "excel_row": 4
+  },
+  {
+    "id": "V4-0004",
+    "code": "lastUpdated",
+    "title": "最新更新时间",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.lastUpdate",
+    "status": "已映射",
+    "oldrow": 5,
+    "added": false,
+    "excel_row": 5
+  },
+  {
+    "id": "V4-0005",
+    "code": "digitalProductPassportId",
+    "title": "电池护照唯一标识符",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.digitalProductPassportId",
+    "status": "已映射",
+    "oldrow": 6,
+    "added": false,
+    "excel_row": 6
+  },
+  {
+    "id": "V4-0006",
+    "code": "uniqueProductIdentifier",
+    "title": "电池唯一标识符",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.uniqueProductIdentifier",
+    "status": "已映射",
+    "oldrow": 7,
+    "added": false,
+    "excel_row": 7
+  },
+  {
+    "id": "V4-0007",
+    "code": "economicOperatorId",
+    "title": "经济运营商唯一标识符",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.registrantIdentity",
+    "status": "候选映射待确认",
+    "oldrow": 8,
+    "added": false,
+    "excel_row": 8
+  },
+  {
+    "id": "V4-0008",
+    "code": "facilityId",
+    "title": "工厂唯一标识符",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 9,
+    "added": false,
+    "excel_row": 9
+  },
+  {
+    "id": "V4-0009",
+    "code": "contentSpecificationIds",
+    "title": "参考标准ID",
+    "groups": [
+      "EV"
+    ],
+    "required": "M",
+    "path": "$.contentSpecificationIds",
+    "status": "结构／类型调整",
+    "oldrow": 10,
+    "added": false,
+    "excel_row": 10
+  },
+  {
+    "id": "V4-0010",
+    "code": "contentSpecificationIds",
+    "title": "参考标准ID",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.contentSpecificationIds",
+    "status": "结构／类型调整",
+    "oldrow": 10,
+    "added": false,
+    "excel_row": 11
+  },
+  {
+    "id": "V4-0011",
+    "code": "contentSpecificationIds",
+    "title": "参考标准ID",
+    "groups": [
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.contentSpecificationIds",
+    "status": "结构／类型调整",
+    "oldrow": 10,
+    "added": false,
+    "excel_row": 12
+  },
+  {
+    "id": "V4-0012",
+    "code": "batteryModelIdentifier",
+    "title": "电池型号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.batteryIdentification.modelIdentifier",
+    "status": "已映射",
+    "oldrow": 11,
+    "added": false,
+    "excel_row": 13
+  },
+  {
+    "id": "V4-0013",
+    "code": "batterySerialNumber",
+    "title": "电池序列号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.batteryIdentification.serialNumber",
+    "status": "已映射",
+    "oldrow": 12,
+    "added": false,
+    "excel_row": 14
+  },
+  {
+    "id": "V4-0014",
+    "code": "uniqueManufacturerIdentifier",
+    "title": "制造商唯一标识符",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 13,
+    "added": false,
+    "excel_row": 15
+  },
+  {
+    "id": "V4-0015",
+    "code": "thirdPartyServiceProvider",
+    "title": "第三方服务提供商",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 14,
+    "added": false,
+    "excel_row": 16
+  },
+  {
+    "id": "V4-0016",
+    "code": "economicOperatorName",
+    "title": "经济运营商名称",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 15,
+    "added": false,
+    "excel_row": 17
+  },
+  {
+    "id": "V4-0017",
+    "code": "economicOperatorTradeName",
+    "title": "经济运营商注册商号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 16,
+    "added": false,
+    "excel_row": 18
+  },
+  {
+    "id": "V4-0018",
+    "code": "economicOperatorTrademark",
+    "title": "经济运营商注册商标",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "待确认",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 17,
+    "added": false,
+    "excel_row": 19
+  },
+  {
+    "id": "V4-0019",
+    "code": "economicOperatorPostalAddress",
+    "title": "经济运营商邮政地址",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 18,
+    "added": false,
+    "excel_row": 20
+  },
+  {
+    "id": "V4-0020",
+    "code": "economicOperatorWebsite",
+    "title": "经济运营商网址",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 19,
+    "added": false,
+    "excel_row": 21
+  },
+  {
+    "id": "V4-0021",
+    "code": "economicOperatorEmail",
+    "title": "经济运营商网址电子邮箱",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 20,
+    "added": false,
+    "excel_row": 22
+  },
+  {
+    "id": "V4-0022",
+    "code": "manufacturerName",
+    "title": "制造商名称",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.manufacturerIdentification.manufacturerName",
+    "status": "已映射",
+    "oldrow": 21,
+    "added": false,
+    "excel_row": 23
+  },
+  {
+    "id": "V4-0023",
+    "code": "manufacturerTradeName",
+    "title": "制造商注册商号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.manufacturerIdentification.manufacturerTradeName",
+    "status": "已映射",
+    "oldrow": 22,
+    "added": false,
+    "excel_row": 24
+  },
+  {
+    "id": "V4-0024",
+    "code": "manufacturerTrademark",
+    "title": "制造商注册商标",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.manufacturerIdentification.manufacturerTrademark",
+    "status": "已映射",
+    "oldrow": 23,
+    "added": false,
+    "excel_row": 25
+  },
+  {
+    "id": "V4-0025",
+    "code": "manufacturerPostalAddress",
+    "title": "制造商邮政地址",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.manufacturerPostalAddress",
+    "status": "已映射",
+    "oldrow": 24,
+    "added": false,
+    "excel_row": 26
+  },
+  {
+    "id": "V4-0026",
+    "code": "manufacturerWebsite",
+    "title": "制造商网址",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.manufacturerContactDetails.manufacturerWebsite",
+    "status": "已映射",
+    "oldrow": 25,
+    "added": false,
+    "excel_row": 27
+  },
+  {
+    "id": "V4-0027",
+    "code": "manufacturerEmail",
+    "title": "制造商网址电子邮箱",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.manufacturerContactDetails.manufacturerEmail",
+    "status": "已映射",
+    "oldrow": 26,
+    "added": false,
+    "excel_row": 28
+  },
+  {
+    "id": "V4-0028",
+    "code": "manufacturingPlace",
+    "title": "生产地点",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.manufacturingPlace",
+    "status": "结构／类型调整",
+    "oldrow": 27,
+    "added": false,
+    "excel_row": 29
+  },
+  {
+    "id": "V4-0029",
+    "code": "manufacturingDate",
+    "title": "生产日期",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.manufacturingDate",
+    "status": "已映射",
+    "oldrow": 28,
+    "added": false,
+    "excel_row": 30
+  },
+  {
+    "id": "V4-0030",
+    "code": "dateOfPuttingTheBatteryIntoService",
+    "title": "投入使用日期",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 29,
+    "added": false,
+    "excel_row": 31
+  },
+  {
+    "id": "V4-0031",
+    "code": "warrantyPeriodOfTheBattery",
+    "title": "质保期",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.commercialWarrantyPeriod",
+    "status": "结构／类型调整",
+    "oldrow": 30,
+    "added": false,
+    "excel_row": 32
+  },
+  {
+    "id": "V4-0032",
+    "code": "batteryCategory",
+    "title": "电池类型",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.batteryCategory",
+    "status": "结构／类型调整",
+    "oldrow": 31,
+    "added": false,
+    "excel_row": 33
+  },
+  {
+    "id": "V4-0033",
+    "code": "batteryWeight",
+    "title": "电池重量",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.batteryWeight.value",
+    "status": "已映射",
+    "oldrow": 32,
+    "added": false,
+    "excel_row": 34
+  },
+  {
+    "id": "V4-0034",
+    "code": "batteryStatus",
+    "title": "电池状态",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.batteryStatus",
+    "status": "结构／类型调整",
+    "oldrow": 33,
+    "added": false,
+    "excel_row": 35
+  },
+  {
+    "id": "V4-0035",
+    "code": "separateCollectionSymbol",
+    "title": "分类收集标识",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.separateCollectionSymbol",
+    "status": "结构／类型调整",
+    "oldrow": 34,
+    "added": false,
+    "excel_row": 36
+  },
+  {
+    "id": "V4-0036",
+    "code": "carbonFootprintLabel",
+    "title": "碳足迹标签",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 35,
+    "added": false,
+    "excel_row": 37
+  },
+  {
+    "id": "V4-0037",
+    "code": "extinguishingAgent",
+    "title": "灭火剂",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.extinguishingAgent",
+    "status": "结构／类型调整",
+    "oldrow": 36,
+    "added": false,
+    "excel_row": 38
+  },
+  {
+    "id": "V4-0038",
+    "code": "meaningOfLabelsAndSymbols",
+    "title": "标识说明",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.batteryLabelSymbolMeaning",
+    "status": "结构／类型调整",
+    "oldrow": 37,
+    "added": false,
+    "excel_row": 39
+  },
+  {
+    "id": "V4-0039",
+    "code": "euDeclarationOfConformity",
+    "title": "欧盟符合性声明",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.euDeclarationOfConformity",
+    "status": "结构／类型调整",
+    "oldrow": 38,
+    "added": false,
+    "excel_row": 40
+  },
+  {
+    "id": "V4-0040",
+    "code": "restrictedSubstanceTestReports",
+    "title": "禁限用物质检测报告",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 39,
+    "added": false,
+    "excel_row": 41
+  },
+  {
+    "id": "V4-0041",
+    "code": "recycledContentTechnicalDocuments",
+    "title": "回收料含量技术文档",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 40,
+    "added": false,
+    "excel_row": 42
+  },
+  {
+    "id": "V4-0042",
+    "code": "performanceAndDurabilityTechnicalDocuments",
+    "title": "性能、耐久性的技术文档",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.complianceTestReportResults",
+    "status": "候选映射待确认",
+    "oldrow": 41,
+    "added": false,
+    "excel_row": 43
+  },
+  {
+    "id": "V4-0043",
+    "code": "stateOfHealthAndLifetimeDocuments",
+    "title": "电池健康状态和预期寿命信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.complianceTestReportResults",
+    "status": "候选映射待确认",
+    "oldrow": 42,
+    "added": false,
+    "excel_row": 44
+  },
+  {
+    "id": "V4-0044",
+    "code": "regulatoryTechnicalDocuments",
+    "title": "法规要求的产品技术文档",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 43,
+    "added": false,
+    "excel_row": 45
+  },
+  {
+    "id": "V4-0045",
+    "code": "batteryUserManuals",
+    "title": "电池使用说明",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 44,
+    "added": false,
+    "excel_row": 46
+  },
+  {
+    "id": "V4-0046",
+    "code": "batteryCarbonFootprintPerFunctionalUnit",
+    "title": "每功能单元电池碳足迹",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 45,
+    "added": false,
+    "excel_row": 47
+  },
+  {
+    "id": "V4-0047",
+    "code": "contributionOfRawMaterialAcquisitionAndPreProcessingLifecycleStage",
+    "title": "原材料获取与处理阶段碳足迹",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 46,
+    "added": false,
+    "excel_row": 48
+  },
+  {
+    "id": "V4-0048",
+    "code": "contributionOfMainProductProductionLifecycleStage",
+    "title": "核心生产阶段碳足迹",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 47,
+    "added": false,
+    "excel_row": 49
+  },
+  {
+    "id": "V4-0049",
+    "code": "contributionOfDistributionLifecycleStage",
+    "title": "分销阶段碳足迹",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 48,
+    "added": false,
+    "excel_row": 50
+  },
+  {
+    "id": "V4-0050",
+    "code": "contributionOfEndOfLifeAndRecyclingLifecycleStage",
+    "title": "退役与回收阶段碳足迹",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 49,
+    "added": false,
+    "excel_row": 51
+  },
+  {
+    "id": "V4-0051",
+    "code": "carbonFootprintPerformanceClass",
+    "title": "碳足迹表现等级",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 50,
+    "added": false,
+    "excel_row": 52
+  },
+  {
+    "id": "V4-0052",
+    "code": "webLinkToPublicCarbonFootprintStudy",
+    "title": "碳足迹研究",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 51,
+    "added": false,
+    "excel_row": 53
+  },
+  {
+    "id": "V4-0053",
+    "code": "absoluteBatteryCarbonFootprint",
+    "title": "电池碳足迹绝对值",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 52,
+    "added": false,
+    "excel_row": 54
+  },
+  {
+    "id": "V4-0054",
+    "code": "informationOfDueDiligenceReport",
+    "title": "尽职调查报告信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 53,
+    "added": false,
+    "excel_row": 55
+  },
+  {
+    "id": "V4-0055",
+    "code": "thirdPartyAssurancesOfRecognisedSchemes",
+    "title": "第三方供应链保证",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 54,
+    "added": false,
+    "excel_row": 56
+  },
+  {
+    "id": "V4-0056",
+    "code": "supplyChainIndices",
+    "title": "供应链指数",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 55,
+    "added": false,
+    "excel_row": 57
+  },
+  {
+    "id": "V4-0057",
+    "code": "batteryChemistry",
+    "title": "化学体系",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.batteryChemistry",
+    "status": "结构／类型调整",
+    "oldrow": 56,
+    "added": false,
+    "excel_row": 58
+  },
+  {
+    "id": "V4-0058",
+    "code": "criticalRawMaterials",
+    "title": "关键原材料",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.criticalRawMaterials",
+    "status": "结构／类型调整",
+    "oldrow": 57,
+    "added": false,
+    "excel_row": 59
+  },
+  {
+    "id": "V4-0059",
+    "code": "cathodeMaterialName",
+    "title": "正极材料名称",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.detailedComposition",
+    "status": "候选映射待确认",
+    "oldrow": 58,
+    "added": false,
+    "excel_row": 60
+  },
+  {
+    "id": "V4-0060",
+    "code": "cathodeMaterialCasNumber",
+    "title": "正极材料CAS码",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.detailedComposition",
+    "status": "候选映射待确认",
+    "oldrow": 59,
+    "added": false,
+    "excel_row": 61
+  },
+  {
+    "id": "V4-0061",
+    "code": "anodeMaterialName",
+    "title": "负极材料名称",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.detailedComposition",
+    "status": "候选映射待确认",
+    "oldrow": 60,
+    "added": false,
+    "excel_row": 62
+  },
+  {
+    "id": "V4-0062",
+    "code": "anodeMaterialCasNumber",
+    "title": "负极材料CAS码",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.detailedComposition",
+    "status": "候选映射待确认",
+    "oldrow": 61,
+    "added": false,
+    "excel_row": 63
+  },
+  {
+    "id": "V4-0063",
+    "code": "electrolyteMaterialName",
+    "title": "电解液材料名称",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.detailedComposition",
+    "status": "候选映射待确认",
+    "oldrow": 62,
+    "added": false,
+    "excel_row": 64
+  },
+  {
+    "id": "V4-0064",
+    "code": "electrolyteMaterialCasNumber",
+    "title": "电解液CAS码",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.detailedComposition",
+    "status": "候选映射待确认",
+    "oldrow": 63,
+    "added": false,
+    "excel_row": 65
+  },
+  {
+    "id": "V4-0065",
+    "code": "hazardousSubstanceNames",
+    "title": "有害物质名称",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.hazardousSubstances",
+    "status": "结构／类型调整",
+    "oldrow": 64,
+    "added": false,
+    "excel_row": 66
+  },
+  {
+    "id": "V4-0066",
+    "code": "hazardousSubstanceCasNumber",
+    "title": "有害物质CAS号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.hazardousSubstances",
+    "status": "候选映射待确认",
+    "oldrow": 65,
+    "added": false,
+    "excel_row": 67
+  },
+  {
+    "id": "V4-0067",
+    "code": "hazardousSubstanceClassification",
+    "title": "有害物质等级和类别",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.hazardousSubstances",
+    "status": "候选映射待确认",
+    "oldrow": 66,
+    "added": false,
+    "excel_row": 68
+  },
+  {
+    "id": "V4-0068",
+    "code": "hazardousSubstanceLocation",
+    "title": "有害物质所在位置",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.hazardousSubstances",
+    "status": "候选映射待确认",
+    "oldrow": 67,
+    "added": false,
+    "excel_row": 69
+  },
+  {
+    "id": "V4-0069",
+    "code": "hazardousSubstanceConcentration",
+    "title": "有害物质浓度",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.hazardousSubstances",
+    "status": "候选映射待确认",
+    "oldrow": 68,
+    "added": false,
+    "excel_row": 70
+  },
+  {
+    "id": "V4-0070",
+    "code": "batterySubstancesImpact",
+    "title": "有害物质影响",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.batterySubstancesImpact",
+    "status": "结构／类型调整",
+    "oldrow": 69,
+    "added": false,
+    "excel_row": 71
+  },
+  {
+    "id": "V4-0071",
+    "code": "dismantlingInformationManualsForTheRemovalAndTheDisassemblyOfTheBatteryPack",
+    "title": "拆卸指南",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.dismantlingInformation",
+    "status": "结构／类型调整",
+    "oldrow": 70,
+    "added": false,
+    "excel_row": 72
+  },
+  {
+    "id": "V4-0072",
+    "code": "partNumbersForComponents",
+    "title": "零部件编号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.sparePartReplacementDetails",
+    "status": "候选映射待确认",
+    "oldrow": 71,
+    "added": false,
+    "excel_row": 73
+  },
+  {
+    "id": "V4-0073",
+    "code": "sparePartReplacementPostalAddress",
+    "title": "备件更换联系地址",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.sparePartReplacementDetails",
+    "status": "候选映射待确认",
+    "oldrow": 72,
+    "added": false,
+    "excel_row": 74
+  },
+  {
+    "id": "V4-0074",
+    "code": "sparePartReplacementWebsite",
+    "title": "备件更换联系网址",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.sparePartReplacementDetails",
+    "status": "候选映射待确认",
+    "oldrow": 73,
+    "added": false,
+    "excel_row": 75
+  },
+  {
+    "id": "V4-0075",
+    "code": "sparePartReplacementEmail",
+    "title": "备件更换联系邮箱",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.sparePartReplacementDetails",
+    "status": "候选映射待确认",
+    "oldrow": 74,
+    "added": false,
+    "excel_row": 76
+  },
+  {
+    "id": "V4-0076",
+    "code": "safetyMeasures",
+    "title": "安全措施",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.safetyMeasures",
+    "status": "结构／类型调整",
+    "oldrow": 75,
+    "added": false,
+    "excel_row": 77
+  },
+  {
+    "id": "V4-0077",
+    "code": "postConsumerRecycledNickelShare",
+    "title": "再循环镍含量",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 76,
+    "added": false,
+    "excel_row": 78
+  },
+  {
+    "id": "V4-0078",
+    "code": "postConsumerRecycledCobaltShare",
+    "title": "再循环钴含量",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 77,
+    "added": false,
+    "excel_row": 79
+  },
+  {
+    "id": "V4-0079",
+    "code": "postConsumerRecycledLithiumShare",
+    "title": "再循环锂含量",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 78,
+    "added": false,
+    "excel_row": 80
+  },
+  {
+    "id": "V4-0080",
+    "code": "recycledLeadShare",
+    "title": "再循环铅含量",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 79,
+    "added": false,
+    "excel_row": 81
+  },
+  {
+    "id": "V4-0081",
+    "code": "renewableContentShare",
+    "title": "可再生材料含量",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.renewableContentShare.value",
+    "status": "结构／类型调整",
+    "oldrow": 80,
+    "added": false,
+    "excel_row": 82
+  },
+  {
+    "id": "V4-0082",
+    "code": "informationOnTheRoleOfEndUsersInContributingToWastePrevention",
+    "title": "终端用户预防电池报废指南",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.endUserRoleInWastePrevention",
+    "status": "结构／类型调整",
+    "oldrow": 81,
+    "added": false,
+    "excel_row": 83
+  },
+  {
+    "id": "V4-0083",
+    "code": "informationOnTheRoleOfEndUsersInContributingToTheSeparateCollectionOfWasteBatteries",
+    "title": "终端用户分类回收指南",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.endUserRoleInSeparateCollection",
+    "status": "结构／类型调整",
+    "oldrow": 82,
+    "added": false,
+    "excel_row": 84
+  },
+  {
+    "id": "V4-0084",
+    "code": "informationOnBatteryCollectionPreparationForSecondLifeAndOnTreatmentAtEndOfLife",
+    "title": "废旧电池回收利用指南",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.wasteBatteryPreventionManagementInfo",
+    "status": "候选映射待确认",
+    "oldrow": 83,
+    "added": false,
+    "excel_row": 85
+  },
+  {
+    "id": "V4-0085",
+    "code": "ratedCapacity",
+    "title": "额定容量",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.batteryCapacity.value",
+    "status": "已映射",
+    "oldrow": 84,
+    "added": false,
+    "excel_row": 86
+  },
+  {
+    "id": "V4-0086",
+    "code": "remainingCapacity",
+    "title": "剩余容量",
+    "groups": [
+      "EV"
+    ],
+    "required": "N/A",
+    "path": "$.remainingCapacity.value",
+    "status": "类别不适用",
+    "oldrow": 85,
+    "added": false,
+    "excel_row": 87
+  },
+  {
+    "id": "V4-0087",
+    "code": "remainingCapacity",
+    "title": "剩余容量",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.remainingCapacity.value",
+    "status": "结构／类型调整",
+    "oldrow": 85,
+    "added": false,
+    "excel_row": 88
+  },
+  {
+    "id": "V4-0088",
+    "code": "remainingCapacity",
+    "title": "剩余容量",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.remainingCapacity.value",
+    "status": "结构／类型调整",
+    "oldrow": 85,
+    "added": false,
+    "excel_row": 89
+  },
+  {
+    "id": "V4-0089",
+    "code": "capacityFade",
+    "title": "容量衰减率",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.capacityFade.value",
+    "status": "结构／类型调整",
+    "oldrow": 86,
+    "added": false,
+    "excel_row": 90
+  },
+  {
+    "id": "V4-0090",
+    "code": "capacityFade",
+    "title": "容量衰减率",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.capacityFade.value",
+    "status": "结构／类型调整",
+    "oldrow": 86,
+    "added": false,
+    "excel_row": 91
+  },
+  {
+    "id": "V4-0091",
+    "code": "certifiedUsableBatteryEnergy",
+    "title": "认证可用电量",
+    "groups": [
+      "EV"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 87,
+    "added": false,
+    "excel_row": 92
+  },
+  {
+    "id": "V4-0092",
+    "code": "remainingUsableBatteryEnergy",
+    "title": "剩余可用电量",
+    "groups": [
+      "EV"
+    ],
+    "required": "V",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 88,
+    "added": false,
+    "excel_row": 93
+  },
+  {
+    "id": "V4-0093",
+    "code": "stateOfCertifiedEnergySOCE",
+    "title": "认证能源状态",
+    "groups": [
+      "EV"
+    ],
+    "required": "M",
+    "path": "$.stateOfCertifiedEnergy.value",
+    "status": "结构／类型调整",
+    "oldrow": 89,
+    "added": false,
+    "excel_row": 94
+  },
+  {
+    "id": "V4-0094",
+    "code": "stateOfChargeSoC",
+    "title": "荷电状态",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "待映射",
+    "status": "旧表保留待确认",
+    "oldrow": 90,
+    "added": false,
+    "excel_row": 95
+  },
+  {
+    "id": "V4-0095",
+    "code": "nominalVoltage",
+    "title": "标称电压",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.nominalVoltage.value",
+    "status": "已映射",
+    "oldrow": 91,
+    "added": false,
+    "excel_row": 96
+  },
+  {
+    "id": "V4-0096",
+    "code": "voltageRange",
+    "title": "电压范围",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.minimalVoltage.value + $.maximumVoltage.value",
+    "status": "候选映射待确认",
+    "oldrow": 92,
+    "added": false,
+    "excel_row": 97
+  },
+  {
+    "id": "V4-0097",
+    "code": "initialPowerAt20Soc",
+    "title": "20%SoC初始功率",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.originalPowerCapability.value",
+    "status": "候选映射待确认",
+    "oldrow": 93,
+    "added": false,
+    "excel_row": 98
+  },
+  {
+    "id": "V4-0098",
+    "code": "initialPowerAt80Soc",
+    "title": "80%SoC初始功率",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.originalPowerCapability.value",
+    "status": "候选映射待确认",
+    "oldrow": 94,
+    "added": false,
+    "excel_row": 99
+  },
+  {
+    "id": "V4-0099",
+    "code": "remainingPowerCapability",
+    "title": "剩余功率",
+    "groups": [
+      "EV"
+    ],
+    "required": "N/A",
+    "path": "$.remainingPowerCapability.value",
+    "status": "类别不适用",
+    "oldrow": 95,
+    "added": false,
+    "excel_row": 100
+  },
+  {
+    "id": "V4-0100",
+    "code": "remainingPowerCapability",
+    "title": "剩余功率",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.remainingPowerCapability.value",
+    "status": "已映射",
+    "oldrow": 95,
+    "added": false,
+    "excel_row": 101
+  },
+  {
+    "id": "V4-0101",
+    "code": "remainingPowerCapability",
+    "title": "剩余功率",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.remainingPowerCapability.value",
+    "status": "已映射",
+    "oldrow": 95,
+    "added": false,
+    "excel_row": 102
+  },
+  {
+    "id": "V4-0102",
+    "code": "powerFade",
+    "title": "功率衰减率",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.powerFade.value",
+    "status": "结构／类型调整",
+    "oldrow": 96,
+    "added": false,
+    "excel_row": 103
+  },
+  {
+    "id": "V4-0103",
+    "code": "powerFade",
+    "title": "功率衰减率",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.powerFade.value",
+    "status": "结构／类型调整",
+    "oldrow": 96,
+    "added": false,
+    "excel_row": 104
+  },
+  {
+    "id": "V4-0104",
+    "code": "maximumPermittedBatteryPower",
+    "title": "允许最大电池功率",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.powerLimit",
+    "status": "候选映射待确认",
+    "oldrow": 97,
+    "added": false,
+    "excel_row": 105
+  },
+  {
+    "id": "V4-0105",
+    "code": "initialRoundTripEnergyEfficiency",
+    "title": "初始往返能效",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.initialRoundTripEnergyEfficiency.value",
+    "status": "结构／类型调整",
+    "oldrow": 98,
+    "added": false,
+    "excel_row": 106
+  },
+  {
+    "id": "V4-0106",
+    "code": "initialRoundTripEnergyEfficiency",
+    "title": "初始往返能效",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.initialRoundTripEnergyEfficiency.value",
+    "status": "结构／类型调整",
+    "oldrow": 98,
+    "added": false,
+    "excel_row": 107
+  },
+  {
+    "id": "V4-0107",
+    "code": "roundTripEnergyEfficiencyAt50OfCycleLife",
+    "title": "往返能效（循环寿命达50%时）",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.roundTripEfficiencyAtHalfCycleLife.value",
+    "status": "结构／类型调整",
+    "oldrow": 99,
+    "added": false,
+    "excel_row": 108
+  },
+  {
+    "id": "V4-0108",
+    "code": "roundTripEnergyEfficiencyAt50OfCycleLife",
+    "title": "往返能效（循环寿命达50%时）",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.roundTripEfficiencyAtHalfCycleLife.value",
+    "status": "结构／类型调整",
+    "oldrow": 99,
+    "added": false,
+    "excel_row": 109
+  },
+  {
+    "id": "V4-0109",
+    "code": "remainingRoundTripEfficiency",
+    "title": "剩余往返能效",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.remainingRoundTripEfficiency.value",
+    "status": "结构／类型调整",
+    "oldrow": 100,
+    "added": false,
+    "excel_row": 110
+  },
+  {
+    "id": "V4-0110",
+    "code": "remainingRoundTripEfficiency",
+    "title": "剩余往返能效",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.remainingRoundTripEfficiency.value",
+    "status": "结构／类型调整",
+    "oldrow": 100,
+    "added": false,
+    "excel_row": 111
+  },
+  {
+    "id": "V4-0111",
+    "code": "energyRoundTripEfficiencyFade",
+    "title": "往返能效衰减率",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "C",
+    "path": "$.roundTripEnergyEfficiencyFade.value",
+    "status": "结构／类型调整",
+    "oldrow": 101,
+    "added": false,
+    "excel_row": 112
+  },
+  {
+    "id": "V4-0112",
+    "code": "energyRoundTripEfficiencyFade",
+    "title": "往返能效衰减率",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.roundTripEnergyEfficiencyFade.value",
+    "status": "结构／类型调整",
+    "oldrow": 101,
+    "added": false,
+    "excel_row": 113
+  },
+  {
+    "id": "V4-0113",
+    "code": "initialSelfDischargeRate",
+    "title": "初始自放电率",
+    "groups": [
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.selfDischargingRateSet",
+    "status": "候选映射待确认",
+    "oldrow": 102,
+    "added": false,
+    "excel_row": 114
+  },
+  {
+    "id": "V4-0114",
+    "code": "currentSelfDischargeRate",
+    "title": "当前自放电率",
+    "groups": [
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.selfDischargingRateSet",
+    "status": "候选映射待确认",
+    "oldrow": 103,
+    "added": false,
+    "excel_row": 115
+  },
+  {
+    "id": "V4-0115",
+    "code": "evolutionOfSelfDischargeRates",
+    "title": "自放电率变化",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "候选：$.selfDischargingRateSet",
+    "status": "候选映射待确认",
+    "oldrow": 104,
+    "added": false,
+    "excel_row": 116
+  },
+  {
+    "id": "V4-0116",
+    "code": "evolutionOfSelfDischargeRates",
+    "title": "自放电率变化",
+    "groups": [
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.selfDischargingRateSet",
+    "status": "候选映射待确认",
+    "oldrow": 104,
+    "added": false,
+    "excel_row": 117
+  },
+  {
+    "id": "V4-0117",
+    "code": "initialCellDcResistance",
+    "title": "初始电芯直流电阻",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.internalCellResistance.value",
+    "status": "候选映射待确认",
+    "oldrow": 105,
+    "added": false,
+    "excel_row": 118
+  },
+  {
+    "id": "V4-0118",
+    "code": "initialPackDcResistance",
+    "title": "初始电池包直流电阻",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.internalPackResistance.value",
+    "status": "候选映射待确认",
+    "oldrow": 106,
+    "added": false,
+    "excel_row": 119
+  },
+  {
+    "id": "V4-0119",
+    "code": "initialCellAcResistance",
+    "title": "初始电芯交流电阻",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.internalCellResistance.value",
+    "status": "候选映射待确认",
+    "oldrow": 107,
+    "added": false,
+    "excel_row": 120
+  },
+  {
+    "id": "V4-0120",
+    "code": "initialPackAcResistance",
+    "title": "初始电池包交流电阻",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.internalPackResistance.value",
+    "status": "候选映射待确认",
+    "oldrow": 108,
+    "added": false,
+    "excel_row": 121
+  },
+  {
+    "id": "V4-0121",
+    "code": "internalResistanceIncreaseOfPackCellAndModuleRecommended",
+    "title": "电池包内阻增长",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.internalResistanceIncrease.value",
+    "status": "候选映射待确认",
+    "oldrow": 109,
+    "added": false,
+    "excel_row": 122
+  },
+  {
+    "id": "V4-0122",
+    "code": "presentInternalResistanceOfPack",
+    "title": "当前电阻",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "候选：$.ohmicResistance.value",
+    "status": "候选映射待确认",
+    "oldrow": 110,
+    "added": false,
+    "excel_row": 123
+  },
+  {
+    "id": "V4-0123",
+    "code": "presentInternalResistanceOfPack",
+    "title": "当前电阻",
+    "groups": [
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.ohmicResistance.value",
+    "status": "候选映射待确认",
+    "oldrow": 110,
+    "added": false,
+    "excel_row": 124
+  },
+  {
+    "id": "V4-0124",
+    "code": "expectedLifetimeInCalendarYears",
+    "title": "预期使用寿命（年）",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.expectedLifetimeYears",
+    "status": "已映射",
+    "oldrow": 111,
+    "added": false,
+    "excel_row": 125
+  },
+  {
+    "id": "V4-0125",
+    "code": "expectedLifetimeInCalendarYears",
+    "title": "预期使用寿命（年）",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.expectedLifetimeYears",
+    "status": "已映射",
+    "oldrow": 111,
+    "added": false,
+    "excel_row": 126
+  },
+  {
+    "id": "V4-0126",
+    "code": "expectedLifetimeNumberOfChargeDischargeCycles",
+    "title": "预期使用寿命（圈）",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.expectedLifetimeCycles",
+    "status": "已映射",
+    "oldrow": 112,
+    "added": false,
+    "excel_row": 127
+  },
+  {
+    "id": "V4-0127",
+    "code": "expectedLifetimeNumberOfChargeDischargeCycles",
+    "title": "预期使用寿命（圈）",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.expectedLifetimeCycles",
+    "status": "已映射",
+    "oldrow": 112,
+    "added": false,
+    "excel_row": 128
+  },
+  {
+    "id": "V4-0128",
+    "code": "numberOfFullChargingAndDischargingCycles",
+    "title": "当前完全循环次数",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.numberOfChargingCycles + $.numberOfDischargingCycles",
+    "status": "候选映射待确认",
+    "oldrow": 113,
+    "added": false,
+    "excel_row": 129
+  },
+  {
+    "id": "V4-0129",
+    "code": "cycleLifeReferenceTest",
+    "title": "循环寿命测试方法",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.cycleLifeReferenceTest",
+    "status": "结构／类型调整",
+    "oldrow": 114,
+    "added": false,
+    "excel_row": 130
+  },
+  {
+    "id": "V4-0130",
+    "code": "cycleLifeReferenceTest",
+    "title": "循环寿命测试方法",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.cycleLifeReferenceTest",
+    "status": "结构／类型调整",
+    "oldrow": 114,
+    "added": false,
+    "excel_row": 131
+  },
+  {
+    "id": "V4-0131",
+    "code": "cRateOfRelevantCycleLifeTest",
+    "title": "循环寿命测试C率-充电",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.cycleLifeChargeCRate.value",
+    "status": "已映射",
+    "oldrow": 115,
+    "added": false,
+    "excel_row": 132
+  },
+  {
+    "id": "V4-0132",
+    "code": "cRateOfRelevantCycleLifeTest",
+    "title": "循环寿命测试C率-充电",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.cycleLifeChargeCRate.value",
+    "status": "已映射",
+    "oldrow": 115,
+    "added": false,
+    "excel_row": 133
+  },
+  {
+    "id": "V4-0133",
+    "code": "cycleLifeDischargeCRate",
+    "title": "循环寿命测试C率-放电",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "$.cycleLifeDischargeCRate.value",
+    "status": "已映射",
+    "oldrow": 116,
+    "added": false,
+    "excel_row": 134
+  },
+  {
+    "id": "V4-0134",
+    "code": "capacityThresholdForExhaustion",
+    "title": "耗尽容量阈值",
+    "groups": [
+      "EV"
+    ],
+    "required": "M",
+    "path": "$.capacityExhaustionThreshold.value",
+    "status": "已映射",
+    "oldrow": 117,
+    "added": false,
+    "excel_row": 135
+  },
+  {
+    "id": "V4-0135",
+    "code": "temperatureInformation",
+    "title": "温度信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.environmentalConditionHistogramSet",
+    "status": "候选映射待确认",
+    "oldrow": 118,
+    "added": false,
+    "excel_row": 136
+  },
+  {
+    "id": "V4-0136",
+    "code": "idleStateTemperatureRange",
+    "title": "空闲状态温度范围",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.notInUseTemperatureRange.valueRange",
+    "status": "结构／类型调整",
+    "oldrow": 119,
+    "added": false,
+    "excel_row": 137
+  },
+  {
+    "id": "V4-0137",
+    "code": "numberOfDeepDischargeEvents",
+    "title": "深度放电事件次数",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.negativeEvents",
+    "status": "候选映射待确认",
+    "oldrow": 120,
+    "added": false,
+    "excel_row": 138
+  },
+  {
+    "id": "V4-0138",
+    "code": "numberOfOverchargeEvents",
+    "title": "过量充电次数",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "候选：$.negativeEvents",
+    "status": "候选映射待确认",
+    "oldrow": 121,
+    "added": false,
+    "excel_row": 139
+  },
+  {
+    "id": "V4-0139",
+    "code": "informationOnAccidents",
+    "title": "事故信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "候选：$.negativeEvents",
+    "status": "候选映射待确认",
+    "oldrow": 122,
+    "added": false,
+    "excel_row": 140
+  },
+  {
+    "id": "V4-0140",
+    "code": "batteryIdentification",
+    "title": "电池识别信息组合",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.batteryIdentification",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 141
+  },
+  {
+    "id": "V4-0141",
+    "code": "batchNumber",
+    "title": "批次号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.batteryIdentification.batchNumber",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 142
+  },
+  {
+    "id": "V4-0142",
+    "code": "otherIdentificationElement",
+    "title": "其他识别要素",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.batteryIdentification.otherIdentificationElement",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 143
+  },
+  {
+    "id": "V4-0143",
+    "code": "productNumber",
+    "title": "产品编号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.batteryIdentification.productNumber",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 144
+  },
+  {
+    "id": "V4-0144",
+    "code": "chemicalSymbol",
+    "title": "化学物质标识符号",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.chemicalSymbol",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 145
+  },
+  {
+    "id": "V4-0145",
+    "code": "complianceTestReportResults",
+    "title": "合规测试报告结果资源",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.complianceTestReportResults",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 146
+  },
+  {
+    "id": "V4-0146",
+    "code": "detailedComposition",
+    "title": "详细组成信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.detailedComposition",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 147
+  },
+  {
+    "id": "V4-0147",
+    "code": "dppStatus",
+    "title": "护照资源状态",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.dppStatus",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 148
+  },
+  {
+    "id": "V4-0148",
+    "code": "environmentalConditionHistogramSet",
+    "title": "运行环境条件直方图集合",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.environmentalConditionHistogramSet",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 149
+  },
+  {
+    "id": "V4-0149",
+    "code": "environmentalConditionHistogram",
+    "title": "运行环境条件直方图列表",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.environmentalConditionHistogramSet.environmentalConditionHistogram",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 150
+  },
+  {
+    "id": "V4-0150",
+    "code": "expectedLifetimeCyclesRest",
+    "title": "参考条件下预期寿命（循环次数）",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.expectedLifetimeCyclesRest",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 151
+  },
+  {
+    "id": "V4-0151",
+    "code": "expectedLifetimeCyclesRest",
+    "title": "参考条件下预期寿命（循环次数）",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.expectedLifetimeCyclesRest",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 152
+  },
+  {
+    "id": "V4-0152",
+    "code": "internalCellResistance",
+    "title": "电芯内阻",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.internalCellResistance.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 153
+  },
+  {
+    "id": "V4-0153",
+    "code": "internalPackResistance",
+    "title": "电池包内阻",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.internalPackResistance.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 154
+  },
+  {
+    "id": "V4-0154",
+    "code": "internalResistance",
+    "title": "内阻",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.internalResistance.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 155
+  },
+  {
+    "id": "V4-0155",
+    "code": "internalResistance",
+    "title": "内阻",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.internalResistance.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 156
+  },
+  {
+    "id": "V4-0156",
+    "code": "internalResistanceIncrease",
+    "title": "内阻增加",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.internalResistanceIncrease.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 157
+  },
+  {
+    "id": "V4-0157",
+    "code": "internalResistanceIncrease",
+    "title": "内阻增加",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.internalResistanceIncrease.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 158
+  },
+  {
+    "id": "V4-0158",
+    "code": "manufacturerContactDetails",
+    "title": "制造商网站及邮箱",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "V",
+    "path": "$.manufacturerContactDetails",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 159
+  },
+  {
+    "id": "V4-0159",
+    "code": "manufacturerIdentification",
+    "title": "制造商名称标识组合",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.manufacturerIdentification",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 160
+  },
+  {
+    "id": "V4-0160",
+    "code": "manufacturingCity",
+    "title": "制造城市",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.manufacturingPlace.manufacturingCity",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 161
+  },
+  {
+    "id": "V4-0161",
+    "code": "manufacturingCountry",
+    "title": "制造国家代码",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.manufacturingPlace.manufacturingCountry",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 162
+  },
+  {
+    "id": "V4-0162",
+    "code": "manufacturingRegion",
+    "title": "制造地区",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.manufacturingPlace.manufacturingRegion",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 163
+  },
+  {
+    "id": "V4-0163",
+    "code": "maximumVoltage",
+    "title": "最高电压",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.maximumVoltage.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 164
+  },
+  {
+    "id": "V4-0164",
+    "code": "maximumVoltageValueRange",
+    "title": "最高电压·适用条件范围",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.maximumVoltage.valueRange",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 165
+  },
+  {
+    "id": "V4-0165",
+    "code": "minimalVoltage",
+    "title": "最低电压",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.minimalVoltage.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 166
+  },
+  {
+    "id": "V4-0166",
+    "code": "minimalVoltageValueRange",
+    "title": "最低电压·适用条件范围",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.minimalVoltage.valueRange",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 167
+  },
+  {
+    "id": "V4-0167",
+    "code": "negativeEvents",
+    "title": "负面事件说明",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.negativeEvents",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 168
+  },
+  {
+    "id": "V4-0168",
+    "code": "nominalVoltageValueRange",
+    "title": "标称电压·适用条件范围",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.nominalVoltage.valueRange",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 169
+  },
+  {
+    "id": "V4-0169",
+    "code": "notInUseTemperatureRange",
+    "title": "非使用状态耐受温度范围及测试",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.notInUseTemperatureRange",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 170
+  },
+  {
+    "id": "V4-0170",
+    "code": "notInUseTemperatureRangeTest",
+    "title": "非使用状态温度范围的参考测试",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.notInUseTemperatureRange.notInUseTemperatureRangeTest",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 171
+  },
+  {
+    "id": "V4-0171",
+    "code": "numberOfChargingCycles",
+    "title": "充电循环次数列表",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.numberOfChargingCycles",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 172
+  },
+  {
+    "id": "V4-0172",
+    "code": "numberOfDischargingCycles",
+    "title": "放电循环次数列表",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.numberOfDischargingCycles",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 173
+  },
+  {
+    "id": "V4-0173",
+    "code": "ohmicResistance",
+    "title": "欧姆内阻",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.ohmicResistance.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 174
+  },
+  {
+    "id": "V4-0174",
+    "code": "ohmicResistance",
+    "title": "欧姆内阻",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.ohmicResistance.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 175
+  },
+  {
+    "id": "V4-0175",
+    "code": "originalPowerCapability",
+    "title": "初始功率能力",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.originalPowerCapability.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 176
+  },
+  {
+    "id": "V4-0176",
+    "code": "powerCapability",
+    "title": "功率能力",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.powerCapability.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 177
+  },
+  {
+    "id": "V4-0177",
+    "code": "powerCapability",
+    "title": "功率能力",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.powerCapability.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 178
+  },
+  {
+    "id": "V4-0178",
+    "code": "powerLimit",
+    "title": "功率限值列表",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.powerLimit",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 179
+  },
+  {
+    "id": "V4-0179",
+    "code": "powerLimitValueRange",
+    "title": "功率限值列表（数组元素）·适用条件范围",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.powerLimit[].valueRange",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 180
+  },
+  {
+    "id": "V4-0180",
+    "code": "stateOfHealthRatedCapacity",
+    "title": "健康状态视图·额定容量",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.ratedCapacity.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 181
+  },
+  {
+    "id": "V4-0181",
+    "code": "stateOfHealthRatedCapacity",
+    "title": "健康状态视图·额定容量",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.ratedCapacity.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 182
+  },
+  {
+    "id": "V4-0182",
+    "code": "registrantIdentity",
+    "title": "护照注册／负责主体身份信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.registrantIdentity",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 183
+  },
+  {
+    "id": "V4-0183",
+    "code": "roundTripEnergyEfficiency",
+    "title": "往返能量效率",
+    "groups": [
+      "EV",
+      "LMT"
+    ],
+    "required": "C",
+    "path": "$.roundTripEnergyEfficiency.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 184
+  },
+  {
+    "id": "V4-0184",
+    "code": "roundTripEnergyEfficiency",
+    "title": "往返能量效率",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.roundTripEnergyEfficiency.value",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 185
+  },
+  {
+    "id": "V4-0185",
+    "code": "selfDischargingRateSet",
+    "title": "自放电率及记录时间",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.selfDischargingRateSet",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 186
+  },
+  {
+    "id": "V4-0186",
+    "code": "selfDischargingRateSet",
+    "title": "自放电率及记录时间",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.selfDischargingRateSet",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 187
+  },
+  {
+    "id": "V4-0187",
+    "code": "recordedTime",
+    "title": "记录时间",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.selfDischargingRateSet.recordedTime",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 188
+  },
+  {
+    "id": "V4-0188",
+    "code": "recordedTime",
+    "title": "记录时间",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.selfDischargingRateSet.recordedTime",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 189
+  },
+  {
+    "id": "V4-0189",
+    "code": "selfDischargingRate",
+    "title": "自放电率记录列表",
+    "groups": [
+      "LMT"
+    ],
+    "required": "M",
+    "path": "$.selfDischargingRateSet.selfDischargingRate",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 190
+  },
+  {
+    "id": "V4-0190",
+    "code": "selfDischargingRate",
+    "title": "自放电率记录列表",
+    "groups": [
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.selfDischargingRateSet.selfDischargingRate",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 191
+  },
+  {
+    "id": "V4-0191",
+    "code": "sparePartReplacementDetails",
+    "title": "替换备件的编号及来源信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.sparePartReplacementDetails",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 192
+  },
+  {
+    "id": "V4-0192",
+    "code": "stateOfChargeHistogram",
+    "title": "荷电状态 SOC 直方图列表",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "C",
+    "path": "$.stateOfChargeHistogram",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 193
+  },
+  {
+    "id": "V4-0193",
+    "code": "wasteBatteryPreventionManagementInfo",
+    "title": "废电池预防与管理信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo",
+    "status": "新增结构组",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 194
+  },
+  {
+    "id": "V4-0194",
+    "code": "preparationForRepurposingFacilities",
+    "title": "准备改变用途的处理设施",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.preparationForRepurposingFacilities",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 195
+  },
+  {
+    "id": "V4-0195",
+    "code": "preparationForReuseFacilities",
+    "title": "准备再使用的处理设施",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.preparationForReuseFacilities",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 196
+  },
+  {
+    "id": "V4-0196",
+    "code": "separateCollectionPoints",
+    "title": "分类收集点信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.separateCollectionPoints",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 197
+  },
+  {
+    "id": "V4-0197",
+    "code": "takeBackCollectionPoints",
+    "title": "回收接收点信息",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.takeBackCollectionPoints",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 198
+  },
+  {
+    "id": "V4-0198",
+    "code": "wasteBatterySafetyInstructions",
+    "title": "废电池安全说明",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.wasteBatterySafetyInstructions",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 199
+  },
+  {
+    "id": "V4-0199",
+    "code": "wasteBatteryTreatmentFacilities",
+    "title": "废电池处理设施",
+    "groups": [
+      "EV",
+      "LMT",
+      "IND"
+    ],
+    "required": "M",
+    "path": "$.wasteBatteryPreventionManagementInfo.wasteBatteryTreatmentFacilities",
+    "status": "新增语义字段",
+    "oldrow": null,
+    "added": true,
+    "excel_row": 200
+  }
+]
