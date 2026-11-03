@@ -1,0 +1,52 @@
+{
+  "version": "4.0-name-audit.1",
+  "referenceUrl": "https://alidocs.dingtalk.com/i/nodes/m9bN7RYPWdYPgl7vCjyrayLgVZd1wyK0",
+  "sourceSemanticVersion": "2026-10-30",
+  "mainRows": 199,
+  "uniquePreviousNames": 171,
+  "categoryRows": {
+    "未确认语义对应": 73,
+    "名称与官方一致": 96,
+    "别名统一官方名称": 24,
+    "本类别不适用": 2,
+    "结构拆分命名": 4
+  },
+  "categoryDistinctPreviousNames": {
+    "未确认语义对应": 71,
+    "名称与官方一致": 78,
+    "别名统一官方名称": 18,
+    "本类别不适用": 2,
+    "结构拆分命名": 4
+  },
+  "originalBusinessRowsPreserved": 121,
+  "semanticPathsPreserved": 642,
+  "rawSchemaFilesChecked": 18,
+  "officialPropertyNames": 109,
+  "skosNotationsChecked": 311,
+  "inputSha256": "9689b71fe27469193a70cdb5d167baca7e3d1df97a581356f2cc79fbe1b27142",
+  "previousFilePreserved": true,
+  "outputSha256": "3200e4b3acfda13084764f7049f4004360a8e3ff21cb0d2cb2969830a405b136",
+  "verification": "passed",
+  "semanticConstraintsChanged": false,
+  "onlineOriginalModified": false,
+  "sourceSha256": {
+    "core/1.0.0/schemas/common.schema.json": "e15afb07991fb8885773d7e02911542c16f5df5d8b47034f5a59ca9663b5c426",
+    "core/1.0.0/schemas/core.schema.json": "c49b96ab015e307831fbc34a0c0f2962c5e9b5d88c65020a6368b8dbd24f1e7a",
+    "product/batteries/1.0.0/schemas/pub-batteries.schema.json": "71fa0caf83338c50fec9076ddd3a8f5cef605a257fd862116fc48206043deafd",
+    "product/batteries/1.0.0/schemas/res1-batteries.schema.json": "92fed13d04cbfdd61c0202f900aa554402a6f2751f270fc35a5edba58e83a301",
+    "product/batteries/1.0.0/schemas/res2-batteries.schema.json": "d812f73928454e90ca1f533897dbe38146802067fd94a9f74e2d8f6660e6e434",
+    "product/batteries/1.0.0/schemas/res3-batteries.schema.json": "e589b2135f8615674034e3e262bc3110e6b2a26052078792e71bed88f19b5548",
+    "product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json": "5f93d99684324d24170ab47c02262098dea547ee88d9c30cc21afd1bb9e7a181",
+    "product/batteries/subgroup/evb/1.0.0/schemas/res1-evb.schema.json": "b0741ff42c356156d15492bac31264acc785e3ece14722f8d7614a424e3395bd",
+    "product/batteries/subgroup/evb/1.0.0/schemas/res2-evb.schema.json": "f30d03f6ea108387133bc635b59826914992718aabb5b97ed9b80f69f940739c",
+    "product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json": "ee3ca7d884cfbc9c767fb6b8c9f14b48d62ae7626ee4ed380dd160feb30d6517",
+    "product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json": "276ded42b9894b5f9f2188b18257bfa90a1359494e0bf731a8886485484a4387",
+    "product/batteries/subgroup/ind/1.0.0/schemas/res1-ind.schema.json": "3725a8ce0aa798ee869a1d6899c05a7fb9cdec9c531c9fd753fe054de09ba4b7",
+    "product/batteries/subgroup/ind/1.0.0/schemas/res2-ind.schema.json": "5ab26719d64b3182b5012fb62499c9afadf38b7c9502456cbeb029b2b9796376",
+    "product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json": "ba42c7b75c69140d935ccdb1d5c9a0ca539282101dc79a84c2643128562c4475",
+    "product/batteries/subgroup/lmt/1.0.0/schemas/pub-lmt.schema.json": "47bd46c2493fbf3125221067966f3dea636ad846ab63b1764bd9efee8334d6c9",
+    "product/batteries/subgroup/lmt/1.0.0/schemas/res1-lmt.schema.json": "8656e30e6291874606d7bd0c601f9591b10988bf20a4df5523c5877ea8fe3b7a",
+    "product/batteries/subgroup/lmt/1.0.0/schemas/res2-lmt.schema.json": "1252c2be71ee5b51edb574ad2392972dc18e3f26f019c903f7e779ae7b5878dd",
+    "product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json": "2d48d00b0b90968a1602d395f83363e801ffc21f3d7d85dcd0e42b927ca45b2d"
+  }
+}

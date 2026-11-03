@@ -1,0 +1,375 @@
+﻿字段ID,数据项名称,修订前工程名,核对后工程名,官方语义字段,分类,命名来源,电池分类,3.4原名,3.4源行,官方路径或候选,核对说明,官方定义出处
+V4-0001,电池护照架构版本,dppSchemaVersion,dppSchemaVersion,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,dppSchemaVersion,2,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0002,电池护照状态,internalDppStatus,internalDppStatus,—（本快照未确认官方对应）,未确认语义对应,本稿更名，保留3.4业务项,EV / LMT / IND,dppStatus,3,待映射,"3.4原名dppStatus由本稿更名为internalDppStatus，仍属旧业务扩展，不能当作官方字段。
+旧五种生命周期状态与官方dppStatus的有效／无效不是同一含义。",
+V4-0003,电池护照颗粒度,granularity,granularity,granularity,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,granularity,4,$.granularity,,core/1.0.0/schemas/core.schema.json#/properties/granularity
+V4-0004,最新更新时间,lastUpdated,lastUpdate,lastUpdate,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,lastUpdated,5,$.lastUpdate,修订前工程名lastUpdated统一为官方名称lastUpdate；旧名仅作历史追溯。,core/1.0.0/schemas/core.schema.json#/properties/lastUpdate
+V4-0005,电池护照唯一标识符,digitalProductPassportId,digitalProductPassportId,digitalProductPassportId,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,digitalProductPassportId,6,$.digitalProductPassportId,,core/1.0.0/schemas/core.schema.json#/properties/digitalProductPassportId
+V4-0006,电池唯一标识符,uniqueProductIdentifier,uniqueProductIdentifier,uniqueProductIdentifier,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,uniqueProductIdentifier,7,$.uniqueProductIdentifier,,core/1.0.0/schemas/core.schema.json#/properties/uniqueProductIdentifier
+V4-0007,经济运营商唯一标识符,economicOperatorId,economicOperatorId,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,economicOperatorId,8,候选：$.registrantIdentity,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.registrantIdentity；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0008,工厂唯一标识符,facilityId,facilityId,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,facilityId,9,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0009,参考标准ID,contentSpecificationIds,contentSpecificationIds,contentSpecificationIds,名称与官方一致,3.4名称与官方一致,EV,contentSpecificationIds,10,$.contentSpecificationIds,,core/1.0.0/schemas/core.schema.json#/properties/contentSpecificationIds
+V4-0010,参考标准ID,contentSpecificationIds,contentSpecificationIds,contentSpecificationIds,名称与官方一致,3.4名称与官方一致,LMT,contentSpecificationIds,10,$.contentSpecificationIds,,core/1.0.0/schemas/core.schema.json#/properties/contentSpecificationIds
+V4-0011,参考标准ID,contentSpecificationIds,contentSpecificationIds,contentSpecificationIds,名称与官方一致,3.4名称与官方一致,IND,contentSpecificationIds,10,$.contentSpecificationIds,,core/1.0.0/schemas/core.schema.json#/properties/contentSpecificationIds
+V4-0012,电池型号,batteryModelIdentifier,modelIdentifier,modelIdentifier,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,batteryModelIdentifier,11,$.batteryIdentification.modelIdentifier,修订前工程名batteryModelIdentifier统一为官方名称modelIdentifier；旧名仅作历史追溯。,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/modelIdentifier
+V4-0013,电池序列号,batterySerialNumber,serialNumber,serialNumber,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,batterySerialNumber,12,$.batteryIdentification.serialNumber,修订前工程名batterySerialNumber统一为官方名称serialNumber；旧名仅作历史追溯。,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/serialNumber
+V4-0014,制造商唯一标识符,uniqueManufacturerIdentifier,uniqueManufacturerIdentifier,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,uniqueManufacturerIdentifier,13,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0015,第三方服务提供商,thirdPartyServiceProvider,thirdPartyServiceProvider,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,thirdPartyServiceProvider,14,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0016,经济运营商名称,economicOperatorName,economicOperatorName,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,15,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0017,经济运营商注册商号,economicOperatorTradeName,economicOperatorTradeName,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,16,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0018,经济运营商注册商标,economicOperatorTrademark,economicOperatorTrademark,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,17,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0019,经济运营商邮政地址,economicOperatorPostalAddress,economicOperatorPostalAddress,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,18,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0020,经济运营商网址,economicOperatorWebsite,economicOperatorWebsite,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,19,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0021,经济运营商网址电子邮箱,economicOperatorEmail,economicOperatorEmail,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,20,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0022,制造商名称,manufacturerName,manufacturerName,manufacturerName,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,21,$.manufacturerIdentification.manufacturerName,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification/properties/manufacturerName
+V4-0023,制造商注册商号,manufacturerTradeName,manufacturerTradeName,manufacturerTradeName,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,22,$.manufacturerIdentification.manufacturerTradeName,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification/properties/manufacturerTradeName
+V4-0024,制造商注册商标,manufacturerTrademark,manufacturerTrademark,manufacturerTrademark,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,23,$.manufacturerIdentification.manufacturerTrademark,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification/properties/manufacturerTrademark
+V4-0025,制造商邮政地址,manufacturerPostalAddress,manufacturerPostalAddress,manufacturerPostalAddress,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,24,$.manufacturerPostalAddress,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerPostalAddress
+V4-0026,制造商网址,manufacturerWebsite,manufacturerWebsite,manufacturerWebsite,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,25,$.manufacturerContactDetails.manufacturerWebsite,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerContactDetails/properties/manufacturerWebsite
+V4-0027,制造商网址电子邮箱,manufacturerEmail,manufacturerEmail,manufacturerEmail,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,26,$.manufacturerContactDetails.manufacturerEmail,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerContactDetails/properties/manufacturerEmail
+V4-0028,生产地点,manufacturingPlace,manufacturingPlace,manufacturingPlace,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,manufacturingPlace,27,$.manufacturingPlace,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace
+V4-0029,生产日期,manufacturingDate,manufacturingDate,manufacturingDate,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,manufacturingDate,28,$.manufacturingDate,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingDate
+V4-0030,投入使用日期,dateOfPuttingTheBatteryIntoService,dateOfPuttingTheBatteryIntoService,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,dateOfPuttingTheBatteryIntoService,29,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0031,质保期,warrantyPeriodOfTheBattery,commercialWarrantyPeriod,commercialWarrantyPeriod,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,warrantyPeriodOfTheBattery,30,$.commercialWarrantyPeriod,修订前工程名warrantyPeriodOfTheBattery统一为官方名称commercialWarrantyPeriod；旧名仅作历史追溯。,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/commercialWarrantyPeriod
+V4-0032,电池类型,batteryCategory,batteryCategory,batteryCategory,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,batteryCategory,31,$.batteryCategory,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryCategory
+V4-0033,电池重量,batteryWeight,batteryWeight,batteryWeight,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,batteryWeight,32,$.batteryWeight.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryWeight
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0034,电池状态,batteryStatus,batteryStatus,batteryStatus,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,batteryStatus,33,$.batteryStatus,,product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/batteryStatus
+V4-0035,分类收集标识,separateCollectionSymbol,separateCollectionSymbol,separateCollectionSymbol,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,34,$.separateCollectionSymbol,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/separateCollectionSymbol
+V4-0036,碳足迹标签,carbonFootprintLabel,carbonFootprintLabel,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,carbonFootprintLabel,35,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0037,灭火剂,extinguishingAgent,extinguishingAgent,extinguishingAgent,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,extinguishingAgent,36,$.extinguishingAgent,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/extinguishingAgent
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0038,标识说明,meaningOfLabelsAndSymbols,batteryLabelSymbolMeaning,batteryLabelSymbolMeaning,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,meaningOfLabelsAndSymbols,37,$.wasteBatteryPreventionManagementInfo.batteryLabelSymbolMeaning,修订前工程名meaningOfLabelsAndSymbols统一为官方名称batteryLabelSymbolMeaning；旧名仅作历史追溯。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/batteryLabelSymbolMeaning
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0039,欧盟符合性声明,euDeclarationOfConformity,euDeclarationOfConformity,euDeclarationOfConformity,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,euDeclarationOfConformity,38,$.euDeclarationOfConformity,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/euDeclarationOfConformity
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource"
+V4-0040,禁限用物质检测报告,restrictedSubstanceTestReports,restrictedSubstanceTestReports,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,39,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0041,回收料含量技术文档,recycledContentTechnicalDocuments,recycledContentTechnicalDocuments,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,40,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0042,性能、耐久性的技术文档,performanceAndDurabilityTechnicalDocuments,performanceAndDurabilityTechnicalDocuments,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,41,候选：$.complianceTestReportResults,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.complianceTestReportResults；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0043,电池健康状态和预期寿命信息,stateOfHealthAndLifetimeDocuments,stateOfHealthAndLifetimeDocuments,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,42,候选：$.complianceTestReportResults,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.complianceTestReportResults；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0044,法规要求的产品技术文档,regulatoryTechnicalDocuments,regulatoryTechnicalDocuments,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,43,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0045,电池使用说明,batteryUserManuals,batteryUserManuals,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,44,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0046,每功能单元电池碳足迹,batteryCarbonFootprintPerFunctionalUnit,batteryCarbonFootprintPerFunctionalUnit,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,batteryCarbonFootprintPerFunctionalUnit,45,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0047,原材料获取与处理阶段碳足迹,contributionOfRawMaterialAcquisitionAndPreProcessingLifecycleStage,contributionOfRawMaterialAcquisitionAndPreProcessingLifecycleStage,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,contributionOfRawMaterialAcquisitionAndPreProcessingLifecycleStage,46,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0048,核心生产阶段碳足迹,contributionOfMainProductProductionLifecycleStage,contributionOfMainProductProductionLifecycleStage,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,contributionOfMainProductProductionLifecycleStage,47,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0049,分销阶段碳足迹,contributionOfDistributionLifecycleStage,contributionOfDistributionLifecycleStage,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,contributionOfDistributionLifecycleStage,48,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0050,退役与回收阶段碳足迹,contributionOfEndOfLifeAndRecyclingLifecycleStage,contributionOfEndOfLifeAndRecyclingLifecycleStage,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,contributionOfEndOfLifeAndRecyclingLifecycleStage,49,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0051,碳足迹表现等级,carbonFootprintPerformanceClass,carbonFootprintPerformanceClass,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,carbonFootprintPerformanceClass,50,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0052,碳足迹研究,webLinkToPublicCarbonFootprintStudy,webLinkToPublicCarbonFootprintStudy,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,webLinkToPublicCarbonFootprintStudy,51,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0053,电池碳足迹绝对值,absoluteBatteryCarbonFootprint,absoluteBatteryCarbonFootprint,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,52,待映射,3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。,
+V4-0054,尽职调查报告信息,informationOfDueDiligenceReport,informationOfDueDiligenceReport,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,informationOfDueDiligenceReport,53,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0055,第三方供应链保证,thirdPartyAssurancesOfRecognisedSchemes,thirdPartyAssurancesOfRecognisedSchemes,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,thirdPartyAssurancesOfRecognisedSchemes,54,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0056,供应链指数,supplyChainIndices,supplyChainIndices,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,supplyChainIndices,55,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0057,化学体系,batteryChemistry,batteryChemistry,batteryChemistry,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,batteryChemistry,56,$.batteryChemistry,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryChemistry
+V4-0058,关键原材料,criticalRawMaterials,criticalRawMaterials,criticalRawMaterials,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,criticalRawMaterials,57,$.criticalRawMaterials,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/criticalRawMaterials
+V4-0059,正极材料名称,cathodeMaterialName,cathodeMaterialName,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,58,候选：$.detailedComposition,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.detailedComposition；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0060,正极材料CAS码,cathodeMaterialCasNumber,cathodeMaterialCasNumber,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,59,候选：$.detailedComposition,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.detailedComposition；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0061,负极材料名称,anodeMaterialName,anodeMaterialName,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,60,候选：$.detailedComposition,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.detailedComposition；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0062,负极材料CAS码,anodeMaterialCasNumber,anodeMaterialCasNumber,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,61,候选：$.detailedComposition,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.detailedComposition；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0063,电解液材料名称,electrolyteMaterialName,electrolyteMaterialName,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,62,候选：$.detailedComposition,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.detailedComposition；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0064,电解液CAS码,electrolyteMaterialCasNumber,electrolyteMaterialCasNumber,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,63,候选：$.detailedComposition,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.detailedComposition；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0065,有害物质名称,hazardousSubstances,hazardousSubstances,hazardousSubstances,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,64,$.hazardousSubstances,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/hazardousSubstances
+V4-0066,有害物质CAS号,hazardousSubstanceCasNumber,hazardousSubstanceCasNumber,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,65,候选：$.hazardousSubstances,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.hazardousSubstances；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0067,有害物质等级和类别,hazardousSubstanceClassification,hazardousSubstanceClassification,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,66,候选：$.hazardousSubstances,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.hazardousSubstances；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0068,有害物质所在位置,hazardousSubstanceLocation,hazardousSubstanceLocation,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,67,候选：$.hazardousSubstances,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.hazardousSubstances；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0069,有害物质浓度,hazardousSubstanceConcentration,hazardousSubstanceConcentration,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,68,候选：$.hazardousSubstances,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.hazardousSubstances；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0070,有害物质影响,batterySubstancesImpact,batterySubstancesImpact,batterySubstancesImpact,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,69,$.wasteBatteryPreventionManagementInfo.batterySubstancesImpact,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/batterySubstancesImpact
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0071,拆卸指南,dismantlingInformationManualsForTheRemovalAndTheDisassemblyOfTheBatteryPack,dismantlingInformation,dismantlingInformation,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,dismantlingInformationManualsForTheRemovalAndTheDisassemblyOfTheBatteryPack,70,$.dismantlingInformation,修订前工程名dismantlingInformationManualsForTheRemovalAndTheDisassemblyOfTheBatteryPack统一为官方名称dismantlingInformation；旧名仅作历史追溯。,"product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/dismantlingInformation
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource"
+V4-0072,零部件编号,partNumbersForComponents,partNumbersForComponents,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,partNumbersForComponents,71,候选：$.sparePartReplacementDetails,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.sparePartReplacementDetails；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0073,备件更换联系地址,sparePartReplacementPostalAddress,sparePartReplacementPostalAddress,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,72,候选：$.sparePartReplacementDetails,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.sparePartReplacementDetails；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0074,备件更换联系网址,sparePartReplacementWebsite,sparePartReplacementWebsite,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,73,候选：$.sparePartReplacementDetails,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.sparePartReplacementDetails；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0075,备件更换联系邮箱,sparePartReplacementEmail,sparePartReplacementEmail,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,74,候选：$.sparePartReplacementDetails,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.sparePartReplacementDetails；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0076,安全措施,safetyMeasures,safetyMeasures,safetyMeasures,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,safetyMeasures,75,$.safetyMeasures,,"product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/safetyMeasures
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource"
+V4-0077,再循环镍含量,postConsumerRecycledNickelShare,postConsumerRecycledNickelShare,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,postConsumerRecycledNickelShare,76,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0078,再循环钴含量,postConsumerRecycledCobaltShare,postConsumerRecycledCobaltShare,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,postConsumerRecycledCobaltShare,77,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0079,再循环锂含量,postConsumerRecycledLithiumShare,postConsumerRecycledLithiumShare,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,postConsumerRecycledLithiumShare,78,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0080,再循环铅含量,recycledLeadShare,recycledLeadShare,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,recycledLeadShare,79,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0081,可再生材料含量,renewableContentShare,renewableContentShare,renewableContentShare,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,renewableContentShare,80,$.renewableContentShare.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/renewableContentShare
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0082,终端用户预防电池报废指南,informationOnTheRoleOfEndUsersInContributingToWastePrevention,endUserRoleInWastePrevention,endUserRoleInWastePrevention,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,informationOnTheRoleOfEndUsersInContributingToWastePrevention,81,$.wasteBatteryPreventionManagementInfo.endUserRoleInWastePrevention,修订前工程名informationOnTheRoleOfEndUsersInContributingToWastePrevention统一为官方名称endUserRoleInWastePrevention；旧名仅作历史追溯。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/endUserRoleInWastePrevention
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0083,终端用户分类回收指南,informationOnTheRoleOfEndUsersInContributingToTheSeparateCollectionOfWasteBatteries,endUserRoleInSeparateCollection,endUserRoleInSeparateCollection,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,informationOnTheRoleOfEndUsersInContributingToTheSeparateCollectionOfWasteBatteries,82,$.wasteBatteryPreventionManagementInfo.endUserRoleInSeparateCollection,修订前工程名informationOnTheRoleOfEndUsersInContributingToTheSeparateCollectionOfWasteBatteries统一为官方名称endUserRoleInSeparateCollection；旧名仅作历史追溯。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/endUserRoleInSeparateCollection
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0084,废旧电池回收利用指南,informationOnBatteryCollectionPreparationForSecondLifeAndOnTreatmentAtEndOfLife,informationOnBatteryCollectionPreparationForSecondLifeAndOnTreatmentAtEndOfLife,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,informationOnBatteryCollectionPreparationForSecondLifeAndOnTreatmentAtEndOfLife,83,候选：$.wasteBatteryPreventionManagementInfo,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.wasteBatteryPreventionManagementInfo；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0085,额定容量,ratedCapacity,batteryCapacity,batteryCapacity,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT / IND,ratedCapacity,84,$.batteryCapacity.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名ratedCapacity统一为官方名称batteryCapacity；旧名仅作历史追溯。
+重要：旧工程名与RES3官方ratedCapacity发生同名异义；此公开行改为batteryCapacity，RES3行改用ratedCapacity。","product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0086,剩余容量,remainingCapacity,remainingCapacity,remainingCapacity,本类别不适用,3.4原有命名；本类别不适用,EV,remainingCapacity,85,$.remainingCapacity.value,不得把其他电池类别中的同名字段填入本类别模型。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingCapacity
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingCapacity"
+V4-0087,剩余容量,remainingCapacity,remainingCapacity,remainingCapacity,名称与官方一致,3.4名称与官方一致,LMT,remainingCapacity,85,$.remainingCapacity.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0088,剩余容量,remainingCapacity,remainingCapacity,remainingCapacity,名称与官方一致,3.4名称与官方一致,IND,remainingCapacity,85,$.remainingCapacity.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0089,容量衰减率,capacityFade,capacityFade,capacityFade,名称与官方一致,3.4名称与官方一致,EV / LMT,capacityFade,86,$.capacityFade.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/capacityFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0090,容量衰减率,capacityFade,capacityFade,capacityFade,名称与官方一致,3.4名称与官方一致,IND,capacityFade,86,$.capacityFade.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/capacityFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0091,认证可用电量,certifiedUsableBatteryEnergy,certifiedUsableBatteryEnergy,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV,certifiedUsableBatteryEnergy,87,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0092,剩余可用电量,remainingUsableBatteryEnergy,remainingUsableBatteryEnergy,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV,remainingUsableBatteryEnergy,88,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0093,认证能源状态,stateOfCertifiedEnergySOCE,stateOfCertifiedEnergy,stateOfCertifiedEnergy,别名统一官方名称,3.4原有别名，现统一官方名称,EV,stateOfCertifiedEnergySOCE,89,$.stateOfCertifiedEnergy.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名stateOfCertifiedEnergySOCE统一为官方名称stateOfCertifiedEnergy；旧名仅作历史追溯。","product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/stateOfCertifiedEnergy
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0094,荷电状态,stateOfChargeSoC,stateOfChargeSoC,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,stateOfChargeSoC,90,待映射,名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。,
+V4-0095,标称电压,nominalVoltage,nominalVoltage,nominalVoltage,名称与官方一致,3.4名称与官方一致,EV / LMT / IND,nominalVoltage,91,$.nominalVoltage.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/nominalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/value"
+V4-0096,电压范围,voltageRange,voltageRange,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,92,候选：$.minimalVoltage.value + $.maximumVoltage.value,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.minimalVoltage.value + $.maximumVoltage.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0097,20%SoC初始功率,initialPowerAt20Soc,initialPowerAt20Soc,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,93,候选：$.originalPowerCapability.value,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.originalPowerCapability.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0098,80%SoC初始功率,initialPowerAt80Soc,initialPowerAt80Soc,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,94,候选：$.originalPowerCapability.value,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.originalPowerCapability.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0099,剩余功率,remainingPowerCapability,remainingPowerCapability,remainingPowerCapability,本类别不适用,3.4原有命名；本类别不适用,EV,remainingPowerCapability,95,$.remainingPowerCapability.value,不得把其他电池类别中的同名字段填入本类别模型。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingPowerCapability
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingPowerCapability"
+V4-0100,剩余功率,remainingPowerCapability,remainingPowerCapability,remainingPowerCapability,名称与官方一致,3.4名称与官方一致,LMT,remainingPowerCapability,95,$.remainingPowerCapability.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingPowerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0101,剩余功率,remainingPowerCapability,remainingPowerCapability,remainingPowerCapability,名称与官方一致,3.4名称与官方一致,IND,remainingPowerCapability,95,$.remainingPowerCapability.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingPowerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0102,功率衰减率,powerFade,powerFade,powerFade,名称与官方一致,3.4名称与官方一致,EV / LMT,powerFade,96,$.powerFade.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/powerFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0103,功率衰减率,powerFade,powerFade,powerFade,名称与官方一致,3.4名称与官方一致,IND,powerFade,96,$.powerFade.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/powerFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0104,允许最大电池功率,maximumPermittedBatteryPower,maximumPermittedBatteryPower,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,maximumPermittedBatteryPower,97,候选：$.powerLimit,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.powerLimit；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0105,初始往返能效,initialRoundTripEnergyEfficiency,initialRoundTripEnergyEfficiency,initialRoundTripEnergyEfficiency,名称与官方一致,3.4名称与官方一致,EV / LMT,initialRoundTripEnergyEfficiency,98,$.initialRoundTripEnergyEfficiency.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/initialRoundTripEnergyEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0106,初始往返能效,initialRoundTripEnergyEfficiency,initialRoundTripEnergyEfficiency,initialRoundTripEnergyEfficiency,名称与官方一致,3.4名称与官方一致,IND,initialRoundTripEnergyEfficiency,98,$.initialRoundTripEnergyEfficiency.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/initialRoundTripEnergyEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0107,往返能效（循环寿命达50%时）,roundTripEnergyEfficiencyAt50OfCycleLife,roundTripEfficiencyAtHalfCycleLife,roundTripEfficiencyAtHalfCycleLife,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT,roundTripEnergyEfficiencyAt50OfCycleLife,99,$.roundTripEfficiencyAtHalfCycleLife.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名roundTripEnergyEfficiencyAt50OfCycleLife统一为官方名称roundTripEfficiencyAtHalfCycleLife；旧名仅作历史追溯。","product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/roundTripEfficiencyAtHalfCycleLife
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0108,往返能效（循环寿命达50%时）,roundTripEnergyEfficiencyAt50OfCycleLife,roundTripEfficiencyAtHalfCycleLife,roundTripEfficiencyAtHalfCycleLife,别名统一官方名称,3.4原有别名，现统一官方名称,IND,roundTripEnergyEfficiencyAt50OfCycleLife,99,$.roundTripEfficiencyAtHalfCycleLife.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名roundTripEnergyEfficiencyAt50OfCycleLife统一为官方名称roundTripEfficiencyAtHalfCycleLife；旧名仅作历史追溯。","product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/roundTripEfficiencyAtHalfCycleLife
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0109,剩余往返能效,remainingRoundTripEfficiency,remainingRoundTripEfficiency,remainingRoundTripEfficiency,名称与官方一致,本稿补名，采用官方名称,LMT,—（3.4未提供）,100,$.remainingRoundTripEfficiency.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingRoundTripEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0110,剩余往返能效,remainingRoundTripEfficiency,remainingRoundTripEfficiency,remainingRoundTripEfficiency,名称与官方一致,本稿补名，采用官方名称,IND,—（3.4未提供）,100,$.remainingRoundTripEfficiency.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingRoundTripEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0111,往返能效衰减率,energyRoundTripEfficiencyFade,roundTripEnergyEfficiencyFade,roundTripEnergyEfficiencyFade,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT,energyRoundTripEfficiencyFade,101,$.roundTripEnergyEfficiencyFade.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名energyRoundTripEfficiencyFade统一为官方名称roundTripEnergyEfficiencyFade；旧名仅作历史追溯。","product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/roundTripEnergyEfficiencyFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0112,往返能效衰减率,energyRoundTripEfficiencyFade,roundTripEnergyEfficiencyFade,roundTripEnergyEfficiencyFade,别名统一官方名称,3.4原有别名，现统一官方名称,IND,energyRoundTripEfficiencyFade,101,$.roundTripEnergyEfficiencyFade.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名energyRoundTripEfficiencyFade统一为官方名称roundTripEnergyEfficiencyFade；旧名仅作历史追溯。","product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/roundTripEnergyEfficiencyFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0113,初始自放电率,initialSelfDischargeRate,initialSelfDischargeRate,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,LMT / IND,initialSelfDischargeRate,102,候选：$.selfDischargingRateSet,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.selfDischargingRateSet；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0114,当前自放电率,currentSelfDischargeRate,currentSelfDischargeRate,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,LMT / IND,currentSelfDischargeRate,103,候选：$.selfDischargingRateSet,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.selfDischargingRateSet；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0115,自放电率变化,evolutionOfSelfDischargeRates,evolutionOfSelfDischargeRates,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,LMT,evolutionOfSelfDischargeRates,104,候选：$.selfDischargingRateSet,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.selfDischargingRateSet；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0116,自放电率变化,evolutionOfSelfDischargeRates,evolutionOfSelfDischargeRates,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,IND,evolutionOfSelfDischargeRates,104,候选：$.selfDischargingRateSet,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.selfDischargingRateSet；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0117,初始电芯直流电阻,initialCellDcResistance,initialCellDcResistance,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,105,候选：$.internalCellResistance.value,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.internalCellResistance.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0118,初始电池包直流电阻,initialPackDcResistance,initialPackDcResistance,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,106,候选：$.internalPackResistance.value,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.internalPackResistance.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0119,初始电芯交流电阻,initialCellAcResistance,initialCellAcResistance,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,107,候选：$.internalCellResistance.value,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.internalCellResistance.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0120,初始电池包交流电阻,initialPackAcResistance,initialPackAcResistance,—（本快照未确认官方对应）,未确认语义对应,本稿拟名，待确认,EV / LMT / IND,—（3.4未提供）,108,候选：$.internalPackResistance.value,"3.4只有业务名称，没有机器字段名；该camelCase名称由本稿拟定，不是官方语义字段。
+候选：$.internalPackResistance.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0121,电池包内阻增长,internalResistanceIncreaseOfPackCellAndModuleRecommended,internalResistanceIncreaseOfPackCellAndModuleRecommended,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,internalResistanceIncreaseOfPackCellAndModuleRecommended,109,候选：$.internalResistanceIncrease.value,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.internalResistanceIncrease.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0122,当前电阻,presentInternalResistanceOfPack,presentInternalResistanceOfPack,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,LMT,presentInternalResistanceOfPack,110,候选：$.ohmicResistance.value,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.ohmicResistance.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0123,当前电阻,presentInternalResistanceOfPack,presentInternalResistanceOfPack,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,IND,presentInternalResistanceOfPack,110,候选：$.ohmicResistance.value,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.ohmicResistance.value；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0124,预期使用寿命（年）,expectedLifetimeInCalendarYears,expectedLifetimeYears,expectedLifetimeYears,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT,expectedLifetimeInCalendarYears,111,$.expectedLifetimeYears,修订前工程名expectedLifetimeInCalendarYears统一为官方名称expectedLifetimeYears；旧名仅作历史追溯。,product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/expectedLifetimeYears
+V4-0125,预期使用寿命（年）,expectedLifetimeInCalendarYears,expectedLifetimeYears,expectedLifetimeYears,别名统一官方名称,3.4原有别名，现统一官方名称,IND,expectedLifetimeInCalendarYears,111,$.expectedLifetimeYears,修订前工程名expectedLifetimeInCalendarYears统一为官方名称expectedLifetimeYears；旧名仅作历史追溯。,product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/expectedLifetimeYears
+V4-0126,预期使用寿命（圈）,expectedLifetimeNumberOfChargeDischargeCycles,expectedLifetimeCycles,expectedLifetimeCycles,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT,expectedLifetimeNumberOfChargeDischargeCycles,112,$.expectedLifetimeCycles,修订前工程名expectedLifetimeNumberOfChargeDischargeCycles统一为官方名称expectedLifetimeCycles；旧名仅作历史追溯。,product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/expectedLifetimeCycles
+V4-0127,预期使用寿命（圈）,expectedLifetimeNumberOfChargeDischargeCycles,expectedLifetimeCycles,expectedLifetimeCycles,别名统一官方名称,3.4原有别名，现统一官方名称,IND,expectedLifetimeNumberOfChargeDischargeCycles,112,$.expectedLifetimeCycles,修订前工程名expectedLifetimeNumberOfChargeDischargeCycles统一为官方名称expectedLifetimeCycles；旧名仅作历史追溯。,product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/expectedLifetimeCycles
+V4-0128,当前完全循环次数,numberOfFullChargingAndDischargingCycles,numberOfFullChargingAndDischargingCycles,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,numberOfFullChargingAndDischargingCycles,113,候选：$.numberOfChargingCycles + $.numberOfDischargingCycles,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.numberOfChargingCycles + $.numberOfDischargingCycles；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0129,循环寿命测试方法,cycleLifeReferenceTest,cycleLifeReferenceTest,cycleLifeReferenceTest,名称与官方一致,3.4名称与官方一致,EV / LMT,cycleLifeReferenceTest,114,$.cycleLifeReferenceTest,,"product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/cycleLifeReferenceTest
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0130,循环寿命测试方法,cycleLifeReferenceTest,cycleLifeReferenceTest,cycleLifeReferenceTest,名称与官方一致,3.4名称与官方一致,IND,cycleLifeReferenceTest,114,$.cycleLifeReferenceTest,,"product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/cycleLifeReferenceTest
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0131,循环寿命测试C率-充电,cRateOfRelevantCycleLifeTest,cycleLifeChargeCRate,cycleLifeChargeCRate,别名统一官方名称,3.4原有别名，现统一官方名称,EV / LMT,cRateOfRelevantCycleLifeTest,115,$.cycleLifeChargeCRate.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名cRateOfRelevantCycleLifeTest统一为官方名称cycleLifeChargeCRate；旧名仅作历史追溯。","product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/cycleLifeChargeCRate
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0132,循环寿命测试C率-充电,cRateOfRelevantCycleLifeTest,cycleLifeChargeCRate,cycleLifeChargeCRate,别名统一官方名称,3.4原有别名，现统一官方名称,IND,cRateOfRelevantCycleLifeTest,115,$.cycleLifeChargeCRate.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名cRateOfRelevantCycleLifeTest统一为官方名称cycleLifeChargeCRate；旧名仅作历史追溯。","product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/cycleLifeChargeCRate
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0133,循环寿命测试C率-放电,cycleLifeDischargeCRate,cycleLifeDischargeCRate,cycleLifeDischargeCRate,名称与官方一致,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,116,$.cycleLifeDischargeCRate.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/cycleLifeDischargeCRate
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0134,耗尽容量阈值,capacityThresholdForExhaustion,capacityExhaustionThreshold,capacityExhaustionThreshold,别名统一官方名称,3.4原有别名，现统一官方名称,EV,capacityThresholdForExhaustion,117,$.capacityExhaustionThreshold.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名capacityThresholdForExhaustion统一为官方名称capacityExhaustionThreshold；旧名仅作历史追溯。","product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/capacityExhaustionThreshold
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0135,温度信息,temperatureInformation,temperatureInformation,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,temperatureInformation,118,候选：$.environmentalConditionHistogramSet,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.environmentalConditionHistogramSet；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0136,空闲状态温度范围,idleStateTemperatureRange,notInUseTemperatureRange.valueRange,notInUseTemperatureRange,别名统一官方名称,本稿补名，采用官方名称,EV / LMT / IND,—（3.4未提供）,119,$.notInUseTemperatureRange.valueRange,"对应官方notInUseTemperatureRange的valueRange子对象；以路径表示，不能作为新的顶层JSON键。
+修订前工程名idleStateTemperatureRange统一为官方名称notInUseTemperatureRange.valueRange；旧名仅作历史追溯。","product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange/properties/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange"
+V4-0137,深度放电事件次数,numberOfDeepDischargeEvents,numberOfDeepDischargeEvents,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,numberOfDeepDischargeEvents,120,候选：$.negativeEvents,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.negativeEvents；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0138,过量充电次数,numberOfOverchargeEvents,numberOfOverchargeEvents,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,numberOfOverchargeEvents,121,候选：$.negativeEvents,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.negativeEvents；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0139,事故信息,informationOnAccidents,informationOnAccidents,—（本快照未确认官方对应）,未确认语义对应,3.4原有工程名；未确认语义对应,EV / LMT / IND,informationOnAccidents,122,候选：$.negativeEvents,"名称来自3.4业务表；在本地语义快照的JSON属性和SKOS notation中未找到同名定义。
+候选：$.negativeEvents；需要人工确认转换规则，不能直接重命名或无损替换。",
+V4-0140,电池识别信息组合,batteryIdentification,batteryIdentification,batteryIdentification,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.batteryIdentification,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification
+V4-0141,批次号,batchNumber,batchNumber,batchNumber,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.batteryIdentification.batchNumber,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/batchNumber
+V4-0142,其他识别要素,otherIdentificationElement,otherIdentificationElement,otherIdentificationElement,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.batteryIdentification.otherIdentificationElement,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/otherIdentificationElement
+V4-0143,产品编号,productNumber,productNumber,productNumber,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.batteryIdentification.productNumber,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/productNumber
+V4-0144,化学物质标识符号,chemicalSymbol,chemicalSymbol,chemicalSymbol,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.chemicalSymbol,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/chemicalSymbol
+V4-0145,合规测试报告结果资源,complianceTestReportResults,complianceTestReportResults,complianceTestReportResults,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.complianceTestReportResults,,"product/batteries/1.0.0/schemas/res2-batteries.schema.json#/properties/complianceTestReportResults
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource"
+V4-0146,详细组成信息,detailedComposition,detailedComposition,detailedComposition,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.detailedComposition,,"product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/detailedComposition
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0147,护照资源状态,dppStatus,dppStatus,dppStatus,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.dppStatus,,core/1.0.0/schemas/core.schema.json#/properties/dppStatus
+V4-0148,运行环境条件直方图集合,environmentalConditionHistogramSet,environmentalConditionHistogramSet,environmentalConditionHistogramSet,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.environmentalConditionHistogramSet,,product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/environmentalConditionHistogramSet
+V4-0149,运行环境条件直方图列表,environmentalConditionHistogram,environmentalConditionHistogram,environmentalConditionHistogram,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.environmentalConditionHistogramSet.environmentalConditionHistogram,,product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/environmentalConditionHistogramSet/properties/environmentalConditionHistogram
+V4-0150,参考条件下预期寿命（循环次数）,expectedLifetimeCyclesRest,expectedLifetimeCyclesRest,expectedLifetimeCyclesRest,名称与官方一致,官方语义名称,EV / LMT,—（3.4未提供）,,$.expectedLifetimeCyclesRest,,product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/expectedLifetimeCyclesRest
+V4-0151,参考条件下预期寿命（循环次数）,expectedLifetimeCyclesRest,expectedLifetimeCyclesRest,expectedLifetimeCyclesRest,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.expectedLifetimeCyclesRest,,product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/expectedLifetimeCyclesRest
+V4-0152,电芯内阻,internalCellResistance,internalCellResistance,internalCellResistance,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.internalCellResistance.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/internalCellResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0153,电池包内阻,internalPackResistance,internalPackResistance,internalPackResistance,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.internalPackResistance.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/internalPackResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0154,内阻,internalResistance,internalResistance,internalResistance,名称与官方一致,官方语义名称,EV / LMT,—（3.4未提供）,,$.internalResistance.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/internalResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0155,内阻,internalResistance,internalResistance,internalResistance,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.internalResistance.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/internalResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0156,内阻增加,internalResistanceIncrease,internalResistanceIncrease,internalResistanceIncrease,名称与官方一致,官方语义名称,EV / LMT,—（3.4未提供）,,$.internalResistanceIncrease.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/internalResistanceIncrease
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0157,内阻增加,internalResistanceIncrease,internalResistanceIncrease,internalResistanceIncrease,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.internalResistanceIncrease.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/internalResistanceIncrease
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0158,制造商网站及邮箱,manufacturerContactDetails,manufacturerContactDetails,manufacturerContactDetails,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.manufacturerContactDetails,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerContactDetails
+V4-0159,制造商名称标识组合,manufacturerIdentification,manufacturerIdentification,manufacturerIdentification,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.manufacturerIdentification,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification
+V4-0160,制造城市,manufacturingCity,manufacturingCity,manufacturingCity,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.manufacturingPlace.manufacturingCity,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace/properties/manufacturingCity
+V4-0161,制造国家代码,manufacturingCountry,manufacturingCountry,manufacturingCountry,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.manufacturingPlace.manufacturingCountry,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace/properties/manufacturingCountry
+V4-0162,制造地区,manufacturingRegion,manufacturingRegion,manufacturingRegion,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.manufacturingPlace.manufacturingRegion,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace/properties/manufacturingRegion
+V4-0163,最高电压,maximumVoltage,maximumVoltage,maximumVoltage,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.maximumVoltage.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/maximumVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/value"
+V4-0164,最高电压·适用条件范围,maximumVoltageValueRange,maximumVoltage.valueRange,maximumVoltage,结构拆分命名,本稿按官方结构拆分,EV / LMT / IND,—（3.4未提供）,,$.maximumVoltage.valueRange,对应官方maximumVoltage的valueRange子对象；以路径表示，不能作为新的顶层JSON键。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/maximumVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange"
+V4-0165,最低电压,minimalVoltage,minimalVoltage,minimalVoltage,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.minimalVoltage.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/minimalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/value"
+V4-0166,最低电压·适用条件范围,minimalVoltageValueRange,minimalVoltage.valueRange,minimalVoltage,结构拆分命名,本稿按官方结构拆分,EV / LMT / IND,—（3.4未提供）,,$.minimalVoltage.valueRange,对应官方minimalVoltage的valueRange子对象；以路径表示，不能作为新的顶层JSON键。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/minimalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange"
+V4-0167,负面事件说明,negativeEvents,negativeEvents,negativeEvents,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.negativeEvents,,"product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/negativeEvents
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0168,标称电压·适用条件范围,nominalVoltageValueRange,nominalVoltage.valueRange,nominalVoltage,结构拆分命名,本稿按官方结构拆分,EV / LMT / IND,—（3.4未提供）,,$.nominalVoltage.valueRange,对应官方nominalVoltage的valueRange子对象；以路径表示，不能作为新的顶层JSON键。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/nominalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange"
+V4-0169,非使用状态耐受温度范围及测试,notInUseTemperatureRange,notInUseTemperatureRange,notInUseTemperatureRange,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.notInUseTemperatureRange,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange
+V4-0170,非使用状态温度范围的参考测试,notInUseTemperatureRangeTest,notInUseTemperatureRangeTest,notInUseTemperatureRangeTest,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.notInUseTemperatureRange.notInUseTemperatureRangeTest,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange/properties/notInUseTemperatureRangeTest
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0171,充电循环次数列表,numberOfChargingCycles,numberOfChargingCycles,numberOfChargingCycles,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.numberOfChargingCycles,,product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/numberOfChargingCycles
+V4-0172,放电循环次数列表,numberOfDischargingCycles,numberOfDischargingCycles,numberOfDischargingCycles,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.numberOfDischargingCycles,,product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/numberOfDischargingCycles
+V4-0173,欧姆内阻,ohmicResistance,ohmicResistance,ohmicResistance,名称与官方一致,官方语义名称,LMT,—（3.4未提供）,,$.ohmicResistance.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/ohmicResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0174,欧姆内阻,ohmicResistance,ohmicResistance,ohmicResistance,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.ohmicResistance.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/ohmicResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0175,初始功率能力,originalPowerCapability,originalPowerCapability,originalPowerCapability,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.originalPowerCapability.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/originalPowerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0176,功率能力,powerCapability,powerCapability,powerCapability,名称与官方一致,官方语义名称,EV / LMT,—（3.4未提供）,,$.powerCapability.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/powerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0177,功率能力,powerCapability,powerCapability,powerCapability,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.powerCapability.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/powerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0178,功率限值列表,powerLimit,powerLimit,powerLimit,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.powerLimit,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/powerLimit
+V4-0179,功率限值列表（数组元素）·适用条件范围,powerLimitValueRange,powerLimit.valueRange,powerLimit,结构拆分命名,本稿按官方结构拆分,EV / LMT / IND,—（3.4未提供）,,$.powerLimit[].valueRange,对应官方powerLimit的valueRange子对象；以路径表示，不能作为新的顶层JSON键。,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/powerLimit/items
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange"
+V4-0180,健康状态视图·额定容量,stateOfHealthRatedCapacity,ratedCapacity,ratedCapacity,别名统一官方名称,本稿工程别名，现统一官方名称,EV / LMT,—（3.4未提供）,,$.ratedCapacity.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名stateOfHealthRatedCapacity统一为官方名称ratedCapacity；旧名仅作历史追溯。
+stateOfHealthRatedCapacity是本稿为避免旧命名冲突拟定的别名；现采用RES3官方名ratedCapacity。","product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/ratedCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0181,健康状态视图·额定容量,stateOfHealthRatedCapacity,ratedCapacity,ratedCapacity,别名统一官方名称,本稿工程别名，现统一官方名称,IND,—（3.4未提供）,,$.ratedCapacity.value,"工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名stateOfHealthRatedCapacity统一为官方名称ratedCapacity；旧名仅作历史追溯。
+stateOfHealthRatedCapacity是本稿为避免旧命名冲突拟定的别名；现采用RES3官方名ratedCapacity。","product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/ratedCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0182,护照注册／负责主体身份信息,registrantIdentity,registrantIdentity,registrantIdentity,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.registrantIdentity,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/registrantIdentity
+V4-0183,往返能量效率,roundTripEnergyEfficiency,roundTripEnergyEfficiency,roundTripEnergyEfficiency,名称与官方一致,官方语义名称,EV / LMT,—（3.4未提供）,,$.roundTripEnergyEfficiency.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/roundTripEnergyEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0184,往返能量效率,roundTripEnergyEfficiency,roundTripEnergyEfficiency,roundTripEnergyEfficiency,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.roundTripEnergyEfficiency.value,工程行表示官方计量对象的value；unit仍按官方结构输出。,"product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/roundTripEnergyEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value"
+V4-0185,自放电率及记录时间,selfDischargingRateSet,selfDischargingRateSet,selfDischargingRateSet,名称与官方一致,官方语义名称,LMT,—（3.4未提供）,,$.selfDischargingRateSet,,product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/selfDischargingRateSet
+V4-0186,自放电率及记录时间,selfDischargingRateSet,selfDischargingRateSet,selfDischargingRateSet,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.selfDischargingRateSet,,product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/selfDischargingRateSet
+V4-0187,记录时间,recordedTime,recordedTime,recordedTime,名称与官方一致,官方语义名称,LMT,—（3.4未提供）,,$.selfDischargingRateSet.recordedTime,,product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/selfDischargingRateSet/properties/recordedTime
+V4-0188,记录时间,recordedTime,recordedTime,recordedTime,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.selfDischargingRateSet.recordedTime,,product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/selfDischargingRateSet/properties/recordedTime
+V4-0189,自放电率记录列表,selfDischargingRate,selfDischargingRate,selfDischargingRate,名称与官方一致,官方语义名称,LMT,—（3.4未提供）,,$.selfDischargingRateSet.selfDischargingRate,,product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/selfDischargingRateSet/properties/selfDischargingRate
+V4-0190,自放电率记录列表,selfDischargingRate,selfDischargingRate,selfDischargingRate,名称与官方一致,官方语义名称,IND,—（3.4未提供）,,$.selfDischargingRateSet.selfDischargingRate,,product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/selfDischargingRateSet/properties/selfDischargingRate
+V4-0191,替换备件的编号及来源信息,sparePartReplacementDetails,sparePartReplacementDetails,sparePartReplacementDetails,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.sparePartReplacementDetails,,"product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/sparePartReplacementDetails
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource"
+V4-0192,荷电状态 SOC 直方图列表,stateOfChargeHistogram,stateOfChargeHistogram,stateOfChargeHistogram,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.stateOfChargeHistogram,,product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/stateOfChargeHistogram
+V4-0193,废电池预防与管理信息,wasteBatteryPreventionManagementInfo,wasteBatteryPreventionManagementInfo,wasteBatteryPreventionManagementInfo,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.wasteBatteryPreventionManagementInfo,,product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo
+V4-0194,准备改变用途的处理设施,preparationForRepurposingFacilities,preparationForRepurposingFacilities,preparationForRepurposingFacilities,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.wasteBatteryPreventionManagementInfo.preparationForRepurposingFacilities,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/preparationForRepurposingFacilities
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0195,准备再使用的处理设施,preparationForReuseFacilities,preparationForReuseFacilities,preparationForReuseFacilities,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.wasteBatteryPreventionManagementInfo.preparationForReuseFacilities,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/preparationForReuseFacilities
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0196,分类收集点信息,separateCollectionPoints,separateCollectionPoints,separateCollectionPoints,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.wasteBatteryPreventionManagementInfo.separateCollectionPoints,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/separateCollectionPoints
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0197,回收接收点信息,takeBackCollectionPoints,takeBackCollectionPoints,takeBackCollectionPoints,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.wasteBatteryPreventionManagementInfo.takeBackCollectionPoints,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/takeBackCollectionPoints
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0198,废电池安全说明,wasteBatterySafetyInstructions,wasteBatterySafetyInstructions,wasteBatterySafetyInstructions,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.wasteBatteryPreventionManagementInfo.wasteBatterySafetyInstructions,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/wasteBatterySafetyInstructions
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"
+V4-0199,废电池处理设施,wasteBatteryTreatmentFacilities,wasteBatteryTreatmentFacilities,wasteBatteryTreatmentFacilities,名称与官方一致,官方语义名称,EV / LMT / IND,—（3.4未提供）,,$.wasteBatteryPreventionManagementInfo.wasteBatteryTreatmentFacilities,,"product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/wasteBatteryTreatmentFacilities
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage"

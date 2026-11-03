@@ -46,7 +46,7 @@ PROPOSED_CODES = {
     42:'stateOfHealthAndLifetimeDocuments',43:'regulatoryTechnicalDocuments',44:'batteryUserManuals',
     52:'absoluteBatteryCarbonFootprint',58:'cathodeMaterialName',59:'cathodeMaterialCasNumber',
     60:'anodeMaterialName',61:'anodeMaterialCasNumber',62:'electrolyteMaterialName',
-    63:'electrolyteMaterialCasNumber',64:'hazardousSubstanceNames',65:'hazardousSubstanceCasNumber',
+    63:'electrolyteMaterialCasNumber',64:'hazardousSubstances',65:'hazardousSubstanceCasNumber',
     66:'hazardousSubstanceClassification',67:'hazardousSubstanceLocation',
     68:'hazardousSubstanceConcentration',69:'batterySubstancesImpact',
     72:'sparePartReplacementPostalAddress',73:'sparePartReplacementWebsite',74:'sparePartReplacementEmail',
@@ -115,12 +115,13 @@ MAPPING_NOTES = {
     10:'不是固定版本枚举；核心、产品组、对应子类规范标识分别按语义规则计数。',
     11:'型号与批次成对，或使用序列号／产品编号／其他识别要素满足择项组合。',
     12:'序列号属于识别择项组合，不能将每个识别成员都设为无条件必填。',
+    24:'制造商单一联系邮寄地址。官方类型为string，minLength=1；未设置地址专用format、pattern、maxLength或枚举，未限定文本语言。可填写中文或英文地址，不接受zh-CN/en-GB等键组成的多语言对象。3.4的“多语言=是”属于工程录入要求，不能据此改变官方传输结构；系统可另存双语版本，输出时仍提交一个地址字符串。业务上须为真实联系邮寄地址，纯空格或任意占位文字即使通过结构校验也不符合字段含义。',
     27:'由旧字符串调整为制造地点对象，需提供国家及城市／地区至少一项。',
     30:'对齐commercialWarrantyPeriod，采用非负整数月数；旧字符串需迁移规则。',
     34:'当前Schema为boolean且const=true；不是任意图片／标识枚举。',
     36:'当前为多语言文本对象，源Schema没有灭火剂的封闭枚举。',
     38:'关联资源对象须包含contentType和url，标题与language按各自规则填写。',
-    64:'当前为物质字符串列表；CAS、浓度、位置等旧工程分项另行保留待确认。',
+    64:'来源为工程化3.4第64行“有害物质名称”，原表未给机器字段名。初稿hazardousSubstanceNames是本稿拟定的工程名，现统一采用官方语义名称hazardousSubstances。官方为有害物质自由文本字符串数组（汞、镉、铅除外），不是多语言对象；CAS、浓度、位置等旧工程分项另行保留待确认。',
     84:'本行对应公开batteryCapacity；RES3另有ratedCapacity。二者同源复用及状态变化后的更新策略需确认。',
     85:'按本语义版本：EV不填写／不展示；LMT结构必填；工业为固定式储能且有BMS等条件适用。',
     89:'保留工程编码stateOfCertifiedEnergySOCE；对外路径stateOfCertifiedEnergy.value。',
@@ -460,6 +461,8 @@ class Builder:
                     example=get_example(source.models[group],path),owner=owner,remarks=join_unique(remarks),
                     oldrow=legacy.get('row'),old=old,entry=entry,added=added,
                     rule_signature=rule_signature(node,context))
+        if legacy.get('row')==64:record['multilingual']='否（非多语言对象；array<string>）'
+        if legacy.get('row')==24:record['multilingual']='无官方多语言结构；工程双语另行管理'
         self.covered.add((group,path))
         return record
 
@@ -740,7 +743,8 @@ def build_workbook(builder):
                       join_unique([r['status'] for r in rs]),old[4],join_unique([' / '.join(r['groups']) for r in rs]),old[5],vals('required'),
                       old[6],vals('access'),old[7],vals('fmt'),old[9],vals('unit'),old[10],vals('enum'),old[13],vals('dynamic'),
                       join_unique([r['path'] for r in rs]),join_unique([
-                      '旧表缺少机器编码，本稿提出：'+legacy['code']+'，需业务确认。' if not legacy['old_code'] else '',notes])])
+                      ('旧表未给机器编码；本稿采用官方语义名称hazardousSubstances。' if legacy['row']==64 else
+                       '旧表缺少机器编码，本稿提出：'+legacy['code']+'，需业务确认。') if not legacy['old_code'] else '',notes])])
     for rec in builder.records:
         if not rec['added']:continue
         diffs.append(['新增','—',rec['code'],'第'+str(rec['excel_row'])+'行',rec['status'],'—',' / '.join(rec['groups']),'—',rec['required'],
@@ -784,6 +788,8 @@ def verify(path,builder,metrics):
         assert match and match[0]['required']==want,(code,group,match)
     assert any(r['code']=='internalDppStatus' and not r['entry'] for r in builder.records)
     assert any(r['code']=='dppStatus' and r['entry'] for r in builder.records)
+    assert not any(r['code']=='hazardousSubstanceNames' for r in builder.records)
+    assert any(r['code']=='hazardousSubstances' and r['path']=='$.hazardousSubstances' for r in builder.records)
     for group in ['LMT','IND']:
         assert any(r['code']=='selfDischargingRateSet' and group in r['groups'] for r in builder.records)
     return wb

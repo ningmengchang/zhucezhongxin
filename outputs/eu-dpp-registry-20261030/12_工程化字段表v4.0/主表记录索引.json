@@ -1019,7 +1019,7 @@
   },
   {
     "id": "V4-0065",
-    "code": "hazardousSubstanceNames",
+    "code": "hazardousSubstances",
     "title": "有害物质名称",
     "groups": [
       "EV",

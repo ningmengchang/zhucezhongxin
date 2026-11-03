@@ -1,0 +1,28 @@
+{
+  "field": "manufacturerPostalAddress",
+  "sourceWorkbook": "电池护照_工程化字段表_v4.0_字段来源核对版.xlsx",
+  "outputWorkbook": "电池护照_工程化字段表_v4.0_字段来源核对版_地址说明修订.xlsx",
+  "schemaSource": "03_语义资源/product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerPostalAddress",
+  "changes": [
+    {
+      "cell": "X26",
+      "column": "多语言",
+      "before": "是",
+      "after": "无官方多语言结构；工程双语另行管理"
+    },
+    {
+      "cell": "S26",
+      "column": "中文描述",
+      "before": "制造商邮政地址。\n必填（该电池类别／当前访问视图）。\nJSON 字符串。",
+      "after": "制造商单一联系邮寄地址。\n官方为制造商单一联系邮寄地址：string，minLength=1，必填；没有地址专用format、pattern、maxLength或枚举，未限定文本语言。中文或英文均可按字符串填写；不是zh-CN/en-GB多语言对象。3.4“多语言=是”属于工程录入要求，双语版本应在内部另行管理，对外仍提交一个地址字符串。须填写真实联系邮寄地址；纯空格或占位文字即使通过结构校验也不符合业务含义。"
+    },
+    {
+      "cell": "AA26",
+      "column": "工程与核对备注",
+      "before": "工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。",
+      "after": "工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。\n【地址填写说明修订】官方为制造商单一联系邮寄地址：string，minLength=1，必填；没有地址专用format、pattern、maxLength或枚举，未限定文本语言。中文或英文均可按字符串填写；不是zh-CN/en-GB多语言对象。3.4“多语言=是”属于工程录入要求，双语版本应在内部另行管理，对外仍提交一个地址字符串。须填写真实联系邮寄地址；纯空格或占位文字即使通过结构校验也不符合业务含义。"
+    }
+  ],
+  "outputSha256": "dc694fa6245e6e68899855cf00d47d490605d5bf816cef3260e10da5ce51724b",
+  "verification": "passed"
+}
