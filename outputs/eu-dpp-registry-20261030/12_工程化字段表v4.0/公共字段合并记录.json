@@ -1,0 +1,1097 @@
+{
+  "source": "电池护照_工程化字段表_v4.0_字段来源核对版_地址说明修订.xlsx",
+  "target": "电池护照_工程化字段表_v4.0_公共字段合并版.xlsx",
+  "previousMainRows": 199,
+  "currentMainRows": 171,
+  "mergedFieldGroups": 25,
+  "reducedRows": 28,
+  "mergedFields": [
+    {
+      "field": "contentSpecificationIds",
+      "oldRows": [
+        10,
+        11,
+        12
+      ],
+      "newRow": 10,
+      "oldIds": [
+        "V4-0009",
+        "V4-0010",
+        "V4-0011"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+          "sourceRow": 10,
+          "originalId": "V4-0009"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+          "sourceRow": 11,
+          "originalId": "V4-0010"
+        },
+        "IND": {
+          "required": "M",
+          "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+          "sourceRow": 12,
+          "originalId": "V4-0011"
+        }
+      }
+    },
+    {
+      "field": "remainingCapacity",
+      "oldRows": [
+        87,
+        88,
+        89
+      ],
+      "newRow": 85,
+      "oldIds": [
+        "V4-0086",
+        "V4-0087",
+        "V4-0088"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "N/A",
+          "condition": "该版本类别语义Schema未定义此路径；相关不适用边界按源视图核对。",
+          "sourceRow": 87,
+          "originalId": "V4-0086"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 88,
+          "originalId": "V4-0087"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 89,
+          "originalId": "V4-0088"
+        }
+      }
+    },
+    {
+      "field": "capacityFade",
+      "oldRows": [
+        90,
+        91
+      ],
+      "newRow": 86,
+      "oldIds": [
+        "V4-0089",
+        "V4-0090"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 90,
+          "originalId": "V4-0089"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 90,
+          "originalId": "V4-0089"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 91,
+          "originalId": "V4-0090"
+        }
+      }
+    },
+    {
+      "field": "remainingPowerCapability",
+      "oldRows": [
+        100,
+        101,
+        102
+      ],
+      "newRow": 95,
+      "oldIds": [
+        "V4-0099",
+        "V4-0100",
+        "V4-0101"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "N/A",
+          "condition": "该版本类别语义Schema未定义此路径；相关不适用边界按源视图核对。",
+          "sourceRow": 100,
+          "originalId": "V4-0099"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 101,
+          "originalId": "V4-0100"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 102,
+          "originalId": "V4-0101"
+        }
+      }
+    },
+    {
+      "field": "powerFade",
+      "oldRows": [
+        103,
+        104
+      ],
+      "newRow": 96,
+      "oldIds": [
+        "V4-0102",
+        "V4-0103"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 103,
+          "originalId": "V4-0102"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 103,
+          "originalId": "V4-0102"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 104,
+          "originalId": "V4-0103"
+        }
+      }
+    },
+    {
+      "field": "initialRoundTripEnergyEfficiency",
+      "oldRows": [
+        106,
+        107
+      ],
+      "newRow": 98,
+      "oldIds": [
+        "V4-0105",
+        "V4-0106"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 106,
+          "originalId": "V4-0105"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 106,
+          "originalId": "V4-0105"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 107,
+          "originalId": "V4-0106"
+        }
+      }
+    },
+    {
+      "field": "roundTripEfficiencyAtHalfCycleLife",
+      "oldRows": [
+        108,
+        109
+      ],
+      "newRow": 99,
+      "oldIds": [
+        "V4-0107",
+        "V4-0108"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 108,
+          "originalId": "V4-0107"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 108,
+          "originalId": "V4-0107"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 109,
+          "originalId": "V4-0108"
+        }
+      }
+    },
+    {
+      "field": "remainingRoundTripEfficiency",
+      "oldRows": [
+        110,
+        111
+      ],
+      "newRow": 100,
+      "oldIds": [
+        "V4-0109",
+        "V4-0110"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 110,
+          "originalId": "V4-0109"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 111,
+          "originalId": "V4-0110"
+        }
+      }
+    },
+    {
+      "field": "roundTripEnergyEfficiencyFade",
+      "oldRows": [
+        112,
+        113
+      ],
+      "newRow": 101,
+      "oldIds": [
+        "V4-0111",
+        "V4-0112"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "C",
+          "condition": "适用时填写；本词表未给出统一的适用条件判断算法。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 112,
+          "originalId": "V4-0111"
+        },
+        "LMT": {
+          "required": "C",
+          "condition": "适用时填写；本词表未给出统一的适用条件判断算法。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 112,
+          "originalId": "V4-0111"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用，且需满足该指标的适用条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 113,
+          "originalId": "V4-0112"
+        }
+      }
+    },
+    {
+      "field": "evolutionOfSelfDischargeRates",
+      "oldRows": [
+        116,
+        117
+      ],
+      "newRow": 104,
+      "oldIds": [
+        "V4-0115",
+        "V4-0116"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "LMT": {
+          "required": "M",
+          "condition": "沿用3.4业务类别；当前语义包尚未确认该工程项的适用条件。",
+          "sourceRow": 116,
+          "originalId": "V4-0115"
+        },
+        "IND": {
+          "required": "V",
+          "condition": "沿用3.4业务类别；当前语义包尚未确认该工程项的适用条件。",
+          "sourceRow": 117,
+          "originalId": "V4-0116"
+        }
+      }
+    },
+    {
+      "field": "presentInternalResistanceOfPack",
+      "oldRows": [
+        123,
+        124
+      ],
+      "newRow": 110,
+      "oldIds": [
+        "V4-0122",
+        "V4-0123"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "LMT": {
+          "required": "M",
+          "condition": "沿用3.4业务类别；当前语义包尚未确认该工程项的适用条件。",
+          "sourceRow": 123,
+          "originalId": "V4-0122"
+        },
+        "IND": {
+          "required": "V",
+          "condition": "沿用3.4业务类别；当前语义包尚未确认该工程项的适用条件。",
+          "sourceRow": 124,
+          "originalId": "V4-0123"
+        }
+      }
+    },
+    {
+      "field": "expectedLifetimeYears",
+      "oldRows": [
+        125,
+        126
+      ],
+      "newRow": 111,
+      "oldIds": [
+        "V4-0124",
+        "V4-0125"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 125,
+          "originalId": "V4-0124"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 125,
+          "originalId": "V4-0124"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用；电池状态变化时可能需要更新。",
+          "sourceRow": 126,
+          "originalId": "V4-0125"
+        }
+      }
+    },
+    {
+      "field": "expectedLifetimeCycles",
+      "oldRows": [
+        127,
+        128
+      ],
+      "newRow": 112,
+      "oldIds": [
+        "V4-0126",
+        "V4-0127"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 127,
+          "originalId": "V4-0126"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 127,
+          "originalId": "V4-0126"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅部分可用循环次数表达寿命的工业电池适用。",
+          "sourceRow": 128,
+          "originalId": "V4-0127"
+        }
+      }
+    },
+    {
+      "field": "cycleLifeReferenceTest",
+      "oldRows": [
+        130,
+        131
+      ],
+      "newRow": 114,
+      "oldIds": [
+        "V4-0129",
+        "V4-0130"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 130,
+          "originalId": "V4-0129"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 130,
+          "originalId": "V4-0129"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅部分可用循环次数表达寿命的工业电池适用。",
+          "sourceRow": 131,
+          "originalId": "V4-0130"
+        }
+      }
+    },
+    {
+      "field": "cycleLifeChargeCRate",
+      "oldRows": [
+        132,
+        133
+      ],
+      "newRow": 115,
+      "oldIds": [
+        "V4-0131",
+        "V4-0132"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 132,
+          "originalId": "V4-0131"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 132,
+          "originalId": "V4-0131"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 133,
+          "originalId": "V4-0132"
+        }
+      }
+    },
+    {
+      "field": "expectedLifetimeCyclesRest",
+      "oldRows": [
+        151,
+        152
+      ],
+      "newRow": 133,
+      "oldIds": [
+        "V4-0150",
+        "V4-0151"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 151,
+          "originalId": "V4-0150"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 151,
+          "originalId": "V4-0150"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电且属于循环应用的工业电池适用；电池状态变化时可能需要更新。",
+          "sourceRow": 152,
+          "originalId": "V4-0151"
+        }
+      }
+    },
+    {
+      "field": "internalResistance",
+      "oldRows": [
+        155,
+        156
+      ],
+      "newRow": 136,
+      "oldIds": [
+        "V4-0154",
+        "V4-0155"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 155,
+          "originalId": "V4-0154"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 155,
+          "originalId": "V4-0154"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 156,
+          "originalId": "V4-0155"
+        }
+      }
+    },
+    {
+      "field": "internalResistanceIncrease",
+      "oldRows": [
+        157,
+        158
+      ],
+      "newRow": 137,
+      "oldIds": [
+        "V4-0156",
+        "V4-0157"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 157,
+          "originalId": "V4-0156"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 157,
+          "originalId": "V4-0156"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 158,
+          "originalId": "V4-0157"
+        }
+      }
+    },
+    {
+      "field": "ohmicResistance",
+      "oldRows": [
+        174,
+        175
+      ],
+      "newRow": 153,
+      "oldIds": [
+        "V4-0173",
+        "V4-0174"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 174,
+          "originalId": "V4-0173"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 175,
+          "originalId": "V4-0174"
+        }
+      }
+    },
+    {
+      "field": "powerCapability",
+      "oldRows": [
+        177,
+        178
+      ],
+      "newRow": 155,
+      "oldIds": [
+        "V4-0176",
+        "V4-0177"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 177,
+          "originalId": "V4-0176"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 177,
+          "originalId": "V4-0176"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 178,
+          "originalId": "V4-0177"
+        }
+      }
+    },
+    {
+      "field": "ratedCapacity",
+      "oldRows": [
+        181,
+        182
+      ],
+      "newRow": 158,
+      "oldIds": [
+        "V4-0180",
+        "V4-0181"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 181,
+          "originalId": "V4-0180"
+        },
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 181,
+          "originalId": "V4-0180"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 182,
+          "originalId": "V4-0181"
+        }
+      }
+    },
+    {
+      "field": "roundTripEnergyEfficiency",
+      "oldRows": [
+        184,
+        185
+      ],
+      "newRow": 160,
+      "oldIds": [
+        "V4-0183",
+        "V4-0184"
+      ],
+      "activeClasses": [
+        "EV",
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "EV": {
+          "required": "C",
+          "condition": "适用时填写；本词表未给出统一的适用条件判断算法。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 184,
+          "originalId": "V4-0183"
+        },
+        "LMT": {
+          "required": "C",
+          "condition": "适用时填写；本词表未给出统一的适用条件判断算法。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 184,
+          "originalId": "V4-0183"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅可充电工业电池适用，且需满足该指标的适用条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 185,
+          "originalId": "V4-0184"
+        }
+      }
+    },
+    {
+      "field": "selfDischargingRateSet",
+      "oldRows": [
+        186,
+        187
+      ],
+      "newRow": 161,
+      "oldIds": [
+        "V4-0185",
+        "V4-0186"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 186,
+          "originalId": "V4-0185"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。",
+          "sourceRow": 187,
+          "originalId": "V4-0186"
+        }
+      }
+    },
+    {
+      "field": "recordedTime",
+      "oldRows": [
+        188,
+        189
+      ],
+      "newRow": 162,
+      "oldIds": [
+        "V4-0187",
+        "V4-0188"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "LMT": {
+          "required": "M",
+          "condition": "继承上层 selfDischargingRateSet：必填（该电池类别／当前访问视图）。",
+          "sourceRow": 188,
+          "originalId": "V4-0187"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "继承上层 selfDischargingRateSet：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 189,
+          "originalId": "V4-0188"
+        }
+      }
+    },
+    {
+      "field": "selfDischargingRate",
+      "oldRows": [
+        190,
+        191
+      ],
+      "newRow": 163,
+      "oldIds": [
+        "V4-0189",
+        "V4-0190"
+      ],
+      "activeClasses": [
+        "LMT",
+        "IND"
+      ],
+      "perClass": {
+        "LMT": {
+          "required": "M",
+          "condition": "必填（该电池类别／当前访问视图）。",
+          "sourceRow": 190,
+          "originalId": "V4-0189"
+        },
+        "IND": {
+          "required": "C",
+          "condition": "仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+          "sourceRow": 191,
+          "originalId": "V4-0190"
+        }
+      }
+    }
+  ],
+  "rowMapping": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "11": 10,
+    "12": 10,
+    "13": 11,
+    "14": 12,
+    "15": 13,
+    "16": 14,
+    "17": 15,
+    "18": 16,
+    "19": 17,
+    "20": 18,
+    "21": 19,
+    "22": 20,
+    "23": 21,
+    "24": 22,
+    "25": 23,
+    "26": 24,
+    "27": 25,
+    "28": 26,
+    "29": 27,
+    "30": 28,
+    "31": 29,
+    "32": 30,
+    "33": 31,
+    "34": 32,
+    "35": 33,
+    "36": 34,
+    "37": 35,
+    "38": 36,
+    "39": 37,
+    "40": 38,
+    "41": 39,
+    "42": 40,
+    "43": 41,
+    "44": 42,
+    "45": 43,
+    "46": 44,
+    "47": 45,
+    "48": 46,
+    "49": 47,
+    "50": 48,
+    "51": 49,
+    "52": 50,
+    "53": 51,
+    "54": 52,
+    "55": 53,
+    "56": 54,
+    "57": 55,
+    "58": 56,
+    "59": 57,
+    "60": 58,
+    "61": 59,
+    "62": 60,
+    "63": 61,
+    "64": 62,
+    "65": 63,
+    "66": 64,
+    "67": 65,
+    "68": 66,
+    "69": 67,
+    "70": 68,
+    "71": 69,
+    "72": 70,
+    "73": 71,
+    "74": 72,
+    "75": 73,
+    "76": 74,
+    "77": 75,
+    "78": 76,
+    "79": 77,
+    "80": 78,
+    "81": 79,
+    "82": 80,
+    "83": 81,
+    "84": 82,
+    "85": 83,
+    "86": 84,
+    "87": 85,
+    "88": 85,
+    "89": 85,
+    "90": 86,
+    "91": 86,
+    "92": 87,
+    "93": 88,
+    "94": 89,
+    "95": 90,
+    "96": 91,
+    "97": 92,
+    "98": 93,
+    "99": 94,
+    "100": 95,
+    "101": 95,
+    "102": 95,
+    "103": 96,
+    "104": 96,
+    "105": 97,
+    "106": 98,
+    "107": 98,
+    "108": 99,
+    "109": 99,
+    "110": 100,
+    "111": 100,
+    "112": 101,
+    "113": 101,
+    "114": 102,
+    "115": 103,
+    "116": 104,
+    "117": 104,
+    "118": 105,
+    "119": 106,
+    "120": 107,
+    "121": 108,
+    "122": 109,
+    "123": 110,
+    "124": 110,
+    "125": 111,
+    "126": 111,
+    "127": 112,
+    "128": 112,
+    "129": 113,
+    "130": 114,
+    "131": 114,
+    "132": 115,
+    "133": 115,
+    "134": 116,
+    "135": 117,
+    "136": 118,
+    "137": 119,
+    "138": 120,
+    "139": 121,
+    "140": 122,
+    "141": 123,
+    "142": 124,
+    "143": 125,
+    "144": 126,
+    "145": 127,
+    "146": 128,
+    "147": 129,
+    "148": 130,
+    "149": 131,
+    "150": 132,
+    "151": 133,
+    "152": 133,
+    "153": 134,
+    "154": 135,
+    "155": 136,
+    "156": 136,
+    "157": 137,
+    "158": 137,
+    "159": 138,
+    "160": 139,
+    "161": 140,
+    "162": 141,
+    "163": 142,
+    "164": 143,
+    "165": 144,
+    "166": 145,
+    "167": 146,
+    "168": 147,
+    "169": 148,
+    "170": 149,
+    "171": 150,
+    "172": 151,
+    "173": 152,
+    "174": 153,
+    "175": 153,
+    "176": 154,
+    "177": 155,
+    "178": 155,
+    "179": 156,
+    "180": 157,
+    "181": 158,
+    "182": 158,
+    "183": 159,
+    "184": 160,
+    "185": 160,
+    "186": 161,
+    "187": 161,
+    "188": 162,
+    "189": 162,
+    "190": 163,
+    "191": 163,
+    "192": 164,
+    "193": 165,
+    "194": 166,
+    "195": 167,
+    "196": 168,
+    "197": 169,
+    "198": 170,
+    "199": 171,
+    "200": 172
+  },
+  "preservedLegacyBusinessRows": 121,
+  "preservedSemanticNodes": 642,
+  "sourcePreserved": true,
+  "outputSha256": "8b47f77126d076a3a0171ecd6aead04a0b5959cf61925438ad0530ee240d762d",
+  "verification": "passed"
+}
