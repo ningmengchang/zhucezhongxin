@@ -338,10 +338,10 @@ def required_of(entry, source):
 def dynamics(entry, source):
     node = meaning(entry,source)
     scope = section(node.get('description',''),'官方适用说明原文')
+    if 'dynamic dimension' in scope.lower():
+        return 'Dynamic','官方语义依据：battery-vocabulary.ttl的skos:scopeNote明确说明动态维度；电池状态变化时，该参数可能需要更新。未规定固定采集频率。'
     if root_name(entry['path']) in DYNAMIC_ROOTS:
         return 'Dynamic','工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。'
-    if 'dynamic dimension' in scope.lower():
-        return 'Dynamic','源词表说明状态变化时可能需更新；本表归入Dynamic，触发方式为事件更新。'
     return 'Static','工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。'
 
 
@@ -443,7 +443,9 @@ class Builder:
         if not chinese:chinese='按字段类型、父结构及源规则填写。'
         old_dynamic=old[13] if old else ''
         remarks=[note,dynamic_note]
-        if old_dynamic and old_dynamic!=dynamic:remarks.append('动静态从旧表'+old_dynamic+'调整为'+dynamic+'，属工程建议，待业务确认。')
+        if old_dynamic and old_dynamic!=dynamic:
+            authority='，依据官方词表的动态维度说明；具体更新频率待工程确认。' if 'dynamic dimension' in section(ctext,'官方适用说明原文').lower() else '，属工程建议，待业务确认。'
+            remarks.append('动静态从旧表'+old_dynamic+'调整为'+dynamic+authority)
         if old and old[7].lower().startswith('decimal'):remarks.append('旧存储精度建议：'+old[7]+'；不是官方JSON Schema精度约束。')
         if node.get('type')=='number' and '%' in unit and 'maximum' not in node:
             remarks.append('源Schema未设maximum，不能仅凭%单位认定已限制0～100。')
