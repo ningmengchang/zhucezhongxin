@@ -1,0 +1,14 @@
+{
+  "field": "capacityFade",
+  "dynamic": "Dynamic",
+  "evidence": "product/batteries/1.0.0/vocabs/battery-vocabulary.ttl#capacityFade; skos:scopeNote (line 839)",
+  "correctedMainRow": 32,
+  "sourceMainRows": 100,
+  "outputMainRows": 100,
+  "otherNonemptyCellValuesPreserved": true,
+  "blankCellNormalizationCount": 1204,
+  "sourceWorkbook": "电池护照_工程化字段表_v4.0_公共字段合并版.xlsx",
+  "outputWorkbook": "电池护照_工程化字段表_v4.0_公共字段合并版_动态依据修订.xlsx",
+  "outputSha256": "2adf30bbf26b5dcad188bec4b2df9cb48b2a5ab4189658012fe2c8ebc988ee8d",
+  "verification": "passed"
+}
