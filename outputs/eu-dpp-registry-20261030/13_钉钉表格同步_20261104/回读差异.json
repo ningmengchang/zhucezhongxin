@@ -1,0 +1,26 @@
+[
+  {
+    "row": 21,
+    "col": 15,
+    "expected": "true",
+    "actual": "TRUE"
+  },
+  {
+    "row": 78,
+    "col": 15,
+    "expected": "45",
+    "actual": "4500%"
+  },
+  {
+    "row": 79,
+    "col": 15,
+    "expected": "150",
+    "actual": "15000%"
+  },
+  {
+    "row": 80,
+    "col": 15,
+    "expected": "45",
+    "actual": "4500%"
+  }
+]

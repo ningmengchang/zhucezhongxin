@@ -1,0 +1,919 @@
+{
+  "cells": [
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "@",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "true"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"en-IE\":\"Large quantities of water; dry chemical powder (Class D) for small fires\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"resourceTitle\":\"EU declaration of conformity file\",\"contentType\":\"application/pdf\",\"url\":\"https://example.com/docs/eu-doc-0001.pdf\",\"language\":\"en-GB\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "[\"https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLCO\"]"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#0563c1",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textUnderline": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "[\"https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lithium\"]"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#0563c1",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textUnderline": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "[\"Lithium\"]"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"resourceTitle\":\"Dismantling document\",\"contentType\":\"application/pdf\",\"url\":\"https://example.com/docs/dismantling-0001\",\"language\":\"en-GB\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"resourceTitle\":\"Safety measures document\",\"contentType\":\"application/pdf\",\"url\":\"https://example.com/docs/safety-0001\",\"language\":\"en-GB\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "12.5"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "75"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "10"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "1.1"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "3"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "3"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"en-IE\":\"Test sample\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "官方全量样例未提供此路径值"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"modelIdentifier\":\"IC-75-LFP\",\"batchNumber\":\"BATCH-2026-03-A\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "\"BATCH-2026-03-A\""
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "官方全量样例未提供此路径值"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "官方全量样例未提供此路径值"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "[\"https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#cadmiumSymbol\"]"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"resourceTitle\":\"Compliance test report result\",\"contentType\":\"application/pdf\",\"url\":\"https://example.com/docs/test-report-0001\",\"language\":\"en-GB\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"en-IE\":\"Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "\"https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#validStatus\""
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"environmentalConditionHistogram\":[{\"observedCharacteristic\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\"binRangeUnit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\",\"binValueUnit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour\",\"bin\":[{\"lowerBound\":-10,\"upperBound\":0,\"binValue\":5},{\"lowerBound\":0,\"upperBound\":25,\"binValue\":400},{\"lowerBound\":25,\"upperBound\":45,\"binValue\":120}]}]}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "[{\"observedCharacteristic\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\"binRangeUnit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\",\"binValueUnit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour\",\"bin\":[{\"lowerBound\":-10,\"upperBound\":0,\"binValue\":5},{\"lowerBound\":0,\"upperBound\":25,\"binValue\":400},{\"lowerBound\":25,\"upperBound\":45,\"binValue\":120}]}]"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "4"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "0.9"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"manufacturerWebsite\":\"https://www.example.com\",\"manufacturerEmail\":\"mailto:info@example.com\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"manufacturerName\":\"Iberia Battery Systems S.L.\",\"manufacturerTradeName\":\"IberiaCell\",\"manufacturerTrademark\":\"IberiaCell(R)\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "\"Zaragoza\""
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "\"ESP\""
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "\"Aragón\""
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "10"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "0.00%",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"observedCharacteristic\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\"lowerBound\":10,\"upperBound\":10,\"unit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "10"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"observedCharacteristic\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\"lowerBound\":10,\"upperBound\":10,\"unit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"en-IE\":\"None recorded\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"observedCharacteristic\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\"lowerBound\":10,\"upperBound\":10,\"unit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#0563c1",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textUnderline": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"notInUseTemperatureRangeTest\":{\"en-IE\":\"IEC 62660-1, storage between -20 C and 45 C\"},\"valueRange\":{\"observedCharacteristic\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\"lowerBound\":10,\"upperBound\":10,\"unit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"}}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#0563c1",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textUnderline": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"observedCharacteristic\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\"lowerBound\":10,\"upperBound\":10,\"unit\":\"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "{\"en-IE\":\"IEC 62660-1, storage between -20 C and 45 C\"}"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "0%",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "[42]"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "0%",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "[41]"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "@",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "@",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "150"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "@",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "45"
+      }
+    ]
+  ],
+  "colIndices": [
+    "O"
+  ],
+  "hasMore": false,
+  "logId": "0b01b86117937750204886754e05d3",
+  "message": "Successfully retrieved cell data.",
+  "returnedRange": "O21:O80",
+  "rowIndices": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80
+  ],
+  "success": true,
+  "truncationReasons": []
+}

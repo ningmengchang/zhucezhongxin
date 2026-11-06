@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "鉴权请求",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "userAccount": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "password": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "userAccount",
+    "password"
+  ]
+}

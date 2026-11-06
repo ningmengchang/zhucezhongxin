@@ -1,0 +1,14 @@
+[
+  {
+    "range": "C30",
+    "field": "batteryCapacity",
+    "before": "额定容量",
+    "after": "电池容量"
+  },
+  {
+    "range": "C83",
+    "field": "ratedCapacity",
+    "before": "健康状态视图·额定容量",
+    "after": "额定容量"
+  }
+]

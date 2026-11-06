@@ -1,0 +1,26 @@
+{
+  "url": "https://alidocs.dingtalk.com/i/nodes/Qnp9zOoBVBByzZaNClgbvO9xV1DK0g6l",
+  "sheetId": "s2",
+  "sheetTitle": "工程化4.0",
+  "sourceDataRows": 100,
+  "onlineDataRows": 100,
+  "columnCountBefore": 19,
+  "columnCountAfter": 19,
+  "headersPreserved": true,
+  "clearedDataRange": "A102:S122",
+  "clearedDataRows": 21,
+  "existingReferenceColumnsPreservedByLegacyField": true,
+  "sourceExtraMetadataWrittenTo": "中文描述",
+  "sourceSnapshot": "Excel_本次同步快照.xlsx",
+  "backup": "目标表_更新前.json",
+  "verificationMethod": "完整范围CSV回读，修正4个示例后局部回读确认文本与格式",
+  "verifiedCells": 2318,
+  "formatCorrectedCells": [
+    "O21",
+    "O78",
+    "O79",
+    "O80"
+  ],
+  "finalDifferences": 0,
+  "verification": "passed"
+}

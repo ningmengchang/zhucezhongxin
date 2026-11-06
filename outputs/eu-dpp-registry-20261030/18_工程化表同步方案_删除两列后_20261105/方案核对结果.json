@@ -1,0 +1,22 @@
+{
+  "状态": "核对通过",
+  "在线当前列": 17,
+  "在线当前行": 121,
+  "拟同步行": 100,
+  "清空尾部旧行": 21,
+  "值变化单元格": 1785,
+  "按本地逐列映射一致": true,
+  "在线表格未修改": true,
+  "数据区合并处理预览": [
+    [
+      "F16:F17",
+      "解除数据区合并",
+      "manufacturingDate=M；commercialWarrantyPeriod=C"
+    ],
+    [
+      "F22:F23",
+      "解除数据区合并",
+      "extinguishingAgent=M；euDeclarationOfConformity=M"
+    ]
+  ]
+}

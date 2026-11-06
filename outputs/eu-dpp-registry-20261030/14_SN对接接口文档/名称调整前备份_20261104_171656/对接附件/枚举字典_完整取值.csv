@@ -1,0 +1,161 @@
+﻿枚举编号,适用字段（相对snList[]）,取值,官方名称,符号
+E01,granularity,https://repository.product-passport.ec.europa.eu/core/vocabs/granularity-level#item,Item,
+E02,dppStatus,https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#invalidStatus,Invalid status,
+E02,dppStatus,https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#validStatus,Valid status,
+E03,batteryCategory,https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#electricVehicleBattery,EVB - Electric vehicle battery,"EVB
+Electric vehicle battery"
+E04,batteryWeight.unit,https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram,Gram,g
+E04,batteryWeight.unit,https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram,Kilogram,kg
+E05,"batteryCapacity.unit
+ratedCapacity.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour,Ampere hour,Ah
+E05,"batteryCapacity.unit
+ratedCapacity.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour,Milliampere hour,mAh
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#leadAcid,Pb - Lead-acid,"Lead-acid
+Pb"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLCO,Li-ion LCO - Lithium ion LCO,"Li-ion LCO
+Lithium-ion LCO"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLFP,Li-ion LFP - Lithium ion LFP,"Li-ion LFP
+Lithium-ion LFP"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLMO,Li-ion LMO - Lithium ion LMO,"Li-ion LMO
+Lithium-ion LMO"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonNCA,Li-ion NCA - Lithium ion NCA,"Li-ion NCA
+Lithium-ion NCA"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonNMC,Li-ion NMC - Lithium ion NMC,"Li-ion NMC
+Lithium-ion NMC"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumMetal,Li-metal - Lithium metal,"Li-metal
+Lithium metal"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#nickelCadmium,Ni-Cd - Nickel-cadmium,"Ni-Cd
+Nickel-cadmium"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#nickelMetalHydride,Ni-MH - Nickel-metal hydride,"Ni-MH
+Nickel-metal hydride"
+E06,batteryChemistry[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#sodiumIon,Na-ion - Sodium-ion,"Na-ion
+Sodium-ion"
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#antimony,Antimony,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#arsenic,Arsenic,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#baryte,Baryte,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#bauxiteAluminaAluminium,Bauxite/alumina/aluminium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#beryllium,Beryllium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#bismuth,Bismuth,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#boron,Boron,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#cobalt,Cobalt,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#cokingCoal,Coking coal,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#copper,Copper,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#feldspar,Feldspar,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#fluorspar,Fluorspar,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#gallium,Gallium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#germanium,Germanium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#graphite,Graphite,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#hafnium,Hafnium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#heavyRareEarthElements,Heavy rare earth elements,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#helium,Helium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lightRareEarthElements,Light rare earth elements,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lithium,Lithium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#magnesium,Magnesium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#manganese,Manganese,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#nickelBatteryGrade,Nickel – battery grade,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#niobium,Niobium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#phosphateRock,Phosphate rock,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#phosphorus,Phosphorus,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#platinumGroupMetals,Platinum group metals,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#scandium,Scandium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#siliconMetal,Silicon metal,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#strontium,Strontium,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#tantalum,Tantalum,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#titaniumMetal,Titanium metal,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#tungsten,Tungsten,
+E07,criticalRawMaterials[],https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#vanadium,Vanadium,
+E08,"renewableContentShare.unit
+capacityExhaustionThreshold.unit
+initialRoundTripEnergyEfficiency.unit
+roundTripEfficiencyAtHalfCycleLife.unit
+roundTripEnergyEfficiency.unit
+roundTripEnergyEfficiencyFade.unit
+capacityFade.unit
+powerFade.unit
+internalResistanceIncrease.unit
+stateOfCertifiedEnergy.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent,Percent,%
+E09,"minimalVoltage.unit
+nominalVoltage.unit
+maximumVoltage.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt,Volt,V
+E10,"minimalVoltage.valueRange.observedCharacteristic
+nominalVoltage.valueRange.observedCharacteristic
+maximumVoltage.valueRange.observedCharacteristic
+powerLimit[].valueRange.observedCharacteristic
+notInUseTemperatureRange.valueRange.observedCharacteristic
+environmentalConditionHistogramSet.environmentalConditionHistogram[].observedCharacteristic",https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature,Temperature,
+E11,"minimalVoltage.valueRange.unit
+nominalVoltage.valueRange.unit
+maximumVoltage.valueRange.unit
+powerLimit[].valueRange.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius,Degree Celsius,°C
+E12,"originalPowerCapability.unit
+powerLimit[].unit
+powerCapability.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt,Watt,W
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour,Ampere hour,Ah
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius,Degree Celsius,°C
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#gram,Gram,g
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour,Hour,h
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram,Kilogram,kg
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#milliampereHour,Milliampere hour,mAh
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm,Ohm,Ω
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent,Percent,%
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour,Reciprocal hour,h-1
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt,Volt,V
+E13,"notInUseTemperatureRange.valueRange.unit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit
+environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit
+stateOfChargeHistogram[].binRangeUnit
+stateOfChargeHistogram[].binValueUnit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt,Watt,W
+E14,"internalCellResistance.unit
+internalPackResistance.unit
+internalResistance.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm,Ohm,Ω
+E15,"cycleLifeDischargeCRate.unit
+cycleLifeChargeCRate.unit",https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour,Reciprocal hour,h-1
+E16,separateCollectionSymbol,true,,
+E17,chemicalSymbol[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#cadmiumSymbol,Cadmium symbol,Cd symbol
+E17,chemicalSymbol[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#leadSymbol,Lead symbol,Pb symbol
+E17,chemicalSymbol[],https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#noneSymbol,Symbol - none,
+E18,batteryStatus,https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#original,Original,
+E18,batteryStatus,https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#remanufactured,Remanufactured,
+E18,batteryStatus,https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#repurposed,Repurposed,
+E18,batteryStatus,https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#reused,Reused,
+E18,batteryStatus,https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#waste,Waste,

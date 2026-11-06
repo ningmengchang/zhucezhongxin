@@ -1,0 +1,119 @@
+5: 上海汽车乘用车有限公司
+6: 电池护照（DPP）平台
+7: 接口对接标准说明
+8: 供应商上传 SN 接口
+15: 2026 年 11 月
+18: 文档修订记录
+20: 本文是接口设计及对接说明，供评审与联调使用。新增EV请求结构及平台业务规则需要服务端按本版实现；本文不表示线上接口已完成改造或验证。
+21: 字段校验以指定的EV JSON Schema为基础，平台附加规则单列说明；不得由字段名称推断或另行增加必填字段。
+23: 目    录
+25: 1. 前言描述4
+26: 1.1 文档范围4
+27: 1.2 通用调用约定4
+28: 1.3 字段来源与平台约束4
+29: 2. 接口集成标准说明6
+30: 2.1 鉴权接口设计6
+31: 2.1.1 请求参数及示例6
+32: 2.1.2 返回参数及鉴权逻辑6
+33: 2.2 供应商上传SN接口设计8
+34: 2.2.1 接口用途及设计8
+35: 2.2.2 请求字段说明9
+36: 2.2.3 填写规则与业务处理说明19
+37: 2.2.4 返回协议及异常处理19
+38: 附录A. 完整枚举字典22
+39: 附录B. 完整请求示例29
+40: 附录C. 来源、附件与验证说明35
+42: （在 Word/WPS 中更新目录可刷新页码。）
+44: 1. 前言描述
+45: 本文说明供应商系统向电池护照（DPP）平台上传EV电池SN及护照完整语义数据的接口规范，包括鉴权、请求字段、填写方式、返回协议和异常处理。
+46: 请求字段来自 EVBatteryPassport_Apifox直接建模.schema.json；参考《供应商接口对接标准说明-20260818》的章节、参数表及鉴权逻辑。供应商上传时，每条数据直接使用EV对象，SN统一填写在 batteryIdentification.serialNumber。
+47: 1.1 文档范围
+49: 1.2 通用调用约定
+51: 1.3 字段来源与平台约束
+53: 本版“24位”在结构校验中指字符串恰好24个字符，不是数值类型。GB/T 34014—2017《汽车动力蓄电池编码规则》及现行第1号修改单的字符、分段及生产企业代码等合法性须另作业务校验；长度正确不代表完整国标校验通过。附件SN为虚构的24字符测试占位码，不代表已登记国标编码。
+55: 2. 接口集成标准说明
+56: 2.1 鉴权接口设计
+57: 2.1.1 请求参数及示例
+58: ➢  接口用途：
+59: 通过平台分配的账号、密码和apikey取得访问令牌，供后续业务接口使用。
+62: 账号、密码在JSON请求体中传递，apikey放入Header。以下均为占位值，不能直接用于生产认证。
+63: 2.1.2 返回参数及鉴权逻辑
+65: ➢  成功返回示例：
+66: ➢  认证失败示例：
+67: 调用顺序：先鉴权；成功后从body.token取值；上传接口Header添加token: <TOKEN>。参考文档没有给出token固定有效期、刷新接口或自动续期协议，本版不虚构这些字段。
+68: HTTP 401时重新鉴权并最多重试一次；认证业务码-7003时核对账号、密码、apikey。403时检查应用授权。缓存token并控制并发重复登录，账号、密码、apikey及完整token不写入日志。
+69: 参考文档的body类型表与示例不一致，本版依据示例及鉴权逻辑统一为object|null，token路径为body.token。
+70: 2.2 供应商上传SN接口设计
+71: 2.2.1 接口用途及设计
+72: ➢  接口用途：
+73: 供应商按一条EV电池一条记录，上传24位国标SN以及相应护照语义信息。平台校验账号权限、字段结构与SN业务规则，逐条处理并返回结果。
+75: 请求结构示意（省略号仅用于说明结构，不可直接发送）：
+76: 完整可解析、可通过结构校验的请求见附录B及附件04_SN上传_全量63字段请求.json；最小必填请求见附件05_SN上传_最小必填请求.json。示例的业务标识、制造商、测试数据和资源链接均用于演示。
+78: 2.2.2 请求字段说明
+79: 字段路径相对每一个snList数组元素；拼接snList[].即为完整请求路径。“是（父对象存在时）”表示字段所在对象/数组元素已提交时必须提供；不能理解为可选父对象也必须提交。“数组元素约束”说明元素类型及内部结构，不单独决定数组是否必填或是否允许为空。
+80: 本接口SN已必填，因此batteryIdentification中的productNumber、otherIdentificationElement保持可选；modelIdentifier与batchNumber仍须同时提供或同时省略。制造商名称/商号/商标至少一项，制造城市/地区至少一项，制造国家始终必填。
+83: EV字段明细（续）：第41–80项
+85: EV字段明细（续）：第81–120项
+87: EV字段明细（续）：第121–160项
+89: EV字段明细（续）：第161–200项
+91: EV字段明细（续）：第201–206项
+93: 字典覆盖全部206个显式字段/数组元素节点；语言对象的动态键不计入固定字段数量，其键名及值的边界见下节。附件Excel、CSV与此表由同一模型生成。
+95: 2.2.3 填写规则与业务处理说明
+97: 源模型和完整语义验证存在边界：部分数组未设minItems，多语言值未设string类型，部分SHACL基数/条件和国标码分段未在JSON Schema中表达。附件校验报告明确记录这些边界；Schema通过只代表结构约束通过，不代表完成全部语义或国标认证。
+98: contentSpecificationIds须按语义提供core、电池组、EV子组规范各一个；示例均使用本批资源版本1.0.0。完整URI保持欧盟资源域名，不改写为平台服务域名。
+99: 2.2.4 返回协议及异常处理
+100: 全部成功：HTTP 200，业务code="0"，data=null。
+101: 存在任一条失败：HTTP 200，业务code="200"，data按输入顺序给出本批所有记录的处理结果。此处200是业务码，不代表所有记录成功，也不同于鉴权接口的成功业务码200。
+103: ➢  HTTP状态说明：
+105: ➢  单条SN业务处理结果码说明：
+107: 本版逐条参数失败以1001返回；凭证/权限或整个封装错误按对应HTTP状态返回。网络超时无法直接断定服务端未入库，应保留原始SN和请求内容，核对状态后重试。
+108: 参考文档的data类型表写为object，但失败示例为数组，本版统一为array|null；成功码与鉴权码分别按各自协议解释。
+110: 附录A. 完整枚举字典
+111: 以下18组枚举完整列出指定源模型的全部取值。相同枚举集合合并展示，并列出适用字段。URI取值必须提交完整字符串；末尾代码只用于阅读。batteryCategory同时展示源模型的3项，但本SN接口仅接受EV项。
+112: E01 · 1项
+113: 适用字段：granularity
+115: E02 · 2项
+116: 适用字段：dppStatus
+118: E03 · 3项
+119: 适用字段：batteryCategory
+121: E04 · 2项
+122: 适用字段：batteryWeight.unit
+124: E05 · 2项
+125: 适用字段：batteryCapacity.unit；ratedCapacity.unit
+127: E06 · 10项
+128: 适用字段：batteryChemistry[]
+130: E07 · 34项
+131: 适用字段：criticalRawMaterials[]
+133: E08 · 1项
+134: 适用字段：renewableContentShare.unit；capacityExhaustionThreshold.unit；initialRoundTripEnergyEfficiency.unit；roundTripEfficiencyAtHalfCycleLife.unit；roundTripEnergyEfficiency.unit；roundTripEnergyEfficiencyFade.unit；capacityFade.unit；powerFade.unit；internalResistanceIncrease.unit；stateOfCertifiedEnergy.unit
+136: E09 · 1项
+137: 适用字段：minimalVoltage.unit；nominalVoltage.unit；maximumVoltage.unit
+139: E10 · 1项
+140: 适用字段：minimalVoltage.valueRange.observedCharacteristic；nominalVoltage.valueRange.observedCharacteristic；maximumVoltage.valueRange.observedCharacteristic；powerLimit[].valueRange.observedCharacteristic；notInUseTemperatureRange.valueRange.observedCharacteristic；environmentalConditionHistogramSet.environmentalConditionHistogram[].observedCharacteristic
+142: E11 · 1项
+143: 适用字段：minimalVoltage.valueRange.unit；nominalVoltage.valueRange.unit；maximumVoltage.valueRange.unit；powerLimit[].valueRange.unit
+145: E12 · 1项
+146: 适用字段：originalPowerCapability.unit；powerLimit[].unit；powerCapability.unit
+148: E13 · 11项
+149: 适用字段：notInUseTemperatureRange.valueRange.unit；environmentalConditionHistogramSet.environmentalConditionHistogram[].binRangeUnit；environmentalConditionHistogramSet.environmentalConditionHistogram[].binValueUnit；stateOfChargeHistogram[].binRangeUnit；stateOfChargeHistogram[].binValueUnit
+151: E14 · 1项
+152: 适用字段：internalCellResistance.unit；internalPackResistance.unit；internalResistance.unit
+154: E15 · 1项
+155: 适用字段：cycleLifeDischargeCRate.unit；cycleLifeChargeCRate.unit
+157: E16 · 1项
+158: 适用字段：separateCollectionSymbol
+160: E17 · 3项
+161: 适用字段：chemicalSymbol[]
+163: E18 · 5项
+164: 适用字段：batteryStatus
+166: 附录B. 完整请求示例
+167: 本示例包含全部63个EV顶层字段，可通过附件请求Schema及format校验。它由官方conforms示例扩充缺少的可选字段后生成，并替换演示标识、制造商及业务资源链接。数值仅演示结构，不代表某个真实电池的检测结果或认证数据。
+168: SN占位码：TEST20261104000000000001（24字符，仅用于结构测试，不代表已登记国标码）。所有/demo链接均为演示链接，不承诺存在真实资源；欧盟枚举/规范URI维持原始域名。
+170: 附录C. 来源、附件与验证说明
+172: 参考文档：https://alidocs.dingtalk.com/i/nodes/P7QG4Yx2JpAON7qZiqjoBb6K89dEq3XD
+173: 国家标准原文公开系统：https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=60E981B01DE41613119F9C788AE3EAE4
+174: 第1号修改单：https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=3B33CCA4D7FDAEEBE06397BE0A0AFC50
+175: 指定源文件SHA-256：abeaff08cd571a158d4062a2d12a31a6504742c810a02ddc24fc0390e8ea2345
+177: 验证完成：33个用例全部符合预期；完整/最小请求、SN长度与必填、EV范围、条件必填、枚举URI、日期类型、布尔值、语言键、资源及直方图约束等已检查。批量重复SN、真实国标分段与登记、SHACL语义完整性及实际接口行为仍属于业务或联调验证。
+178: 原模型存在的宽松边界已记录在报告中：例如制造年月正则允许13月、语言值未声明string、部分必填数组允许空数组、跨记录重复SN不能由当前Schema判定。供应商按真实语义填报，平台需补充相应业务校验。
+179: 本次未使用真实凭证，未调用登录或上传接口，未修改任何线上接口或原始语义文件。

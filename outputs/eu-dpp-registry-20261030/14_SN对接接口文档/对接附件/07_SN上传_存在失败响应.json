@@ -1,0 +1,16 @@
+{
+  "code": "200",
+  "message": "success",
+  "data": [
+    {
+      "sn": "TEST20261104000000000001",
+      "code": "0000",
+      "message": null
+    },
+    {
+      "sn": "TEST2026110400000000000",
+      "code": "1001",
+      "message": "batteryIdentification.serialNumber必须为24位国标码；当前长度为23"
+    }
+  ]
+}

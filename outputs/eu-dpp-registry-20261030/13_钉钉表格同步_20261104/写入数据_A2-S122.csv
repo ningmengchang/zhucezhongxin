@@ -1,0 +1,4305 @@
+DPP头信息,电池护照信息,电池护照颗粒度,granularity,EV / LMT / IND,M,PUB（公开）,string,string (format: enum),,"EU-GRANULARITY-LEVEL
+item — 单件",2,否,Static,"""https://repository.product-passport.ec.europa.eu/core/vocabs/granularity-level#item""","电池护照颗粒度。
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+JSON 字符串。
+受控值使用完整 URI／规范标识；参考允许值列，不能只传中文名称或 URI 末尾代码。
+
+【适用条件】
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+
+【官方JSON路径】
+$.granularity
+
+【官方语义字段】
+granularity
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+core/1.0.0/schemas/core.schema.json#/properties/granularity
+
+【字段ID】
+V4-0003
+
+【3.4源行】
+4
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","The level at which a unique product identifier applies, such as model level, batch level or item level.",DPP,
+DPP头信息,电池护照信息,最新更新时间,lastUpdate,EV / LMT / IND,M,PUB（公开）,string / date-time,string (format: date-time),,无,2,否,Dynamic,"""2025-08-22T03:12:00Z""","最新更新时间。
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+JSON 字符串。
+date-time 字符串，包含日期、时间和时区；例如官方样例 ""2025-08-22T03:12:00Z""。
+3.4工程编码lastUpdated现统一为lastUpdate；对外JSON字段为lastUpdate，使用date-time格式。
+
+【适用条件】
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+
+【官方JSON路径】
+$.lastUpdate
+
+【官方语义字段】
+lastUpdate
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+3.4工程编码lastUpdated现统一为lastUpdate；对外JSON字段为lastUpdate，使用date-time格式。
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+修订前工程名lastUpdated统一为官方名称lastUpdate；旧名仅作历史追溯。
+
+【语义定义出处】
+core/1.0.0/schemas/core.schema.json#/properties/lastUpdate
+
+【字段ID】
+V4-0004
+
+【修订前工程名】
+lastUpdated
+
+【3.4源行】
+5
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Date and time at which a digital product passport was most recently modified or updated.,DPP,
+DPP头信息,标识符,电池护照唯一标识符,digitalProductPassportId,EV / LMT / IND,M,PUB（公开）,string,string (format: uri),,无,2,否,Static,"""https://www.example.org/dpp/1234545""","电池护照唯一标识符。
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+JSON 字符串。
+DPP 实例标识字符串；官方样例为 URL；本语义 Schema 未单独增加 URI 格式关键字。
+语义Schema仅声明string；URI为旧工程要求，注册接口另有规范，不能当作本字段已有format。
+
+【适用条件】
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+
+【官方JSON路径】
+$.digitalProductPassportId
+
+【官方语义字段】
+digitalProductPassportId
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+语义Schema仅声明string；URI为旧工程要求，注册接口另有规范，不能当作本字段已有format。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动静态从旧表Dynamic调整为Static，属工程建议，待业务确认。
+
+【语义定义出处】
+core/1.0.0/schemas/core.schema.json#/properties/digitalProductPassportId
+
+【字段ID】
+V4-0005
+
+【3.4源行】
+6
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Identifier of an instance of the digital product passport.,生产,
+DPP头信息,标识符,电池唯一标识符,uniqueProductIdentifier,EV / LMT / IND,M,PUB（公开）,string,string (format: uri),,无,2,否,Static,"""https://www.example.org/1234545""","电池唯一标识符。
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+JSON 字符串。
+本语义 Schema 为 string；注册 OpenAPI 另要求完整 HTTPS UPI URL，可被注册中心读取。
+语义Schema仅声明string；注册OpenAPI另要求可读取的HTTPS UPI URL。
+
+【适用条件】
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+
+【官方JSON路径】
+$.uniqueProductIdentifier
+
+【官方语义字段】
+uniqueProductIdentifier
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+语义Schema仅声明string；注册OpenAPI另要求可读取的HTTPS UPI URL。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+core/1.0.0/schemas/core.schema.json#/properties/uniqueProductIdentifier
+
+【字段ID】
+V4-0006
+
+【3.4源行】
+7
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Unique character string that identifies a product.,生产,
+DPP头信息,标识符,参考标准ID,contentSpecificationIds,EV / LMT / IND,M,PUB（公开）,array<string>,string,,无,2,否,Static,"EV：[""https://repository.product-passport.ec.europa.eu/core/1.0.0"", ""https://repository.product-passport.ec.europa.eu/product/batteries/1.0.0"", ""https://repository.product-passport.ec.europa.eu/product/batteries/subgroup/evb/1.0.0""]
+
+LMT：[""https://repository.product-passport.ec.europa.eu/core/1.0.0"", ""https://repository.product-passport.ec.europa.eu/product/batteries/1.0.0"", ""https://repository.product-passport.ec.europa.eu/product/batteries/subgroup/lmt/1.0.0""]
+
+IND：[""https://repository.product-passport.ec.europa.eu/core/1.0.0"", ""https://repository.product-passport.ec.europa.eu/product/batteries/1.0.0"", ""https://repository.product-passport.ec.europa.eu/product/batteries/subgroup/ind/1.0.0""]","内容规范标识列表，类型array<string>，元素不可重复。
+核心规范、电池组规范、所属电池子类规范分别各有1个匹配值；每条护照填写对应电池类别的子类规范标识。
+EV使用/product/batteries/subgroup/evb/版本号；LMT使用/subgroup/lmt/版本号；IND使用/subgroup/ind/版本号。
+版本号按实际采用的规范填写；1.0.0是本快照样例，不是固定枚举。
+qualifiedMaxCount=1针对各匹配子集；源Schema没有整个数组的maxItems，不能理解为只能1项或恰好3项。
+
+【适用条件】
+三类均必填。核心规范、电池组规范、所属电池子类规范分别各含1个匹配标识；子类按EV→evb、LMT→lmt、IND→ind选择。
+
+【官方JSON路径】
+$.contentSpecificationIds
+
+【官方语义字段】
+contentSpecificationIds
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+不是固定版本枚举；核心、产品组、对应子类规范标识分别按语义规则计数。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+【公共字段合并】原记录V4-0009 / V4-0010 / V4-0011合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+core/1.0.0/schemas/core.schema.json#/properties/contentSpecificationIds
+product/batteries/subgroup/evb/1.0.0/shapes/pub-evb-shapes.ttl；contentSpecificationIds的qualifiedValueShape
+product/batteries/subgroup/lmt/1.0.0/shapes/pub-lmt-shapes.ttl；contentSpecificationIds的qualifiedValueShape
+product/batteries/subgroup/ind/1.0.0/shapes/pub-ind-shapes.ttl；contentSpecificationIds的qualifiedValueShape
+
+【字段ID】
+V4-0009
+
+【3.4源行】
+10
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Identifiers of content specifications, schemas or data models that govern the structure of the digital product passport content.",研发,
+标识符和产品数据,标识符,电池型号,modelIdentifier,EV / LMT / IND,C,PUB（公开）,string,string,,无,2,否,Static,"""IC-75-LFP""","电池型号。
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+型号与批次成对，或使用序列号／产品编号／其他识别要素满足择项组合。
+
+【适用条件】
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+
+【官方JSON路径】
+$.batteryIdentification.modelIdentifier
+
+【官方语义字段】
+modelIdentifier
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+型号与批次成对，或使用序列号／产品编号／其他识别要素满足择项组合。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+修订前工程名batteryModelIdentifier统一为官方名称modelIdentifier；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/modelIdentifier
+
+【字段ID】
+V4-0012
+
+【修订前工程名】
+batteryModelIdentifier
+
+【3.4源行】
+11
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",研发,
+标识符和产品数据,标识符,电池序列号,serialNumber,EV / LMT / IND,C,PUB（公开）,string,string,,无,2,否,Static,官方全量样例未提供此路径值,"电池序列号。
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+序列号属于识别择项组合，不能将每个识别成员都设为无条件必填。
+
+【适用条件】
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+
+【官方JSON路径】
+$.batteryIdentification.serialNumber
+
+【官方语义字段】
+serialNumber
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+序列号属于识别择项组合，不能将每个识别成员都设为无条件必填。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+修订前工程名batterySerialNumber统一为官方名称serialNumber；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/serialNumber
+
+【字段ID】
+V4-0013
+
+【修订前工程名】
+batterySerialNumber
+
+【3.4源行】
+12
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",生产,
+标识符和产品数据,产品信息,制造商名称,manufacturerName,EV / LMT / IND,C,PUB（公开）,string,string,,无,2,是,Static,"""Iberia Battery Systems S.L.""","制造商名称。
+制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。
+
+【官方JSON路径】
+$.manufacturerIdentification.manufacturerName
+
+【官方语义字段】
+manufacturerName
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification/properties/manufacturerName
+
+【字段ID】
+V4-0022
+
+【3.4源行】
+21
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Manufacturer name, registered trade name or registered trademark [at least one of]",财务/总经办,
+标识符和产品数据,产品信息,制造商注册商号,manufacturerTradeName,EV / LMT / IND,C,PUB（公开）,string,string,,无,2,否,Static,"""IberiaCell""","制造商注册商号。
+制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。
+
+【官方JSON路径】
+$.manufacturerIdentification.manufacturerTradeName
+
+【官方语义字段】
+manufacturerTradeName
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification/properties/manufacturerTradeName
+
+【字段ID】
+V4-0023
+
+【3.4源行】
+22
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Manufacturer name, registered trade name or registered trademark [at least one of]",财务/总经办,
+标识符和产品数据,产品信息,制造商注册商标,manufacturerTrademark,EV / LMT / IND,C,PUB（公开）,string,string,,无,2,否,Static,"""IberiaCell(R)""","制造商注册商标。
+制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。
+
+【官方JSON路径】
+$.manufacturerIdentification.manufacturerTrademark
+
+【官方语义字段】
+manufacturerTrademark
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification/properties/manufacturerTrademark
+
+【字段ID】
+V4-0024
+
+【3.4源行】
+23
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Manufacturer name, registered trade name or registered trademark [at least one of]",财务/总经办,
+标识符和产品数据,产品信息,制造商邮政地址,manufacturerPostalAddress,EV / LMT / IND,M,PUB（公开）,string,string,,无,2,无官方多语言结构；工程双语另行管理,Static,"""Calle de Alcalá 100, 28009 Madrid, Spain""","制造商单一联系邮寄地址。
+官方为制造商单一联系邮寄地址：string，minLength=1，必填；没有地址专用format、pattern、maxLength或枚举，未限定文本语言。中文或英文均可按字符串填写；不是zh-CN/en-GB多语言对象。3.4“多语言=是”属于工程录入要求，双语版本应在内部另行管理，对外仍提交一个地址字符串。须填写真实联系邮寄地址；纯空格或占位文字即使通过结构校验也不符合业务含义。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.manufacturerPostalAddress
+
+【官方语义字段】
+manufacturerPostalAddress
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+【地址填写说明修订】官方为制造商单一联系邮寄地址：string，minLength=1，必填；没有地址专用format、pattern、maxLength或枚举，未限定文本语言。中文或英文均可按字符串填写；不是zh-CN/en-GB多语言对象。3.4“多语言=是”属于工程录入要求，双语版本应在内部另行管理，对外仍提交一个地址字符串。须填写真实联系邮寄地址；纯空格或占位文字即使通过结构校验也不符合业务含义。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerPostalAddress
+
+【字段ID】
+V4-0025
+
+【3.4源行】
+24
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Manufacturer single contact postal address,财务/总经办,
+标识符和产品数据,产品信息,制造商网址,manufacturerWebsite,EV / LMT / IND,C,PUB（公开）,string / uri,string,,无,2,否,Static,"""https://www.example.com""","制造商网址。
+父对象提供时，网站／邮箱至少一项；不要求两项同时提供。
+JSON 字符串。
+URI 字符串，Schema format=uri；实际可访问性和受控 HTTPS 策略需结合接口指南。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+父对象提供时，网站／邮箱至少一项；不要求两项同时提供。
+
+【官方JSON路径】
+$.manufacturerContactDetails.manufacturerWebsite
+
+【官方语义字段】
+manufacturerWebsite
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerContactDetails/properties/manufacturerWebsite
+
+【字段ID】
+V4-0026
+
+【3.4源行】
+25
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","If available, manufacturer web and email address [both optional]",财务/总经办,
+标识符和产品数据,产品信息,制造商网址电子邮箱,manufacturerEmail,EV / LMT / IND,C,PUB（公开）,string / uri,string,,无,2,否,Static,"""mailto:info@example.com""","制造商网址电子邮箱。
+父对象提供时，网站／邮箱至少一项；不要求两项同时提供。
+JSON 字符串。
+URI 字符串；官方样例采用 mailto: 前缀。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+父对象提供时，网站／邮箱至少一项；不要求两项同时提供。
+
+【官方JSON路径】
+$.manufacturerContactDetails.manufacturerEmail
+
+【官方语义字段】
+manufacturerEmail
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerContactDetails/properties/manufacturerEmail
+
+【字段ID】
+V4-0027
+
+【3.4源行】
+26
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","If available, manufacturer web and email address [both optional]",财务/总经办,
+标识符和产品数据,产品信息,生产地点,manufacturingPlace,EV / LMT / IND,M,PUB（公开）,object,string,,无,2,是,Static,"{""manufacturingCity"":""Zaragoza"",""manufacturingRegion"":""Aragón"",""manufacturingCountry"":""ESP""}","生产地点。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：manufacturingCity、manufacturingRegion、manufacturingCountry。
+由旧字符串调整为制造地点对象，需提供国家及城市／地区至少一项。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.manufacturingPlace
+
+【官方语义字段】
+manufacturingPlace
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+由旧字符串调整为制造地点对象，需提供国家及城市／地区至少一项。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace
+
+【字段ID】
+V4-0028
+
+【3.4源行】
+27
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",生产,
+标识符和产品数据,产品信息,生产日期,manufacturingDate,EV / LMT / IND,M,PUB（公开）,string,string (format: date),,无,2,否,Static,"""2026-03""","生产日期。
+必填（该电池类别／当前访问视图）。
+JSON 字符串。
+年－月字符串 YYYY-MM，如 ""2026-10""；Schema 正则只约束外形，SHACL xsd:gYearMonth 再约束真实年月。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.manufacturingDate
+
+【官方语义字段】
+manufacturingDate
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingDate
+
+【字段ID】
+V4-0029
+
+【3.4源行】
+28
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The date of manufacturing [month and year],生产,
+标识符和产品数据,产品信息,质保期,commercialWarrantyPeriod,EV / LMT / IND,C,PUB（公开）,integer,string (format: duration),月,无,0,否,Static,24,"质保期。
+有商业质保时适用；词表未将 0 定义为“无质保”或“终身质保”。
+JSON 整数；直接填写数值。
+直接填写质保月数，如 24 表示 24 个月；8 年换算为 96。
+无商业质保而不适用时可省略；不是日期或时长字符串。
+数值下限：0；未设置数值上限。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：月
+对齐commercialWarrantyPeriod，采用非负整数月数；旧字符串需迁移规则。
+
+【适用条件】
+有商业质保时适用；词表未将 0 定义为“无质保”或“终身质保”。
+
+【官方JSON路径】
+$.commercialWarrantyPeriod
+
+【官方语义字段】
+commercialWarrantyPeriod
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+对齐commercialWarrantyPeriod，采用非负整数月数；旧字符串需迁移规则。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+修订前工程名warrantyPeriodOfTheBattery统一为官方名称commercialWarrantyPeriod；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/commercialWarrantyPeriod
+
+【字段ID】
+V4-0031
+
+【修订前工程名】
+warrantyPeriodOfTheBattery
+
+【3.4源行】
+30
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Period for which the commercial warranty for the calendar life applies [months],售后,
+标识符和产品数据,产品信息,电池类型,batteryCategory,EV / LMT / IND,M,PUB（公开）,string,枚举值,,"EU-BATTERY-CATEGORY
+electricVehicleBattery — 电动汽车电池
+industrialBattery — 工业电池
+lightMeansOfTransportBattery — 轻型交通工具电池",2,否,Static,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#electricVehicleBattery""","电池类型。
+必填（该电池类别／当前访问视图）。
+JSON 字符串。
+受控值使用完整 URI／规范标识；参考允许值列，不能只传中文名称或 URI 末尾代码。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.batteryCategory
+
+【官方语义字段】
+batteryCategory
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryCategory
+
+【字段ID】
+V4-0032
+
+【3.4源行】
+31
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Battery category [3-code list],研发,
+标识符和产品数据,产品信息,电池重量,batteryWeight,EV / LMT / IND,M,PUB（公开）,number,"Decimal(10,6)",千克（kg） 或 克（g）,无,0,否,Static,385.5,"电池重量。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：千克（kg） 或 克（g）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.batteryWeight.value
+
+【官方语义字段】
+batteryWeight
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+旧存储精度建议：Decimal(10,6)；不是官方JSON Schema精度约束。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryWeight
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0033
+
+【3.4源行】
+32
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The weight [unit kg],研发,
+标识符和产品数据,产品信息,电池状态,batteryStatus,EV / LMT / IND,M,RES3（合法权益人·单个电池）,string,枚举值,,"EU-BATTERY-STATUS
+original — 原始电池
+remanufactured — 再制造
+repurposed — 改变用途
+reused — 再使用
+waste — 废电池",2,否,Dynamic,"""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#original""","电池状态。
+必填（该电池类别／当前访问视图）。
+JSON 字符串。
+受控值使用完整 URI／规范标识；参考允许值列，不能只传中文名称或 URI 末尾代码。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.batteryStatus
+
+【官方语义字段】
+batteryStatus
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/batteryStatus
+
+【字段ID】
+V4-0034
+
+【3.4源行】
+33
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Information on the status of the battery, defined as ‘original’, ‘repurposed’, ‘re-used’, ‘remanufactured’ or ‘waste’ [code list]",售后,
+符号，标签和文档符合性,符号，标签和文档符合性,分类收集标识,separateCollectionSymbol,EV / LMT / IND,M,PUB（公开）,boolean,枚举值,,"CONST-TRUE
+true — 必须设置为true",0,否,Static,true,"分类收集标识。
+必填（该电池类别／当前访问视图）。
+JSON 布尔值 true／false。
+Schema 只声明 boolean；SHACL hasValue=true 要求该标志为 true。
+当前Schema为boolean且const=true；不是任意图片／标识枚举。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.separateCollectionSymbol
+
+【官方语义字段】
+separateCollectionSymbol
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+当前Schema为boolean且const=true；不是任意图片／标识枚举。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/separateCollectionSymbol
+
+【字段ID】
+V4-0035
+
+【3.4源行】
+34
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The marking requirements laid down in Article 13(4) [Yes/No],研发/实验室,
+符号，标签和文档符合性,符号，标签和文档符合性,灭火剂,extinguishingAgent,EV / LMT / IND,M,PUB（公开）,object（多语言）,枚举值,,无,0,是,Static,"{""en-IE"":""Large quantities of water; dry chemical powder (Class D) for small fires""}","灭火剂。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+当前为多语言文本对象，源Schema没有灭火剂的封闭枚举。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.extinguishingAgent
+
+【官方语义字段】
+extinguishingAgent
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+当前为多语言文本对象，源Schema没有灭火剂的封闭枚举。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/extinguishingAgent
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0037
+
+【3.4源行】
+36
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Usable extinguishing agent [free text],研发,
+符号，标签和文档符合性,符号，标签和文档符合性,欧盟符合性声明,euDeclarationOfConformity,EV / LMT / IND,M,PUB（公开）,object,Link,,无,0,否,Static,"{""resourceTitle"":""EU declaration of conformity file"",""contentType"":""application/pdf"",""url"":""https://example.com/docs/eu-doc-0001.pdf"",""language"":""en-GB""}","欧盟符合性声明。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：contentType、url、resourceTitle、language。
+关联资源对象须包含contentType和url，标题与language按各自规则填写。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.euDeclarationOfConformity
+
+【官方语义字段】
+euDeclarationOfConformity
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+关联资源对象须包含contentType和url，标题与language按各自规则填写。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/euDeclarationOfConformity
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource
+
+【字段ID】
+V4-0039
+
+【3.4源行】
+38
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The EU declaration of conformity referred to in Article 18 [a web link],研发,
+电池材料组成,电池材料组成,化学体系,batteryChemistry,EV / LMT / IND,M,PUB（公开）,array<string>,枚举值,,"EU-BATTERY-CHEMISTRY
+leadAcid — 铅酸电池
+lithiumIonLCO — 锂离子·钴酸锂（LCO）
+lithiumIonLFP — 锂离子·磷酸铁锂（LFP）
+lithiumIonLMO — 锂离子·锰酸锂（LMO）
+lithiumIonNCA — 锂离子·镍钴铝（NCA）
+lithiumIonNMC — 锂离子·镍锰钴（NMC）
+lithiumMetal — 锂金属电池
+nickelCadmium — 镍镉电池
+nickelMetalHydride — 镍氢电池
+sodiumIon — 钠离子电池",0,否,Static,"[""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLCO""]","化学体系。
+必填（该电池类别／当前访问视图）。
+JSON 数组；逐元素结构已在 [] 子行展开。
+受控值使用完整 URI／规范标识；参考允许值列，不能只传中文名称或 URI 末尾代码。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.batteryChemistry
+
+【官方语义字段】
+batteryChemistry
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryChemistry
+
+【字段ID】
+V4-0057
+
+【3.4源行】
+56
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The chemistry [code list],研发,
+电池材料组成,电池材料组成,关键原材料,criticalRawMaterials,EV / LMT / IND,M,PUB（公开）,array<string>,Array<枚举值>,,"EU-CRITICAL-RAW-MATERIAL
+antimony — 锑
+arsenic — 砷
+baryte — 重晶石
+bauxiteAluminaAluminium — 铝土矿／氧化铝／铝
+beryllium — 铍
+bismuth — 铋
+boron — 硼
+cobalt — 钴
+cokingCoal — 焦煤
+copper — 铜
+feldspar — 长石
+fluorspar — 萤石
+gallium — 镓
+germanium — 锗
+graphite — 石墨
+hafnium — 铪
+heavyRareEarthElements — 重稀土元素
+helium — 氦
+lightRareEarthElements — 轻稀土元素
+lithium — 锂
+magnesium — 镁
+manganese — 锰
+nickelBatteryGrade — 电池级镍
+niobium — 铌
+phosphateRock — 磷矿石
+phosphorus — 磷
+platinumGroupMetals — 铂族金属
+scandium — 钪
+siliconMetal — 金属硅
+strontium — 锶
+tantalum — 钽
+titaniumMetal — 金属钛
+tungsten — 钨
+vanadium — 钒",0,否,Static,"[""https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lithium""]","关键原材料。
+必填（该电池类别／当前访问视图）。
+JSON 数组；逐元素结构已在 [] 子行展开。
+受控值使用完整 URI／规范标识；参考允许值列，不能只传中文名称或 URI 末尾代码。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.criticalRawMaterials
+
+【官方语义字段】
+criticalRawMaterials
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/criticalRawMaterials
+
+【字段ID】
+V4-0058
+
+【3.4源行】
+57
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Critical raw materials present in the battery in a concentration of more than 0,1 % weight by weight [code list]",研发,
+电池材料组成,电池材料组成,有害物质,hazardousSubstances,EV / LMT / IND,M,PUB（公开）,array<string>,string,,无,0,否（非多语言对象；array<string>）,Static,"[""Lithium""]","有害物质名称。
+必填（该电池类别／当前访问视图）。
+JSON 数组；逐元素结构已在 [] 子行展开。
+来源为工程化3.4第64行“有害物质名称”，原表未给机器字段名。初稿hazardousSubstanceNames是本稿拟定的工程名，现统一采用官方语义名称hazardousSubstances。官方为有害物质自由文本字符串数组（汞、镉、铅除外），不是多语言对象；CAS、浓度、位置等旧工程分项另行保留待确认。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.hazardousSubstances
+
+【官方语义字段】
+hazardousSubstances
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+来源为工程化3.4第64行“有害物质名称”，原表未给机器字段名。初稿hazardousSubstanceNames是本稿拟定的工程名，现统一采用官方语义名称hazardousSubstances。官方为有害物质自由文本字符串数组（汞、镉、铅除外），不是多语言对象；CAS、浓度、位置等旧工程分项另行保留待确认。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/hazardousSubstances
+
+【字段ID】
+V4-0065
+
+【3.4源行】
+64
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","The hazardous substances present in the battery, other than mercury, cadmium or lead [free text]",实验室,
+循环和资源效率,循环信息,拆卸指南,dismantlingInformation,EV / LMT / IND,M,RES1（合法权益人／公告机构／主管机关／欧委会）,object,Link,,无,0,否,Static,"{""resourceTitle"":""Dismantling document"",""contentType"":""application/pdf"",""url"":""https://example.com/docs/dismantling-0001"",""language"":""en-GB""}","拆卸指南。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：contentType、url、resourceTitle、language。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.dismantlingInformation
+
+【官方语义字段】
+dismantlingInformation
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+修订前工程名dismantlingInformationManualsForTheRemovalAndTheDisassemblyOfTheBatteryPack统一为官方名称dismantlingInformation；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/dismantlingInformation
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource
+
+【字段ID】
+V4-0071
+
+【修订前工程名】
+dismantlingInformationManualsForTheRemovalAndTheDisassemblyOfTheBatteryPack
+
+【3.4源行】
+70
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Dismantling information,售后,
+循环和资源效率,循环信息,安全措施,safetyMeasures,EV / LMT / IND,M,RES1（合法权益人／公告机构／主管机关／欧委会）,object,Link,,无,0,否,Static,"{""resourceTitle"":""Safety measures document"",""contentType"":""application/pdf"",""url"":""https://example.com/docs/safety-0001"",""language"":""en-GB""}","安全措施。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：contentType、url、resourceTitle、language。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.safetyMeasures
+
+【官方语义字段】
+safetyMeasures
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/safetyMeasures
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource
+
+【字段ID】
+V4-0076
+
+【3.4源行】
+75
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Safety measures [a web link],售后,
+循环和资源效率,回收和可再生内容,可再生材料含量,renewableContentShare,EV / LMT / IND,M,PUB（公开）,number,int,百分比（%）,无,0,否,Static,12.5,"可再生材料含量。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.renewableContentShare.value
+
+【官方语义字段】
+renewableContentShare
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/renewableContentShare
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0081
+
+【3.4源行】
+80
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The share of renewable content [%],研发,
+性能和耐用性,容量、能量和电压,额定容量,batteryCapacity,EV / LMT / IND,M,PUB（公开）,number,"Decimal（10,2）",安时（Ah） 或 毫安时（mAh）,无,0,否,Static,75,"额定容量。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：安时（Ah） 或 毫安时（mAh）
+本行对应公开batteryCapacity；RES3另有ratedCapacity。二者同源复用及状态变化后的更新策略需确认。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.batteryCapacity.value
+
+【官方语义字段】
+batteryCapacity
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+本行对应公开batteryCapacity；RES3另有ratedCapacity。二者同源复用及状态变化后的更新策略需确认。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+旧存储精度建议：Decimal（10,2）；不是官方JSON Schema精度约束。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名ratedCapacity统一为官方名称batteryCapacity；旧名仅作历史追溯。
+重要：旧工程名与RES3官方ratedCapacity发生同名异义；此公开行改为batteryCapacity，RES3行改用ratedCapacity。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0085
+
+【修订前工程名】
+ratedCapacity
+
+【3.4源行】
+84
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The capacity [unit Ah],研发,
+性能和耐用性,容量、能量和电压,剩余容量,remainingCapacity,LMT / IND,"EV：N/A
+
+LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,int,安时（Ah） 或 毫安时（mAh）,无,0,否,Dynamic,45,"EV：旧表包含该类别；本语义版本对该字段不填写／不展示，未纳入该类别模型。
+
+LMT：剩余容量。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：安时（Ah） 或 毫安时（mAh）
+按本语义版本：EV不填写／不展示；LMT结构必填；工业为固定式储能且有BMS等条件适用。
+
+IND：剩余容量。
+仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：安时（Ah） 或 毫安时（mAh）
+按本语义版本：EV不填写／不展示；LMT结构必填；工业为固定式储能且有BMS等条件适用。
+
+【适用条件】
+分类必填规则：
+EV：N/A
+
+LMT：M
+
+IND：C
+
+EV：该版本类别语义Schema未定义此路径；相关不适用边界按源视图核对。
+
+LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.remainingCapacity.value
+
+【官方语义字段】
+remainingCapacity
+
+【命名来源】
+EV：3.4原有命名；本类别不适用
+
+LMT/IND：3.4名称与官方一致
+
+【语义对应状态】
+EV：本类别不适用
+
+LMT/IND：名称与官方一致
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+EV：保留旧条目以显示类别差异；不向该类别的语义输出填入此字段。
+不得把其他电池类别中的同名字段填入本类别模型。
+
+LMT/IND：按本语义版本：EV不填写／不展示；LMT结构必填；工业为固定式储能且有BMS等条件适用。
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0086 / V4-0087 / V4-0088合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingCapacity
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingCapacity
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0086
+
+【3.4源行】
+85
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Information on the state of health of the battery pursuant to Article 14: remaining capacity [unit Ah],研发/BMS,
+性能和耐用性,容量、能量和电压,容量衰减率,capacityFade,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,int,百分比（%）,无,0,否,Dynamic,45,"EV/LMT：容量衰减率。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+IND：容量衰减率。
+仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.capacityFade.value
+
+【官方语义字段】
+capacityFade
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+动静态从旧表Static调整为Dynamic，属工程建议，待业务确认。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0089 / V4-0090合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/capacityFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/capacityFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0089
+
+【3.4源行】
+86
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Capacity fade [%],研发,
+性能和耐用性,容量、能量和电压,认证能源状态,stateOfCertifiedEnergy,EV,M,RES3（合法权益人·单个电池）,number,int,百分比（%）,无,0,否,Dynamic,45,"认证能源状态。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+3.4工程编码stateOfCertifiedEnergySOCE现统一为stateOfCertifiedEnergy；对外路径stateOfCertifiedEnergy.value。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.stateOfCertifiedEnergy.value
+
+【官方语义字段】
+stateOfCertifiedEnergy
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+3.4工程编码stateOfCertifiedEnergySOCE现统一为stateOfCertifiedEnergy；对外路径stateOfCertifiedEnergy.value。
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名stateOfCertifiedEnergySOCE统一为官方名称stateOfCertifiedEnergy；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/stateOfCertifiedEnergy
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0093
+
+【修订前工程名】
+stateOfCertifiedEnergySOCE
+
+【3.4源行】
+89
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Information on the state of health of the battery pursuant to Article 14: state of certified energy (SOCE) [%],研发/BMS,
+性能和耐用性,容量、能量和电压,标称电压,nominalVoltage,EV / LMT / IND,M,PUB（公开）,number,"Decimal（10,2）",伏特（V）,无,0,否,Static,10,"标称电压。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：伏特（V）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.nominalVoltage.value
+
+【官方语义字段】
+nominalVoltage
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+旧存储精度建议：Decimal（10,2）；不是官方JSON Schema精度约束。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/nominalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/value
+
+【字段ID】
+V4-0095
+
+【3.4源行】
+91
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Nominal voltage, with temperature range when relevant [unit V, optional unit °C]",研发,
+性能和耐用性,容量、能量和电压,剩余功率,remainingPowerCapability,LMT / IND,"EV：N/A
+
+LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,"Decimal（10,2）",瓦特（W）,无,0,否,Dynamic,45,"EV：旧表包含该类别；本语义版本对该字段不填写／不展示，未纳入该类别模型。
+
+LMT：剩余功率。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：瓦特（W）
+
+IND：剩余功率。
+仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：瓦特（W）
+
+【适用条件】
+分类必填规则：
+EV：N/A
+
+LMT：M
+
+IND：C
+
+EV：该版本类别语义Schema未定义此路径；相关不适用边界按源视图核对。
+
+LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.remainingPowerCapability.value
+
+【官方语义字段】
+remainingPowerCapability
+
+【命名来源】
+EV：3.4原有命名；本类别不适用
+
+LMT/IND：3.4名称与官方一致
+
+【语义对应状态】
+EV：本类别不适用
+
+LMT/IND：名称与官方一致
+
+【核对状态】
+已映射；分类合并展示
+
+【工程与核对备注】
+EV：保留旧条目以显示类别差异；不向该类别的语义输出填入此字段。
+不得把其他电池类别中的同名字段填入本类别模型。
+
+LMT/IND：工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+旧存储精度建议：Decimal（10,2）；不是官方JSON Schema精度约束。
+原文含where possible，具体可提供性需业务判断。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0099 / V4-0100 / V4-0101合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingPowerCapability
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingPowerCapability
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingPowerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingPowerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0099
+
+【3.4源行】
+95
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Information on the state of health of the battery pursuant to Article 14: where possible, the remaining power capability [unit W]",研发/BMS,
+性能和耐用性,功率能力,功率衰减率,powerFade,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,int,百分比（%）,无,0,否,Dynamic,45,"EV/LMT：功率衰减率。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+IND：功率衰减率。
+仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.powerFade.value
+
+【官方语义字段】
+powerFade
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+动静态从旧表Static调整为Dynamic，属工程建议，待业务确认。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0102 / V4-0103合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/powerFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/powerFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0102
+
+【3.4源行】
+96
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Power fade [%],研发,
+性能和耐用性,往返能效与自放电率,初始往返能效,initialRoundTripEnergyEfficiency,EV / LMT / IND,"EV/LMT：M
+
+IND：C",PUB（公开）,number,int,百分比（%）,无,0,否,Static,45,"EV/LMT：初始往返能效。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+IND：初始往返能效。
+仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.initialRoundTripEnergyEfficiency.value
+
+【官方语义字段】
+initialRoundTripEnergyEfficiency
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0105 / V4-0106合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/initialRoundTripEnergyEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/initialRoundTripEnergyEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0105
+
+【3.4源行】
+98
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Initial round trip energy efficiency [%],研发,
+性能和耐用性,往返能效与自放电率,往返能效（循环寿命达50%时）,roundTripEfficiencyAtHalfCycleLife,EV / LMT / IND,"EV/LMT：M
+
+IND：C",PUB（公开）,number,int,百分比（%）,无,0,否,Static,45,"EV/LMT：往返能效（循环寿命达50%时）。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+修订前沿用旧工程编码，现统一为roundTripEfficiencyAtHalfCycleLife，对外使用roundTripEfficiencyAtHalfCycleLife。
+
+IND：往返能效（循环寿命达50%时）。
+仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+修订前沿用旧工程编码，现统一为roundTripEfficiencyAtHalfCycleLife，对外使用roundTripEfficiencyAtHalfCycleLife。
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.roundTripEfficiencyAtHalfCycleLife.value
+
+【官方语义字段】
+roundTripEfficiencyAtHalfCycleLife
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+修订前沿用旧工程编码，现统一为roundTripEfficiencyAtHalfCycleLife，对外使用roundTripEfficiencyAtHalfCycleLife。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名roundTripEnergyEfficiencyAt50OfCycleLife统一为官方名称roundTripEfficiencyAtHalfCycleLife；旧名仅作历史追溯。
+【公共字段合并】原记录V4-0107 / V4-0108合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/roundTripEfficiencyAtHalfCycleLife
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/roundTripEfficiencyAtHalfCycleLife
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0107
+
+【修订前工程名】
+roundTripEnergyEfficiencyAt50OfCycleLife
+
+【3.4源行】
+99
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Round trip energy efficiency at 50 % of cycle-life [%],研发,
+性能和耐用性,往返能效与自放电率,剩余往返能效,remainingRoundTripEfficiency,LMT / IND,"LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,int,百分比（%）,无,0,否,Dynamic,45,"LMT：剩余往返能效。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+IND：剩余往返能效。
+仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+分类必填规则：
+LMT：M
+
+IND：C
+
+LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.remainingRoundTripEfficiency.value
+
+【官方语义字段】
+remainingRoundTripEfficiency
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+原文含where possible，具体可提供性需业务判断。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0109 / V4-0110合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/remainingRoundTripEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/remainingRoundTripEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0109
+
+【3.4源行】
+100
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Information on the state of health of the battery pursuant to Article 14: where possible, the remaining round-trip efficiency [%]",售后,
+性能和耐用性,往返能效与自放电率,往返能效衰减率,roundTripEnergyEfficiencyFade,EV / LMT / IND,C,RES3（合法权益人·单个电池）,number,int,百分比（%）,无,0,否,Dynamic,1.1,"EV/LMT：往返能效衰减率。
+适用时填写；本词表未给出统一的适用条件判断算法。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+修订前沿用旧工程编码，现统一为roundTripEnergyEfficiencyFade，对外使用roundTripEnergyEfficiencyFade.value。
+
+IND：往返能效衰减率。
+仅可充电工业电池适用，且需满足该指标的适用条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+修订前沿用旧工程编码，现统一为roundTripEnergyEfficiencyFade，对外使用roundTripEnergyEfficiencyFade.value。
+
+【适用条件】
+EV/LMT：适用时填写；本词表未给出统一的适用条件判断算法。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+IND：仅可充电工业电池适用，且需满足该指标的适用条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.roundTripEnergyEfficiencyFade.value
+
+【官方语义字段】
+roundTripEnergyEfficiencyFade
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+修订前沿用旧工程编码，现统一为roundTripEnergyEfficiencyFade，对外使用roundTripEnergyEfficiencyFade.value。
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+动静态从旧表Static调整为Dynamic，属工程建议，待业务确认。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名energyRoundTripEfficiencyFade统一为官方名称roundTripEnergyEfficiencyFade；旧名仅作历史追溯。
+【公共字段合并】原记录V4-0111 / V4-0112合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/roundTripEnergyEfficiencyFade
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0111
+
+【修订前工程名】
+energyRoundTripEfficiencyFade
+
+【3.4源行】
+101
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","Where applicable, energy round trip efficiency fade [%]",回收商,
+性能和耐用性,电池生命周期,预期使用寿命（年）,expectedLifetimeYears,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,integer,int,年,无,0,否,Dynamic,3,"EV/LMT：预期使用寿命（年）。
+必填（该电池类别／当前访问视图）。
+JSON 整数；直接填写数值。
+直接填写年数；官方 Schema 采用整数，不支持分数年。
+数值下限：1；未设置数值上限。
+单位口径：年
+采用整数年；词表说明状态变化时可能需更新，不能只根据“预期”一词判断永不变化。
+
+IND：预期使用寿命（年）。
+仅可充电工业电池适用；电池状态变化时可能需要更新。
+JSON 整数；直接填写数值。
+直接填写年数；官方 Schema 采用整数，不支持分数年。
+数值下限：1；未设置数值上限。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：年
+采用整数年；词表说明状态变化时可能需更新，不能只根据“预期”一词判断永不变化。
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电工业电池适用；电池状态变化时可能需要更新。
+
+【官方JSON路径】
+$.expectedLifetimeYears
+
+【官方语义字段】
+expectedLifetimeYears
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射；分类合并展示
+
+【工程与核对备注】
+采用整数年；词表说明状态变化时可能需更新，不能只根据“预期”一词判断永不变化。
+源词表说明状态变化时可能需更新；本表归入Dynamic，触发方式为事件更新。
+动静态从旧表Static调整为Dynamic，属工程建议，待业务确认。
+修订前工程名expectedLifetimeInCalendarYears统一为官方名称expectedLifetimeYears；旧名仅作历史追溯。
+【公共字段合并】原记录V4-0124 / V4-0125合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/expectedLifetimeYears
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/expectedLifetimeYears
+
+【字段ID】
+V4-0124
+
+【修订前工程名】
+expectedLifetimeInCalendarYears
+
+【3.4源行】
+111
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",The expected lifetime of the battery under the reference conditions for which it has been designed [years],研发,
+性能和耐用性,电池生命周期,预期使用寿命（圈）,expectedLifetimeCycles,EV / LMT / IND,"EV/LMT：M
+
+IND：C",PUB（公开）,integer,int,循环次数（次）,无,0,否,Static,3,"EV/LMT：预期使用寿命（圈）。
+必填（该电池类别／当前访问视图）。
+JSON 整数；直接填写数值。
+数值下限：1；未设置数值上限。
+单位口径：循环次数（次）
+
+IND：预期使用寿命（圈）。
+仅部分可用循环次数表达寿命的工业电池适用。
+JSON 整数；直接填写数值。
+数值下限：1；未设置数值上限。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：循环次数（次）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅部分可用循环次数表达寿命的工业电池适用。
+
+【官方JSON路径】
+$.expectedLifetimeCycles
+
+【官方语义字段】
+expectedLifetimeCycles
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射；分类合并展示
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+修订前工程名expectedLifetimeNumberOfChargeDischargeCycles统一为官方名称expectedLifetimeCycles；旧名仅作历史追溯。
+【公共字段合并】原记录V4-0126 / V4-0127合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/expectedLifetimeCycles
+product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/expectedLifetimeCycles
+
+【字段ID】
+V4-0126
+
+【修订前工程名】
+expectedLifetimeNumberOfChargeDischargeCycles
+
+【3.4源行】
+112
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Expected battery lifetime expressed in cycles [in number],研发,
+性能和耐用性,电池生命周期,循环寿命测试方法,cycleLifeReferenceTest,EV / LMT / IND,"EV/LMT：M
+
+IND：C",PUB（公开）,object（多语言）,string,,无,0,是,Static,"{""en-IE"":""Test sample""}","EV/LMT：循环寿命测试方法。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+IND：循环寿命测试方法。
+仅部分可用循环次数表达寿命的工业电池适用。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅部分可用循环次数表达寿命的工业电池适用。
+
+【官方JSON路径】
+$.cycleLifeReferenceTest
+
+【官方语义字段】
+cycleLifeReferenceTest
+
+【命名来源】
+3.4名称与官方一致
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整；分类合并展示
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+【公共字段合并】原记录V4-0129 / V4-0130合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/cycleLifeReferenceTest
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/cycleLifeReferenceTest
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0129
+
+【3.4源行】
+114
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Reference test used for expected battery lifetime expressed in cycles [free text],研发,
+性能和耐用性,电池生命周期,循环寿命测试C率-充电,cycleLifeChargeCRate,EV / LMT / IND,"EV/LMT：M
+
+IND：C",PUB（公开）,number,"Decimal（10,2）",每小时（h^-1，C 倍率）,无,0,否,Static,45,"EV/LMT：循环寿命测试C率-充电。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：每小时（h^-1，C 倍率）
+工程量纲A/Ah对应h⁻¹；对外unit提交reciprocalHour的完整URI。
+
+IND：循环寿命测试C率-充电。
+仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：每小时（h^-1，C 倍率）
+工程量纲A/Ah对应h⁻¹；对外unit提交reciprocalHour的完整URI。
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.cycleLifeChargeCRate.value
+
+【官方语义字段】
+cycleLifeChargeCRate
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射；分类合并展示
+
+【工程与核对备注】
+工程量纲A/Ah对应h⁻¹；对外unit提交reciprocalHour的完整URI。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+旧存储精度建议：Decimal（10,2）；不是官方JSON Schema精度约束。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名cRateOfRelevantCycleLifeTest统一为官方名称cycleLifeChargeCRate；旧名仅作历史追溯。
+【公共字段合并】原记录V4-0131 / V4-0132合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/cycleLifeChargeCRate
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/pub-ind.schema.json#/properties/cycleLifeChargeCRate
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0131
+
+【修订前工程名】
+cRateOfRelevantCycleLifeTest
+
+【3.4源行】
+115
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Charge C-rate of relevant cycle-life test [number],研发,
+性能和耐用性,电池生命周期,循环寿命测试C率-放电,cycleLifeDischargeCRate,EV / LMT / IND,V,PUB（公开）,number,"Decimal（10,2）",每小时（h^-1，C 倍率）,无,0,否,Static,官方全量样例未提供此路径值,"循环寿命测试C率-放电。
+可选；有相应资料时填写。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：每小时（h^-1，C 倍率）
+当前词表明确Optional；不能沿用旧表无条件M。
+
+【适用条件】
+可选；有相应资料时填写。
+
+【官方JSON路径】
+$.cycleLifeDischargeCRate.value
+
+【官方语义字段】
+cycleLifeDischargeCRate
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+当前词表明确Optional；不能沿用旧表无条件M。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+旧存储精度建议：Decimal（10,2）；不是官方JSON Schema精度约束。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/cycleLifeDischargeCRate
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0133
+
+【3.4源行】
+116
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Discharge C-rate of relevant cycle-life test [number],研发,
+性能和耐用性,电池生命周期,耗尽容量阈值,capacityExhaustionThreshold,EV,M,PUB（公开）,number,Decimal,百分比（%）,无,0,否,Static,45,"耗尽容量阈值。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.capacityExhaustionThreshold.value
+
+【官方语义字段】
+capacityExhaustionThreshold
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+已映射
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+旧存储精度建议：Decimal；不是官方JSON Schema精度约束。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名capacityThresholdForExhaustion统一为官方名称capacityExhaustionThreshold；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/pub-evb.schema.json#/properties/capacityExhaustionThreshold
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0134
+
+【修订前工程名】
+capacityThresholdForExhaustion
+
+【3.4源行】
+117
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Capacity threshold for exhaustion [%],研发,
+标识符和产品数据,制造商与生产信息,电池识别信息组合,batteryIdentification,EV / LMT / IND,M,PUB（公开）,object,,,无,待确认,否,Static,"{""modelIdentifier"":""IC-75-LFP"",""batchNumber"":""BATCH-2026-03-A""}","电池识别信息组合。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：modelIdentifier、batchNumber、serialNumber、productNumber、otherIdentificationElement。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.batteryIdentification
+
+【官方语义字段】
+batteryIdentification
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增结构组
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification
+
+【字段ID】
+V4-0140","Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",待分配,
+标识符和产品数据,制造商与生产信息,批次号,batchNumber,EV / LMT / IND,C,PUB（公开）,string,,,无,待确认,否,Static,"""BATCH-2026-03-A""","批次号。
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+
+【官方JSON路径】
+$.batteryIdentification.batchNumber
+
+【官方语义字段】
+batchNumber
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/batchNumber
+
+【字段ID】
+V4-0141","Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",待分配,
+标识符和产品数据,制造商与生产信息,其他识别要素,otherIdentificationElement,EV / LMT / IND,C,PUB（公开）,string,,,无,待确认,否,Static,官方全量样例未提供此路径值,"其他识别要素。
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+
+【官方JSON路径】
+$.batteryIdentification.otherIdentificationElement
+
+【官方语义字段】
+otherIdentificationElement
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/otherIdentificationElement
+
+【字段ID】
+V4-0142","Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",待分配,
+标识符和产品数据,制造商与生产信息,产品编号,productNumber,EV / LMT / IND,C,PUB（公开）,string,,,无,待确认,否,Static,官方全量样例未提供此路径值,"产品编号。
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。
+
+【官方JSON路径】
+$.batteryIdentification.productNumber
+
+【官方语义字段】
+productNumber
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/batteryIdentification/properties/productNumber
+
+【字段ID】
+V4-0143","Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",待分配,
+符号，标签和文档符合性,标识与符合性资料,化学物质标识符号,chemicalSymbol,EV / LMT / IND,C,PUB（公开）,array<string>,,,"EU-BATTERY-CHEMICAL-SYMBOL
+cadmiumSymbol — 镉标识
+leadSymbol — 铅标识
+noneSymbol — 无相应化学符号",待确认,否,Static,"[""https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#cadmiumSymbol""]","化学物质标识符号。
+适用镉或铅标识要求时填写。
+JSON 数组；逐元素结构已在 [] 子行展开。
+受控值使用完整 URI／规范标识；参考允许值列，不能只传中文名称或 URI 末尾代码。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+适用镉或铅标识要求时填写。
+
+【官方JSON路径】
+$.chemicalSymbol
+
+【官方语义字段】
+chemicalSymbol
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/chemicalSymbol
+
+【字段ID】
+V4-0144",The marking requirements laid down in Article 13(5) [code list ],待分配,
+符号，标签和文档符合性,标识与符合性资料,合规测试报告结果资源,complianceTestReportResults,EV / LMT / IND,M,RES2（公告机构／主管机关／欧委会）,object,,,无,待确认,否,Static,"{""resourceTitle"":""Compliance test report result"",""contentType"":""application/pdf"",""url"":""https://example.com/docs/test-report-0001"",""language"":""en-GB""}","合规测试报告结果资源。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：contentType、url、resourceTitle、language。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.complianceTestReportResults
+
+【官方语义字段】
+complianceTestReportResults
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res2-batteries.schema.json#/properties/complianceTestReportResults
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource
+
+【字段ID】
+V4-0145",Results of test reports proving compliance with the requirements laid down in this Regulation or any delegated or implementing act adopted pursuant to this Regulation [a web link],待分配,
+电池材料组成,化学体系与物质信息,详细组成信息,detailedComposition,EV / LMT / IND,M,RES1（合法权益人／公告机构／主管机关／欧委会）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium""}","详细组成信息。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.detailedComposition
+
+【官方语义字段】
+detailedComposition
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/detailedComposition
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0146","Detailed composition, including materials used in the cathode, anode and electrolyte [free text]",待分配,
+DPP头信息,护照与注册主体,护照资源状态,dppStatus,EV / LMT / IND,M,PUB（公开）,string,,,"EU-INSTANCE-STATUS
+invalidStatus — 无效
+validStatus — 有效",待确认,否,Dynamic,"""https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#validStatus""","护照资源状态。
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+JSON 字符串。
+受控值使用完整 URI／规范标识；参考允许值列，不能只传中文名称或 URI 末尾代码。
+
+【适用条件】
+官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。
+
+【官方JSON路径】
+$.dppStatus
+
+【官方语义字段】
+dppStatus
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+
+【语义定义出处】
+core/1.0.0/schemas/core.schema.json#/properties/dppStatus
+
+【字段ID】
+V4-0147",The current lifecycle status of a digital product passport.,待分配,
+性能和耐用性,语义包补齐指标,运行环境条件直方图集合,environmentalConditionHistogramSet,EV / LMT / IND,C,RES3（合法权益人·单个电池）,object,,按 binRangeUnit 与 binValueUnit 分别确定,无,待确认,否,Dynamic,"{""environmentalConditionHistogram"":[{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""binRangeUnit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius"",""binValueUnit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour"",""bin"":[{""lowerBound"":-10,""upperBound"":0,""binValue"":5},{""lowerBound"":0,""upperBound"":25,""binValue"":400},{""lowerBound"":25,""upperBound"":45,""binValue"":120}]}]}","运行环境条件直方图集合。
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+JSON 对象；成员：environmentalConditionHistogram。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：按 binRangeUnit 与 binValueUnit 分别确定
+
+【适用条件】
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+
+【官方JSON路径】
+$.environmentalConditionHistogramSet
+
+【官方语义字段】
+environmentalConditionHistogramSet
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增结构组
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/environmentalConditionHistogramSet
+
+【字段ID】
+V4-0148","Periodically recorded information on the operating environmental conditions, including temperature [code list, histogram, related units]",待分配,
+性能和耐用性,语义包补齐指标,运行环境条件直方图列表,environmentalConditionHistogram,EV / LMT / IND,C,RES3（合法权益人·单个电池）,array<object>,,按 binRangeUnit 与 binValueUnit 分别确定,无,待确认,否,Dynamic,"[{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""binRangeUnit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius"",""binValueUnit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour"",""bin"":[{""lowerBound"":-10,""upperBound"":0,""binValue"":5},{""lowerBound"":0,""upperBound"":25,""binValue"":400},{""lowerBound"":25,""upperBound"":45,""binValue"":120}]}]","运行环境条件直方图列表。
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数组；逐元素结构已在 [] 子行展开。
+单位口径：按 binRangeUnit 与 binValueUnit 分别确定
+
+【适用条件】
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.environmentalConditionHistogramSet.environmentalConditionHistogram
+
+【官方语义字段】
+environmentalConditionHistogram
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/environmentalConditionHistogramSet/properties/environmentalConditionHistogram
+
+【字段ID】
+V4-0149","Periodically recorded information on the operating environmental conditions, including temperature [code list, histogram, related units]",待分配,
+性能和耐用性,语义包补齐指标,参考条件下预期寿命（循环次数）,expectedLifetimeCyclesRest,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,integer,,循环次数（次）,无,待确认,否,Dynamic,4,"EV/LMT：参考条件下预期寿命（循环次数）。
+必填（该电池类别／当前访问视图）。
+JSON 整数；直接填写数值。
+数值下限：1；未设置数值上限。
+单位口径：循环次数（次）
+
+IND：参考条件下预期寿命（循环次数）。
+仅可充电且属于循环应用的工业电池适用；电池状态变化时可能需要更新。
+JSON 整数；直接填写数值。
+数值下限：1；未设置数值上限。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：循环次数（次）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电且属于循环应用的工业电池适用；电池状态变化时可能需要更新。
+
+【官方JSON路径】
+$.expectedLifetimeCyclesRest
+
+【官方语义字段】
+expectedLifetimeCyclesRest
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+源词表说明状态变化时可能需更新；本表归入Dynamic，触发方式为事件更新。
+【公共字段合并】原记录V4-0150 / V4-0151合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/expectedLifetimeCyclesRest
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/expectedLifetimeCyclesRest
+
+【字段ID】
+V4-0150","The expected lifetime of the battery under the reference conditions for which it has been designed, in terms of cycles, except for non-cycle applications [number]",待分配,
+性能和耐用性,语义包补齐指标,电芯内阻,internalCellResistance,EV / LMT / IND,M,PUB（公开）,number,,欧姆（Ω）,无,待确认,否,Static,0.9,"电芯内阻。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：欧姆（Ω）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.internalCellResistance.value
+
+【官方语义字段】
+internalCellResistance
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/internalCellResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0152",Internal battery cell resistance [unit Ω],待分配,
+性能和耐用性,语义包补齐指标,电池包内阻,internalPackResistance,EV / LMT / IND,M,PUB（公开）,number,,欧姆（Ω）,无,待确认,否,Static,45,"电池包内阻。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：欧姆（Ω）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.internalPackResistance.value
+
+【官方语义字段】
+internalPackResistance
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/internalPackResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0153",Internal battery pack resistance [unit Ω],待分配,
+性能和耐用性,语义包补齐指标,内阻,internalResistance,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,,欧姆（Ω）,无,待确认,否,Dynamic,45,"EV/LMT：内阻。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：欧姆（Ω）
+
+IND：内阻。
+仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：欧姆（Ω）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.internalResistance.value
+
+【官方语义字段】
+internalResistance
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0154 / V4-0155合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/internalResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/internalResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0154",Internal resistance [unit Ω],待分配,
+性能和耐用性,语义包补齐指标,内阻增加,internalResistanceIncrease,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,,百分比（%）,无,待确认,否,Dynamic,45,"EV/LMT：内阻增加。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+IND：内阻增加。
+仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.internalResistanceIncrease.value
+
+【官方语义字段】
+internalResistanceIncrease
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0156 / V4-0157合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/internalResistanceIncrease
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/internalResistanceIncrease
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0156",Internal resistance increase [%],待分配,
+标识符和产品数据,制造商与生产信息,制造商网站及邮箱,manufacturerContactDetails,EV / LMT / IND,V,PUB（公开）,object,,,无,待确认,否,Static,"{""manufacturerWebsite"":""https://www.example.com"",""manufacturerEmail"":""mailto:info@example.com""}","制造商网站及邮箱。
+有资料时填写；对象可省略，提供对象时网站／邮箱至少一项。
+JSON 对象；成员：manufacturerWebsite、manufacturerEmail。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+有资料时填写；对象可省略，提供对象时网站／邮箱至少一项。
+
+【官方JSON路径】
+$.manufacturerContactDetails
+
+【官方语义字段】
+manufacturerContactDetails
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增结构组
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerContactDetails
+
+【字段ID】
+V4-0158","If available, manufacturer web and email address [both optional]",待分配,
+标识符和产品数据,制造商与生产信息,制造商名称标识组合,manufacturerIdentification,EV / LMT / IND,M,PUB（公开）,object,,,无,待确认,否,Static,"{""manufacturerName"":""Iberia Battery Systems S.L."",""manufacturerTradeName"":""IberiaCell"",""manufacturerTrademark"":""IberiaCell(R)""}","制造商名称标识组合。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：manufacturerName、manufacturerTradeName、manufacturerTrademark。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.manufacturerIdentification
+
+【官方语义字段】
+manufacturerIdentification
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增结构组
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturerIdentification
+
+【字段ID】
+V4-0159","Manufacturer name, registered trade name or registered trademark [at least one of]",待分配,
+标识符和产品数据,制造商与生产信息,制造城市,manufacturingCity,EV / LMT / IND,C,PUB（公开）,string,,,无,待确认,否,Static,"""Zaragoza""","制造城市。
+制造城市／制造地区至少一项；国家代码另为必填。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+制造城市／制造地区至少一项；国家代码另为必填。
+
+【官方JSON路径】
+$.manufacturingPlace.manufacturingCity
+
+【官方语义字段】
+manufacturingCity
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace/properties/manufacturingCity
+
+【字段ID】
+V4-0160","The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",待分配,
+标识符和产品数据,制造商与生产信息,制造国家代码,manufacturingCountry,EV / LMT / IND,M,PUB（公开）,string,,,无,待确认,否,Static,"""ESP""","制造国家代码。
+必填（该电池类别／当前访问视图）。
+JSON 字符串。
+3 位大写字母国家／司法辖区代码；本版仅显式约束 ^[A-Z]{3}$，未附完整国家代码 enum。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.manufacturingPlace.manufacturingCountry
+
+【官方语义字段】
+manufacturingCountry
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace/properties/manufacturingCountry
+
+【字段ID】
+V4-0161","The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",待分配,
+标识符和产品数据,制造商与生产信息,制造地区,manufacturingRegion,EV / LMT / IND,C,PUB（公开）,string,,,无,待确认,否,Static,"""Aragón""","制造地区。
+制造城市／制造地区至少一项；国家代码另为必填。
+JSON 字符串。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+制造城市／制造地区至少一项；国家代码另为必填。
+
+【官方JSON路径】
+$.manufacturingPlace.manufacturingRegion
+
+【官方语义字段】
+manufacturingRegion
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/manufacturingPlace/properties/manufacturingRegion
+
+【字段ID】
+V4-0162","The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",待分配,
+性能和耐用性,语义包补齐指标,最高电压,maximumVoltage,EV / LMT / IND,M,PUB（公开）,number,,伏特（V）,无,待确认,否,Static,10,"最高电压。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：伏特（V）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.maximumVoltage.value
+
+【官方语义字段】
+maximumVoltage
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/maximumVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/value
+
+【字段ID】
+V4-0163","Maximum voltage, with temperature range when relevant [unit V, optional unit °C]",待分配,
+性能和耐用性,语义包补齐指标,最高电压·适用条件范围,maximumVoltage.valueRange,EV / LMT / IND,M,PUB（公开）,object,,摄氏度（°C）,无,待确认,否,Static,"{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""lowerBound"":10,""upperBound"":10,""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""}","最高电压·适用条件范围。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：observedCharacteristic、lowerBound、upperBound、unit。
+单位口径：摄氏度（°C）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.maximumVoltage.valueRange
+
+【官方语义字段】
+maximumVoltage
+
+【命名来源】
+本稿按官方结构拆分
+
+【语义对应状态】
+结构拆分命名
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+对应官方maximumVoltage的valueRange子对象；以路径表示，不能作为新的顶层JSON键。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/maximumVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange
+
+【字段ID】
+V4-0164
+
+【修订前工程名】
+maximumVoltageValueRange","Maximum voltage, with temperature range when relevant [unit V, optional unit °C]",待分配,
+性能和耐用性,语义包补齐指标,最低电压,minimalVoltage,EV / LMT / IND,M,PUB（公开）,number,,伏特（V）,无,待确认,否,Static,10,"最低电压。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：伏特（V）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.minimalVoltage.value
+
+【官方语义字段】
+minimalVoltage
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/minimalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/value
+
+【字段ID】
+V4-0165","Minimal voltage, with temperature range when relevant [unit V, optional unit °C]",待分配,
+性能和耐用性,语义包补齐指标,最低电压·适用条件范围,minimalVoltage.valueRange,EV / LMT / IND,M,PUB（公开）,object,,摄氏度（°C）,无,待确认,否,Static,"{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""lowerBound"":10,""upperBound"":10,""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""}","最低电压·适用条件范围。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：observedCharacteristic、lowerBound、upperBound、unit。
+单位口径：摄氏度（°C）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.minimalVoltage.valueRange
+
+【官方语义字段】
+minimalVoltage
+
+【命名来源】
+本稿按官方结构拆分
+
+【语义对应状态】
+结构拆分命名
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+对应官方minimalVoltage的valueRange子对象；以路径表示，不能作为新的顶层JSON键。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/minimalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange
+
+【字段ID】
+V4-0166
+
+【修订前工程名】
+minimalVoltageValueRange","Minimal voltage, with temperature range when relevant [unit V, optional unit °C]",待分配,
+性能和耐用性,语义包补齐指标,负面事件说明,negativeEvents,EV / LMT / IND,C,RES3（合法权益人·单个电池）,object（多语言）,,,无,待确认,是,Dynamic,"{""en-IE"":""None recorded""}","负面事件说明。
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+
+【适用条件】
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+
+【官方JSON路径】
+$.negativeEvents
+
+【官方语义字段】
+negativeEvents
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/negativeEvents
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0167","Negative events, such as accidents [multiple free texts]",待分配,
+性能和耐用性,语义包补齐指标,标称电压·适用条件范围,nominalVoltage.valueRange,EV / LMT / IND,M,PUB（公开）,object,,摄氏度（°C）,无,待确认,否,Static,"{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""lowerBound"":10,""upperBound"":10,""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""}","标称电压·适用条件范围。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：observedCharacteristic、lowerBound、upperBound、unit。
+单位口径：摄氏度（°C）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.nominalVoltage.valueRange
+
+【官方语义字段】
+nominalVoltage
+
+【命名来源】
+本稿按官方结构拆分
+
+【语义对应状态】
+结构拆分命名
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+对应官方nominalVoltage的valueRange子对象；以路径表示，不能作为新的顶层JSON键。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/nominalVoltage
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange
+
+【字段ID】
+V4-0168
+
+【修订前工程名】
+nominalVoltageValueRange","Nominal voltage, with temperature range when relevant [unit V, optional unit °C]",待分配,
+性能和耐用性,语义包补齐指标,非使用状态耐受温度范围及测试,notInUseTemperatureRange,EV / LMT / IND,M,PUB（公开）,object,,摄氏度（°C，词表语义）,无,待确认,否,Static,"{""notInUseTemperatureRangeTest"":{""en-IE"":""IEC 62660-1, storage between -20 C and 45 C""},""valueRange"":{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""lowerBound"":10,""upperBound"":10,""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""}}","非使用状态耐受温度范围及测试。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：notInUseTemperatureRangeTest、valueRange。
+单位口径：摄氏度（°C，词表语义）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.notInUseTemperatureRange
+
+【官方语义字段】
+notInUseTemperatureRange
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增结构组
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange
+
+【字段ID】
+V4-0169",Temperature range the battery can withstand when not in use (reference test) [min_T °C … max_T °C + free text],待分配,
+性能和耐用性,温度控制,空闲状态温度范围,notInUseTemperatureRange.valueRange,EV / LMT / IND,M,PUB（公开）,object,"范围，Decimal(10,2)",摄氏度（°C，词表语义）,无,0,否,Static,"{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""lowerBound"":10,""upperBound"":10,""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""}","空闲状态温度范围。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：observedCharacteristic、lowerBound、upperBound、unit。
+单位口径：摄氏度（°C，词表语义）
+调整为范围对象；旧表仅显示下限名称，需确认上界、观测特征和单位如何补齐。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.notInUseTemperatureRange.valueRange
+
+【官方语义字段】
+notInUseTemperatureRange
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+调整为范围对象；旧表仅显示下限名称，需确认上界、观测特征和单位如何补齐。
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+对应官方notInUseTemperatureRange的valueRange子对象；以路径表示，不能作为新的顶层JSON键。
+修订前工程名idleStateTemperatureRange统一为官方名称notInUseTemperatureRange.valueRange；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange/properties/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+
+【字段ID】
+V4-0136
+
+【修订前工程名】
+idleStateTemperatureRange
+
+【3.4源行】
+119
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。",Temperature range the battery can withstand when not in use (reference test) [min_T °C … max_T °C + free text],研发,
+性能和耐用性,语义包补齐指标,非使用状态温度范围的参考测试,notInUseTemperatureRangeTest,EV / LMT / IND,M,PUB（公开）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""IEC 62660-1, storage between -20 C and 45 C""}","非使用状态温度范围的参考测试。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.notInUseTemperatureRange.notInUseTemperatureRangeTest
+
+【官方语义字段】
+notInUseTemperatureRangeTest
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/notInUseTemperatureRange/properties/notInUseTemperatureRangeTest
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0170",Temperature range the battery can withstand when not in use (reference test) [min_T °C … max_T °C + free text],待分配,
+性能和耐用性,语义包补齐指标,充电循环次数列表,numberOfChargingCycles,EV / LMT / IND,C,RES3（合法权益人·单个电池）,array<integer>,,充电循环次数（次）,无,待确认,否,Dynamic,[42],"充电循环次数列表。
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+JSON 数组；逐元素结构已在 [] 子行展开。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：充电循环次数（次）
+
+【适用条件】
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+
+【官方JSON路径】
+$.numberOfChargingCycles
+
+【官方语义字段】
+numberOfChargingCycles
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/numberOfChargingCycles
+
+【字段ID】
+V4-0171",The number of charging cycles [number],待分配,
+性能和耐用性,语义包补齐指标,放电循环次数列表,numberOfDischargingCycles,EV / LMT / IND,C,RES3（合法权益人·单个电池）,array<integer>,,放电循环次数（次）,无,待确认,否,Dynamic,[41],"放电循环次数列表。
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+JSON 数组；逐元素结构已在 [] 子行展开。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：放电循环次数（次）
+
+【适用条件】
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+
+【官方JSON路径】
+$.numberOfDischargingCycles
+
+【官方语义字段】
+numberOfDischargingCycles
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/numberOfDischargingCycles
+
+【字段ID】
+V4-0172",The number of discharging cycles [number],待分配,
+性能和耐用性,语义包补齐指标,欧姆内阻,ohmicResistance,LMT / IND,"LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,,欧姆（Ω）,无,待确认,否,Dynamic,45,"LMT：欧姆内阻。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：欧姆（Ω）
+
+IND：欧姆内阻。
+仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：欧姆（Ω）
+
+【适用条件】
+分类必填规则：
+LMT：M
+
+IND：C
+
+LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.ohmicResistance.value
+
+【官方语义字段】
+ohmicResistance
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+原文含where possible，具体可提供性需业务判断。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0173 / V4-0174合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/ohmicResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/ohmicResistance
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0173","Information on the state of health of the battery pursuant to Article 14: where possible, the ohmic resistance [unit Ω]",待分配,
+性能和耐用性,语义包补齐指标,初始功率能力,originalPowerCapability,EV / LMT / IND,M,PUB（公开）,number,,瓦特（W）,无,待确认,否,Static,150,"初始功率能力。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：瓦特（W）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.originalPowerCapability.value
+
+【官方语义字段】
+originalPowerCapability
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/originalPowerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0175",Original power capability [unit W],待分配,
+性能和耐用性,语义包补齐指标,功率能力,powerCapability,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,,瓦特（W）,无,待确认,否,Dynamic,45,"EV/LMT：功率能力。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：瓦特（W）
+
+IND：功率能力。
+仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：瓦特（W）
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.powerCapability.value
+
+【官方语义字段】
+powerCapability
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+源词表说明状态变化时可能需更新；本表归入Dynamic，触发方式为事件更新。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0176 / V4-0177合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/powerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/powerCapability
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0176",Power [unit W],待分配,
+性能和耐用性,语义包补齐指标,功率限值列表,powerLimit,EV / LMT / IND,M,PUB（公开）,array<object>,,"瓦特（W）
+条件范围单位：摄氏度（°C）",无,待确认,否,Static,"[{""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt"",""value"":150,""valueRange"":{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""lowerBound"":10,""upperBound"":10,""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""}}]","功率限值列表。
+必填（该电池类别／当前访问视图）。
+JSON 数组；逐元素结构已在 [] 子行展开。
+单位口径：瓦特（W）
+条件范围单位：摄氏度（°C）
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.powerLimit
+
+【官方语义字段】
+powerLimit
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/powerLimit
+
+【字段ID】
+V4-0178","Power limits, with temperature range when relevant [unit W, optionally min_T °C … max_T °C]",待分配,
+性能和耐用性,语义包补齐指标,功率限值列表（数组元素）·适用条件范围,powerLimit.valueRange,EV / LMT / IND,C,PUB（公开）,object,,摄氏度（°C）,无,待确认,否,Static,"{""observedCharacteristic"":""https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature"",""lowerBound"":10,""upperBound"":10,""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius""}","功率限值列表（数组元素）·适用条件范围。
+提供此可选子结构时，按其内部约束填写；父级规则另见规则页。
+JSON 对象；成员：observedCharacteristic、lowerBound、upperBound、unit。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：摄氏度（°C）
+
+【适用条件】
+提供此可选子结构时，按其内部约束填写；父级规则另见规则页。
+
+【官方JSON路径】
+$.powerLimit[].valueRange
+
+【官方语义字段】
+powerLimit
+
+【命名来源】
+本稿按官方结构拆分
+
+【语义对应状态】
+结构拆分命名
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+对应官方powerLimit的valueRange子对象；以路径表示，不能作为新的顶层JSON键。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/powerLimit/items
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange
+core/1.0.0/schemas/common.schema.json#/$defs/valueRange
+core/1.0.0/schemas/common.schema.json#/$defs/unitValueWithRange/properties/valueRange
+
+【字段ID】
+V4-0179
+
+【修订前工程名】
+powerLimitValueRange","Power limits, with temperature range when relevant [unit W, optionally min_T °C … max_T °C]",待分配,
+性能和耐用性,语义包补齐指标,健康状态视图·额定容量,ratedCapacity,EV / LMT / IND,"EV/LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,number,,安时（Ah） 或 毫安时（mAh）,无,待确认,否,Dynamic,45,"EV/LMT：健康状态视图·额定容量。
+必填（该电池类别／当前访问视图）。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：安时（Ah） 或 毫安时（mAh）
+RES3额定容量与公开batteryCapacity可能同源；同源复用及状态变化后的更新策略待确认。
+
+IND：健康状态视图·额定容量。
+仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+单位口径：安时（Ah） 或 毫安时（mAh）
+RES3额定容量与公开batteryCapacity可能同源；同源复用及状态变化后的更新策略待确认。
+
+【适用条件】
+分类必填规则：
+EV/LMT：M
+
+IND：C
+
+EV/LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅可充电工业电池适用；电池状态变化时可能需要更新。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.ratedCapacity.value
+
+【官方语义字段】
+ratedCapacity
+
+【命名来源】
+本稿工程别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+RES3额定容量与公开batteryCapacity可能同源；同源复用及状态变化后的更新策略待确认。
+源词表说明状态变化时可能需更新；本表归入Dynamic，触发方式为事件更新。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+修订前工程名stateOfHealthRatedCapacity统一为官方名称ratedCapacity；旧名仅作历史追溯。
+stateOfHealthRatedCapacity是本稿为避免旧命名冲突拟定的别名；现采用RES3官方名ratedCapacity。
+【公共字段合并】原记录V4-0180 / V4-0181合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/evb/1.0.0/schemas/res3-evb.schema.json#/properties/ratedCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/ratedCapacity
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0180
+
+【修订前工程名】
+stateOfHealthRatedCapacity",Rated capacity (Ah),待分配,
+DPP头信息,护照与注册主体,护照注册／负责主体身份信息,registrantIdentity,EV / LMT / IND,M,PUB（公开）,string,,,无,待确认,否,Static,"""urn:uuid:3f1c7a52-8d4e-4b1a-9c2e-5a6b7d8e9f01""","护照注册／负责主体身份信息。
+必填（该电池类别／当前访问视图）。
+JSON 字符串。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.registrantIdentity
+
+【官方语义字段】
+registrantIdentity
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/registrantIdentity
+
+【字段ID】
+V4-0182",Identity of who is registering and/or is responsible for the battery passport [name],待分配,
+性能和耐用性,语义包补齐指标,往返能量效率,roundTripEnergyEfficiency,EV / LMT / IND,C,RES3（合法权益人·单个电池）,number,,百分比（%）,无,待确认,否,Dynamic,95,"EV/LMT：往返能量效率。
+适用时填写；本词表未给出统一的适用条件判断算法。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+IND：往返能量效率。
+仅可充电工业电池适用，且需满足该指标的适用条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数值，允许小数；计量口径见单位列。
+Schema 未设置数值下限；未设置数值上限。
+百分比单位本身不代表 Schema 已规定 0～100；数值边界以实际约束列为准。
+单位口径：百分比（%）
+
+【适用条件】
+EV/LMT：适用时填写；本词表未给出统一的适用条件判断算法。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+IND：仅可充电工业电池适用，且需满足该指标的适用条件。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.roundTripEnergyEfficiency.value
+
+【官方语义字段】
+roundTripEnergyEfficiency
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+源Schema未设maximum，不能仅凭%单位认定已限制0～100。
+工程行表示官方计量对象的value；unit仍按官方结构输出。
+【公共字段合并】原记录V4-0183 / V4-0184合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/roundTripEnergyEfficiency
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue
+core/1.0.0/schemas/common.schema.json#/$defs/unitValue/properties/value
+
+【字段ID】
+V4-0183","Where applicable, energy round trip efficiency [%]",待分配,
+性能和耐用性,语义包补齐指标,自放电率及记录时间,selfDischargingRateSet,LMT / IND,"LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,object,,自放电率：%/年；另带记录时间,无,待确认,否,Dynamic,"{""selfDischargingRate"":[{""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent"",""value"":45}],""recordedTime"":""2026-03-01T00:00:00Z""}","LMT：自放电率及记录时间。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：selfDischargingRate、recordedTime。
+词表口径为每年下降百分比（%/年）；JSON 单位 URI 为 percent，并以 recordedTime 记录时间。
+单位口径：自放电率：%/年；另带记录时间
+
+IND：自放电率及记录时间。
+仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+JSON 对象；成员：selfDischargingRate、recordedTime。
+词表口径为每年下降百分比（%/年）；JSON 单位 URI 为 percent，并以 recordedTime 记录时间。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：自放电率：%/年；另带记录时间
+
+【适用条件】
+分类必填规则：
+LMT：M
+
+IND：C
+
+LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+
+【官方JSON路径】
+$.selfDischargingRateSet
+
+【官方语义字段】
+selfDischargingRateSet
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增结构组；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+原文含where possible，具体可提供性需业务判断。
+【公共字段合并】原记录V4-0185 / V4-0186合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/selfDischargingRateSet
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/selfDischargingRateSet
+
+【字段ID】
+V4-0185","Information on the state of health of the battery pursuant to Article 14: where possible, the evolution of self-discharging rates [timestamp, decrease % per year]",待分配,
+性能和耐用性,语义包补齐指标,记录时间,recordedTime,LMT / IND,"LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,string / date-time,,,无,待确认,否,Dynamic,"""2026-03-01T00:00:00Z""","LMT：记录时间。
+继承上层 selfDischargingRateSet：必填（该电池类别／当前访问视图）。
+JSON 字符串。
+date-time 字符串，包含日期、时间和时区；例如官方样例 ""2025-08-22T03:12:00Z""。
+
+IND：记录时间。
+继承上层 selfDischargingRateSet：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 字符串。
+date-time 字符串，包含日期、时间和时区；例如官方样例 ""2025-08-22T03:12:00Z""。
+
+【适用条件】
+分类必填规则：
+LMT：M
+
+IND：C
+
+LMT：继承上层 selfDischargingRateSet：必填（该电池类别／当前访问视图）。
+
+IND：继承上层 selfDischargingRateSet：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.selfDischargingRateSet.recordedTime
+
+【官方语义字段】
+recordedTime
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+【公共字段合并】原记录V4-0187 / V4-0188合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/selfDischargingRateSet/properties/recordedTime
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/selfDischargingRateSet/properties/recordedTime
+
+【字段ID】
+V4-0187",Time when the value was recorded (timestamp).,待分配,
+性能和耐用性,语义包补齐指标,自放电率记录列表,selfDischargingRate,LMT / IND,"LMT：M
+
+IND：C",RES3（合法权益人·单个电池）,array<object>,,百分比（%）；语义口径为每年下降百分比（%/年）,无,待确认,否,Dynamic,"[{""unit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent"",""value"":45}]","LMT：自放电率记录列表。
+必填（该电池类别／当前访问视图）。
+JSON 数组；逐元素结构已在 [] 子行展开。
+词表口径为每年下降百分比（%/年）；JSON 单位 URI 为 percent，并以 recordedTime 记录时间。
+单位口径：百分比（%）；语义口径为每年下降百分比（%/年）
+
+IND：自放电率记录列表。
+仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+JSON 数组；逐元素结构已在 [] 子行展开。
+词表口径为每年下降百分比（%/年）；JSON 单位 URI 为 percent，并以 recordedTime 记录时间。
+单位口径：百分比（%）；语义口径为每年下降百分比（%/年）
+
+【适用条件】
+分类必填规则：
+LMT：M
+
+IND：C
+
+LMT：必填（该电池类别／当前访问视图）。
+
+IND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。
+仅在对应父对象／数组元素存在时执行子字段约束。
+
+【官方JSON路径】
+$.selfDischargingRateSet.selfDischargingRate
+
+【官方语义字段】
+selfDischargingRate
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段；分类合并展示
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+原文含where possible，具体可提供性需业务判断。
+【公共字段合并】原记录V4-0189 / V4-0190合并；各类别的必填、适用条件与不适用状态分别保留。
+
+【语义定义出处】
+product/batteries/subgroup/lmt/1.0.0/schemas/res3-lmt.schema.json#/properties/selfDischargingRateSet/properties/selfDischargingRate
+product/batteries/subgroup/ind/1.0.0/schemas/res3-ind.schema.json#/properties/selfDischargingRateSet/properties/selfDischargingRate
+
+【字段ID】
+V4-0189","Information on the state of health of the battery pursuant to Article 14: where possible, the evolution of self-discharging rates [timestamp, decrease % per year]",待分配,
+循环和资源效率,回收、拆解与资源信息,替换备件的编号及来源信息,sparePartReplacementDetails,EV / LMT / IND,M,RES1（合法权益人／公告机构／主管机关／欧委会）,object,,,无,待确认,否,Static,"{""resourceTitle"":""Spare part replacements"",""contentType"":""application/pdf"",""url"":""https://example.com/docs/spare-parts-0001"",""language"":""en-GB""}","替换备件的编号及来源信息。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：contentType、url、resourceTitle、language。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.sparePartReplacementDetails
+
+【官方语义字段】
+sparePartReplacementDetails
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res1-batteries.schema.json#/properties/sparePartReplacementDetails
+core/1.0.0/schemas/common.schema.json#/$defs/relatedResource
+
+【字段ID】
+V4-0191",Part numbers for components and contact details of sources for replacement spares [a web link],待分配,
+性能和耐用性,语义包补齐指标,荷电状态 SOC 直方图列表,stateOfChargeHistogram,EV / LMT / IND,C,RES3（合法权益人·单个电池）,array<object>,,按 binRangeUnit 与 binValueUnit 分别确定,无,待确认,否,Dynamic,"[{""binRangeUnit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent"",""binValueUnit"":""https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour"",""bin"":[{""lowerBound"":-10,""upperBound"":0,""binValue"":5},{""lowerBound"":0,""upperBound"":25,""binValue"":400},{""lowerBound"":25,""upperBound"":45,""binValue"":120}]}]","荷电状态 SOC 直方图列表。
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+JSON 数组；逐元素结构已在 [] 子行展开。
+是否可省略需结合适用条件与组合判断；提供字段时仍须满足所列类型，本版未声明接受 null。
+单位口径：按 binRangeUnit 与 binValueUnit 分别确定
+
+【适用条件】
+电池开始使用后适用；静态 Schema 未自动判断是否已使用。
+
+【官方JSON路径】
+$.stateOfChargeHistogram
+
+【官方语义字段】
+stateOfChargeHistogram
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：使用状态／计数／性能结果或事件变化时更新；实际频率待业务确认。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/res3-batteries.schema.json#/properties/stateOfChargeHistogram
+
+【字段ID】
+V4-0192","Periodically recorded information on the state of charge [histogram, %]",待分配,
+循环和资源效率,回收、拆解与资源信息,废电池预防与管理信息,wasteBatteryPreventionManagementInfo,EV / LMT / IND,M,PUB（公开）,object,,,无,待确认,否,Static,"{""endUserRoleInWastePrevention"":{""en-IE"":""End users should avoid mechanical damage and follow the usage instructions.""},""endUserRoleInSeparateCollection"":{""en-IE"":""End users must not dispose of batteries as unsorted municipal waste.""},""separateCollectionPoints"":{""en-IE"":""https://example.com/collection-points""},""takeBackCollectionPoints"":{""en-IE"":""Return to any authorised dealer free of charge.""},""preparationForReuseFacilities"":{""en-IE"":""Authorised facility: Iberia Reuse Centre, Zaragoza.""},""preparationForRepurposingFacilities"":{""en-IE"":""Authorised facility: Iberia Second-Life Hub, Valencia.""},""wasteBatteryTreatmentFacilities"":{""en-IE"":""Authorised recycling plant: Recycla Ibérica, Bilbao.""},""wasteBatterySafetyInstructions"":{""en-IE"":""Store damaged batteries in a dry, ventilated, non-flammable container.""},""batteryLabelSymbolMeaning"":{""en-IE"":""The crossed-out wheelie bin symbol indicates separate collection is required.""},""batterySubstancesImpact"":{""en-IE"":""Improper disposal may release electrolyte and heavy metals into soil and water.""}}","废电池预防与管理信息。
+必填（该电池类别／当前访问视图）。
+JSON 对象；成员：endUserRoleInWastePrevention、endUserRoleInSeparateCollection、separateCollectionPoints、takeBackCollectionPoints、preparationForReuseFacilities、preparationForRepurposingFacilities、wasteBatteryTreatmentFacilities、wasteBatterySafetyInstructions、batteryLabelSymbolMeaning、batterySubstancesImpact。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo
+
+【官方语义字段】
+wasteBatteryPreventionManagementInfo
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增结构组
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo
+
+【字段ID】
+V4-0193","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",待分配,
+符号，标签和文档符合性,符号，标签和文档符合性,标识说明,batteryLabelSymbolMeaning,EV / LMT / IND,M,PUB（公开）,object（多语言）,Link,,无,0,是,Static,"{""en-IE"":""The crossed-out wheelie bin symbol indicates separate collection is required.""}","标识说明。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.batteryLabelSymbolMeaning
+
+【官方语义字段】
+batteryLabelSymbolMeaning
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+修订前工程名meaningOfLabelsAndSymbols统一为官方名称batteryLabelSymbolMeaning；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/batteryLabelSymbolMeaning
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0038
+
+【修订前工程名】
+meaningOfLabelsAndSymbols
+
+【3.4源行】
+37
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",研发,
+电池材料组成,电池材料组成,有害物质影响,batterySubstancesImpact,EV / LMT / IND,M,PUB（公开）,object（多语言）,string,,无,0,是,Static,"{""en-IE"":""Improper disposal may release electrolyte and heavy metals into soil and water.""}","有害物质影响。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.batterySubstancesImpact
+
+【官方语义字段】
+batterySubstancesImpact
+
+【命名来源】
+本稿补名，采用官方名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/batterySubstancesImpact
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0070
+
+【3.4源行】
+69
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",实验室,
+循环和资源效率,最终用户在废物预防中的作用的信息,终端用户预防电池报废指南,endUserRoleInWastePrevention,EV / LMT / IND,M,PUB（公开）,object（多语言）,Link,,无,0,是,Static,"{""en-IE"":""End users should avoid mechanical damage and follow the usage instructions.""}","终端用户预防电池报废指南。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.endUserRoleInWastePrevention
+
+【官方语义字段】
+endUserRoleInWastePrevention
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+修订前工程名informationOnTheRoleOfEndUsersInContributingToWastePrevention统一为官方名称endUserRoleInWastePrevention；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/endUserRoleInWastePrevention
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0082
+
+【修订前工程名】
+informationOnTheRoleOfEndUsersInContributingToWastePrevention
+
+【3.4源行】
+81
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",售后,
+循环和资源效率,最终用户在废物预防中的作用的信息,终端用户分类回收指南,endUserRoleInSeparateCollection,EV / LMT / IND,M,PUB（公开）,object（多语言）,Link,,无,0,是,Static,"{""en-IE"":""End users must not dispose of batteries as unsorted municipal waste.""}","终端用户分类回收指南。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.endUserRoleInSeparateCollection
+
+【官方语义字段】
+endUserRoleInSeparateCollection
+
+【命名来源】
+3.4原有别名，现统一官方名称
+
+【语义对应状态】
+别名统一官方名称
+
+【核对状态】
+结构／类型调整
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+修订前工程名informationOnTheRoleOfEndUsersInContributingToTheSeparateCollectionOfWasteBatteries统一为官方名称endUserRoleInSeparateCollection；旧名仅作历史追溯。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/endUserRoleInSeparateCollection
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0083
+
+【修订前工程名】
+informationOnTheRoleOfEndUsersInContributingToTheSeparateCollectionOfWasteBatteries
+
+【3.4源行】
+82
+
+【原表参考格式】
+“batterPass数据格式”沿用原表对应字段；本次语义格式以“数据格式”列为准。","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",售后,
+循环和资源效率,回收、拆解与资源信息,准备改变用途的处理设施,preparationForRepurposingFacilities,EV / LMT / IND,M,PUB（公开）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""Authorised facility: Iberia Second-Life Hub, Valencia.""}","准备改变用途的处理设施。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.preparationForRepurposingFacilities
+
+【官方语义字段】
+preparationForRepurposingFacilities
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/preparationForRepurposingFacilities
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0194","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",待分配,
+循环和资源效率,回收、拆解与资源信息,准备再使用的处理设施,preparationForReuseFacilities,EV / LMT / IND,M,PUB（公开）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""Authorised facility: Iberia Reuse Centre, Zaragoza.""}","准备再使用的处理设施。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.preparationForReuseFacilities
+
+【官方语义字段】
+preparationForReuseFacilities
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/preparationForReuseFacilities
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0195","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",待分配,
+循环和资源效率,回收、拆解与资源信息,分类收集点信息,separateCollectionPoints,EV / LMT / IND,M,PUB（公开）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""https://example.com/collection-points""}","分类收集点信息。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.separateCollectionPoints
+
+【官方语义字段】
+separateCollectionPoints
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/separateCollectionPoints
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0196","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",待分配,
+循环和资源效率,回收、拆解与资源信息,回收接收点信息,takeBackCollectionPoints,EV / LMT / IND,M,PUB（公开）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""Return to any authorised dealer free of charge.""}","回收接收点信息。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.takeBackCollectionPoints
+
+【官方语义字段】
+takeBackCollectionPoints
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/takeBackCollectionPoints
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0197","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",待分配,
+循环和资源效率,回收、拆解与资源信息,废电池安全说明,wasteBatterySafetyInstructions,EV / LMT / IND,M,PUB（公开）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""Store damaged batteries in a dry, ventilated, non-flammable container.""}","废电池安全说明。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.wasteBatterySafetyInstructions
+
+【官方语义字段】
+wasteBatterySafetyInstructions
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/wasteBatterySafetyInstructions
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0198","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",待分配,
+循环和资源效率,回收、拆解与资源信息,废电池处理设施,wasteBatteryTreatmentFacilities,EV / LMT / IND,M,PUB（公开）,object（多语言）,,,无,待确认,是,Static,"{""en-IE"":""Authorised recycling plant: Recycla Ibérica, Bilbao.""}","废电池处理设施。
+必填（该电池类别／当前访问视图）。
+多语言 JSON 对象：语言标签作为键，文本作为值，例如 {""en-IE"":""...""}。
+至少一个语言键；键形如 xx-XX。Schema 未单独给动态键的值声明 string；SHACL 要求带语言标签的文本。
+
+【适用条件】
+必填（该电池类别／当前访问视图）。
+
+【官方JSON路径】
+$.wasteBatteryPreventionManagementInfo.wasteBatteryTreatmentFacilities
+
+【官方语义字段】
+wasteBatteryTreatmentFacilities
+
+【命名来源】
+官方语义名称
+
+【语义对应状态】
+名称与官方一致
+
+【核对状态】
+新增语义字段
+
+【工程与核对备注】
+工程建议：建档／定型时确定，资料或版本变化时维护；不是禁止修改。
+动态语言键如en-IE；JSON Schema未限定逐值类型，语义层要求文本。
+
+【语义定义出处】
+product/batteries/1.0.0/schemas/pub-batteries.schema.json#/properties/wasteBatteryPreventionManagementInfo/properties/wasteBatteryTreatmentFacilities
+core/1.0.0/schemas/common.schema.json#/$defs/multiLanguage
+
+【字段ID】
+V4-0199","The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",待分配,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,

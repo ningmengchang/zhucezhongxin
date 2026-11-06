@@ -1,0 +1,278 @@
+{
+  "nodeId": "Qnp9zOoBVBByzZaNClgbvO9xV1DK0g6l",
+  "sheetId": "s2",
+  "sheetTitle": "工程化4.0",
+  "sourceFile": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/12_工程化字段表v4.0/电池护照_工程化字段表_v4.0_公共字段合并版.xlsx",
+  "sourceSha256": "bd4ad47a0a28c3b6576d84e1a5af5e216477efd1bb429555a9de245eaa33abf9",
+  "sourceDataRows": 100,
+  "existingDataRows": 121,
+  "columnCount": 19,
+  "writeRange": "A2:S122",
+  "preservedHeaderRange": "A1:S1",
+  "clearedTail": "A102:S122",
+  "changedCells": 1873,
+  "matchedLegacyFields": 50,
+  "legacyMatches": [
+    {
+      "field": "granularity",
+      "oldOnlineRow": 4,
+      "newOnlineRow": 2
+    },
+    {
+      "field": "lastUpdate",
+      "oldOnlineRow": 5,
+      "newOnlineRow": 3
+    },
+    {
+      "field": "digitalProductPassportId",
+      "oldOnlineRow": 6,
+      "newOnlineRow": 4
+    },
+    {
+      "field": "uniqueProductIdentifier",
+      "oldOnlineRow": 7,
+      "newOnlineRow": 5
+    },
+    {
+      "field": "contentSpecificationIds",
+      "oldOnlineRow": 10,
+      "newOnlineRow": 6
+    },
+    {
+      "field": "modelIdentifier",
+      "oldOnlineRow": 11,
+      "newOnlineRow": 7
+    },
+    {
+      "field": "serialNumber",
+      "oldOnlineRow": 12,
+      "newOnlineRow": 8
+    },
+    {
+      "field": "manufacturerName",
+      "oldOnlineRow": 21,
+      "newOnlineRow": 9
+    },
+    {
+      "field": "manufacturerTradeName",
+      "oldOnlineRow": 22,
+      "newOnlineRow": 10
+    },
+    {
+      "field": "manufacturerTrademark",
+      "oldOnlineRow": 23,
+      "newOnlineRow": 11
+    },
+    {
+      "field": "manufacturerPostalAddress",
+      "oldOnlineRow": 24,
+      "newOnlineRow": 12
+    },
+    {
+      "field": "manufacturerWebsite",
+      "oldOnlineRow": 25,
+      "newOnlineRow": 13
+    },
+    {
+      "field": "manufacturerEmail",
+      "oldOnlineRow": 26,
+      "newOnlineRow": 14
+    },
+    {
+      "field": "manufacturingPlace",
+      "oldOnlineRow": 27,
+      "newOnlineRow": 15
+    },
+    {
+      "field": "manufacturingDate",
+      "oldOnlineRow": 28,
+      "newOnlineRow": 16
+    },
+    {
+      "field": "commercialWarrantyPeriod",
+      "oldOnlineRow": 30,
+      "newOnlineRow": 17
+    },
+    {
+      "field": "batteryCategory",
+      "oldOnlineRow": 31,
+      "newOnlineRow": 18
+    },
+    {
+      "field": "batteryWeight",
+      "oldOnlineRow": 32,
+      "newOnlineRow": 19
+    },
+    {
+      "field": "batteryStatus",
+      "oldOnlineRow": 33,
+      "newOnlineRow": 20
+    },
+    {
+      "field": "separateCollectionSymbol",
+      "oldOnlineRow": 34,
+      "newOnlineRow": 21
+    },
+    {
+      "field": "extinguishingAgent",
+      "oldOnlineRow": 36,
+      "newOnlineRow": 22
+    },
+    {
+      "field": "euDeclarationOfConformity",
+      "oldOnlineRow": 38,
+      "newOnlineRow": 23
+    },
+    {
+      "field": "batteryChemistry",
+      "oldOnlineRow": 56,
+      "newOnlineRow": 24
+    },
+    {
+      "field": "criticalRawMaterials",
+      "oldOnlineRow": 57,
+      "newOnlineRow": 25
+    },
+    {
+      "field": "hazardousSubstances",
+      "oldOnlineRow": 64,
+      "newOnlineRow": 26
+    },
+    {
+      "field": "dismantlingInformation",
+      "oldOnlineRow": 70,
+      "newOnlineRow": 27
+    },
+    {
+      "field": "safetyMeasures",
+      "oldOnlineRow": 75,
+      "newOnlineRow": 28
+    },
+    {
+      "field": "renewableContentShare",
+      "oldOnlineRow": 80,
+      "newOnlineRow": 29
+    },
+    {
+      "field": "batteryCapacity",
+      "oldOnlineRow": 84,
+      "newOnlineRow": 30
+    },
+    {
+      "field": "remainingCapacity",
+      "oldOnlineRow": 85,
+      "newOnlineRow": 31
+    },
+    {
+      "field": "capacityFade",
+      "oldOnlineRow": 86,
+      "newOnlineRow": 32
+    },
+    {
+      "field": "stateOfCertifiedEnergy",
+      "oldOnlineRow": 89,
+      "newOnlineRow": 33
+    },
+    {
+      "field": "nominalVoltage",
+      "oldOnlineRow": 91,
+      "newOnlineRow": 34
+    },
+    {
+      "field": "remainingPowerCapability",
+      "oldOnlineRow": 95,
+      "newOnlineRow": 35
+    },
+    {
+      "field": "powerFade",
+      "oldOnlineRow": 96,
+      "newOnlineRow": 36
+    },
+    {
+      "field": "initialRoundTripEnergyEfficiency",
+      "oldOnlineRow": 98,
+      "newOnlineRow": 37
+    },
+    {
+      "field": "roundTripEfficiencyAtHalfCycleLife",
+      "oldOnlineRow": 99,
+      "newOnlineRow": 38
+    },
+    {
+      "field": "remainingRoundTripEfficiency",
+      "oldOnlineRow": 100,
+      "newOnlineRow": 39
+    },
+    {
+      "field": "roundTripEnergyEfficiencyFade",
+      "oldOnlineRow": 101,
+      "newOnlineRow": 40
+    },
+    {
+      "field": "expectedLifetimeYears",
+      "oldOnlineRow": 111,
+      "newOnlineRow": 41
+    },
+    {
+      "field": "expectedLifetimeCycles",
+      "oldOnlineRow": 112,
+      "newOnlineRow": 42
+    },
+    {
+      "field": "cycleLifeReferenceTest",
+      "oldOnlineRow": 114,
+      "newOnlineRow": 43
+    },
+    {
+      "field": "cycleLifeChargeCRate",
+      "oldOnlineRow": 115,
+      "newOnlineRow": 44
+    },
+    {
+      "field": "cycleLifeDischargeCRate",
+      "oldOnlineRow": 116,
+      "newOnlineRow": 45
+    },
+    {
+      "field": "capacityExhaustionThreshold",
+      "oldOnlineRow": 117,
+      "newOnlineRow": 46
+    },
+    {
+      "field": "notInUseTemperatureRange.valueRange",
+      "oldOnlineRow": 119,
+      "newOnlineRow": 74
+    },
+    {
+      "field": "batteryLabelSymbolMeaning",
+      "oldOnlineRow": 37,
+      "newOnlineRow": 92
+    },
+    {
+      "field": "batterySubstancesImpact",
+      "oldOnlineRow": 69,
+      "newOnlineRow": 93
+    },
+    {
+      "field": "endUserRoleInWastePrevention",
+      "oldOnlineRow": 81,
+      "newOnlineRow": 94
+    },
+    {
+      "field": "endUserRoleInSeparateCollection",
+      "oldOnlineRow": 82,
+      "newOnlineRow": 95
+    }
+  ],
+  "untouchedExtraColumns": [
+    "batterPass数据格式（按对应字段保留）",
+    "XXX型号（按对应字段保留）"
+  ],
+  "extraMetadataDestination": "中文描述",
+  "existingMergedCells": [
+    "F16:F17",
+    "F22:F23"
+  ],
+  "csvCharacters": 106229,
+  "maxCellLength": 1756
+}

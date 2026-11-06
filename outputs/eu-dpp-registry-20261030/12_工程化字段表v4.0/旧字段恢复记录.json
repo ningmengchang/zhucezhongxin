@@ -1,0 +1,445 @@
+{
+  "target": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/12_工程化字段表v4.0/电池护照_工程化字段表_v4.0_公共字段合并版.xlsx",
+  "recoveredCopy": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/12_工程化字段表v4.0/电池护照_工程化字段表_v4.0_公共字段合并版_旧字段恢复版.xlsx",
+  "backup": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/12_工程化字段表v4.0/历史备份/电池护照_工程化字段表_v4.0_公共字段合并版_恢复前_20261104_142032.xlsx",
+  "beforeFields": 100,
+  "afterFields": 171,
+  "restoredFields": 71,
+  "restoredEnumEntries": 45,
+  "existingContentsAndStylesPreserved": true,
+  "existingRelativeOrderPreserved": true,
+  "sourceBusinessRowsPreserved": 121,
+  "repairedLocationCells": 565,
+  "internalLinksVerified": 601,
+  "beforeSha256": "bd4ad47a0a28c3b6576d84e1a5af5e216477efd1bb429555a9de245eaa33abf9",
+  "afterSha256": "9329e90866c9e4278cadf899efec2d305ecd518ab583d2cc2de32aacb63ce5f8",
+  "verification": "passed",
+  "restored": [
+    {
+      "field": "dppSchemaVersion",
+      "title": "电池护照架构版本",
+      "fieldId": "V4-0001",
+      "row": 2
+    },
+    {
+      "field": "internalDppStatus",
+      "title": "电池护照状态",
+      "fieldId": "V4-0002",
+      "row": 3
+    },
+    {
+      "field": "economicOperatorId",
+      "title": "经济运营商唯一标识符",
+      "fieldId": "V4-0007",
+      "row": 8
+    },
+    {
+      "field": "facilityId",
+      "title": "工厂唯一标识符",
+      "fieldId": "V4-0008",
+      "row": 9
+    },
+    {
+      "field": "uniqueManufacturerIdentifier",
+      "title": "制造商唯一标识符",
+      "fieldId": "V4-0014",
+      "row": 13
+    },
+    {
+      "field": "thirdPartyServiceProvider",
+      "title": "第三方服务提供商",
+      "fieldId": "V4-0015",
+      "row": 14
+    },
+    {
+      "field": "economicOperatorName",
+      "title": "经济运营商名称",
+      "fieldId": "V4-0016",
+      "row": 15
+    },
+    {
+      "field": "economicOperatorTradeName",
+      "title": "经济运营商注册商号",
+      "fieldId": "V4-0017",
+      "row": 16
+    },
+    {
+      "field": "economicOperatorTrademark",
+      "title": "经济运营商注册商标",
+      "fieldId": "V4-0018",
+      "row": 17
+    },
+    {
+      "field": "economicOperatorPostalAddress",
+      "title": "经济运营商邮政地址",
+      "fieldId": "V4-0019",
+      "row": 18
+    },
+    {
+      "field": "economicOperatorWebsite",
+      "title": "经济运营商网址",
+      "fieldId": "V4-0020",
+      "row": 19
+    },
+    {
+      "field": "economicOperatorEmail",
+      "title": "经济运营商网址电子邮箱",
+      "fieldId": "V4-0021",
+      "row": 20
+    },
+    {
+      "field": "dateOfPuttingTheBatteryIntoService",
+      "title": "投入使用日期",
+      "fieldId": "V4-0030",
+      "row": 29
+    },
+    {
+      "field": "carbonFootprintLabel",
+      "title": "碳足迹标签",
+      "fieldId": "V4-0036",
+      "row": 35
+    },
+    {
+      "field": "restrictedSubstanceTestReports",
+      "title": "禁限用物质检测报告",
+      "fieldId": "V4-0040",
+      "row": 38
+    },
+    {
+      "field": "recycledContentTechnicalDocuments",
+      "title": "回收料含量技术文档",
+      "fieldId": "V4-0041",
+      "row": 39
+    },
+    {
+      "field": "performanceAndDurabilityTechnicalDocuments",
+      "title": "性能、耐久性的技术文档",
+      "fieldId": "V4-0042",
+      "row": 40
+    },
+    {
+      "field": "stateOfHealthAndLifetimeDocuments",
+      "title": "电池健康状态和预期寿命信息",
+      "fieldId": "V4-0043",
+      "row": 41
+    },
+    {
+      "field": "regulatoryTechnicalDocuments",
+      "title": "法规要求的产品技术文档",
+      "fieldId": "V4-0044",
+      "row": 42
+    },
+    {
+      "field": "batteryUserManuals",
+      "title": "电池使用说明",
+      "fieldId": "V4-0045",
+      "row": 43
+    },
+    {
+      "field": "batteryCarbonFootprintPerFunctionalUnit",
+      "title": "每功能单元电池碳足迹",
+      "fieldId": "V4-0046",
+      "row": 44
+    },
+    {
+      "field": "contributionOfRawMaterialAcquisitionAndPreProcessingLifecycleStage",
+      "title": "原材料获取与处理阶段碳足迹",
+      "fieldId": "V4-0047",
+      "row": 45
+    },
+    {
+      "field": "contributionOfMainProductProductionLifecycleStage",
+      "title": "核心生产阶段碳足迹",
+      "fieldId": "V4-0048",
+      "row": 46
+    },
+    {
+      "field": "contributionOfDistributionLifecycleStage",
+      "title": "分销阶段碳足迹",
+      "fieldId": "V4-0049",
+      "row": 47
+    },
+    {
+      "field": "contributionOfEndOfLifeAndRecyclingLifecycleStage",
+      "title": "退役与回收阶段碳足迹",
+      "fieldId": "V4-0050",
+      "row": 48
+    },
+    {
+      "field": "carbonFootprintPerformanceClass",
+      "title": "碳足迹表现等级",
+      "fieldId": "V4-0051",
+      "row": 49
+    },
+    {
+      "field": "webLinkToPublicCarbonFootprintStudy",
+      "title": "碳足迹研究",
+      "fieldId": "V4-0052",
+      "row": 50
+    },
+    {
+      "field": "absoluteBatteryCarbonFootprint",
+      "title": "电池碳足迹绝对值",
+      "fieldId": "V4-0053",
+      "row": 51
+    },
+    {
+      "field": "informationOfDueDiligenceReport",
+      "title": "尽职调查报告信息",
+      "fieldId": "V4-0054",
+      "row": 52
+    },
+    {
+      "field": "thirdPartyAssurancesOfRecognisedSchemes",
+      "title": "第三方供应链保证",
+      "fieldId": "V4-0055",
+      "row": 53
+    },
+    {
+      "field": "supplyChainIndices",
+      "title": "供应链指数",
+      "fieldId": "V4-0056",
+      "row": 54
+    },
+    {
+      "field": "cathodeMaterialName",
+      "title": "正极材料名称",
+      "fieldId": "V4-0059",
+      "row": 57
+    },
+    {
+      "field": "cathodeMaterialCasNumber",
+      "title": "正极材料CAS码",
+      "fieldId": "V4-0060",
+      "row": 58
+    },
+    {
+      "field": "anodeMaterialName",
+      "title": "负极材料名称",
+      "fieldId": "V4-0061",
+      "row": 59
+    },
+    {
+      "field": "anodeMaterialCasNumber",
+      "title": "负极材料CAS码",
+      "fieldId": "V4-0062",
+      "row": 60
+    },
+    {
+      "field": "electrolyteMaterialName",
+      "title": "电解液材料名称",
+      "fieldId": "V4-0063",
+      "row": 61
+    },
+    {
+      "field": "electrolyteMaterialCasNumber",
+      "title": "电解液CAS码",
+      "fieldId": "V4-0064",
+      "row": 62
+    },
+    {
+      "field": "hazardousSubstanceCasNumber",
+      "title": "有害物质CAS号",
+      "fieldId": "V4-0066",
+      "row": 64
+    },
+    {
+      "field": "hazardousSubstanceClassification",
+      "title": "有害物质等级和类别",
+      "fieldId": "V4-0067",
+      "row": 65
+    },
+    {
+      "field": "hazardousSubstanceLocation",
+      "title": "有害物质所在位置",
+      "fieldId": "V4-0068",
+      "row": 66
+    },
+    {
+      "field": "hazardousSubstanceConcentration",
+      "title": "有害物质浓度",
+      "fieldId": "V4-0069",
+      "row": 67
+    },
+    {
+      "field": "partNumbersForComponents",
+      "title": "零部件编号",
+      "fieldId": "V4-0072",
+      "row": 69
+    },
+    {
+      "field": "sparePartReplacementPostalAddress",
+      "title": "备件更换联系地址",
+      "fieldId": "V4-0073",
+      "row": 70
+    },
+    {
+      "field": "sparePartReplacementWebsite",
+      "title": "备件更换联系网址",
+      "fieldId": "V4-0074",
+      "row": 71
+    },
+    {
+      "field": "sparePartReplacementEmail",
+      "title": "备件更换联系邮箱",
+      "fieldId": "V4-0075",
+      "row": 72
+    },
+    {
+      "field": "postConsumerRecycledNickelShare",
+      "title": "再循环镍含量",
+      "fieldId": "V4-0077",
+      "row": 74
+    },
+    {
+      "field": "postConsumerRecycledCobaltShare",
+      "title": "再循环钴含量",
+      "fieldId": "V4-0078",
+      "row": 75
+    },
+    {
+      "field": "postConsumerRecycledLithiumShare",
+      "title": "再循环锂含量",
+      "fieldId": "V4-0079",
+      "row": 76
+    },
+    {
+      "field": "recycledLeadShare",
+      "title": "再循环铅含量",
+      "fieldId": "V4-0080",
+      "row": 77
+    },
+    {
+      "field": "certifiedUsableBatteryEnergy",
+      "title": "认证可用电量",
+      "fieldId": "V4-0091",
+      "row": 82
+    },
+    {
+      "field": "remainingUsableBatteryEnergy",
+      "title": "剩余可用电量",
+      "fieldId": "V4-0092",
+      "row": 83
+    },
+    {
+      "field": "stateOfChargeSoC",
+      "title": "荷电状态",
+      "fieldId": "V4-0094",
+      "row": 85
+    },
+    {
+      "field": "voltageRange",
+      "title": "电压范围",
+      "fieldId": "V4-0096",
+      "row": 87
+    },
+    {
+      "field": "initialPowerAt20Soc",
+      "title": "20%SoC初始功率",
+      "fieldId": "V4-0097",
+      "row": 88
+    },
+    {
+      "field": "initialPowerAt80Soc",
+      "title": "80%SoC初始功率",
+      "fieldId": "V4-0098",
+      "row": 89
+    },
+    {
+      "field": "maximumPermittedBatteryPower",
+      "title": "允许最大电池功率",
+      "fieldId": "V4-0104",
+      "row": 92
+    },
+    {
+      "field": "initialSelfDischargeRate",
+      "title": "初始自放电率",
+      "fieldId": "V4-0113",
+      "row": 97
+    },
+    {
+      "field": "currentSelfDischargeRate",
+      "title": "当前自放电率",
+      "fieldId": "V4-0114",
+      "row": 98
+    },
+    {
+      "field": "evolutionOfSelfDischargeRates",
+      "title": "自放电率变化",
+      "fieldId": "V4-0115",
+      "row": 99
+    },
+    {
+      "field": "initialCellDcResistance",
+      "title": "初始电芯直流电阻",
+      "fieldId": "V4-0117",
+      "row": 100
+    },
+    {
+      "field": "initialPackDcResistance",
+      "title": "初始电池包直流电阻",
+      "fieldId": "V4-0118",
+      "row": 101
+    },
+    {
+      "field": "initialCellAcResistance",
+      "title": "初始电芯交流电阻",
+      "fieldId": "V4-0119",
+      "row": 102
+    },
+    {
+      "field": "initialPackAcResistance",
+      "title": "初始电池包交流电阻",
+      "fieldId": "V4-0120",
+      "row": 103
+    },
+    {
+      "field": "internalResistanceIncreaseOfPackCellAndModuleRecommended",
+      "title": "电池包内阻增长",
+      "fieldId": "V4-0121",
+      "row": 104
+    },
+    {
+      "field": "presentInternalResistanceOfPack",
+      "title": "当前电阻",
+      "fieldId": "V4-0122",
+      "row": 105
+    },
+    {
+      "field": "numberOfFullChargingAndDischargingCycles",
+      "title": "当前完全循环次数",
+      "fieldId": "V4-0128",
+      "row": 108
+    },
+    {
+      "field": "temperatureInformation",
+      "title": "温度信息",
+      "fieldId": "V4-0135",
+      "row": 113
+    },
+    {
+      "field": "numberOfDeepDischargeEvents",
+      "title": "深度放电事件次数",
+      "fieldId": "V4-0137",
+      "row": 142
+    },
+    {
+      "field": "numberOfOverchargeEvents",
+      "title": "过量充电次数",
+      "fieldId": "V4-0138",
+      "row": 143
+    },
+    {
+      "field": "informationOnAccidents",
+      "title": "事故信息",
+      "fieldId": "V4-0139",
+      "row": 144
+    },
+    {
+      "field": "informationOnBatteryCollectionPreparationForSecondLifeAndOnTreatmentAtEndOfLife",
+      "title": "废旧电池回收利用指南",
+      "fieldId": "V4-0084",
+      "row": 166
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "code": "200",
+  "success": true,
+  "message": "业务处理成功",
+  "body": {
+    "token": "<TOKEN>",
+    "userAccount": "client_demo",
+    "userDomain": "client_demo",
+    "realName": "示例对接方"
+  }
+}
