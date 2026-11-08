@@ -1,0 +1,116 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "@何凯(何凯) @明亮(明宣帆)  可照着做的注册和认证指南，10分钟即可注册成功",
+            "createTime": "2026-11-07 15:15:52",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "明宣帆"
+                ]
+              }
+            ],
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgxRY8GMEhFX4fEqo5jg6u4w==",
+            "quotedMessage": {
+              "content": "[文件] EU注册认证与接口调试指南-V1.2.docx fileId: 1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE 注意：如需下载使用dws drive download命令下载",
+              "createTime": "2026-11-07 15:13:59",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgm+aMMUSAIAygLix4I1Zm0Q==",
+              "resources": [
+                {
+                  "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                  "resourceId": "1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE",
+                  "resourceIdType": "fileId",
+                  "resourceType": "file",
+                  "url": "https://alidocs.dingtalk.com/i/nodes/1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE"
+                }
+              ],
+              "sendType": "user",
+              "sender": "刘勇辉",
+              "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "[文件] EU注册认证与接口调试指南-V1.2.docx fileId: 1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-07 15:13:59",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgm+aMMUSAIAygLix4I1Zm0Q==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE"
+              }
+            ],
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@明亮(明宣帆) @何凯(何凯)   \n  \n1106 进度 跟踪，今天找星恒授权了一次，实现了【欧盟生产环境】的身份认证 Organisation Verification 和 注册验证 \tDPP Registration  \n效果和 ACC测试环境 一致[图片消息](mediaId=@lQLPJx5jqlkVe2XNBb3NCfewvFFbsG_R0HAKvfHMT7alAA)",
+            "createTime": "2026-11-06 22:41:22",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "明宣帆"
+                ]
+              }
+            ],
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgF3HXEYpAJ7kwiG6ytg/IRg==",
+            "quotedMessage": {
+              "content": "[文件] 复创电池数字护照项目上线与欧盟体系对接成果报告-V1.3.docx fileId: PwkYGxZV33LwmA0ghr2j23LOVAgozOKL 注意：如需下载使用dws drive download命令下载",
+              "createTime": "2026-11-06 22:37:23",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgWXSpU9kfahj1ZXWbpQiaHw==",
+              "resources": [
+                {
+                  "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                  "resourceId": "PwkYGxZV33LwmA0ghr2j23LOVAgozOKL",
+                  "resourceIdType": "fileId",
+                  "resourceType": "file",
+                  "url": "https://alidocs.dingtalk.com/i/nodes/PwkYGxZV33LwmA0ghr2j23LOVAgozOKL"
+                }
+              ],
+              "sendType": "user",
+              "sender": "刘勇辉",
+              "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@潘鹏(潘鹏) 对于HPTTS，可以找到官方证据，官方发布的注册接口，openapi-dpp-registry-public.yml，  \n明确说明了，HTTPS URL identifying the DPP candidate. Registry resolves and   \n      validates it through the controlled HTTPS retrieval policy.[图片消息](mediaId=@lQLPJwFT_-GEv2XMrc0DZbA9rp6H-F2kmgq9Sj2hxxIA)",
+            "createTime": "2026-11-06 10:28:49",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgUSWonz0qYf/KtEBwdU0eSw==",
+            "sendType": "user",
+            "sender": "宁蒙昌",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVTaoa08aGiiQXsUQj2ziPdoJW"
+          }
+        ],
+        "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+        "singleChat": false,
+        "title": "DPP注册中心攻坚"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "s3tkA+a4oliy36XhoW/nIPszERB0mqIuiLHF/FzMPhsX2+kphc/jNZfcTmRzP2LYKxYW1lr3HgFS4efR2u/0ahywK0PesrgL5gfAdLacM8Y2pYWYLLMYu9+XW2B1D5tg+LlSpfL8fn8hdfWqgq5VS/r/Hu9Jv5uhifiDM+GNQzFUOolj9uohCvAEBaDxK9PjMN/jarRoNBE+0tf8rYW4pKFktMLXignl1vH9bqDLCoxz0sdyu9KxJbOgRN/tnMND"
+  },
+  "success": true
+}

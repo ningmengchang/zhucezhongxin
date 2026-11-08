@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=DPP 更新跟踪
+Comment=打开内网欧委会语义资源更新记录
+Exec=xdg-open http://192.168.110.79:8768
+Icon=appointment-soon
+Terminal=false
+Categories=Office;

@@ -1,0 +1,51 @@
+{
+  "source_page": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/resources-documentation_en",
+  "timezone": "Europe/Brussels",
+  "display_timezone": "Asia/Shanghai",
+  "schedule_label": "每天布鲁塞尔时间 18:30；北京时间夏令时次日 00:30，冬令时次日 01:30",
+  "desktop_notifications": true,
+  "bind_host": "0.0.0.0",
+  "public_url": "http://192.168.110.79:8768",
+  "allowed_hosts": [
+    "192.168.110.79",
+    "127.0.0.1",
+    "localhost"
+  ],
+  "allowed_networks": [
+    "192.168.110.0/24",
+    "127.0.0.0/8"
+  ],
+  "frontend_poll_seconds": 30,
+  "busy_poll_seconds": 2,
+  "port": 8768,
+  "timeout_seconds": 40,
+  "attempts": 2,
+  "baseline_manifest": "../outputs/eu-dpp-registry-20261030/来源与下载校验.json",
+  "watch": [
+    {
+      "key": "semantic_artifacts",
+      "title": "Semantic Data Artifacts",
+      "kind": "semantic_zip"
+    },
+    {
+      "key": "semantic_guide",
+      "title": "Semantic Data Guide",
+      "kind": "pdf"
+    }
+  ],
+  "dingtalk": {
+    "enabled": true,
+    "executable": "/home/ningmengchang/.local/bin/dws",
+    "profile": "dinge9d68c682320ae25acaaa37764f94726:17155639567268190",
+    "recipient_user_id": "17155639567268190",
+    "recipient_name": "宁蒙昌",
+    "events": [
+      "resource_changed",
+      "page_changed",
+      "new_resource",
+      "check_failed"
+    ],
+    "retry_seconds": 300,
+    "enabled_at": "2026-11-06T23:16:05+00:00"
+  }
+}

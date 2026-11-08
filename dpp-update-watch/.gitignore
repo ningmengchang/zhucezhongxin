@@ -1,0 +1,5 @@
+data/
+__pycache__/
+watchlib/__pycache__/
+tests/__pycache__/
+验收截图/

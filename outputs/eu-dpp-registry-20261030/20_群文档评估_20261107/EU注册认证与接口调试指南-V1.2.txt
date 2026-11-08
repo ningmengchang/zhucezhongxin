@@ -1,0 +1,230 @@
+EU数字产品护照
+注册认证与接口调试指南
+
+V1.2　正式环境操作版　2026年11月7日
+本指南供企业经办人、管理员及接口开发人员使用，按已完成的正式环境操作编排：邮箱注册 → 配置Trusted Platform → Windows PIN登录 → 新建组织与QSeal认证 → 必要时Restart Verification → DPP Registration验证UPI。
+首次办理按第一至七章操作；UPI问题见第八章，程序接口和数据准备见第九、十章。网页提交使用人员登录会话，程序自动提交另行使用Service Account。
+阅读导航：邮箱注册　Windows PIN配置　组织认证　Restart处理　UPI验证　接口调试　官方依据
+一、确认正式环境与办理材料
+（一）从正式门户开始
+正式环境：https://registry.product-passport.ec.europa.eu/。本指南的人员操作以此环境为主。
+ACC验收测试环境：https://registry.acc.product-passport.ec.europa.eu/。ACC即Acceptance，页面带MOCK标识，用于测试与联调。两套环境分别办理组织认证、准备机器账号和查看业务结果。《登记册用户指南》PDF第58页。
+（二）准备人员、电脑与企业资料
+经办人准备本人姓名、可正常收信的邮箱，以及已设置Windows Hello PIN的Windows电脑。浏览器使用支持WebAuthn的当前版本，本次实际操作使用Chrome。
+企业资料包括法定名称、注册地址、注册国家、登记标识和合规联系人；认证时还需法律代表的姓名与邮箱，以及可为该组织加盖QSeal的合格电子印章。提交UPI前准备一条真实、可从公网读取的护照地址。
+个人EU Login账号用于人员登录；Organisation记录企业身份；Service Account供程序获取Token；DPP Registration处理具体护照。操作时分别查看个人登录、组织核验和护照注册的完成结果。《登记册用户指南》第3—4章。
+二、使用邮箱注册EU Login账号
+从正式门户点击登录，跳转到EU Login后选择Create an account。已有账号时直接登录。
+依次填写First name（名）、Last name（姓）、邮箱及确认邮箱，选择邮件语言，完成页面验证码和隐私声明确认后提交。姓名使用本人英文姓名，企业信息留到组织登记环节填写。
+
+图1 EU Login邮箱注册表单（官方操作示意）
+打开注册邮箱，点击EU Login确认邮件中的链接，设置并确认密码。官方要求密码至少10个字符，包含大小写字母、数字及特殊字符。完成后进入My Account，继续配置多因素认证。EU Login官方注册说明。
+收不到邮件时核对邮箱拼写及垃圾邮件；提示邮箱已注册时，回到登录页面使用原账号，必要时通过Lost your password?重设密码。官方密码重置说明。
+完成结果：邮箱已确认，能够进入My Account。
+三、配置Trusted Platform和Windows PIN
+本次实际办理采用电脑Trusted Platform（可信平台）作为多因素认证方式，通过Windows Hello PIN完成身份确认。EU Login官方支持这一方式；手机应用可作为另选方式，相关操作放在官方帮助中查阅。
+（一）先确认电脑可以使用Windows Hello
+在Windows“设置 → 账户 → 登录选项”确认PIN已配置。Trusted Platform使用设备内置安全硬件；浏览器和设备兼容后，EU Login才会开放相应添加选项。官方可信平台设置说明。
+
+图2 My Account中的可信平台管理入口（官方操作示意）
+（二）在My Account添加这台电脑
+1. 登录EU Login，打开右上角设置菜单，进入My Account。
+2. 选择Manage my Trusted Platforms, security keys and passkeys。
+3. 点击Add a Trusted Platform，输入便于识别的设备名称并提交。
+4. 浏览器提示凭据注册时继续操作；出现Proceed时点击继续，保留设备证明信息。
+5. 按Windows安全弹窗提示，使用这台电脑现有的Windows Hello PIN确认。
+6. 回到EU Login，确认设备已加入可信平台列表，随后按下一章完成一次实际登录。
+上述添加步骤及浏览器设备确认依据官方设置说明的第二部分。该说明提示不要选择“Anonymise anyway”，否则认证方式可能无法正常工作。
+完成结果：可信平台列表中能看到已登记设备，并能用Windows PIN返回DPP正式门户。
+四、日常使用Windows PIN登录
+1. 打开正式门户，进入EU Login，填写已注册邮箱。
+2. 在验证方式中选择Trusted Platform, security key or passkey。
+
+图3 登录时选择可信平台验证方式（官方操作示意）
+3. 如页面显示设备列表，选择刚才登记的Windows设备，再按浏览器提示继续。
+4. 在Windows安全弹窗中输入本机Windows Hello PIN。认证完成后，浏览器返回DPP Registry。
+
+图4 Windows Hello PIN确认弹窗（官方操作示意）
+5. 查看门户右上角人员、组织名称及角色，进入本次要操作的组织。
+依据：EU Login官方可信平台登录说明。官方明确说明Windows Hello可通过PIN或生物识别完成可信平台认证。
+验证方式不可用时，先回到已登记的电脑和浏览器，核对My Account中的设备记录。更换电脑后需为新设备另行登记。账号恢复及其他验证方式可从EU Login官方帮助进入。
+五、新建组织并完成QSeal认证
+（一）填写组织资料
+登录后进入Organisation → Organisation Information。公司主体选择Legal Person，按官方注册资料填写并保存。
+信息
+填写方法
+Legal Name
+企业法定名称，与QSeal证书主体一致
+地址、国家等
+企业正式登记的注册地址与注册国家
+Identifier Type
+选择与组织实际登记标识相符的类型
+Identifier
+填写与证书organisationIdentifier一致的完整标识，包含适用前缀
+Compliance Contact
+企业实际合规联系人的邮箱、区号和电话
+
+图5 保存组织资料后启动认证（官方用户指南）
+QSeal一致性核对重点为法定名称、国家及组织标识。证书中对应organizationName、countryName和organizationIdentifier；可在已盖章PDF的签名面板中查看证书Subject详情。《登记册用户指南》PDF第26页。
+实际遇到过“登记表仅填编号、印章含国家及登记类型前缀”的不一致。填写前直接对照证书中的完整值，可以减少重复盖章和提交。
+（二）申请、下载并加盖QSeal
+
+图6 法律代表资料及声明申请入口（官方用户指南示意）
+1. 进入Organisation → Verification，填写法律代表的First Name、Last Name及Email。这里填写有权代表企业签章的人员资料。
+2. 点击Request Declaration，并按页面继续确认，等待系统生成声明PDF。
+3. 下载系统生成的PDF，交由具备该企业QSeal的签章方盖章。使用这份系统声明，不自行重建内容。
+4. 盖章后核对签名面板、组织证书及PDF内容，再上传至Upload Signed/Sealed PDF Declaration，提交核验。
+5. 到Verification或Activity Dashboard查看结果；处理中等待同一请求完成，出现问题按下一章处理。
+依据：《登记册用户指南》PDF第20—27页。法人组织的本次办理路径使用QSeal，签章嵌入PDF并保持系统声明内容完整。
+（三）确认组织认证成功
+正式环境既有记录显示：2026年11月6日16:33:44，组织核验Success，正文为“Your Organisation has been successfully verified.”；业务响应outcomeResult为SUCCEEDED。
+
+图7 正式环境组织认证成功记录（2026年11月6日）
+完成结果：目标组织核验通过，可以进入DPP Registration进行网页验证。
+六、认证报错或信息填错时使用Restart
+先打开核验详情，阅读Issues Found，确定问题发生在组织资料、法律代表资料还是PDF签章。核验结果页面提供三个处理入口，按问题选择。
+情况
+选择的入口及下一步
+已拿到修正后的盖章PDF
+Upload PDF Declaration，直接重新上传
+法律代表资料需要修改，或需要重新申请声明
+Restart Verification，回到资料页并申请新声明
+企业名称、国家或登记标识填错
+Organisation Information，先修改组织资料，再继续核验流程
+
+图8 核验问题页的三个处理入口（官方用户指南示意）
+Restart Verification的官方用途，是返回法律代表资料页面，允许检查、修改并申请新的PDF声明。《登记册用户指南》PDF第44页。
+本次办理遇到信息错误或流程阻塞时，曾采用Restart重新走流程。操作顺序为：保存当前错误提示 → 修正对应资料 → 重新申请并下载声明 → 加盖QSeal → 上传并查看结果。声明内容发生变化时，使用新声明重新盖章，保留已签章文件的完整性。
+单纯处于Processing状态时，先到Activity Dashboard查看原任务；如服务持续异常，携带请求时间和追踪号联系官方。
+七、在DPP Registration验证UPI
+（一）用单条在线表单开始
+1. 确认当前是已认证的正式组织，点击左侧DPP Registration。
+2. 选择Batteries产品组并继续，选择Online registration form。
+3. 填写本条护照信息；电池当前采用Item粒度。
+字段
+填写内容
+Granularity Level
+Item，单件电池
+Unique Product Identifier
+本条产品实际、稳定的HTTPS护照地址，必填
+Batch Identifier
+该电池真实批次号，选填
+Model Identifier
+该电池真实型号标识，选填
+
+图9 单条DPP在线注册表单（官方用户指南示意）
+4. 点击Submit并继续确认，保存页面显示的请求编号。
+5. 打开Activity Dashboard，找到本次DPP Registration，点击View Detail，查看UPI、错误原因及Correlation ID；需要逐项核对时导出CSV。
+依据：《登记册用户指南》PDF第49—53页。批量上传时从当前页面取得JSON/XML模板，按模板提交1—100条；首次联调先用单条。
+（二）本次正式环境的实际回执
+2026年11月6日16:36，UPI请求进入SEMANTIC阶段，返回SEMANTIC_VALIDATION_UNAVAILABLE。当次结果为FAILED，接收0条、拒绝1条。
+
+图10 正式环境UPI语义校验回执（2026年11月6日16:36）
+响应字段摘录如下，时间保留官方UTC值：
+{  "taskId": "1eeae4c4-6484-462a-ad82-259673727e8a",  "correlationId": "ff3e81bd-148b-430e-a4c3-07dc2c5f03e5",  "completedAt": "2026-11-06T08:36:09.393Z",  "outcomeResult": "FAILED",  "stage": "SEMANTIC",  "errorCode": "SEMANTIC_VALIDATION_UNAVAILABLE",  "acceptedItems": 0,  "rejectedItems": 1}
+此结果说明该请求已进入语义校验。后续取得成功业务回执、逐项结果及欧盟注册标识后，完成该条护照的最终登记确认。
+八、按UPI回执定位问题
+（一）三个常见提示怎样理解
+官方提示或错误码
+含义及处理方向
+The UPI URL is invalid.
+URL不符合规则；检查HTTPS、地址格式及端口
+The UPI is not resolvable.
+Registry未能完成地址取回；检查网络、TLS、HTTP及最终护照响应
+SEMANTIC_VALIDATION_UNAVAILABLE
+当次在线语义校验服务不可用；保存回执并确认官方服务状态
+依据：《登记册用户指南》PDF第56—57页。排查时同时读取stage和具体errorCode。
+UPI不可解析按DNS → TCP连接 → TLS证书 → HTTP状态 → 重定向 → Content-Type → 护照JSON的顺序检查。浏览器能显示页面后，继续确认Registry能否取到公开护照JSON，以及服务器是否收到欧盟请求。《Self-Hosted Authentication指南》第4章。
+11月6日16:54的正式回执曾返回DISALLOWED_UPI_URL_PORT，stage为URL_RESOLVABILITY。此时先处理公网端口。推荐UPI使用标准HTTPS 443入口，并使该入口的证书SAN覆盖实际域名；不同端口分别核对监听、证书和欧盟端口策略。
+（二）区分资料版本和当次服务状态
+日期与来源
+已确认信息
+2026年9月用户指南v1.03
+PDF第49页仍说明电池语义目录当时尚未定义
+2026年10月30日技术资料
+已发布语义指南及1.0.0制品，可开展离线校验
+2026年11月6日正式回执
+当次请求进入语义阶段，在线服务返回不可用
+因此，数据准备采用10月30日语义制品，在线可用情况按实际任务回执确认。官方技术资料入口。
+（三）读取真正的业务结果
+已观察到的网页回执可能同时出现外层status=SUCCESS和内层resultPayload.outcomeResult=FAILED。查看注册结果时，读取内层业务结果、接收/拒绝数量和逐项错误；成功项继续核对欧盟返回的注册标识。
+九、Service Account与机器接口联调
+本章供接口开发人员使用。网页操作完成后，程序自动提交需另行准备Service Account、公钥凭据和私钥签名能力。
+（一）确认服务账号入口
+官方流程为企业EO Administrator创建Service Account并登记公钥，程序以private_key_jwt获取Token。前置资料为Client ID、kid及至少一项ACTIVE公钥凭据。《Service Account技术集成指南》第2—3章，PDF第5—6页。
+11月6日正式门户EO Administrator菜单中未显示服务账号管理项；11月3日ACC也有同类观察。需向官方确认两套环境的创建入口及权限。取得账号后继续下列机器流程。
+（二）正式环境的文档地址
+以下采用2026年10月30日v1.0指南第5章、第13章：
+用途
+正式环境地址
+issuer
+https://auth.product-passport.ec.europa.eu
+Token，POST
+https://auth.product-passport.ec.europa.eu/oauth2/token
+JWKS，GET
+https://auth.product-passport.ec.europa.eu/oauth2/jwks
+授权服务元数据，GET
+https://auth.product-passport.ec.europa.eu/.well-known/oauth-authorization-server
+Registry资源标识
+https://auth.product-passport.ec.europa.eu/resources/dpp/registry
+Registry API基址
+https://reg.product-passport.ec.europa.eu/api/v1
+依据：官方鉴权地址，PDF第9页；环境对照，PDF第20页。ACC对应auth.acc、reg.acc主机，其余路径按同版指南配置。
+11月6日无凭据GET实测中，两环境JWKS均返回404，元数据返回401；reg主机产品组路径返回401、正文为missing session cookie，registry主机相同路径返回HTML门户页。同批OpenAPI的servers与指南主机名有差异，机器联调前需由官方确认当前地址。Token规范方法为POST；GET探测结果仅记录地址响应。
+（三）构造签名并获取Token
+支持的凭据曲线及算法为P-256/ES256、P-384/ES384、P-521/ES512。Client assertion的Header包含typ=client-authentication+jwt、alg及kid；Payload的iss和sub均为Client ID，aud精确匹配本环境issuer，并包含iat、exp、唯一jti。每次Token请求生成新的assertion，最长有效期5分钟。指南第4—5章。
+使用application/x-www-form-urlencoded向Token地址POST，包含以下参数；Client ID及签名值从本方配置与签名器取得：
+grant_type=client_credentialsclient_id=本方Service Account的Client IDclient_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearerclient_assertion=本次新签发的client assertionresource=https://auth.product-passport.ec.europa.eu/resources/dpp/registry
+成功后读取access_token、token_type和expires_in。后续请求以Authorization: Bearer携带Token，复用未到期Token。invalid_client优先核对Client ID、kid、算法、公私钥和时间；invalid_target检查resource，invalid_scope检查账号授权。指南第5、8、11章。
+（四）单条提交与任务查询
+先调用GET /api/v1/dpp/product-groups，采用当前返回的产品组和子组，再调用POST /api/v1/dpp/submission。基址已含/api/v1时，只继续拼接/dpp/...业务路径。《API Integration Guide》第2—3章及OpenAPI。
+下面为LMT单条注册请求结构示例，UPI、批次和型号替换为实际产品值：
+{  "productGroup": "BATTERIES",  "productSubGroup": "LMT",  "submissionItems": [{    "uniqueProductIdentifier": "https://passport.example.com/dpp/DEMO-LMT-000001",    "granularity": "item",    "batchIdentifier": "DEMO-LMT-BATCH-001",    "modelIdentifier": "DEMO-LMT-MODEL-001"  }]}
+提交时设置Idempotency-Key和X-Correlation-Id。202表示请求进入异步处理，保存返回的taskId及estimatedPeriodCompletionTime。随后按Dashboard公开合同查询GET /api/v1/tasks/{taskId}及/items，直到任务完成，并核对全部逐项业务结果。
+同一逻辑请求重试复用原幂等键；修正数据形成新请求时使用新键。遇到Retry-After时按该值等待；提交超时先查原请求，保留已取得的taskId。《API Integration Guide》第3、5章。
+十、准备UPI响应与三类电池数据
+（一）UPI要能提供护照数据
+建议采用稳定HTTPS地址，例如https://passport.example.com/dpp/DEMO-LMT-000001。公开GET提供PUB护照JSON；授权GET按权限提供公开及受限数据。最终响应使用application/json，重定向最多3次，接口不依赖人员浏览器Cookie。《Self-Hosted Authentication指南》第2、4章。
+浏览器地址中#后的片段不会发送到服务器。产品识别应由服务器可读取的路径或查询参数完成，并核对最终机器响应。
+欧盟回读Token由欧盟签发，通过官方JWKS验签。按官方合同核对ES384、at+jwt、issuer、有效期、SYSTEM身份、dpp:registry:read、UPI的HTTPS origin及组织请求方标识；签名或基础声明无效返回401，组织或权限不符返回403。对授权响应使用Vary: Authorization和Cache-Control: no-store。指南第5—7章。
+（二）三类产品的代码和模型
+采用2026年10月30日语义制品1.0.0。完整字段、词表、SHACL、context及公开/受限视图从官方Semantic Data Artifacts读取。
+电池类型
+注册子组代码
+语义子组及类别词表成员
+电动汽车
+EV
+evb；electricVehicleBattery
+工业
+IND
+ind；industrialBattery
+轻型交通
+LMT
+lmt；lightMeansOfTransportBattery
+实际可提交分类先以产品组查询返回为准。PUB表示公开字段，RES1、RES2、RES3为相应受限视图；对外按请求方权限返回所需字段。
+1.0.0版LMT的版本链如下，另外两类将最后的lmt替换为对应子组：
+{  "contentSpecificationIds": [    "https://repository.product-passport.ec.europa.eu/core/1.0.0",    "https://repository.product-passport.ec.europa.eu/product/batteries/1.0.0",    "https://repository.product-passport.ec.europa.eu/product/batteries/subgroup/lmt/1.0.0"  ]}
+先做Schema结构、类型和必填检查，再检查类别词表、单位及业务条件。电荷容量字段使用Ah，制造日期采用YYYY-MM，更新时间带时区，邮箱按当前Schema使用mailto: URI。保留核心、产品组和子组三段版本引用。《Semantic Data Guide》第2、5、7章及固定1.0.0制品。
+本方已按该固定制品整理EV、IND、LMT样例，完成33项实例校验、18项Schema元校验及4项负向校验。在线注册继续以欧盟任务业务回执确认结果。
+十一、检查完成结果并保留记录
+经办人完成以下检查：邮箱注册已确认；可信设备已登记；Windows PIN可返回正式门户；目标组织QSeal核验通过；DPP Registration请求可在Activity Dashboard查看。
+开发人员继续检查：Service Account及公钥有效，Token交换成功；匿名与授权UPI回读通过；固定语义版本校验通过；单条提交、查询和逐项注册标识可对应。先验证一条，再扩展三类别及小批量。
+每次保留环境、北京时间或UTC时间、请求类别、UPI、taskId、correlationId、业务结果、错误码及语义版本。实际回执与填写记录对应，便于之后复查。
+需要官方协助时，通过门户Help Center确认当前支持入口，提交三个具体问题：Service Account创建与权限、当前机器接口地址、语义服务及规则版本。附请求时间、taskId、correlationId和错误码即可定位本次问题。
+十二、法规与官方资料
+（一）法规依据
+《电池法规》（EU）2023/1542第77条第3款要求护照通过二维码访问，并与唯一标识关联。本处采用2026年8月13日合并文本。《电池法规》第77条。
+原文短引：“A battery passport shall be accessible through the QR code”，即“电池护照应可通过二维码访问”。
+
+图11 EUR-Lex《电池法规》第77条第3—5款实截
+《可持续产品生态设计法规》（EU）2024/1781第13条规定登记册及成功上传后的唯一注册标识。第13条，官方PDF第42—43页。
+（二）EU Login官方操作依据
+邮箱注册账号；添加可信平台；通过可信平台登录；可用MFA方式。上述网页于2026年11月7日核对；图1、图2、图3、图4为官方页面提供的操作示意。
+（三）登记册与接口资料版本
+《登记册用户指南》v1.03：2026年9月版。组织认证见PDF第20—27页，Restart见第44页，网页注册见第49—53页，错误说明见第56—57页。本文页号均指PDF阅读器页码。
+《Service Account技术集成指南》v1.0：2026年10月30日发布，账号前置条件见第5—6页、Token见第9—11页、环境地址见第20页。
+《Self-Hosted Authentication指南》v1.0：2026年10月30日，说明UPI匿名及授权回读、JWT验证与组织授权。
+《Semantic Data Guide》v1.0及1.0.0语义制品：2026年10月30日发布。
+委员会DPP资料总入口：提供API指南、OpenAPI及各项技术资料。正式环境截图及业务响应对应2026年11月6日既有操作记录。
+南京复创大数据产业发展有限公司
+2026年11月7日

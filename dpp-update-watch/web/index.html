@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>DPP 更新跟踪</title>
+<style>
+:root{--ink:#182b32;--muted:#60747b;--line:#dde5e7;--page:#f3f6f6;--paper:#fff;--accent:#14665b;--accent-soft:#e8f3ee;--amber:#8d5b13;--amber-soft:#fff3df;--red:#9b3630;--red-soft:#fbeeea;--blue:#355d82;--blue-soft:#edf2f8;--font:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:14px/1.65 var(--font)}button,a,input,summary{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:disabled{opacity:.55;cursor:wait}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #438fbc;outline-offset:3px}button{border:1px solid var(--line);border-radius:6px;background:white;padding:8px 14px;color:var(--ink)}button:hover:not(:disabled){background:#f2f6f5}button.primary{background:var(--accent);border-color:var(--accent);color:white}button.primary:hover:not(:disabled){background:#10554c}button.small{font-size:12px;padding:5px 10px}.app{display:grid;grid-template-columns:218px minmax(0,1fr);min-height:100dvh}.rail{padding:30px 24px;background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:40px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{display:grid;place-items:center;width:40px;height:40px;background:var(--accent);border-radius:6px;color:#fff;font:bold 12px/1.2 system-ui;letter-spacing:1px}.brand-name{font-weight:700;font-size:15px}.brand-caption{font-size:11px;color:var(--muted);margin-top:1px}.rail-label{color:#809198;font-size:11px;letter-spacing:.06em;margin:0 0 10px}.rail nav a{display:block;padding:10px 12px;margin:4px -12px;border-radius:5px;color:var(--muted);font-size:13px}.rail nav a.active{background:var(--accent-soft);color:var(--accent);font-weight:600}.rail-foot{margin-top:auto;font-size:12px;color:var(--muted);line-height:1.9}.rail-foot strong{display:block;color:var(--ink);font-weight:500}.content{min-width:0;width:100%;max-width:1600px;margin:0 auto;padding:38px 42px 26px}.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:30px}.eyebrow{font-size:12px;color:var(--muted);margin-bottom:6px}.topbar h1{font-size:29px;line-height:1.4;font-weight:650;letter-spacing:-.035em;margin:0}.subline{margin:9px 0 0;color:var(--muted);font-size:13px}.actions{display:flex;align-items:center;gap:10px;padding-top:5px}.status-band{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,.8fr));border:1px solid var(--line);border-radius:9px;background:#fff;margin-bottom:28px;overflow:hidden}.status-main{padding:23px 25px;background:var(--blue-soft);border-right:1px solid var(--line)}.status-main.good{background:var(--accent-soft)}.status-main.warn{background:var(--amber-soft)}.status-main.bad{background:var(--red-soft)}.status-kicker{font-size:11px;color:var(--muted)}.status-main h2{font-size:19px;font-weight:600;line-height:1.5;margin:7px 0 5px}.status-main p{font-size:12px;margin:0;color:var(--muted)}.stat{padding:23px 25px;min-width:0}.stat+.stat{border-left:1px solid var(--line)}.stat-label{font-size:11px;color:var(--muted)}.stat-value{font-size:16px;line-height:1.6;margin-top:8px;overflow-wrap:anywhere}.stat-note{font-size:11px;line-height:1.7;margin-top:6px;color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,1fr);gap:25px;align-items:start}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;min-height:29px}.section-head h2{font-size:16px;margin:0;font-weight:600}.count{display:inline-flex;align-items:center;justify-content:center;background:#e2e9e8;color:#425d63;min-width:23px;height:23px;border-radius:4px;font-size:11px;margin-left:8px;vertical-align:1px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:15px}.tabs button{font-size:12px;padding:6px 12px;border-color:transparent;background:transparent;color:var(--muted)}.tabs button[aria-pressed=true]{background:#e1eae7;color:#175d54;border-color:#cedfd6;font-weight:600}.event{border-bottom:1px solid var(--line)}.event:last-child{border-bottom:0}.event summary{list-style:none;cursor:pointer;padding:20px 21px;display:grid;grid-template-columns:4px minmax(0,1fr) 18px;gap:14px;align-items:start}.event summary::-webkit-details-marker{display:none}.event summary:hover{background:#fafcfb}.severity-bar{height:34px;background:#a5b7bd;border-radius:3px;margin-top:3px}.event.medium .severity-bar{background:#c89542}.event.high .severity-bar{background:#c06956}.event summary:after{content:"+";font:20px/1.5 system-ui;color:#70858a}.event[open] summary:after{content:"−"}.event-title{font-size:14px;font-weight:550;line-height:1.6;margin:0 0 5px;overflow-wrap:anywhere}.event-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:11px;color:var(--muted)}.label{font-size:10px;font-weight:500;line-height:1.7;padding:1px 6px;border-radius:3px;background:#eef2f3;color:#566d75}.label.pending{background:var(--amber-soft);color:var(--amber)}.label.reviewed{background:var(--accent-soft);color:var(--accent)}.label.high{background:var(--red-soft);color:var(--red)}.event-description{font-size:12px;line-height:1.85;color:var(--muted);margin:9px 0 0;overflow-wrap:anywhere}.event-body{padding:0 21px 20px 39px}.event-body p{margin:0 0 13px;font-size:12px;color:var(--muted)}.change-list{list-style:none;margin:0 0 15px;padding:0}.change-list li{font-size:12px;padding:9px 12px;background:#f4f7f6;border-radius:4px;margin:6px 0;overflow-wrap:anywhere}.change-list pre{font:11px/1.8 ui-monospace,"Noto Sans Mono",monospace;white-space:pre-wrap;word-break:break-word;max-height:220px;overflow:auto;margin:0}.event-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.event-actions a{font-size:12px;margin-right:auto}.source{padding:20px;border-bottom:1px solid var(--line)}.source:last-child{border-bottom:0}.source-type{font-size:10px;letter-spacing:.04em;color:var(--muted);margin-bottom:7px}.source h3{font-size:13px;line-height:1.7;font-weight:600;margin:0 0 13px;overflow-wrap:anywhere}.source-facts{display:grid;grid-template-columns:60px minmax(0,1fr);gap:7px 10px;font-size:11px;line-height:1.7;margin:0}.source-facts dt{color:var(--muted)}.source-facts dd{margin:0;min-width:0;overflow-wrap:anywhere}.hash{font:10px/1.8 ui-monospace,"Noto Sans Mono",monospace;color:#597179;word-break:break-all}.source-links{display:flex;gap:12px;margin-top:12px;font-size:11px}.scheduler{background:#eaf0ed;border:1px solid #d8e2dc;border-radius:7px;margin-top:19px;padding:17px 19px}.scheduler h3{font-size:12px;font-weight:600;margin:0 0 6px}.scheduler p{font-size:11px;color:var(--muted);line-height:1.9;margin:0}.scheduler.warn{background:var(--amber-soft);border-color:#eed7af}.history-section{margin-top:29px}.table-wrap{overflow-x:auto}.history{border-collapse:collapse;width:100%;white-space:nowrap;text-align:left;font-size:12px}.history th{font-size:11px;font-weight:500;color:var(--muted);background:#f8faf9}.history th,.history td{padding:13px 18px;border-bottom:1px solid #e7ecec}.history tr:last-child td{border-bottom:0}.history td:last-child{white-space:normal;min-width:220px;line-height:1.8}.check-tag{display:inline-block;color:var(--muted)}.check-tag.changed{color:var(--amber)}.check-tag.unchanged,.check-tag.baseline{color:var(--accent)}.check-tag.error{color:var(--red)}.check-tag.partial{color:var(--amber)}.empty{padding:36px 26px;font-size:13px;color:var(--muted);line-height:1.9}.empty strong{font-size:14px;color:var(--ink);font-weight:500;display:block;margin-bottom:6px}.alert{display:none;border:1px solid #e3b7aa;color:#813e34;background:var(--red-soft);border-radius:6px;padding:13px 17px;font-size:12px;line-height:1.9;margin-bottom:20px;overflow-wrap:anywhere}.alert.visible{display:block}.toast{position:fixed;bottom:25px;right:30px;max-width:min(440px,calc(100vw - 36px));background:#193a34;color:#fff;border-radius:6px;padding:13px 18px;font-size:12px;box-shadow:0 8px 30px #12312825;z-index:20;display:none}.toast.visible{display:block}.footer{font-size:11px;line-height:1.8;display:flex;justify-content:space-between;gap:15px;color:#7d9196;margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}.footer a{color:var(--muted)}.busy-label::before{content:"";display:inline-block;width:10px;height:10px;margin-right:7px;border:2px solid #ffffff60;border-top-color:#fff;border-radius:50%;vertical-align:-1px;animation:spin .9s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.busy-label::before{animation:none}}@media(min-width:1600px){.content{padding-top:45px}.topbar{margin-bottom:35px}}@media(max-width:1180px){.app{grid-template-columns:174px minmax(0,1fr)}.rail{padding:28px 20px}.content{padding:30px 27px}.layout{grid-template-columns:minmax(0,1.5fr) minmax(265px,1fr);gap:20px}.stat,.status-main{padding:20px}.status-band{grid-template-columns:minmax(0,1.1fr) repeat(2,minmax(0,.8fr))}.stat-value{font-size:14px}}@media(max-width:960px){.app{display:block}.rail{padding:16px 25px;border-right:0;border-bottom:1px solid var(--line);display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:20px}.rail nav{display:flex;gap:8px}.rail nav a{margin:0;padding:8px 12px}.rail-label,.rail-foot{display:none}.brand-caption{display:none}.brand-mark{height:33px;width:33px}.brand-name{font-size:13px}.content{padding:27px 25px}.layout{grid-template-columns:minmax(0,1.5fr) minmax(255px,1fr);gap:20px}.status-band{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}.stat:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;gap:18px}.stat:last-child .stat-value,.stat:last-child .stat-note{margin:0}.stat:last-child .stat-label{flex-shrink:0}.stat:last-child .stat-note{margin-left:auto}.topbar h1{font-size:26px}}@media(max-width:740px){.layout{grid-template-columns:minmax(0,1fr)}.content{padding:24px 18px}.rail{padding:14px 18px}.rail nav a{font-size:12px;padding:7px 9px}.rail nav a:last-child{display:none}.brand-mark{height:30px;width:30px}.brand{gap:9px}.topbar{display:block;margin-bottom:23px}.actions{margin-top:18px;gap:8px}.actions .primary{flex:1}.actions button{padding:9px 14px}.topbar h1{font-size:25px}.subline{font-size:12px}.status-band{margin-bottom:24px}.status-main,.stat{padding:17px}.status-main h2{font-size:17px}.stat:last-child{display:block;padding:14px 17px}.stat:last-child .stat-value{margin-top:4px}.stat:last-child .stat-note{margin-top:4px}.event summary{padding:18px 16px;gap:11px}.event-body{padding:0 16px 18px 31px}.event-title{font-size:13px}.sources-section{margin-top:6px}.source{padding:18px}.history th,.history td{padding:12px 14px}.footer{display:block;margin-top:23px}.footer span{display:block;margin:5px 0}.toast{bottom:18px;right:18px}.tabs button{padding:6px 11px}.section-head{margin-bottom:12px}}@media(max-width:380px){.rail nav a{padding:6px}.brand-name{font-size:12px}.status-band{grid-template-columns:1fr}.status-main{border-right:0;border-bottom:1px solid var(--line)}.stat+.stat{border-left:0}}
+.notification-panel{margin-top:18px;border:1px solid var(--line);border-radius:7px;padding:17px 19px;background:#fff}.notification-panel h3{font-size:12px;font-weight:600;margin:0}.notification-heading{display:flex;justify-content:space-between;gap:10px;align-items:center}.notification-status{font-size:11px;color:var(--muted)}.notification-panel.good{border-color:#c6ded3}.notification-panel.good .notification-status{color:var(--accent)}.notification-panel.warn{border-color:#e7cfaa}.notification-panel.warn .notification-status{color:var(--amber)}.notification-panel.bad{border-color:#e6bbae}.notification-panel.bad .notification-status{color:var(--red)}.notification-copy{font-size:11px;color:var(--muted);line-height:1.9;margin:9px 0 0}.notification-counts{font-size:11px;margin-top:11px;display:flex;gap:15px;flex-wrap:wrap;color:var(--muted)}.notification-counts strong{font-weight:600;color:var(--ink)}.notification-latest{margin-top:12px;padding-top:12px;border-top:1px solid #e7ecec;font-size:11px;line-height:1.9;overflow-wrap:anywhere}.notification-time{color:var(--muted);margin-top:4px}.notification-error{color:var(--red);font-size:11px;line-height:1.85;margin-top:6px;overflow-wrap:anywhere}.notification-recent{margin-top:10px;font-size:11px}.notification-recent>summary{color:var(--accent);cursor:pointer}.notification-recent ol{list-style:none;padding:0;margin:8px 0 0}.notification-recent li{padding:8px 0;border-top:1px solid #edf1f0;overflow-wrap:anywhere}.delivery-label{font-size:10px;background:#eef2f3;color:#566d75;border-radius:3px;padding:1px 5px;margin-right:6px}.delivery-label.delivered{background:var(--accent-soft);color:var(--accent)}.delivery-label.pending,.delivery-label.submitted,.delivery-label.retry_wait,.delivery-label.unknown{background:var(--amber-soft);color:var(--amber)}.delivery-label.blocked{background:var(--red-soft);color:var(--red)}
+</style>
+</head>
+<body>
+<div class="app">
+ <aside class="rail" aria-label="导航">
+  <div class="brand"><div class="brand-mark" aria-hidden="true">DPP</div><div><div class="brand-name">更新跟踪</div><div class="brand-caption">本地监控 · 官方来源</div></div></div>
+  <div><p class="rail-label">工作台</p><nav><a href="#overview" class="active">更新概览</a><a href="#history">检查记录</a><a href="#sources">监控来源</a></nav></div>
+  <div class="rail-foot"><strong>独立运行</strong>监控主机负责检查、比较和报告，无需模型或 API Token。</div>
+ </aside>
+ <main class="content" id="overview">
+  <header class="topbar"><div><div class="eyebrow">欧盟数字产品护照 · 官方资源</div><h1>DPP 更新跟踪</h1><p class="subline">跟踪官方文件变化，把发现的更新逐项确认。页面时间均为北京时间。</p></div><div class="actions"><button type="button" id="reload" title="重新读取服务中已保存的结果，不访问欧委会官网">刷新记录</button><button type="button" class="primary" id="check" title="立即访问欧委会官网，下载并比较监控资源" disabled>立即检查</button></div></header>
+  <div id="connection-alert" class="alert" role="alert"></div>
+  <section class="status-band" aria-label="运行状态">
+   <div class="status-main" id="status-main"><div class="status-kicker">最近一次检查</div><h2 id="status-title">正在读取运行记录</h2><p id="status-note">首次运行前不会把未知状态记作“没有变化”。</p></div>
+   <div class="stat"><div class="stat-label">最近完整检查成功</div><div class="stat-value" id="last-success">读取中</div><div class="stat-note" id="last-attempt">等待监控服务响应</div></div>
+   <div class="stat"><div class="stat-label">官网自动检查</div><div class="stat-value" id="schedule-label">读取中</div><div class="stat-note" id="next-run">定时状态以监控主机调度器为准</div></div>
+  </section>
+  <p class="subline" id="polling-note" style="margin:-14px 0 24px;line-height:1.9">页面每 30 秒读取一次检查结果，检查执行中每 2 秒刷新。官网由后台每天布鲁塞尔时间 18:30 检查，页面关闭后照常运行。</p>
+  <div class="layout">
+   <section aria-labelledby="events-title"><div class="section-head"><h2 id="events-title">更新待办<span class="count" id="pending-count">—</span></h2><span id="event-total" class="stat-label"></span></div><div class="tabs" role="group" aria-label="筛选更新待办"><button data-filter="pending" aria-pressed="true">待确认</button><button data-filter="all" aria-pressed="false">全部</button><button data-filter="reviewed" aria-pressed="false">已确认</button><button data-filter="ignored" aria-pressed="false">已忽略</button></div><div id="events" class="panel"><div class="empty">正在读取更新待办…</div></div></section>
+   <aside class="sources-section" id="sources"><div class="section-head"><h2>监控来源</h2><span class="stat-label" id="source-count"></span></div><div class="panel" id="artifacts"><div class="empty">正在读取来源信息…</div></div><div class="scheduler" id="scheduler"><h3>定时检查状态</h3><p id="scheduler-note">正在读取监控主机的调度状态。</p></div><section class="notification-panel" id="notifications" aria-label="钉钉推送状态"><div class="notification-heading"><h3>钉钉推送</h3><span class="notification-status">正在读取状态</span></div><p class="notification-copy">推送记录由监控服务保存。</p></section></aside>
+  </div>
+  <section class="history-section" id="history" aria-labelledby="history-title"><div class="section-head"><h2 id="history-title">检查记录</h2><span class="stat-label" id="history-count"></span></div><div class="panel table-wrap"><table class="history"><thead><tr><th scope="col">检查时间</th><th scope="col">结果</th><th scope="col">检查说明</th></tr></thead><tbody id="checks"><tr><td colspan="3" class="empty">正在读取检查记录…</td></tr></tbody></table></div></section>
+  <footer class="footer"><span>时间按 <span id="timezone">Asia/Shanghai</span> 显示 · 检查结果保存在监控主机</span><span><a id="source-page" target="_blank" rel="noopener noreferrer" hidden>欧委会资源与文档</a></span></footer>
+ </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:20px">此查看页面需要浏览器开启 JavaScript；后台定时检查不依赖浏览器，可以通过命令行运行。</p></noscript>
+<script>
+'use strict';
+(() => {
+ const $ = (id) => document.getElementById(id);
+ const successStates = new Set(['changed','unchanged','baseline']);
+ const statusNames = {changed:'发现变化',unchanged:'未发现变化',partial:'部分检查失败',error:'检查失败',baseline:'已建立基线'};
+ const reviewNames = {pending:'待确认',reviewed:'已确认',ignored:'已忽略'};
+ const kindNames = {resource_changed:'文件更新',new_resource:'新增资源',page_changed:'页面变化',check_failed:'检查异常'};
+ let state=null, filter='pending', poll=null, loading=false, pollNeeded=false, toastTimer=null;
+ const expanded = new Set();
+ const escape = (value) => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ function link(value, report=false) {
+  try {
+   const u=new URL(String(value||''),location.href);
+   if(report) return u.origin===location.origin && u.pathname.startsWith('/reports/') ? u.pathname+u.search+u.hash : '';
+   return u.protocol==='https:' ? u.href : '';
+  } catch{return '';}
+ }
+ function date(value, short=false) {
+  if(!value)return '暂无记录';
+  const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);
+  try {return new Intl.DateTimeFormat('zh-CN',{timeZone:state?.config?.display_timezone||'Asia/Shanghai',year:short?undefined:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d);}catch{return d.toLocaleString('zh-CN');}
+ }
+ const text = (id,value) => {$(id).textContent=String(value??'');};
+ function pollSeconds(name,fallback,minimum,maximum) {
+  const raw=Number(state?.config?.[name]);
+  return Number.isFinite(raw)&&raw>0?Math.round(Math.min(maximum,Math.max(minimum,raw))):fallback;
+ }
+ const idleSeconds = () => pollSeconds('frontend_poll_seconds',30,10,300);
+ const busySeconds = () => pollSeconds('busy_poll_seconds',2,1,10);
+ function toast(message) {clearTimeout(toastTimer);text('toast',message);$('toast').classList.add('visible');toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),4500);}
+ async function api(path,options={}) {
+  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),18000);
+  try {
+   const response=await fetch(path,{cache:'no-store',credentials:'same-origin',...options,signal:controller.signal});
+   const content=await response.text();let payload;
+   try{payload=content?JSON.parse(content):{};}catch{throw new Error('监控服务返回了无法识别的内容，请检查服务日志。');}
+   if(!response.ok)throw new Error(payload.error||payload.message||`请求未完成（HTTP ${response.status}）`);
+   return payload;
+  } finally {clearTimeout(timer);}
+ }
+ function showConnectionError(error) {
+  const detail=error?.name==='AbortError'?'读取监控服务超时。':String(error?.message||error);
+  text('connection-alert',`无法读取最新运行状态：${detail} 页面将在 30 秒后重试，也可点击“刷新记录”。请确认监控服务正常运行、当前设备与监控主机网络互通。${state?'下方保留上次读取的数据，不代表本次检查成功。':''}`);
+  $('connection-alert').classList.add('visible');
+  $('status-main').className='status-main bad';text('status-title','监控服务暂不可用');text('status-note','未读取到最新状态；页面可见时每 30 秒重试。');
+  $('notifications').className='notification-panel warn';
+  $('notifications').innerHTML='<div class="notification-heading"><h3>钉钉推送</h3><span class="notification-status">状态暂不可用</span></div><p class="notification-copy">无法读取最新推送记录；请恢复与监控服务的连接后核对。</p>';
+  $('check').disabled=true;
+  if(!state){text('last-success','尚无法确认');text('last-attempt','记录读取失败');text('schedule-label','尚无法确认');text('next-run','请先恢复监控服务');text('scheduler-note','无法读取调度状态；没有把连接失败记录为“未发现变化”。');$('events').innerHTML='<div class="empty"><strong>暂时无法读取待办</strong>恢复与监控服务的连接后，检查记录和更新待办会显示在这里。</div>';$('artifacts').innerHTML='<div class="empty">来源信息暂不可用。</div>';$('checks').innerHTML='<tr><td colspan="3" class="empty">无法读取检查记录。</td></tr>';}
+ }
+ function schedulePoll(running=false,retry=false,immediate=false){
+  clearTimeout(poll);poll=null;
+  if(document.hidden)return;
+  const seconds=retry?30:immediate?0.1:running?busySeconds():idleSeconds();
+  poll=setTimeout(()=>{poll=null;load(true);},seconds*1000);
+ }
+ async function load(quiet=false) {
+  if(document.hidden){clearTimeout(poll);poll=null;return;}
+  if(loading){pollNeeded=pollNeeded||quiet;return;}
+  loading=true;clearTimeout(poll);poll=null;$('reload').disabled=true;
+  let failed=false;
+  try {
+   const next=await api('/api/state');
+   if(!next||!Array.isArray(next.checks)||!Array.isArray(next.events)||!Array.isArray(next.artifacts))throw new Error('监控状态数据缺少必要的检查记录或来源列表。');
+   state=next;$('connection-alert').classList.remove('visible');render();
+  }catch(error){failed=true;showConnectionError(error);}
+  finally{loading=false;$('reload').disabled=false;const refreshAgain=pollNeeded;pollNeeded=false;schedulePoll(Boolean(state?.running),failed,refreshAgain);}
+ }
+ function changeMarkup(change) {
+  if(typeof change==='string')return `<li>${escape(change)}</li>`;
+  if(change===null||typeof change!=='object')return `<li>${escape(change)}</li>`;
+  const heading=change.summary||change.description||change.message||change.label;
+  const copy={...change};if(heading){for(const key of ['summary','description','message','label'])if(copy[key]===heading)delete copy[key];}
+  const details=Object.keys(copy).length?JSON.stringify(copy,null,2):'';
+  return `<li>${heading?`<div>${escape(heading)}</div>`:''}${details?`<pre>${escape(details)}</pre>`:''}</li>`;
+ }
+ function renderNotifications(){
+  const panel=$('notifications'), notification=state.notifications;
+  panel.className='notification-panel';
+  if(!notification?.enabled){
+   panel.innerHTML='<div class="notification-heading"><h3>钉钉推送</h3><span class="notification-status">未启用钉钉推送</span></div><p class="notification-copy">检查结果和更新待办仍会保留在这个页面。</p>';
+   return;
+  }
+  const labels={delivered:'已确认送达',pending:'待发送',submitted:'发送确认中',retry_wait:'等待重试',blocked:'推送受阻',unknown:'送达状态待核对'};
+  const normalizedStatus=(value)=>Object.hasOwn(labels,value)?value:'unknown';
+  const count=(value)=>Number.isFinite(Number(value))?Math.max(0,Math.trunc(Number(value))):0;
+  const pending=count(notification.pending), delivered=count(notification.delivered), blocked=count(notification.blocked);
+  const latest=notification.latest&&typeof notification.latest==='object'?notification.latest:null;
+  const status=latest?normalizedStatus(latest.status):null;
+  let heading='尚无推送记录', tone='';
+  if(blocked){heading=`${blocked} 条推送需要处理`;tone='bad';}
+  else if(status==='blocked'){heading=labels.blocked;tone='bad';}
+  else if(status==='unknown'){heading=labels.unknown;tone='warn';}
+  else if(pending){heading=`${pending} 条推送待完成`;tone='warn';}
+  else if(status==='delivered'){heading='最近一条已确认送达';tone='good';}
+  else if(status){heading=labels[status];tone='warn';}
+  if(tone)panel.className+=' '+tone;
+  const recipient=notification.recipient_name||'已配置的个人收件人';
+  const errorText=(value)=>typeof value==='string'?value:value?JSON.stringify(value):'';
+  const latestError=latest?errorText(latest.error):'';
+  const reason=latestError||(['blocked','unknown'].includes(status)?errorText(notification.message)||'尚未取得明确送达结果，请核对服务中的推送记录。':'');
+  const recent=Array.isArray(notification.recent)?notification.recent.slice(0,5):[];
+  const latestMarkup=latest?`<div class="notification-latest"><span class="delivery-label ${status}">${escape(labels[status])}</span>${escape(latest.summary||'监控提醒')}<div class="notification-time">${status==='delivered'?`确认送达时间：${escape(date(latest.delivered_at))}`:`创建：${escape(date(latest.created_at))}${latest.last_attempt_at?` · 最近尝试：${escape(date(latest.last_attempt_at))}`:''}`}</div>${reason?`<div class="notification-error">${escape(reason)}</div>`:''}</div>`:'';
+  const recentMarkup=recent.length?`<details class="notification-recent"><summary>最近 ${recent.length} 条推送记录</summary><ol>${recent.map(item=>{const s=normalizedStatus(item.status),error=errorText(item.error);return `<li><span class="delivery-label ${s}">${escape(labels[s])}</span>${escape(item.summary||'监控提醒')}<div class="notification-time">${escape(date(s==='delivered'?item.delivered_at:item.created_at))}</div>${error?`<div class="notification-error">${escape(error)}</div>`:''}</li>`;}).join('')}</ol></details>`:'';
+  panel.innerHTML=`<div class="notification-heading"><h3>钉钉推送</h3><span class="notification-status">${escape(heading)}</span></div><p class="notification-copy">仅向 ${escape(recipient)} 发送私聊。发现新变化或检查失败时提醒；未发现变化不发送。</p><div class="notification-counts"><span>待完成 <strong>${pending}</strong></span><span>确认送达 <strong>${delivered}</strong></span><span>需处理 <strong>${blocked}</strong></span></div>${latestMarkup}${recentMarkup}`;
+ }
+ function renderEvents(){
+  if(!state)return;
+  const all=state.events;const pending=all.filter(e=>(e.review_status||'pending')==='pending').length;
+  text('pending-count',pending);text('event-total',`共 ${all.length} 条记录`);
+  for(const button of document.querySelectorAll('[data-filter]'))button.setAttribute('aria-pressed',String(button.dataset.filter===filter));
+  const visible=all.filter(e=>filter==='all'||(e.review_status||'pending')===filter);
+  if(!visible.length){const title=filter==='pending'?'当前没有待确认更新':filter==='all'?'尚未发现更新':'这个分类暂无记录';const detail=filter==='pending'?'新发现的文件变化会保留在这里，确认后仍可在“全部”中查看。':'检查记录与源文件会持续保留，便于之后追溯。';$('events').innerHTML=`<div class="empty"><strong>${title}</strong>${detail}</div>`;return;}
+  $('events').innerHTML=visible.map(e=>{
+   const review=reviewNames[e.review_status]||reviewNames.pending;const severity=['high','medium'].includes(e.severity)?e.severity:'info';const report=link(e.report_url,true);const changes=Array.isArray(e.changes)?e.changes:[];
+   return `<details class="event ${severity}" data-event="${escape(e.id)}" ${expanded.has(String(e.id))?'open':''}><summary><span class="severity-bar" aria-hidden="true"></span><div><div class="event-title">${escape(e.title||'发现资源变化')}</div><div class="event-meta"><span class="label ${escape(e.review_status||'pending')}">${review}</span><span>${escape(kindNames[e.kind]||'更新记录')}</span>${severity==='high'?'<span class="label high">需重点核对</span>':''}<time>${escape(date(e.created_at))}</time></div><p class="event-description">${escape(e.summary||'展开查看变化详情及处理操作。')}</p></div></summary><div class="event-body">${changes.length?`<ul class="change-list">${changes.slice(0,80).map(changeMarkup).join('')}</ul>${changes.length>80?'<p>此处显示前 80 项，其余内容请查看完整变更报告。</p>':''}`:'<p>详细依据请查看变更报告，确认后可将这条记录标为“已确认”。</p>'}<div class="event-actions">${report?`<a href="${escape(report)}" target="_blank" rel="noopener noreferrer">查看变更报告</a>`:'<span style="margin-right:auto"></span>'}${e.review_status!=='reviewed'?`<button class="small" data-review="reviewed" data-id="${escape(e.id)}">标为已确认</button>`:''}${e.review_status!=='ignored'?`<button class="small" data-review="ignored" data-id="${escape(e.id)}">忽略此条</button>`:''}${e.review_status&&e.review_status!=='pending'?`<button class="small" data-review="pending" data-id="${escape(e.id)}">恢复待确认</button>`:''}</div></div></details>`;
+  }).join('');
+ }
+ function render(){
+  const checks=state.checks;const latest=checks[0];const successful=checks.find(c=>successStates.has(c.status));const pending=state.events.filter(e=>(e.review_status||'pending')==='pending').length;const running=Boolean(state.running);
+  const block=$('status-main');block.className='status-main';
+  if(running){text('status-title','正在检查官方资源');text('status-note','检查在监控主机执行，关闭页面不会中断本次检查。');}
+  else if(!latest){text('status-title','等待首次检查');text('status-note','点击“立即检查”建立基线，再开始跟踪文件变化。');}
+  else if(latest.status==='error'){block.classList.add('bad');text('status-title','最近检查未完成');text('status-note',latest.summary||latest.error||'网络或文件读取发生问题，请查看检查记录。');}
+  else if(latest.status==='partial'){block.classList.add('warn');text('status-title','部分来源检查失败');text('status-note',latest.summary||'已保留取得的结果，失败的来源仍需再次检查。');}
+  else if(pending){block.classList.add('warn');text('status-title',`有 ${pending} 条更新待确认`);text('status-note',latest.status==='unchanged'?'最近一次未发现新变化；之前的待办仍待确认。':latest.summary||'请查看变化内容，决定是否更新开发或业务模型。');}
+  else if(latest.status==='changed'){block.classList.add('warn');text('status-title','最近一次发现变化');text('status-note',latest.summary||'查看更新记录和报告，可追溯已确认的变化。');}
+  else if(latest.status==='unchanged'){block.classList.add('good');text('status-title','最近一次未发现变化');text('status-note','已完成的检查结果保留在下方；此状态不代表未来不会更新。');}
+  else if(latest.status==='baseline'){block.classList.add('good');text('status-title','基线已准备好');text('status-note',latest.summary||'后续会与已保存的文件比较，发现变化时生成待办。');}
+  else{text('status-title','检查状态待核对');text('status-note',latest.summary||String(latest.status));}
+  text('last-success',successful?date(successful.finished_at||successful.started_at):'尚无完整成功记录');
+  text('last-attempt',latest?`最近尝试 ${date(latest.started_at,true)} · ${statusNames[latest.status]||latest.status}`:'尚未开始检查');
+  const scheduler=state.scheduler||{};
+  text('schedule-label',state.config?.schedule_label|| (scheduler.active?'定时运行中':'尚未启用自动检查'));
+  text('next-run',scheduler.next_run?`下次 ${date(scheduler.next_run)}`:scheduler.active?'等待调度器提供下次时间':'当前可手动检查');
+  $('scheduler').className='scheduler'+(scheduler.active?'':' warn');
+  $('scheduler').querySelector('h3').textContent=scheduler.active?'后台定时检查已启用':scheduler.installed?'定时任务尚未运行':'尚未启用后台定时检查';
+  text('scheduler-note',(scheduler.message||'定时检查由监控主机的调度器负责。')+' 监控主机需要开机并能访问官网；其他设备的查看页面和大模型可以关闭。');
+  text('polling-note',`页面每 ${idleSeconds()} 秒读取一次已保存的结果，检查执行中每 ${busySeconds()} 秒刷新。“刷新记录”只读取结果，“立即检查”会访问官网。${scheduler.active?`官网由后台按“${state.config?.schedule_label||'每天布鲁塞尔时间 18:30'}”检查，页面关闭后照常运行。`:'后台定时检查尚未运行，状态见右侧说明。'}`);
+  $('check').disabled=running;$('check').textContent=running?'检查进行中':'立即检查';$('check').classList.toggle('busy-label',running);
+  text('timezone',state.config?.display_timezone||'Asia/Shanghai');
+  const page=link(state.config?.source_page);$('source-page').hidden=!page;if(page)$('source-page').href=page;
+  renderEvents();
+  renderNotifications();
+  text('source-count',`${state.artifacts.length} 项资源`);
+  $('artifacts').innerHTML=state.artifacts.length?state.artifacts.map(a=>{
+   const href=link(a.source_url);let version=a.version;if(version&&typeof version==='object')version=JSON.stringify(version);const hash=typeof a.sha256==='string'?a.sha256:'';
+   return `<article class="source"><div class="source-type">${escape(a.kind==='semantic_zip'||a.kind==='zip'?'语义资源包':a.kind==='pdf'?'说明文档':a.kind==='openapi_zip'?'接口规范包':'官方资源')}</div><h3>${escape(a.title||a.key)}</h3><dl class="source-facts"><dt>版本</dt><dd>${escape(version||'未提取到版本号')}</dd><dt>上次检查</dt><dd>${escape(date(a.last_checked_at,true))}</dd><dt>最近变化</dt><dd>${escape(a.last_changed_at?date(a.last_changed_at,true):'尚无变化记录')}</dd><dt>SHA-256</dt><dd class="hash" title="${escape(hash)}">${hash?`${escape(hash.slice(0,24))}…`:'尚未下载文件'}</dd></dl>${href?`<div class="source-links"><a href="${escape(href)}" target="_blank" rel="noopener noreferrer">打开官方文件</a></div>`:''}</article>`;
+  }).join(''):'<div class="empty"><strong>暂无已跟踪文件</strong>首次检查会从配置的官方页面定位资源。</div>';
+  text('history-count',checks.length?`显示最近 ${Math.min(checks.length,30)} 次`:'暂无记录');
+  $('checks').innerHTML=checks.length?checks.slice(0,30).map(c=>`<tr><td><time>${escape(date(c.started_at))}</time></td><td><span class="check-tag ${['changed','unchanged','partial','error','baseline'].includes(c.status)?c.status:''}">${escape(statusNames[c.status]||c.status||'未知')}</span></td><td>${escape(c.summary||'未提供检查摘要')}${c.error?`<div style="color:var(--red);font-size:11px">${escape(typeof c.error==='string'?c.error:JSON.stringify(c.error))}</div>`:''}</td></tr>`).join(''):'<tr><td colspan="3" class="empty">首次检查完成后，这里会保留运行时间、结果和错误信息。</td></tr>';
+ }
+ $('reload').addEventListener('click',()=>load());
+ $('check').addEventListener('click',async()=>{
+  $('check').disabled=true;$('check').textContent='正在提交检查';
+  try{await api('/api/check',{method:'POST',headers:{'X-DPP-Watch':'local'}});toast('检查已开始，完成后会显示结果。');await load(true);}
+  catch(error){toast(error?.message||'未能启动检查');if(state)render();}
+ });
+ document.querySelector('.tabs').addEventListener('click',(event)=>{const button=event.target.closest('[data-filter]');if(button){filter=button.dataset.filter;renderEvents();}});
+ $('events').addEventListener('toggle',event=>{const detail=event.target;if(detail.matches('details[data-event]')){if(detail.open)expanded.add(detail.dataset.event);else expanded.delete(detail.dataset.event);}},true);
+ $('events').addEventListener('click',async event=>{
+  const button=event.target.closest('[data-review]');if(!button)return;
+  button.disabled=true;
+  try{await api(`/api/events/${encodeURIComponent(button.dataset.id)}`,{method:'POST',headers:{'Content-Type':'application/json','X-DPP-Watch':'local'},body:JSON.stringify({review_status:button.dataset.review})});toast(`已${button.dataset.review==='pending'?'恢复为待确认':button.dataset.review==='reviewed'?'标为已确认':'忽略此条记录'}`);await load(true);}
+  catch(error){toast(error?.message||'状态修改未完成');button.disabled=false;}
+ });
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){clearTimeout(poll);poll=null;pollNeeded=false;}else load(true);});
+ window.addEventListener('focus',()=>{if(!document.hidden)load(true);});
+ load();
+})();
+</script>
+</body>
+</html>
