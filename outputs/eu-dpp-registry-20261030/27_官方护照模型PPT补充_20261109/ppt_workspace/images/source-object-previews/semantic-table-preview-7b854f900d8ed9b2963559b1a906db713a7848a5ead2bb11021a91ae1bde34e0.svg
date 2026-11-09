@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="shape-12" data-pptx-object="graphic-frame" data-pptx-frame="61.85 124.16 1156.3 530.05" data-pptx-import-source="pptx" data-pptx-replace-with="table" data-pptx-native-authority="json" data-pptx-semantic-object="table">
+<rect x="61.85" y="124.16" width="184.35" height="36.98" fill="#4E95D9" />
+<rect x="246.2" y="124.16" width="73.53" height="36.98" fill="#4E95D9" />
+<rect x="319.73" y="124.16" width="898.42" height="36.98" fill="#4E95D9" />
+<rect x="61.85" y="161.14" width="184.35" height="48.21" fill="none" />
+<rect x="246.2" y="161.14" width="73.53" height="48.21" fill="none" />
+<rect x="319.73" y="161.14" width="898.42" height="48.21" fill="none" />
+<rect x="61.85" y="209.35" width="184.35" height="65.55" fill="none" />
+<rect x="246.2" y="209.35" width="73.53" height="65.55" fill="none" />
+<rect x="319.73" y="209.35" width="898.42" height="65.55" fill="none" />
+<rect x="61.85" y="274.9" width="184.35" height="59.93" fill="none" />
+<rect x="246.2" y="274.9" width="73.53" height="59.93" fill="none" />
+<rect x="319.73" y="274.9" width="898.42" height="59.93" fill="none" />
+<rect x="61.85" y="334.82" width="184.35" height="99.11" fill="none" />
+<rect x="246.2" y="334.82" width="73.53" height="99.11" fill="none" />
+<rect x="319.73" y="334.82" width="898.42" height="99.11" fill="none" />
+<rect x="61.85" y="433.93" width="184.35" height="110.14" fill="none" />
+<rect x="246.2" y="433.93" width="73.53" height="110.14" fill="none" />
+<rect x="319.73" y="433.93" width="898.42" height="110.14" fill="none" />
+<rect x="61.85" y="544.07" width="184.35" height="110.14" fill="none" />
+<rect x="246.2" y="544.07" width="73.53" height="110.14" fill="none" />
+<rect x="319.73" y="544.07" width="898.42" height="110.14" fill="none" />
+<text x="154.02" y="146.29312336" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">变化类别</text>
+<text x="282.96" y="146.29312336" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">项数</text>
+<text x="768.94" y="146.29312336" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">具体数据项</text>
+<text x="71.45" y="181.93753149" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">新增数据项</text>
+<text x="282.96" y="181.93753149" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1">14</text>
+<text x="329.33" y="181.93753149" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>参考标准</tspan><tspan>/</tspan><tspan>内容规范、废电池预防和管理信息、分类收集点信息、回收接收点信息、再使用准备设施信息、梯次利用准备设施</tspan><tspan x="329.33" dy="19.2">信息、废电池处理设施信息、废电池处理安全说明、额定容量、功率、往返能效、内阻、参考条件下预期循环寿命、空闲状</tspan><tspan x="329.33" dy="19.2">态温度范围测试</tspan></text>
+<text x="71.45" y="230.14954714" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">填写要求调整项</text>
+<text x="282.96" y="230.14954714" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1">19</text>
+<text x="329.33" y="230.14954714" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#E97132" data-pptx-text-baseline="metrics-v1"><tspan>经济运营商信息、制造商信息、生产地点、标识说明、检测报告、正极、负极、电极液组成、有害物质信息、拆卸指南、终</tspan><tspan x="329.33" dy="19.2">端用户预防电池报废指南、终端用户分类回收指南、荷电状态、温度信息、最低电压、最高电压、标称电压、允许最大电池</tspan><tspan x="329.33" dy="19.2">功率、预期使用寿命（年）、电池护照状态、质保期</tspan></text>
+<text x="71.45" y="295.6973024" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">关于是否必填要求的变更项</text>
+<text x="282.96" y="295.6973024" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1">9</text>
+<text x="329.33" y="295.6973024" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>剩余容量、剩余功率、事故信息、经济运营商信息、荷电状态、温度信息、质保期、</tspan><tspan>当前完全循环次数</tspan><tspan>、</tspan><tspan>循环寿命测试放电C率 </tspan></text>
+<text x="71.45" y="355.62477235" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">数据拆分及合并</text>
+<text x="282.96" y="355.62477235" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1">4</text>
+<text x="329.33" y="355.62477235" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>零部件编号</tspan><tspan>、</tspan><tspan>备件来源联系方式</tspan><tspan>→</tspan><tspan>零部件编号及备件来源联系方式</tspan></text>
+<text x="329.33" y="374.82477235" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>当前完全循环次数→</tspan><tspan>充电循环次数</tspan><tspan>、</tspan><tspan>放</tspan><tspan>电循环次数</tspan></text>
+<text x="329.33" y="394.02477235" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>循环寿命测试C率 </tspan><tspan>→</tspan><tspan>循环寿命测试充电C率</tspan><tspan>、</tspan><tspan>循环寿命测试</tspan><tspan>放</tspan><tspan>电C率 </tspan></text>
+<text x="71.45" y="454.73119497" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>27/2/18</tspan><tspan>暂不生效数据项</tspan></text>
+<text x="282.96" y="454.73119497" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1">17</text>
+<text x="329.33" y="454.73119497" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>碳足迹标签、每功能单元电池碳足迹、原材料获取与预处理阶段碳足迹、核心生产阶段碳足迹、分销阶段碳足迹、退役与回</tspan><tspan x="329.33" dy="19.2">收阶段碳足迹、碳足迹表现等级、碳足迹研究、电池碳足迹、尽职调查报告信息、再循环镍含量（消费前）、再循环镍含量</tspan><tspan x="329.33" dy="19.2">（消费后）、再循环钴含量（消费前）、再循环钴含量（消费后）、再循环锂含量（消费前）、再循环锂含量（消费后）、</tspan><tspan x="329.33" dy="19.2">再循环铅含量</tspan></text>
+<text x="71.45" y="564.87294657" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">删除数据项</text>
+<text x="282.96" y="564.87294657" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1">13</text>
+<text x="329.33" y="564.87294657" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>经济运营商唯一标识符、工厂唯一标识符、制造商唯一标识符、投入使用日期、尽职调查报告信息、第三方供应链保证、供</tspan><tspan x="329.33" dy="19.2">应链指数、废旧电池回收利用指南、认证可用电量、剩余可用电量、初始自放电率、当前自放电率、深度放电事件次数、过</tspan><tspan x="329.33" dy="19.2">量充电次数</tspan></text>
+<line x1="61.85" y1="124.16" x2="246.2" y2="124.16" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="124.16" x2="246.2" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="161.14" x2="246.2" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="124.16" x2="61.85" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="124.16" x2="319.73" y2="124.16" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="124.16" x2="319.73" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="161.14" x2="319.73" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="124.16" x2="246.2" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="124.16" x2="1218.15" y2="124.16" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="1218.15" y1="124.16" x2="1218.15" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="161.14" x2="1218.15" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="124.16" x2="319.73" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="161.14" x2="246.2" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="161.14" x2="246.2" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="209.35" x2="246.2" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="161.14" x2="61.85" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="161.14" x2="319.73" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="161.14" x2="319.73" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="209.35" x2="319.73" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="161.14" x2="246.2" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="161.14" x2="1218.15" y2="161.14" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="1218.15" y1="161.14" x2="1218.15" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="209.35" x2="1218.15" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="161.14" x2="319.73" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="209.35" x2="246.2" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="209.35" x2="246.2" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="274.9" x2="246.2" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="209.35" x2="61.85" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="209.35" x2="319.73" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="209.35" x2="319.73" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="274.9" x2="319.73" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="209.35" x2="246.2" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="209.35" x2="1218.15" y2="209.35" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="1218.15" y1="209.35" x2="1218.15" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="274.9" x2="1218.15" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="209.35" x2="319.73" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="274.9" x2="246.2" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="274.9" x2="246.2" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="334.82" x2="246.2" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="274.9" x2="61.85" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="274.9" x2="319.73" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="274.9" x2="319.73" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="334.82" x2="319.73" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="274.9" x2="246.2" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="274.9" x2="1218.15" y2="274.9" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="1218.15" y1="274.9" x2="1218.15" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="334.82" x2="1218.15" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="274.9" x2="319.73" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="334.82" x2="246.2" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="334.82" x2="246.2" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="433.93" x2="246.2" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="334.82" x2="61.85" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="334.82" x2="319.73" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="334.82" x2="319.73" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="433.93" x2="319.73" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="334.82" x2="246.2" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="334.82" x2="1218.15" y2="334.82" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="1218.15" y1="334.82" x2="1218.15" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="433.93" x2="1218.15" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="334.82" x2="319.73" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="433.93" x2="246.2" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="433.93" x2="246.2" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="544.07" x2="246.2" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="433.93" x2="61.85" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="433.93" x2="319.73" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="433.93" x2="319.73" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="544.07" x2="319.73" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="433.93" x2="246.2" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="433.93" x2="1218.15" y2="433.93" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="1218.15" y1="433.93" x2="1218.15" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="544.07" x2="1218.15" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="433.93" x2="319.73" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="544.07" x2="246.2" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="544.07" x2="246.2" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="654.21" x2="246.2" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="61.85" y1="544.07" x2="61.85" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="544.07" x2="319.73" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="544.07" x2="319.73" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="654.21" x2="319.73" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="246.2" y1="544.07" x2="246.2" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="544.07" x2="1218.15" y2="544.07" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="1218.15" y1="544.07" x2="1218.15" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="654.21" x2="1218.15" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+<line x1="319.73" y1="544.07" x2="319.73" y2="654.21" stroke-width="1.33333" stroke-linecap="butt" stroke="#000000" stroke-linejoin="round" />
+</g>
+</svg>

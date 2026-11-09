@@ -1,0 +1,217 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "@何凯(何凯) @明亮(明宣帆)  可照着做的注册和认证指南，10分钟即可注册成功",
+            "createTime": "2026-11-07 15:15:52",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "明宣帆"
+                ]
+              }
+            ],
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgxRY8GMEhFX4fEqo5jg6u4w==",
+            "quotedMessage": {
+              "content": "[文件] EU注册认证与接口调试指南-V1.2.docx fileId: 1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE 注意：如需下载使用dws drive download命令下载",
+              "createTime": "2026-11-07 15:13:59",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgm+aMMUSAIAygLix4I1Zm0Q==",
+              "resources": [
+                {
+                  "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                  "resourceId": "1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE",
+                  "resourceIdType": "fileId",
+                  "resourceType": "file",
+                  "url": "https://alidocs.dingtalk.com/i/nodes/1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE"
+                }
+              ],
+              "sendType": "user",
+              "sender": "刘勇辉",
+              "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "[文件] EU注册认证与接口调试指南-V1.2.docx fileId: 1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-07 15:13:59",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgm+aMMUSAIAygLix4I1Zm0Q==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE"
+              }
+            ],
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@明亮(明宣帆) @何凯(何凯)   \n  \n1106 进度 跟踪，今天找星恒授权了一次，实现了【欧盟生产环境】的身份认证 Organisation Verification 和 注册验证 \tDPP Registration  \n效果和 ACC测试环境 一致[图片消息](mediaId=@lQLPJx5jqlkVe2XNBb3NCfewvFFbsG_R0HAKvfHMT7alAA)",
+            "createTime": "2026-11-06 22:41:22",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "明宣帆"
+                ]
+              }
+            ],
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgF3HXEYpAJ7kwiG6ytg/IRg==",
+            "quotedMessage": {
+              "content": "[文件] 复创电池数字护照项目上线与欧盟体系对接成果报告-V1.3.docx fileId: PwkYGxZV33LwmA0ghr2j23LOVAgozOKL 注意：如需下载使用dws drive download命令下载",
+              "createTime": "2026-11-06 22:37:23",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgWXSpU9kfahj1ZXWbpQiaHw==",
+              "resources": [
+                {
+                  "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                  "resourceId": "PwkYGxZV33LwmA0ghr2j23LOVAgozOKL",
+                  "resourceIdType": "fileId",
+                  "resourceType": "file",
+                  "url": "https://alidocs.dingtalk.com/i/nodes/PwkYGxZV33LwmA0ghr2j23LOVAgozOKL"
+                }
+              ],
+              "sendType": "user",
+              "sender": "刘勇辉",
+              "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@潘鹏(潘鹏) 对于HPTTS，可以找到官方证据，官方发布的注册接口，openapi-dpp-registry-public.yml，  \n明确说明了，HTTPS URL identifying the DPP candidate. Registry resolves and   \n      validates it through the controlled HTTPS retrieval policy.[图片消息](mediaId=@lQLPJwFT_-GEv2XMrc0DZbA9rp6H-F2kmgq9Sj2hxxIA)",
+            "createTime": "2026-11-06 10:28:49",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgUSWonz0qYf/KtEBwdU0eSw==",
+            "sendType": "user",
+            "sender": "宁蒙昌",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVTaoa08aGiiQXsUQj2ziPdoJW"
+          },
+          {
+            "content": "不合法的码已经打了，这改不了\n如：https://dpp.xingheng.com.cn:30569/passport/#/portal?passcode=XHLMT.BFAJBACA4E053AHL4U0599\n\n但注册时使用 合法的格式去注册，如 https://dpp.xingheng.com.cn:30570/portal?.S=BFAJBACA4E053AHL4U0599\n\n扫码时 从不合法的码 跳转到 合法的码的地址\n\n这个模式技术上是可以走得通的，就是注册和打码的不是同一个[笑哭]@明亮(明宣帆) \n\n",
+            "createTime": "2026-11-04 22:14:28",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msg2i0jHIQyLix46yXif+42Wg==",
+            "quotedMessage": {
+              "content": "@刘勇辉(刘勇辉) 勇辉，我们告知我们的客户：1、我们不同端口的使用443去注册；2、新得端口都调整到443端口，旧的老码重定向到443端口；这样，扫也能扫出来，注册也注册了，后续我们就采用新的端口了；这样行不行？",
+              "createTime": "2026-11-04 22:11:41",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgZMXN7Xh2FdbFpGAKG8JMOQ==",
+              "sendType": "user",
+              "sender": "明宣帆",
+              "senderOpenDingTalkId": "DUJwiSXaZPWVQLcp7IZEShScRQf8MtQHJR"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "虽然有点扯，但是总比不注册强",
+            "createTime": "2026-11-04 22:13:20",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msg6BeDXOk8g25ncsyfK7Jcow==",
+            "sendType": "user",
+            "sender": "何凯",
+            "senderOpenDingTalkId": "DxAg03iikuGlhzUl700mEiSwViPIr6uJGaRN"
+          },
+          {
+            "content": "我的想法也是这样，注册和打码的不是同一个。",
+            "createTime": "2026-11-04 22:13:08",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msg3EY+47MgzQtJpgjm1GLjCw==",
+            "sendType": "user",
+            "sender": "何凯",
+            "senderOpenDingTalkId": "DxAg03iikuGlhzUl700mEiSwViPIr6uJGaRN"
+          },
+          {
+            "content": "@刘勇辉(刘勇辉) 勇辉，我们告知我们的客户：1、我们不同端口的使用443去注册；2、新得端口都调整到443端口，旧的老码重定向到443端口；这样，扫也能扫出来，注册也注册了，后续我们就采用新的端口了；这样行不行？",
+            "createTime": "2026-11-04 22:11:41",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgZMXN7Xh2FdbFpGAKG8JMOQ==",
+            "quotedMessage": {
+              "content": "@刘勇辉 重定向到默认的443也不行吗？",
+              "createTime": "2026-11-04 22:02:31",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgiU620OrvzOgmFwA/F/YWNA==",
+              "sendType": "user",
+              "sender": "潘鹏",
+              "senderOpenDingTalkId": "DjRZmZDr6iiNvqWZezfvnYX8UQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "明宣帆",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVQLcp7IZEShScRQf8MtQHJR"
+          },
+          {
+            "content": "@潘鹏(潘鹏) 注册的时候会校验，码已经打了，改不了",
+            "createTime": "2026-11-04 22:02:52",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgXIvpU9gSe1PHd24+DZ8HRg==",
+            "quotedMessage": {
+              "content": "@刘勇辉 重定向到默认的443也不行吗？",
+              "createTime": "2026-11-04 22:02:31",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgiU620OrvzOgmFwA/F/YWNA==",
+              "sendType": "user",
+              "sender": "潘鹏",
+              "senderOpenDingTalkId": "DjRZmZDr6iiNvqWZezfvnYX8UQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "1104欧盟注册进展说明\n我更新了「1104欧盟注册进展说明」\n刘勇辉\n我更新了「1104欧盟注册进展说明」\n立即查看\n立即查看\nView Now\n今すぐ表示\n钉钉文档\n釘釘文檔\nDocs\nDingTalkドキュメント\n![image](https://img.alicdn.com/imgextra/i4/O1CN016ONypJoATGD0C5Gi_!!6000000006787-2-tps-96-96.png)\n![image](https://img.alicdn.com/imgextra/i4/O1CN016ONypJoATGD0C5Gi_!!6000000006787-2-tps-96-96.png)\n[https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJlqYD7OXUjvzgM5y8dqbropQ?corpId=dinge9d68c682320ae25acaaa37764f94726&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im&editNotify=true&cid=74976150519](https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJlqYD7OXUjvzgM5y8dqbropQ?corpId=dinge9d68c682320ae25acaaa37764f94726&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im&editNotify=true&cid=74976150519)\n[https://alidocs.dingtalk.com/h5/d?dt_editor_toolbar=true&biz_ver=10&docId=oLl9ZeJWeJ8Bynap&utm_medium=im_card&dontjump=true&utm_scene=person_space&mainsiteOrigin=mainsite&showCommentPanel=false&from=dingnote&dd_user_keyboard=false&dd_full_screen=true&utm_source=im&workspaceId=o5WXM825w5LJxzwO&docKey=oLl9ZeJWeJ8Bynap&dentryKey=dvD3wmNbOsxOQP8l&type=d&editNotify=true&cid=74976150519#/edit?dentryKey=dvD3wmNbOsxOQP8l](https://alidocs.dingtalk.com/h5/d?dt_editor_toolbar=true&biz_ver=10&docId=oLl9ZeJWeJ8Bynap&utm_medium=im_card&dontjump=true&utm_scene=person_space&mainsiteOrigin=mainsite&showCommentPanel=false&from=dingnote&dd_user_keyboard=false&dd_full_screen=true&utm_source=im&workspaceId=o5WXM825w5LJxzwO&docKey=oLl9ZeJWeJ8Bynap&dentryKey=dvD3wmNbOsxOQP8l&type=d&editNotify=true&cid=74976150519#/edit?dentryKey=dvD3wmNbOsxOQP8l)",
+            "createTime": "2026-11-04 14:13:17",
+            "flowStatus": "null",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgPCDjrGixKPS7nbACETfL4A==",
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "1104欧盟注册进展说明\n创建者：刘勇辉\n![image](https://img.alicdn.com/imgextra/i4/O1CN016ONypJoATGD0C5Gi_!!6000000006787-2-tps-96-96.png)\n[https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJlqYD7OXUjvzgM5y8dqbropQ?corpId=dinge9d68c682320ae25acaaa37764f94726&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im](https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJlqYD7OXUjvzgM5y8dqbropQ?corpId=dinge9d68c682320ae25acaaa37764f94726&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im)",
+            "createTime": "2026-11-04 14:12:37",
+            "flowStatus": "null",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msg4/238kGlWLIEnawzbl06/g==",
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "猜测未来会变成每个EO是一个admin + n个 operator 账号\noperator账号可以丢给不同电池厂，以该EO名义来注册。\n\n类似架构参考api key+secret，1个场景1个api key",
+            "createTime": "2026-11-04 13:57:59",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msg5+8hQMsv8atAtXdamjxvJQ==",
+            "sendType": "user",
+            "sender": "何凯",
+            "senderOpenDingTalkId": "DxAg03iikuGlhzUl700mEiSwViPIr6uJGaRN"
+          }
+        ],
+        "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+        "singleChat": false,
+        "title": "DPP注册中心攻坚"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "JAMfvwlCusgHfFhL3MwEpz8hMGSGfX/DUuoNO9Ak2lbzyNNj4uUY4O/P15QKgGMeCaemCX3dQ8Gej/lqZqs0wwIjN8WGQWesVp8yOoRglYocnWFinueQbVjrqBz4mF5Gw846vcG3nRrjfgsYoelV4HxMIGw54/hMMuX40DyUUJwchqT46IEcCxTycOGVUWbVnC3BB063PnwRAdYZYspxjGx+hO6qNWmze7czdCRKtiwbTBQu0v35erszI69Lcovs"
+  },
+  "success": true
+}

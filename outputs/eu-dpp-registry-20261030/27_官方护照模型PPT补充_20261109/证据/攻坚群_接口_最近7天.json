@@ -1,0 +1,55 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "[文件] EU注册认证与接口调试指南-V1.2.docx fileId: 1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-07 15:13:59",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgm+aMMUSAIAygLix4I1Zm0Q==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE"
+              }
+            ],
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "具体接口文档：[图片消息](mediaId=@lQLPJxTyOooIe-XNAiHNA02wtYQAf1Sr2bgKvUpUs0nYAA)",
+            "createTime": "2026-11-06 10:29:12",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msguek7Qztb+K9KAX/v92nwDA==",
+            "sendType": "user",
+            "sender": "宁蒙昌",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVTaoa08aGiiQXsUQj2ziPdoJW"
+          },
+          {
+            "content": "@潘鹏(潘鹏) 对于HPTTS，可以找到官方证据，官方发布的注册接口，openapi-dpp-registry-public.yml，  \n明确说明了，HTTPS URL identifying the DPP candidate. Registry resolves and   \n      validates it through the controlled HTTPS retrieval policy.[图片消息](mediaId=@lQLPJwFT_-GEv2XMrc0DZbA9rp6H-F2kmgq9Sj2hxxIA)",
+            "createTime": "2026-11-06 10:28:49",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgUSWonz0qYf/KtEBwdU0eSw==",
+            "sendType": "user",
+            "sender": "宁蒙昌",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVTaoa08aGiiQXsUQj2ziPdoJW"
+          }
+        ],
+        "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+        "singleChat": false,
+        "title": "DPP注册中心攻坚"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "gti2hB18lKkaUVE8S1JSxpylrZLji6R0qwgQtdKA8N9tHaXGih5Oo8bXZ4BtJ9Euj+C2WVHQhiXERzFS+aAv1cZXr/9T9/kCMUzQH2SXQeLHFrZ1EP9eXbb8KziNYin+7ROMWbCqdvjk6kqvfGmBXCeE9MQuIXCWVrk2LKDkJdImyinQfiZkChIZRYVwqwbMLOwkZNQSOlNck8auKGr3i5MgECZu3OB8q+dRhQ/FMcAfgzczkiYBurSMShnaHnZ3"
+  },
+  "success": true
+}

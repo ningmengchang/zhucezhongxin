@@ -1,0 +1,108 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "[文件] 护照模型V3.3.2 VS官方语义库1.0.0 - 上汽.pptx fileId: 4lgGw3P8vzPEOYExHn0B6YEo85daZ90D 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-09 09:59:37",
+            "openConversationId": "cidBZD2tqeIY8tBH5wcIQ49Ew==",
+            "openMessageId": "msgKFs0kZfGMk+jg+F31lroAg==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "4lgGw3P8vzPEOYExHn0B6YEo85daZ90D",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/4lgGw3P8vzPEOYExHn0B6YEo85daZ90D"
+              }
+            ],
+            "sendType": "user",
+            "sender": "孔瑞霞",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVQz4Fo3T33iPhRqDzN1XiSB9f"
+          },
+          {
+            "content": "@孔瑞霞 上周六，上汽任务项的 ppt 发我一下，我加一页",
+            "createTime": "2026-11-09 09:35:19",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "孔瑞霞"
+                ]
+              }
+            ],
+            "openConversationId": "cidBZD2tqeIY8tBH5wcIQ49Ew==",
+            "openMessageId": "msg5KFL5cEnYMMO57Hk9DBsEg==",
+            "sendType": "user",
+            "sender": "宁蒙昌",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVTaoa08aGiiQXsUQj2ziPdoJW"
+          },
+          {
+            "content": "[文件] 小容量电池信息管理项目指导手册v0.1(1).pptx fileId: NkDwLng8ZOepA6paIp6eedalWKMEvZBY 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-07 18:27:17",
+            "openConversationId": "cidBZD2tqeIY8tBH5wcIQ49Ew==",
+            "openMessageId": "msgBocHdR1rJ8gyw96R6CWMyA==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "NkDwLng8ZOepA6paIp6eedalWKMEvZBY",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/NkDwLng8ZOepA6paIp6eedalWKMEvZBY"
+              }
+            ],
+            "sendType": "user",
+            "sender": "何凯",
+            "senderOpenDingTalkId": "DxAg03iikuGlhzUl700mEiSwViPIr6uJGaRN"
+          },
+          {
+            "content": "[文件] 小容量电池 产品内部宣贯v0.1-261107.pptx fileId: Amq4vjg895nK4OKjSY4207Y183kdP0wQ 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-07 17:52:57",
+            "openConversationId": "cidBZD2tqeIY8tBH5wcIQ49Ew==",
+            "openMessageId": "msg5j7FgjXfk6R3X4H22EHJNw==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "Amq4vjg895nK4OKjSY4207Y183kdP0wQ",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/Amq4vjg895nK4OKjSY4207Y183kdP0wQ"
+              }
+            ],
+            "sendType": "user",
+            "sender": "孔瑞霞",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVQz4Fo3T33iPhRqDzN1XiSB9f"
+          },
+          {
+            "content": "[文件] 小容量电池信息管理项目指导手册v0.1.pptx fileId: nYMoO1rWx62EwPErUR5dpgzDJ47Z3je9 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-07 17:52:57",
+            "openConversationId": "cidBZD2tqeIY8tBH5wcIQ49Ew==",
+            "openMessageId": "msgVce+VaCoeOuVnOSftuL8bA==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "nYMoO1rWx62EwPErUR5dpgzDJ47Z3je9",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/nYMoO1rWx62EwPErUR5dpgzDJ47Z3je9"
+              }
+            ],
+            "sendType": "user",
+            "sender": "孔瑞霞",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVQz4Fo3T33iPhRqDzN1XiSB9f"
+          }
+        ],
+        "openConversationId": "cidBZD2tqeIY8tBH5wcIQ49Ew==",
+        "singleChat": false,
+        "title": "Futris部门群"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "qBaQL4pvTrMopc+UYFaPruaWcPDYl43lcWvZPb/tNMa4Q38LnGAILVaHB9lcLBjSJ41/2uzEi3SMe3nla4LaeHAVZVAJUZanorT4UTmbF76yNC5+LxSQV5Wi1naL5ECCBI1mAhtw4vwGBcoXBNnJ80L2dD+H4jsE10ZKs9cn6HPzHE6LVAcH4nY9m3EDDCAuTvCfy9IVWV3hzWgB0GfArC7m3Eht4lmECpsTz+tnRJ02RLlD9iVLDxwjyg7gNcS8"
+  },
+  "success": true
+}

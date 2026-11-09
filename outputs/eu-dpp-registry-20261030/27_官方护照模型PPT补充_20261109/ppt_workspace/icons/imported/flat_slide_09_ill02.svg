@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" data-icon-style="preserve-color" data-pptx-asset-role="decoration" viewBox="0 0 1280 720" width="1280" height="720"><g stroke="#000008" stroke-width="0.66667"><line x1="35.61" y1="85.04" x2="95.56" y2="85.04" stroke-linecap="butt" />
+<line x1="95.56" y1="85.04" x2="95.56" y2="147.41" stroke-linecap="butt" />
+<line x1="35.61" y1="147.41" x2="95.56" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="85.04" x2="35.61" y2="147.41" stroke-linecap="butt" />
+<line x1="95.56" y1="85.04" x2="777.29" y2="85.04" stroke-linecap="butt" />
+<line x1="777.29" y1="85.04" x2="777.29" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="147.41" x2="777.29" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="85.04" x2="95.56" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="85.04" x2="1049.81" y2="85.04" stroke-linecap="butt" />
+<line x1="1049.81" y1="85.04" x2="1049.81" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="147.41" x2="1049.81" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="85.04" x2="777.29" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="85.04" x2="1231.48" y2="85.04" stroke-linecap="butt" />
+<line x1="1231.48" y1="85.04" x2="1231.48" y2="147.41" stroke-linecap="butt" />
+<line x1="1049.81" y1="147.41" x2="1231.48" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="85.04" x2="1049.81" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="147.41" x2="95.56" y2="147.41" stroke-linecap="butt" />
+<line x1="95.56" y1="147.41" x2="95.56" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="202.97" x2="95.56" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="147.41" x2="35.61" y2="202.97" stroke-linecap="butt" />
+<line x1="95.56" y1="147.41" x2="777.29" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="147.41" x2="777.29" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="202.97" x2="777.29" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="147.41" x2="95.56" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="147.41" x2="1049.81" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="147.41" x2="1049.81" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="202.97" x2="1049.81" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="147.41" x2="777.29" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="147.41" x2="1231.48" y2="147.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="147.41" x2="1231.48" y2="202.97" stroke-linecap="butt" />
+<line x1="1049.81" y1="202.97" x2="1231.48" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="147.41" x2="1049.81" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="202.97" x2="95.56" y2="202.97" stroke-linecap="butt" />
+<line x1="95.56" y1="202.97" x2="95.56" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="258.52" x2="95.56" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="202.97" x2="35.61" y2="258.52" stroke-linecap="butt" />
+<line x1="95.56" y1="202.97" x2="777.29" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="202.97" x2="777.29" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="258.52" x2="777.29" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="202.97" x2="95.56" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="202.97" x2="1049.81" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="202.97" x2="1049.81" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="258.52" x2="1049.81" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="202.97" x2="777.29" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="202.97" x2="1231.48" y2="202.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="202.97" x2="1231.48" y2="258.52" stroke-linecap="butt" />
+<line x1="1049.81" y1="258.52" x2="1231.48" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="202.97" x2="1049.81" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="258.52" x2="95.56" y2="258.52" stroke-linecap="butt" />
+<line x1="95.56" y1="258.52" x2="95.56" y2="314.08" stroke-linecap="butt" />
+<line x1="35.61" y1="314.08" x2="95.56" y2="314.08" stroke-linecap="butt" />
+<line x1="35.61" y1="258.52" x2="35.61" y2="314.08" stroke-linecap="butt" />
+<line x1="95.56" y1="258.52" x2="777.29" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="258.52" x2="777.29" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="314.08" x2="777.29" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="258.52" x2="95.56" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="258.52" x2="1049.81" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="258.52" x2="1049.81" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="314.08" x2="1049.81" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="258.52" x2="777.29" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="258.52" x2="1231.48" y2="258.52" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="258.52" x2="1231.48" y2="314.08" stroke-linecap="butt" />
+<line x1="1049.81" y1="314.08" x2="1231.48" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="258.52" x2="1049.81" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="314.08" x2="95.56" y2="314.08" stroke-linecap="butt" />
+<line x1="95.56" y1="314.08" x2="95.56" y2="369.63" stroke-linecap="butt" />
+<line x1="35.61" y1="369.63" x2="95.56" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="314.08" x2="35.61" y2="369.63" stroke-linecap="butt" />
+<line x1="95.56" y1="314.08" x2="777.29" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="314.08" x2="777.29" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="369.63" x2="777.29" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="314.08" x2="95.56" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="314.08" x2="1049.81" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="314.08" x2="1049.81" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="369.63" x2="1049.81" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="314.08" x2="777.29" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="314.08" x2="1231.48" y2="314.08" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="314.08" x2="1231.48" y2="369.63" stroke-linecap="butt" />
+<line x1="1049.81" y1="369.63" x2="1231.48" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="314.08" x2="1049.81" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="369.63" x2="95.56" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="369.63" x2="95.56" y2="425.19" stroke-linecap="butt" />
+<line x1="35.61" y1="425.19" x2="95.56" y2="425.19" stroke-linecap="butt" />
+<line x1="35.61" y1="369.63" x2="35.61" y2="425.19" stroke-linecap="butt" />
+<line x1="95.56" y1="369.63" x2="777.29" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="369.63" x2="777.29" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="425.19" x2="777.29" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="369.63" x2="95.56" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="369.63" x2="1049.81" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="369.63" x2="1049.81" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="425.19" x2="1049.81" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="369.63" x2="777.29" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="369.63" x2="1231.48" y2="369.63" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="369.63" x2="1231.48" y2="425.19" stroke-linecap="butt" />
+<line x1="1049.81" y1="425.19" x2="1231.48" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="369.63" x2="1049.81" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="425.19" x2="95.56" y2="425.19" stroke-linecap="butt" />
+<line x1="95.56" y1="425.19" x2="95.56" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="480.75" x2="95.56" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="425.19" x2="35.61" y2="480.75" stroke-linecap="butt" />
+<line x1="95.56" y1="425.19" x2="777.29" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="425.19" x2="777.29" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="480.75" x2="777.29" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="425.19" x2="95.56" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="425.19" x2="1049.81" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="425.19" x2="1049.81" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="480.75" x2="1049.81" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="425.19" x2="777.29" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="425.19" x2="1231.48" y2="425.19" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="425.19" x2="1231.48" y2="480.75" stroke-linecap="butt" />
+<line x1="1049.81" y1="480.75" x2="1231.48" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="425.19" x2="1049.81" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="480.75" x2="95.56" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="480.75" x2="95.56" y2="536.3" stroke-linecap="butt" />
+<line x1="35.61" y1="536.3" x2="95.56" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="480.75" x2="35.61" y2="536.3" stroke-linecap="butt" />
+<line x1="95.56" y1="480.75" x2="777.29" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="480.75" x2="777.29" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="536.3" x2="777.29" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="480.75" x2="95.56" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="480.75" x2="1049.81" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="480.75" x2="1049.81" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="536.3" x2="1049.81" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="480.75" x2="777.29" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="480.75" x2="1231.48" y2="480.75" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="480.75" x2="1231.48" y2="536.3" stroke-linecap="butt" />
+<line x1="1049.81" y1="536.3" x2="1231.48" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="480.75" x2="1049.81" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="536.3" x2="95.56" y2="536.3" stroke-linecap="butt" />
+<line x1="95.56" y1="536.3" x2="95.56" y2="591.86" stroke-linecap="butt" />
+<line x1="35.61" y1="591.86" x2="95.56" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="536.3" x2="35.61" y2="591.86" stroke-linecap="butt" />
+<line x1="95.56" y1="536.3" x2="777.29" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="536.3" x2="777.29" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="591.86" x2="777.29" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="536.3" x2="95.56" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="536.3" x2="1049.81" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="536.3" x2="1049.81" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="591.86" x2="1049.81" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="536.3" x2="777.29" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="536.3" x2="1231.48" y2="536.3" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="536.3" x2="1231.48" y2="591.86" stroke-linecap="butt" />
+<line x1="1049.81" y1="591.86" x2="1231.48" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="536.3" x2="1049.81" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="591.86" x2="95.56" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="591.86" x2="95.56" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="647.41" x2="95.56" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="591.86" x2="35.61" y2="647.41" />
+<line x1="95.56" y1="591.86" x2="777.29" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="591.86" x2="777.29" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="647.41" x2="777.29" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="591.86" x2="95.56" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="591.86" x2="1049.81" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="591.86" x2="1049.81" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="647.41" x2="1049.81" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="591.86" x2="777.29" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="591.86" x2="1231.48" y2="591.86" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="591.86" x2="1231.48" y2="647.41" />
+<line x1="1049.81" y1="647.41" x2="1231.48" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="591.86" x2="1049.81" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="35.61" y1="647.41" x2="95.56" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="647.41" x2="95.56" y2="702.97" />
+<line x1="35.61" y1="702.97" x2="95.56" y2="702.97" />
+<line x1="35.61" y1="647.41" x2="35.61" y2="702.97" />
+<line x1="95.56" y1="647.41" x2="777.29" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="647.41" x2="777.29" y2="702.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="95.56" y1="702.97" x2="777.29" y2="702.97" />
+<line x1="95.56" y1="647.41" x2="95.56" y2="702.97" />
+<line x1="777.29" y1="647.41" x2="1049.81" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1049.81" y1="647.41" x2="1049.81" y2="702.97" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="777.29" y1="702.97" x2="1049.81" y2="702.97" />
+<line x1="777.29" y1="647.41" x2="777.29" y2="702.97" />
+<line x1="1049.81" y1="647.41" x2="1231.48" y2="647.41" stroke-linecap="butt" stroke-linejoin="round" />
+<line x1="1231.48" y1="647.41" x2="1231.48" y2="702.97" />
+<line x1="1049.81" y1="702.97" x2="1231.48" y2="702.97" />
+<line x1="1049.81" y1="647.41" x2="1049.81" y2="702.97" />
+</g></svg>

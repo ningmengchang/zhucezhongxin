@@ -1,0 +1,43 @@
+  Authoring round-trip materialized: 11 slide(s), 136 unchanged ref(s), 0 edited ref(s), 4 deleted ref(s)
+  Round-trip page plan: 11 output page(s) from 9 source slide(s)
+  Source slide passthrough: 9/11 slide(s) retain original XML and relationships
+  Animation config: outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/animations.json
+PPT Master - SVG to native DrawingML PPTX Tool
+==================================================
+  Project path: outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace
+  SVG directory: authoring-svg-flat
+  Output file: outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/exports/ppt_workspace_20261109_103301_native_charts_tables.pptx
+
+  Detected canvas format: PPT 16:9
+  Slide dimensions: 1280 x 720 px
+  SVG file count: 11
+  Mode: Native DrawingML shapes (directly editable)
+  Native table/chart objects: Chart/Table replacement enabled
+  PPTX structure: preserve
+  Image optimization: Enabled (preferred cap 2560 px, unchanged bytes preserved, JPEG q85 when re-encoded)
+
+  [Slide 1/11] slide_01.svg (Source slide passthrough)
+  [Slide 2/11] slide_02.svg (Source slide passthrough)
+  [Slide 3/11] slide_03.svg (Source slide passthrough)
+  [Slide 4/11] slide_04.svg (Source slide passthrough)
+  [Slide 5/11] slide_05.svg (Source slide passthrough)
+  [Slide 6/11] slide_06.svg (Source slide passthrough)
+  [Slide 7/11] slide_07.svg (Source slide passthrough)
+  [Slide 8/11] slide_08.svg (Source slide passthrough)
+  Lowered positional <tspan> using preserve text flow
+  Converted 6 elements, skipped 0
+  [Slide 9/11] official_registry_readiness.svg (Native)
+  Lowered positional <tspan> using preserve text flow
+  Converted 5 elements, skipped 0
+  [Slide 10/11] saic_preintegration_work.svg (Native)
+  [Slide 11/11] slide_09.svg (Source slide passthrough)
+
+[Done] Saved: outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/exports/ppt_workspace_20261109_103301_native_charts_tables.pptx
+  Speaker notes: 0 page(s)
+  Slides: 11; unselected Layout prototype carriers: 0
+  Round-trip export summary: output_pages=11 passthrough=0 cloned_passthrough=9 patched=0 rebuilt=2
+  [POSTFLIGHT] status=passed-with-warnings quality_gate=passed slides=11 warning_categories=1
+  [POSTFLIGHT][WARNING] unsafe_exported_font_faces=2
+  [PPTX] outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/exports/ppt_workspace_20261109_103301_native_charts_tables.pptx
+  [REPORT] outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/validation/ppt_workspace_20261109_103301_native_charts_tables.report.json
+Warning: --native-charts-and-tables replaces shape-based SVG fallbacks with PowerPoint Chart/Table objects. The native objects may normalize styling or omit SVG details that are not represented by marker metadata; use the default shape-based export when exact fallback artwork is required.

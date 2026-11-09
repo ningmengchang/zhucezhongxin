@@ -1,0 +1,46 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "现在发现官方三项校验：\nUPI格式校验，UPI 格式是否合法\nUPI响应解析校验，UPI是否可解析的（可达）\n语义库校验，官方语义库尚未启用\n\n\nThe UPI URL is invalid.\nThe UPI is not resolvable.\nSemantic validation failed due to its unavailability.",
+            "createTime": "2026-11-03 19:40:13",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgu0YPfswCGUtaOFsmIr1jPg==",
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "另外，看样子，他这个UPI要校验 语义库\n那这个 UPI 返回的不能是一个网页吧，而是一个 json、xml 这样的数据",
+            "createTime": "2026-11-03 19:19:21",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msg7c/8Ne88F1FiadxCdXl5vQ==",
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@所有人[图片消息](mediaId=@lQLPJwKdPIfKiuXNBHDNCq6w9gM2G9hF_ywKueWq5u_dAA)星恒授权成功了，已经提交EU审核  \n[https://dpp.xingheng.com.cn:30570/portal?passcode=XJK.0285E6959765%2FF3.BPM10.XBXJKHL21L36135260900100](https://dpp.xingheng.com.cn:30570/portal?passcode=XJK.0285E6959765%2FF3.BPM10.XBXJKHL21L36135260900100)[图片消息](mediaId=@lQLPKGgVrxZoG-XNB_LNCqywbIwzpO8eBfkKueWq5u_dBA)[图片消息](mediaId=@lQLPKdpzmNuYq-XNB_DNCq2wCiY3fyY4_dwKueWq5u_dAQ)现在已经实现了 EU  Digital Product Passport Registry 官方MOCK服务测试验证通过了 UPI 验证（SAAS服务UPI合法，语义库校验官方未开启）[图片消息](mediaId=@lQLPJv_OvFJrKuXNBmjNCrqwjyjV-tmYKHkKueWq5u_dAg)需要注意的是 星恒的 UPI 不合法：[图片消息](mediaId=@lQLPJxRgtb-rCuXNA-zNCq2wut_cxzd-bsUKueWq5u_dBQ)[图片消息](mediaId=@lQLPJxkIJeRS6uXNA_jNCr2wacrZ4FJZnkMKueWq5u_dAw)",
+            "createTime": "2026-11-03 19:13:58",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgbo33KevIJV91klfyPNfqGA==",
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          }
+        ],
+        "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+        "singleChat": false,
+        "title": "DPP注册中心攻坚"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "e+Q878Eip/7ztv8g0VASg8ElVuzC4+LCmPwDsFKfSfWu85Z4G+HwZO1fcqEgRavSTxPga39bO257FwltNz/LddK8ddMDy7E/XDo/wCsAoR2so0B5lUbNVVlQFab0h3HxLKqj+BwtX30GrIMYy0JB2njh85hUmaqJ4q11oLIDeLNce8sfc3rAzcZzNniSK5PMUyFIuksEK3YQfExScSsOsQXMjuBUv/E2zVFwekcKXsy1jcDRQa4tHHk9cE3Mw6ef"
+  },
+  "success": true
+}

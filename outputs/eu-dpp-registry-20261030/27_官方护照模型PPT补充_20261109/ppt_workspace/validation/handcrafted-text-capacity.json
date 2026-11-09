@@ -1,0 +1,296 @@
+[
+  {
+    "lines": [
+      "官方规范已发布，完整联调条件仍待确认"
+    ],
+    "size": 32,
+    "actual_width": 576.0,
+    "slot_width": 1230
+  },
+  {
+    "lines": [
+      "开发依据已具备，完整联调仍待确认。"
+    ],
+    "size": 22,
+    "actual_width": 374.0,
+    "slot_width": 1200
+  },
+  {
+    "lines": [
+      "已发布的开发依据｜2026.10.30"
+    ],
+    "size": 23,
+    "actual_width": 321.91,
+    "slot_width": 535
+  },
+  {
+    "lines": [
+      "接口文档与 OpenAPI"
+    ],
+    "size": 23,
+    "actual_width": 213.53,
+    "slot_width": 535
+  },
+  {
+    "lines": [
+      "认证与Token、注册提交、幂等重试，",
+      "以及任务状态和逐项结果查询。"
+    ],
+    "size": 21,
+    "actual_width": 353.38,
+    "slot_width": 535
+  },
+  {
+    "lines": [
+      "语义模型 1.0.0"
+    ],
+    "size": 23,
+    "actual_width": 148.23,
+    "slot_width": 535
+  },
+  {
+    "lines": [
+      "覆盖EV、LMT、IND的字段结构、类型、",
+      "必填、枚举及公开／受限访问视图。"
+    ],
+    "size": 21,
+    "actual_width": 374.28,
+    "slot_width": 535
+  },
+  {
+    "lines": [
+      "校验资源与测试样例"
+    ],
+    "size": 23,
+    "actual_width": 207.0,
+    "slot_width": 535
+  },
+  {
+    "lines": [
+      "JSON Schema、SHACL、JSON-LD，",
+      "可用于构建本地校验与回归用例。"
+    ],
+    "size": 21,
+    "actual_width": 353.89,
+    "slot_width": 535
+  },
+  {
+    "lines": [
+      "内部测试记录｜2026.11.06"
+    ],
+    "size": 23,
+    "actual_width": 275.91,
+    "slot_width": 572
+  },
+  {
+    "lines": [
+      "鉴权链路尚待完成验证"
+    ],
+    "size": 23,
+    "actual_width": 230.0,
+    "slot_width": 572
+  },
+  {
+    "lines": [
+      "Token地址GET探测返回404；",
+      "正式POST取Token待服务账号与凭据具备后验证。"
+    ],
+    "size": 20,
+    "actual_width": 447.52,
+    "slot_width": 572
+  },
+  {
+    "lines": [
+      "在线语义校验当次不可用"
+    ],
+    "size": 23,
+    "actual_width": 253.0,
+    "slot_width": 572
+  },
+  {
+    "lines": [
+      "正式环境：接收0条、拒绝1条；未完成登记。"
+    ],
+    "size": 16.5,
+    "actual_width": 321.75,
+    "slot_width": 572
+  },
+  {
+    "lines": [
+      "当前完整端到端联调尚未完成，具体可联调时间以官方后续通知为准。"
+    ],
+    "size": 22,
+    "actual_width": 682.0,
+    "slot_width": 1167
+  },
+  {
+    "lines": [
+      "来源：欧盟官方资源页（2026.10.30）；刘勇辉《成果报告V1.3》《注册认证指南V1.2》，2026.11.06测试。",
+      "官方资料：single-market-economy.ec.europa.eu/single-market/digital-product-passport/resources-documentation_en"
+    ],
+    "size": 12.5,
+    "actual_width": 661.53,
+    "slot_width": 1204
+  },
+  {
+    "lines": [
+      "上汽当前可推进：完善系统，完成联调前准备"
+    ],
+    "size": 32,
+    "actual_width": 640.0,
+    "slot_width": 1230
+  },
+  {
+    "lines": [
+      "以官方接口与语义规范为基线，先完成本地开发和验证，再进入欧盟端到端联调。"
+    ],
+    "size": 22,
+    "actual_width": 792.0,
+    "slot_width": 1200
+  },
+  {
+    "lines": [
+      "工作方向"
+    ],
+    "size": 22,
+    "actual_width": 88.0,
+    "slot_width": 170
+  },
+  {
+    "lines": [
+      "当前可开展工作"
+    ],
+    "size": 22,
+    "actual_width": 154.0,
+    "slot_width": 650
+  },
+  {
+    "lines": [
+      "准备成果"
+    ],
+    "size": 22,
+    "actual_width": 88.0,
+    "slot_width": 294
+  },
+  {
+    "lines": [
+      "模型与系统适配"
+    ],
+    "size": 20,
+    "actual_width": 140.0,
+    "slot_width": 170
+  },
+  {
+    "lines": [
+      "对齐字段、类型、必填、枚举、单位、多语言及权限；",
+      "完善录入、动态更新规则和业务数据接入。"
+    ],
+    "size": 20,
+    "actual_width": 480.0,
+    "slot_width": 650
+  },
+  {
+    "lines": [
+      "工程字段映射与模型；",
+      "上汽→护照平台接入接口"
+    ],
+    "size": 20,
+    "actual_width": 220.0,
+    "slot_width": 294
+  },
+  {
+    "lines": [
+      "欧盟接口开发"
+    ],
+    "size": 20,
+    "actual_width": 120.0,
+    "slot_width": 170
+  },
+  {
+    "lines": [
+      "开发私钥签名、Token申请、注册提交及幂等重试；",
+      "实现任务查询，通过Mock验证调用与异常处理。"
+    ],
+    "size": 20,
+    "actual_width": 456.55,
+    "slot_width": 650
+  },
+  {
+    "lines": [
+      "欧盟接口适配模块；",
+      "配置及联调用例"
+    ],
+    "size": 20,
+    "actual_width": 180.0,
+    "slot_width": 294
+  },
+  {
+    "lines": [
+      "本地模型校验"
+    ],
+    "size": 20,
+    "actual_width": 120.0,
+    "slot_width": 170
+  },
+  {
+    "lines": [
+      "执行JSON Schema结构校验与SHACL语义约束校验；",
+      "覆盖三类电池的正向样例和负向校验用例。"
+    ],
+    "size": 20,
+    "actual_width": 473.58,
+    "slot_width": 650
+  },
+  {
+    "lines": [
+      "校验功能、样例及报告"
+    ],
+    "size": 20,
+    "actual_width": 200.0,
+    "slot_width": 294
+  },
+  {
+    "lines": [
+      "UPI与试点数据"
+    ],
+    "size": 20,
+    "actual_width": 132.94,
+    "slot_width": 170
+  },
+  {
+    "lines": [
+      "准备HTTPS护照服务、匿名公开及授权受限视图；",
+      "实现欧盟回读令牌验签与授权，准备单条EV数据。"
+    ],
+    "size": 20,
+    "actual_width": 443.28,
+    "slot_width": 650
+  },
+  {
+    "lines": [
+      "UPI与访问控制；",
+      "单条EV试点数据包"
+    ],
+    "size": 20,
+    "actual_width": 163.28,
+    "slot_width": 294
+  },
+  {
+    "lines": [
+      "联调启动条件：服务账号及凭据、Token POST、UPI回读及官方在线语义校验具备。",
+      "先完成单条EV护照端到端验证，再扩展类别与批量注册。"
+    ],
+    "size": 21,
+    "actual_width": 782.17,
+    "slot_width": 1167
+  },
+  {
+    "lines": [
+      "依据：官方API、Service Account、Self-Hosted Authentication及Semantic Data指南，结合上汽当前准备任务整理。",
+      "范围：上汽业务系统→护照平台数据接入，与护照平台→欧盟注册中心接口开发分别推进。"
+    ],
+    "size": 12.5,
+    "actual_width": 627.31,
+    "slot_width": 1204
+  }
+]

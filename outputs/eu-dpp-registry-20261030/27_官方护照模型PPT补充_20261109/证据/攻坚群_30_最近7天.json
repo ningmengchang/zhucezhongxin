@@ -1,0 +1,84 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "不合法的码已经打了，这改不了\n如：https://dpp.xingheng.com.cn:30569/passport/#/portal?passcode=XHLMT.BFAJBACA4E053AHL4U0599\n\n但注册时使用 合法的格式去注册，如 https://dpp.xingheng.com.cn:30570/portal?.S=BFAJBACA4E053AHL4U0599\n\n扫码时 从不合法的码 跳转到 合法的码的地址\n\n这个模式技术上是可以走得通的，就是注册和打码的不是同一个[笑哭]@明亮(明宣帆) \n\n",
+            "createTime": "2026-11-04 22:14:28",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msg2i0jHIQyLix46yXif+42Wg==",
+            "quotedMessage": {
+              "content": "@刘勇辉(刘勇辉) 勇辉，我们告知我们的客户：1、我们不同端口的使用443去注册；2、新得端口都调整到443端口，旧的老码重定向到443端口；这样，扫也能扫出来，注册也注册了，后续我们就采用新的端口了；这样行不行？",
+              "createTime": "2026-11-04 22:11:41",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgZMXN7Xh2FdbFpGAKG8JMOQ==",
+              "sendType": "user",
+              "sender": "明宣帆",
+              "senderOpenDingTalkId": "DUJwiSXaZPWVQLcp7IZEShScRQf8MtQHJR"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@明亮(明宣帆) \nhttps://alidocs.dingtalk.com/i/nodes/MNDoBb60VLBGOrx7Cnjw3pDv8lemrZQ3?corpId=dinge9d68c682320ae25acaaa37764f94726&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=team_space&utm_source=im\n明总，请跟项目经理，交付兄弟们同步编码规则的更新，同时让项目经理检测一下自己手上的项目是否满足规则。\n编码规则在原来的基础上补充了 2 个规则，\n必须是 HTTPS 开头，\n域名不允许带端口。\n当前已识别的有星恒项目@潘鹏 ，还有晶科项目@陈同心 ，需要跟进这次改动\n\n@刘勇辉 请在研发内部也通知一下\n\n\n\n新增贴码使用的UPI链接统一遵守两项要求：\n1. 链接必须以https://开头，不能使用http://。\n2. 域名后不填写端口号，不要出现:30570、:8443等内容。https://中的冒号需要保留。\n\n写法示例（仅说明链接格式，实际域名、SN和其他参数沿用项目已确认的规则）：\n正确：https://dpp.example.com/portal?.S=DEMO001&.16D=20261104\n错误：http://dpp.example.com/portal?.S=DEMO001&.16D=20261104\n错误位置为开头的http://，应使用https://。\n错误：https://dpp.example.com:30570/portal?.S=DEMO001&.16D=20261104\n错误位置为域名后的:30570",
+            "createTime": "2026-11-04 21:59:18",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "明宣帆",
+                  "陈同心",
+                  "潘鹏",
+                  "刘勇辉"
+                ]
+              }
+            ],
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgDFnPqiCRZUlFOzaEHmQTRg==",
+            "sendType": "user",
+            "sender": "宁蒙昌",
+            "senderOpenDingTalkId": "DUJwiSXaZPWVTaoa08aGiiQXsUQj2ziPdoJW"
+          },
+          {
+            "content": "@何凯(何凯) @潘鹏(潘鹏) @明亮(明宣帆) \n现阶段需要重点关注 UPI 的合法性问题\n\n星恒老UPI 【非法】 https://dpp.xingheng.com.cn:30569/passport/#/portal?passcode=XHLMT.BFAJBACA4E053AHL4U0599&version=1 \n星恒老UPI 跳转的新UPI只有 .S= 【非法】  https://dpp.xingheng.com.cn:30570/portal?.S=BXJKHL21L36135261100105\nSAAS 完整结构UPI   【合法】 https://battery.chdpp.com/portal?.S=CHD0123456789012345&.16D=20261030&.Z=0458",
+            "createTime": "2026-11-03 19:17:54",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgtKlbuVxkOgX4tmQUSByl9w==",
+            "quotedMessage": {
+              "content": "@所有人[图片消息](mediaId=@lQLPJwKdPIfKiuXNBHDNCq6w9gM2G9hF_ywKueWq5u_dAA)星恒授权成功了，已经提交EU审核  \n[https://dpp.xingheng.com.cn:30570/portal?passcode=XJK.0285E6959765%2FF3.BPM10.XBXJKHL21L36135260900100](https://dpp.xingheng.com.cn:30570/portal?passcode=XJK.0285E6959765%2FF3.BPM10.XBXJKHL21L36135260900100)[图片消息](mediaId=@lQLPKGgVrxZoG-XNB_LNCqywbIwzpO8eBfkKueWq5u_dBA)[图片消息](mediaId=@lQLPKdpzmNuYq-XNB_DNCq2wCiY3fyY4_dwKueWq5u_dAQ)现在已经实现了 EU  Digital Product Passport Registry 官方MOCK服务测试验证通过了 UPI 验证（SAAS服务UPI合法，语义库校验官方未开启）[图片消息](mediaId=@lQLPJv_OvFJrKuXNBmjNCrqwjyjV-tmYKHkKueWq5u_dAg)需要注意的是 星恒的 UPI 不合法：[图片消息](mediaId=@lQLPJxRgtb-rCuXNA-zNCq2wut_cxzd-bsUKueWq5u_dBQ)[图片消息](mediaId=@lQLPJxkIJeRS6uXNA_jNCr2wacrZ4FJZnkMKueWq5u_dAw)",
+              "createTime": "2026-11-03 19:13:58",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgbo33KevIJV91klfyPNfqGA==",
+              "sendType": "user",
+              "sender": "刘勇辉",
+              "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@所有人[图片消息](mediaId=@lQLPJwKdPIfKiuXNBHDNCq6w9gM2G9hF_ywKueWq5u_dAA)星恒授权成功了，已经提交EU审核  \n[https://dpp.xingheng.com.cn:30570/portal?passcode=XJK.0285E6959765%2FF3.BPM10.XBXJKHL21L36135260900100](https://dpp.xingheng.com.cn:30570/portal?passcode=XJK.0285E6959765%2FF3.BPM10.XBXJKHL21L36135260900100)[图片消息](mediaId=@lQLPKGgVrxZoG-XNB_LNCqywbIwzpO8eBfkKueWq5u_dBA)[图片消息](mediaId=@lQLPKdpzmNuYq-XNB_DNCq2wCiY3fyY4_dwKueWq5u_dAQ)现在已经实现了 EU  Digital Product Passport Registry 官方MOCK服务测试验证通过了 UPI 验证（SAAS服务UPI合法，语义库校验官方未开启）[图片消息](mediaId=@lQLPJv_OvFJrKuXNBmjNCrqwjyjV-tmYKHkKueWq5u_dAg)需要注意的是 星恒的 UPI 不合法：[图片消息](mediaId=@lQLPJxRgtb-rCuXNA-zNCq2wut_cxzd-bsUKueWq5u_dBQ)[图片消息](mediaId=@lQLPJxkIJeRS6uXNA_jNCr2wacrZ4FJZnkMKueWq5u_dAw)",
+            "createTime": "2026-11-03 19:13:58",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgbo33KevIJV91klfyPNfqGA==",
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          }
+        ],
+        "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+        "singleChat": false,
+        "title": "DPP注册中心攻坚"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "+qfvVT+/8/IfzX2kSqwKu6cCHqhmwTq8lG+B5bJkRPGUv77CjtWzkPiMcp0UtpU+hM8HjXeQntPXe1bYAYBQDMroIUhj9NJfPnQjbxAFB4WTGbvvOf8ZlbEQbH7L4zM6ArRnGATJK/2I0JqiaFGuc7OUiivZctBXOuCVUxNPmT4/nfN4QSv0Hmnq51doHtesODM/lErSbQxxHfdkDWukY+LSbuqz1G9S+8VfdSHpGlz2aA5whjg+s0xZ+UkGMNXa"
+  },
+  "success": true
+}

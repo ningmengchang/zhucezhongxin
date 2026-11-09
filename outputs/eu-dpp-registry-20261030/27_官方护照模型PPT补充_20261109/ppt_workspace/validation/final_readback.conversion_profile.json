@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/护照模型V3.3.2与官方语义库1.0.0_上汽_联调准备补充版_20261109.pptx",
+    "name": "护照模型V3.3.2与官方语义库1.0.0_上汽_联调准备补充版_20261109.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 127856
+  },
+  "outputs": {
+    "markdown": "final_readback.md",
+    "asset_dir": "final_readback_files",
+    "image_manifest": "final_readback_files/image_manifest.json",
+    "image_count": 1
+  },
+  "markdown": {
+    "line_count": 427,
+    "char_count": 12826,
+    "heading_count": 12,
+    "table_count": 11,
+    "image_ref_count": 1,
+    "link_count": 0
+  },
+  "warnings": []
+}

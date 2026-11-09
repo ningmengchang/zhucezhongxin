@@ -1,0 +1,988 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+<g id="layout-shape-7" data-pptx-object="shape" data-pptx-shape-id="7" data-pptx-shape-scope="layout" data-pptx-frame="0 68.12902887 1280 4.79989501" data-pptx-shape-name="矩形 7" data-name="矩形 7" data-pptx-prst="rect" data-pptx-preview-sha256="fdddc116fe180e437c2d2b302087aa4774e5938dbad2eb46e13e27eafcc151c5">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="7" data-pptx-shape-scope="layout" data-pptx-frame="0 68.12902887 1280 4.79989501" data-pptx-shape-name="矩形 7" data-pptx-shape-style="PHA6c3R5bGUgeG1sbnM6YT0iaHR0cDovL3NjaGVtYXMub3BlbnhtbGZvcm1hdHMub3JnL2RyYXdpbmdtbC8yMDA2L21haW4iIHhtbG5zOnA9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9wcmVzZW50YXRpb25tbC8yMDA2L21haW4iPjxhOmxuUmVmIGlkeD0iMiI+PGE6c2NoZW1lQ2xyIHZhbD0iYWNjZW50MSI+PGE6c2hhZGUgdmFsPSIxNTAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpsblJlZj48YTpmaWxsUmVmIGlkeD0iMSI+PGE6c2NoZW1lQ2xyIHZhbD0iYWNjZW50MSIgLz48L2E6ZmlsbFJlZj48YTplZmZlY3RSZWYgaWR4PSIwIj48YTpzY2hlbWVDbHIgdmFsPSJhY2NlbnQxIiAvPjwvYTplZmZlY3RSZWY+PGE6Zm9udFJlZiBpZHg9Im1pbm9yIj48YTpzY2hlbWVDbHIgdmFsPSJsdDEiIC8+PC9hOmZvbnRSZWY+PC9wOnN0eWxlPg==" data-pptx-preview-sha256="fdddc116fe180e437c2d2b302087aa4774e5938dbad2eb46e13e27eafcc151c5" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="7f3f754e6957ef8785b795ad130c5571162ebbfceb6f2c715cd90c4a6b8334cf">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgcnRsQ29sPSIwIiBhbmNob3I9ImN0ciIgLz48YTpsc3RTdHlsZSAvPjxhOnA+PGE6cFByIGFsZ249ImN0ciIgLz48YTplbmRQYXJhUlByIGxhbmc9InpoLUNOIiBhbHRMYW5nPSJlbi1VUyIgLz48L2E6cD48L3A6dHhCb2R5Pg==</metadata>
+</g>
+<g id="shape-46" data-pptx-object="shape" data-pptx-shape-id="46" data-pptx-shape-scope="slide" data-pptx-frame="11.87097113 9.80094488 855.74194226 48.4687664" data-pptx-shape-name="文本框 11" data-name="文本框 11" data-pptx-prst="rect" data-pptx-preview-sha256="fc7d655ac0d0001a3f210e183be421ba300355acc8e8bdcdcff8da8fbb39e76d">
+<path d="M 11.87 9.8 L 867.61 9.8 L 867.61 58.27 L 11.87 58.27 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="46" data-pptx-shape-scope="slide" data-pptx-frame="11.87097113 9.80094488 855.74194226 48.4687664" data-pptx-shape-name="文本框 11" data-pptx-preview-sha256="fc7d655ac0d0001a3f210e183be421ba300355acc8e8bdcdcff8da8fbb39e76d" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 11.87 9.8 L 867.61 9.8 L 867.61 58.27 L 11.87 58.27 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="72843deab7094d5373bb4c083fbab17fae58cfc91698ac70b6dc428866b595c0">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ic3F1YXJlIiBydGxDb2w9IjAiPjxhOnNwQXV0b0ZpdCAvPjwvYTpib2R5UHI+PGE6bHN0U3R5bGUgLz48YTpwPjxhOnBQciBtYXJMPSIwIiBtYXJSPSIwIiBsdmw9IjAiIGluZGVudD0iMCIgYWxnbj0ibCIgZGVmVGFiU3o9IjkxNDQwMCIgcnRsPSIwIiBlYUxuQnJrPSIxIiBmb250QWxnbj0iYXV0byIgbGF0aW5MbkJyaz0iMCIgaGFuZ2luZ1B1bmN0PSIxIj48YTpsblNwYz48YTpzcGNQY3QgdmFsPSIxMDAwMDAiIC8+PC9hOmxuU3BjPjxhOnNwY0JlZj48YTpzcGNQdHMgdmFsPSIwIiAvPjwvYTpzcGNCZWY+PGE6c3BjQWZ0PjxhOnNwY1B0cyB2YWw9IjAiIC8+PC9hOnNwY0FmdD48YTpidUNsclR4IC8+PGE6YnVTelR4IC8+PGE6YnVGb250VHggLz48YTpidU5vbmUgLz48YTp0YWJMc3QgLz48YTpkZWZSUHIgLz48L2E6cFByPjxhOnI+PGE6clByIGt1bWltb2ppPSIwIiBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiIHN6PSIyNDAwIiBiPSIxIiBpPSIwIiB1PSJub25lIiBzdHJpa2U9Im5vU3RyaWtlIiBrZXJuPSIxMjAwIiBjYXA9Im5vbmUiIHNwYz0iMCIgbm9ybWFsaXplSD0iMCIgYmFzZWxpbmU9IjAiIG5vUHJvb2Y9IjAiIGRpcnR5PSIwIj48YTpsbj48YTpub0ZpbGwgLz48L2E6bG4+PGE6c29saWRGaWxsPjxhOnByc3RDbHIgdmFsPSJibGFjayIgLz48L2E6c29saWRGaWxsPjxhOmVmZmVjdExzdCAvPjxhOnVMblR4IC8+PGE6dUZpbGxUeCAvPjxhOmxhdGluIHR5cGVmYWNlPSLlvq7ova/pm4Xpu5EiIHBhbm9zZT0iMDIwQjA1MDMwMjAyMDQwMjAyMDQiIHBpdGNoRmFtaWx5PSIzNCIgY2hhcnNldD0iLTEyMiIgLz48YTplYSB0eXBlZmFjZT0i5b6u6L2v6ZuF6buRIiBwYW5vc2U9IjAyMEIwNTAzMDIwMjA0MDIwMjA0IiBwaXRjaEZhbWlseT0iMzQiIGNoYXJzZXQ9Ii0xMjIiIC8+PGE6Y3MgdHlwZWZhY2U9Iittbi1jcyIgLz48L2E6clByPjxhOnQ+5aGr5YaZ6KaB5rGC6LCD5pW06aG5PC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciBrdW1pbW9qaT0iMCIgc3o9IjE4MDAiIGI9IjAiIGk9IjAiIHU9Im5vbmUiIHN0cmlrZT0ibm9TdHJpa2UiIGtlcm49IjEyMDAiIGNhcD0ibm9uZSIgc3BjPSIwIiBub3JtYWxpemVIPSIwIiBiYXNlbGluZT0iMCIgbm9Qcm9vZj0iMCIgZGlydHk9IjAiPjxhOmxuPjxhOm5vRmlsbCAvPjwvYTpsbj48YTpzb2xpZEZpbGw+PGE6cHJzdENsciB2YWw9ImJsYWNrIiAvPjwvYTpzb2xpZEZpbGw+PGE6ZWZmZWN0THN0IC8+PGE6dUxuVHggLz48YTp1RmlsbFR4IC8+PGE6bGF0aW4gdHlwZWZhY2U9Iuetiee6vyIgcGFub3NlPSIwMjExMDAwNDAyMDIwMjAyMDIwNCIgLz48YTplYSB0eXBlZmFjZT0iK21uLWVhIiAvPjxhOmNzIHR5cGVmYWNlPSIrbW4tY3MiIC8+PC9hOmVuZFBhcmFSUHI+PC9hOnA+PC9wOnR4Qm9keT4=</metadata>
+<text x="21.47" y="45.26761155" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="32" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="32" font-weight="bold">填写要求调整项</tspan></text>
+</g>
+<g id="shape-47" data-pptx-object="graphic-frame" data-pptx-shape-id="47" data-pptx-shape-scope="slide" data-pptx-frame="21.56776903 62.55181102 1243.46456693 655.76104987" data-pptx-shape-name="表格 3" data-name="表格 3" data-pptx-import-source="pptx" data-pptx-replacement-status="unsupported-table-geometry">
+<rect x="21.57" y="62.55" width="502.68" height="219.16" fill="#5B9BD5"/>
+<rect x="524.24" y="62.55" width="487.56" height="219.16" fill="#70AD47"/>
+<rect x="1011.8" y="62.55" width="253.23" height="219.16" fill="#808080"/>
+<rect x="21.57" y="281.71" width="279.69" height="436.6" fill="#5B9BD5"/>
+<rect x="301.25" y="281.71" width="139.84" height="436.6" fill="#5B9BD5"/>
+<rect x="441.1" y="281.71" width="83.15" height="436.6" fill="#5B9BD5"/>
+<rect x="524.24" y="281.71" width="268.35" height="436.6" fill="#70AD47"/>
+<rect x="792.59" y="281.71" width="102.05" height="436.6" fill="#70AD47"/>
+<rect x="894.64" y="281.71" width="117.17" height="436.6" fill="#70AD47"/>
+<rect x="1011.8" y="281.71" width="253.23" height="436.6" fill="#808080"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<rect x="21.57" y="718.31" width="279.69" height="0" fill="#EEF5FB"/>
+<rect x="301.25" y="718.31" width="139.84" height="0" fill="#EEF5FB"/>
+<rect x="441.1" y="718.31" width="83.15" height="0" fill="#EEF5FB"/>
+<rect x="524.24" y="718.31" width="268.35" height="0" fill="#F1F8EC"/>
+<rect x="792.59" y="718.31" width="102.05" height="0" fill="#F1F8EC"/>
+<rect x="894.64" y="718.31" width="117.17" height="0" fill="#F1F8EC"/>
+<rect x="1011.8" y="718.31" width="253.23" height="0" fill="#FAFAFA"/>
+<text x="272.91" y="78.60524934" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" font-weight="bold">护照模型V3.3.2</tspan></text>
+<text x="768.02" y="83.35181102" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" font-weight="bold">官方语义库</tspan><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" font-weight="bold">1.0.0</tspan></text>
+<text x="1138.42" y="78.60524934" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="16" font-weight="bold">变更说明</tspan></text>
+<text x="161.41" y="295.0984298" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">数据项名称</tspan></text>
+<text x="371.17" y="295.0984298" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">电池分类</tspan></text>
+<text x="482.67" y="295.0984298" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">是否必填</tspan><tspan x="482.67" dy="16" fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">M：必填 R：</tspan><tspan x="482.67" dy="16" fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">推荐/自愿</tspan></text>
+<text x="658.42" y="295.0984298" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">数据项名称</tspan></text>
+<text x="843.62" y="295.0984298" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">电池分类</tspan></text>
+<text x="953.22" y="295.0984298" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">是否必填</tspan><tspan x="953.22" dy="16" fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">M：必填 C：有条件</tspan><tspan x="953.22" dy="16" fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold"> V：推荐/自愿</tspan></text>
+<text x="1138.42" y="295.0984298" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#FFFFFF" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">对照表备注</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">经济运营商信息 Economic operator </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">information</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">R</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">护照登记方/责任方身份（经济运营商） </tspan><tspan x="524.3" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">registrantIdentity</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">仅名称</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">制造商信息 Manufacturer information</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">制造商信息 Manufacturer information</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">名称</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">（必填）</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">、注册商标</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">/</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">注册商号（</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">选</tspan><tspan x="1138.42" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">填</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">）；联系地址（必填）；网址、邮箱（</tspan><tspan x="1138.42" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">选填）</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">生产地点 Manufacturing place</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">生产地点 Manufacturing place</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1011.86" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">格式：town/region（二选一）, </tspan><tspan x="1011.86" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">country/jurisdiction（必填）</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">标识说明 Meaning of labels and symbols</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">标识说明 Battery Label Symbol Meaning</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#C00000" data-pptx-text-baseline="metrics-v1"><tspan fill="#C00000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">待确定</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">检测报告 Results of test reports </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">proving compliance</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">合规测试报告结果 Compliance Test </tspan><tspan x="524.3" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">Report Results</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">上传1份文件</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">正极、负极、电极液组成 Materials used in </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">cathode, anode and electrolyte</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">详细组成 detailedComposition</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">名称</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">有害物质信息 hazardous substances</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">有害物质 Hazardous substances</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">填名称</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">拆卸指南 Dismantling information: </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">Manuals for the removal and the </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">disassembly of the battery pack</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">拆卸指南 Dismantling information:</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">上传1份文件</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">终端用户预防电池报废指南 Information on </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">the role of end-users in contributing to </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">waste prevention</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">终端用户预防电池报废指南 End User Role </tspan><tspan x="524.3" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">In Waste Prevention</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">上传文档改为填写自由文本</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">终端用户分类回收指南 Information on the </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">role of end-users in contributing to the </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">separate collection of waste batteries</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">终端用户分类回收指南 End User Role In </tspan><tspan x="524.3" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">Separate Collection</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">上传文档改为填写自由文本</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">荷电状态 State of Charge (SoC)</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">R</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">荷电状态 State of Charge (SoC)</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">电池使用后适用：直方图，%</tspan></text>
+<text x="23.07" y="732.64619423" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33">温度信息Temperature information</tspan></text>
+<text x="371.17" y="732.64619423" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="732.64619423" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="13.33" font-weight="bold">R</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">温度信息 </tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">Temperature information</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">电池使用后适用：直方图，</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">%</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">最低电压 Minimum voltage</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">最低电压 Minimum voltage</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">和温度相关的话，附带温度</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">最高电压 Maximum voltage</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">最高电压 Maximum voltage</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">和温度相关的话，附带温度</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">标称电压 Nominal voltage</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">标称电压 Nominal voltage</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">和温度相关的话，附带温度</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">允许最大电池功率 Maximum permitted </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">battery power</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">允许最大电池功率 Power limits</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">和温度相关的话，附带温度范围</tspan></text>
+<text x="21.62" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">预期使用寿命（年） Expected lifetime in </tspan><tspan x="21.62" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">calendar years</tspan></text>
+<text x="371.17" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.3" y="731.69963255" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">预期使用寿命（年） Expected lifetime </tspan><tspan x="524.3" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">in calendar years</tspan></text>
+<text x="843.62" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M(EV/LMT/IND-</tspan><tspan x="953.22" dy="16.8" fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">可充电电池)</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">动态值，状态变化时更新</tspan></text>
+<text x="22.07" y="732.14624672" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">电池护照状态 DPP Status</tspan></text>
+<text x="371.17" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="524.74" y="732.14624672" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">电池护照状态 DPP Status</tspan></text>
+<text x="843.62" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">M</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">枚举值变化：</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">valid</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">、</tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">invalid</tspan></text>
+<text x="22.07" y="732.14624672" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">质保期 </tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">Warranty period of the battery</tspan></text>
+<text x="371.17" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/BESS/IND</tspan></text>
+<text x="482.67" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">R</tspan></text>
+<text x="524.74" y="732.14624672" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">质保期 </tspan><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">Commercial Warranty Period</tspan></text>
+<text x="843.62" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">EV/LMT/IND</tspan></text>
+<text x="953.22" y="732.14624672" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" font-weight="bold">如适用（如果提供商业保修）</tspan></text>
+<text x="1138.42" y="731.69963255" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="14">单位是月</tspan></text>
+<line x1="21.57" y1="62.55" x2="524.24" y2="62.55" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="62.55" x2="524.24" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="281.71" x2="524.24" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="62.55" x2="21.57" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="62.55" x2="1011.8" y2="62.55" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="62.55" x2="1011.8" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="281.71" x2="1011.8" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="62.55" x2="524.24" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="62.55" x2="1265.03" y2="62.55" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="62.55" x2="1265.03" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="281.71" x2="1265.03" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="62.55" x2="1011.8" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="281.71" x2="301.25" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="281.71" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="281.71" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="281.71" x2="441.1" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="281.71" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="281.71" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="281.71" x2="524.24" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="281.71" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="281.71" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="281.71" x2="792.59" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="281.71" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="281.71" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="281.71" x2="894.64" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="281.71" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="281.71" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="281.71" x2="1011.8" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="281.71" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="281.71" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="281.71" x2="1265.03" y2="281.71" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="281.71" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="281.71" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="21.57" y1="718.31" x2="21.57" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="301.25" y1="718.31" x2="301.25" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="441.1" y1="718.31" x2="441.1" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="524.24" y1="718.31" x2="524.24" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="792.59" y1="718.31" x2="792.59" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="894.64" y1="718.31" x2="894.64" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="1" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="1265.03" y1="718.31" x2="1265.03" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1265.03" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+<line x1="1011.8" y1="718.31" x2="1011.8" y2="718.31" stroke-width="0.66667" stroke-linecap="butt" stroke="#C9D3DE" stroke-linejoin="round"/>
+</g>
+<g id="shape-48" data-pptx-object="shape" data-pptx-shape-id="48" data-pptx-shape-scope="slide" data-pptx-frame="17.32524934 491.81795276 145.74425197 38.66666667" data-pptx-shape-name="文本框 32" data-name="文本框 32" data-pptx-prst="rect" data-pptx-preview-sha256="c0eee0a64f061d0aa037bd2ab0d0fd0d67aee351fec3d211a456eba18620e656" transform="rotate(330 90.19737533 511.15128609)">
+<path d="M 17.33 491.82 L 163.07 491.82 L 163.07 530.48 L 17.33 530.48 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="48" data-pptx-shape-scope="slide" data-pptx-frame="17.32524934 491.81795276 145.74425197 38.66666667" data-pptx-shape-name="文本框 32" data-pptx-preview-sha256="c0eee0a64f061d0aa037bd2ab0d0fd0d67aee351fec3d211a456eba18620e656" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 17.33 491.82 L 163.07 491.82 L 163.07 530.48 L 17.33 530.48 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="81bdaad4cc74b8a3d435cee12380581f840cc458b6f7cd4f139da6ad76696c16">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="26.93" y="519.28461942" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-49" data-pptx-object="shape" data-pptx-shape-id="49" data-pptx-shape-scope="slide" data-pptx-frame="378.46761155 278.94372703 145.74425197 38.66666667" data-pptx-shape-name="文本框 34" data-name="文本框 34" data-pptx-prst="rect" data-pptx-preview-sha256="620571bdfeba454e8d31420f37b0aa3cc0c16698965983c4dd899c17df91a08a" transform="rotate(330 451.33973753 298.27706037)">
+<path d="M 378.47 278.94 L 524.21 278.94 L 524.21 317.61 L 378.47 317.61 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="49" data-pptx-shape-scope="slide" data-pptx-frame="378.46761155 278.94372703 145.74425197 38.66666667" data-pptx-shape-name="文本框 34" data-pptx-preview-sha256="620571bdfeba454e8d31420f37b0aa3cc0c16698965983c4dd899c17df91a08a" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 378.47 278.94 L 524.21 278.94 L 524.21 317.61 L 378.47 317.61 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="11ffdbe3550d8cf9a0e30a22d03968593e61686053e534a2954400468d0190f3">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="388.07" y="306.4103937" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-50" data-pptx-object="shape" data-pptx-shape-id="50" data-pptx-shape-scope="slide" data-pptx-frame="730.51863517 103.11254593 145.74425197 38.66666667" data-pptx-shape-name="文本框 36" data-name="文本框 36" data-pptx-prst="rect" data-pptx-preview-sha256="25060addd80bda37a9c86b3a6c762f095e0205c9e123d9fdef7fe9fcae115f5e" transform="rotate(330 803.39076115 122.44587927)">
+<path d="M 730.52 103.11 L 876.26 103.11 L 876.26 141.78 L 730.52 141.78 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="50" data-pptx-shape-scope="slide" data-pptx-frame="730.51863517 103.11254593 145.74425197 38.66666667" data-pptx-shape-name="文本框 36" data-pptx-preview-sha256="25060addd80bda37a9c86b3a6c762f095e0205c9e123d9fdef7fe9fcae115f5e" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 730.52 103.11 L 876.26 103.11 L 876.26 141.78 L 730.52 141.78 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="e397ef022e4bf242c26cb5f25ce2d4b4af52841b4368ca5e6fa636f7f7a93c8e">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiIGRpcnR5PSIwIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0iYmcyIj48YTpsdW1Nb2QgdmFsPSI5MDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpzb2xpZEZpbGw+PC9hOnJQcj48YTp0PuWNl+S6rOWkjeWImzwvYTp0PjwvYTpyPjxhOmVuZFBhcmFSUHIgLz48L2E6cD48L3A6dHhCb2R5Pg==</metadata>
+<text x="740.12" y="130.5792126" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-51" data-pptx-object="shape" data-pptx-shape-id="51" data-pptx-shape-scope="slide" data-pptx-frame="213.1056168 578.32608924 145.74425197 38.66666667" data-pptx-shape-name="文本框 38" data-name="文本框 38" data-pptx-prst="rect" data-pptx-preview-sha256="8cbeb13ff8161d71235330444a44f81a64a122d88e2e3ddf546de5a45bcc9a22" transform="rotate(330 285.97774278 597.65942257)">
+<path d="M 213.11 578.33 L 358.85 578.33 L 358.85 616.99 L 213.11 616.99 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="51" data-pptx-shape-scope="slide" data-pptx-frame="213.1056168 578.32608924 145.74425197 38.66666667" data-pptx-shape-name="文本框 38" data-pptx-preview-sha256="8cbeb13ff8161d71235330444a44f81a64a122d88e2e3ddf546de5a45bcc9a22" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 213.11 578.33 L 358.85 578.33 L 358.85 616.99 L 213.11 616.99 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="7189f4e1354dd89746fa08b0bb302bf11e2b956468a948bf3f0b51cd89cc4db5">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiIGRpcnR5PSIwIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0iYmcyIj48YTpsdW1Nb2QgdmFsPSI5MDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpzb2xpZEZpbGw+PC9hOnJQcj48YTp0PuWNl+S6rOWkjeWImzwvYTp0PjwvYTpyPjxhOmVuZFBhcmFSUHIgLz48L2E6cD48L3A6dHhCb2R5Pg==</metadata>
+<text x="222.71" y="605.79275591" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-52" data-pptx-object="shape" data-pptx-shape-id="52" data-pptx-shape-scope="slide" data-pptx-frame="472.16619423 576.11464567 145.74425197 38.66666667" data-pptx-shape-name="文本框 40" data-name="文本框 40" data-pptx-prst="rect" data-pptx-preview-sha256="68a2be871af6d56268e7f8b68474f7452383548dc585a01fd0376be9b00fceaf" transform="rotate(330 545.03832021 595.447979)">
+<path d="M 472.17 576.11 L 617.91 576.11 L 617.91 614.78 L 472.17 614.78 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="52" data-pptx-shape-scope="slide" data-pptx-frame="472.16619423 576.11464567 145.74425197 38.66666667" data-pptx-shape-name="文本框 40" data-pptx-preview-sha256="68a2be871af6d56268e7f8b68474f7452383548dc585a01fd0376be9b00fceaf" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 472.17 576.11 L 617.91 576.11 L 617.91 614.78 L 472.17 614.78 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="7731dcfa749b50f7e653a4893b448550bdc71ad804c58d745ff8c172d7c0585c">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="481.77" y="603.58131234" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-53" data-pptx-object="shape" data-pptx-shape-id="53" data-pptx-shape-scope="slide" data-pptx-frame="740.76367454 582.83328084 145.74425197 38.66666667" data-pptx-shape-name="文本框 42" data-name="文本框 42" data-pptx-prst="rect" data-pptx-preview-sha256="c9ae76fec094278670af018b1936c1f4c43c2e6a8f197b8949c69255ff0fd319" transform="rotate(330 813.63580052 602.16661417)">
+<path d="M 740.76 582.83 L 886.51 582.83 L 886.51 621.5 L 740.76 621.5 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="53" data-pptx-shape-scope="slide" data-pptx-frame="740.76367454 582.83328084 145.74425197 38.66666667" data-pptx-shape-name="文本框 42" data-pptx-preview-sha256="c9ae76fec094278670af018b1936c1f4c43c2e6a8f197b8949c69255ff0fd319" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 740.76 582.83 L 886.51 582.83 L 886.51 621.5 L 740.76 621.5 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="28962245979b891708ac3f420c2ae8019e1ead49e1d045a51246bc024757d187">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="750.36" y="610.29994751" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-54" data-pptx-object="shape" data-pptx-shape-id="54" data-pptx-shape-scope="slide" data-pptx-frame="358.65511811 430.20409449 145.74425197 38.66666667" data-pptx-shape-name="文本框 44" data-name="文本框 44" data-pptx-prst="rect" data-pptx-preview-sha256="f71c857ecc7c8224f858fc3d013f0ca90217f77cccea92fd1b1fd41d6a8502aa" transform="rotate(330 431.52724409 449.53742782)">
+<path d="M 358.66 430.2 L 504.4 430.2 L 504.4 468.87 L 358.66 468.87 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="54" data-pptx-shape-scope="slide" data-pptx-frame="358.65511811 430.20409449 145.74425197 38.66666667" data-pptx-shape-name="文本框 44" data-pptx-preview-sha256="f71c857ecc7c8224f858fc3d013f0ca90217f77cccea92fd1b1fd41d6a8502aa" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 358.66 430.2 L 504.4 430.2 L 504.4 468.87 L 358.66 468.87 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="b262c6c1ba4589ddcff7178185b4c120766502347e0ccce1d7aa936d558c2172">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="368.26" y="457.67076115" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-55" data-pptx-object="shape" data-pptx-shape-id="55" data-pptx-shape-scope="slide" data-pptx-frame="771.96325459 407.92272966 145.74425197 38.66666667" data-pptx-shape-name="文本框 46" data-name="文本框 46" data-pptx-prst="rect" data-pptx-preview-sha256="2df4082e17139e39e71a301ebffd3931b02e985c451683cee27d3692b1515320" transform="rotate(330 844.83538058 427.25606299)">
+<path d="M 771.96 407.92 L 917.71 407.92 L 917.71 446.59 L 771.96 446.59 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="55" data-pptx-shape-scope="slide" data-pptx-frame="771.96325459 407.92272966 145.74425197 38.66666667" data-pptx-shape-name="文本框 46" data-pptx-preview-sha256="2df4082e17139e39e71a301ebffd3931b02e985c451683cee27d3692b1515320" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 771.96 407.92 L 917.71 407.92 L 917.71 446.59 L 771.96 446.59 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="28b35a689e39c84fe38e719af8ef8a8a462770f2ddd3ee32571dc843a4ba7591">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="781.56" y="435.38939633" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-56" data-pptx-object="shape" data-pptx-shape-id="56" data-pptx-shape-scope="slide" data-pptx-frame="1078.38047244 250.80293963 145.74425197 38.66666667" data-pptx-shape-name="文本框 48" data-name="文本框 48" data-pptx-prst="rect" data-pptx-preview-sha256="b40211265913fcae38b9b573bb9a9fa3f85b103db880a3742fed72b5d70a32ce" transform="rotate(330 1151.25259843 270.13627297)">
+<path d="M 1078.38 250.8 L 1224.12 250.8 L 1224.12 289.47 L 1078.38 289.47 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="56" data-pptx-shape-scope="slide" data-pptx-frame="1078.38047244 250.80293963 145.74425197 38.66666667" data-pptx-shape-name="文本框 48" data-pptx-preview-sha256="b40211265913fcae38b9b573bb9a9fa3f85b103db880a3742fed72b5d70a32ce" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 1078.38 250.8 L 1224.12 250.8 L 1224.12 289.47 L 1078.38 289.47 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="f1263799b8133878d71d9d9a9ba3d7a6fafabcafc8208e4d3b48b20b4e05c718">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="1087.98" y="278.2696063" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-57" data-pptx-object="shape" data-pptx-shape-id="57" data-pptx-shape-scope="slide" data-pptx-frame="1089.54057743 560.17238845 145.74425197 38.66666667" data-pptx-shape-name="文本框 50" data-name="文本框 50" data-pptx-prst="rect" data-pptx-preview-sha256="3d4c72bc3987870d6ca86360a066356c7a4529c26dde746757074bdb3671da97" transform="rotate(330 1162.41270341 579.50572178)">
+<path d="M 1089.54 560.17 L 1235.28 560.17 L 1235.28 598.84 L 1089.54 598.84 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="57" data-pptx-shape-scope="slide" data-pptx-frame="1089.54057743 560.17238845 145.74425197 38.66666667" data-pptx-shape-name="文本框 50" data-pptx-preview-sha256="3d4c72bc3987870d6ca86360a066356c7a4529c26dde746757074bdb3671da97" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 1089.54 560.17 L 1235.28 560.17 L 1235.28 598.84 L 1089.54 598.84 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="209747f59fd5154dab21bd1993b80b70617305906ca53910e1c6bc8243e5c9d3">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJiZzIiPjxhOmx1bU1vZCB2YWw9IjkwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48L2E6clByPjxhOnQ+5Y2X5Lqs5aSN5YibPC9hOnQ+PC9hOnI+PGE6ZW5kUGFyYVJQciAvPjwvYTpwPjwvcDp0eEJvZHk+</metadata>
+<text x="1099.14" y="587.63905512" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-58" data-pptx-object="shape" data-pptx-shape-id="58" data-pptx-shape-scope="slide" data-pptx-frame="31.66173228 95.3655643 145.74425197 38.66666667" data-pptx-shape-name="文本框 52" data-name="文本框 52" data-pptx-prst="rect" data-pptx-preview-sha256="1dbb204b7a6898fb818ad07e62b1c7f0b237365668943e1d7463fc8a1c3ad406" transform="rotate(330 104.53385827 114.69889764)">
+<path d="M 31.66 95.37 L 177.41 95.37 L 177.41 134.03 L 31.66 134.03 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="58" data-pptx-shape-scope="slide" data-pptx-frame="31.66173228 95.3655643 145.74425197 38.66666667" data-pptx-shape-name="文本框 52" data-pptx-preview-sha256="1dbb204b7a6898fb818ad07e62b1c7f0b237365668943e1d7463fc8a1c3ad406" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 31.66 95.37 L 177.41 95.37 L 177.41 134.03 L 31.66 134.03 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="7be8a5aa44f81dee7f8efe000c37359be78c2c9f42296e083f21ae2ef0add92a">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiIGRpcnR5PSIwIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0iYmcyIj48YTpsdW1Nb2QgdmFsPSI5MDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpzb2xpZEZpbGw+PC9hOnJQcj48YTp0PuWNl+S6rOWkjeWImzwvYTp0PjwvYTpyPjxhOmVuZFBhcmFSUHIgLz48L2E6cD48L3A6dHhCb2R5Pg==</metadata>
+<text x="41.26" y="122.83223097" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-59" data-pptx-object="shape" data-pptx-shape-id="59" data-pptx-shape-scope="slide" data-pptx-frame="369.90372703 109.81816273 145.74425197 38.66666667" data-pptx-shape-name="文本框 54" data-name="文本框 54" data-pptx-prst="rect" data-pptx-preview-sha256="e594be45b2608ed332602ec98402a1de49f794e5fc78b734683142c654fbd78d" transform="rotate(330 442.77585302 129.15149606)">
+<path d="M 369.9 109.82 L 515.65 109.82 L 515.65 148.48 L 369.9 148.48 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="59" data-pptx-shape-scope="slide" data-pptx-frame="369.90372703 109.81816273 145.74425197 38.66666667" data-pptx-shape-name="文本框 54" data-pptx-preview-sha256="e594be45b2608ed332602ec98402a1de49f794e5fc78b734683142c654fbd78d" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 369.9 109.82 L 515.65 109.82 L 515.65 148.48 L 369.9 148.48 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="ff32f1faa5d51040a7643022c008cfa3ecce6c26b6c0ba0779d74399379934c3">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiIGRpcnR5PSIwIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0iYmcyIj48YTpsdW1Nb2QgdmFsPSI5MDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpzb2xpZEZpbGw+PC9hOnJQcj48YTp0PuWNl+S6rOWkjeWImzwvYTp0PjwvYTpyPjxhOmVuZFBhcmFSUHIgLz48L2E6cD48L3A6dHhCb2R5Pg==</metadata>
+<text x="379.5" y="137.2848294" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-60" data-pptx-object="shape" data-pptx-shape-id="60" data-pptx-shape-scope="slide" data-pptx-frame="717.90393701 275.19160105 145.74425197 38.66666667" data-pptx-shape-name="文本框 56" data-name="文本框 56" data-pptx-prst="rect" data-pptx-preview-sha256="8e401d572f40651c89383c5684264053a3cd64f5b3aabde1c3a7bb54eb6e3b96" transform="rotate(330 790.77606299 294.52493438)">
+<path d="M 717.9 275.19 L 863.65 275.19 L 863.65 313.86 L 717.9 313.86 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="60" data-pptx-shape-scope="slide" data-pptx-frame="717.90393701 275.19160105 145.74425197 38.66666667" data-pptx-shape-name="文本框 56" data-pptx-preview-sha256="8e401d572f40651c89383c5684264053a3cd64f5b3aabde1c3a7bb54eb6e3b96" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 717.9 275.19 L 863.65 275.19 L 863.65 313.86 L 717.9 313.86 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="ff6a87752da96a47cd6c169db5a4c54f1d1ef06151b8715461057411c74ac095">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiIGRpcnR5PSIwIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0iYmcyIj48YTpsdW1Nb2QgdmFsPSI5MDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpzb2xpZEZpbGw+PC9hOnJQcj48YTp0PuWNl+S6rOWkjeWImzwvYTp0PjwvYTpyPjxhOmVuZFBhcmFSUHIgLz48L2E6cD48L3A6dHhCb2R5Pg==</metadata>
+<text x="727.5" y="302.65826772" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g>
+<g id="shape-61" data-pptx-object="shape" data-pptx-shape-id="61" data-pptx-shape-scope="slide" data-pptx-frame="1065.35212598 112.12524934 145.74425197 38.66666667" data-pptx-shape-name="文本框 58" data-name="文本框 58" data-pptx-prst="rect" data-pptx-preview-sha256="5833af1c049db79b9ce3492d0712b3065e8dc8b10c790667d05c2dc4b9a6d8af" transform="rotate(330 1138.22425197 131.45858268)">
+<path d="M 1065.35 112.13 L 1211.1 112.13 L 1211.1 150.79 L 1065.35 150.79 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="61" data-pptx-shape-scope="slide" data-pptx-frame="1065.35212598 112.12524934 145.74425197 38.66666667" data-pptx-shape-name="文本框 58" data-pptx-preview-sha256="5833af1c049db79b9ce3492d0712b3065e8dc8b10c790667d05c2dc4b9a6d8af" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 1065.35 112.13 L 1211.1 112.13 L 1211.1 150.79 L 1065.35 150.79 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+<metadata data-pptx-part="txbody" data-pptx-encoding="base64" data-pptx-text-sha256="39f8518787b4bd965301d365646ffe0adc6bf0148a7fb0086a19d4e3d910181c">PHA6dHhCb2R5IHhtbG5zOmE9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9kcmF3aW5nbWwvMjAwNi9tYWluIiB4bWxuczpwPSJodHRwOi8vc2NoZW1hcy5vcGVueG1sZm9ybWF0cy5vcmcvcHJlc2VudGF0aW9ubWwvMjAwNi9tYWluIj48YTpib2R5UHIgd3JhcD0ibm9uZSIgcnRsQ29sPSIwIj48YTpub0F1dG9maXQgLz48L2E6Ym9keVByPjxhOmxzdFN0eWxlIC8+PGE6cD48YTpyPjxhOnJQciBsYW5nPSJ6aC1DTiIgYWx0TGFuZz0iZW4tVVMiIGRpcnR5PSIwIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0iYmcyIj48YTpsdW1Nb2QgdmFsPSI5MDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpzb2xpZEZpbGw+PC9hOnJQcj48YTp0PuWNl+S6rOWkjeWImzwvYTp0PjwvYTpyPjxhOmVuZFBhcmFSUHIgLz48L2E6cD48L3A6dHhCb2R5Pg==</metadata>
+<text x="1074.95" y="139.59191601" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1"><tspan fill="#D1D1D1" font-family="&quot;等线&quot;, sans-serif" font-size="24">南京复创</tspan></text>
+</g></svg>

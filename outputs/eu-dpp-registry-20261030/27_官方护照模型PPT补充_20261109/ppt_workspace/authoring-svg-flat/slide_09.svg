@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="layout-shape-7" data-pptx-object="shape" data-pptx-frame="0 68.13 1280 4.8" data-pptx-prst="rect" data-pptx-source-ref="layout:7" data-pptx-semantic-object="shape">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-115" data-pptx-object="shape" data-pptx-frame="11.87 9.8 855.74 48.47" data-pptx-prst="rect" data-pptx-source-ref="slide:115" data-pptx-semantic-object="shape">
+<path d="M 11.87 9.8 L 867.61 9.8 L 867.61 58.27 L 11.87 58.27 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="21.47" y="45.26761155" text-anchor="start" xml:space="preserve" font-size="32" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">下一步计划</text>
+</g>
+<g id="shape-116" data-pptx-object="graphic-frame" data-pptx-frame="35.61 85.04 1195.87 617.93" data-pptx-import-source="pptx" data-pptx-replacement-status="unsupported-table-direct-formatting" data-pptx-source-ref="slide:116">
+<use data-icon="imported/flat_slide_09_ill01" data-pptx-asset-role="decoration" /><text x="65.59" y="101.56923885" text-anchor="middle" xml:space="preserve" font-size="17.17" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">序号</text>
+<text x="436.43" y="101.56923885" text-anchor="middle" xml:space="preserve" font-size="17.17" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">关键事项</text>
+<text x="913.55" y="101.56923885" text-anchor="middle" xml:space="preserve" font-size="17.17" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">责任人</text>
+<text x="1140.65" y="101.56923885" text-anchor="middle" xml:space="preserve" font-size="17.17" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">完成时间</text>
+<text x="65.59" y="166.61259843" text-anchor="middle" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">1</text>
+<text x="96.09" y="165.27926509" text-anchor="start" xml:space="preserve" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>护照模型V4.0输出：</tspan><tspan>汇总前序对齐与验证结果，正式发布护照模型V4.0版本</tspan></text>
+<text x="913.55" y="165.27926509" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">孔瑞霞</text>
+<text x="1140.65" y="165.27926509" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">11.10</text>
+<text x="65.59" y="222.16808399" text-anchor="middle" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">2</text>
+<text x="96.09" y="220.83475066" text-anchor="start" xml:space="preserve" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>工程化</tspan><tspan>护照模型V4.0输出</tspan></text>
+<text x="913.55" y="220.83475066" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">宁蒙昌</text>
+<text x="1140.65" y="220.83475066" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">11.12</text>
+<text x="65.59" y="277.72356955" text-anchor="middle" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">3</text>
+<text x="96.09" y="276.39023622" text-anchor="start" xml:space="preserve" font-family="Arial, &quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>变化数据项责任归属确认</tspan><tspan>：</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">根据护照模型</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">V4.0</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">和上汽增补确认变化项数据责任归属</tspan><tspan x="96.09" dy="22.4" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">，完善护照数据项并同步调整业务蓝图</tspan></text>
+<text x="913.55" y="276.39023622" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">孙波</text>
+<text x="1140.65" y="276.39023622" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">11.18</text>
+<text x="65.59" y="333.27905512" text-anchor="middle" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">4</text>
+<text x="96.09" y="331.94572178" text-anchor="start" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>系统调整优化：</tspan><tspan>按确认后的模型变更，对护照系统数据模型、录入界面及校验规则</tspan><tspan x="96.09" dy="22.4">进行适配调整与优化</tspan></text>
+<text x="913.55" y="331.94572178" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">段素栋</text>
+<text x="1140.65" y="331.94572178" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">11.30</text>
+<text x="65.59" y="388.83454068" text-anchor="middle" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">5</text>
+<text x="96.09" y="387.50120735" text-anchor="start" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>数据收集Deadline：</tspan><tspan>明确各数据项数据收集的截止时间节点，制定收集计划并跟踪</tspan><tspan x="96.09" dy="22.4">落实进度</tspan></text>
+<text x="913.55" y="387.50120735" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">各业务部门</text>
+<text x="1140.65" y="387.50120735" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">12.04</text>
+<text x="65.59" y="443.05669291" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">6</text>
+<text x="96.09" y="443.05669291" text-anchor="start" xml:space="preserve" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">输出体系流程文件初版</text>
+<text x="913.55" y="443.05669291" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">孙波</text>
+<text x="1140.65" y="443.05669291" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">11.30</text>
+<text x="65.59" y="499.94551181" text-anchor="middle" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">7</text>
+<text x="96.09" y="498.61217848" text-anchor="start" xml:space="preserve" font-family="Arial, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>API接口对接：</tspan><tspan>开发并联调上汽业务系统与护照平台的API接口，实现关键数据自动</tspan><tspan x="96.09" dy="22.4">采集与同步</tspan></text>
+<text x="913.55" y="498.61217848" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">段素栋</text>
+<text x="1140.65" y="498.61217848" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>预计</tspan><tspan>12.30</tspan></text>
+<text x="65.59" y="554.16766404" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">8</text>
+<text x="96.09" y="554.16766404" text-anchor="start" xml:space="preserve" font-family="Arial, &quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>试点护照完整认证：</tspan><tspan>试点电池产品，完成</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">一个</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">SN</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">的测试环境注册和</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">NB</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">机构</tspan><tspan font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">最终认证</tspan><tspan x="96.09" dy="22.4" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif">（包含护照数据项完整性和系统合规性认证）</tspan></text>
+<text x="913.55" y="554.16766404" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>NB</tspan><tspan>机构</tspan></text>
+<text x="1140.65" y="554.16766404" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">27.1.15</text>
+<text x="65.59" y="609.72314961" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">9</text>
+<text x="96.09" y="609.72314961" text-anchor="start" xml:space="preserve" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">电池护照批量正式注册</text>
+<text x="913.55" y="609.72314961" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">项目组</text>
+<text x="1140.65" y="609.72314961" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">27.1.20</text>
+<text x="65.59" y="665.27863517" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">10</text>
+<text x="96.09" y="665.27863517" text-anchor="start" xml:space="preserve" font-size="18.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>输出项目最终交付物</tspan><tspan>，包括最终版电池护照模型表、业务蓝图最终版、体系流程文</tspan><tspan x="96.09" dy="22.4">件终稿、项目白皮书终稿、试点护照认证报告、项目验收报告。</tspan></text>
+<text x="913.55" y="665.27863517" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">孙波</text>
+<text x="1140.65" y="665.27863517" text-anchor="middle" xml:space="preserve" font-size="18.67" fill="#000000" data-pptx-text-baseline="metrics-v1">27.02</text>
+<use data-icon="imported/flat_slide_09_ill02" data-pptx-asset-role="decoration" /></g></svg>

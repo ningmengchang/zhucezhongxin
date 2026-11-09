@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;等线&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="layout-shape-7" data-pptx-object="shape" data-pptx-frame="0 68.13 1280 4.8" data-pptx-prst="rect" data-pptx-source-ref="layout:7" data-pptx-semantic-object="shape">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-12" data-pptx-object="graphic-frame" data-pptx-frame="61.85 124.16 1156.3 530.05" data-pptx-import-source="pptx" data-pptx-replace-with="table" data-pptx-native-authority="json" data-pptx-source-ref="slide:12" data-pptx-semantic-object="table">
+<metadata type="application/json">{"schema":"ppt-master.semantic-table.v2","x":61.851,"y":124.16,"width":1156.297,"height":530.055,"strict_grid":true,"header_rows":1,"column_widths":[184.346,73.532,898.419],"row_heights":[36.978,48.212,65.548,59.927,99.106,110.142,110.142],"style":{"band_row":true,"table_style_id":"{5C22544A-7EE6-4342-B048-85BDC9FD1C3A}"},"defaults":{"cell":{"valign":"middle","borders":{"left":{"style":"solid","color":"#000000","width":1.333},"right":{"style":"solid","color":"#000000","width":1.333},"top":{"style":"solid","color":"#000000","width":1.333},"bottom":{"style":"solid","color":"#000000","width":1.333}}},"run":{"font_size":16,"font_family":"微软雅黑","lang":"zh-CN"}},"rows":[[{"paragraphs":[{"runs":[{"text":"变化类别","font_size":18.667,"lang":"en-US"}],"align":"ctr"}],"fill":"#4E95D9","align":"ctr"},{"paragraphs":[{"runs":[{"text":"项数","font_size":18.667,"lang":"en-US"}],"align":"ctr"}],"fill":"#4E95D9","align":"ctr"},{"paragraphs":[{"runs":[{"text":"具体数据项","font_size":18.667,"alt_lang":"en-US"}],"align":"ctr"}],"fill":"#4E95D9","align":"ctr"}],[{"paragraphs":[{"runs":[{"text":"新增数据项","bold":true,"lang":"en-US"}]}]},{"paragraphs":[{"runs":[{"text":"14","lang":"en-US"}],"align":"ctr"}],"align":"ctr"},{"paragraphs":[{"runs":[{"text":"参考标准","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"en-US"},{"text":"/","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","lang":"en-US","alt_lang":"zh-CN"},{"text":"内容规范、废电池预防和管理信息、分类收集点信息、回收接收点信息、再使用准备设施信息、梯次利用准备设施信息、废电池处理设施信息、废电池处理安全说明、额定容量、功率、往返能效、内阻、参考条件下预期循环寿命、空闲状态温度范围测试","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"en-US"}],"align":"l"}],"align":"l"}],[{"paragraphs":[{"runs":[{"text":"填写要求调整项","bold":true,"alt_lang":"en-US"}]}]},{"paragraphs":[{"runs":[{"text":"19","lang":"en-US"}],"align":"ctr"}],"align":"ctr"},{"paragraphs":[{"runs":[{"text":"经济运营商信息、制造商信息、生产地点、标识说明、检测报告、正极、负极、电极液组成、有害物质信息、拆卸指南、终端用户预防电池报废指南、终端用户分类回收指南、荷电状态、温度信息、最低电压、最高电压、标称电压、允许最大电池功率、预期使用寿命（年）、电池护照状态、质保期","alt_lang":"en-US"}]}]}],[{"paragraphs":[{"runs":[{"text":"关于是否必填要求的变更项","bold":true,"alt_lang":"en-US"}]}]},{"paragraphs":[{"runs":[{"text":"9","lang":"en-US"}],"align":"ctr"}],"align":"ctr"},{"paragraphs":[{"runs":[{"text":"剩余容量、剩余功率、事故信息、经济运营商信息、荷电状态、温度信息、质保期、","alt_lang":"en-US"},{"text":"当前完全循环次数","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"},{"text":"、","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"en-US"},{"text":"循环寿命测试放电C率 ","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"}],"align":"l"}],"align":"l"}],[{"paragraphs":[{"runs":[{"text":"数据拆分及合并","bold":true,"alt_lang":"en-US"}]}]},{"paragraphs":[{"runs":[{"text":"4","lang":"en-US"}],"align":"ctr"}],"align":"ctr"},{"paragraphs":[{"runs":[{"text":"零部件编号","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"},{"text":"、","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"en-US"},{"text":"备件来源联系方式","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"},{"text":"→","alt_lang":"en-US"},{"text":"零部件编号及备件来源联系方式","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"}]},{"runs":[{"text":"当前完全循环次数→","alt_lang":"en-US"},{"text":"充电循环次数","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"},{"text":"、","alt_lang":"en-US"},{"text":"放","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"en-US"},{"text":"电循环次数","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"}]},{"runs":[{"text":"循环寿命测试C率 ","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"},{"text":"→","alt_lang":"en-US"},{"text":"循环寿命测试充电C率","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"},{"text":"、","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"en-US"},{"text":"循环寿命测试","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"},{"text":"放","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"en-US"},{"text":"电C率 ","bold":false,"italic":false,"underline":false,"strike":false,"color":"#000000","alt_lang":"zh-CN"}]}]}],[{"paragraphs":[{"runs":[{"text":"27/2/18","bold":true,"color":"#000000","lang":"en-US","alt_lang":"zh-CN"},{"text":"暂不生效数据项","bold":true,"color":"#000000","alt_lang":"en-US"}],"align":"l"}],"align":"l"},{"paragraphs":[{"runs":[{"text":"17","lang":"en-US"}],"align":"ctr"}],"align":"ctr"},{"paragraphs":[{"runs":[{"text":"碳足迹标签、每功能单元电池碳足迹、原材料获取与预处理阶段碳足迹、核心生产阶段碳足迹、分销阶段碳足迹、退役与回收阶段碳足迹、碳足迹表现等级、碳足迹研究、电池碳足迹、尽职调查报告信息、再循环镍含量（消费前）、再循环镍含量（消费后）、再循环钴含量（消费前）、再循环钴含量（消费后）、再循环锂含量（消费前）、再循环锂含量（消费后）、再循环铅含量","color":"#000000","alt_lang":"en-US"}]}]}],[{"paragraphs":[{"runs":[{"text":"删除数据项","bold":true,"color":"#000000","alt_lang":"en-US"}],"align":"l"}],"align":"l"},{"paragraphs":[{"runs":[{"text":"13","lang":"en-US"}],"align":"ctr"}],"align":"ctr"},{"paragraphs":[{"runs":[{"text":"经济运营商唯一标识符、工厂唯一标识符、制造商唯一标识符、投入使用日期、尽职调查报告信息、第三方供应链保证、供应链指数、废旧电池回收利用指南、认证可用电量、剩余可用电量、初始自放电率、当前自放电率、深度放电事件次数、过量充电次数","color":"#000000","alt_lang":"en-US"}]}]}]],"name":"表格 2"}</metadata><image x="0" y="0" width="1280" height="720" preserveAspectRatio="none" href="../images/source-object-previews/semantic-table-preview-7b854f900d8ed9b2963559b1a906db713a7848a5ead2bb11021a91ae1bde34e0.svg" data-pptx-part="authoring-preview" /></g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="14.11 17.66 1173.33 48.47" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 14.11 17.66 L 1187.44 17.66 L 1187.44 66.13 L 14.11 66.13 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="23.71" y="53.1312336" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="32" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">变更信息汇总</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="17.33 491.82 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 90.2 511.15)" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 17.33 491.82 L 163.07 491.82 L 163.07 530.48 L 17.33 530.48 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="26.93" y="519.28461942" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="378.47 278.94 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 451.34 298.28)" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 378.47 278.94 L 524.21 278.94 L 524.21 317.61 L 378.47 317.61 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="388.07" y="306.4103937" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="730.52 103.11 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 803.39 122.45)" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 730.52 103.11 L 876.26 103.11 L 876.26 141.78 L 730.52 141.78 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="740.12" y="130.5792126" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="213.11 578.33 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 285.98 597.66)" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 213.11 578.33 L 358.85 578.33 L 358.85 616.99 L 213.11 616.99 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="222.71" y="605.79275591" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="472.17 576.11 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 545.04 595.45)" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 472.17 576.11 L 617.91 576.11 L 617.91 614.78 L 472.17 614.78 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="481.77" y="603.58131234" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="740.76 582.83 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 813.64 602.17)" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 740.76 582.83 L 886.51 582.83 L 886.51 621.5 L 740.76 621.5 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="750.36" y="610.29994751" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="358.66 430.2 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 431.53 449.54)" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 358.66 430.2 L 504.4 430.2 L 504.4 468.87 L 358.66 468.87 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="368.26" y="457.67076115" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="771.96 407.92 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 844.84 427.26)" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 771.96 407.92 L 917.71 407.92 L 917.71 446.59 L 771.96 446.59 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="781.56" y="435.38939633" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="1078.38 250.8 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1151.25 270.14)" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 1078.38 250.8 L 1224.12 250.8 L 1224.12 289.47 L 1078.38 289.47 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1087.98" y="278.2696063" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="1089.54 560.17 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1162.41 579.51)" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 1089.54 560.17 L 1235.28 560.17 L 1235.28 598.84 L 1089.54 598.84 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1099.14" y="587.63905512" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="31.66 95.37 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 104.53 114.7)" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 31.66 95.37 L 177.41 95.37 L 177.41 134.03 L 31.66 134.03 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="41.26" y="122.83223097" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="369.9 109.82 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 442.78 129.15)" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 369.9 109.82 L 515.65 109.82 L 515.65 148.48 L 369.9 148.48 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="379.5" y="137.2848294" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="717.9 275.19 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 790.78 294.52)" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 717.9 275.19 L 863.65 275.19 L 863.65 313.86 L 717.9 313.86 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="727.5" y="302.65826772" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="1065.35 112.13 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1138.22 131.46)" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 1065.35 112.13 L 1211.1 112.13 L 1211.1 150.79 L 1065.35 150.79 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1074.95" y="139.59191601" text-anchor="start" xml:space="preserve" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g></svg>

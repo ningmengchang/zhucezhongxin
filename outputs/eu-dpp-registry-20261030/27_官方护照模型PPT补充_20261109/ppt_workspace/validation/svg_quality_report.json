@@ -1,0 +1,362 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "84213e884147ff30777911ee54d44f7e037540ea626f9d3656464b7c1450469c",
+    "file_count": 12,
+    "files": [
+      {
+        "file": "authoring-svg-flat/official_registry_readiness.svg",
+        "sha256": "8da7ade77750e5b6ccd6537647aa0ac61f831bde2f02aefe3d7ab3a4c5e084df"
+      },
+      {
+        "file": "authoring-svg-flat/saic_preintegration_work.svg",
+        "sha256": "4d7494390be1745247e54575401f3bc20bfb1db367db46aeb89462b48a1eda96"
+      },
+      {
+        "file": "authoring-svg-flat/slide_01.svg",
+        "sha256": "97b4d352227b54159abc9664a9ed4efbaae63c20df9030f7edc4bfa126322cba"
+      },
+      {
+        "file": "authoring-svg-flat/slide_02.svg",
+        "sha256": "e97a83eb65e44cedc96f74b44685bc2ec1d0798312b5f0c565ad1ffece6b159d"
+      },
+      {
+        "file": "authoring-svg-flat/slide_03.svg",
+        "sha256": "1710e80132f8c5a3eb51d0e23ee7574f7fde6beee28461e1dee47620043fdbc2"
+      },
+      {
+        "file": "authoring-svg-flat/slide_04.svg",
+        "sha256": "b9023ef819fb4be727a59a27e77764f9c0407397796d698cd33e925db5640763"
+      },
+      {
+        "file": "authoring-svg-flat/slide_05.svg",
+        "sha256": "ba6a04b99934c000508a2272bd9fa1c43db11f8e935812b90b573fa69379c5cc"
+      },
+      {
+        "file": "authoring-svg-flat/slide_06.svg",
+        "sha256": "fd44477dcce0388253a174e2311a587d913017e09de89c0fe058ec1a262b0acc"
+      },
+      {
+        "file": "authoring-svg-flat/slide_07.svg",
+        "sha256": "889ce1370aa9a648822e00be19f9a45bd5f7843e42fa8c800746c77d63784f30"
+      },
+      {
+        "file": "authoring-svg-flat/slide_08.svg",
+        "sha256": "f3dbe8094239141bcb939a7bafc17d516f62cfd8882b88a33401440c440db8e0"
+      },
+      {
+        "file": "authoring-svg-flat/slide_09.svg",
+        "sha256": "ad8b6d97c9103959dcff1d805669a9d2c1738fc8a25799200118fa4207e9444f"
+      },
+      {
+        "file": "page_plan.json",
+        "sha256": "de0ed750c0b964499ecd13092c496f7dc9f9b8bc4a6c2790ec0d0da6f14d5227"
+      }
+    ]
+  },
+  "summary": {
+    "total": 11,
+    "passed": 11,
+    "warnings": 0,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 0,
+      "issues": []
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 0,
+    "totals": {
+      "text_elements": 0,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 0,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": null,
+    "geometry_elements": {},
+    "preset_names": {},
+    "native_objects": {},
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "slide_01.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_01.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 1,
+        "source_slide": 1,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.012509090226657327,
+          "measured_unchanged": 2,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "97b4d352227b54159abc9664a9ed4efbaae63c20df9030f7edc4bfa126322cba"
+    },
+    {
+      "file": "slide_02.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_02.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 2,
+        "source_slide": 2,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 15,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "e97a83eb65e44cedc96f74b44685bc2ec1d0798312b5f0c565ad1ffece6b159d"
+    },
+    {
+      "file": "slide_03.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_03.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 3,
+        "source_slide": 3,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.004114338325205344,
+          "measured_unchanged": 92,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "1710e80132f8c5a3eb51d0e23ee7574f7fde6beee28461e1dee47620043fdbc2"
+    },
+    {
+      "file": "slide_04.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_04.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 4,
+        "source_slide": 4,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.005589242918951993,
+          "measured_unchanged": 158,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "b9023ef819fb4be727a59a27e77764f9c0407397796d698cd33e925db5640763"
+    },
+    {
+      "file": "slide_05.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_05.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 5,
+        "source_slide": 5,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.014888742087350876,
+          "measured_unchanged": 96,
+          "positive_unchanged": 4
+        }
+      },
+      "passed": true,
+      "source_sha256": "ba6a04b99934c000508a2272bd9fa1c43db11f8e935812b90b573fa69379c5cc"
+    },
+    {
+      "file": "slide_06.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_06.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 6,
+        "source_slide": 6,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 62,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "fd44477dcce0388253a174e2311a587d913017e09de89c0fe058ec1a262b0acc"
+    },
+    {
+      "file": "slide_07.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_07.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 7,
+        "source_slide": 7,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0022341301638177198,
+          "measured_unchanged": 65,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "889ce1370aa9a648822e00be19f9a45bd5f7843e42fa8c800746c77d63784f30"
+    },
+    {
+      "file": "slide_08.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_08.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 8,
+        "source_slide": 8,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0022341301638177198,
+          "measured_unchanged": 62,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "f3dbe8094239141bcb939a7bafc17d516f62cfd8882b88a33401440c440db8e0"
+    },
+    {
+      "file": "official_registry_readiness.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/official_registry_readiness.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 9,
+        "source_slide": 9,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 16,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "8da7ade77750e5b6ccd6537647aa0ac61f831bde2f02aefe3d7ab3a4c5e084df"
+    },
+    {
+      "file": "saic_preintegration_work.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/saic_preintegration_work.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 10,
+        "source_slide": 9,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 19,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "4d7494390be1745247e54575401f3bc20bfb1db367db46aeb89462b48a1eda96"
+    },
+    {
+      "file": "slide_09.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/authoring-svg-flat/slide_09.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 11,
+        "source_slide": 9,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 45,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "ad8b6d97c9103959dcff1d805669a9d2c1738fc8a25799200118fa4207e9444f"
+    }
+  ]
+}

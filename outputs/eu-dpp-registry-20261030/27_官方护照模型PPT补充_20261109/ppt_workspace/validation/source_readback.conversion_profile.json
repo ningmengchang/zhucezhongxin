@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/sources/source.pptx",
+    "name": "source.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 76885
+  },
+  "outputs": {
+    "markdown": "source_readback.md",
+    "asset_dir": "",
+    "image_manifest": "",
+    "image_count": 0
+  },
+  "markdown": {
+    "line_count": 367,
+    "char_count": 11499,
+    "heading_count": 10,
+    "table_count": 10,
+    "image_ref_count": 0,
+    "link_count": 0
+  },
+  "warnings": []
+}

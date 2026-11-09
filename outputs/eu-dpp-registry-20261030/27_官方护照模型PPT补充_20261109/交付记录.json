@@ -1,0 +1,12 @@
+{
+  "source": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/sources/source.pptx",
+  "export": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/exports/ppt_workspace_20261109_103301_native_charts_tables.pptx",
+  "delivery": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/护照模型V3.3.2与官方语义库1.0.0_上汽_联调准备补充版_20261109.pptx",
+  "sha256": "4649dafd36808d22389e1594b58753f7478ca4635f2ba5f5759ee7495a874c78",
+  "original_pages_retained": 9,
+  "inserted_output_pages": [
+    9,
+    10
+  ],
+  "original_page_9_output_page": 11
+}

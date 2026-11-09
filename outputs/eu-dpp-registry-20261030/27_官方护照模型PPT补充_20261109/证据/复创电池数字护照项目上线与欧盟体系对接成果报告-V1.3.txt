@@ -1,0 +1,170 @@
+复创电池数字护照项目
+上线与欧盟体系对接成果报告
+
+阅读导航：成果概览　法规依据　服务账号与接口　验证响应　官方文档
+针对《电池护照项目澄清函》关于客户上线实绩和欧盟体系对接证明的要求，现将项目交付、欧盟登记册认证、Battery Pass测试及JTC24标准接口验证成果报告如下。资料截至2026年11月6日。
+一、成果概览
+客户交付：完成两个生产项目上线，验证资料采集、护照发行与扫码展示。客户案例。
+欧盟登记册：完成ACC及正式环境组织认证；正式UPI请求已进入语义校验，当前返回语义服务不可用，待取得产品登记成功回执。认证与UPI记录。
+标准接口：Battery Pass四类电池220项用例通过、0项失败；JTC24相关接口完成64次OAuth请求和101项回归。测试批次；接口验证。
+二、客户平台上线实绩
+（一）客户A：电池制造企业生产平台
+2026年11月4日，完成后台应用、客户管理端、护照展示端及平台管理端等七个组件的生产交付，6,352个制品文件逐项核对一致。上线后以既有客户账号查询产品物料库、企业护照模型、护照生成管理和接口日志四个页面，页面运行错误和接口业务错误均为0。
+
+图1 客户A生产平台登录入口（2026年11月4日）
+（二）客户B：生产平台及采集至扫码流程
+2026年11月4日11:17，完成七个组件的生产更新，验证登录、权限、多语言公司资料、文件访问及两种管理角色操作。使用标识明确的合成验收样本完成71项数据采集、审核、护照生成和发行；桌面端与手机端分别验证原二维码入口、客户域名入口，四种扫码场景均通过。验收样本按流程清理，审计记录保留。
+（三）客户C：轻型交通电池护照页面
+2026年11月4日读取既有护照，产品图片、电池类型、化学体系、重量、更新时间及访问权限提示正常展示，页面状态为“未注册”。
+
+图2 客户C轻型交通电池护照实际页面
+三、欧盟登记册认证与UPI验证
+（一）ACC及正式环境组织认证
+已支撑客户授权经济运营商完成EU Login登录、MFA、组织登记、声明PDF生成、QSeal盖章上传及组织核验。登记标识与电子印章中的组织标识已完成一致性核对。
+11月4日复核ACC页面，核验状态为“Verified”，页脚显示“Environment: Acceptance”。
+
+图3 ACC测试环境组织核验结果
+11月6日正式登记册显示“Your Organisation has been successfully verified.”，审核时间为16:33:44；业务响应outcomeResult为SUCCEEDED。组织认证响应。
+
+图4 正式环境组织认证成功（2026年11月6日16:33:44）
+（二）正式环境UPI校验
+11月6日16:36，正式环境返回stage=SEMANTIC、错误码SEMANTIC_VALIDATION_UNAVAILABLE。该次请求已进入语义校验，最终outcomeResult=FAILED，接收0条、拒绝1条。语义阶段响应。
+
+图5 正式环境UPI请求的语义校验回执
+另一条带非标准端口的UPI被拒绝。16:54回读的业务响应为stage=URL_RESOLVABILITY、DISALLOWED_UPI_URL_PORT，定位为端口策略问题。端口校验响应。
+
+图6 正式环境带端口UPI请求的拒绝记录
+按官方10月30日发布的语义制品1.0.0，已整理EV、LMT、IND三类完整样例及分级访问视图，完成33项实例校验、18项Schema元校验和4项负向校验，并形成注册、MFA和接口调试指南。官方语义资料及版本。
+四、Battery Pass测试成果
+BatteryPass-Ready由Fraunhofer IPK牵头，用于验证电池护照实施及互操作能力。复创将护照生命周期服务接入其测试平台，覆盖创建、读取、数据元素读写、更新、历史版本、归档删除及权限处理。BatteryPass-Ready项目官网。
+2026年10月21日，在平台1.2.15、EconomicOperator/v1、内置测试配置下，复创R27隔离测试服务取得以下成绩：
+电池类型
+通过／总数
+耗时
+EV电动汽车
+55／55
+307秒
+LMT轻型交通
+55／55
+321秒
+非固定式工业
+55／55
+320秒
+固定式储能
+55／55
+327秒
+合计
+220／220，0项失败
+—
+批次编号：
+EV：5f8efda6-66d5-4a1c-a5d7-f0b816e15579LMT：dee03b31-6405-4d9b-a370-b251dabeb4c5工业：b2462efe-24c7-457a-8626-0840d1b4791c储能：b779bdda-4b20-4144-9e85-d5bc65638c38
+下列平台截图记录10月17日早期阶段的“Passed 19”；10月21日完整测试成绩及批次列于上表。
+
+图7 BatteryPass平台EV阶段结果（2026年10月17日）
+
+图8 BatteryPass平台储能阶段结果（2026年10月17日）
+五、JTC24标准接口对接
+CEN/CLC/JTC 24负责数字产品护照框架与系统标准。CEN-CENELEC于2026年7月15日公布首批八项标准，其中EN 18222涉及护照生命周期管理与检索接口。CEN-CENELEC官方说明。
+复创已实现护照创建、按标识及产品读取、数据元素读写、历史版本回读、归档与删除接口，验证ETag条件冲突、错误身份、跨租户访问和非法请求处理。R27版本完成四类Full合成报文的64次OAuth接口请求及101项定向回归，并通过前述BatteryPass-Ready外部平台测试。
+生命周期验证流程：创建护照 → 读取与更新 → 历史回读 → 归档或删除。身份权限及ETag条件贯穿上述操作。
+六、法规依据与官方原文
+《电池法规》（EU）2023/1542第77条第3款要求电池护照通过二维码访问，并与唯一标识关联；经济运营商将该唯一标识上传至（EU）2024/1781第13条的登记册。第5款要求护照信息准确、完整、及时更新。采用2026年8月13日合并文本。《电池法规》第77条原文。
+原文短引：“A battery passport shall be accessible through the QR code”，即“电池护照应可通过二维码访问”。
+
+图9 EUR-Lex《电池法规》第77条第3—5款实截（合并文本2026年8月13日）
+《可持续产品生态设计法规》（EU）2024/1781第13条第1款规定委员会建立数字产品护照登记册，存储唯一标识；第5款规定，成功上传后由登记册返回唯一注册标识。第13条原文，官方PDF第42—43页。
+七、服务账号、接口地址与后续联调
+（一）服务账号的创建
+Service Account是程序调用接口使用的账号。官方流程为：企业管理员创建账号并登记公钥 → 程序以private_key_jwt获取Token → 调用Registry API。前置条件包括Client ID、kid及至少一项ACTIVE公钥凭据。《Service Account技术集成指南》第2—3章，第5—6页。
+
+图10 官方技术指南第5页：管理员创建Service Account并登记公钥
+11月3日ACC会话及11月6日正式环境管理员菜单均未见Service Account管理项。正式环境当前角色为EO Administrator，侧栏及账号菜单如下。
+
+图11 11月6日正式环境管理员实际菜单
+（二）官方接口地址
+以下地址采用2026年10月30日v1.0指南。Token使用POST，JWKS和授权服务元数据使用GET。指南第5.1节第9页；环境对照第13章第20页。
+用途
+环境
+官方地址
+门户
+ACC
+https://registry.acc.product-passport.ec.europa.eu/
+门户
+生产
+https://registry.product-passport.ec.europa.eu/
+Token
+ACC
+https://auth.acc.product-passport.ec.europa.eu/oauth2/token
+Token
+生产
+https://auth.product-passport.ec.europa.eu/oauth2/token
+JWKS
+ACC
+https://auth.acc.product-passport.ec.europa.eu/oauth2/jwks
+JWKS
+生产
+https://auth.product-passport.ec.europa.eu/oauth2/jwks
+元数据
+ACC
+https://auth.acc.product-passport.ec.europa.eu/.well-known/oauth-authorization-server
+元数据
+生产
+https://auth.product-passport.ec.europa.eu/.well-known/oauth-authorization-server
+Registry API
+ACC
+https://reg.acc.product-passport.ec.europa.eu/api/v1
+Registry API
+生产
+https://reg.product-passport.ec.europa.eu/api/v1
+
+图12 官方技术指南第9页：Token、JWKS及元数据端点
+
+图13 官方技术指南第20页：ACC及生产环境地址
+11月6日17:06前后，无凭据GET实测如下。指南要求的Token POST签名申请，待Service Account取得后联调。
+检查项
+ACC结果
+生产结果
+JWKS
+404；JSON，NOT_FOUND
+404；JSON，NOT_FOUND
+授权服务元数据
+401；空正文
+401；空正文
+Token地址GET探测
+404；JSON
+404；JSON
+reg主机产品组接口
+401；missing session cookie
+401；missing session cookie
+registry主机相同路径
+200；text/html门户页
+200；text/html门户页
+产品组探测路径为/api/v1/dpp/product-groups。10月30日OpenAPI的servers使用registry主机，技术指南使用reg主机；需由官方确认机器接口的当前基址。端点响应摘录。
+（三）语义服务状态
+官方用户指南将“UPI URL is invalid”“UPI is not resolvable”和语义校验服务不可用分别列为错误。11月6日正式业务响应明确为SEMANTIC_VALIDATION_UNAVAILABLE，说明当次语义校验服务不可用。《登记册用户指南》v1.03，PDF第57页；业务响应。
+
+图14 官方用户指南PDF第57页：UPI及语义服务错误说明
+（四）下一步安排
+向官方确认三项：Service Account创建入口及权限；ACC和生产当前启用的Token、JWKS和Registry API地址；语义校验服务开放或恢复状态。取得账号和地址后，按指南完成签名Token申请、单条UPI提交、任务结果回读，归档成功注册标识与业务回执。
+八、官方业务响应摘录
+以下为11月6日从正式门户后端结果接口取得的响应字段。正文时间采用北京时间，JSON时间保留官方UTC原值。
+（一）组织认证成功
+{  "taskType": "ORGANISATION_VERIFICATION_SUBMISSION",  "completedAt": "2026-11-06T08:33:44.109Z",  "outcomeResult": "SUCCEEDED",  "outcomeMessage": "Organisation verified successfully.",  "errorCodes": []}
+（二）UPI进入语义校验
+{  "taskId": "1eeae4c4-6484-462a-ad82-259673727e8a",  "correlationId": "ff3e81bd-148b-430e-a4c3-07dc2c5f03e5",  "completedAt": "2026-11-06T08:36:09.393Z",  "outcomeResult": "FAILED",  "stage": "SEMANTIC",  "errorCode": "SEMANTIC_VALIDATION_UNAVAILABLE",  "acceptedItems": 0,  "rejectedItems": 1}
+（三）UPI端口策略拒绝
+{  "taskId": "cacd5709-3d30-425b-8c59-8ec8a227afa1",  "completedAt": "2026-11-06T08:54:10.512Z",  "outcomeResult": "FAILED",  "stage": "URL_RESOLVABILITY",  "errorCode": "DISALLOWED_UPI_URL_PORT",  "acceptedItems": 0,  "rejectedItems": 1}
+（四）端点实测响应
+ACC JWKS：GET https://auth.acc.product-passport.ec.europa.eu/oauth2/jwks，HTTP 404、application/json。原响应字段摘录：
+{  "message": "No static resource oauth2/jwks for request 'https://auth.acc.product-passport.ec.europa.eu/oauth2/jwks'.",  "code": "NOT_FOUND",  "status": 404}
+reg主机产品组路径返回HTTP 401，正文为“Unauthorized: missing session cookie”。registry主机相同路径返回HTTP 200、text/html，内容为登记册门户HTML；两套环境结果一致。
+九、官方文档与版本
+《电池法规》（EU）2023/1542，第77条：采用2026年8月13日合并文本；法规实截见图9。
+《可持续产品生态设计法规》（EU）2024/1781，第13条：2024年6月28日官方公报PDF第42—43页，规定登记册及成功上传后的注册标识。
+《登记册用户指南》v1.03：2026年9月版；UPI及语义服务错误见PDF第57页，图14。
+《Service Account技术集成指南》v1.0：2026年10月30日发布；创建流程第5页、前置条件第6页、鉴权地址第9页、环境对照第20页，见图10、图12、图13。
+委员会DPP官方资料页：10月30日OpenAPI及语义制品1.0.0下载入口。文档版本与11月6日在线响应分别标注。
+BatteryPass-Ready项目官网：项目及实施验证说明；测试平台提供实际联测入口。
+CEN-CENELEC数字产品护照标准说明：2026年7月15日，JTC24工作范围及八项标准。
+南京复创大数据产业发展有限公司
+2026年11月6日

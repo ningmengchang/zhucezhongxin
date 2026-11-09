@@ -1,0 +1,52 @@
+
+[SCAN] Checking 11 round-trip output SVG page(s) for edited-text horizontal capacity (single-line width per positioned line; vertical wrapping is not modeled)...
+
+[OK] slide_01.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 1.3% (1/2 unchanged source texts)
+
+[OK] slide_02.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/15 unchanged source texts)
+
+[OK] slide_03.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.4% (1/92 unchanged source texts)
+
+[OK] slide_04.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.6% (1/158 unchanged source texts)
+
+[OK] slide_05.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 1.5% (4/96 unchanged source texts)
+
+[OK] slide_06.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/62 unchanged source texts)
+
+[OK] slide_07.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.2% (1/65 unchanged source texts)
+
+[OK] slide_08.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.2% (1/62 unchanged source texts)
+
+[OK] official_registry_readiness.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] saic_preintegration_work.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_09.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/45 unchanged source texts)
+
+================================================================================
+[SUMMARY] Check Summary
+================================================================================
+
+Total files: 11
+  [OK] Fully passed: 11 (100%)
+  [WARN] With warnings: 0 (0%)
+  [ERROR] With errors: 0 (0%)
+
+Provenance categories:
+  blocking: 0          hard findings; gate also requires exit 0
+  introduced: 0        advisory; new or changed
+  inherited: 0         informational; prototype-identical
+  source-import: 0     informational; source-conversion loss
+
+[REPORT] JSON quality report exported: outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/ppt_workspace/validation/svg_quality_report.json

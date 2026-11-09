@@ -1,0 +1,28 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "官方指南要求 EO Administrator 创建账号，但从“账号和公钥凭据已创建”开始讲解，没有提供创建页面地址。当前 ACC 主入口及其动态路由引用的 15 个公开脚本中，也没有发现对应入口。结合此前管理员已有相关权限的证据，更像是功能尚未在该门户开放，或另有管理入口；这仍需官方确认。\n\nService Account 指南 (https://single-market-economy.ec.europa.eu/document/download/b42673d1-90db-4c0c-b54e-37fa9e0ac6c6_en?filename=DPP+Registry+%E2%80%93+Service+Account+Technical+Integration+Guide.pdf)",
+            "createTime": "2026-11-04 11:07:30",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgdVd5OwVHx3kuZKimIYi1tw==",
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          }
+        ],
+        "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+        "singleChat": false,
+        "title": "DPP注册中心攻坚"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "KOvDf5e6lvodEkKXaT9QZh5JgYOfwNVD9x7R/nsTp2q4Y2jAL8uDQMCEr0W4x/hOUg0QCQkFhlVzW6zJHY++XFNHzYEADqMV4LMIdbgZ4Y2N0u9YRT/keiX7TyqCjLFI2qosJYxQOQhYfnWRaNyqD6KEuIKtSBpnhZiEVHMXRYhHcwPVFXUUwYWhKGHxnMnVLaA0kR0UX92LpDNv/2Mc4/jXmOi23ubhBv7B5fVHczFTjUPd1l4omRp2wTY7aqlN"
+  },
+  "success": true
+}

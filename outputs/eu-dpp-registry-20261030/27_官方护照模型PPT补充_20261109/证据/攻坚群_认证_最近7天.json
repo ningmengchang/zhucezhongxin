@@ -1,0 +1,107 @@
+{
+  "arguments": [],
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "conversationMessagesList": [
+      {
+        "messages": [
+          {
+            "content": "@何凯(何凯) @明亮(明宣帆)  可照着做的注册和认证指南，10分钟即可注册成功",
+            "createTime": "2026-11-07 15:15:52",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "明宣帆"
+                ]
+              }
+            ],
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgxRY8GMEhFX4fEqo5jg6u4w==",
+            "quotedMessage": {
+              "content": "[文件] EU注册认证与接口调试指南-V1.2.docx fileId: 1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE 注意：如需下载使用dws drive download命令下载",
+              "createTime": "2026-11-07 15:13:59",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgm+aMMUSAIAygLix4I1Zm0Q==",
+              "resources": [
+                {
+                  "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                  "resourceId": "1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE",
+                  "resourceIdType": "fileId",
+                  "resourceType": "file",
+                  "url": "https://alidocs.dingtalk.com/i/nodes/1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE"
+                }
+              ],
+              "sendType": "user",
+              "sender": "刘勇辉",
+              "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "[文件] EU注册认证与接口调试指南-V1.2.docx fileId: 1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE 注意：如需下载使用dws drive download命令下载",
+            "createTime": "2026-11-07 15:13:59",
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgm+aMMUSAIAygLix4I1Zm0Q==",
+            "resources": [
+              {
+                "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                "resourceId": "1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE",
+                "resourceIdType": "fileId",
+                "resourceType": "file",
+                "url": "https://alidocs.dingtalk.com/i/nodes/1OQX0akWmXBk9ja5INPkP4lz8GlDd3mE"
+              }
+            ],
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          },
+          {
+            "content": "@明亮(明宣帆) @何凯(何凯)   \n  \n1106 进度 跟踪，今天找星恒授权了一次，实现了【欧盟生产环境】的身份认证 Organisation Verification 和 注册验证 \tDPP Registration  \n效果和 ACC测试环境 一致[图片消息](mediaId=@lQLPJx5jqlkVe2XNBb3NCfewvFFbsG_R0HAKvfHMT7alAA)",
+            "createTime": "2026-11-06 22:41:22",
+            "emotionReplyList": [
+              {
+                "emoji": "OK",
+                "replyUsers": [
+                  "明宣帆"
+                ]
+              }
+            ],
+            "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+            "openMessageId": "msgF3HXEYpAJ7kwiG6ytg/IRg==",
+            "quotedMessage": {
+              "content": "[文件] 复创电池数字护照项目上线与欧盟体系对接成果报告-V1.3.docx fileId: PwkYGxZV33LwmA0ghr2j23LOVAgozOKL 注意：如需下载使用dws drive download命令下载",
+              "createTime": "2026-11-06 22:37:23",
+              "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+              "openMessageId": "msgWXSpU9kfahj1ZXWbpQiaHw==",
+              "resources": [
+                {
+                  "downloadCommand": "注意：如需下载使用dws drive download命令下载",
+                  "resourceId": "PwkYGxZV33LwmA0ghr2j23LOVAgozOKL",
+                  "resourceIdType": "fileId",
+                  "resourceType": "file",
+                  "url": "https://alidocs.dingtalk.com/i/nodes/PwkYGxZV33LwmA0ghr2j23LOVAgozOKL"
+                }
+              ],
+              "sendType": "user",
+              "sender": "刘勇辉",
+              "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+            },
+            "sendType": "user",
+            "sender": "刘勇辉",
+            "senderOpenDingTalkId": "DQ0MfXjvxCiPTB2JyTkqvThMUQj2ziPdoJW"
+          }
+        ],
+        "openConversationId": "cidSOF2T3s7ENWAM+2Jb41CNw==",
+        "singleChat": false,
+        "title": "DPP注册中心攻坚"
+      }
+    ],
+    "hasMore": false,
+    "nextCursor": "uObC9wWntT4e6m377KbymimiV/jEN+fseuc+jh4IWAZqrCV2pV8KrIwEtQHiMM6EFiOxirLTTV7e99FudF0xY4FMPD6WZJ4u7nybGDUICha2qVvsbMkVafLYZitDpwo9dAAhMESkHRQjhq3jT7mh4YEKMNJjj5ip2PnI/7sEC5Y6s6TCR25XrAKR7VEiHp6wgAAF8CHdcCvalM+mR/eIsC/5gK2XKxWymGityoDCLD3bbHANxm9m9SdSZg5D6u1G"
+  },
+  "success": true
+}
