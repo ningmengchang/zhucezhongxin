@@ -1,0 +1,56 @@
+{
+  "native_table_count": 1,
+  "rows": 8,
+  "columns": 3,
+  "other_pages_unchanged": 12,
+  "source_slide_and_rels_preserved": true,
+  "masters_layouts_preserved": true,
+  "table": [
+    [
+      "任务项",
+      "责任人",
+      "预期时间"
+    ],
+    [
+      "1  法规4.0输出 / 形成法规模型及字段要求",
+      "孔瑞霞",
+      "11.10"
+    ],
+    [
+      "2  法规4.0用户宣贯 / 对齐字段含义、适用规则与使用方式",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "3  工程化4.0输出 / 形成工程字段、数据结构与实施规则",
+      "宁蒙昌",
+      "11.12"
+    ],
+    [
+      "4  系统影响面评估 / 实体、API、护照编辑器、二维码落地页改动",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "5  PRD输出 / 明确功能需求、交互流程与改造范围",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "6  功能上线 / 完成相关功能开发、验证与发布",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "7  数据割接 / 手动补数据、系统割接",
+      "待确认",
+      "待确认"
+    ]
+  ],
+  "delivery_file": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/护照模型V3.4与官方语义库1.0.0_实施落地计划表版_20261113.pptx",
+  "sha256": "d28fe7ff0acb8c134f79c22bce7a35df292babb891b0d0e2b63394ea7a446466",
+  "visual_review": "已检查实际PPT转PDF第11页，无文字溢出、遮挡或裁切。",
+  "native_table_verified": true,
+  "delivery_errors": [],
+  "font_advisories": "保留原稿字体声明；新增表格使用Microsoft YaHei，实际渲染可读。"
+}

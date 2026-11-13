@@ -1,0 +1,943 @@
+{
+  "cells": [
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "基础信息"
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        },
+        "value": "数据字段定义规范"
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        },
+        "value": "XXX型号"
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "verticalAlignment": "middle"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "欧盟电池法要求"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "BatteryPass v1.3\n No"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "数据大类\nAttribute Category"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "数据小类\nAttribute sub-category"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "数据项名称\nAttribute name"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "电池分类\nBattery Category"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "是否必填\nM：必填项\nC：有条件的\nV：自愿项"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "是否从2027.02强制要求\nY：yes\nN：no"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "欧盟官方指南中是否包括\nY：yes\nN：no"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "欧盟官方指南序号"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "欧盟官方指南名称"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Data Unit"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "披露权限"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(252, 193, 2)",
+          "fontFamily": "\"微软雅黑, sans-serif\", monospace",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "字段说明（业务说明）"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "取值逻辑和建议"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "填写示例"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "主机厂/pack供应商/复创提供信息"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "责任部门/岗位\nOwner Dept"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "系统数据填写颗粒度"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "数据项值\nAttribute Value"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "数据溯源证据\nValue Proof"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(255, 192, 0)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "对接方式+数据来源"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(4, 176, 241)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "附录XIII要求"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "DIN99100\n编号"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Short Definition/Understanding"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Requirements per Regulation(s), incl. mandated standardization and DA/IA"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Requirements or Recommendations per DIN-DKE Spec 99100 and Additional Requirements"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Regulation Reference"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Data Format"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Data behavioural characteristic: static vs. dynamic"
+      },
+      {
+        "cellStyles": {
+          "backgroundColor": "rgb(146, 208, 80)",
+          "fontFamily": "\"Microsoft YaHei Regular\", sans-serif",
+          "fontSize": 10,
+          "fontWeight": "bold",
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Granularity level I: Model vs individual battery"
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "BPv1.3/#2"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "DPP头信息\nDPP header"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "电池护照信息\nDPP Information"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "电池护照状态\nDPP Status"
+      },
+      {
+        "cellStyles": {
+          "fontColor": "rgb(77, 147, 217)",
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "EV/LMT/IND"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        },
+        "value": "M"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        },
+        "value": "Y"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "N"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "-"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "-"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        },
+        "value": "n.a."
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Public"
+      },
+      {
+        "cellStyles": {
+          "fontColor": "rgb(77, 147, 217)",
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "单个电池护照的当前状态：\n-valid：有效\n-invalid：无效"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "DPP系统维护"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "/"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "复创"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "DPP"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "SN"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": ""
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "-"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "The current status of the DPP as a digital resource"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "The status of the DPP instance as digital resource.\nExample: \"active\", \"inactive\", \"archived\", \"marked-for-deletion\"，\"invalid\""
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "The options for DPP status should be defined as\n- active: current version of the battery passport\n- archived: past version of the battery passport, archived after an update.\n- inactive: A battery passport linked to a new battery passport, which has a different DPP status than 'inactive', after reuse, repurposing, remanufacturing.\n- marked-for-deletion: a battery passport that has been marked for deletion after recycling or export of the battery\n- invalid: a battery passport that has been marked as invalid, e.g. by market surveillance"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "JTC-24 EN 18223 (4.1.2.1 Table 1)"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "String"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        },
+        "value": "Static"
+      },
+      {
+        "cellStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Individual battery"
+      }
+    ]
+  ],
+  "colIndices": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "AA",
+    "AB",
+    "AC",
+    "AD"
+  ],
+  "hasMore": false,
+  "logId": "213ee25c17943769329251758e06c2",
+  "message": "Successfully retrieved cell data.",
+  "returnedRange": "A1:AD3",
+  "rowIndices": [
+    1,
+    2,
+    3
+  ],
+  "success": true,
+  "truncationReasons": []
+}

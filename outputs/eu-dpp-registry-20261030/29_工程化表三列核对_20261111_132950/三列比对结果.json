@@ -1,0 +1,4161 @@
+{
+  "metadata": {
+    "source": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/12_工程化字段表v4.0/电池护照_工程化字段表_v4.0_公共字段合并版.xlsx",
+    "sha256": "7d9f9c4c1c7db28617df1a4500497c986514a4d82b1ceed2ad6d2e0ce766a45a",
+    "mtime": "2026-11-11T13:25:37.790721",
+    "sheet": "工程化v4.0",
+    "rows": 93,
+    "cols": 30,
+    "merges": []
+  },
+  "online_metadata": {
+    "colWidths": null,
+    "columnCount": 19,
+    "columnGroups": null,
+    "frozenColumnCount": 0,
+    "frozenRowCount": 1,
+    "hiddenCols": null,
+    "hiddenRows": null,
+    "id": "s2",
+    "logId": "213f86d817943749913581073e058b",
+    "mergedRanges": [
+      "H19:H20",
+      "E65:E70"
+    ],
+    "message": "Successfully retrieved sheet information.",
+    "name": "工程化4.0",
+    "nonEmptyRange": {
+      "lastCell": "S145",
+      "lastColumn": "S",
+      "lastRow": 145,
+      "range": "A1:S145"
+    },
+    "rowCount": 145,
+    "rowGroups": null,
+    "rowHeights": null,
+    "success": true,
+    "visibility": "visible"
+  },
+  "summary": {
+    "total_fields": 92,
+    "match_counts": {
+      "字段直接对应": 84,
+      "仅父字段参考": 8
+    },
+    "direct_columns": {
+      "category": {
+        "一致": 26,
+        "大类一致·细分写法不同": 54,
+        "不一致": 1,
+        "在线空缺": 3
+      },
+      "required": {
+        "一致": 63,
+        "不一致": 17,
+        "粒度不同·需确认": 1,
+        "在线空缺": 3
+      },
+      "permission": {
+        "角色一致": 76,
+        "不一致": 5,
+        "在线空缺": 3
+      }
+    },
+    "parent_columns_reference_only": {
+      "category": {
+        "大类一致·细分写法不同": 6,
+        "一致": 2
+      },
+      "required": {
+        "一致": 7,
+        "不一致": 1
+      },
+      "permission": {
+        "角色一致": 8
+      }
+    }
+  },
+  "results": [
+    {
+      "local": {
+        "row": 2,
+        "id": "V4-0003",
+        "name": "电池护照颗粒度",
+        "key": "granularity",
+        "official": "granularity",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+        "permission": "PUB（公开）",
+        "path": "$.granularity"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 4,
+            "name": "电池护照颗粒度\r\nDPP Granularity",
+            "engineering": "电池护照颗粒度\r\ngranularity\r\nDPP Granularity",
+            "mapping": "$.granularity",
+            "example": "    \"granularity\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/granularity-level#item\",\r\n",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 3,
+        "id": "V4-0004",
+        "name": "最新更新时间",
+        "key": "lastUpdate",
+        "official": "lastUpdate",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+        "permission": "PUB（公开）",
+        "path": "$.lastUpdate"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 5,
+            "name": "最新更新时间\r\nDate-time of latest update of DPP",
+            "engineering": "最新更新时间\r\nlastUpdated\r\nDate-time of latest update of DPP",
+            "mapping": "$.lastUpdate",
+            "example": "    \"lastUpdate\": \"2025-08-22T03:12:00Z\",\r\n",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 4,
+        "id": "V4-0005",
+        "name": "电池护照唯一标识符",
+        "key": "digitalProductPassportId",
+        "official": "digitalProductPassportId",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+        "permission": "PUB（公开）",
+        "path": "$.digitalProductPassportId"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 6,
+            "name": "电池护照唯一标识符\r\nUnique battery passport identifier / unique DPP identifier",
+            "engineering": "电池护照唯一标识符\r\ndigitalProductPassportId\r\nUnique battery passport identifier / unique DPP identifier",
+            "mapping": "$.digitalProductPassportId",
+            "example": "",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 5,
+        "id": "V4-0006",
+        "name": "电池唯一标识符",
+        "key": "uniqueProductIdentifier",
+        "official": "uniqueProductIdentifier",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+        "permission": "PUB（公开）",
+        "path": "$.uniqueProductIdentifier"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 7,
+            "name": "电池唯一标识符\r\nUnique battery identifier / unique product identifier",
+            "engineering": "电池唯一标识符\r\nuniqueProductIdentifier\r\nUnique battery identifier / unique product identifier",
+            "mapping": "$.uniqueProductIdentifier",
+            "example": "",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 6,
+        "id": "V4-0009",
+        "name": "参考标准ID",
+        "key": "contentSpecificationIds",
+        "official": "contentSpecificationIds",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "三类均必填。核心规范、电池组规范、所属电池子类规范分别各含1个匹配标识；子类按EV→evb、LMT→lmt、IND→ind选择。",
+        "permission": "PUB（公开）",
+        "path": "$.contentSpecificationIds"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 10,
+            "name": "参考标准/内容规范ID\r\nContent specification Ids",
+            "engineering": "参考标准ID\r\ncontentSpecificationIds\r\nContent specification Ids",
+            "mapping": "$.contentSpecificationIds",
+            "example": "    \"contentSpecificationIds\": [\r\n        \"https://repository.product-passport.ec.europa.eu/product/batteries/1.0.0\",\r\n        \"https://repository.product-passport.ec.europa.eu/core/1.0.0\",\r\n        \"https://repository.product-passport.ec.europa.eu/product/batteries/subgroup/evb/1.0.0\"\r\n    ],",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 7,
+        "id": "V4-0012",
+        "name": "电池型号",
+        "key": "modelIdentifier",
+        "official": "modelIdentifier",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryIdentification.modelIdentifier"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 11,
+            "name": "电池型号\r\nBattery model identifier",
+            "engineering": "电池型号\r\nbatteryModelIdentifier\r\nBattery model identifier",
+            "mapping": "$.batteryIdentification.modelIdentifier",
+            "example": "\"batteryIdentification\": {\r\n        \"modelIdentifier\": \"IC-75-LFP\",\r\n        \"serialNumber\": \"sn-001\"\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 8,
+        "id": "V4-0013",
+        "name": "电池序列号",
+        "key": "serialNumber",
+        "official": "serialNumber",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryIdentification.serialNumber"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 12,
+            "name": "电池序列号\r\nBattery serial number",
+            "engineering": "电池序列号\r\nbatterySerialNumber\r\nBattery serial number",
+            "mapping": "$.batteryIdentification.serialNumber",
+            "example": "\"batteryIdentification\": {\r\n        \"modelIdentifier\": \"IC-75-LFP\",\r\n        \"serialNumber\": \"sn-001\"\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 9,
+        "id": "V4-0141",
+        "name": "批次号",
+        "key": "batchNumber",
+        "official": "batchNumber",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryIdentification.batchNumber"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 13,
+            "name": "批次号",
+            "engineering": "批次号",
+            "mapping": "batchNumber",
+            "example": "\"batteryIdentification\": {\r\n        \"modelIdentifier\": \"IC-75-LFP\",\r\n        \"serialNumber\": \"sn-001\"\r\n    },",
+            "category": "EV / LMT / IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 10,
+        "id": "V4-0142",
+        "name": "其他识别要素",
+        "key": "otherIdentificationElement",
+        "official": "otherIdentificationElement",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryIdentification.otherIdentificationElement"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 14,
+            "name": "其他识别要素",
+            "engineering": "其他识别要素",
+            "mapping": "otherIdentificationElement",
+            "example": "\"batteryIdentification\": {\r\n        \"modelIdentifier\": \"IC-75-LFP\",\r\n        \"serialNumber\": \"sn-001\"\r\n    },",
+            "category": "EV / LMT / IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 11,
+        "id": "V4-0143",
+        "name": "产品编号",
+        "key": "productNumber",
+        "official": "productNumber",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "“型号＋批次号”成对，或序列号／产品编号／其他识别要素至少一组；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryIdentification.productNumber"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 15,
+            "name": "产品编号",
+            "engineering": "产品编号",
+            "mapping": "productNumber",
+            "example": "\"batteryIdentification\": {\r\n        \"modelIdentifier\": \"IC-75-LFP\",\r\n        \"serialNumber\": \"sn-001\"\r\n    },",
+            "category": "EV / LMT / IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 12,
+        "id": "V4-0022",
+        "name": "制造商名称",
+        "key": "manufacturerName",
+        "official": "manufacturerName",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturerIdentification.manufacturerName"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 24,
+            "name": "制造商信息\r\nManufacturer information",
+            "engineering": "制造商名称\r\nManufacturer name",
+            "mapping": "$.manufacturerIdentification.manufacturerName",
+            "example": "    \"manufacturerIdentification\": {\r\n        \"manufacturerName\": \"Iberia Battery Systems S.L.\",\r\n        \"manufacturerTradeName\": \"IberiaCell\",\r\n        \"manufacturerTrademark\": \"IberiaCell(R)\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 13,
+        "id": "V4-0023",
+        "name": "制造商注册商号",
+        "key": "manufacturerTradeName",
+        "official": "manufacturerTradeName",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturerIdentification.manufacturerTradeName"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 25,
+            "name": "",
+            "engineering": "制造商注册商号\r\nmanufacturerInformation.registeredTradeNameOrRegisteredTrademark\r\nManufacturer registered trade name",
+            "mapping": "$.manufacturerIdentification.manufacturerTradeName",
+            "example": "    \"manufacturerIdentification\": {\r\n        \"manufacturerName\": \"Iberia Battery Systems S.L.\",\r\n        \"manufacturerTradeName\": \"IberiaCell\",\r\n        \"manufacturerTrademark\": \"IberiaCell(R)\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 14,
+        "id": "V4-0024",
+        "name": "制造商注册商标",
+        "key": "manufacturerTrademark",
+        "official": "manufacturerTrademark",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "制造商名称／注册商号／注册商标至少一项；该子字段不逐项强制。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturerIdentification.manufacturerTrademark"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 26,
+            "name": "",
+            "engineering": "制造商注册商标\r\nmanufacturerInformation.registeredTradeNameOrRegisteredTrademark\r\nManufacturer registered trademark",
+            "mapping": "$.manufacturerIdentification.manufacturerTrademark",
+            "example": "    \"manufacturerIdentification\": {\r\n        \"manufacturerName\": \"Iberia Battery Systems S.L.\",\r\n        \"manufacturerTradeName\": \"IberiaCell\",\r\n        \"manufacturerTrademark\": \"IberiaCell(R)\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 15,
+        "id": "V4-0025",
+        "name": "制造商邮政地址",
+        "key": "manufacturerPostalAddress",
+        "official": "manufacturerPostalAddress",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturerPostalAddress"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 27,
+            "name": "",
+            "engineering": "制造商邮政地址\r\nmanufacturerInformation.postalAddress\r\nManufacturer postal address",
+            "mapping": "manufacturerPostalAddress",
+            "example": "    \"manufacturerPostalAddress\": \"Calle de Alcalá 100, 28009 Madrid, Spain\",\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 16,
+        "id": "V4-0026",
+        "name": "制造商网址",
+        "key": "manufacturerWebsite",
+        "official": "manufacturerWebsite",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "父对象提供时，网站／邮箱至少一项；不要求两项同时提供。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturerContactDetails.manufacturerWebsite"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 28,
+            "name": "",
+            "engineering": "制造商网址\r\nmanufacturerInformation.webAddress\r\nManufacturer web address",
+            "mapping": "$.manufacturerContactDetails.manufacturerWebsite",
+            "example": "    \"manufacturerContactDetails\": {\r\n        \"manufacturerWebsite\": \"https://www.example.com\",\r\n        \"manufacturerEmail\": \"mailto:info@example.com\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 17,
+        "id": "V4-0027",
+        "name": "制造商网址电子邮箱",
+        "key": "manufacturerEmail",
+        "official": "manufacturerEmail",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "父对象提供时，网站／邮箱至少一项；不要求两项同时提供。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturerContactDetails.manufacturerEmail"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 29,
+            "name": "",
+            "engineering": "制造商网址电子邮箱\r\nmanufacturerInformation.eMailAddress\r\nManufacturer email address",
+            "mapping": "manufacturerContactDetails.manufacturerEmail",
+            "example": "    \"manufacturerContactDetails\": {\r\n        \"manufacturerWebsite\": \"https://www.example.com\",\r\n        \"manufacturerEmail\": \"mailto:info@example.com\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 18,
+        "id": "V4-0029",
+        "name": "生产日期",
+        "key": "manufacturingDate",
+        "official": "manufacturingDate",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturingDate"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 34,
+            "name": "生产日期\r\nManufacturing date",
+            "engineering": "生产日期\r\nmanufacturingDate\r\nManufacturing date",
+            "mapping": "manufacturingDate",
+            "example": "    \"manufacturingDate\": \"2026-03\",\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 19,
+        "id": "V4-0031",
+        "name": "质保期",
+        "key": "commercialWarrantyPeriod",
+        "official": "commercialWarrantyPeriod",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "有商业质保时适用；词表未将 0 定义为“无质保”或“终身质保”。",
+        "permission": "PUB（公开）",
+        "path": "$.commercialWarrantyPeriod"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 36,
+            "name": "质保期\r\nWarranty period of the battery",
+            "engineering": "质保期\r\nwarrantyPeriodOfTheBattery\r\nWarranty period of the battery",
+            "mapping": "commercialWarrantyPeriod",
+            "example": "    \"commercialWarrantyPeriod\": 24,\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:C; LMT:C; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 20,
+        "id": "V4-0032",
+        "name": "电池类型",
+        "key": "batteryCategory",
+        "official": "batteryCategory",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryCategory"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 37,
+            "name": "电池类型\r\nBattery category",
+            "engineering": "电池类型\r\nbatteryCategory\r\nBattery category",
+            "mapping": "\r\nbatteryCategory",
+            "example": "    \"batteryCategory\": \"https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-category#electricVehicleBattery\",\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 21,
+        "id": "V4-0033",
+        "name": "电池重量",
+        "key": "batteryWeight",
+        "official": "batteryWeight",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryWeight.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 38,
+            "name": "电池质量\r\nBattery weight",
+            "engineering": "电池重量\r\nbatteryWeight\r\nBattery weight",
+            "mapping": "batteryWeight.value",
+            "example": "    \"batteryWeight\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#kilogram\",\r\n        \"value\": 385.5\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 22,
+        "id": "V4-0034",
+        "name": "电池状态",
+        "key": "batteryStatus",
+        "official": "batteryStatus",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.batteryStatus"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 39,
+            "name": "电池状态\r\nBattery status",
+            "engineering": "电池状态\r\nbatteryStatus\r\nBattery status",
+            "mapping": "batteryStatus",
+            "example": "    \"batteryStatus\": \"https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-status#original\",\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 23,
+        "id": "V4-0035",
+        "name": "分类收集标识确认",
+        "key": "separateCollectionSymbol",
+        "official": "separateCollectionSymbol",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.separateCollectionSymbol"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 40,
+            "name": "镉和铅符号\r\nSymbols for cadmium and lead",
+            "engineering": "分类收集标识\r\nSeparate collection symbol",
+            "mapping": "chemicalSymbol\r\nseparateCollectionSymbol",
+            "example": "    \"separateCollectionSymbol\": true,\r\n    \"chemicalSymbol\": [\"https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#cadmiumSymbol\"],\r\n\r\n\r\n\r\nEU-BATTERY-CHEMICAL-SYMBOL\r\r\ncadmiumSymbol — 镉标识\r\r\nleadSymbol — 铅标识\r\r\nnoneSymbol — 无相应化学符号",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 24,
+        "id": "V4-0037",
+        "name": "灭火剂",
+        "key": "extinguishingAgent",
+        "official": "extinguishingAgent",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.extinguishingAgent"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 42,
+            "name": "灭火剂\r\nExtinguishing agent",
+            "engineering": "灭火剂\r\nextinguishingAgent\r\nExtinguishing agent",
+            "mapping": "extinguishingAgent",
+            "example": "\"extinguishingAgent\": {\r\n        \"en-IE\": \"Large quantities of water; dry chemical powder (Class D) for small fires\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 25,
+        "id": "V4-0039",
+        "name": "欧盟符合性声明",
+        "key": "euDeclarationOfConformity",
+        "official": "euDeclarationOfConformity",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.euDeclarationOfConformity"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 44,
+            "name": "欧盟符合性声明\r\nEU declaration of conformity",
+            "engineering": "欧盟符合性声明\r\neuDeclarationOfConformity\r\nEU declaration of conformity",
+            "mapping": "euDeclarationOfConformity",
+            "example": "    \"euDeclarationOfConformity\": {\r\n        \"resourceTitle\": \"EU declaration of conformity file\",\r\n        \"contentType\": \"application/pdf\",\r\n        \"url\": \"https://example.com/docs/eu-doc-0001.pdf\",\r\n        \"language\": \"en-GB\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 26,
+        "id": "V4-0057",
+        "name": "化学体系",
+        "key": "batteryChemistry",
+        "official": "batteryChemistry",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryChemistry"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 63,
+            "name": "化学体系\r\nBattery chemistry",
+            "engineering": "化学体系\r\nbatteryChemistry\r\nBattery chemistry",
+            "mapping": "batteryChemistry",
+            "example": "   \"batteryChemistry\": [\r\n        \"https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemistry#lithiumIonLCO\"\r\n    ]",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 27,
+        "id": "V4-0058",
+        "name": "关键原材料",
+        "key": "criticalRawMaterials",
+        "official": "criticalRawMaterials",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.criticalRawMaterials"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 64,
+            "name": "关键原材料\r\nCritical raw materials",
+            "engineering": "关键原材料\r\ncriticalRawMaterials\r\nCritical raw materials",
+            "mapping": "criticalRawMaterials",
+            "example": "    \"criticalRawMaterials\": [\r\n        \"https://repository.product-passport.ec.europa.eu/core/vocabs/critical-raw-material#lithium\"\r\n    ]",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 28,
+        "id": "V4-0065",
+        "name": "有害物质",
+        "key": "hazardousSubstances",
+        "official": "hazardousSubstances",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.hazardousSubstances"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 71,
+            "name": "有害物质信息\r\nhazardous substances",
+            "engineering": "有害物质名称\r\nHazardous substance name",
+            "mapping": "hazardousSubstances",
+            "example": "    \"hazardousSubstances\": [\"Lithium\"],\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 29,
+        "id": "V4-0071",
+        "name": "拆卸指南",
+        "key": "dismantlingInformation",
+        "official": "dismantlingInformation",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "RES1（合法权益人／公告机构／主管机关／欧委会）",
+        "path": "$.dismantlingInformation"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 77,
+            "name": "拆卸指南\r\nDismantling information: Manuals for the removal and the disassembly of the battery pack",
+            "engineering": "拆卸指南\r\ndismantlingInformationManualsForTheRemovalAndTheDisassemblyOfTheBatteryPack\r\nDismantling information: Manuals for the removal and the disassembly of the battery pack",
+            "mapping": "dismantlingInformation",
+            "example": "    \"dismantlingInformation\": {\r\n        \"resourceTitle\": \"Dismantling document\",\r\n        \"contentType\": \"application/pdf\",\r\n        \"url\": \"https://example.com/docs/dismantling-0001\",\r\n        \"language\": \"en-GB\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "NB/市场监管机构/委员会",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "不一致",
+          "permission_norm": "NB/委员会/市场监管机构",
+          "permission_note": "在线少了：PLI。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "不一致"
+    },
+    {
+      "local": {
+        "row": 30,
+        "id": "V4-0076",
+        "name": "安全措施",
+        "key": "safetyMeasures",
+        "official": "safetyMeasures",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "RES1（合法权益人／公告机构／主管机关／欧委会）",
+        "path": "$.safetyMeasures"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 83,
+            "name": "安全措施\r\nSafety measures",
+            "engineering": "安全措施\r\nsafetyMeasures\r\nSafety measures",
+            "mapping": "safetyMeasures",
+            "example": "    \"safetyMeasures\": {\r\n        \"resourceTitle\": \"Safety measures document\",\r\n        \"contentType\": \"application/pdf\",\r\n        \"url\": \"https://example.com/docs/safety-0001\",\r\n        \"language\": \"en-GB\"\r\n    }",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 31,
+        "id": "V4-0081",
+        "name": "可再生材料含量",
+        "key": "renewableContentShare",
+        "official": "renewableContentShare",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.renewableContentShare.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 88,
+            "name": "可再生材料含量\r\nRenewable content share",
+            "engineering": "可再生材料含量\r\nrenewableContentShare\r\nRenewable content share",
+            "mapping": "renewableContentShare",
+            "example": "    \"renewableContentShare\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 12.5\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 32,
+        "id": "V4-0085",
+        "name": "额定容量",
+        "key": "batteryCapacity",
+        "official": "batteryCapacity",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.batteryCapacity.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 100,
+            "name": "额定容量\r\nbatteryCapacity",
+            "engineering": "额定容量\r\nbatteryCapacity",
+            "mapping": "batteryCapacity",
+            "example": "    \"batteryCapacity\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour\",\r\n        \"value\": 75\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 33,
+        "id": "V4-0086",
+        "name": "剩余容量",
+        "key": "remainingCapacity",
+        "official": "remainingCapacity",
+        "category": "LMT / IND",
+        "required": "EV：N/A\n\nLMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV：N/A\n\nLMT：M\n\nIND：C\n\nEV：该版本类别语义Schema未定义此路径；相关不适用边界按源视图核对。\n\nLMT：必填（该电池类别／当前访问视图）。\n\nIND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.remainingCapacity.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 101,
+            "name": "剩余容量\r\nRemaining capacity",
+            "engineering": "剩余容量\r\nremainingCapacity\r\nRemaining capacity",
+            "mapping": "remainingCapacity",
+            "example": "    \"remainingCapacity\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour\",\r\n        \"value\": 45\r\n    }",
+            "category": "LMT / IND",
+            "required": "M(LMT)\r\nV(IND)",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "不一致",
+          "required_norm": "EV:N/A; LMT:M; IND:V",
+          "required_note": "IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 34,
+        "id": "V4-0089",
+        "name": "容量衰减率",
+        "key": "capacityFade",
+        "official": "capacityFade",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.capacityFade.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 102,
+            "name": "容量衰减率\r\nCapacity fade",
+            "engineering": "容量衰减率\r\ncapacityFade\r\nCapacity fade",
+            "mapping": "capacityFade",
+            "example": "    \"capacityFade\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M(EV/LMT)\r\nC(IND)",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 35,
+        "id": "V4-0093",
+        "name": "认证能源状态",
+        "key": "stateOfCertifiedEnergy",
+        "official": "stateOfCertifiedEnergy",
+        "category": "EV",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.stateOfCertifiedEnergy.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 105,
+            "name": "认证能源状态\r\nState of certified energy (SOCE)",
+            "engineering": "认证能源状态\r\nstateOfCertifiedEnergySOCE\r\nState of certified energy (SOCE)",
+            "mapping": "stateOfCertifiedEnergy",
+            "example": "    \"stateOfCertifiedEnergy\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV",
+            "required": "M",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:N/A; IND:N/A",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 36,
+        "id": "V4-0099",
+        "name": "剩余功率",
+        "key": "remainingPowerCapability",
+        "official": "remainingPowerCapability",
+        "category": "LMT / IND",
+        "required": "EV：N/A\n\nLMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV：N/A\n\nLMT：M\n\nIND：C\n\nEV：该版本类别语义Schema未定义此路径；相关不适用边界按源视图核对。\n\nLMT：必填（该电池类别／当前访问视图）。\n\nIND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.remainingPowerCapability.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 113,
+            "name": "剩余功率\r\nRemaining power capability",
+            "engineering": "剩余功率\r\nremainingPowerCapability\r\nRemaining power capability",
+            "mapping": "remainingPowerCapability",
+            "example": "\"remainingPowerCapability\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt\",\r\n        \"value\": 45\r\n    },",
+            "category": "LMT/IND",
+            "required": "M(LMT)\r\nV(IND)",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "不一致",
+          "required_norm": "EV:N/A; LMT:M; IND:V",
+          "required_note": "IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 37,
+        "id": "V4-0102",
+        "name": "功率衰减率",
+        "key": "powerFade",
+        "official": "powerFade",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.powerFade.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 114,
+            "name": "功率衰减率\r\nPower fade",
+            "engineering": "功率衰减率\r\npowerFade\r\nPower fade",
+            "mapping": "powerFade",
+            "example": "    \"powerFade\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV / LMT / IND",
+            "required": "M(EV/LMT)\r\nC(IND)",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 38,
+        "id": "V4-0105",
+        "name": "初始往返能效",
+        "key": "initialRoundTripEnergyEfficiency",
+        "official": "initialRoundTripEnergyEfficiency",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "PUB（公开）",
+        "path": "$.initialRoundTripEnergyEfficiency.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 116,
+            "name": "初始往返能效\r\nInitial round trip energy efficiency",
+            "engineering": "初始往返能效\r\ninitialRoundTripEnergyEfficiency\r\nInitial round trip energy efficiency",
+            "mapping": "initialRoundTripEnergyEfficiency",
+            "example": "\"initialRoundTripEnergyEfficiency\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 39,
+        "id": "V4-0107",
+        "name": "往返能效（循环寿命达50%时）",
+        "key": "roundTripEfficiencyAtHalfCycleLife",
+        "official": "roundTripEfficiencyAtHalfCycleLife",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "PUB（公开）",
+        "path": "$.roundTripEfficiencyAtHalfCycleLife.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 118,
+            "name": "往返能效（循环寿命达50%时）\r\nRound trip energy efficiency at 50% of cycle life",
+            "engineering": "往返能效（循环寿命达50%时）\r\nroundTripEnergyEfficiencyAt50OfCycleLife\r\nRound trip energy efficiency at 50% of cycle life",
+            "mapping": "roundTripEfficiencyAtHalfCycleLife",
+            "example": "\"roundTripEfficiencyAtHalfCycleLife\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 40,
+        "id": "V4-0109",
+        "name": "剩余往返能效",
+        "key": "remainingRoundTripEfficiency",
+        "official": "remainingRoundTripEfficiency",
+        "category": "LMT / IND",
+        "required": "LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nLMT：M\n\nIND：C\n\nLMT：必填（该电池类别／当前访问视图）。\n\nIND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.remainingRoundTripEfficiency.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 119,
+            "name": "往返能效与自放电率Round trip energy efficiency and self-discharge\r\nfield\r\n",
+            "engineering": "剩余往返能效\r\r\nRemaining round trip energy efficiency",
+            "mapping": "remainingRoundTripEfficiency",
+            "example": " \"remainingRoundTripEfficiency\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    }",
+            "category": "LMT/IND",
+            "required": "LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:N/A; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 41,
+        "id": "V4-0111",
+        "name": "往返能效衰减率",
+        "key": "roundTripEnergyEfficiencyFade",
+        "official": "roundTripEnergyEfficiencyFade",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "EV/LMT：适用时填写；本词表未给出统一的适用条件判断算法。\n仅在对应父对象／数组元素存在时执行子字段约束。\n\nIND：仅可充电工业电池适用，且需满足该指标的适用条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.roundTripEnergyEfficiencyFade.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 120,
+            "name": "往返能效衰减率\r\nEnergy round trip efficiency fade",
+            "engineering": "往返能效衰减率\r\nenergyRoundTripEfficiencyFade\r\nEnergy round trip efficiency fade",
+            "mapping": "roundTripEnergyEfficiencyFade",
+            "example": "\"roundTripEnergyEfficiencyFade\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 1.1\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:C; LMT:C; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 42,
+        "id": "V4-0124",
+        "name": "预期使用寿命（年）",
+        "key": "expectedLifetimeYears",
+        "official": "expectedLifetimeYears",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电工业电池适用；电池状态变化时可能需要更新。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.expectedLifetimeYears"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 131,
+            "name": "预期使用寿命（年）\r\nExpected lifetime in calendar years",
+            "engineering": "预期使用寿命（年）\r\nexpectedLifetimeInCalendarYears\r\nExpected lifetime in calendar years",
+            "mapping": "expectedLifetimeYears",
+            "example": "    \"expectedLifetimeYears\": 3,\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 43,
+        "id": "V4-0126",
+        "name": "预期使用寿命（圈）",
+        "key": "expectedLifetimeCycles",
+        "official": "expectedLifetimeCycles",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅部分可用循环次数表达寿命的工业电池适用。",
+        "permission": "PUB（公开）",
+        "path": "$.expectedLifetimeCycles"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 132,
+            "name": "预期使用寿命（圈）\r\nExpected lifetime: Number of charge-discharge cycles",
+            "engineering": "预期使用寿命（圈）\r\nexpectedLifetimeNumberOfChargeDischargeCycles\r\nExpected lifetime: Number of charge-discharge cycles",
+            "mapping": "expectedLifetimeCycles",
+            "example": "    \"expectedLifetimeCycles\": 3,\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 44,
+        "id": "V4-0129",
+        "name": "循环寿命测试方法",
+        "key": "cycleLifeReferenceTest",
+        "official": "cycleLifeReferenceTest",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅部分可用循环次数表达寿命的工业电池适用。",
+        "permission": "PUB（公开）",
+        "path": "$.cycleLifeReferenceTest"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 137,
+            "name": "循环寿命测试方法\r\nCycle-life reference test",
+            "engineering": "循环寿命测试方法\r\ncycleLifeReferenceTest\r\nCycle-life reference test",
+            "mapping": "cycleLifeReferenceTest",
+            "example": "\"cycleLifeReferenceTest\": {\r\n        \"en-IE\": \"Test sample\"\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 45,
+        "id": "V4-0131",
+        "name": "循环寿命测试C率-充电",
+        "key": "cycleLifeChargeCRate",
+        "official": "cycleLifeChargeCRate",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅部分工业电池适用；本词表未进一步给出可程序化的判定条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "PUB（公开）",
+        "path": "$.cycleLifeChargeCRate.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 138,
+            "name": "循环寿命测试C率\r\nC-rate of relevant cycle-life test",
+            "engineering": "循环寿命测试C率-充电\r\ncRateOfRelevantCycleLifeTest\r\nCharge C-rate of relevant cycle-life test",
+            "mapping": "cycleLifeChargeCRate",
+            "example": "    \"cycleLifeChargeCRate\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 46,
+        "id": "V4-0133",
+        "name": "循环寿命测试C率-放电",
+        "key": "cycleLifeDischargeCRate",
+        "official": "cycleLifeDischargeCRate",
+        "category": "EV / LMT / IND",
+        "required": "V",
+        "condition": "可选；有相应资料时填写。",
+        "permission": "PUB（公开）",
+        "path": "$.cycleLifeDischargeCRate.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 139,
+            "name": "",
+            "engineering": "循环寿命测试C率-放电\r\nDischarge C-rate of relevant cycle-life test",
+            "mapping": "cycleLifeDischargeCRate",
+            "example": "    \"cycleLifeDischargeCRate\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#reciprocalHour\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 47,
+        "id": "V4-0134",
+        "name": "耗尽容量阈值",
+        "key": "capacityExhaustionThreshold",
+        "official": "capacityExhaustionThreshold",
+        "category": "EV",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.capacityExhaustionThreshold.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 140,
+            "name": "耗尽容量阈值\r\nCapacity threshold for exhaustion",
+            "engineering": "耗尽容量阈值\r\ncapacityThresholdForExhaustion\r\nCapacity threshold for exhaustion",
+            "mapping": "capacityExhaustionThreshold",
+            "example": "    \"capacityExhaustionThreshold\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:N/A; IND:N/A",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 48,
+        "id": "V4-0144",
+        "name": "镉和铅符号",
+        "key": "chemicalSymbol",
+        "official": "chemicalSymbol",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "适用镉或铅标识要求时填写。",
+        "permission": "PUB（公开）",
+        "path": "$.chemicalSymbol"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 40,
+            "name": "镉和铅符号\r\nSymbols for cadmium and lead",
+            "engineering": "分类收集标识\r\nSeparate collection symbol",
+            "mapping": "chemicalSymbol\r\nseparateCollectionSymbol",
+            "example": "    \"separateCollectionSymbol\": true,\r\n    \"chemicalSymbol\": [\"https://repository.product-passport.ec.europa.eu/product/batteries/vocabs/battery-chemical-symbol#cadmiumSymbol\"],\r\n\r\n\r\n\r\nEU-BATTERY-CHEMICAL-SYMBOL\r\r\ncadmiumSymbol — 镉标识\r\r\nleadSymbol — 铅标识\r\r\nnoneSymbol — 无相应化学符号",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 49,
+        "id": "V4-0145",
+        "name": "合规测试报告结果",
+        "key": "complianceTestReportResults",
+        "official": "complianceTestReportResults",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "RES2（公告机构／主管机关／欧委会）",
+        "path": "$.complianceTestReportResults"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 50,
+            "name": "检测报告\r\nResults of test reports proving compliance",
+            "engineering": "合规测试报告结果\r\ncomplianceTestReportResults",
+            "mapping": "$.complianceTestReportResults",
+            "example": "    \"complianceTestReportResults\": {\r\n        \"resourceTitle\": \"Compliance test report result\",\r\n        \"contentType\": \"application/pdf\",\r\n        \"url\": \"https://example.com/docs/test-report-0001\",\r\n        \"language\": \"en-GB\"\r\n    },",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "NB/市场监管机构/委员会",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 50,
+        "id": "V4-0146",
+        "name": "详细组成信息",
+        "key": "detailedComposition",
+        "official": "detailedComposition",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "RES1（合法权益人／公告机构／主管机关／欧委会）",
+        "path": "$.detailedComposition"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 65,
+            "name": "正极、负极、电极液组成\r\nMaterials used in cathode, anode and electrolyte",
+            "engineering": "正极材料名称\r\nCathode material name",
+            "mapping": "\r\ndetailedComposition\r\n\r\n文案固定格式，Cathode: 【正极名称】，【正极名称】，【正极名称】；Electrolyte\r\n：【负极名称】，【负极名称】，【负极名称】；Electrolyte：【电解液名称】",
+            "example": "  \"detailedComposition\": {\r\n        \"en-IE\": \"Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        },
+        {
+          "online": {
+            "row": 66,
+            "name": "",
+            "engineering": "正极材料CAS码\r\nfield\r\nCathode material CAS number",
+            "mapping": "\r\ndetailedComposition\r\n\r\n文案固定格式，Cathode: 【正极名称】，【正极名称】，【正极名称】；Electrolyte\r\n：【负极名称】，【负极名称】，【负极名称】；Electrolyte：【电解液名称】",
+            "example": "  \"detailedComposition\": {\r\n        \"en-IE\": \"Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {
+              "mapping": "E65 (E65:E70)"
+            },
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地M / 在线V；LMT: 本地M / 在线V；IND: 本地M / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        },
+        {
+          "online": {
+            "row": 67,
+            "name": "",
+            "engineering": "负极材料名称\r\nfield\r\nAnode material name",
+            "mapping": "\r\ndetailedComposition\r\n\r\n文案固定格式，Cathode: 【正极名称】，【正极名称】，【正极名称】；Electrolyte\r\n：【负极名称】，【负极名称】，【负极名称】；Electrolyte：【电解液名称】",
+            "example": "  \"detailedComposition\": {\r\n        \"en-IE\": \"Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {
+              "mapping": "E65 (E65:E70)"
+            },
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        },
+        {
+          "online": {
+            "row": 68,
+            "name": "",
+            "engineering": "负极材料CAS码\r\nfield\r\nAnode material CAS number",
+            "mapping": "\r\ndetailedComposition\r\n\r\n文案固定格式，Cathode: 【正极名称】，【正极名称】，【正极名称】；Electrolyte\r\n：【负极名称】，【负极名称】，【负极名称】；Electrolyte：【电解液名称】",
+            "example": "  \"detailedComposition\": {\r\n        \"en-IE\": \"Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {
+              "mapping": "E65 (E65:E70)"
+            },
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地M / 在线V；LMT: 本地M / 在线V；IND: 本地M / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        },
+        {
+          "online": {
+            "row": 69,
+            "name": "",
+            "engineering": "电解液材料名称\r\nfield\r\nElectrolyte material name",
+            "mapping": "\r\ndetailedComposition\r\n\r\n文案固定格式，Cathode: 【正极名称】，【正极名称】，【正极名称】；Electrolyte\r\n：【负极名称】，【负极名称】，【负极名称】；Electrolyte：【电解液名称】",
+            "example": "  \"detailedComposition\": {\r\n        \"en-IE\": \"Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {
+              "mapping": "E65 (E65:E70)"
+            },
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        },
+        {
+          "online": {
+            "row": 70,
+            "name": "",
+            "engineering": "电解液CAS码\r\nfield\r\nElectrolyte material CAS number",
+            "mapping": "\r\ndetailedComposition\r\n\r\n文案固定格式，Cathode: 【正极名称】，【正极名称】，【正极名称】；Electrolyte\r\n：【负极名称】，【负极名称】，【负极名称】；Electrolyte：【电解液名称】",
+            "example": "  \"detailedComposition\": {\r\n        \"en-IE\": \"Cathode: LiFePO4; Anode: graphite; Electrolyte: LiPF6 in organic carbonates; Housing: aluminium\"\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "V",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {
+              "mapping": "E65 (E65:E70)"
+            },
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:V; LMT:V; IND:V",
+          "required_note": "EV: 本地M / 在线V；LMT: 本地M / 在线V；IND: 本地M / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "粒度不同·需确认",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 51,
+        "id": "V4-0147",
+        "name": "电池护照状态",
+        "key": "dppStatus",
+        "official": "dppStatus",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "官方词表未单列业务必填条件；按当前对象的 Schema、组合规则与 SHACL 判断。",
+        "permission": "PUB（公开）",
+        "path": "$.dppStatus"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 3,
+            "name": "电池护照状态\r\nDPP Status",
+            "engineering": "电池护照状态\r\ndppStatus\r\nDPP Status",
+            "mapping": "$.dppStatus",
+            "example": "    \"dppStatus\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/instance-status#validStatus\",\r\n",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 52,
+        "id": "V4-0149",
+        "name": "运行环境温度信息",
+        "key": "environmentalConditionHistogram",
+        "official": "environmentalConditionHistogram",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "电池开始使用后适用；静态 Schema 未自动判断是否已使用。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.environmentalConditionHistogramSet.environmentalConditionHistogram"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 141,
+            "name": "温度信息\r\nTemperature information",
+            "engineering": "温度信息\r\ntemperatureInformation\r\nTemperature information",
+            "mapping": "environmentalConditionHistogram",
+            "example": " \"environmentalConditionHistogramSet\":{\r\n        \"environmentalConditionHistogram\":[\r\n            {\r\n                \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n                \"binRangeUnit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\",\r\n                \"binValueUnit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour\",\r\n                \"bin\": [\r\n                    {\r\n                        \"lowerBound\": -10,\r\n                        \"upperBound\": 0,\r\n                        \"binValue\": 5\r\n                    },\r\n                    {\r\n                        \"lowerBound\": 0,\r\n                        \"upperBound\": 25,\r\n                        \"binValue\": 400\r\n                    },\r\n                    {\r\n                        \"lowerBound\": 25,\r\n                        \"upperBound\": 45,\r\n                        \"binValue\": 120\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }",
+            "category": "EV/LMT/IND",
+            "required": "C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:C; LMT:C; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 53,
+        "id": "V4-0150",
+        "name": "使用寿命（圈）",
+        "key": "expectedLifetimeCyclesRest",
+        "official": "expectedLifetimeCyclesRest",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电且属于循环应用的工业电池适用；电池状态变化时可能需要更新。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.expectedLifetimeCyclesRest"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 133,
+            "name": "使用寿命（圈）\r\n",
+            "engineering": "使用寿命（圈）\r\n",
+            "mapping": "expectedLifetimeCyclesRest",
+            "example": "    \"expectedLifetimeCyclesRest\": 4,\r\n",
+            "category": "EV / LMT / IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "不一致",
+          "permission_norm": "Public",
+          "permission_note": "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "不一致"
+    },
+    {
+      "local": {
+        "row": 54,
+        "id": "V4-0152",
+        "name": "电芯内阻",
+        "key": "internalCellResistance",
+        "official": "internalCellResistance",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.internalCellResistance.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 124,
+            "name": "初始内阻\r\nInitial internal resistance of battery cell and pack (module recommended)",
+            "engineering": "初始电芯电阻\r\nInitial cell resistance",
+            "mapping": "internalCellResistance",
+            "example": " \"internalCellResistance\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm\",\r\n        \"value\": 0.9\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 55,
+        "id": "V4-0153",
+        "name": "电池包内阻",
+        "key": "internalPackResistance",
+        "official": "internalPackResistance",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.internalPackResistance.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 125,
+            "name": "",
+            "engineering": "初始电池包电阻\r\nInitial pack resistance",
+            "mapping": "internalPackResistance",
+            "example": "\"internalPackResistance\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 56,
+        "id": "V4-0154",
+        "name": "内阻",
+        "key": "internalResistance",
+        "official": "internalResistance",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.internalResistance.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 129,
+            "name": "当前电阻\r\n\r\nPresent internal resistance of pack",
+            "engineering": "当前电阻\r\npresentInternalResistanceOfPack\r\nPresent internal resistance of pack",
+            "mapping": "internalResistance",
+            "example": "\"internalResistance\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm\",\r\n        \"value\": 45\r\n    },",
+            "category": "LMT/IND",
+            "required": "M(LMT)\r\nV(IND)",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "不一致",
+          "category_norm": "IND/LMT",
+          "category_note": "本地大类=EV/IND/LMT；在线大类=IND/LMT。",
+          "required_status": "不一致",
+          "required_norm": "EV:N/A; LMT:M; IND:V",
+          "required_note": "EV: 本地M / 在线N/A；IND: 本地C / 在线V",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "不一致",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 57,
+        "id": "V4-0156",
+        "name": "电池包内阻增长",
+        "key": "internalResistanceIncrease",
+        "official": "internalResistanceIncrease",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.internalResistanceIncrease.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 128,
+            "name": "电池包内阻增长\r\nInternal resistance increase of pack (cell and module recommended)",
+            "engineering": "电池包内阻增长\r\ninternalResistanceIncreaseOfPackCellAndModuleRecommended\r\nInternal resistance increase of pack (cell and module recommended)",
+            "mapping": "internalResistanceIncrease",
+            "example": "\"internalResistanceIncrease\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 45\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 58,
+        "id": "V4-0160",
+        "name": "生产地点（城市）",
+        "key": "manufacturingCity",
+        "official": "manufacturingCity",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "制造城市／制造地区至少一项；国家代码另为必填。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturingPlace.manufacturingCity"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 32,
+            "name": "生产地点\r\n",
+            "engineering": "生产地点（城市）",
+            "mapping": "manufacturingPlace.manufacturingCity",
+            "example": "\"manufacturingPlace\": {\r\n    \"manufacturingCity\": \"Nanjing\",\r\n    \"manufacturingRegion\": \"Jiangsu\",\r\n    \"manufacturingCountry\": \"CHN\"\r\n}\r\n",
+            "category": "",
+            "required": "",
+            "permission": "",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "在线空缺",
+          "category_norm": "",
+          "category_note": "在线分类单元格为空，且不属于合并单元格。",
+          "required_status": "在线空缺",
+          "required_norm": "",
+          "required_note": "在线必填单元格为空，且不属于合并单元格。",
+          "permission_status": "在线空缺",
+          "permission_norm": "",
+          "permission_note": "在线权限单元格为空，且不属于合并单元格。"
+        }
+      ],
+      "category_status": "在线空缺",
+      "required_status": "在线空缺",
+      "permission_status": "在线空缺"
+    },
+    {
+      "local": {
+        "row": 59,
+        "id": "V4-0161",
+        "name": "生产地点（国家）",
+        "key": "manufacturingCountry",
+        "official": "manufacturingCountry",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturingPlace.manufacturingCountry"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 31,
+            "name": "生产地点\r\n",
+            "engineering": "生产地点（国家）",
+            "mapping": "manufacturingPlace.manufacturingCountry",
+            "example": "\"manufacturingPlace\": {\r\n    \"manufacturingCity\": \"Nanjing\",\r\n    \"manufacturingRegion\": \"Jiangsu\",\r\n    \"manufacturingCountry\": \"CHN\"\r\n}\r\n",
+            "category": "",
+            "required": "",
+            "permission": "",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "在线空缺",
+          "category_norm": "",
+          "category_note": "在线分类单元格为空，且不属于合并单元格。",
+          "required_status": "在线空缺",
+          "required_norm": "",
+          "required_note": "在线必填单元格为空，且不属于合并单元格。",
+          "permission_status": "在线空缺",
+          "permission_norm": "",
+          "permission_note": "在线权限单元格为空，且不属于合并单元格。"
+        }
+      ],
+      "category_status": "在线空缺",
+      "required_status": "在线空缺",
+      "permission_status": "在线空缺"
+    },
+    {
+      "local": {
+        "row": 60,
+        "id": "V4-0162",
+        "name": "生产地点（地区）",
+        "key": "manufacturingRegion",
+        "official": "manufacturingRegion",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "制造城市／制造地区至少一项；国家代码另为必填。",
+        "permission": "PUB（公开）",
+        "path": "$.manufacturingPlace.manufacturingRegion"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 33,
+            "name": "生产地点",
+            "engineering": "生产地点（地区）",
+            "mapping": "manufacturingPlace.manufacturingRegion",
+            "example": "\"manufacturingPlace\": {\r\n    \"manufacturingCity\": \"Nanjing\",\r\n    \"manufacturingRegion\": \"Jiangsu\",\r\n    \"manufacturingCountry\": \"CHN\"\r\n}\r\n",
+            "category": "",
+            "required": "",
+            "permission": "",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "在线空缺",
+          "category_norm": "",
+          "category_note": "在线分类单元格为空，且不属于合并单元格。",
+          "required_status": "在线空缺",
+          "required_norm": "",
+          "required_note": "在线必填单元格为空，且不属于合并单元格。",
+          "permission_status": "在线空缺",
+          "permission_norm": "",
+          "permission_note": "在线权限单元格为空，且不属于合并单元格。"
+        }
+      ],
+      "category_status": "在线空缺",
+      "required_status": "在线空缺",
+      "permission_status": "在线空缺"
+    },
+    {
+      "local": {
+        "row": 61,
+        "id": "V4-0163",
+        "name": "最高电压",
+        "key": "maximumVoltage",
+        "official": "maximumVoltage",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.maximumVoltage.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 108,
+            "name": "最低电压\r\nMinimum voltage",
+            "engineering": "电压范围\r\nrange of voltage",
+            "mapping": "minimalVoltage，maximumVoltage",
+            "example": "\"minimalVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },\r\n\r\n\r\n \"maximumVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 62,
+        "id": "V4-0164",
+        "name": "最高电压适用温度范围",
+        "key": "maximumVoltage.valueRange",
+        "official": "maximumVoltage",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.maximumVoltage.valueRange"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 108,
+            "name": "最低电压\r\nMinimum voltage",
+            "engineering": "电压范围\r\nrange of voltage",
+            "mapping": "minimalVoltage，maximumVoltage",
+            "example": "\"minimalVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },\r\n\r\n\r\n \"maximumVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 63,
+        "id": "V4-0165",
+        "name": "最低电压",
+        "key": "minimalVoltage",
+        "official": "minimalVoltage",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.minimalVoltage.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 108,
+            "name": "最低电压\r\nMinimum voltage",
+            "engineering": "电压范围\r\nrange of voltage",
+            "mapping": "minimalVoltage，maximumVoltage",
+            "example": "\"minimalVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },\r\n\r\n\r\n \"maximumVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 64,
+        "id": "V4-0166",
+        "name": "最低电压适用温度范围",
+        "key": "minimalVoltage.valueRange",
+        "official": "minimalVoltage",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.minimalVoltage.valueRange"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 108,
+            "name": "最低电压\r\nMinimum voltage",
+            "engineering": "电压范围\r\nrange of voltage",
+            "mapping": "minimalVoltage，maximumVoltage",
+            "example": "\"minimalVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },\r\n\r\n\r\n \"maximumVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 65,
+        "id": "V4-0095",
+        "name": "标称电压",
+        "key": "nominalVoltage",
+        "official": "nominalVoltage",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.nominalVoltage.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 107,
+            "name": "标称电压\r\nNominal voltage",
+            "engineering": "标称电压\r\nnominalVoltage\r\nNominal voltage",
+            "mapping": "nominalVoltage",
+            "example": "\"nominalVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 66,
+        "id": "V4-0168",
+        "name": "标称电压适用温度范围",
+        "key": "nominalVoltage.valueRange",
+        "official": "nominalVoltage",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.nominalVoltage.valueRange"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 107,
+            "name": "标称电压\r\nNominal voltage",
+            "engineering": "标称电压\r\nnominalVoltage\r\nNominal voltage",
+            "mapping": "nominalVoltage",
+            "example": "\"nominalVoltage\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#volt\",\r\n        \"value\": 10,\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 67,
+        "id": "V4-0167",
+        "name": "事故信息",
+        "key": "negativeEvents",
+        "official": "negativeEvents",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "电池开始使用后适用；静态 Schema 未自动判断是否已使用。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.negativeEvents"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 145,
+            "name": "事故信息\r\nInformation on accidents",
+            "engineering": "事故信息\r\ninformationOnAccidents\r\nInformation on accidents",
+            "mapping": "negativeEvents",
+            "example": " \"negativeEvents\": {\r\n        \"en-IE\": \"None recorded\"\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:C; LMT:C; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 68,
+        "id": "V4-0136",
+        "name": "空闲状态温度范围",
+        "key": "notInUseTemperatureRange.valueRange",
+        "official": "notInUseTemperatureRange",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.notInUseTemperatureRange.valueRange"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 142,
+            "name": "空闲状态温度下限\r\nTemperature range idle state, lower boundary",
+            "engineering": "空闲状态温度范围\r\nTemperature range idle statey",
+            "mapping": "notInUseTemperatureRange",
+            "example": "\"notInUseTemperatureRange\": {\r\n        \"notInUseTemperatureRangeTest\": {\r\n            \"en-IE\": \"IEC 62660-1, storage between -20 C and 45 C\"\r\n        },\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 69,
+        "id": "V4-0170",
+        "name": "空闲状态温度范围的参考测试",
+        "key": "notInUseTemperatureRangeTest",
+        "official": "notInUseTemperatureRangeTest",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.notInUseTemperatureRange.notInUseTemperatureRangeTest"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 142,
+            "name": "空闲状态温度下限\r\nTemperature range idle state, lower boundary",
+            "engineering": "空闲状态温度范围\r\nTemperature range idle statey",
+            "mapping": "notInUseTemperatureRange",
+            "example": "\"notInUseTemperatureRange\": {\r\n        \"notInUseTemperatureRangeTest\": {\r\n            \"en-IE\": \"IEC 62660-1, storage between -20 C and 45 C\"\r\n        },\r\n        \"valueRange\": {\r\n            \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n            \"lowerBound\": 10,\r\n            \"upperBound\": 10,\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 70,
+        "id": "V4-0171",
+        "name": "充电循环次数",
+        "key": "numberOfChargingCycles",
+        "official": "numberOfChargingCycles",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "电池开始使用后适用；静态 Schema 未自动判断是否已使用。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.numberOfChargingCycles"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 135,
+            "name": "充电循环次数\r\nNumber of full charging and discharging cycles",
+            "engineering": "充电循环次数\r\nnumberOfFullChargingAndDischargingCycles\r\nNumber of full charging and discharging cycles",
+            "mapping": "numberOfChargingCycles",
+            "example": "  \"numberOfChargingCycles\": [42],\r\n",
+            "category": "EV/LMT/IND",
+            "required": "C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:C; LMT:C; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 71,
+        "id": "V4-0172",
+        "name": "放电循环次数",
+        "key": "numberOfDischargingCycles",
+        "official": "numberOfDischargingCycles",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "电池开始使用后适用；静态 Schema 未自动判断是否已使用。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.numberOfDischargingCycles"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 136,
+            "name": "当前完全循环次数\r\nNumber of full charging and discharging cycles",
+            "engineering": "放电循环次数\r\nnumberOfFullChargingAndDischargingCycles\r\nNumber of full charging and discharging cycles",
+            "mapping": "numberOfDischargingCycles",
+            "example": "    \"numberOfDischargingCycles\": [41],",
+            "category": "EV/LMT/IND",
+            "required": "C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:C; LMT:C; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 72,
+        "id": "V4-0173",
+        "name": "当前内阻",
+        "key": "ohmicResistance",
+        "official": "ohmicResistance",
+        "category": "LMT / IND",
+        "required": "LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nLMT：M\n\nIND：C\n\nLMT：必填（该电池类别／当前访问视图）。\n\nIND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.ohmicResistance.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 130,
+            "name": "当前内阻",
+            "engineering": "当前内阻\r\n\r\n",
+            "mapping": "ohmicResistance",
+            "example": "    \"ohmicResistance\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ohm\",\r\n        \"value\": 45\r\n    }",
+            "category": "LMT/IND",
+            "required": "LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:N/A; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 73,
+        "id": "V4-0175",
+        "name": "初始功率",
+        "key": "originalPowerCapability",
+        "official": "originalPowerCapability",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.originalPowerCapability.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 111,
+            "name": "初始功率\r\nOriginal power capability",
+            "engineering": "初始功率\r\n",
+            "mapping": "originalPowerCapability",
+            "example": "  \"originalPowerCapability\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt\",\r\n        \"value\": 150\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 74,
+        "id": "V4-0176",
+        "name": "功率",
+        "key": "powerCapability",
+        "official": "powerCapability",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.powerCapability.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 112,
+            "name": "功率\r\n",
+            "engineering": "功率",
+            "mapping": "powerCapability",
+            "example": "  \"originalPowerCapability\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt\",\r\n        \"value\": 150\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "不一致",
+          "permission_norm": "Public",
+          "permission_note": "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "不一致"
+    },
+    {
+      "local": {
+        "row": 75,
+        "id": "V4-0178",
+        "name": "允许最大电池功率",
+        "key": "powerLimit",
+        "official": "powerLimit",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.powerLimit.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 115,
+            "name": "允许最大电池功率\r\nMaximum permitted battery power",
+            "engineering": "允许最大电池功率\r\nmaximumPermittedBatteryPower\r\nMaximum permitted battery power",
+            "mapping": "powerLimit",
+            "example": "\"powerLimit\": [\r\n        {\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt\",\r\n            \"value\": 150,\r\n            \"valueRange\": {\r\n                \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n                \"lowerBound\": 10,\r\n                \"upperBound\": 10,\r\n                \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n            }\r\n        }\r\n    ],",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "IND: 本地M / 在线C",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 76,
+        "id": "V4-0179",
+        "name": "允许最大电池功率-温度范围",
+        "key": "powerLimit.valueRange",
+        "official": "powerLimit",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "提供此可选子结构时，按其内部约束填写；父级规则另见规则页。",
+        "permission": "PUB（公开）",
+        "path": "$.powerLimit[].valueRange"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 115,
+            "name": "允许最大电池功率\r\nMaximum permitted battery power",
+            "engineering": "允许最大电池功率\r\nmaximumPermittedBatteryPower\r\nMaximum permitted battery power",
+            "mapping": "powerLimit",
+            "example": "\"powerLimit\": [\r\n        {\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#watt\",\r\n            \"value\": 150,\r\n            \"valueRange\": {\r\n                \"observedCharacteristic\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/observed-characteristic#temperature\",\r\n                \"lowerBound\": 10,\r\n                \"upperBound\": 10,\r\n                \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#degreeCelsius\"\r\n            }\r\n        }\r\n    ],",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:C",
+          "required_note": "EV: 本地C / 在线M；LMT: 本地C / 在线M",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 77,
+        "id": "V4-0180",
+        "name": "容量",
+        "key": "ratedCapacity",
+        "official": "ratedCapacity",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nEV/LMT：M\n\nIND：C\n\nEV/LMT：必填（该电池类别／当前访问视图）。\n\nIND：仅可充电工业电池适用；电池状态变化时可能需要更新。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.ratedCapacity.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 99,
+            "name": "容量\r\nRated capacity",
+            "engineering": "容量\r\nratedCapacity\r\nRated capacity",
+            "mapping": "ratedCapacity",
+            "example": "    \"ratedCapacity\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#ampereHour\",\r\n        \"value\": 45\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M(EV/LMT)\r\nV(IND)",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:V",
+          "required_note": "IND: 本地C / 在线V",
+          "permission_status": "不一致",
+          "permission_norm": "Public",
+          "permission_note": "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "不一致",
+      "permission_status": "不一致"
+    },
+    {
+      "local": {
+        "row": 78,
+        "id": "V4-0182",
+        "name": "经济运营商名称",
+        "key": "registrantIdentity",
+        "official": "registrantIdentity",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.registrantIdentity"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 18,
+            "name": "经济运营商信息\r\nEconomic operator information",
+            "engineering": "经济运营商名称\r\nEconomic operator name",
+            "mapping": "$.registrantIdentity",
+            "example": "  { \r\n    \"registrantIdentity\": \"Example Battery Europe GmbH\" \r\n  }\r\n",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 79,
+        "id": "V4-0183",
+        "name": "往返能效",
+        "key": "roundTripEnergyEfficiency",
+        "official": "roundTripEnergyEfficiency",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "EV/LMT：适用时填写；本词表未给出统一的适用条件判断算法。\n仅在对应父对象／数组元素存在时执行子字段约束。\n\nIND：仅可充电工业电池适用，且需满足该指标的适用条件。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.roundTripEnergyEfficiency.value"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 117,
+            "name": "往返能效\r\n",
+            "engineering": "往返能效\r\ninitialRoundTripEnergyEfficiency\r\nInitial round trip energy efficiency",
+            "mapping": "roundTripEnergyEfficiency",
+            "example": "  \"roundTripEnergyEfficiency\": {\r\n        \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"value\": 95\r\n    }",
+            "category": "EV / LMT / IND",
+            "required": "C",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:C; LMT:C; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "不一致",
+          "permission_norm": "Public",
+          "permission_note": "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "不一致"
+    },
+    {
+      "local": {
+        "row": 80,
+        "id": "V4-0187",
+        "name": "自放电率变化记录时间",
+        "key": "recordedTime",
+        "official": "recordedTime",
+        "category": "LMT / IND",
+        "required": "LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nLMT：M\n\nIND：C\n\nLMT：继承上层 selfDischargingRateSet：必填（该电池类别／当前访问视图）。\n\nIND：继承上层 selfDischargingRateSet：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.selfDischargingRateSet.recordedTime"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 123,
+            "name": "自放电率变化\r\nEvolution of self-discharge rates",
+            "engineering": "自放电率变化\r\nevolutionOfSelfDischargeRates\r\nEvolution of self-discharge rates",
+            "mapping": "selfDischargingRateSet",
+            "example": "\"selfDischargingRateSet\": {\r\n        \"selfDischargingRate\": [{\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n            \"value\": 45\r\n        }],\r\n        \"recordedTime\": \"2026-03-01T00:00:00Z\"\r\n    }",
+            "category": "LMT/IND",
+            "required": "LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:N/A; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 81,
+        "id": "V4-0189",
+        "name": "自放电率变化记录",
+        "key": "selfDischargingRate",
+        "official": "selfDischargingRate",
+        "category": "LMT / IND",
+        "required": "LMT：M\n\nIND：C",
+        "condition": "分类必填规则：\nLMT：M\n\nIND：C\n\nLMT：必填（该电池类别／当前访问视图）。\n\nIND：仅配有电池管理系统（BMS）的固定式电池储能系统适用；原定义注明“where possible”的指标还需结合是否可提供判断。\n仅在对应父对象／数组元素存在时执行子字段约束。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.selfDischargingRateSet.selfDischargingRate"
+      },
+      "kind": "仅父字段参考",
+      "matches": [
+        {
+          "online": {
+            "row": 123,
+            "name": "自放电率变化\r\nEvolution of self-discharge rates",
+            "engineering": "自放电率变化\r\nevolutionOfSelfDischargeRates\r\nEvolution of self-discharge rates",
+            "mapping": "selfDischargingRateSet",
+            "example": "\"selfDischargingRateSet\": {\r\n        \"selfDischargingRate\": [{\r\n            \"unit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n            \"value\": 45\r\n        }],\r\n        \"recordedTime\": \"2026-03-01T00:00:00Z\"\r\n    }",
+            "category": "LMT/IND",
+            "required": "LMT：M\r\r\n\r\r\nIND：C",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:N/A; LMT:M; IND:C",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 82,
+        "id": "V4-0191",
+        "name": "备件来源信息",
+        "key": "sparePartReplacementDetails",
+        "official": "sparePartReplacementDetails",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "RES1（合法权益人／公告机构／主管机关／欧委会）",
+        "path": "$.sparePartReplacementDetails"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 82,
+            "name": "零部件编号及备件来源信息\r\nInformation on sources of spare parts",
+            "engineering": "零部件编号及备件来源信息\r\naddress of spare parts",
+            "mapping": "sparePartReplacementDetails",
+            "example": "    \"sparePartReplacementDetails\": {\r\n        \"resourceTitle\": \"Spare part replacements\",\r\n        \"contentType\": \"application/pdf\",\r\n        \"url\": \"https://example.com/docs/spare-parts-0001\",\r\n        \"language\": \"en-GB\"\r\n    }",
+            "category": "EV / LMT / IND",
+            "required": "M",
+            "permission": "PLI/NB/市场监管机构/委员会",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "NB/PLI/委员会/市场监管机构",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 83,
+        "id": "V4-0192",
+        "name": "荷电状态",
+        "key": "stateOfChargeHistogram",
+        "official": "stateOfChargeHistogram",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "condition": "电池开始使用后适用；静态 Schema 未自动判断是否已使用。",
+        "permission": "RES3（合法权益人·单个电池）",
+        "path": "$.stateOfChargeHistogram"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 106,
+            "name": "荷电状态\r\nState of Charge (SoC)",
+            "engineering": "荷电状态\r\nstateOfChargeSoC\r\nState of Charge (SoC)",
+            "mapping": "stateOfChargeHistogram",
+            "example": " \"stateOfChargeHistogram\":[{\r\n        \"binRangeUnit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#percent\",\r\n        \"binValueUnit\": \"https://repository.product-passport.ec.europa.eu/core/vocabs/measurement-unit#hour\",\r\n        \"bin\": [\r\n            {\r\n                \"lowerBound\": -10,\r\n                \"upperBound\": 0,\r\n                \"binValue\": 5\r\n            },\r\n            {\r\n                \"lowerBound\": 0,\r\n                \"upperBound\": 25,\r\n                \"binValue\": 400\r\n            },\r\n            {\r\n                \"lowerBound\": 25,\r\n                \"upperBound\": 45,\r\n                \"binValue\": 120\r\n            }\r\n        ]\r\n    }],",
+            "category": "EV/LMT/IND",
+            "required": "M",
+            "permission": "PLI",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "一致",
+          "category_norm": "EV/IND/LMT",
+          "category_note": "已统一分隔符、空白和顺序。",
+          "required_status": "不一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M",
+          "permission_status": "角色一致",
+          "permission_norm": "PLI",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "一致",
+      "required_status": "不一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 84,
+        "id": "V4-0038",
+        "name": "标识说明",
+        "key": "batteryLabelSymbolMeaning",
+        "official": "batteryLabelSymbolMeaning",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.batteryLabelSymbolMeaning"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 43,
+            "name": "标识说明\r\nMeaning of labels and symbols",
+            "engineering": "标识说明\r\nmeaningOfLabelsAndSymbols\r\nMeaning of labels and symbols",
+            "mapping": "$.wasteBatteryPreventionManagementInfo.batteryLabelSymbolMeaning",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 85,
+        "id": "V4-0070",
+        "name": "有害物质影响",
+        "key": "batterySubstancesImpact",
+        "official": "batterySubstancesImpact",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.batterySubstancesImpact"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 89,
+            "name": "有害物质影响",
+            "engineering": "有害物质影响",
+            "mapping": "wasteBatteryPreventionManagementInfo.batterySubstancesImpact\r\n\r\n",
+            "example": "  \"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    },",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 86,
+        "id": "V4-0082",
+        "name": "终端用户预防电池报废指导",
+        "key": "endUserRoleInWastePrevention",
+        "official": "endUserRoleInWastePrevention",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.endUserRoleInWastePrevention"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 90,
+            "name": "终端用户预防电池报废指南\r\nInformation on the role of end-users in contributing to waste prevention",
+            "engineering": "终端用户预防电池报废指南\r\ninformationOnTheRoleOfEndUsersInContributingToWastePrevention\r\nInformation on the role of end-users in contributing to waste prevention",
+            "mapping": "wasteBatteryPreventionManagementInfo.endUserRoleInWastePrevention\r\n\r\n",
+            "example": " \"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 87,
+        "id": "V4-0083",
+        "name": "终端用户分类回收指导",
+        "key": "endUserRoleInSeparateCollection",
+        "official": "endUserRoleInSeparateCollection",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.endUserRoleInSeparateCollection"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 91,
+            "name": "终端用户分类回收指南\r\nInformation on the role of end-users in contributing to the separate collection of waste batteries",
+            "engineering": "终端用户分类回收指南\r\ninformationOnTheRoleOfEndUsersInContributingToTheSeparateCollectionOfWasteBatteries\r\nInformation on the role of end-users in contributing to the separate collection of waste batteries",
+            "mapping": "wasteBatteryPreventionManagementInfo.endUserRoleInSeparateCollection",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 88,
+        "id": "V4-0194",
+        "name": "准备改变用途的处理设施",
+        "key": "preparationForRepurposingFacilities",
+        "official": "preparationForRepurposingFacilities",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.preparationForRepurposingFacilities"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 93,
+            "name": "准备改变用途的处理设施\r\n",
+            "engineering": "准备改变用途的处理设施\r\n",
+            "mapping": "wasteBatteryPreventionManagementInfo.preparationForRepurposingFacilities",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 89,
+        "id": "V4-0195",
+        "name": "准备再使用的处理设施",
+        "key": "preparationForReuseFacilities",
+        "official": "preparationForReuseFacilities",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.preparationForReuseFacilities"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 94,
+            "name": "准备再使用的处理设施",
+            "engineering": "准备再使用的处理设施",
+            "mapping": "wasteBatteryPreventionManagementInfo.preparationForReuseFacilities",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 90,
+        "id": "V4-0196",
+        "name": "分类收集点信息",
+        "key": "separateCollectionPoints",
+        "official": "separateCollectionPoints",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.separateCollectionPoints"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 95,
+            "name": "分类收集点信息",
+            "engineering": "分类收集点信息",
+            "mapping": "wasteBatteryPreventionManagementInfo.separateCollectionPoints",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 91,
+        "id": "V4-0197",
+        "name": "回收接收点信息",
+        "key": "takeBackCollectionPoints",
+        "official": "takeBackCollectionPoints",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.takeBackCollectionPoints"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 96,
+            "name": "回收接收点信息",
+            "engineering": "回收接收点信息",
+            "mapping": "wasteBatteryPreventionManagementInfo.takeBackCollectionPoints",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 92,
+        "id": "V4-0198",
+        "name": "废电池安全说明",
+        "key": "wasteBatterySafetyInstructions",
+        "official": "wasteBatterySafetyInstructions",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.wasteBatterySafetyInstructions"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 97,
+            "name": "废电池安全说明",
+            "engineering": "废电池安全说明",
+            "mapping": "wasteBatteryPreventionManagementInfo.wasteBatterySafetyInstructions",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    },
+    {
+      "local": {
+        "row": 93,
+        "id": "V4-0199",
+        "name": "废电池处理设施",
+        "key": "wasteBatteryTreatmentFacilities",
+        "official": "wasteBatteryTreatmentFacilities",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "condition": "必填（该电池类别／当前访问视图）。",
+        "permission": "PUB（公开）",
+        "path": "$.wasteBatteryPreventionManagementInfo.wasteBatteryTreatmentFacilities"
+      },
+      "kind": "字段直接对应",
+      "matches": [
+        {
+          "online": {
+            "row": 98,
+            "name": "废电池处理设施",
+            "engineering": "废电池处理设施",
+            "mapping": "wasteBatteryPreventionManagementInfo.wasteBatteryTreatmentFacilities",
+            "example": "\"wasteBatteryPreventionManagementInfo\": {\r\n        \"endUserRoleInWastePrevention\": {\r\n            \"en-IE\": \"End users should avoid mechanical damage and follow the usage instructions.\"\r\n        },\r\n        \"endUserRoleInSeparateCollection\": {\r\n            \"en-IE\": \"End users must not dispose of batteries as unsorted municipal waste.\"\r\n        },\r\n        \"separateCollectionPoints\": {\r\n            \"en-IE\": \"https://example.com/collection-points\"\r\n        },\r\n        \"takeBackCollectionPoints\": {\r\n            \"en-IE\": \"Return to any authorised dealer free of charge.\"\r\n        },\r\n        \"preparationForReuseFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Reuse Centre, Zaragoza.\"\r\n        },\r\n        \"preparationForRepurposingFacilities\": {\r\n            \"en-IE\": \"Authorised facility: Iberia Second-Life Hub, Valencia.\"\r\n        },\r\n        \"wasteBatteryTreatmentFacilities\": {\r\n            \"en-IE\": \"Authorised recycling plant: Recycla Ibérica, Bilbao.\"\r\n        },\r\n        \"wasteBatterySafetyInstructions\": {\r\n            \"en-IE\": \"Store damaged batteries in a dry, ventilated, non-flammable container.\"\r\n        },\r\n        \"batteryLabelSymbolMeaning\": {\r\n            \"en-IE\": \"The crossed-out wheelie bin symbol indicates separate collection is required.\"\r\n        },\r\n        \"batterySubstancesImpact\": {\r\n            \"en-IE\": \"Improper disposal may release electrolyte and heavy metals into soil and water.\"\r\n        }\r\n    }",
+            "category": "EV/LMT/IND/无BMS的IND",
+            "required": "M",
+            "permission": "Public",
+            "inherited": {},
+            "strike": false
+          },
+          "category_status": "大类一致·细分写法不同",
+          "category_norm": "EV/IND/LMT; 无BMS的IND",
+          "category_note": "在线另列“无BMS的IND”；保留该细分标注。EV/LMT/IND大类集合相同，不能据此认定BMS适用条件相同。",
+          "required_status": "一致",
+          "required_norm": "EV:M; LMT:M; IND:M",
+          "required_note": "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。",
+          "permission_status": "角色一致",
+          "permission_norm": "Public",
+          "permission_note": "按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"
+        }
+      ],
+      "category_status": "大类一致·细分写法不同",
+      "required_status": "一致",
+      "permission_status": "角色一致"
+    }
+  ]
+}

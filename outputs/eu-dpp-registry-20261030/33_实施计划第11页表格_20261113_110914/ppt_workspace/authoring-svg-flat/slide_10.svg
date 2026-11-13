@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="layout-shape-7" data-pptx-object="shape" data-pptx-frame="0 68.13 1280 4.8" data-pptx-prst="rect" data-pptx-source-ref="layout:7" data-pptx-semantic-object="shape">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="group" data-pptx-frame="20.19 14.6 577.2 38.73" data-pptx-source-ref="slide:3">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="20.19 14.6 577.2 38.73" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 20.19 14.6 L 597.39 14.6 L 597.39 53.34 L 20.19 53.34 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="20.19" y="45.27002625" text-anchor="start" xml:space="preserve" font-size="32" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">当前可推进：完善系统，完成联调前准备</text>
+</g>
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="37.12 91.67 841.28 33.88" data-pptx-source-ref="slide:5">
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="37.12 91.67 841.28 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 37.12 91.67 L 878.4 91.67 L 878.4 125.55 L 37.12 125.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="37.12" y="113" text-anchor="start" xml:space="preserve" font-size="22" fill="#556477" data-pptx-text-baseline="metrics-v1">以官方接口与语义规范为基线，先完成本地开发和验证，再进入欧盟端到端联调。</text>
+</g>
+</g>
+<g id="shape-6" data-pptx-object="graphic-frame" data-pptx-frame="38 145 1204 440" data-pptx-import-source="pptx" data-pptx-replace-with="table" data-pptx-native-authority="json" data-pptx-source-ref="slide:6" data-pptx-semantic-object="table">
+<metadata type="application/json">{"schema":"ppt-master.semantic-table.v2","x":38,"y":145,"width":1204,"height":440,"strict_grid":true,"header_rows":1,"column_widths":[200,680,324],"row_heights":[44,99,99,99,99],"style":{"band_row":false,"table_style_id":"{5C22544A-7EE6-4342-B048-85BDC9FD1C3A}"},"defaults":{"cell":{"fill":"#FFFFFF","valign":"top","borders":{"left":{"style":"solid","color":"#CED7E3","width":1},"right":{"style":"solid","color":"#CED7E3","width":1},"top":{"style":"solid","color":"#CED7E3","width":1},"bottom":{"style":"solid","color":"#CED7E3","width":1}},"padding_left":15,"padding_right":15,"padding_top":9,"padding_bottom":8},"run":{"bold":false,"color":"#202A37","font_size":20,"font_family":"微软雅黑","lang":"zh-CN"}},"cell_styles":{"cell-1":{"fill":"#4472C4","align":"ctr","valign":"middle","padding_top":6.988,"padding_bottom":6.212}},"rows":[[{"paragraphs":[{"runs":[{"text":"工作方向","bold":true,"font_size":22,"color":"#FFFFFF"}],"align":"ctr"}],"cell_style":"cell-1"},{"paragraphs":[{"runs":[{"text":"当前可开展工作","bold":true,"font_size":22,"color":"#FFFFFF"}],"align":"ctr"}],"cell_style":"cell-1"},{"paragraphs":[{"runs":[{"text":"准备成果","bold":true,"font_size":22,"color":"#FFFFFF"}],"align":"ctr"}],"cell_style":"cell-1"}],[{"paragraphs":[{"runs":[{"text":"模型与系统适配","bold":true,"color":"#1F4E79"}]}]},{"paragraphs":[{"runs":[{"text":"对齐字段、类型、必填、枚举、单位、多语言及权限；完善录入、动态更新规则和业务数据接入。"}]}]},{"paragraphs":[{"runs":[{"text":"工程字段映射与模型"}]}]}],[{"paragraphs":[{"runs":[{"text":"欧盟接口开发","bold":true,"color":"#1F4E79"}]}],"fill":"#F3F6FB"},{"paragraphs":[{"runs":[{"text":"开发私钥签名、Token申请、注册提交及幂等重试；实现任务查询，通过Mock验证调用与异常处理。"}]}],"fill":"#F3F6FB"},{"paragraphs":[{"runs":[{"text":"欧盟接口适配模块；配置及联调用例"}]}],"fill":"#F3F6FB"}],[{"paragraphs":[{"runs":[{"text":"本地模型校验","bold":true,"color":"#1F4E79"}]}]},{"paragraphs":[{"runs":[{"text":"执行JSON Schema结构校验与SHACL语义约束校验；覆盖三类电池的正向样例和负向校验用例。"}]}]},{"paragraphs":[{"runs":[{"text":"校验功能、样例及报告"}]}]}],[{"paragraphs":[{"runs":[{"text":"UPI与试点数据","bold":true,"color":"#1F4E79"}]}],"fill":"#F3F6FB"},{"paragraphs":[{"runs":[{"text":"准备HTTPS护照服务、匿名公开及授权受限视图；实现欧盟回读令牌验签与授权，准备单条EV数据。"}]}],"fill":"#F3F6FB"},{"paragraphs":[{"runs":[{"text":"UPI与访问控制"}]}],"fill":"#F3F6FB"}]],"name":"saic-preintegration-work"}</metadata><image x="0" y="0" width="1280" height="720" preserveAspectRatio="none" href="../images/source-object-previews/semantic-table-preview-6ca77e5e8586f598dc35c3354cf966edecd319bd85ce828e751ddf4db2b09885.svg" data-pptx-part="authoring-preview" /></g>
+<g id="shape-9" data-pptx-object="group" data-pptx-frame="38 604 1204 65.44" data-pptx-source-ref="slide:9">
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="38 604 1204 62" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 38 604 L 1242 604 L 1242 666 L 38 666 Z" fill="#EAF0F9" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="55.16 610 785.2 59.44" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 55.16 610 L 840.36 610 L 840.36 669.44 L 55.16 669.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.16" y="630" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#1F4E79" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="27"><tspan><tspan>联调启动条件：服务账号及凭据、Token POST、UPI回读及官方在线语义校验具备。</tspan></tspan><tspan data-paragraph-line-break="1">先完成单条EV护照端到端验证，再扩展类别与批量注册。</tspan></text>
+</g>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="37.5 675.33 669.03 37.3" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 37.5 675.33 L 706.53 675.33 L 706.53 712.63 L 37.5 712.63 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="37.5" y="690" text-anchor="start" xml:space="preserve" font-size="12.53" fill="#556477" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="18"><tspan><tspan>依据：官方API、Service Account、Self-Hosted Authentication及Semantic Data指南，结合上汽当前准备任务整理。</tspan></tspan><tspan data-paragraph-line-break="1">范围：上汽业务系统→护照平台数据接入，与护照平台→欧盟注册中心接口开发分别推进。</tspan></text>
+</g></svg>

@@ -1,0 +1,43 @@
+  Authoring round-trip materialized: 13 slide(s), 172 unchanged ref(s), 0 edited ref(s), 18 deleted ref(s)
+  Round-trip page plan: 13 output page(s) from 11 source slide(s)
+  Source slide passthrough: 11/13 slide(s) retain original XML and relationships
+  Animation config: outputs/eu-dpp-registry-20261030/32_模型4.0实施落地PPT_20261113_105618/ppt_workspace/animations.json
+PPT Master - SVG to native DrawingML PPTX Tool
+==================================================
+  Project path: outputs/eu-dpp-registry-20261030/32_模型4.0实施落地PPT_20261113_105618/ppt_workspace
+  SVG directory: authoring-svg-flat
+  Output file: outputs/eu-dpp-registry-20261030/32_模型4.0实施落地PPT_20261113_105618/ppt_workspace/exports/ppt_workspace_20261113_110338.pptx
+
+  Detected canvas format: PPT 16:9
+  Slide dimensions: 1280 x 720 px
+  SVG file count: 13
+  Mode: Native DrawingML shapes (directly editable)
+  Native table/chart objects: Chart/Table replacement disabled
+  PPTX structure: preserve
+  Image optimization: Enabled (preferred cap 2560 px, unchanged bytes preserved, JPEG q85 when re-encoded)
+
+  [Slide 1/13] slide_01.svg (Source slide passthrough)
+  [Slide 2/13] slide_02.svg (Source slide passthrough)
+  [Slide 3/13] slide_03.svg (Source slide passthrough)
+  [Slide 4/13] slide_04.svg (Source slide passthrough)
+  [Slide 5/13] slide_05.svg (Source slide passthrough)
+  [Slide 6/13] slide_06.svg (Source slide passthrough)
+  [Slide 7/13] slide_07.svg (Source slide passthrough)
+  [Slide 8/13] slide_08.svg (Source slide passthrough)
+  [Slide 9/13] slide_09.svg (Source slide passthrough)
+  [Slide 10/13] slide_10.svg (Source slide passthrough)
+  Lowered positional <tspan> using preserve text flow
+  Converted 18 elements, skipped 0
+  [Slide 11/13] implementation_roadmap.svg (Native)
+  Converted 7 elements, skipped 0
+  [Slide 12/13] implementation_layers.svg (Native)
+  [Slide 13/13] slide_11.svg (Source slide passthrough)
+
+[Done] Saved: outputs/eu-dpp-registry-20261030/32_模型4.0实施落地PPT_20261113_105618/ppt_workspace/exports/ppt_workspace_20261113_110338.pptx
+  Speaker notes: 0 page(s)
+  Slides: 13; unselected Layout prototype carriers: 0
+  Round-trip export summary: output_pages=13 passthrough=0 cloned_passthrough=11 patched=0 rebuilt=2
+  [POSTFLIGHT] status=passed-with-warnings quality_gate=passed slides=13 warning_categories=1
+  [POSTFLIGHT][WARNING] unsafe_exported_font_faces=2
+  [PPTX] outputs/eu-dpp-registry-20261030/32_模型4.0实施落地PPT_20261113_105618/ppt_workspace/exports/ppt_workspace_20261113_110338.pptx
+  [REPORT] outputs/eu-dpp-registry-20261030/32_模型4.0实施落地PPT_20261113_105618/ppt_workspace/validation/ppt_workspace_20261113_110338.report.json

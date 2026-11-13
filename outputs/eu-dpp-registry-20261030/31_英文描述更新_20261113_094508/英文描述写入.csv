@@ -1,0 +1,149 @@
+Standard or schema version used to structure the battery passport.
+Current status of the battery passport as a digital resource.
+"Level at which the product identifier applies: model, batch or individual item."
+Date and time when the battery passport was most recently updated.
+Unique identifier assigned to an instance of the battery passport.
+Unique product identifier used to identify the individual battery.
+Identifier used to distinguish the battery model from other models.
+Serial number used to identify the individual battery unit.
+Identifiers of the content specifications governing the battery passport structure.
+Unique identifier assigned to the manufacturer of the battery.
+Unique identifier of the facility where the battery was manufactured.
+Unique identifier assigned to the economic operator responsible for the battery.
+Battery category defined according to its intended application and regulatory classification.
+"Total mass of the battery, expressed in the specified unit."
+"Current lifecycle status of the individual battery, such as original or remanufactured."
+Geographical location of the plant where the battery was manufactured.
+Country or jurisdiction where the battery manufacturing plant is located.
+Town or city where the battery manufacturing plant is located.
+Region where the battery manufacturing plant is geographically located.
+Year and month in which the battery was manufactured.
+Date of first intended use in the EU without prior placement on the market.
+Name of the manufacturer responsible for manufacturing the battery.
+Registered trade name under which the battery manufacturer conducts business.
+Registered trademark used to identify the manufacturer of the battery.
+Postal address at which the battery manufacturer can be contacted.
+Website address providing online access to the battery manufacturer's information.
+Email address used to contact the manufacturer of the battery.
+Name of the economic operator associated with the battery passport.
+Registered trade name under which the economic operator conducts business.
+Registered trademark used to identify the economic operator's business.
+Postal address at which the economic operator can be contacted.
+Website address providing online access to the economic operator's information.
+Email address used to contact the economic operator for the battery.
+"Duration of the battery's commercial calendar-life warranty, expressed in months."
+Period covered by the battery's commercial warranty for calendar life.
+Extinguishing agents suitable for use in a fire involving the battery.
+Separate-collection marking and applicable cadmium or lead symbols displayed on the battery.
+Label displaying the battery's carbon footprint and carbon footprint performance class.
+Explanation of the meanings of labels and symbols displayed on the battery.
+EU declaration confirming the battery's conformity with applicable requirements under Article 18.
+Test report results demonstrating compliance with the Batteries Regulation and acts adopted under it.
+Reports documenting tests for prohibited or restricted substances in the battery.
+Technical documentation supporting the declared recycled material content of the battery.
+Technical documentation describing the battery's performance and durability assessment results.
+Documentation describing the battery's state of health and expected lifetime.
+Technical documentation demonstrating the battery's conformity with applicable regulatory requirements.
+"Instructions for using the battery in a printable, downloadable and storable format."
+Battery carbon footprint per kilowatt-hour of energy delivered over its expected lifetime.
+Contribution of raw material acquisition and preprocessing to the battery's carbon footprint.
+Contribution of the main production stage to the battery's carbon footprint.
+Contribution of the distribution stage to the battery's carbon footprint.
+Contribution of end-of-life treatment and recycling to the battery's carbon footprint.
+Performance class indicating the battery's relative lifecycle carbon footprint level.
+Total absolute carbon footprint attributable to the battery's lifecycle.
+Publicly accessible study supporting the battery's declared carbon footprint results.
+"Report describing battery supply-chain due diligence policies, risk management and verification activities."
+Information on supply-chain assurances provided by third parties through recognised schemes.
+Indices providing information relevant to the assessment of the battery's supply chain.
+Electrochemical composition identifying the battery's chemistry.
+Critical raw materials identified as being present in the battery.
+Name of a material used in the battery's cathode.
+CAS Registry Number identifying a material used in the battery's cathode.
+Name of a material used in the battery's anode.
+CAS Registry Number identifying a material used in the battery's anode.
+Name of a material used in the battery's electrolyte.
+CAS Registry Number identifying a material used in the battery's electrolyte.
+"Names of hazardous substances present in the battery, excluding mercury, cadmium and lead."
+CAS Registry Number used to identify a hazardous substance in the battery.
+Hazard classes and categories assigned to substances present in the battery.
+Location of a hazardous substance within the battery or its components.
+Concentration of a hazardous substance present in the battery.
+"Effects of battery substances on the environment, human health and personal safety."
+Share of nickel in battery active materials recovered from pre-consumer waste.
+Share of cobalt in battery active materials recovered from pre-consumer waste.
+Share of lithium in battery active materials recovered from pre-consumer waste.
+Share of nickel in battery active materials recovered from post-consumer waste.
+Share of cobalt in battery active materials recovered from post-consumer waste.
+Share of lithium in battery active materials recovered from post-consumer waste.
+Share of lead recovered from waste and present in the battery.
+"Proportion of renewable content incorporated into the battery, expressed as a percentage."
+Instructions for safely removing the battery pack from the equipment.
+Reference to instructions for disassembling the battery pack and its components.
+Reference to component part numbers and contact details for replacement spare parts.
+Postal address of the source supplying replacement battery spare parts.
+Website address of the source supplying replacement battery spare parts.
+Email address for contacting the source of replacement battery spare parts.
+Reference to safety measures for handling and dismantling the battery.
+Guidance explaining how end-users can help prevent batteries from becoming waste.
+Guidance explaining end-users' role in the separate collection of waste batteries.
+"Guidance on battery collection, preparation for second life, and treatment at the end of life."
+Information identifying facilities that prepare batteries for repurposing into a different application.
+Information identifying facilities that prepare used batteries for reuse in their original application.
+Information identifying locations designated for the separate collection of waste batteries.
+Information identifying take-back services and collection points for waste batteries.
+Instructions describing safety precautions for handling and managing waste batteries.
+Information identifying facilities that treat waste batteries at the end of life.
+Usable battery energy established during vehicle certification under the applicable test procedure.
+Usable energy available at the current stage of the battery's service life.
+"Usable battery energy at a given time, expressed as a percentage of certified usable energy."
+Histogram of periodically recorded battery state-of-charge values during battery use.
+Battery capacity expressed in ampere-hours under the specified reference conditions.
+Capacity remaining in the battery at the current stage of its service life.
+Percentage decrease in battery capacity over time and use relative to its original rated capacity.
+"Nominal voltage used to identify the battery, with the relevant temperature conditions."
+Minimum and maximum battery voltage values under the applicable reference conditions.
+Initial battery power capability measured at 20% state of charge under specified reference conditions.
+Initial power capability of the battery under the specified reference conditions.
+Initial battery power capability measured at 80% state of charge under specified reference conditions.
+Power capability of the battery at its current stage of use under reference conditions.
+Percentage decrease in battery power capability over time and use relative to its initial value.
+"Permitted battery power limits, including applicable temperature conditions where relevant."
+Ratio of nominal battery power to battery energy under the specified reference conditions.
+Initial ratio of net discharge energy to energy required to restore the initial state of charge.
+Round-trip energy efficiency of the battery under the applicable measurement conditions during use.
+Round-trip energy efficiency measured when the battery reaches half of its expected cycle life.
+Round-trip energy efficiency representing the battery's condition at the current stage of use.
+"Decrease in round-trip energy efficiency over time and use, expressed as a percentage."
+Self-discharge rate of an unused battery under reference conditions at the beginning of life.
+Self-discharge rate of the battery at its current age under specified reference conditions.
+"Recorded evolution of battery self-discharge rates, with the associated measurement timestamps."
+Initial internal resistance of the battery cell measured using the specified DC test method.
+Initial internal resistance of the battery pack measured using the specified DC test method.
+Initial internal resistance of the battery cell measured using the specified AC test method.
+Initial internal resistance of the battery pack measured using the specified AC test method.
+Initial internal resistance of the battery measured under the specified reference conditions.
+Current internal resistance of the battery measured under the specified reference conditions.
+Percentage increase in battery pack internal resistance relative to its initial reference value.
+Expected battery lifetime expressed in calendar years under its design reference conditions.
+Expected battery lifetime in charge-discharge cycles under its design reference conditions.
+Expected battery lifetime expressed in cycles under its design reference conditions.
+Cumulative number of complete charge-discharge cycles recorded during battery use.
+Cumulative number of charging cycles recorded for the individual battery during use.
+Cumulative number of discharging cycles recorded for the individual battery during use.
+Reference test used to determine the battery's expected lifetime expressed in cycles.
+Charging C-rate applied in the reference test used to determine expected cycle life.
+Discharging C-rate applied in the reference test used to determine expected cycle life.
+Cumulative energy throughput of the battery over its service life up to the measurement time.
+Cumulative capacity throughput of the battery over its service life up to the measurement time.
+SOCE percentage threshold used to determine whether an EV battery remains operational.
+Histogram of periodically recorded operating temperatures experienced during battery use.
+Temperature range the battery can withstand when not in use under specified reference conditions.
+Cumulative time above the upper boundary of the battery's specified idle temperature range.
+Cumulative time below the lower boundary of the battery's specified idle temperature range.
+Cumulative charging time above the upper boundary of the specified idle temperature range.
+Cumulative charging time below the lower boundary of the specified idle temperature range.
+"Information on accidents affecting the battery, including incidents involving the equipment it powers."
+Number of recorded events in which battery voltage falls below its specified operating limit.
+Number of recorded events in which battery voltage exceeds its specified upper operating limit.
+"Rated capacity of the battery under specified reference conditions, expressed in ampere-hours."

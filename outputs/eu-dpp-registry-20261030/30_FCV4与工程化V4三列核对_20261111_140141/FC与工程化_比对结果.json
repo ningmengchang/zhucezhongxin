@@ -1,0 +1,3449 @@
+{
+  "created_at": "2026-11-11T14:10:54.907921",
+  "source_url": "https://alidocs.dingtalk.com/i/nodes/Qnp9zOoBVBByzZaNClgbvO9xV1DK0g6l",
+  "summary": {
+    "fc_data_rows": 96,
+    "fc_unique_names": 93,
+    "engineering_data_rows": 144,
+    "engineering_named_rows": 117,
+    "engineering_unique_names": 106,
+    "common_name_groups": 77,
+    "one_to_one_groups": 70,
+    "multiple_name_groups": 7,
+    "fc_unmatched_names": 16,
+    "engineering_unmatched_named_rows": 29,
+    "engineering_blank_name_rows": 27,
+    "one_to_one_columns": {
+      "category": {
+        "一致": 22,
+        "大类一致·细分写法不同": 47,
+        "不一致": 1
+      },
+      "required": {
+        "一致": 50,
+        "条件表达不同·需确认": 5,
+        "不一致": 15
+      },
+      "permission": {
+        "角色一致": 67,
+        "不一致": 3
+      }
+    },
+    "explicit_field_column_differences": 19,
+    "unique_names_with_explicit_differences": 18
+  },
+  "one_to_one": [
+    {
+      "anchor": "电池护照状态",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 3,
+        "name": "电池护照状态\nDPP Status",
+        "cn": "电池护照状态",
+        "en": "dppstatus",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 3,
+        "name": "电池护照状态\r\nDPP Status",
+        "cn": "电池护照状态",
+        "en": "dppstatus",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池护照颗粒度",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 4,
+        "name": "电池护照颗粒度\r\nDPP Granularity",
+        "cn": "电池护照颗粒度",
+        "en": "dppgranularity",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 4,
+        "name": "电池护照颗粒度\r\nDPP Granularity",
+        "cn": "电池护照颗粒度",
+        "en": "dppgranularity",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "最新更新时间",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 5,
+        "name": "最新更新时间\nDate-time of latest update of DPP",
+        "cn": "最新更新时间",
+        "en": "date-timeoflatestupdateofdpp",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 5,
+        "name": "最新更新时间\r\nDate-time of latest update of DPP",
+        "cn": "最新更新时间",
+        "en": "date-timeoflatestupdateofdpp",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池护照唯一标识符",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 6,
+        "name": "电池护照唯一标识符\nUnique battery passport identifier / unique DPP identifier",
+        "cn": "电池护照唯一标识符",
+        "en": "uniquebatterypassportidentifier/uniquedppidentifier",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 6,
+        "name": "电池护照唯一标识符\r\nUnique battery passport identifier / unique DPP identifier",
+        "cn": "电池护照唯一标识符",
+        "en": "uniquebatterypassportidentifier/uniquedppidentifier",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池唯一标识符",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 7,
+        "name": "电池唯一标识符\nUnique battery identifier / unique product identifier",
+        "cn": "电池唯一标识符",
+        "en": "uniquebatteryidentifier/uniqueproductidentifier",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 7,
+        "name": "电池唯一标识符\r\nUnique battery identifier / unique product identifier",
+        "cn": "电池唯一标识符",
+        "en": "uniquebatteryidentifier/uniqueproductidentifier",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "参考标准/内容规范ID",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 8,
+        "name": "参考标准/内容规范ID\nContent specification Ids",
+        "cn": "参考标准/内容规范ID",
+        "en": "contentspecificationids",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 10,
+        "name": "参考标准/内容规范ID\r\nContent specification Ids",
+        "cn": "参考标准/内容规范ID",
+        "en": "contentspecificationids",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池型号",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 9,
+        "name": "电池型号\nBattery model identifier",
+        "cn": "电池型号",
+        "en": "batterymodelidentifier",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 11,
+        "name": "电池型号\r\nBattery model identifier",
+        "cn": "电池型号",
+        "en": "batterymodelidentifier",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池序列号",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 10,
+        "name": "电池序列号\nBattery serial number",
+        "cn": "电池序列号",
+        "en": "batteryserialnumber",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 12,
+        "name": "电池序列号\r\nBattery serial number",
+        "cn": "电池序列号",
+        "en": "batteryserialnumber",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "经济运营商信息",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 11,
+        "name": "经济运营商信息\nEconomic operator information",
+        "cn": "经济运营商信息",
+        "en": "economicoperatorinformation",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 18,
+        "name": "经济运营商信息\r\nEconomic operator information",
+        "cn": "经济运营商信息",
+        "en": "economicoperatorinformation",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "制造商信息",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 12,
+        "name": "制造商信息\nManufacturer information",
+        "cn": "制造商信息",
+        "en": "manufacturerinformation",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 24,
+        "name": "制造商信息\r\nManufacturer information",
+        "cn": "制造商信息",
+        "en": "manufacturerinformation",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "生产日期",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 14,
+        "name": "生产日期\nManufacturing date",
+        "cn": "生产日期",
+        "en": "manufacturingdate",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 34,
+        "name": "生产日期\r\nManufacturing date",
+        "cn": "生产日期",
+        "en": "manufacturingdate",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "质保期",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 15,
+        "name": "质保期\nWarranty period of the battery",
+        "cn": "质保期",
+        "en": "warrantyperiodofthebattery",
+        "category": "EV/LMT/IND",
+        "required": "M（如果提供商业保修）",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 36,
+        "name": "质保期\r\nWarranty period of the battery",
+        "cn": "质保期",
+        "en": "warrantyperiodofthebattery",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "条件表达不同·需确认",
+      "required_note": "FC：M（如果提供商业保修）；工程化：C。保留条件原文，不能将带条件的M直接当作无条件M。 两侧均可表达条件必填，但工程化C单元格未明确写出商业保修条件。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池类型",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 16,
+        "name": "电池类型\nBattery category",
+        "cn": "电池类型",
+        "en": "batterycategory",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 37,
+        "name": "电池类型\r\nBattery category",
+        "cn": "电池类型",
+        "en": "batterycategory",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池状态",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 18,
+        "name": "电池状态\nBattery status",
+        "cn": "电池状态",
+        "en": "batterystatus",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 39,
+        "name": "电池状态\r\nBattery status",
+        "cn": "电池状态",
+        "en": "batterystatus",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "镉和铅符号",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 20,
+        "name": "镉和铅符号\nSymbols for cadmium and lead",
+        "cn": "镉和铅符号",
+        "en": "symbolsforcadmiumandlead",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 40,
+        "name": "镉和铅符号\r\nSymbols for cadmium and lead",
+        "cn": "镉和铅符号",
+        "en": "symbolsforcadmiumandlead",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "碳足迹标签",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 21,
+        "name": "碳足迹标签\nCarbon Footprint label",
+        "cn": "碳足迹标签",
+        "en": "carbonfootprintlabel",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 41,
+        "name": "碳足迹标签\r\nCarbon Footprint label",
+        "cn": "碳足迹标签",
+        "en": "carbonfootprintlabel",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "灭火剂",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 22,
+        "name": "灭火剂\nExtinguishing agent",
+        "cn": "灭火剂",
+        "en": "extinguishingagent",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 42,
+        "name": "灭火剂\r\nExtinguishing agent",
+        "cn": "灭火剂",
+        "en": "extinguishingagent",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "标识说明",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 23,
+        "name": "标识说明\nMeaning of labels and symbols",
+        "cn": "标识说明",
+        "en": "meaningoflabelsandsymbols",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 43,
+        "name": "标识说明\r\nMeaning of labels and symbols",
+        "cn": "标识说明",
+        "en": "meaningoflabelsandsymbols",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "欧盟符合性声明",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 24,
+        "name": "欧盟符合性声明\nEU declaration of conformity",
+        "cn": "欧盟符合性声明",
+        "en": "eudeclarationofconformity",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 44,
+        "name": "欧盟符合性声明\r\nEU declaration of conformity",
+        "cn": "欧盟符合性声明",
+        "en": "eudeclarationofconformity",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "每功能单元电池碳足迹",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 26,
+        "name": "每功能单元电池碳足迹\nBattery carbon footprint per Functional Unit",
+        "cn": "每功能单元电池碳足迹",
+        "en": "batterycarbonfootprintperfunctionalunit",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 52,
+        "name": "每功能单元电池碳足迹\r\nBattery carbon footprint per Functional Unit",
+        "cn": "每功能单元电池碳足迹",
+        "en": "batterycarbonfootprintperfunctionalunit",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "核心生产阶段碳足迹",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 28,
+        "name": "核心生产阶段碳足迹\nContribution of main product production lifecycle stage",
+        "cn": "核心生产阶段碳足迹",
+        "en": "contributionofmainproductproductionlifecyclestage",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 54,
+        "name": "核心生产阶段碳足迹\r\nContribution of main product production lifecycle stage",
+        "cn": "核心生产阶段碳足迹",
+        "en": "contributionofmainproductproductionlifecyclestage",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "分销阶段碳足迹",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 29,
+        "name": "分销阶段碳足迹\nContribution of distribution lifecycle stage",
+        "cn": "分销阶段碳足迹",
+        "en": "contributionofdistributionlifecyclestage",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 55,
+        "name": "分销阶段碳足迹\r\nContribution of distribution lifecycle stage",
+        "cn": "分销阶段碳足迹",
+        "en": "contributionofdistributionlifecyclestage",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "退役与回收阶段碳足迹",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 30,
+        "name": "退役与回收阶段碳足迹\nContribution of end of life and recycling lifecycle stage",
+        "cn": "退役与回收阶段碳足迹",
+        "en": "contributionofendoflifeandrecyclinglifecyclestage",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 56,
+        "name": "退役与回收阶段碳足迹\r\nContribution of end of life and recycling lifecycle stage",
+        "cn": "退役与回收阶段碳足迹",
+        "en": "contributionofendoflifeandrecyclinglifecyclestage",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "碳足迹表现等级",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 31,
+        "name": "碳足迹表现等级\nCarbon footprint performance class",
+        "cn": "碳足迹表现等级",
+        "en": "carbonfootprintperformanceclass",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 57,
+        "name": "碳足迹表现等级\r\nCarbon footprint performance class",
+        "cn": "碳足迹表现等级",
+        "en": "carbonfootprintperformanceclass",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "碳足迹研究",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 32,
+        "name": "碳足迹研究\nWeb link to public carbon footprint study",
+        "cn": "碳足迹研究",
+        "en": "weblinktopubliccarbonfootprintstudy",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 58,
+        "name": "碳足迹研究\r\nWeb link to public carbon footprint study",
+        "cn": "碳足迹研究",
+        "en": "weblinktopubliccarbonfootprintstudy",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池碳足迹",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 33,
+        "name": "电池碳足迹\nAbsolute battery carbon footprint",
+        "cn": "电池碳足迹",
+        "en": "absolutebatterycarbonfootprint",
+        "category": "EV/LMT/IND",
+        "required": "V",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 59,
+        "name": "电池碳足迹\r\nAbsolute battery carbon footprint",
+        "cn": "电池碳足迹",
+        "en": "absolutebatterycarbonfootprint",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "V",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "尽职调查报告信息",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 34,
+        "name": "尽职调查报告信息\r\nInformation of due diligence report",
+        "cn": "尽职调查报告信息",
+        "en": "informationofduediligencereport",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 60,
+        "name": "尽职调查报告信息\r\nInformation of due diligence report",
+        "cn": "尽职调查报告信息",
+        "en": "informationofduediligencereport",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "化学体系",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 35,
+        "name": "化学体系\nBattery chemistry",
+        "cn": "化学体系",
+        "en": "batterychemistry",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 63,
+        "name": "化学体系\r\nBattery chemistry",
+        "cn": "化学体系",
+        "en": "batterychemistry",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "关键原材料",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 36,
+        "name": "关键原材料\nCritical raw materials",
+        "cn": "关键原材料",
+        "en": "criticalrawmaterials",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 64,
+        "name": "关键原材料\r\nCritical raw materials",
+        "cn": "关键原材料",
+        "en": "criticalrawmaterials",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "正极、负极、电极液组成",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 37,
+        "name": "正极、负极、电极液组成\nMaterials used in cathode, anode and electrolyte",
+        "cn": "正极、负极、电极液组成",
+        "en": "materialsusedincathode,anodeandelectrolyte",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 1 (batteryRestrictedType1) | 有合法利益者、公告机构、市场监管机构、欧盟委员会",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 65,
+        "name": "正极、负极、电极液组成\r\nMaterials used in cathode, anode and electrolyte",
+        "cn": "正极、负极、电极液组成",
+        "en": "materialsusedincathode,anodeandelectrolyte",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "PLI/NB/市场监管机构/委员会",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "拆卸指南",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 39,
+        "name": "拆卸指南\nDismantling information: Manuals for the removal and the disassembly of the battery pack",
+        "cn": "拆卸指南",
+        "en": "dismantlinginformation:manualsfortheremovalandthedisassemblyofthebatterypack",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 1 (batteryRestrictedType1) | 有合法利益者、公告机构、市场监管机构、欧盟委员会",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 77,
+        "name": "拆卸指南\r\nDismantling information: Manuals for the removal and the disassembly of the battery pack",
+        "cn": "拆卸指南",
+        "en": "dismantlinginformation:manualsfortheremovalandthedisassemblyofthebatterypack",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "NB/市场监管机构/委员会",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "不一致",
+      "permission_note": "工程化少了：PLI。只比较表内可见角色，不审定法规权限。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "安全措施",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 41,
+        "name": "安全措施\nSafety measures",
+        "cn": "安全措施",
+        "en": "safetymeasures",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 1 (batteryRestrictedType1) | 有合法利益者、公告机构、市场监管机构、欧盟委员会",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 83,
+        "name": "安全措施\r\nSafety measures",
+        "cn": "安全措施",
+        "en": "safetymeasures",
+        "category": "EV / LMT / IND",
+        "required": "M",
+        "permission": "PLI/NB/市场监管机构/委员会",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "再循环镍含量",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 42,
+        "name": "再循环镍含量\nNickel recycled content share",
+        "cn": "再循环镍含量",
+        "en": "nickelrecycledcontentshare",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 84,
+        "name": "再循环镍含量\r\nPost-consumer recycled nickel share",
+        "cn": "再循环镍含量",
+        "en": "post-consumerrecyclednickelshare",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "再循环钴含量",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 43,
+        "name": "再循环钴含量\nCobalt recycled content share",
+        "cn": "再循环钴含量",
+        "en": "cobaltrecycledcontentshare",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 85,
+        "name": "再循环钴含量\r\nPost-consumer recycled cobalt share",
+        "cn": "再循环钴含量",
+        "en": "post-consumerrecycledcobaltshare",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "再循环锂含量",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 44,
+        "name": "再循环锂含量\nLithium recycled content share",
+        "cn": "再循环锂含量",
+        "en": "lithiumrecycledcontentshare",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 86,
+        "name": "再循环锂含量\r\nPost-consumer recycled lithium share",
+        "cn": "再循环锂含量",
+        "en": "post-consumerrecycledlithiumshare",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "再循环铅含量",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 45,
+        "name": "再循环铅含量\nLead recycled content share",
+        "cn": "再循环铅含量",
+        "en": "leadrecycledcontentshare",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 87,
+        "name": "再循环铅含量\r\nRecycled lead share",
+        "cn": "再循环铅含量",
+        "en": "recycledleadshare",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "可再生材料含量",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 46,
+        "name": "可再生材料含量\nRenewable content share",
+        "cn": "可再生材料含量",
+        "en": "renewablecontentshare",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 88,
+        "name": "可再生材料含量\r\nRenewable content share",
+        "cn": "可再生材料含量",
+        "en": "renewablecontentshare",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "终端用户预防电池报废指南",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 47,
+        "name": "终端用户预防电池报废指南\nInformation on the role of end-users in contributing to waste prevention",
+        "cn": "终端用户预防电池报废指南",
+        "en": "informationontheroleofend-usersincontributingtowasteprevention",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 90,
+        "name": "终端用户预防电池报废指南\r\nInformation on the role of end-users in contributing to waste prevention",
+        "cn": "终端用户预防电池报废指南",
+        "en": "informationontheroleofend-usersincontributingtowasteprevention",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "终端用户分类回收指南",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 48,
+        "name": "终端用户分类回收指南\nInformation on the role of end-users in contributing to the separate collection of waste batteries",
+        "cn": "终端用户分类回收指南",
+        "en": "informationontheroleofend-usersincontributingtotheseparatecollectionofwastebatteries",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 91,
+        "name": "终端用户分类回收指南\r\nInformation on the role of end-users in contributing to the separate collection of waste batteries",
+        "cn": "终端用户分类回收指南",
+        "en": "informationontheroleofend-usersincontributingtotheseparatecollectionofwastebatteries",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "分类收集点信息",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 50,
+        "name": "分类收集点信息 Separate Collection Points",
+        "cn": "分类收集点信息",
+        "en": "separatecollectionpoints",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 95,
+        "name": "分类收集点信息",
+        "cn": "分类收集点信息",
+        "en": "",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "回收接收点信息",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 51,
+        "name": "回收接收点信息 Take Back Collection Points",
+        "cn": "回收接收点信息",
+        "en": "takebackcollectionpoints",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 96,
+        "name": "回收接收点信息",
+        "cn": "回收接收点信息",
+        "en": "",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "剩余容量",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 58,
+        "name": "剩余容量\nRemaining capacity",
+        "cn": "剩余容量",
+        "en": "remainingcapacity",
+        "category": "LMT/IND",
+        "required": "M(EV/IND-BESS)",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 101,
+        "name": "剩余容量\r\nRemaining capacity",
+        "cn": "剩余容量",
+        "en": "remainingcapacity",
+        "category": "LMT / IND",
+        "required": "M(LMT)\r\nV(IND)",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "条件表达不同·需确认",
+      "required_note": "FC：M(EV/IND-BESS)；工程化：M(LMT)\r\nV(IND)。保留条件原文，不能将带条件的M直接当作无条件M。 FC分类仅列LMT/IND，但条件写EV/IND-BESS，存在表内适用范围疑点。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "容量衰减率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 59,
+        "name": "容量衰减率\nCapacity fade",
+        "cn": "容量衰减率",
+        "en": "capacityfade",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 102,
+        "name": "容量衰减率\r\nCapacity fade",
+        "cn": "容量衰减率",
+        "en": "capacityfade",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M(EV/LMT)\r\nC(IND)",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "认证能源状态",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 60,
+        "name": "认证能源状态\nState of certified energy (SOCE)",
+        "cn": "认证能源状态",
+        "en": "stateofcertifiedenergy(soce)",
+        "category": "EV",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 105,
+        "name": "认证能源状态\r\nState of certified energy (SOCE)",
+        "cn": "认证能源状态",
+        "en": "stateofcertifiedenergy(soce)",
+        "category": "EV",
+        "required": "M",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "荷电状态",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 61,
+        "name": "荷电状态\nState of Charge (SoC)",
+        "cn": "荷电状态",
+        "en": "stateofcharge(soc)",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 106,
+        "name": "荷电状态\r\nState of Charge (SoC)",
+        "cn": "荷电状态",
+        "en": "stateofcharge(soc)",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "最低电压",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 62,
+        "name": "最低电压\nMinimum voltage",
+        "cn": "最低电压",
+        "en": "minimumvoltage",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 108,
+        "name": "最低电压\r\nMinimum voltage",
+        "cn": "最低电压",
+        "en": "minimumvoltage",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "标称电压",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 64,
+        "name": "标称电压\nNominal voltage",
+        "cn": "标称电压",
+        "en": "nominalvoltage",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 107,
+        "name": "标称电压\r\nNominal voltage",
+        "cn": "标称电压",
+        "en": "nominalvoltage",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "剩余功率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 67,
+        "name": "剩余功率\nRemaining power capability",
+        "cn": "剩余功率",
+        "en": "remainingpowercapability",
+        "category": "LMT/IND",
+        "required": "M(EV/IND-BESS)",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 113,
+        "name": "剩余功率\r\nRemaining power capability",
+        "cn": "剩余功率",
+        "en": "remainingpowercapability",
+        "category": "LMT/IND",
+        "required": "M(LMT)\r\nV(IND)",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "条件表达不同·需确认",
+      "required_note": "FC：M(EV/IND-BESS)；工程化：M(LMT)\r\nV(IND)。保留条件原文，不能将带条件的M直接当作无条件M。 FC分类仅列LMT/IND，但条件写EV/IND-BESS，存在表内适用范围疑点。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "功率衰减率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 68,
+        "name": "功率衰减率\nPower fade",
+        "cn": "功率衰减率",
+        "en": "powerfade",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 114,
+        "name": "功率衰减率\r\nPower fade",
+        "cn": "功率衰减率",
+        "en": "powerfade",
+        "category": "EV / LMT / IND",
+        "required": "M(EV/LMT)\r\nC(IND)",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "允许最大电池功率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 69,
+        "name": "允许最大电池功率\nMaximum permitted battery power",
+        "cn": "允许最大电池功率",
+        "en": "maximumpermittedbatterypower",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 115,
+        "name": "允许最大电池功率\r\nMaximum permitted battery power",
+        "cn": "允许最大电池功率",
+        "en": "maximumpermittedbatterypower",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "初始往返能效",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 70,
+        "name": "初始往返能效\nInitial round trip energy efficiency",
+        "cn": "初始往返能效",
+        "en": "initialroundtripenergyefficiency",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 116,
+        "name": "初始往返能效\r\nInitial round trip energy efficiency",
+        "cn": "初始往返能效",
+        "en": "initialroundtripenergyefficiency",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "往返能效",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 71,
+        "name": "往返能效\nenergy round trip efficiency (in %)",
+        "cn": "往返能效",
+        "en": "energyroundtripefficiency(in%)",
+        "category": "EV/LMT/IND",
+        "required": "V",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 117,
+        "name": "往返能效\r\n",
+        "cn": "往返能效",
+        "en": "",
+        "category": "EV / LMT / IND",
+        "required": "C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "不一致",
+      "required_note": "EV：FC=V，工程化=C；LMT：FC=V，工程化=C；IND：FC=V，工程化=C",
+      "permission_status": "不一致",
+      "permission_note": "工程化少了：PLI；工程化多了：Public。只比较表内可见角色，不审定法规权限。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "往返能效(循环寿命达50%时)",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 72,
+        "name": "往返能效（循环寿命达50%时）\nRound trip energy efficiency at 50% of cycle life",
+        "cn": "往返能效(循环寿命达50%时)",
+        "en": "roundtripenergyefficiencyat50%ofcyclelife",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 118,
+        "name": "往返能效（循环寿命达50%时）\r\nRound trip energy efficiency at 50% of cycle life",
+        "cn": "往返能效(循环寿命达50%时)",
+        "en": "roundtripenergyefficiencyat50%ofcyclelife",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "往返能效衰减率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 74,
+        "name": "往返能效衰减率\nEnergy round trip efficiency fade",
+        "cn": "往返能效衰减率",
+        "en": "energyroundtripefficiencyfade",
+        "category": "EV/LMT/IND",
+        "required": "V",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 120,
+        "name": "往返能效衰减率\r\nEnergy round trip efficiency fade",
+        "cn": "往返能效衰减率",
+        "en": "energyroundtripefficiencyfade",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "EV：FC=V，工程化=C；LMT：FC=V，工程化=C；IND：FC=V，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "初始自放电率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 75,
+        "name": "初始自放电率\nInitial self-discharge rate",
+        "cn": "初始自放电率",
+        "en": "initialself-dischargerate",
+        "category": "LMT/IND",
+        "required": "V",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 121,
+        "name": "初始自放电率\r\nInitial self-discharge rate",
+        "cn": "初始自放电率",
+        "en": "initialself-dischargerate",
+        "category": "LMT/IND",
+        "required": "V",
+        "permission": "public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "不一致",
+      "permission_note": "工程化少了：PLI；工程化多了：Public。只比较表内可见角色，不审定法规权限。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "当前自放电率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 76,
+        "name": "当前自放电率\nCurrent self-discharge rate",
+        "cn": "当前自放电率",
+        "en": "currentself-dischargerate",
+        "category": "LMT/IND",
+        "required": "V",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 122,
+        "name": "当前自放电率\r\nCurrent self-discharge rate",
+        "cn": "当前自放电率",
+        "en": "currentself-dischargerate",
+        "category": "LMT/IND",
+        "required": "V",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "自放电率变化",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 77,
+        "name": "自放电率变化\nEvolution of self-discharge rates",
+        "cn": "自放电率变化",
+        "en": "evolutionofself-dischargerates",
+        "category": "LMT/IND",
+        "required": "M(EV/IND-BESS)",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 123,
+        "name": "自放电率变化\r\nEvolution of self-discharge rates",
+        "cn": "自放电率变化",
+        "en": "evolutionofself-dischargerates",
+        "category": "LMT/IND",
+        "required": "LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "条件表达不同·需确认",
+      "required_note": "FC：M(EV/IND-BESS)；工程化：LMT：M\r\r\n\r\r\nIND：C。保留条件原文，不能将带条件的M直接当作无条件M。 FC分类仅列LMT/IND，但条件写EV/IND-BESS，存在表内适用范围疑点。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "电池包内阻增长",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 80,
+        "name": "电池包内阻增长\nInternal resistance increase of pack (cell and module recommended)",
+        "cn": "电池包内阻增长",
+        "en": "internalresistanceincreaseofpack(cellandmodulerecommended)",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 128,
+        "name": "电池包内阻增长\r\nInternal resistance increase of pack (cell and module recommended)",
+        "cn": "电池包内阻增长",
+        "en": "internalresistanceincreaseofpack(cellandmodulerecommended)",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "当前电阻",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 81,
+        "name": "当前电阻\nPresent internal resistance of pack",
+        "cn": "当前电阻",
+        "en": "presentinternalresistanceofpack",
+        "category": "LMT/IND",
+        "required": "M(LMT/IND-BESS with BMS)",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 129,
+        "name": "当前电阻\r\n\r\nPresent internal resistance of pack",
+        "cn": "当前电阻",
+        "en": "presentinternalresistanceofpack",
+        "category": "EV / LMT / IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "不一致",
+      "category_note": "FC大类=LMT/IND；工程化大类=EV / LMT / IND。",
+      "required_status": "条件表达不同·需确认",
+      "required_note": "FC：M(LMT/IND-BESS with BMS)；工程化：EV/LMT：M\r\r\n\r\r\nIND：C。保留条件原文，不能将带条件的M直接当作无条件M。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "预期使用寿命(年)",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 82,
+        "name": "预期使用寿命（年）\nExpected lifetime in calendar years",
+        "cn": "预期使用寿命(年)",
+        "en": "expectedlifetimeincalendaryears",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 131,
+        "name": "预期使用寿命（年）\r\nExpected lifetime in calendar years",
+        "cn": "预期使用寿命(年)",
+        "en": "expectedlifetimeincalendaryears",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "预期使用寿命(圈)",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 83,
+        "name": "预期使用寿命（圈）\nExpected lifetime - Number of charge-discharge cycles",
+        "cn": "预期使用寿命(圈)",
+        "en": "expectedlifetime-numberofcharge-dischargecycles",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 132,
+        "name": "预期使用寿命（圈）\r\nExpected lifetime: Number of charge-discharge cycles",
+        "cn": "预期使用寿命(圈)",
+        "en": "expectedlifetime:numberofcharge-dischargecycles",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "充电循环次数",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 86,
+        "name": "充电循环次数 number Of Charging Cycles",
+        "cn": "充电循环次数",
+        "en": "numberofchargingcycles",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 135,
+        "name": "充电循环次数\r\nNumber of full charging and discharging cycles",
+        "cn": "充电循环次数",
+        "en": "numberoffullcharginganddischargingcycles",
+        "category": "EV/LMT/IND",
+        "required": "C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "不一致",
+      "required_note": "EV：FC=M，工程化=C；LMT：FC=M，工程化=C；IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": false
+    },
+    {
+      "anchor": "循环寿命测试方法",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 88,
+        "name": "循环寿命测试方法\nCycle-life reference test",
+        "cn": "循环寿命测试方法",
+        "en": "cycle-lifereferencetest",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 137,
+        "name": "循环寿命测试方法\r\nCycle-life reference test",
+        "cn": "循环寿命测试方法",
+        "en": "cycle-lifereferencetest",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "循环寿命测试C率",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 89,
+        "name": "循环寿命测试C率\nC-rate of relevant cycle-life test",
+        "cn": "循环寿命测试C率",
+        "en": "c-rateofrelevantcycle-lifetest",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 138,
+        "name": "循环寿命测试C率\r\nC-rate of relevant cycle-life test",
+        "cn": "循环寿命测试C率",
+        "en": "c-rateofrelevantcycle-lifetest",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "耗尽容量阈值",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 90,
+        "name": "耗尽容量阈值\nCapacity threshold for exhaustion",
+        "cn": "耗尽容量阈值",
+        "en": "capacitythresholdforexhaustion",
+        "category": "EV",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 140,
+        "name": "耗尽容量阈值\r\nCapacity threshold for exhaustion",
+        "cn": "耗尽容量阈值",
+        "en": "capacitythresholdforexhaustion",
+        "category": "EV",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "温度信息",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 91,
+        "name": "温度信息\nTemperature information",
+        "cn": "温度信息",
+        "en": "temperatureinformation",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 141,
+        "name": "温度信息\r\nTemperature information",
+        "cn": "温度信息",
+        "en": "temperatureinformation",
+        "category": "EV/LMT/IND",
+        "required": "C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "不一致",
+      "required_note": "EV：FC=M，工程化=C；LMT：FC=M，工程化=C；IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "空闲状态温度下限",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 92,
+        "name": "空闲状态温度下限\nTemperature range idle state, lower boundary",
+        "cn": "空闲状态温度下限",
+        "en": "temperaturerangeidlestate,lowerboundary",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 142,
+        "name": "空闲状态温度下限\r\nTemperature range idle state, lower boundary",
+        "cn": "空闲状态温度下限",
+        "en": "temperaturerangeidlestate,lowerboundary",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "M",
+        "permission": "Public",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致；Public/public仅大小写不同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "深度放电事件次数",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 95,
+        "name": "深度放电事件次数\nNumber of deep discharge events",
+        "cn": "深度放电事件次数",
+        "en": "numberofdeepdischargeevents",
+        "category": "EV/LMT/IND",
+        "required": "V",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 143,
+        "name": "深度放电事件次数\r\nNumber of deep discharge events",
+        "cn": "深度放电事件次数",
+        "en": "numberofdeepdischargeevents",
+        "category": "EV/LMT/IND",
+        "required": "V",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "过量充电次数",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 96,
+        "name": "过量充电次数\nNumber of overcharge events",
+        "cn": "过量充电次数",
+        "en": "numberofoverchargeevents",
+        "category": "EV/LMT/IND",
+        "required": "V",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 144,
+        "name": "过量充电次数\r\nNumber of overcharge events",
+        "cn": "过量充电次数",
+        "en": "numberofoverchargeevents",
+        "category": "EV/LMT/IND",
+        "required": "V",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "一致",
+      "category_note": "分类代码集合相同；仅统一空白、分隔符与顺序。",
+      "required_status": "一致",
+      "required_note": "按分类展开后M/C/V规则相同。",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    },
+    {
+      "anchor": "事故信息",
+      "fc": {
+        "sheet": "FC V4.0",
+        "row": 97,
+        "name": "事故信息\nInformation on accidents",
+        "cn": "事故信息",
+        "en": "informationonaccidents",
+        "category": "EV/LMT/IND",
+        "required": "M",
+        "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+        "inherited": {}
+      },
+      "engineering": {
+        "sheet": "工程化4.0",
+        "row": 145,
+        "name": "事故信息\r\nInformation on accidents",
+        "cn": "事故信息",
+        "en": "informationonaccidents",
+        "category": "EV/LMT/IND/无BMS的IND",
+        "required": "C",
+        "permission": "PLI",
+        "inherited": {}
+      },
+      "category_status": "大类一致·细分写法不同",
+      "category_note": "工程化额外标注“无BMS的IND”；保留细分，不据此认定BMS具体适用条件一致。",
+      "required_status": "不一致",
+      "required_note": "EV：FC=M，工程化=C；LMT：FC=M，工程化=C；IND：FC=M，工程化=C",
+      "permission_status": "角色一致",
+      "permission_note": "可见角色集合一致。工程化PLI未显式写Restricted 3/单块电池粒度，不能据此确认访问视图与粒度完全相同。",
+      "full_name_same": true
+    }
+  ],
+  "multiple_names": [
+    {
+      "anchor": "生产地点",
+      "fc": [
+        {
+          "sheet": "FC V4.0",
+          "row": 13,
+          "name": "生产地点\nManufacturing place",
+          "cn": "生产地点",
+          "en": "manufacturingplace",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        }
+      ],
+      "engineering": [
+        {
+          "sheet": "工程化4.0",
+          "row": 30,
+          "name": "生产地点\r\nManufacturing place",
+          "cn": "生产地点",
+          "en": "manufacturingplace",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 31,
+          "name": "生产地点\r\n",
+          "cn": "生产地点",
+          "en": "",
+          "category": "EV / LMT / IND",
+          "required": "M",
+          "permission": "",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 32,
+          "name": "生产地点\r\n",
+          "cn": "生产地点",
+          "en": "",
+          "category": "EV / LMT / IND",
+          "required": "M",
+          "permission": "",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 33,
+          "name": "生产地点",
+          "cn": "生产地点",
+          "en": "",
+          "category": "EV / LMT / IND",
+          "required": "M",
+          "permission": "",
+          "inherited": {
+            "required": "H32:H33"
+          }
+        }
+      ],
+      "note": "FC13对应工程化30—33四个同名行。已纳入核对期间的更新：工程化31—33分类均已填EV/LMT/IND、必填均为M（H32:H33为实际合并）；31—33权限仍为空。只继承真实合并值，不能从30行下填权限。"
+    },
+    {
+      "anchor": "检测报告",
+      "fc": [
+        {
+          "sheet": "FC V4.0",
+          "row": 25,
+          "name": "检测报告\r\nResults of test reports proving compliance",
+          "cn": "检测报告",
+          "en": "resultsoftestreportsprovingcompliance",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Restricted 2 (batteryRestrictedType2) | 公告机构、市场监管机构、欧盟委员会",
+          "inherited": {}
+        }
+      ],
+      "engineering": [
+        {
+          "sheet": "工程化4.0",
+          "row": 45,
+          "name": "检测报告\r\nResults of test reports proving compliance",
+          "cn": "检测报告",
+          "en": "resultsoftestreportsprovingcompliance",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "NB/市场监管机构/委员会",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 46,
+          "name": "检测报告\r\nResults of test reports proving compliance",
+          "cn": "检测报告",
+          "en": "resultsoftestreportsprovingcompliance",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "NB/市场监管机构/委员会",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 47,
+          "name": "检测报告\r\nResults of test reports proving compliance",
+          "cn": "检测报告",
+          "en": "resultsoftestreportsprovingcompliance",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "NB/市场监管机构/委员会",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 48,
+          "name": "检测报告\r\nResults of test reports proving compliance",
+          "cn": "检测报告",
+          "en": "resultsoftestreportsprovingcompliance",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "V",
+          "permission": "NB/市场监管机构/委员会",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 49,
+          "name": "检测报告\r\nResults of test reports proving compliance",
+          "cn": "检测报告",
+          "en": "resultsoftestreportsprovingcompliance",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "V",
+          "permission": "NB/市场监管机构/委员会",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 50,
+          "name": "检测报告\r\nResults of test reports proving compliance",
+          "cn": "检测报告",
+          "en": "resultsoftestreportsprovingcompliance",
+          "category": "EV / LMT / IND",
+          "required": "M",
+          "permission": "NB/市场监管机构/委员会",
+          "inherited": {}
+        }
+      ],
+      "note": "FC25为M；工程化45/46/47/50为M，48/49为V。先区分整项与拆分子项，再决定必填规则，不把六行当六个独立FC字段。"
+    },
+    {
+      "anchor": "零部件编号及备件来源信息",
+      "fc": [
+        {
+          "sheet": "FC V4.0",
+          "row": 40,
+          "name": "零部件编号及备件来源信息\nPart numbers for\ncomponents and contact\ndetails of sources for\nreplacement spares",
+          "cn": "零部件编号及备件来源信息",
+          "en": "partnumbersforcomponentsandcontactdetailsofsourcesforreplacementspares",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Restricted 1 (batteryRestrictedType1) | 有合法利益者、公告机构、市场监管机构、欧盟委员会",
+          "inherited": {}
+        }
+      ],
+      "engineering": [
+        {
+          "sheet": "工程化4.0",
+          "row": 79,
+          "name": "零部件编号及备件来源信息\r\nInformation on sources of spare parts",
+          "cn": "零部件编号及备件来源信息",
+          "en": "informationonsourcesofspareparts",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "PLI",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 82,
+          "name": "零部件编号及备件来源信息\r\nInformation on sources of spare parts",
+          "cn": "零部件编号及备件来源信息",
+          "en": "informationonsourcesofspareparts",
+          "category": "EV / LMT / IND",
+          "required": "M",
+          "permission": "PLI/NB/市场监管机构/委员会",
+          "inherited": {}
+        }
+      ],
+      "note": "FC40为Restricted 1；工程化79为PLI，82为PLI/NB/市场监管机构/委员会，权限角色范围不同，需明确两行各自业务范围。"
+    },
+    {
+      "anchor": "额定容量",
+      "fc": [
+        {
+          "sheet": "FC V4.0",
+          "row": 56,
+          "name": "额定容量\nThe capacity",
+          "cn": "额定容量",
+          "en": "thecapacity",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        },
+        {
+          "sheet": "FC V4.0",
+          "row": 57,
+          "name": "额定容量\nRated capacity",
+          "cn": "额定容量",
+          "en": "ratedcapacity",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+          "inherited": {}
+        }
+      ],
+      "engineering": [
+        {
+          "sheet": "工程化4.0",
+          "row": 100,
+          "name": "额定容量\r\nbatteryCapacity",
+          "cn": "额定容量",
+          "en": "batterycapacity",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        }
+      ],
+      "note": "FC56(The capacity)与57(Rated capacity)中文同名，权限分别Public与Restricted 3；工程化100(batteryCapacity)为Public。不能只按中文名选择其中一个。工程化99的中文名为“容量”，不强行归入本组。"
+    },
+    {
+      "anchor": "初始功率",
+      "fc": [
+        {
+          "sheet": "FC V4.0",
+          "row": 65,
+          "name": "初始功率\nOriginal power capability",
+          "cn": "初始功率",
+          "en": "originalpowercapability",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        },
+        {
+          "sheet": "FC V4.0",
+          "row": 66,
+          "name": "初始功率\npowerCapability",
+          "cn": "初始功率",
+          "en": "powercapability",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+          "inherited": {}
+        }
+      ],
+      "engineering": [
+        {
+          "sheet": "工程化4.0",
+          "row": 109,
+          "name": "初始功率\r\nOriginal power capability",
+          "cn": "初始功率",
+          "en": "originalpowercapability",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 111,
+          "name": "初始功率\r\nOriginal power capability",
+          "cn": "初始功率",
+          "en": "originalpowercapability",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        }
+      ],
+      "note": "FC65(Original power capability)为Public，66(powerCapability)为Restricted 3；工程化109/111均为Original power capability且Public。FC65有完整名称对应，FC66中文同名但含义有歧义；工程化112中文名为“功率”，本报告不按语义字段改配。"
+    },
+    {
+      "anchor": "初始内阻",
+      "fc": [
+        {
+          "sheet": "FC V4.0",
+          "row": 78,
+          "name": "初始内阻\nInitial internal resistance of battery cell and pack (module recommended)",
+          "cn": "初始内阻",
+          "en": "initialinternalresistanceofbatterycellandpack(modulerecommended)",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        },
+        {
+          "sheet": "FC V4.0",
+          "row": 79,
+          "name": "初始内阻\nInternal resistance (in Ω)",
+          "cn": "初始内阻",
+          "en": "internalresistance(inω)",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+          "inherited": {}
+        }
+      ],
+      "engineering": [
+        {
+          "sheet": "工程化4.0",
+          "row": 124,
+          "name": "初始内阻\r\nInitial internal resistance of battery cell and pack (module recommended)",
+          "cn": "初始内阻",
+          "en": "initialinternalresistanceofbatterycellandpack(modulerecommended)",
+          "category": "EV/LMT/IND/无BMS的IND",
+          "required": "M",
+          "permission": "Public",
+          "inherited": {}
+        }
+      ],
+      "note": "FC78(Initial internal resistance...)为Public，79(Internal resistance)为Restricted 3；工程化124完整名称对应FC78且Public。FC79不能仅因中文同名而认定也对应124。"
+    },
+    {
+      "anchor": "当前完全循环次数",
+      "fc": [
+        {
+          "sheet": "FC V4.0",
+          "row": 85,
+          "name": "当前完全循环次数\nNumber of full charging and discharging cycles",
+          "cn": "当前完全循环次数",
+          "en": "numberoffullcharginganddischargingcycles",
+          "category": "EV/LMT/IND",
+          "required": "V",
+          "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+          "inherited": {}
+        }
+      ],
+      "engineering": [
+        {
+          "sheet": "工程化4.0",
+          "row": 134,
+          "name": "当前完全循环次数\r\nNumber of full charging and discharging cycles",
+          "cn": "当前完全循环次数",
+          "en": "numberoffullcharginganddischargingcycles",
+          "category": "EV/LMT/IND",
+          "required": "M",
+          "permission": "PLI",
+          "inherited": {}
+        },
+        {
+          "sheet": "工程化4.0",
+          "row": 136,
+          "name": "当前完全循环次数\r\nNumber of full charging and discharging cycles",
+          "cn": "当前完全循环次数",
+          "en": "numberoffullcharginganddischargingcycles",
+          "category": "EV/LMT/IND",
+          "required": "C",
+          "permission": "PLI",
+          "inherited": {}
+        }
+      ],
+      "note": "FC85为V；工程化134为M、136为C，两个同名行规则不同，需先确定对应关系。"
+    }
+  ],
+  "fc_unmatched": [
+    {
+      "sheet": "FC V4.0",
+      "row": 17,
+      "name": "电池重量\nBattery weight",
+      "cn": "电池重量",
+      "en": "batteryweight",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 19,
+      "name": "分类收集标识\nSeparate collection symbol",
+      "cn": "分类收集标识",
+      "en": "separatecollectionsymbol",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 27,
+      "name": "原材料获取与预处理阶段碳足迹\nContribution of raw material acquisition and pre-processing lifecycle stage",
+      "cn": "原材料获取与预处理阶段碳足迹",
+      "en": "contributionofrawmaterialacquisitionandpre-processinglifecyclestage",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 38,
+      "name": "有害物质及其影响\nHazardous substances and their impact",
+      "cn": "有害物质及其影响",
+      "en": "hazardoussubstancesandtheirimpact",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 49,
+      "name": "废电池预防和管理信息 Waste Battery Preventio Management Info",
+      "cn": "废电池预防和管理信息",
+      "en": "wastebatterypreventiomanagementinfo",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 52,
+      "name": "再使用准备设施信息Preparation For Reuse Facilities",
+      "cn": "再使用准备设施信息",
+      "en": "preparationforreusefacilities",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 53,
+      "name": "梯次利用准备设施信息Preparation For Repurposing Facilities",
+      "cn": "梯次利用准备设施信息",
+      "en": "preparationforrepurposingfacilities",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 54,
+      "name": "废电池处理设施信息 Waste Battery Treatment Facilities",
+      "cn": "废电池处理设施信息",
+      "en": "wastebatterytreatmentfacilities",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 55,
+      "name": "废电池处理安全说明 Waste Battery Safety Instructions",
+      "cn": "废电池处理安全说明",
+      "en": "wastebatterysafetyinstructions",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 63,
+      "name": "最高电压\nMaximum voltage",
+      "cn": "最高电压",
+      "en": "maximumvoltage",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 73,
+      "name": "剩余往返能效\nRemaining round trip energy efficiency",
+      "cn": "剩余往返能效",
+      "en": "remainingroundtripenergyefficiency",
+      "category": "LMT/IND",
+      "required": "M(EV/IND-BESS)",
+      "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 84,
+      "name": "参考条件下预期循环寿命 expected Lifetime Cycles Rest",
+      "cn": "参考条件下预期循环寿命",
+      "en": "expectedlifetimecyclesrest",
+      "category": "EV/LMT/IND",
+      "required": "M(EV/LMT/IND仅适用于可用循环次数表达寿命的可充电电池)",
+      "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 87,
+      "name": "放电循环次数 number Of Discharging Cycles",
+      "cn": "放电循环次数",
+      "en": "numberofdischargingcycles",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 93,
+      "name": "空闲状态温度上限\nTemperature range idle state, upper boundary",
+      "cn": "空闲状态温度上限",
+      "en": "temperaturerangeidlestate,upperboundary",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 94,
+      "name": "空闲状态温度范围测试方法\n Not in use temperature range test",
+      "cn": "空闲状态温度范围测试方法",
+      "en": "notinusetemperaturerangetest",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "FC V4.0",
+      "row": 98,
+      "name": "电池使用说明\nClear, understandable and readable instructions for use in a format that makes it possible to print, download and save them on an electronic device so that the user can access them at all times, in particular during a breakdown of the battery",
+      "cn": "电池使用说明",
+      "en": "clear,understandableandreadableinstructionsforuseinaformatthatmakesitpossibletoprint,downloadandsavethemonanelectronicdevicesothattheusercanaccessthematalltimes,inparticularduringabreakdownofthebattery",
+      "category": "EV/LMT/IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    }
+  ],
+  "engineering_unmatched": [
+    {
+      "sheet": "工程化4.0",
+      "row": 2,
+      "name": "电池护照架构版本\r\nDPP Schema version",
+      "cn": "电池护照架构版本",
+      "en": "dppschemaversion",
+      "category": "EV / LMT / IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 8,
+      "name": "经济运营商唯一标识符\r\nUnique economic operator identifier",
+      "cn": "经济运营商唯一标识符",
+      "en": "uniqueeconomicoperatoridentifier",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 9,
+      "name": "工厂唯一标识符\r\nUnique facility identifier",
+      "cn": "工厂唯一标识符",
+      "en": "uniquefacilityidentifier",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 13,
+      "name": "批次号",
+      "cn": "批次号",
+      "en": "",
+      "category": "EV / LMT / IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 14,
+      "name": "其他识别要素",
+      "cn": "其他识别要素",
+      "en": "",
+      "category": "EV / LMT / IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 15,
+      "name": "产品编号",
+      "cn": "产品编号",
+      "en": "",
+      "category": "EV / LMT / IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 16,
+      "name": "制造商唯一标识符\r\nUnique manufacturer identifier",
+      "cn": "制造商唯一标识符",
+      "en": "uniquemanufactureridentifier",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 17,
+      "name": "第三方服务提供商\r\n\r\nThird party service provider",
+      "cn": "第三方服务提供商",
+      "en": "thirdpartyserviceprovider",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 35,
+      "name": "投入使用日期\r\nDate of putting the battery into service",
+      "cn": "投入使用日期",
+      "en": "dateofputtingthebatteryintoservice",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 38,
+      "name": "电池质量\r\nBattery weight",
+      "cn": "电池质量",
+      "en": "batteryweight",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 51,
+      "name": "清晰、易懂且可读的使用说明，可打印、下载并保存，以便用户在任何时候（尤其电池故障时）访问\r\nClear, understandable and readable instructions for use in a format that makes it possible to print, download and save them on an electronic device so that the user can access them at all times, in particular during a breakdown of the battery",
+      "cn": "清晰、易懂且可读的使用说明,可打印、下载并保存,以便用户在任何时候(尤其电池故障时)访问",
+      "en": "clear,understandableandreadableinstructionsforuseinaformatthatmakesitpossibletoprint,downloadandsavethemonanelectronicdevicesothattheusercanaccessthematalltimes,inparticularduringabreakdownofthebattery",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 53,
+      "name": "原材料获取与处理阶段碳足迹\r\nContribution of raw material acquisition and pre-processing lifecycle stage",
+      "cn": "原材料获取与处理阶段碳足迹",
+      "en": "contributionofrawmaterialacquisitionandpre-processinglifecyclestage",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 61,
+      "name": "第三方供应链保证\r\nThird party assurances of recognised schemes",
+      "cn": "第三方供应链保证",
+      "en": "thirdpartyassurancesofrecognisedschemes",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 62,
+      "name": "供应链指数\r\nSupply chain indices",
+      "cn": "供应链指数",
+      "en": "supplychainindices",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 71,
+      "name": "有害物质信息\r\nhazardous substances",
+      "cn": "有害物质信息",
+      "en": "hazardoussubstances",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 78,
+      "name": "零部件编号\r\nPart numbers for components",
+      "cn": "零部件编号",
+      "en": "partnumbersforcomponents",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "PLI",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 89,
+      "name": "有害物质影响",
+      "cn": "有害物质影响",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 92,
+      "name": "废旧电池回收利用指南\r\nInformation on battery collection, preparation for second life and on treatment at end of life",
+      "cn": "废旧电池回收利用指南",
+      "en": "informationonbatterycollection,preparationforsecondlifeandontreatmentatendoflife",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 93,
+      "name": "准备改变用途的处理设施\r\n",
+      "cn": "准备改变用途的处理设施",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 94,
+      "name": "准备再使用的处理设施",
+      "cn": "准备再使用的处理设施",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 97,
+      "name": "废电池安全说明",
+      "cn": "废电池安全说明",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 98,
+      "name": "废电池处理设施",
+      "cn": "废电池处理设施",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 99,
+      "name": "容量\r\nRated capacity",
+      "cn": "容量",
+      "en": "ratedcapacity",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M(EV/LMT)\r\nV(IND)",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 103,
+      "name": "认证可用电量\r\nCertified usable battery energy",
+      "cn": "认证可用电量",
+      "en": "certifiedusablebatteryenergy",
+      "category": "EV",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 104,
+      "name": "剩余可用电量\r\nRemaining usable battery energy",
+      "cn": "剩余可用电量",
+      "en": "remainingusablebatteryenergy",
+      "category": "EV",
+      "required": "V",
+      "permission": "PLI",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 112,
+      "name": "功率\r\n",
+      "cn": "功率",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 119,
+      "name": "往返能效与自放电率Round trip energy efficiency and self-discharge\r\nfield\r\n",
+      "cn": "往返能效与自放电率",
+      "en": "roundtripenergyefficiencyandself-dischargefield",
+      "category": "LMT/IND",
+      "required": "LMT：M\r\r\n\r\r\nIND：C",
+      "permission": "PLI",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 130,
+      "name": "当前内阻",
+      "cn": "当前内阻",
+      "en": "",
+      "category": "LMT/IND",
+      "required": "LMT：M\r\r\n\r\r\nIND：C",
+      "permission": "PLI",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 133,
+      "name": "使用寿命（圈）\r\n",
+      "cn": "使用寿命(圈)",
+      "en": "",
+      "category": "EV / LMT / IND",
+      "required": "EV/LMT：M\r\r\n\r\r\nIND：C",
+      "permission": "Public",
+      "inherited": {}
+    }
+  ],
+  "engineering_blank_names": [
+    {
+      "sheet": "工程化4.0",
+      "row": 19,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 20,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {
+        "required": "H19:H20"
+      }
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 21,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 22,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 23,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 25,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 26,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 27,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 28,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 29,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 66,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "PLI/NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 67,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "PLI/NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 68,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "PLI/NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 69,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "PLI/NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 70,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "PLI/NB/市场监管机构/委员会",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 72,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 73,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 74,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 75,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 76,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 80,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "PLI",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 81,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "PLI",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 110,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 125,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 126,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 127,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "M",
+      "permission": "Public",
+      "inherited": {}
+    },
+    {
+      "sheet": "工程化4.0",
+      "row": 139,
+      "name": "",
+      "cn": "",
+      "en": "",
+      "category": "EV/LMT/IND/无BMS的IND",
+      "required": "V",
+      "permission": "Public",
+      "inherited": {}
+    }
+  ],
+  "snapshot_sha256": {
+    "FCV4_快照.json": "98710f864e8f16b02f47f54927164d18bd3a03dc1caaa801ad46bcef65cb00e6",
+    "工程化V4_快照.json": "71865d34c062050ba3166767ccf131f024b13ade6f2078c4e9f2cab4a0e2218b"
+  }
+}

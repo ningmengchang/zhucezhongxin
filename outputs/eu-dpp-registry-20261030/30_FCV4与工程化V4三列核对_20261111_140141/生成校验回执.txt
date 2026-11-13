@@ -1,0 +1,51 @@
+{
+  "fc_data_rows": 96,
+  "fc_unique_names": 93,
+  "engineering_data_rows": 144,
+  "engineering_named_rows": 117,
+  "engineering_unique_names": 106,
+  "common_name_groups": 77,
+  "one_to_one_groups": 70,
+  "multiple_name_groups": 7,
+  "fc_unmatched_names": 16,
+  "engineering_unmatched_named_rows": 29,
+  "engineering_blank_name_rows": 27,
+  "one_to_one_columns": {
+    "category": {
+      "一致": 22,
+      "大类一致·细分写法不同": 47,
+      "不一致": 1
+    },
+    "required": {
+      "一致": 50,
+      "条件表达不同·需确认": 5,
+      "不一致": 15
+    },
+    "permission": {
+      "角色一致": 67,
+      "不一致": 3
+    }
+  },
+  "explicit_field_column_differences": 19,
+  "unique_names_with_explicit_differences": 18
+}
+{"name": "拆卸指南", "column": "permission", "FC_row": 39, "engineering_row": 77, "FC": "Restricted 1 (batteryRestrictedType1) | 有合法利益者、公告机构、市场监管机构、欧盟委员会", "engineering": "NB/市场监管机构/委员会"}
+{"name": "容量衰减率", "column": "required", "FC_row": 59, "engineering_row": 102, "FC": "M", "engineering": "M(EV/LMT)\r\nC(IND)"}
+{"name": "功率衰减率", "column": "required", "FC_row": 68, "engineering_row": 114, "FC": "M", "engineering": "M(EV/LMT)\r\nC(IND)"}
+{"name": "允许最大电池功率", "column": "required", "FC_row": 69, "engineering_row": 115, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "初始往返能效", "column": "required", "FC_row": 70, "engineering_row": 116, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "往返能效", "column": "required", "FC_row": 71, "engineering_row": 117, "FC": "V", "engineering": "C"}
+{"name": "往返能效", "column": "permission", "FC_row": 71, "engineering_row": 117, "FC": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）", "engineering": "Public"}
+{"name": "往返能效(循环寿命达50%时)", "column": "required", "FC_row": 72, "engineering_row": 118, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "往返能效衰减率", "column": "required", "FC_row": 74, "engineering_row": 120, "FC": "V", "engineering": "C"}
+{"name": "初始自放电率", "column": "permission", "FC_row": 75, "engineering_row": 121, "FC": "Restricted 3 (batteryRestrictedType3) | 有合法利益者（单块电池）", "engineering": "public"}
+{"name": "电池包内阻增长", "column": "required", "FC_row": 80, "engineering_row": 128, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "当前电阻", "column": "category", "FC_row": 81, "engineering_row": 129, "FC": "LMT/IND", "engineering": "EV / LMT / IND"}
+{"name": "预期使用寿命(年)", "column": "required", "FC_row": 82, "engineering_row": 131, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "预期使用寿命(圈)", "column": "required", "FC_row": 83, "engineering_row": 132, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "充电循环次数", "column": "required", "FC_row": 86, "engineering_row": 135, "FC": "M", "engineering": "C"}
+{"name": "循环寿命测试方法", "column": "required", "FC_row": 88, "engineering_row": 137, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "循环寿命测试C率", "column": "required", "FC_row": 89, "engineering_row": 138, "FC": "M", "engineering": "EV/LMT：M\r\r\n\r\r\nIND：C"}
+{"name": "温度信息", "column": "required", "FC_row": 91, "engineering_row": 141, "FC": "M", "engineering": "C"}
+{"name": "事故信息", "column": "required", "FC_row": 97, "engineering_row": 145, "FC": "M", "engineering": "C"}
+{"report": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/30_FCV4与工程化V4三列核对_20261111_140141/FCV4.0与工程化V4.0_按数据项名称_三列核对_20261111.xlsx", "sheets": {"核对结论": 22, "一对一核对": 71, "明确差异": 20, "必填条件待确认": 6, "同名多行": 29, "FC未匹配名称": 17, "工程化未匹配与空名": 57, "分类细分写法": 48, "FC读取快照": 98, "工程化读取快照": 145}, "verified": true}

@@ -1,0 +1,29 @@
+{
+  "colWidths": null,
+  "columnCount": 40,
+  "columnGroups": null,
+  "frozenColumnCount": 0,
+  "frozenRowCount": 0,
+  "hiddenCols": null,
+  "hiddenRows": null,
+  "id": "st-9acb78f8-25454",
+  "logId": "0bfb8a3b17943773484565021e04e7",
+  "mergedRanges": [
+    "A1:L1",
+    "M1:Q1",
+    "S1:U1"
+  ],
+  "message": "Successfully retrieved sheet information.",
+  "name": "FC V4.0",
+  "nonEmptyRange": {
+    "lastCell": "AD98",
+    "lastColumn": "AD",
+    "lastRow": 98,
+    "range": "A1:AD98"
+  },
+  "rowCount": 200,
+  "rowGroups": null,
+  "rowHeights": null,
+  "success": true,
+  "visibility": "visible"
+}

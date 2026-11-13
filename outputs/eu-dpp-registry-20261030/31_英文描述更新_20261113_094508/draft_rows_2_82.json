@@ -1,0 +1,488 @@
+[
+  {
+    "row": 2,
+    "description": "Version of the schema used to structure the battery passport instance.",
+    "source_key": "engineering:dppSchemaVersion",
+    "notes": "旧工程字段；官方1.0.0未定义同名独立字段，不等同contentSpecificationIds。"
+  },
+  {
+    "row": 3,
+    "description": "Current status of the battery passport as a digital resource.",
+    "source_key": "dppStatus",
+    "notes": "当前行同时混有旧业务状态与官方有效性枚举，描述保持中性，不加入初始未激活规则。"
+  },
+  {
+    "row": 4,
+    "description": "Level at which the product identifier applies: model, batch or individual item.",
+    "source_key": "granularity",
+    "notes": "描述通用粒度含义，不把本行旧枚举当作当前EV允许值。"
+  },
+  {
+    "row": 5,
+    "description": "Date and time when the battery passport was most recently updated.",
+    "source_key": "lastUpdate",
+    "notes": "不加入BMS绝不更新或仅状态变化才更新的未确认限制。"
+  },
+  {
+    "row": 6,
+    "description": "Unique identifier assigned to an instance of the battery passport.",
+    "source_key": "digitalProductPassportId",
+    "notes": ""
+  },
+  {
+    "row": 7,
+    "description": "Unique product identifier used to identify the individual battery.",
+    "source_key": "uniqueProductIdentifier",
+    "notes": "描述语义标识含义，不把注册接口HTTPS规则扩写为语义格式约束。"
+  },
+  {
+    "row": 8,
+    "description": "Identifier used to distinguish the battery model from other models.",
+    "source_key": "batteryIdentification.modelIdentifier",
+    "notes": ""
+  },
+  {
+    "row": 9,
+    "description": "Serial number used to identify the individual battery unit.",
+    "source_key": "batteryIdentification.serialNumber",
+    "notes": "删除旧英文中序列号必然包含批次信息的额外要求。"
+  },
+  {
+    "row": 10,
+    "description": "Identifiers of the content specifications governing the battery passport structure.",
+    "source_key": "contentSpecificationIds",
+    "notes": ""
+  },
+  {
+    "row": 11,
+    "description": "Unique identifier assigned to the manufacturer of the battery.",
+    "source_key": "engineering:uniqueManufacturerIdentifier",
+    "notes": "工程扩展标识；官方1.0.0未定义同名独立字段。"
+  },
+  {
+    "row": 12,
+    "description": "Unique identifier assigned to the facility associated with the battery.",
+    "source_key": "engineering:facilityId",
+    "notes": "工程扩展标识；不将其等同manufacturingPlace邮政地址。"
+  },
+  {
+    "row": 13,
+    "description": "Unique identifier assigned to the economic operator responsible for the battery.",
+    "source_key": "engineering:economicOperatorId",
+    "notes": "工程扩展标识；不等同官方registrantIdentity名称。"
+  },
+  {
+    "row": 14,
+    "description": "Battery category defined according to its intended application and regulatory classification.",
+    "source_key": "batteryCategory",
+    "notes": "不把工程枚举BESS误写为官方三类之外的新类别。"
+  },
+  {
+    "row": 15,
+    "description": "Total mass of the battery, expressed in the specified unit.",
+    "source_key": "batteryWeight",
+    "notes": ""
+  },
+  {
+    "row": 16,
+    "description": "Current lifecycle status of the individual battery, such as original or remanufactured.",
+    "source_key": "batteryStatus",
+    "notes": ""
+  },
+  {
+    "row": 17,
+    "description": "Geographical location of the plant where the battery was manufactured.",
+    "source_key": "manufacturingPlace",
+    "notes": "官方定义是实际生产地点，不是制造商注册地址。"
+  },
+  {
+    "row": 18,
+    "description": "Country or jurisdiction where the battery manufacturing plant is located.",
+    "source_key": "manufacturingPlace.manufacturingCountry",
+    "notes": ""
+  },
+  {
+    "row": 19,
+    "description": "Town or city where the battery manufacturing plant is located.",
+    "source_key": "manufacturingPlace.manufacturingCity",
+    "notes": ""
+  },
+  {
+    "row": 20,
+    "description": "Region where the battery manufacturing plant is geographically located.",
+    "source_key": "manufacturingPlace.manufacturingRegion",
+    "notes": "工程项是地区；不把中文详细地址直译为street address。"
+  },
+  {
+    "row": 21,
+    "description": "Year and month in which the battery was manufactured.",
+    "source_key": "manufacturingDate",
+    "notes": ""
+  },
+  {
+    "row": 22,
+    "description": "Date of first intended use in the EU without prior placement on the market.",
+    "source_key": "engineering:dateOfPuttingTheBatteryIntoService",
+    "notes": "工程扩展字段，保留putting into service含义而非任意首次使用。"
+  },
+  {
+    "row": 23,
+    "description": "Name of the manufacturer responsible for manufacturing the battery.",
+    "source_key": "manufacturerIdentification.manufacturerName",
+    "notes": ""
+  },
+  {
+    "row": 24,
+    "description": "Registered trade name under which the battery manufacturer conducts business.",
+    "source_key": "manufacturerIdentification.manufacturerTradeName",
+    "notes": "与名称、商标分开描述，不加入三项同时必填。"
+  },
+  {
+    "row": 25,
+    "description": "Registered trademark used to identify the manufacturer of the battery.",
+    "source_key": "manufacturerIdentification.manufacturerTrademark",
+    "notes": ""
+  },
+  {
+    "row": 26,
+    "description": "Postal address at which the battery manufacturer can be contacted.",
+    "source_key": "manufacturerPostalAddress",
+    "notes": ""
+  },
+  {
+    "row": 27,
+    "description": "Website address providing online access to the battery manufacturer's information.",
+    "source_key": "manufacturerContactDetails.manufacturerWebsite",
+    "notes": ""
+  },
+  {
+    "row": 28,
+    "description": "Email address used to contact the manufacturer of the battery.",
+    "source_key": "manufacturerContactDetails.manufacturerEmail",
+    "notes": ""
+  },
+  {
+    "row": 29,
+    "description": "Name of the economic operator associated with the battery passport.",
+    "source_key": "registrantIdentity / engineering:economicOperatorName",
+    "notes": "本行是经济运营商名称拆项；不将整组商号商标等伪称官方独立子字段。"
+  },
+  {
+    "row": 30,
+    "description": "Registered trade name under which the economic operator conducts business.",
+    "source_key": "engineering:economicOperatorRegisteredTradeName",
+    "notes": "工程扩展，官方1.0.0无此独立语义子字段。"
+  },
+  {
+    "row": 31,
+    "description": "Registered trademark used to identify the economic operator's business.",
+    "source_key": "engineering:economicOperatorRegisteredTrademark",
+    "notes": "工程扩展，官方1.0.0无此独立语义子字段。"
+  },
+  {
+    "row": 32,
+    "description": "Postal address at which the economic operator can be contacted.",
+    "source_key": "engineering:economicOperatorPostalAddress",
+    "notes": "工程扩展，官方1.0.0无此独立语义子字段。"
+  },
+  {
+    "row": 33,
+    "description": "Website address providing online access to the economic operator's information.",
+    "source_key": "engineering:economicOperatorWebsite",
+    "notes": "工程扩展，官方1.0.0无此独立语义子字段。"
+  },
+  {
+    "row": 34,
+    "description": "Email address used to contact the economic operator for the battery.",
+    "source_key": "engineering:economicOperatorEmail",
+    "notes": "工程扩展，官方1.0.0无此独立语义子字段。"
+  },
+  {
+    "row": 35,
+    "description": "Duration of the battery's commercial calendar-life warranty, expressed in months.",
+    "source_key": "commercialWarrantyPeriod",
+    "notes": "官方TTL明示months，非年月日期。"
+  },
+  {
+    "row": 36,
+    "description": "Period covered by the battery's commercial warranty for calendar life.",
+    "source_key": "engineering:warrantyYearMonth",
+    "notes": "歧义：工程项带YYYYMM且数据格式为Date，官方commercialWarrantyPeriod为月数。英文仅描述质保期限含义，不伪称官方年月日期格式，也不擅自定义起始月或到期月。"
+  },
+  {
+    "row": 37,
+    "description": "Extinguishing agents suitable for use in a fire involving the battery.",
+    "source_key": "extinguishingAgent",
+    "notes": "不新增具体灭火剂枚举或适用条件。"
+  },
+  {
+    "row": 38,
+    "description": "Indicates whether the battery bears the symbol for separate collection.",
+    "source_key": "separateCollectionSymbol",
+    "notes": "E工程项为分类收集标识；中文与枚举同时混入chemicalSymbol镉铅组合。草稿按工程项描述，建议主代理检查是否本行实为组合显示。"
+  },
+  {
+    "row": 39,
+    "description": "Label displaying the battery's carbon footprint and carbon footprint performance class.",
+    "source_key": "engineering:carbonFootprintLabel",
+    "notes": "按工程名描述，不宣称此字段已在官方1.0.0语义包启用。"
+  },
+  {
+    "row": 40,
+    "description": "Explanation of the meanings of labels and symbols displayed on the battery.",
+    "source_key": "wasteBatteryPreventionManagementInfo.batteryLabelSymbolMeaning",
+    "notes": ""
+  },
+  {
+    "row": 41,
+    "description": "EU declaration confirming the battery's conformity with applicable requirements under Article 18.",
+    "source_key": "euDeclarationOfConformity",
+    "notes": "电池DoC，非整车CoC；不增加PDF限定。"
+  },
+  {
+    "row": 42,
+    "description": "Test report results demonstrating compliance with the Batteries Regulation and acts adopted under it.",
+    "source_key": "complianceTestReportResults",
+    "notes": "不规定第三方出具、不造固定报告清单、不限PDF。"
+  },
+  {
+    "row": 43,
+    "description": "Reports documenting tests for prohibited or restricted substances in the battery.",
+    "source_key": "complianceTestReportResults / engineering:restrictedSubstanceReports",
+    "notes": "原表工程拆分资料类；不将REACH/SVHC或任意检测项目写成官方固定必交清单。"
+  },
+  {
+    "row": 44,
+    "description": "Technical documentation supporting the declared recycled material content of the battery.",
+    "source_key": "engineering:recycledContentTechnicalDocumentation",
+    "notes": "工程拆分资料类；不加入必须第三方认证的要求。"
+  },
+  {
+    "row": 45,
+    "description": "Technical documentation describing the battery's performance and durability assessment results.",
+    "source_key": "complianceTestReportResults / engineering:performanceDurabilityDocumentation",
+    "notes": "工程拆分资料类。"
+  },
+  {
+    "row": 46,
+    "description": "Documentation describing the battery's state of health and expected lifetime.",
+    "source_key": "engineering:stateOfHealthLifetimeDocumentation",
+    "notes": "工程拆分资料类，不等同某一个SOH数值字段。"
+  },
+  {
+    "row": 47,
+    "description": "Technical documentation demonstrating the battery's conformity with applicable regulatory requirements.",
+    "source_key": "engineering:regulatoryTechnicalDocumentation",
+    "notes": "工程拆分资料类，不将全部技术文档都归为测试报告。"
+  },
+  {
+    "row": 48,
+    "description": "Instructions for using the battery in a printable, downloadable and storable format.",
+    "source_key": "engineering:batteryInstructionsForUse",
+    "notes": "不复制中文中对综合法案/暂不填的未核实解释。"
+  },
+  {
+    "row": 49,
+    "description": "Battery carbon footprint per kilowatt-hour of energy delivered over its expected lifetime.",
+    "source_key": "engineering:batteryCarbonFootprintPerFunctionalUnit",
+    "notes": "保留功能单位含义，不重复长法律段落。"
+  },
+  {
+    "row": 50,
+    "description": "Contribution of raw material acquisition and preprocessing to the battery's carbon footprint.",
+    "source_key": "engineering:rawMaterialCarbonFootprintContribution",
+    "notes": ""
+  },
+  {
+    "row": 51,
+    "description": "Contribution of the main production stage to the battery's carbon footprint.",
+    "source_key": "engineering:productionCarbonFootprintContribution",
+    "notes": ""
+  },
+  {
+    "row": 52,
+    "description": "Contribution of the distribution stage to the battery's carbon footprint.",
+    "source_key": "engineering:distributionCarbonFootprintContribution",
+    "notes": ""
+  },
+  {
+    "row": 53,
+    "description": "Contribution of end-of-life treatment and recycling to the battery's carbon footprint.",
+    "source_key": "engineering:endOfLifeCarbonFootprintContribution",
+    "notes": ""
+  },
+  {
+    "row": 54,
+    "description": "Performance class indicating the battery's relative lifecycle carbon footprint level.",
+    "source_key": "engineering:carbonFootprintPerformanceClass",
+    "notes": "不增加A至E已被法规固定等要求。"
+  },
+  {
+    "row": 55,
+    "description": "Total absolute carbon footprint attributable to the battery's lifecycle.",
+    "source_key": "engineering:absoluteBatteryCarbonFootprint",
+    "notes": ""
+  },
+  {
+    "row": 56,
+    "description": "Publicly accessible study supporting the battery's declared carbon footprint results.",
+    "source_key": "engineering:publicCarbonFootprintStudy",
+    "notes": ""
+  },
+  {
+    "row": 57,
+    "description": "Report describing battery supply-chain due diligence policies, risk management and verification activities.",
+    "source_key": "engineering:dueDiligenceReport",
+    "notes": "不把所有报告都强制为第三方出具。"
+  },
+  {
+    "row": 58,
+    "description": "Information on supply-chain assurances provided by third parties through recognised schemes.",
+    "source_key": "engineering:thirdPartySupplyChainAssurances",
+    "notes": "名称本身为第三方供应链保证，保留third parties，不新增强制认证。"
+  },
+  {
+    "row": 59,
+    "description": "Indices providing information relevant to the assessment of the battery's supply chain.",
+    "source_key": "engineering:supplyChainIndices",
+    "notes": ""
+  },
+  {
+    "row": 60,
+    "description": "Electrochemical chemistry of the battery, reflecting its active materials and electrolyte.",
+    "source_key": "batteryChemistry",
+    "notes": "不保留旧英文电解质自愿披露的未经本字段确认限定。"
+  },
+  {
+    "row": 61,
+    "description": "Critical raw materials identified as being present in the battery.",
+    "source_key": "criticalRawMaterials",
+    "notes": "按主代理指定仅描述critical raw materials；不在英文描述重复阈值和清单数量。"
+  },
+  {
+    "row": 62,
+    "description": "Name of a material used in the battery's cathode.",
+    "source_key": "detailedComposition / engineering:cathodeMaterialName",
+    "notes": "官方detailedComposition下工程拆分；不伪造官方结构化子字段。"
+  },
+  {
+    "row": 63,
+    "description": "CAS Registry Number identifying a material used in the battery's cathode.",
+    "source_key": "detailedComposition / engineering:cathodeMaterialCASNumber",
+    "notes": "工程拆分，不声称CAS为官方独立必填子字段。"
+  },
+  {
+    "row": 64,
+    "description": "Name of a material used in the battery's anode.",
+    "source_key": "detailedComposition / engineering:anodeMaterialName",
+    "notes": "纠正negative material为anode material。"
+  },
+  {
+    "row": 65,
+    "description": "CAS Registry Number identifying a material used in the battery's anode.",
+    "source_key": "detailedComposition / engineering:anodeMaterialCASNumber",
+    "notes": "工程拆分，不声称CAS为官方独立必填子字段。"
+  },
+  {
+    "row": 66,
+    "description": "Name of a material used in the battery's electrolyte.",
+    "source_key": "detailedComposition / engineering:electrolyteMaterialName",
+    "notes": ""
+  },
+  {
+    "row": 67,
+    "description": "CAS Registry Number identifying a material used in the battery's electrolyte.",
+    "source_key": "detailedComposition / engineering:electrolyteMaterialCASNumber",
+    "notes": "工程拆分，不声称CAS为官方独立必填子字段。"
+  },
+  {
+    "row": 68,
+    "description": "Names of hazardous substances present in the battery, excluding mercury, cadmium and lead.",
+    "source_key": "hazardousSubstances / engineering:hazardousSubstanceName",
+    "notes": "按官方TTL保留除Hg/Cd/Pb外的含义；不复制旧文中SVHC与0.1%限定。"
+  },
+  {
+    "row": 69,
+    "description": "CAS Registry Number used to identify a hazardous substance in the battery.",
+    "source_key": "hazardousSubstances / engineering:hazardousSubstanceCASNumber",
+    "notes": "工程拆分，不声称CAS为官方独立必填子字段。"
+  },
+  {
+    "row": 70,
+    "description": "Hazard classes and categories assigned to substances present in the battery.",
+    "source_key": "hazardousSubstances / engineering:hazardClassesAndCategories",
+    "notes": "工程拆分；不指定未确认的分类体系。"
+  },
+  {
+    "row": 71,
+    "description": "Location of a hazardous substance within the battery or its components.",
+    "source_key": "hazardousSubstances / engineering:hazardousSubstanceLocation",
+    "notes": "原英文为0，已按工程项补全。"
+  },
+  {
+    "row": 72,
+    "description": "Concentration of a hazardous substance present in the battery.",
+    "source_key": "hazardousSubstances / engineering:hazardousSubstanceConcentration",
+    "notes": "不添加本行未明确的单位或统一阈值。"
+  },
+  {
+    "row": 73,
+    "description": "Effects of battery substances on the environment, human health and personal safety.",
+    "source_key": "wasteBatteryPreventionManagementInfo.batterySubstancesImpact",
+    "notes": ""
+  },
+  {
+    "row": 74,
+    "description": "Share of nickel in battery active materials recovered from pre-consumer waste.",
+    "source_key": "engineering:preConsumerRecycledNickelShare",
+    "notes": "工程细分；不冒充1.0.0当前可用字段。"
+  },
+  {
+    "row": 75,
+    "description": "Share of cobalt in battery active materials recovered from pre-consumer waste.",
+    "source_key": "engineering:preConsumerRecycledCobaltShare",
+    "notes": "工程细分；不冒充1.0.0当前可用字段。"
+  },
+  {
+    "row": 76,
+    "description": "Share of lithium in battery active materials recovered from pre-consumer waste.",
+    "source_key": "engineering:preConsumerRecycledLithiumShare",
+    "notes": "工程细分；不冒充1.0.0当前可用字段。"
+  },
+  {
+    "row": 77,
+    "description": "Share of nickel in battery active materials recovered from post-consumer waste.",
+    "source_key": "engineering:postConsumerRecycledNickelShare",
+    "notes": "工程细分；不冒充1.0.0当前可用字段。"
+  },
+  {
+    "row": 78,
+    "description": "Share of cobalt in battery active materials recovered from post-consumer waste.",
+    "source_key": "engineering:postConsumerRecycledCobaltShare",
+    "notes": "工程细分；不冒充1.0.0当前可用字段。"
+  },
+  {
+    "row": 79,
+    "description": "Share of lithium in battery active materials recovered from post-consumer waste.",
+    "source_key": "engineering:postConsumerRecycledLithiumShare",
+    "notes": "工程细分；不冒充1.0.0当前可用字段。"
+  },
+  {
+    "row": 80,
+    "description": "Share of recycled lead contained in the battery's active materials.",
+    "source_key": "engineering:recycledLeadShare",
+    "notes": "不擅自限定仅消费前或消费后。"
+  },
+  {
+    "row": 81,
+    "description": "Proportion of renewable content incorporated into the battery, expressed as a percentage.",
+    "source_key": "renewableContentShare",
+    "notes": "官方为renewable content，不是制造过程中可再生能源的占比。"
+  },
+  {
+    "row": 82,
+    "description": "Instructions for removing the battery pack and dismantling its components.",
+    "source_key": "dismantlingInformation / engineering:removalManual",
+    "notes": "工程项含拆除/拆卸指南；按父语义描述，未将文档分拆方式写成强制要求。"
+  }
+]

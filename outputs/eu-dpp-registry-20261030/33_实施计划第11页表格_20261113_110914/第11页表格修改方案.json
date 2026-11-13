@@ -1,0 +1,120 @@
+{
+  "authorization": "用户直接指定第11页改为任务项、责任人、预期时间三列表格，延续已确认的七步内容。",
+  "source": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/sources/source.pptx",
+  "source_pages": 13,
+  "output_pages": 13,
+  "roster": [
+    {
+      "page": 1,
+      "mode": "referenced"
+    },
+    {
+      "page": 2,
+      "mode": "referenced"
+    },
+    {
+      "page": 3,
+      "mode": "referenced"
+    },
+    {
+      "page": 4,
+      "mode": "referenced"
+    },
+    {
+      "page": 5,
+      "mode": "referenced"
+    },
+    {
+      "page": 6,
+      "mode": "referenced"
+    },
+    {
+      "page": 7,
+      "mode": "referenced"
+    },
+    {
+      "page": 8,
+      "mode": "referenced"
+    },
+    {
+      "page": 9,
+      "mode": "referenced"
+    },
+    {
+      "page": 10,
+      "mode": "referenced"
+    },
+    {
+      "page": 11,
+      "mode": "edited"
+    },
+    {
+      "page": 12,
+      "mode": "referenced"
+    },
+    {
+      "page": 13,
+      "mode": "referenced"
+    }
+  ],
+  "table_columns": [
+    "任务项",
+    "责任人",
+    "预期时间"
+  ],
+  "tasks": [
+    [
+      "1  法规4.0输出",
+      "形成法规模型及字段要求",
+      "孔瑞霞",
+      "11.10"
+    ],
+    [
+      "2  法规4.0用户宣贯",
+      "对齐字段含义、适用规则与使用方式",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "3  工程化4.0输出",
+      "形成工程字段、数据结构与实施规则",
+      "宁蒙昌",
+      "11.12"
+    ],
+    [
+      "4  系统影响面评估",
+      "实体、API、护照编辑器、二维码落地页改动",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "5  PRD输出",
+      "明确功能需求、交互流程与改造范围",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "6  功能上线",
+      "完成相关功能开发、验证与发布",
+      "待确认",
+      "待确认"
+    ],
+    [
+      "7  数据割接",
+      "手动补数据、系统割接",
+      "待确认",
+      "待确认"
+    ]
+  ],
+  "source_mapping": {
+    "法规4.0输出": "原第13页护照模型V4.0输出：孔瑞霞/11.10；沿用原计划，不代表完成状态或新承诺。",
+    "工程化4.0输出": "原第13页工程化护照模型V4.0输出：宁蒙昌/11.12。",
+    "other_rows": "无同任务明确责任和时间，标注待确认。"
+  },
+  "enhancements": {
+    "native_table": true,
+    "notes": "preserve",
+    "motion": "preserve",
+    "new_audio": false
+  }
+}

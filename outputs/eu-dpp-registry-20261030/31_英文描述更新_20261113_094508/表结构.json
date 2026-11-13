@@ -1,0 +1,27 @@
+{
+  "colWidths": null,
+  "columnCount": 25,
+  "columnGroups": null,
+  "frozenColumnCount": 0,
+  "frozenRowCount": 0,
+  "hiddenCols": null,
+  "hiddenRows": null,
+  "id": "st-e85d417d-79819",
+  "logId": "2166191717945343207854543e067c",
+  "mergedRanges": [
+    "Q19:Q20"
+  ],
+  "message": "Successfully retrieved sheet information.",
+  "name": "工程化v4.0",
+  "nonEmptyRange": {
+    "lastCell": "U150",
+    "lastColumn": "U",
+    "lastRow": 150,
+    "range": "A1:U150"
+  },
+  "rowCount": 248,
+  "rowGroups": null,
+  "rowHeights": null,
+  "success": true,
+  "visibility": "visible"
+}

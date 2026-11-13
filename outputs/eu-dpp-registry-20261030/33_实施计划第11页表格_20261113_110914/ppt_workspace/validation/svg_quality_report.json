@@ -1,0 +1,400 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "d9a7d8552f66f121d41ba9c3b58dc4f749b4836b1864f236995b782d79919eff",
+    "file_count": 13,
+    "files": [
+      {
+        "file": "authoring-svg-flat/slide_01.svg",
+        "sha256": "1b9189fdf0b8cb8a84d7387cdf1d79642aa7bce2c6bd58f26fde0216ce59c74d"
+      },
+      {
+        "file": "authoring-svg-flat/slide_02.svg",
+        "sha256": "b95f1154690117bb53344676e8e3aad32dd88d760eb657db36f4ed831d8cc848"
+      },
+      {
+        "file": "authoring-svg-flat/slide_03.svg",
+        "sha256": "3905e1bb7463aed30cbff8993c7194f0131bd4a553e7c6e076f4254588ceb292"
+      },
+      {
+        "file": "authoring-svg-flat/slide_04.svg",
+        "sha256": "b8c372d8c27c523c20ffdf8c13bb0fd697552b1c3592e915f7128e8e2a6efc5e"
+      },
+      {
+        "file": "authoring-svg-flat/slide_05.svg",
+        "sha256": "f419245b8385da936e0eadd8742d8b51b79c1b5b4f69eeadea0244d15cb222c8"
+      },
+      {
+        "file": "authoring-svg-flat/slide_06.svg",
+        "sha256": "088760d6d2ad64fcf45681d4a37f8600321b046591690bfc7bd467b94dba815c"
+      },
+      {
+        "file": "authoring-svg-flat/slide_07.svg",
+        "sha256": "76e83e138f5bb1d7c6319af9d43938ceaa901dabe9ea0148d41a6d3003d77549"
+      },
+      {
+        "file": "authoring-svg-flat/slide_08.svg",
+        "sha256": "1781adf7131baffe5b14092c5684ccbef1c6a037fad705661d0e0592386acc43"
+      },
+      {
+        "file": "authoring-svg-flat/slide_09.svg",
+        "sha256": "17ff5bdad394d1da7497944b5b921e3e7030ab06144b923885038d587f74db87"
+      },
+      {
+        "file": "authoring-svg-flat/slide_10.svg",
+        "sha256": "330affc1acaef31199e01aaa2364feb09b915ed29ad0eabad3157079ef0e5d27"
+      },
+      {
+        "file": "authoring-svg-flat/slide_11.svg",
+        "sha256": "1d8bfbb59dbffac2c949bfb0dda2ddf614aad1d16166e5c3eef08df96467bdbc"
+      },
+      {
+        "file": "authoring-svg-flat/slide_12.svg",
+        "sha256": "ee69992e6aab47e10f47a243d4bea9e877c67474af8ff233a416ae01389724e4"
+      },
+      {
+        "file": "authoring-svg-flat/slide_13.svg",
+        "sha256": "d29d63027aea4128d662909b302058884b7cf9c64abe0b008bd75a5a69e3c76c"
+      }
+    ]
+  },
+  "summary": {
+    "total": 13,
+    "passed": 13,
+    "warnings": 0,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 0,
+      "issues": []
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 0,
+    "totals": {
+      "text_elements": 0,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 0,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": null,
+    "geometry_elements": {},
+    "preset_names": {},
+    "native_objects": {},
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "slide_01.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_01.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 1,
+        "source_slide": 1,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.003741185412473295,
+          "measured_unchanged": 2,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "1b9189fdf0b8cb8a84d7387cdf1d79642aa7bce2c6bd58f26fde0216ce59c74d"
+    },
+    {
+      "file": "slide_02.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_02.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 2,
+        "source_slide": 2,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 15,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "b95f1154690117bb53344676e8e3aad32dd88d760eb657db36f4ed831d8cc848"
+    },
+    {
+      "file": "slide_03.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_03.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 3,
+        "source_slide": 3,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.004114338325205344,
+          "measured_unchanged": 87,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "3905e1bb7463aed30cbff8993c7194f0131bd4a553e7c6e076f4254588ceb292"
+    },
+    {
+      "file": "slide_04.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_04.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 4,
+        "source_slide": 4,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.005589242918951993,
+          "measured_unchanged": 158,
+          "positive_unchanged": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "b8c372d8c27c523c20ffdf8c13bb0fd697552b1c3592e915f7128e8e2a6efc5e"
+    },
+    {
+      "file": "slide_05.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_05.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 5,
+        "source_slide": 5,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.014888742087350876,
+          "measured_unchanged": 96,
+          "positive_unchanged": 4
+        }
+      },
+      "passed": true,
+      "source_sha256": "f419245b8385da936e0eadd8742d8b51b79c1b5b4f69eeadea0244d15cb222c8"
+    },
+    {
+      "file": "slide_06.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_06.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 6,
+        "source_slide": 6,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 62,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "088760d6d2ad64fcf45681d4a37f8600321b046591690bfc7bd467b94dba815c"
+    },
+    {
+      "file": "slide_07.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_07.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 7,
+        "source_slide": 7,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0022341301638177198,
+          "measured_unchanged": 65,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "76e83e138f5bb1d7c6319af9d43938ceaa901dabe9ea0148d41a6d3003d77549"
+    },
+    {
+      "file": "slide_08.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_08.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 8,
+        "source_slide": 8,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0022341301638177198,
+          "measured_unchanged": 62,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "1781adf7131baffe5b14092c5684ccbef1c6a037fad705661d0e0592386acc43"
+    },
+    {
+      "file": "slide_09.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_09.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 9,
+        "source_slide": 9,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.1,
+          "measured_unchanged": 16,
+          "positive_unchanged": 5
+        }
+      },
+      "passed": true,
+      "source_sha256": "17ff5bdad394d1da7497944b5b921e3e7030ab06144b923885038d587f74db87"
+    },
+    {
+      "file": "slide_10.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_10.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 10,
+        "source_slide": 10,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.06521888266259146,
+          "measured_unchanged": 4,
+          "positive_unchanged": 3
+        }
+      },
+      "passed": true,
+      "source_sha256": "330affc1acaef31199e01aaa2364feb09b915ed29ad0eabad3157079ef0e5d27"
+    },
+    {
+      "file": "slide_11.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_11.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 11,
+        "source_slide": 11,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 33,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 1,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "1d8bfbb59dbffac2c949bfb0dda2ddf614aad1d16166e5c3eef08df96467bdbc"
+    },
+    {
+      "file": "slide_12.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_12.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 12,
+        "source_slide": 12,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 27,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "ee69992e6aab47e10f47a243d4bea9e877c67474af8ff233a416ae01389724e4"
+    },
+    {
+      "file": "slide_13.svg",
+      "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/authoring-svg-flat/slide_13.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 13,
+        "source_slide": 13,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 45,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "d29d63027aea4128d662909b302058884b7cf9c64abe0b008bd75a5a69e3c76c"
+    }
+  ]
+}

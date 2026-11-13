@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="layout-shape-7" data-pptx-object="shape" data-pptx-frame="0 68.13 1280 4.8" data-pptx-prst="rect" data-pptx-source-ref="layout:7" data-pptx-semantic-object="shape">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="11.87 9.8 855.74 48.47" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 11.87 9.8 L 867.61 9.8 L 867.61 58.27 L 11.87 58.27 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="21.47" y="45.26761155" text-anchor="start" xml:space="preserve" font-size="32" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">新增数据项</text>
+</g>
+<g id="shape-30" data-pptx-object="graphic-frame" data-pptx-frame="40.93 92.25 1158.55 579.32" data-pptx-import-source="pptx" data-pptx-replacement-status="unsupported-table-direct-formatting" data-pptx-source-ref="slide:30">
+<use data-icon="imported/flat_slide_03_ill01" data-pptx-asset-role="decoration" /><text x="424.85" y="111.71979003" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>官方语义库</tspan><tspan>1.0.0</tspan></text>
+<text x="1004.13" y="106.97322835" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">变更说明</text>
+<text x="230.01" y="141.22554285" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">数据项名称</text>
+<text x="493.4" y="141.22554285" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">电池分类</text>
+<text x="688.24" y="141.22554285" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>是否必填</tspan><tspan x="688.24" dy="17.6">M：必填 C：有条件 V：推荐/自愿</tspan></text>
+<text x="900.06" y="141.22554285" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">变更类型</text>
+<text x="1095.42" y="141.22554285" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">对照表备注</text>
+<text x="40.98" y="189.63968222" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">参考标准/内容规范ID Content specification Ids</text>
+<text x="493.4" y="189.63968222" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="189.63968222" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="189.63968222" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="189.63968222" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">语义库版本，系统默认配置</text>
+<text x="40.98" y="225.79487176" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">分类收集点信息 Separate Collection Points</text>
+<text x="493.4" y="225.79487176" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="225.79487176" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="225.79487176" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="225.79487176" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>格式是自由文本，官方测试数据</tspan><tspan x="1095.42" dy="17.6">给的是个网址</tspan></text>
+<text x="40.98" y="261.95006129" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">回收接收点信息 Take Back Collection Points</text>
+<text x="493.4" y="261.95006129" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="261.95006129" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="261.95006129" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="261.95006129" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">格式是自由文本</text>
+<text x="40.98" y="298.10525083" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">再使用准备设施信息Preparation For Reuse Facilities</text>
+<text x="493.4" y="298.10525083" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="298.10525083" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="298.10525083" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="298.10525083" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">格式是自由文本</text>
+<text x="40.98" y="334.26044036" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>梯次利用准备设施信息Preparation For Repurposing </tspan><tspan x="40.98" dy="17.6">Facilities</tspan></text>
+<text x="493.4" y="334.26044036" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="334.26044036" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="334.26044036" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="334.26044036" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">格式是自由文本</text>
+<text x="40.98" y="370.4156299" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">废电池处理设施信息 Waste Battery Treatment Facilities</text>
+<text x="493.4" y="370.4156299" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="370.4156299" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="370.4156299" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="370.4156299" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">格式是自由文本</text>
+<text x="40.98" y="406.57081943" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">废电池处理安全说明 Waste Battery Safety Instructions</text>
+<text x="493.4" y="406.57081943" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="406.57081943" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="406.57081943" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="406.57081943" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">格式是自由文本</text>
+<text x="40.98" y="442.72600897" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">额定容量 Rated capacity</text>
+<text x="493.4" y="442.72600897" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="442.72600897" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(EV/LMT</tspan><tspan>/</tspan><tspan>IND-可充电电池)</tspan></text>
+<text x="900.06" y="442.72600897" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="442.72600897" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>动态值</tspan><tspan>，电池</tspan><tspan>状态变化时更新</tspan></text>
+<text x="40.98" y="478.8811985" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">功率 Power Capability</text>
+<text x="493.4" y="478.8811985" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="478.8811985" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(EV/LMT</tspan><tspan>/</tspan><tspan>IND-可充电电池)</tspan></text>
+<text x="900.06" y="478.8811985" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="478.8811985" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>动态值</tspan><tspan>，电池</tspan><tspan>状态变化时更新</tspan></text>
+<text x="40.98" y="515.03638804" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>往返能效Where applicable, energy round trip </tspan><tspan x="40.98" dy="17.6">efficiency [%]</tspan></text>
+<text x="493.4" y="515.03638804" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="515.03638804" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">V(如适用)</text>
+<text x="900.06" y="515.03638804" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="515.03638804" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>动态值</tspan><tspan>，电池</tspan><tspan>状态变化时更新</tspan></text>
+<text x="40.98" y="551.19157757" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">内阻 internal Resistance</text>
+<text x="493.4" y="551.19157757" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>EV/LMT/IND</tspan><tspan>　</tspan></text>
+<text x="688.24" y="551.19157757" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M(EV/LMT) V(IND-可充电电池)</text>
+<text x="900.06" y="551.19157757" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="551.19157757" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>动态值</tspan><tspan>，电池</tspan><tspan>状态变化时更新</tspan></text>
+<text x="40.98" y="587.34676711" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">参考条件下预期循环寿命 expected Lifetime Cycles Rest</text>
+<text x="493.4" y="587.34676711" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="587.34676711" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(EV/LMT/IND仅适用于可用循环次</tspan><tspan x="688.24" dy="17.6">数表达寿命的可充电电池)</tspan></text>
+<text x="900.06" y="587.34676711" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="587.34676711" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>动态值</tspan><tspan>，电池</tspan><tspan>状态变化时更新</tspan></text>
+<text x="41.43" y="637.26892161" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">空闲状态温度范围测试 Not in use temperature range test</text>
+<text x="493.4" y="637.26892161" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="688.24" y="637.26892161" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="900.06" y="637.26892161" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#548235" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义库新增</text>
+<text x="1095.42" y="636.82230744" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">格式是自由文本</text>
+<use data-icon="imported/flat_slide_03_ill02" data-pptx-asset-role="decoration" /></g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="17.33 491.82 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 90.2 511.15)" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 17.33 491.82 L 163.07 491.82 L 163.07 530.48 L 17.33 530.48 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="26.93" y="519.28461942" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="378.47 278.94 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 451.34 298.28)" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 378.47 278.94 L 524.21 278.94 L 524.21 317.61 L 378.47 317.61 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="388.07" y="306.4103937" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-33" data-pptx-object="shape" data-pptx-frame="730.52 103.11 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 803.39 122.45)" data-pptx-source-ref="slide:33" data-pptx-semantic-object="shape">
+<path d="M 730.52 103.11 L 876.26 103.11 L 876.26 141.78 L 730.52 141.78 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="740.12" y="130.5792126" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-34" data-pptx-object="shape" data-pptx-frame="213.11 578.33 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 285.98 597.66)" data-pptx-source-ref="slide:34" data-pptx-semantic-object="shape">
+<path d="M 213.11 578.33 L 358.85 578.33 L 358.85 616.99 L 213.11 616.99 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="222.71" y="605.79275591" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-35" data-pptx-object="shape" data-pptx-frame="472.17 576.11 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 545.04 595.45)" data-pptx-source-ref="slide:35" data-pptx-semantic-object="shape">
+<path d="M 472.17 576.11 L 617.91 576.11 L 617.91 614.78 L 472.17 614.78 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="481.77" y="603.58131234" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-36" data-pptx-object="shape" data-pptx-frame="740.76 582.83 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 813.64 602.17)" data-pptx-source-ref="slide:36" data-pptx-semantic-object="shape">
+<path d="M 740.76 582.83 L 886.51 582.83 L 886.51 621.5 L 740.76 621.5 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="750.36" y="610.29994751" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-37" data-pptx-object="shape" data-pptx-frame="358.66 430.2 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 431.53 449.54)" data-pptx-source-ref="slide:37" data-pptx-semantic-object="shape">
+<path d="M 358.66 430.2 L 504.4 430.2 L 504.4 468.87 L 358.66 468.87 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="368.26" y="457.67076115" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-38" data-pptx-object="shape" data-pptx-frame="771.96 407.92 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 844.84 427.26)" data-pptx-source-ref="slide:38" data-pptx-semantic-object="shape">
+<path d="M 771.96 407.92 L 917.71 407.92 L 917.71 446.59 L 771.96 446.59 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="781.56" y="435.38939633" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-39" data-pptx-object="shape" data-pptx-frame="1078.38 250.8 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1151.25 270.14)" data-pptx-source-ref="slide:39" data-pptx-semantic-object="shape">
+<path d="M 1078.38 250.8 L 1224.12 250.8 L 1224.12 289.47 L 1078.38 289.47 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1087.98" y="278.2696063" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-40" data-pptx-object="shape" data-pptx-frame="1089.54 560.17 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1162.41 579.51)" data-pptx-source-ref="slide:40" data-pptx-semantic-object="shape">
+<path d="M 1089.54 560.17 L 1235.28 560.17 L 1235.28 598.84 L 1089.54 598.84 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1099.14" y="587.63905512" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-41" data-pptx-object="shape" data-pptx-frame="31.66 95.37 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 104.53 114.7)" data-pptx-source-ref="slide:41" data-pptx-semantic-object="shape">
+<path d="M 31.66 95.37 L 177.41 95.37 L 177.41 134.03 L 31.66 134.03 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="41.26" y="122.83223097" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-42" data-pptx-object="shape" data-pptx-frame="369.9 109.82 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 442.78 129.15)" data-pptx-source-ref="slide:42" data-pptx-semantic-object="shape">
+<path d="M 369.9 109.82 L 515.65 109.82 L 515.65 148.48 L 369.9 148.48 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="379.5" y="137.2848294" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-43" data-pptx-object="shape" data-pptx-frame="717.9 275.19 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 790.78 294.52)" data-pptx-source-ref="slide:43" data-pptx-semantic-object="shape">
+<path d="M 717.9 275.19 L 863.65 275.19 L 863.65 313.86 L 717.9 313.86 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="727.5" y="302.65826772" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-44" data-pptx-object="shape" data-pptx-frame="1065.35 112.13 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1138.22 131.46)" data-pptx-source-ref="slide:44" data-pptx-semantic-object="shape">
+<path d="M 1065.35 112.13 L 1211.1 112.13 L 1211.1 150.79 L 1065.35 150.79 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1074.95" y="139.59191601" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g></svg>

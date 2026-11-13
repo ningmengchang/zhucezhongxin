@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="layout-shape-7" data-pptx-object="shape" data-pptx-frame="0 68.13 1280 4.8" data-pptx-prst="rect" data-pptx-source-ref="layout:7" data-pptx-semantic-object="shape">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-63" data-pptx-object="graphic-frame" data-pptx-frame="39.32 94.45 1195.87 601.77" data-pptx-import-source="pptx" data-pptx-replacement-status="unsupported-table-direct-formatting" data-pptx-source-ref="slide:63">
+<use data-icon="imported/flat_slide_05_ill01" data-pptx-asset-role="decoration" /><text x="298.55" y="109.17165354" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>护照模型V3.</tspan><tspan>4</tspan></text>
+<text x="819.68" y="113.91821522" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>官方语义库</tspan><tspan>1.0.0</tspan></text>
+<text x="1158.39" y="113.91821522" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">变更说明</text>
+<text x="168.79" y="141.39966076" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">数据项名称</text>
+<text x="370.98" y="141.39966076" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">电池分类</text>
+<text x="500.74" y="141.39966076" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>是否必填</tspan><tspan x="500.74" dy="16">M：必填 R：推荐</tspan><tspan x="500.74" dy="16">/自愿</tspan></text>
+<text x="676.13" y="141.39966076" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">数据项名称</text>
+<text x="858.51" y="141.39966076" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">电池分类</text>
+<text x="1002.06" y="141.39966076" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>是否必填</tspan><tspan x="1002.06" dy="16">M：必填 C：有条件 V：推</tspan><tspan x="1002.06" dy="16">荐/自愿</tspan></text>
+<text x="1158.39" y="141.39966076" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">对照表备注</text>
+<text x="39.37" y="198.594535" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">剩余容量 Remaining capacity</text>
+<text x="370.98" y="198.594535" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="198.594535" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(LMT/BESS)</tspan><tspan x="500.74" dy="17.6">R(EV/IND)</tspan></text>
+<text x="557.83" y="198.594535" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">剩余容量 Remaining capacity</text>
+<text x="858.51" y="198.594535" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">LMT/IND</text>
+<text x="1002.06" y="198.594535" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(LMT</tspan><tspan>/</tspan><tspan>IND-BESS </tspan><tspan x="1002.06" dy="17.6">with BMS)</tspan></text>
+<text x="1158.39" y="198.594535" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>仅针对</tspan><tspan>LMT</tspan><tspan>和</tspan><tspan>IND-BESS </tspan><tspan x="1158.39" dy="17.6">with BMS</tspan></text>
+<text x="39.37" y="244.63729799" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">剩余功率 Remaining power capability</text>
+<text x="370.98" y="244.63729799" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="244.63729799" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(LMT/BESS)</tspan><tspan x="500.74" dy="17.6">R(EV/IND)</tspan></text>
+<text x="557.83" y="244.63729799" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>剩余功率 Remaining power </tspan><tspan x="557.83" dy="17.6">capability</tspan></text>
+<text x="858.51" y="244.63729799" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">LMT/IND</text>
+<text x="1002.06" y="244.63729799" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(LMT</tspan><tspan>/</tspan><tspan>IND-BESS </tspan><tspan x="1002.06" dy="17.6">with BMS)</tspan></text>
+<text x="1158.39" y="244.63729799" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>仅针对</tspan><tspan>LMT</tspan><tspan>和</tspan><tspan>IND-BESS </tspan><tspan x="1158.39" dy="17.6">with BMS</tspan><tspan>　</tspan></text>
+<text x="39.82" y="291.12667514" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">事故信息 Information on accidents</text>
+<text x="370.98" y="291.12667514" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="291.12667514" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">R</text>
+<text x="558.28" y="291.12667514" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">负面事件 Negative events</text>
+<text x="858.51" y="291.12667514" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="291.12667514" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="1158.39" y="290.68006097" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">改为必填</text>
+<text x="39.37" y="335.38949062" text-anchor="start" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>经济运营商信息 Economic operator </tspan><tspan x="39.37" dy="16.8">information</tspan></text>
+<text x="370.98" y="335.38949062" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="335.38949062" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">R</text>
+<text x="557.83" y="335.38949062" text-anchor="start" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>护照登记方/责任方身份（经济运营商</tspan><tspan x="557.83" dy="16.8">） registrantIdentity</tspan></text>
+<text x="858.51" y="335.38949062" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="335.38949062" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="1158.39" y="335.38949062" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">仅名称</text>
+<text x="39.37" y="381.43225361" text-anchor="start" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">荷电状态 State of Charge (SoC)</text>
+<text x="370.98" y="381.43225361" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="381.43225361" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">R</text>
+<text x="557.83" y="381.43225361" text-anchor="start" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">荷电状态 State of Charge (SoC)</text>
+<text x="858.51" y="381.43225361" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="381.43225361" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="1158.39" y="381.43225361" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">电池使用后适用：直方图，%</text>
+<text x="40.82" y="428.42157827" text-anchor="start" xml:space="preserve" font-size="13.33" fill="#000000" data-pptx-text-baseline="metrics-v1">温度信息Temperature information</text>
+<text x="370.98" y="428.42157827" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="428.42157827" text-anchor="middle" xml:space="preserve" font-size="13.33" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">R</text>
+<text x="557.83" y="427.47501659" text-anchor="start" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>温度信息 </tspan><tspan>Temperature information</tspan></text>
+<text x="858.51" y="427.47501659" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="427.47501659" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="1158.39" y="427.47501659" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>电池使用后适用：直方图，</tspan><tspan>%</tspan></text>
+<text x="39.82" y="473.96439375" text-anchor="start" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>质保期 </tspan><tspan>Warranty period of the battery</tspan></text>
+<text x="370.98" y="473.96439375" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="473.96439375" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">R</text>
+<text x="558.28" y="473.96439375" text-anchor="start" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>质保期 </tspan><tspan>Commercial Warranty Period</tspan></text>
+<text x="858.51" y="473.96439375" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="473.96439375" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">如适用（如果提供商业保修）</text>
+<text x="1158.39" y="473.51777958" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">单位是月</text>
+<text x="39.82" y="521.34049007" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>当前完全循环次数 Number of full </tspan><tspan x="39.82" dy="17.6">charging and discharging cycles</tspan></text>
+<text x="370.98" y="521.34049007" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="521.34049007" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">R</text>
+<text x="558.28" y="521.34049007" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>充电循环次数 number Of </tspan><tspan x="558.28" dy="17.6">Charging Cycles</tspan></text>
+<text x="858.51" y="521.34049007" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="521.34049007" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="1158.39" y="519.56054256" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">电池开始使用后适用</text>
+<text x="558.28" y="567.38325305" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>放电循环次数 number Of </tspan><tspan x="558.28" dy="17.6">Discharging Cycles</tspan></text>
+<text x="858.51" y="567.38325305" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="567.38325305" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="1158.39" y="565.60330555" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">电池开始使用后适用</text>
+<text x="39.82" y="613.42601604" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>循环寿命测试C率 C-rate of relevant </tspan><tspan x="39.82" dy="17.6">cycle-life test</tspan></text>
+<text x="370.98" y="613.42601604" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/BESS/IND</text>
+<text x="500.74" y="613.42601604" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">M</text>
+<text x="558.28" y="613.42601604" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>循环寿命测试充电C率 Cycle Life </tspan><tspan x="558.28" dy="17.6">Charge C-Rate</tspan></text>
+<text x="858.51" y="613.42601604" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="613.42601604" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>M(EV/LMT/IND仅适用</tspan><tspan x="1002.06" dy="17.6">于可用循环次数表达寿</tspan><tspan x="1002.06" dy="17.6">命的部分电池)</tspan></text>
+<text x="1158.39" y="611.64606853" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">未变化</text>
+<text x="558.28" y="665.34526851" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>循环寿命测试放电C率 Cycle Life </tspan><tspan x="558.28" dy="17.6">Discharge C-Rate</tspan></text>
+<text x="858.51" y="665.34526851" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" data-pptx-text-baseline="metrics-v1">EV/LMT/IND</text>
+<text x="1002.06" y="665.34526851" text-anchor="middle" xml:space="preserve" font-size="14.67" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">V</text>
+<text x="1158.39" y="663.565321" text-anchor="middle" xml:space="preserve" font-size="14" fill="#000000" data-pptx-text-baseline="metrics-v1">改为选填</text>
+<use data-icon="imported/flat_slide_05_ill02" data-pptx-asset-role="decoration" /></g>
+<g id="shape-64" data-pptx-object="shape" data-pptx-frame="11.87 9.8 855.74 48.47" data-pptx-prst="rect" data-pptx-source-ref="slide:64" data-pptx-semantic-object="shape">
+<path d="M 11.87 9.8 L 867.61 9.8 L 867.61 58.27 L 11.87 58.27 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="21.47" y="45.26761155" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="32" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">关于是否必填要求的变更项</text>
+</g>
+<g id="shape-65" data-pptx-object="shape" data-pptx-frame="17.33 491.82 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 90.2 511.15)" data-pptx-source-ref="slide:65" data-pptx-semantic-object="shape">
+<path d="M 17.33 491.82 L 163.07 491.82 L 163.07 530.48 L 17.33 530.48 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="26.93" y="519.28461942" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-66" data-pptx-object="shape" data-pptx-frame="378.47 278.94 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 451.34 298.28)" data-pptx-source-ref="slide:66" data-pptx-semantic-object="shape">
+<path d="M 378.47 278.94 L 524.21 278.94 L 524.21 317.61 L 378.47 317.61 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="388.07" y="306.4103937" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-67" data-pptx-object="shape" data-pptx-frame="730.52 103.11 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 803.39 122.45)" data-pptx-source-ref="slide:67" data-pptx-semantic-object="shape">
+<path d="M 730.52 103.11 L 876.26 103.11 L 876.26 141.78 L 730.52 141.78 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="740.12" y="130.5792126" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-68" data-pptx-object="shape" data-pptx-frame="213.11 578.33 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 285.98 597.66)" data-pptx-source-ref="slide:68" data-pptx-semantic-object="shape">
+<path d="M 213.11 578.33 L 358.85 578.33 L 358.85 616.99 L 213.11 616.99 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="222.71" y="605.79275591" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-69" data-pptx-object="shape" data-pptx-frame="472.17 576.11 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 545.04 595.45)" data-pptx-source-ref="slide:69" data-pptx-semantic-object="shape">
+<path d="M 472.17 576.11 L 617.91 576.11 L 617.91 614.78 L 472.17 614.78 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="481.77" y="603.58131234" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-70" data-pptx-object="shape" data-pptx-frame="740.76 582.83 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 813.64 602.17)" data-pptx-source-ref="slide:70" data-pptx-semantic-object="shape">
+<path d="M 740.76 582.83 L 886.51 582.83 L 886.51 621.5 L 740.76 621.5 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="750.36" y="610.29994751" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-71" data-pptx-object="shape" data-pptx-frame="358.66 430.2 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 431.53 449.54)" data-pptx-source-ref="slide:71" data-pptx-semantic-object="shape">
+<path d="M 358.66 430.2 L 504.4 430.2 L 504.4 468.87 L 358.66 468.87 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="368.26" y="457.67076115" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-72" data-pptx-object="shape" data-pptx-frame="771.96 407.92 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 844.84 427.26)" data-pptx-source-ref="slide:72" data-pptx-semantic-object="shape">
+<path d="M 771.96 407.92 L 917.71 407.92 L 917.71 446.59 L 771.96 446.59 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="781.56" y="435.38939633" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-73" data-pptx-object="shape" data-pptx-frame="1078.38 250.8 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1151.25 270.14)" data-pptx-source-ref="slide:73" data-pptx-semantic-object="shape">
+<path d="M 1078.38 250.8 L 1224.12 250.8 L 1224.12 289.47 L 1078.38 289.47 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1087.98" y="278.2696063" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-74" data-pptx-object="shape" data-pptx-frame="1089.54 560.17 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1162.41 579.51)" data-pptx-source-ref="slide:74" data-pptx-semantic-object="shape">
+<path d="M 1089.54 560.17 L 1235.28 560.17 L 1235.28 598.84 L 1089.54 598.84 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1099.14" y="587.63905512" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-75" data-pptx-object="shape" data-pptx-frame="31.66 95.37 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 104.53 114.7)" data-pptx-source-ref="slide:75" data-pptx-semantic-object="shape">
+<path d="M 31.66 95.37 L 177.41 95.37 L 177.41 134.03 L 31.66 134.03 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="41.26" y="122.83223097" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-76" data-pptx-object="shape" data-pptx-frame="369.9 109.82 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 442.78 129.15)" data-pptx-source-ref="slide:76" data-pptx-semantic-object="shape">
+<path d="M 369.9 109.82 L 515.65 109.82 L 515.65 148.48 L 369.9 148.48 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="379.5" y="137.2848294" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-77" data-pptx-object="shape" data-pptx-frame="717.9 275.19 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 790.78 294.52)" data-pptx-source-ref="slide:77" data-pptx-semantic-object="shape">
+<path d="M 717.9 275.19 L 863.65 275.19 L 863.65 313.86 L 717.9 313.86 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="727.5" y="302.65826772" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g>
+<g id="shape-78" data-pptx-object="shape" data-pptx-frame="1065.35 112.13 145.74 38.67" data-pptx-prst="rect" transform="rotate(330 1138.22 131.46)" data-pptx-source-ref="slide:78" data-pptx-semantic-object="shape">
+<path d="M 1065.35 112.13 L 1211.1 112.13 L 1211.1 150.79 L 1065.35 150.79 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1074.95" y="139.59191601" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#D1D1D1" data-pptx-text-baseline="metrics-v1">南京复创</text>
+</g></svg>

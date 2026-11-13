@@ -1,0 +1,596 @@
+{
+  "registrantIdentity": {
+    "definition": "Identity of who is registering and/or is responsible for the battery passport [name]",
+    "label": "Identity of who is registering and/or is responsible for the battery passport",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 44
+  },
+  "manufacturerIdentification": {
+    "definition": "Manufacturer name, registered trade name or registered trademark [at least one of]",
+    "label": "Manufacturer identification",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 56
+  },
+  "manufacturerName": {
+    "definition": "Manufacturer name, registered trade name or registered trademark [at least one of]",
+    "label": "Manufacturer name",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 68
+  },
+  "manufacturerTradeName": {
+    "definition": "Manufacturer name, registered trade name or registered trademark [at least one of]",
+    "label": "Manufacturer registered trade name",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 80
+  },
+  "manufacturerTrademark": {
+    "definition": "Manufacturer name, registered trade name or registered trademark [at least one of]",
+    "label": "Manufacturer registered trademark",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 92
+  },
+  "manufacturerPostalAddress": {
+    "definition": "Manufacturer single contact postal address",
+    "label": "Manufacturer postal address",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 104
+  },
+  "manufacturerContactDetails": {
+    "definition": "If available, manufacturer web and email address [both optional]",
+    "label": "Manufacturer contact details",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 116
+  },
+  "manufacturerWebsite": {
+    "definition": "If available, manufacturer web and email address [both optional]",
+    "label": "Manufacturer website",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 128
+  },
+  "manufacturerEmail": {
+    "definition": "If available, manufacturer web and email address [both optional]",
+    "label": "Manufacturer email address",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 140
+  },
+  "batteryCategory": {
+    "definition": "Battery category [3-code list]",
+    "label": "Battery category",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 152
+  },
+  "batteryIdentification": {
+    "definition": "Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",
+    "label": "Battery identification",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 164
+  },
+  "modelIdentifier": {
+    "definition": "Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",
+    "label": "Model identifier",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 176
+  },
+  "batchNumber": {
+    "definition": "Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",
+    "label": "Batch number",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 188
+  },
+  "serialNumber": {
+    "definition": "Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",
+    "label": "Serial number",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 200
+  },
+  "productNumber": {
+    "definition": "Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",
+    "label": "Product number",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 212
+  },
+  "otherIdentificationElement": {
+    "definition": "Model identification and batch or serial number, or product number or another element allowing their identification [at least one of]",
+    "label": "Other identification element",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 224
+  },
+  "manufacturingPlace": {
+    "definition": "The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",
+    "label": "Place of manufacture",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 236
+  },
+  "manufacturingCity": {
+    "definition": "The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",
+    "label": "Town/city of manufacture",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 248
+  },
+  "manufacturingRegion": {
+    "definition": "The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",
+    "label": "Region of manufacture",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 260
+  },
+  "manufacturingCountry": {
+    "definition": "The place of manufacture (geographical location of a battery manufacturing plant) [town, region, country/jurisdiction]",
+    "label": "Country of manufacture",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 272
+  },
+  "manufacturingDate": {
+    "definition": "The date of manufacturing [month and year]",
+    "label": "Date of manufacturing",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 284
+  },
+  "batteryWeight": {
+    "definition": "The weight [unit kg]",
+    "label": "Battery weight",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 296
+  },
+  "batteryCapacity": {
+    "definition": "The capacity [unit Ah]",
+    "label": "Battery capacity",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 308
+  },
+  "batteryChemistry": {
+    "definition": "The chemistry [code list]",
+    "label": "Battery chemistry",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 320
+  },
+  "hazardousSubstances": {
+    "definition": "The hazardous substances present in the battery, other than mercury, cadmium or lead [free text]",
+    "label": "Hazardous substances present in the battery, other than mercury, cadmium or lead",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 332
+  },
+  "extinguishingAgent": {
+    "definition": "Usable extinguishing agent [free text]",
+    "label": "Usable extinguishing agent",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 344
+  },
+  "criticalRawMaterials": {
+    "definition": "Critical raw materials present in the battery in a concentration of more than 0,1 % weight by weight [code list]",
+    "label": "Critical raw materials present in the battery",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 356
+  },
+  "renewableContentShare": {
+    "definition": "The share of renewable content [%]",
+    "label": "Renewable content share",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 368
+  },
+  "minimalVoltage": {
+    "definition": "Minimal voltage, with temperature range when relevant [unit V, optional unit °C]",
+    "label": "Minimal voltage",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 380
+  },
+  "nominalVoltage": {
+    "definition": "Nominal voltage, with temperature range when relevant [unit V, optional unit °C]",
+    "label": "Nominal voltage",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 392
+  },
+  "maximumVoltage": {
+    "definition": "Maximum voltage, with temperature range when relevant [unit V, optional unit °C]",
+    "label": "Maximum voltage",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 404
+  },
+  "originalPowerCapability": {
+    "definition": "Original power capability [unit W]",
+    "label": "Original power capability",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 416
+  },
+  "powerLimit": {
+    "definition": "Power limits, with temperature range when relevant [unit W, optionally min_T °C … max_T °C]",
+    "label": "Power limit",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 428
+  },
+  "expectedLifetimeCycles": {
+    "definition": "Expected battery lifetime expressed in cycles [in number]",
+    "label": "Expected battery lifetime in cycles",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 440
+  },
+  "cycleLifeReferenceTest": {
+    "definition": "Reference test used for expected battery lifetime expressed in cycles [free text]",
+    "label": "Reference test used for expected battery lifetime expressed in cycles",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 452
+  },
+  "capacityExhaustionThreshold": {
+    "definition": "Capacity threshold for exhaustion [%]",
+    "label": "Capacity threshold for exhaustion",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 464
+  },
+  "notInUseTemperatureRange": {
+    "definition": "Temperature range the battery can withstand when not in use (reference test) [min_T °C … max_T °C + free text]",
+    "label": "Temperature range the battery can withstand when not in use",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 476
+  },
+  "notInUseTemperatureRangeTest": {
+    "definition": "Temperature range the battery can withstand when not in use (reference test) [min_T °C … max_T °C + free text]",
+    "label": "Reference test for the temperature range the battery can withstand when not in use",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 488
+  },
+  "commercialWarrantyPeriod": {
+    "definition": "Period for which the commercial warranty for the calendar life applies [months]",
+    "label": "Period for which the commercial warranty for the calendar life applies",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 500
+  },
+  "initialRoundTripEnergyEfficiency": {
+    "definition": "Initial round trip energy efficiency [%]",
+    "label": "Initial round-trip energy efficiency",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 512
+  },
+  "roundTripEfficiencyAtHalfCycleLife": {
+    "definition": "Round trip energy efficiency at 50 % of cycle-life [%]",
+    "label": "Round-trip energy efficiency at 50% of cycle life",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 524
+  },
+  "internalCellResistance": {
+    "definition": "Internal battery cell resistance [unit Ω]",
+    "label": "Internal battery cell resistance",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 536
+  },
+  "internalPackResistance": {
+    "definition": "Internal battery pack resistance [unit Ω]",
+    "label": "Internal battery pack resistance",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 548
+  },
+  "cycleLifeChargeCRate": {
+    "definition": "Charge C-rate of relevant cycle-life test [number]",
+    "label": "Charge C-rate of relevant cycle-life test",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 560
+  },
+  "cycleLifeDischargeCRate": {
+    "definition": "Discharge C-rate of relevant cycle-life test [number]",
+    "label": "Discharge C-rate used of relevant cycle-life test",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 572
+  },
+  "separateCollectionSymbol": {
+    "definition": "The marking requirements laid down in Article 13(4) [Yes/No]",
+    "label": "Separate collection symbol",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 584
+  },
+  "chemicalSymbol": {
+    "definition": "The marking requirements laid down in Article 13(5) [code list ]",
+    "label": "Chemical symbol",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 596
+  },
+  "euDeclarationOfConformity": {
+    "definition": "The EU declaration of conformity referred to in Article 18 [a web link]",
+    "label": "EU declaration of conformity",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 608
+  },
+  "wasteBatteryPreventionManagementInfo": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Waste battery prevention and management information",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 620
+  },
+  "endUserRoleInWastePrevention": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Role of end-users in waste prevention",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 632
+  },
+  "endUserRoleInSeparateCollection": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Role of end-users in separate collection of waste batteries",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 644
+  },
+  "separateCollectionPoints": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Information on separate collection points",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 656
+  },
+  "takeBackCollectionPoints": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Information on take-back and collection points",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 668
+  },
+  "preparationForReuseFacilities": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Information on preparation for reuse facilities",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 680
+  },
+  "preparationForRepurposingFacilities": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Information on preparation-for-repurposing facilities",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 692
+  },
+  "wasteBatteryTreatmentFacilities": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Information on treatment facilities for waste batteries",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 704
+  },
+  "wasteBatterySafetyInstructions": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Safety instructions for handling waste batteries",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 716
+  },
+  "batteryLabelSymbolMeaning": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Meaning of the labels and symbols on batteries",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 728
+  },
+  "batterySubstancesImpact": {
+    "definition": "The information regarding the prevention and management of waste batteries laid down in Article 74(1), points (a) to (f) [multiple free text]",
+    "label": "Impact of substances present in batteries on the environment and on human health or the safety of persons",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 740
+  },
+  "detailedComposition": {
+    "definition": "Detailed composition, including materials used in the cathode, anode and electrolyte [free text]",
+    "label": "Detailed composition",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 752
+  },
+  "sparePartReplacementDetails": {
+    "definition": "Part numbers for components and contact details of sources for replacement spares [a web link] ",
+    "label": "Part numbers for components and contact details of sources for replacement spares",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 764
+  },
+  "dismantlingInformation": {
+    "definition": "Dismantling information, including at least: \n- exploded diagrams of the battery system/pack showing the location of battery cells, \n- disassembly sequences, \n- type and number of fastening techniques to be unlocked, \n- tools required for disassembly, \n- warnings if risk of damaging parts exist, \n- amount of cells used and layout \n[a web link]",
+    "label": "Dismantling information",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 776
+  },
+  "safetyMeasures": {
+    "definition": "Safety measures [a web link]",
+    "label": "Safety measures",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 795
+  },
+  "complianceTestReportResults": {
+    "definition": "Results of test reports proving compliance with the requirements laid down in this Regulation or any delegated or implementing act adopted pursuant to this Regulation [a web link]",
+    "label": "Results of test reports proving compliance",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 807
+  },
+  "ratedCapacity": {
+    "definition": "Rated capacity (Ah)",
+    "label": "Rated capacity",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 819
+  },
+  "capacityFade": {
+    "definition": "Capacity fade [%]",
+    "label": "Capacity fade",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 831
+  },
+  "powerCapability": {
+    "definition": "Power [unit W]",
+    "label": "Power capability",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 843
+  },
+  "powerFade": {
+    "definition": "Power fade [%]",
+    "label": "Power fade",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 855
+  },
+  "internalResistance": {
+    "definition": "Internal resistance [unit Ω]",
+    "label": "Internal resistance",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 867
+  },
+  "internalResistanceIncrease": {
+    "definition": "Internal resistance increase [%]",
+    "label": "Internal resistance increase",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 879
+  },
+  "roundTripEnergyEfficiency": {
+    "definition": "Where applicable, energy round trip efficiency [%]",
+    "label": "Energy round trip efficiency",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 891
+  },
+  "roundTripEnergyEfficiencyFade": {
+    "definition": "Where applicable, energy round trip efficiency fade [%]",
+    "label": "Energy round trip efficiency fade",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 903
+  },
+  "expectedLifetimeCyclesRest": {
+    "definition": "The expected lifetime of the battery under the reference conditions for which it has been designed, in terms of cycles, except for non-cycle applications [number]",
+    "label": "Expected lifetime of the battery under the reference conditions in cycles",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 915
+  },
+  "expectedLifetimeYears": {
+    "definition": "The expected lifetime of the battery under the reference conditions for which it has been designed [years]",
+    "label": "Expected lifetime of the battery in years",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 927
+  },
+  "stateOfCertifiedEnergy": {
+    "definition": "Information on the state of health of the battery pursuant to Article 14: state of certified energy (SOCE) [%]",
+    "label": "State of certified energy (SOCE)",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 939
+  },
+  "remainingCapacity": {
+    "definition": "Information on the state of health of the battery pursuant to Article 14: remaining capacity [unit Ah]",
+    "label": "Remaining capacity",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 951
+  },
+  "remainingPowerCapability": {
+    "definition": "Information on the state of health of the battery pursuant to Article 14: where possible, the remaining power capability [unit W]",
+    "label": "Remaining power capability",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 963
+  },
+  "remainingRoundTripEfficiency": {
+    "definition": "Information on the state of health of the battery pursuant to Article 14: where possible, the remaining round-trip efficiency [%]",
+    "label": "Remaining round-trip efficiency",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 975
+  },
+  "selfDischargingRateSet": {
+    "definition": "Information on the state of health of the battery pursuant to Article 14: where possible, the evolution of self-discharging rates [timestamp, decrease % per year]",
+    "label": "Self-discharging rate set",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 987
+  },
+  "selfDischargingRate": {
+    "definition": "Information on the state of health of the battery pursuant to Article 14: where possible, the evolution of self-discharging rates [timestamp, decrease % per year]",
+    "label": "Self-discharging rates",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 999
+  },
+  "ohmicResistance": {
+    "definition": "Information on the state of health of the battery pursuant to Article 14: where possible, the ohmic resistance [unit Ω]",
+    "label": "Ohmic resistance",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1011
+  },
+  "batteryStatus": {
+    "definition": "Information on the status of the battery, defined as ‘original’, ‘repurposed’, ‘re-used’, ‘remanufactured’ or ‘waste’ [code list]",
+    "label": "Battery status",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1023
+  },
+  "numberOfChargingCycles": {
+    "definition": "The number of charging cycles [number]",
+    "label": "Number of charging cycles",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1035
+  },
+  "numberOfDischargingCycles": {
+    "definition": "The number of discharging cycles [number]",
+    "label": "Number of discharging cycles",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1062
+  },
+  "negativeEvents": {
+    "definition": "Negative events, such as accidents [multiple free texts]",
+    "label": "Negative events",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1074
+  },
+  "environmentalConditionHistogramSet": {
+    "definition": "Periodically recorded information on the operating environmental conditions, including temperature [code list, histogram, related units]",
+    "label": "Periodically recorded information on the operating environmental conditions",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1086
+  },
+  "environmentalConditionHistogram": {
+    "definition": "Periodically recorded information on the operating environmental conditions, including temperature [code list, histogram, related units]",
+    "label": "Environmental Condition Histogram",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1098
+  },
+  "stateOfChargeHistogram": {
+    "definition": "Periodically recorded information on the state of charge [histogram, %]",
+    "label": "Periodically recorded state of charge (SoC)",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/product/batteries/1.0.0/vocabs/battery-vocabulary.ttl",
+    "line": 1110
+  },
+  "digitalProductPassportId": {
+    "definition": "Identifier of an instance of the digital product passport.",
+    "label": "digitalProductPassportId",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 29
+  },
+  "uniqueProductIdentifier": {
+    "definition": "Unique character string that identifies a product.",
+    "label": "uniqueProductIdentifier",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 40
+  },
+  "granularity": {
+    "definition": "The level at which a unique product identifier applies, such as model level, batch level or item level.",
+    "label": "granularity",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 51
+  },
+  "dppStatus": {
+    "definition": "The current lifecycle status of a digital product passport.",
+    "label": "dppStatus",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 62
+  },
+  "lastUpdate": {
+    "definition": "Date and time at which a digital product passport was most recently modified or updated.",
+    "label": "lastUpdate",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 73
+  },
+  "contentSpecificationIds": {
+    "definition": "Identifiers of content specifications, schemas or data models that govern the structure of the digital product passport content.",
+    "label": "contentSpecificationIds",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 84
+  },
+  "resourceTitle": {
+    "definition": "Human-readable title assigned to a digital resource.",
+    "label": "resourceTitle",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 93
+  },
+  "contentType": {
+    "definition": "Media type or format of a digital resource.",
+    "label": "contentType",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 103
+  },
+  "url": {
+    "definition": "Uniform Resource Locator providing electronic access to a digital resource.",
+    "label": "url",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 113
+  },
+  "language": {
+    "definition": "Language in which information associated is expressed.",
+    "label": "language",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 123
+  },
+  "DigitalProductPassport": {
+    "definition": "A set of data specific to a product that includes the information specified in the applicable delegated act adopted pursuant to Article 4 and that is accessible via electronic means through a data carrier in accordance with Chapter III - Regulation (EU) 2024/1781;",
+    "label": "DigitalProductPassport",
+    "file": "outputs/eu-dpp-registry-20261030/03_语义资源/core/1.0.0/vocabs/core-vocabulary.ttl",
+    "line": 133
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/exports/ppt_workspace_20261113_111430_native_charts_tables.pptx",
+    "name": "ppt_workspace_20261113_111430_native_charts_tables.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 131105
+  },
+  "outputs": {
+    "markdown": "readback.md",
+    "asset_dir": "readback_files",
+    "image_manifest": "readback_files/image_manifest.json",
+    "image_count": 1
+  },
+  "markdown": {
+    "line_count": 500,
+    "char_count": 13170,
+    "heading_count": 14,
+    "table_count": 12,
+    "image_ref_count": 1,
+    "link_count": 0
+  },
+  "warnings": []
+}

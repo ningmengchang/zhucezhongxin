@@ -1,0 +1,2338 @@
+{
+  "cells": [
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Standard or schema version used to structure the battery passport."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Current status of the battery passport as a digital resource."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Level at which the product identifier applies: model, batch or individual item."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Date and time when the battery passport was most recently updated."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Unique identifier assigned to an instance of the battery passport."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Unique product identifier used to identify the individual battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Identifier used to distinguish the battery model from other models."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Serial number used to identify the individual battery unit."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Identifiers of the content specifications governing the battery passport structure."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Unique identifier assigned to the manufacturer of the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Unique identifier of the facility where the battery was manufactured."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Unique identifier assigned to the economic operator responsible for the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Battery category defined according to its intended application and regulatory classification."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Total mass of the battery, expressed in the specified unit."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Current lifecycle status of the individual battery, such as original or remanufactured."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Geographical location of the plant where the battery was manufactured."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": false,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Country or jurisdiction where the battery manufacturing plant is located."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": false,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Town or city where the battery manufacturing plant is located."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": false,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Region where the battery manufacturing plant is geographically located."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Year and month in which the battery was manufactured."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Date of first intended use in the EU without prior placement on the market."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Name of the manufacturer responsible for manufacturing the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Registered trade name under which the battery manufacturer conducts business."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Registered trademark used to identify the manufacturer of the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Postal address at which the battery manufacturer can be contacted."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Website address providing online access to the battery manufacturer's information."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Email address used to contact the manufacturer of the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Name of the economic operator associated with the battery passport."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Registered trade name under which the economic operator conducts business."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Registered trademark used to identify the economic operator's business."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Postal address at which the economic operator can be contacted."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Website address providing online access to the economic operator's information."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Email address used to contact the economic operator for the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Duration of the battery's commercial calendar-life warranty, expressed in months."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Period covered by the battery's commercial warranty for calendar life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Extinguishing agents suitable for use in a fire involving the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Separate-collection marking and applicable cadmium or lead symbols displayed on the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Label displaying the battery's carbon footprint and carbon footprint performance class."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Explanation of the meanings of labels and symbols displayed on the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "EU declaration confirming the battery's conformity with applicable requirements under Article 18."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": false,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Test report results demonstrating compliance with the Batteries Regulation and acts adopted under it."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Reports documenting tests for prohibited or restricted substances in the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Technical documentation supporting the declared recycled material content of the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Technical documentation describing the battery's performance and durability assessment results."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Documentation describing the battery's state of health and expected lifetime."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Technical documentation demonstrating the battery's conformity with applicable regulatory requirements."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Instructions for using the battery in a printable, downloadable and storable format."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Battery carbon footprint per kilowatt-hour of energy delivered over its expected lifetime."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Contribution of raw material acquisition and preprocessing to the battery's carbon footprint."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Contribution of the main production stage to the battery's carbon footprint."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Contribution of the distribution stage to the battery's carbon footprint."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Contribution of end-of-life treatment and recycling to the battery's carbon footprint."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Performance class indicating the battery's relative lifecycle carbon footprint level."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Total absolute carbon footprint attributable to the battery's lifecycle."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Publicly accessible study supporting the battery's declared carbon footprint results."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Report describing battery supply-chain due diligence policies, risk management and verification activities."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Information on supply-chain assurances provided by third parties through recognised schemes."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Indices providing information relevant to the assessment of the battery's supply chain."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Electrochemical composition identifying the battery's chemistry."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Critical raw materials identified as being present in the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Name of a material used in the battery's cathode."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "CAS Registry Number identifying a material used in the battery's cathode."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Name of a material used in the battery's anode."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "CAS Registry Number identifying a material used in the battery's anode."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Name of a material used in the battery's electrolyte."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "CAS Registry Number identifying a material used in the battery's electrolyte."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Names of hazardous substances present in the battery, excluding mercury, cadmium and lead."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "CAS Registry Number used to identify a hazardous substance in the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Hazard classes and categories assigned to substances present in the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Location of a hazardous substance within the battery or its components."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Concentration of a hazardous substance present in the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": false,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Effects of battery substances on the environment, human health and personal safety."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Share of nickel in battery active materials recovered from pre-consumer waste."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Share of cobalt in battery active materials recovered from pre-consumer waste."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Share of lithium in battery active materials recovered from pre-consumer waste."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Share of nickel in battery active materials recovered from post-consumer waste."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Share of cobalt in battery active materials recovered from post-consumer waste."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Share of lithium in battery active materials recovered from post-consumer waste."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Share of lead recovered from waste and present in the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Proportion of renewable content incorporated into the battery, expressed as a percentage."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Instructions for safely removing the battery pack from the equipment."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Reference to instructions for disassembling the battery pack and its components."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Reference to component part numbers and contact details for replacement spare parts."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Postal address of the source supplying replacement battery spare parts."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Website address of the source supplying replacement battery spare parts."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Email address for contacting the source of replacement battery spare parts."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Reference to safety measures for handling and dismantling the battery."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Guidance explaining how end-users can help prevent batteries from becoming waste."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Guidance explaining end-users' role in the separate collection of waste batteries."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Guidance on battery collection, preparation for second life, and treatment at the end of life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Information identifying facilities that prepare batteries for repurposing into a different application."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Information identifying facilities that prepare used batteries for reuse in their original application."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Information identifying locations designated for the separate collection of waste batteries."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Information identifying take-back services and collection points for waste batteries."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Instructions describing safety precautions for handling and managing waste batteries."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Information identifying facilities that treat waste batteries at the end of life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Usable battery energy established during vehicle certification under the applicable test procedure."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Usable energy available at the current stage of the battery's service life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Usable battery energy at a given time, expressed as a percentage of certified usable energy."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Histogram of periodically recorded battery state-of-charge values during battery use."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Battery capacity expressed in ampere-hours under the specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Capacity remaining in the battery at the current stage of its service life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Percentage decrease in battery capacity over time and use relative to its original rated capacity."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Nominal voltage used to identify the battery, with the relevant temperature conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Minimum and maximum battery voltage values under the applicable reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial battery power capability measured at 20% state of charge under specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial power capability of the battery under the specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial battery power capability measured at 80% state of charge under specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Power capability of the battery at its current stage of use under reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Percentage decrease in battery power capability over time and use relative to its initial value."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Permitted battery power limits, including applicable temperature conditions where relevant."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Ratio of nominal battery power to battery energy under the specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial ratio of net discharge energy to energy required to restore the initial state of charge."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Round-trip energy efficiency of the battery under the applicable measurement conditions during use."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Round-trip energy efficiency measured when the battery reaches half of its expected cycle life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Round-trip energy efficiency representing the battery's condition at the current stage of use."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Decrease in round-trip energy efficiency over time and use, expressed as a percentage."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Self-discharge rate of an unused battery under reference conditions at the beginning of life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Self-discharge rate of the battery at its current age under specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Recorded evolution of battery self-discharge rates, with the associated measurement timestamps."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial internal resistance of the battery cell measured using the specified DC test method."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial internal resistance of the battery pack measured using the specified DC test method."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial internal resistance of the battery cell measured using the specified AC test method."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial internal resistance of the battery pack measured using the specified AC test method."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Initial internal resistance of the battery measured under the specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Current internal resistance of the battery measured under the specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Percentage increase in battery pack internal resistance relative to its initial reference value."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Expected battery lifetime expressed in calendar years under its design reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Expected battery lifetime in charge-discharge cycles under its design reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Expected battery lifetime expressed in cycles under its design reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative number of complete charge-discharge cycles recorded during battery use."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative number of charging cycles recorded for the individual battery during use."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "backgroundColor": "#FE0300",
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative number of discharging cycles recorded for the individual battery during use."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Reference test used to determine the battery's expected lifetime expressed in cycles."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Charging C-rate applied in the reference test used to determine expected cycle life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Discharging C-rate applied in the reference test used to determine expected cycle life."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative energy throughput of the battery over its service life up to the measurement time."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative capacity throughput of the battery over its service life up to the measurement time."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "SOCE percentage threshold used to determine whether an EV battery remains operational."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Histogram of periodically recorded operating temperatures experienced during battery use."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Temperature range the battery can withstand when not in use under specified reference conditions."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative time above the upper boundary of the battery's specified idle temperature range."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative time below the lower boundary of the battery's specified idle temperature range."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative charging time above the upper boundary of the specified idle temperature range."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Cumulative charging time below the lower boundary of the specified idle temperature range."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "left",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Information on accidents affecting the battery, including incidents involving the equipment it powers."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Number of recorded events in which battery voltage falls below its specified operating limit."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "textLineThrough": true,
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Number of recorded events in which battery voltage exceeds its specified upper operating limit."
+      }
+    ],
+    [
+      {
+        "cellStyles": {
+          "fontColor": "#000000",
+          "fontFamily": "Microsoft YaHei Regular",
+          "fontSize": 10,
+          "horizontalAlignment": "general",
+          "numberFormat": "General",
+          "verticalAlignment": "middle",
+          "wordWrap": "autoWrap"
+        },
+        "value": "Rated capacity of the battery under specified reference conditions, expressed in ampere-hours."
+      }
+    ]
+  ],
+  "colIndices": [
+    "J"
+  ],
+  "hasMore": false,
+  "logId": "2108a56817945346405458112e05e9",
+  "message": "Successfully retrieved cell data.",
+  "returnedRange": "J2:J150",
+  "rowIndices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150
+  ],
+  "success": true,
+  "truncationReasons": []
+}

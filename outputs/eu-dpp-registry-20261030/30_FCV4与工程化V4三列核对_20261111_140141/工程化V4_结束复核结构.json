@@ -1,0 +1,29 @@
+{
+  "colWidths": null,
+  "columnCount": 19,
+  "columnGroups": null,
+  "frozenColumnCount": 0,
+  "frozenRowCount": 1,
+  "hiddenCols": null,
+  "hiddenRows": null,
+  "id": "s2",
+  "logId": "2104fdb917943773485075422e052d",
+  "mergedRanges": [
+    "H19:H20",
+    "E65:E70",
+    "H32:H33"
+  ],
+  "message": "Successfully retrieved sheet information.",
+  "name": "工程化4.0",
+  "nonEmptyRange": {
+    "lastCell": "S145",
+    "lastColumn": "S",
+    "lastRow": 145,
+    "range": "A1:S145"
+  },
+  "rowCount": 145,
+  "rowGroups": null,
+  "rowHeights": null,
+  "success": true,
+  "visibility": "visible"
+}

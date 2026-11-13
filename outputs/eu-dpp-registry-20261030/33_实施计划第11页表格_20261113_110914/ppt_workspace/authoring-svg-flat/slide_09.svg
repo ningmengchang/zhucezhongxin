@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="layout-shape-7" data-pptx-object="shape" data-pptx-frame="0 68.13 1280 4.8" data-pptx-prst="rect" data-pptx-source-ref="layout:7" data-pptx-semantic-object="shape">
+<path d="M 0 68.13 L 1280 68.13 L 1280 72.93 L 0 72.93 Z" fill="#BFBFBF" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="group" data-pptx-frame="20.19 14.6 613.12 49.28" data-pptx-source-ref="slide:3">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="20.19 14.6 613.12 49.28" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 20.19 14.6 L 633.31 14.6 L 633.31 63.88 L 20.19 63.88 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="20.19" y="45.27002625" text-anchor="start" xml:space="preserve" font-size="32" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">官方规范已发布，完整联调条件仍待确认</text>
+</g>
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="37.12 91.67 398.2 33.88" data-pptx-source-ref="slide:5">
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="37.12 91.67 398.2 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 37.12 91.67 L 435.32 91.67 L 435.32 125.55 L 37.12 125.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="37.12" y="113" text-anchor="start" xml:space="preserve" font-size="22" fill="#556477" data-pptx-text-baseline="metrics-v1">开发依据已具备，完整联调仍待确认。</text>
+</g>
+</g>
+<g id="shape-14" data-pptx-object="group" data-pptx-frame="38 146 572 406.77" data-pptx-source-ref="slide:14">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="38 146 572 42" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 38 146 L 610 146 L 610 188 L 38 188 Z" fill="#4472C4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="55.08 152.33 361.01 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 55.08 152.33 L 416.09 152.33 L 416.09 187.75 L 55.08 187.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.08" y="175" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">已发布的开发依据｜2026.10.30</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="55.08 206.33 231.42 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 55.08 206.33 L 286.5 206.33 L 286.5 241.75 L 55.08 241.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.08" y="229" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#202A37" font-weight="bold" data-pptx-text-baseline="metrics-v1">接口文档与 OpenAPI</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="55.16 241.33 354.55 61.44" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 55.16 241.33 L 409.71 241.33 L 409.71 302.77 L 55.16 302.77 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.16" y="264" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#202A37" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="29"><tspan><tspan>认证与Token、注册提交、幂等重试，</tspan></tspan><tspan data-paragraph-line-break="1">以及任务状态和逐项结果查询。</tspan></text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="55.08 331.33 176.93 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 55.08 331.33 L 232.01 331.33 L 232.01 366.75 L 55.08 366.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.08" y="354" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#202A37" font-weight="bold" data-pptx-text-baseline="metrics-v1">语义模型 1.0.0</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="55.16 366.33 367.19 61.44" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 55.16 366.33 L 422.35 366.33 L 422.35 427.77 L 55.16 427.77 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.16" y="389" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#202A37" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="29"><tspan><tspan>覆盖EV、LMT、IND的字段结构、类型、</tspan></tspan><tspan data-paragraph-line-break="1">必填、枚举及公开／受限访问视图。</tspan></text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="55.08 456.33 220.62 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 55.08 456.33 L 275.7 456.33 L 275.7 491.75 L 55.08 491.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.08" y="479" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#202A37" font-weight="bold" data-pptx-text-baseline="metrics-v1">校验资源与测试样例</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="55.16 491.33 338.75 61.44" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 55.16 491.33 L 393.91 491.33 L 393.91 552.77 L 55.16 552.77 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.16" y="514" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#202A37" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="29"><tspan><tspan>JSON Schema、SHACL、JSON-LD，</tspan></tspan><tspan data-paragraph-line-break="1">可用于构建本地校验与回归用例。</tspan></text>
+</g>
+</g>
+<g id="shape-22" data-pptx-object="group" data-pptx-frame="634 146 608 440.46" data-pptx-source-ref="slide:22">
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="634 146 608 42" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 634 146 L 1242 146 L 1242 188 L 634 188 Z" fill="#B45309" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="651.08 152.33 312.39 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 651.08 152.33 L 963.47 152.33 L 963.47 187.75 L 651.08 187.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="651.08" y="175" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">内部测试记录｜2026.11.06</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="651.08 201.33 244.93 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 651.08 201.33 L 896.01 201.33 L 896.01 236.75 L 651.08 236.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="651.08" y="224" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#202A37" font-weight="bold" data-pptx-text-baseline="metrics-v1">鉴权链路尚待完成验证</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="651.2 234.67 444.6 58.8" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 651.2 234.67 L 1095.8 234.67 L 1095.8 293.47 L 651.2 293.47 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="651.2" y="256" text-anchor="start" xml:space="preserve" font-size="20" fill="#202A37" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="28"><tspan><tspan>Token地址GET探测返回404；</tspan></tspan><tspan data-paragraph-line-break="1">正式POST取Token待服务账号与凭据具备后验证。</tspan></text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="651.08 300.33 269.24 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 651.08 300.33 L 920.32 300.33 L 920.32 335.75 L 651.08 335.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="651.08" y="323" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#9A3412" font-weight="bold" data-pptx-text-baseline="metrics-v1">在线语义校验当次不可用</text>
+</g>
+<g id="shape-20" data-pptx-object="picture" data-pptx-frame="648 339 580 213.42" data-pptx-source-ref="slide:20">
+<image data-pptx-object="picture" data-pptx-frame="648 339 580 213.42" href="../images/image1.png" x="648" y="339" width="580" height="213.42" preserveAspectRatio="none" />
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="651.34 561 353.58 25.46" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 651.34 561 L 1004.92 561 L 1004.92 586.46 L 651.34 586.46 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="651.34" y="577" text-anchor="start" xml:space="preserve" font-size="16.53" fill="#556477" data-pptx-text-baseline="metrics-v1">正式环境：接收0条、拒绝1条；未完成登记。</text>
+</g>
+</g>
+<g id="shape-25" data-pptx-object="group" data-pptx-frame="38 600 1204 63" data-pptx-source-ref="slide:25">
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="38 600 1204 63" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 38 600 L 1242 600 L 1242 663 L 38 663 Z" fill="#EAF0F9" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="55.12 617.67 724.68 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 55.12 617.67 L 779.8 617.67 L 779.8 651.55 L 55.12 651.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="55.12" y="639" text-anchor="start" xml:space="preserve" font-size="22" fill="#1F4E79" font-weight="bold" data-pptx-text-baseline="metrics-v1">当前完整端到端联调尚未完成，具体可联调时间以官方后续通知为准。</text>
+</g>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="37.5 675.33 664.2 36.33" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 37.5 675.33 L 701.7 675.33 L 701.7 711.67 L 37.5 711.67 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="37.5" y="690" text-anchor="start" xml:space="preserve" font-size="12.53" fill="#556477" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="18"><tspan><tspan>来源：欧盟官方资源页（2026.10.30）；《成果报告V1.3》《注册认证指南V1.2》，2026.11.06测试。</tspan></tspan><tspan data-paragraph-line-break="1">官方资料：single-market-economy.ec.europa.eu/single-market/digital-product-passport/resources-documentation_en</tspan></text>
+</g></svg>

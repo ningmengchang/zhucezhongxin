@@ -1,0 +1,68 @@
+[
+  {
+    "row": 2,
+    "description": "Standard or schema version used to structure the battery passport.",
+    "source_key": "engineering:dppSchemaVersion",
+    "notes": "工程扩展项，保留标准/Schema版本含义，不等同contentSpecificationIds。"
+  },
+  {
+    "row": 12,
+    "description": "Unique identifier of the facility where the battery was manufactured.",
+    "source_key": "engineering:uniqueFacilityIdentifier",
+    "notes": "按工厂唯一标识符的工程含义描述，不将其伪称官方1.0.0独立字段。"
+  },
+  {
+    "row": 38,
+    "description": "Separate-collection marking and applicable cadmium or lead symbols displayed on the battery.",
+    "source_key": "separateCollectionSymbol / chemicalSymbol; engineering:combinedMarking",
+    "notes": "本行D为镉铅标识、E为分类收集、枚举为组合图标；按现有组合业务项解释两类官方语义，不把它强改成一个boolean字段。"
+  },
+  {
+    "row": 60,
+    "description": "Electrochemical composition identifying the battery's chemistry.",
+    "source_key": "batteryChemistry",
+    "notes": "使用简洁化学体系表述，不新增电解质披露范围约束。"
+  },
+  {
+    "row": 80,
+    "description": "Share of lead recovered from waste and present in the battery.",
+    "source_key": "engineering:recycledLeadShare",
+    "notes": "回收铅比例为工程保留项；不将铅比例限定为只在活性材料内统计。"
+  },
+  {
+    "row": 82,
+    "description": "Instructions for safely removing the battery pack from the equipment.",
+    "source_key": "dismantlingInformation / engineering:removalManual",
+    "notes": "本行按电池拆除手册描述，与83行电池包内部拆解手册区分；未改变源表字段。"
+  },
+  {
+    "row": 114,
+    "description": "Initial ratio of net discharge energy to energy required to restore the initial state of charge.",
+    "notes": "保留官方定义中的net discharge energy，避免将放电总能量直接当净能量。"
+  },
+  {
+    "row": 118,
+    "description": "Decrease in round-trip energy efficiency over time and use, expressed as a percentage.",
+    "notes": "仅描述效率衰减，不自行指定相对值或百分点计算公式。"
+  },
+  {
+    "row": 130,
+    "description": "Expected battery lifetime in charge-discharge cycles under its design reference conditions."
+  },
+  {
+    "row": 143,
+    "description": "Cumulative time above the upper boundary of the battery's specified idle temperature range."
+  },
+  {
+    "row": 144,
+    "description": "Cumulative time below the lower boundary of the battery's specified idle temperature range."
+  },
+  {
+    "row": 145,
+    "description": "Cumulative charging time above the upper boundary of the specified idle temperature range."
+  },
+  {
+    "row": 146,
+    "description": "Cumulative charging time below the lower boundary of the specified idle temperature range."
+  }
+]

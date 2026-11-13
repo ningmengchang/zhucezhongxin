@@ -1,0 +1,58 @@
+
+[SCAN] Checking 13 round-trip output SVG page(s) for edited-text horizontal capacity (single-line width per positioned line; vertical wrapping is not modeled)...
+
+[OK] slide_01.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.4% (1/2 unchanged source texts)
+
+[OK] slide_02.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/15 unchanged source texts)
+
+[OK] slide_03.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.4% (1/87 unchanged source texts)
+
+[OK] slide_04.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.6% (2/158 unchanged source texts)
+
+[OK] slide_05.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 1.5% (4/96 unchanged source texts)
+
+[OK] slide_06.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/62 unchanged source texts)
+
+[OK] slide_07.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.2% (1/65 unchanged source texts)
+
+[OK] slide_08.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.2% (1/62 unchanged source texts)
+
+[OK] slide_09.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 10.0% (5/16 unchanged source texts)
+
+[OK] slide_10.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 6.5% (3/4 unchanged source texts)
+
+[OK] slide_11.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/1 unchanged source texts)
+
+[OK] slide_12.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/27 unchanged source texts)
+
+[OK] slide_13.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/45 unchanged source texts)
+
+================================================================================
+[SUMMARY] Check Summary
+================================================================================
+
+Total files: 13
+  [OK] Fully passed: 13 (100%)
+  [WARN] With warnings: 0 (0%)
+  [ERROR] With errors: 0 (0%)
+
+Provenance categories:
+  blocking: 0          hard findings; gate also requires exit 0
+  introduced: 0        advisory; new or changed
+  inherited: 0         informational; prototype-identical
+  source-import: 0     informational; source-conversion loss
+
+[REPORT] JSON quality report exported: outputs/eu-dpp-registry-20261030/33_实施计划第11页表格_20261113_110914/ppt_workspace/validation/svg_quality_report.json

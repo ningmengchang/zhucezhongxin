@@ -1,0 +1,66 @@
+{
+  "total_fields": 92,
+  "match_counts": {
+    "字段直接对应": 84,
+    "仅父字段参考": 8
+  },
+  "direct_columns": {
+    "category": {
+      "一致": 26,
+      "大类一致·细分写法不同": 54,
+      "不一致": 1,
+      "在线空缺": 3
+    },
+    "required": {
+      "一致": 63,
+      "不一致": 17,
+      "粒度不同·需确认": 1,
+      "在线空缺": 3
+    },
+    "permission": {
+      "角色一致": 76,
+      "不一致": 5,
+      "在线空缺": 3
+    }
+  },
+  "parent_columns_reference_only": {
+    "category": {
+      "大类一致·细分写法不同": 6,
+      "一致": 2
+    },
+    "required": {
+      "一致": 7,
+      "不一致": 1
+    },
+    "permission": {
+      "角色一致": 8
+    }
+  }
+}
+{"field": "modelIdentifier", "local_row": 7, "online_rows": [11], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M"]}]}
+{"field": "serialNumber", "local_row": 8, "online_rows": [12], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M"]}]}
+{"field": "batchNumber", "local_row": 9, "online_rows": [13], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V"]}]}
+{"field": "otherIdentificationElement", "local_row": 10, "online_rows": [14], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V"]}]}
+{"field": "productNumber", "local_row": 11, "online_rows": [15], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V"]}]}
+{"field": "manufacturerName", "local_row": 12, "online_rows": [24], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M"]}]}
+{"field": "manufacturerTradeName", "local_row": 13, "online_rows": [25], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V"]}]}
+{"field": "manufacturerTrademark", "local_row": 14, "online_rows": [26], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V"]}]}
+{"field": "manufacturerWebsite", "local_row": 16, "online_rows": [28], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V"]}]}
+{"field": "manufacturerEmail", "local_row": 17, "online_rows": [29], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线V；LMT: 本地C / 在线V；IND: 本地C / 在线V"]}]}
+{"field": "dismantlingInformation", "local_row": 29, "online_rows": [77], "kind": "字段直接对应", "columns": ["permission"], "details": [{"permission": ["不一致", "在线少了：PLI。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"]}]}
+{"field": "remainingCapacity", "local_row": 33, "online_rows": [101], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "IND: 本地C / 在线V"]}]}
+{"field": "remainingPowerCapability", "local_row": 36, "online_rows": [113], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "IND: 本地C / 在线V"]}]}
+{"field": "chemicalSymbol", "local_row": 48, "online_rows": [40], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M"]}]}
+{"field": "detailedComposition", "local_row": 50, "online_rows": [65, 66, 67, 68, 69, 70], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["一致", "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。"]}, {"required": ["不一致", "EV: 本地M / 在线V；LMT: 本地M / 在线V；IND: 本地M / 在线V"]}, {"required": ["一致", "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。"]}, {"required": ["不一致", "EV: 本地M / 在线V；LMT: 本地M / 在线V；IND: 本地M / 在线V"]}, {"required": ["一致", "按EV/LMT/IND展开后相同；仅比较必填代码，不代表C的具体条件已完全一致。"]}, {"required": ["不一致", "EV: 本地M / 在线V；LMT: 本地M / 在线V；IND: 本地M / 在线V"]}]}
+{"field": "expectedLifetimeCyclesRest", "local_row": 53, "online_rows": [133], "kind": "字段直接对应", "columns": ["permission"], "details": [{"permission": ["不一致", "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"]}]}
+{"field": "internalResistance", "local_row": 56, "online_rows": [129], "kind": "字段直接对应", "columns": ["category", "required"], "details": [{"category": ["不一致", "本地大类=EV/IND/LMT；在线大类=IND/LMT。"], "required": ["不一致", "EV: 本地M / 在线N/A；IND: 本地C / 在线V"]}]}
+{"field": "manufacturingCity", "local_row": 58, "online_rows": [32], "kind": "字段直接对应", "columns": ["category", "required", "permission"], "details": [{"category": ["在线空缺", "在线分类单元格为空，且不属于合并单元格。"], "required": ["在线空缺", "在线必填单元格为空，且不属于合并单元格。"], "permission": ["在线空缺", "在线权限单元格为空，且不属于合并单元格。"]}]}
+{"field": "manufacturingCountry", "local_row": 59, "online_rows": [31], "kind": "字段直接对应", "columns": ["category", "required", "permission"], "details": [{"category": ["在线空缺", "在线分类单元格为空，且不属于合并单元格。"], "required": ["在线空缺", "在线必填单元格为空，且不属于合并单元格。"], "permission": ["在线空缺", "在线权限单元格为空，且不属于合并单元格。"]}]}
+{"field": "manufacturingRegion", "local_row": 60, "online_rows": [33], "kind": "字段直接对应", "columns": ["category", "required", "permission"], "details": [{"category": ["在线空缺", "在线分类单元格为空，且不属于合并单元格。"], "required": ["在线空缺", "在线必填单元格为空，且不属于合并单元格。"], "permission": ["在线空缺", "在线权限单元格为空，且不属于合并单元格。"]}]}
+{"field": "powerCapability", "local_row": 74, "online_rows": [112], "kind": "字段直接对应", "columns": ["permission"], "details": [{"permission": ["不一致", "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"]}]}
+{"field": "powerLimit", "local_row": 75, "online_rows": [115], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "IND: 本地M / 在线C"]}]}
+{"field": "powerLimit.valueRange", "local_row": 76, "online_rows": [115], "kind": "仅父字段参考", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线M；LMT: 本地C / 在线M"]}]}
+{"field": "ratedCapacity", "local_row": 77, "online_rows": [99], "kind": "字段直接对应", "columns": ["required", "permission"], "details": [{"required": ["不一致", "IND: 本地C / 在线V"], "permission": ["不一致", "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"]}]}
+{"field": "roundTripEnergyEfficiency", "local_row": 79, "online_rows": [117], "kind": "字段直接对应", "columns": ["permission"], "details": [{"permission": ["不一致", "在线少了：PLI；在线多了：Public。按可见访问角色比较：Public↔公开、PLI↔合法权益人、NB↔公告机构、市场监管机构↔主管机关、委员会↔欧委会。在线未标RES代码及单个电池粒度，未认定访问视图/粒度完全一致。"]}]}
+{"field": "stateOfChargeHistogram", "local_row": 83, "online_rows": [106], "kind": "字段直接对应", "columns": ["required"], "details": [{"required": ["不一致", "EV: 本地C / 在线M；LMT: 本地C / 在线M；IND: 本地C / 在线M"]}]}
+{"report": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/29_工程化表三列核对_20261111_132950/电池护照_本地与在线三列核对_20261111.xlsx", "rows": {"核对结论": 23, "三列逐字段": 93, "明确差异": 24, "待确认与空缺": 13, "分类细分写法": 55, "在线读取快照": 145}, "unique_fields_with_explicit_differences": 21, "local_source_unchanged": true}

@@ -1,0 +1,178 @@
+{
+  "status": "confirmed",
+  "source": "/home/ningmengchang/Desktop/注册中心/outputs/eu-dpp-registry-20261030/27_官方护照模型PPT补充_20261109/护照模型V3.4与官方语义库1.0.0_20261109.pptx",
+  "source_sha256": "b2dcaee26c9dceeed729a3f5ca7661cdaa2e7f70f16ddef41978ab7c408f38ba",
+  "source_slide_count": 11,
+  "output_slide_count": 13,
+  "route": "Edit Native PPTX",
+  "confirmation_authority": "/home/ningmengchang/.codex3/skills/ppt-master/workflows/edit-native-pptx.md §4.3",
+  "output_roster": [
+    {
+      "output": 1,
+      "source_slide": 1,
+      "mode": "referenced"
+    },
+    {
+      "output": 2,
+      "source_slide": 2,
+      "mode": "referenced"
+    },
+    {
+      "output": 3,
+      "source_slide": 3,
+      "mode": "referenced"
+    },
+    {
+      "output": 4,
+      "source_slide": 4,
+      "mode": "referenced"
+    },
+    {
+      "output": 5,
+      "source_slide": 5,
+      "mode": "referenced"
+    },
+    {
+      "output": 6,
+      "source_slide": 6,
+      "mode": "referenced"
+    },
+    {
+      "output": 7,
+      "source_slide": 7,
+      "mode": "referenced"
+    },
+    {
+      "output": 8,
+      "source_slide": 8,
+      "mode": "referenced"
+    },
+    {
+      "output": 9,
+      "source_slide": 9,
+      "mode": "referenced"
+    },
+    {
+      "output": 10,
+      "source_slide": 10,
+      "mode": "referenced"
+    },
+    {
+      "output": 11,
+      "source_slide": 10,
+      "mode": "new copy",
+      "title": "模型4.0实施与落地",
+      "reason": "在现有开发准备与下一步计划之间补齐整体实施路径",
+      "source_material": "用户本轮七步实施要求"
+    },
+    {
+      "output": 12,
+      "source_slide": 10,
+      "mode": "new copy",
+      "title": "工程化4.0落地实施步骤",
+      "reason": "按用户列出的五个环节说明模块改造范围",
+      "source_material": "用户本轮工程化实施五组要点"
+    },
+    {
+      "output": 13,
+      "source_slide": 11,
+      "mode": "referenced"
+    }
+  ],
+  "page_11": {
+    "title": "模型4.0实施与落地",
+    "layout": "七步流程，采用4+3两行连续编号与箭头；第4、第7步展开影响面与割接方式",
+    "steps": [
+      {
+        "title": "法规4.0输出",
+        "detail": "形成法规模型及字段要求"
+      },
+      {
+        "title": "法规4.0用户宣贯",
+        "detail": "对齐字段含义、适用规则与使用方式"
+      },
+      {
+        "title": "工程化4.0输出",
+        "detail": "形成工程字段、数据结构与实施规则"
+      },
+      {
+        "title": "系统影响面评估",
+        "detail": "实体改动、API改动、护照编辑器、二维码落地页"
+      },
+      {
+        "title": "PRD输出",
+        "detail": "明确功能需求、交互流程与改造范围"
+      },
+      {
+        "title": "功能上线",
+        "detail": "完成开发、验证与发布"
+      },
+      {
+        "title": "数据割接",
+        "detail": "手动补数据、系统割接"
+      }
+    ]
+  },
+  "page_12": {
+    "title": "工程化4.0落地实施步骤",
+    "layout": "五个实施环节的横向分层图；数据割接作为贯穿实施的收尾环节",
+    "layers": [
+      {
+        "title": "数据录入环节",
+        "items": [
+          "API改动",
+          "护照编辑器改动",
+          "实体改动",
+          "变更功能",
+          "护照状态机改动",
+          "期初数据导入"
+        ]
+      },
+      {
+        "title": "护照注册",
+        "items": [
+          "注册模块",
+          "自动化逻辑",
+          "Token逻辑",
+          "EU Registry凭证管理"
+        ]
+      },
+      {
+        "title": "数据展示环节",
+        "items": [
+          "二维码展示页改动"
+        ]
+      },
+      {
+        "title": "与欧盟注册中心交互",
+        "items": [
+          "语义模型1.0转换逻辑",
+          "JTC24接口改动"
+        ]
+      },
+      {
+        "title": "数据割接策略",
+        "items": [
+          "手动补数据",
+          "系统割接方案"
+        ]
+      }
+    ]
+  },
+  "enhancements": {
+    "speaker_notes": "preserve source; no new notes",
+    "narration": "off",
+    "auto_advance": "off; preserve source",
+    "transitions": "preserve source; static new pages",
+    "object_animations": "preserve source; off for new pages",
+    "native_charts_tables": "no new chart or table data; new content native editable text and geometry"
+  },
+  "style": "原稿蓝白配色与微软雅黑，保留原11页native内容",
+  "mapping_notes": [
+    "用户称3层但列5组，按五个实施环节完整保留",
+    "JTC24接口保留用户用语，不扩展为具体API标准事实",
+    "保留现有11页及日期责任人；不增加新承诺或日期"
+  ],
+  "confirmation": "用户回复“确认”后执行",
+  "confirmed_at": "2026-11-13T11:03:30.164181"
+}

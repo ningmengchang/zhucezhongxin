@@ -1,0 +1,149 @@
+The reference standard the DPP instance schema refers to
+The current status of the DPP as a digital resource
+"The level at which a unique product identifier applies, such as model level, batch level or item level."
+Date and time of the latest update of the battery passport
+The unique identifier of a battery passport
+The unique identifier of the battery item
+The unique identifier of the battery model
+Serial number of the battery including information on the battery batch
+Reference to horizontal or product-type related content specifications for the DPP
+The unique identifier of the manufacturer of the battery
+The unique identifier of a facility
+The unique identifier of the economic operator 
+Description of the scope of application of a battery in terms of its use according to the battery regulation
+The mass of the battery
+Current status of the battery item in its life cycle
+The place of manufacture of the battery
+The place of manufacture of the battery
+The place of manufacture of the battery
+The place of manufacture of the battery
+The date of manufacture of the battery
+"The date of first use, for its intended purpose, in the European Union, of a battery, without having been previously placed on the market"
+Information related to the manufacturer of the battery
+name of the manufacturer of the battery
+registered trade mark of the manufacturer of the battery
+address of the manufacturer of the battery
+web address of the manufacturer of the battery
+e-mail address of the manufacturer of the battery
+name of the economic operator 
+name of the economic operator 
+registered trade mark of the economic operator 
+address of the economic operator 
+web address of the economic operator 
+e-mail address of the economic operator 
+Commercial warranty period for the battery
+Commercial warranty period for the battery（YYYYMM）
+Specification of the usable extinguishing agent
+"The battery contains classification and collection labels and ""cadmium"" and ""lead"" symbols"
+Label indicating the carbon footprint and carbon footprint performance class
+Brief and easily understandable explanatory sentence conveying the meaning of symbols and labels used
+The document that declares compliance with requirements for placement on EU market
+Test report results proving compliance with the requirements stated in the battery regulation
+Test report results proving compliance with the requirements stated in the battery regulation
+Test report results proving compliance with the requirements stated in the battery regulation
+Test report results proving compliance with the requirements stated in the battery regulation
+Test report results proving compliance with the requirements stated in the battery regulation
+Test report results proving compliance with the requirements stated in the battery regulation
+"Clear, understandable and readable instructions for use in a format that makes it possible to print, download and save them on an electronic device so that the user can access them at all times, in particular during a breakdown of the battery"
+The battery carbon footprint must be included as declared in terms of kg of carbon dioxide equivalent per one kWh of the total energy provided by the battery over its expected service life.
+Contribution of raw material acquisition and pre-processing lifecycle stage to the battery carbon footprint
+Contribution of the main product production lifecycle stage to the battery carbon footprint
+Contribution of the distribution lifecycle stage to the battery's carbon footprint
+Contribution of the end of life and recycling lifecycle stage to the battery's carbon footprint
+"Depending on the distribution of the values in the carbon footprint declarations of batteries placed on the market, a meaningful number of classes of performance shall be identified, with category A being the best class with the lowest carbon footprint life cycle impact, to enable market differentiation"
+Battery carbon footprint as absolute number 
+The public version of the carbon footprint study
+"The report on the supply chain due diligence policy, risk management plan, and summary of third-party verification."
+Information on supply chain scheme assurances granted by third-party actors
+Information on relevant supply chain indices
+"The electrochemical composition reflecting active materials in cathode and anode, and - voluntarily - electrolyte"
+"Critical raw materials present in a concentration of more than 0,1%, weight by weight"
+Name of battery cathode material
+CAS code of battery cathode material
+Name of battery negative material
+CAS code of battery negative material
+Name of battery electrolyte material
+CAS code of battery electrolyte material
+"The name of any substance of very high concern in a battery, other than mercury, cadmium, and lead, at a concentration of 0.1% or higher (by weight), that meets the requirements of Article 3, paragraph (1), subparagraph (69)"
+CAS number of hazardous substances
+Hazardous substances grades and categories
+0
+Hazardous substance concentration
+"Elaboration on the impact of substances contained in the battery on the environment, human health and the safety of persons"
+The share of nickel recycled from pre-consumer waste in the active materials of the battery
+The share of cobalt recycled from pre-consumer waste in the active materials of the battery
+The share of lithium recycled from pre-consumer waste in the active materials of the battery
+The share of nickel recycled from post-consumer waste in the active materials of the battery
+The share of cobalt recycled from post-consumer waste in the active materials of the battery
+The share of lithium recycled from post-consumer waste in the active materials of the battery
+The share of recycled lead in the active materials of the battery
+Share of renewable content in the battery
+Manual(s) containing information on the removal of the battery pack
+Manual(s) containing information on the removal and disassembly of the battery pack
+The part numbers of components of the battery
+address on how to contact sources of spare parts
+web address on how to contact sources of spare parts
+e-mail on how to contact sources of spare parts
+"Safety measures to be taken during battery handling, including the dismantling"
+Information on how end-users can contribute to waste prevention
+Information on how end-users can contribute to the separate collection of waste batteries
+"Information on the collection of waste batteries, their preparation for second life and definitive treatment at end of life"
+""
+""
+""
+""
+""
+""
+The usable battery energy according to the procedure in the UN GTR No 22 as determined during the certification of the vehicle
+The usable battery energy at the present point in the lifetime of a battery as determined according to the procedure in the UN GTR No 22
+"The measured or on-board usable battery energy performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy"
+"The available energy or charge in a battery expressed as a percentage of rated capacity as declared by the manufacturer. When the battery’s state of health is no longer equal to its initial condition, SoC refers to the maximum energy or charge that can be stored in the battery at the time of charging"
+The total number of ampere-hours that can be withdrawn from a fully charged battery under reference conditions
+The corresponding in-use data attribute to rated capacity
+"The decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity as declared by the manufacturer"
+The suitable approximate value of the voltage used to designate or identify the battery
+The voltage range required for safe battery operation
+The amount of energy that a battery is capable to provide over a given period of time under reference conditions
+The amount of energy that a battery is capable to provide over a given period of time under reference conditions
+The amount of energy that a battery is capable to provide over a given period of time under reference conditions
+The amount of energy that a battery is capable to provide over a given period of time under reference conditions at a distinct point in time during its usage
+The decrease over time and upon usage in the amount of power that a battery can deliver at the rated voltage
+The value of maximum permitted power the battery is rated for and reflects the data relevant for power limits
+"The suitable approximate value of the power capability used to designate or identify the battery, while the battery energy is determined in reference conditions to be defined"
+The ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial state of charge by a standard charge (see BattReg Annex IV (6))
+The ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial state of charge by a standard charge (see BattReg Annex IV (6))
+The ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial state of charge by a standard charge (see BattReg Annex IV (6))
+The in-use analogy to the initial roundtrip energy the ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial state of charge by a standard charge
+The decrease of round trip energy efficiency as percentage
+The self-discharge-rate in an idle state of the battery in reference conditions (temperature etc.) at begin of life
+"The change of the self-discharge rate in an idle state of the battery in reference conditions (temperature etc.) at aging parameter x, e.g. after a certain amount of storage time or, number of cycles"
+"The change of self-discharge over time and usage, as percentage calculated from the initial and current self-discharge rate"
+Cell resistance value measured under DC conditions
+Pack resistance value measured under DC conditions
+Cell resistance value measured under AC conditions
+Pack resistance value measured under AC conditions
+Cell resistance value measured under DC conditions
+Cell resistance value measured under DC conditions
+The increase over time and upon usage of internal resistance
+"Expected life-time under the reference conditions for which they have been designed in terms of cycles, except for non-cycle applications, and calendar years"
+"Expected life-time under the reference conditions for which they have been designed in terms of cycles, except for non-cycle applications, and calendar years"
+"Expected life-time under the reference conditions for which they have been designed in terms of cycles, except for non-cycle applications, and calendar years"
+In-use number of (full) charging and discharging cycles
+In-use number of (full) charging and discharging cycles
+In-use number of (full) charging and discharging cycles
+The reference test for “Expected lifetime: Number of charge-discharge cycles”
+Measurement parameter for “Expected lifetime: Number of charge-discharge cycles”: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test
+Measurement parameter for “Expected lifetime: Number of charge-discharge cycles”: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test
+The overall sum of the energy throughput over the battery lifetime at a specific time during usage
+The overall sum of the capacity throughput over the battery lifetime at a specific time during usage
+"The percentage of SOCE, above which the battery is still considered operational as EV battery in its current life, as provided by the economic operator"
+Temperature information regarding operating environmental conditions
+Battery storage temperature range in idle state
+"The aggregated time, in which temperatures above the upper boundary of the temperature range as defined in 'Temperature range idle state, upper boundary' are prevalent"
+"The aggregated time, in which temperatures below the lower boundary of the temperature range as defined in 'Temperature range idle state, lower boundary' are prevalent"
+"The aggregated time, in which the battery is charged, while temperatures above the upper boundary of the temperature range as defined in 'Temperature range idle state, upper boundary' are prevalent"
+"The aggregated time, in which the battery is charged, while temperatures below the lower boundary of the temperature range as defined in 'Temperature range idle state, lower boundary' are prevalent"
+"Information on accidents affecting the battery, including when incorporated in equipment it is powering"
+"The number of occasions, in which voltage has dropped below the lower operational limit as provided in the battery passport "
+"The number of occasions, in which voltage has increased above the upper operational limit as provided in the battery passport"
+""
